@@ -1,0 +1,366 @@
+{
+  "version": "1.0.0",
+  "cadence_policy": {
+    "job_api": {
+      "description": "High-volatility commercial ATS boards (Greenhouse, Ashby, Lever)",
+      "default_interval_min": 480,
+      "min_interval_min": 120,
+      "max_interval_min": 1440,
+      "burst_interval_min": 60,
+      "burst_trigger": "new_hit"
+    },
+    "lab_portal": {
+      "description": "National lab and institutional career pages (PPPL, ORNL, DIII-D, ITER)",
+      "default_interval_min": 1440,
+      "min_interval_min": 720,
+      "max_interval_min": 4320,
+      "burst_interval_min": 360,
+      "burst_trigger": "new_hit"
+    },
+    "phd_board": {
+      "description": "PhD/postdoc aggregators (EURAXESS, AcademicTransfer, FindAPhD, APS Jobs)",
+      "default_interval_min": 2880,
+      "min_interval_min": 1440,
+      "max_interval_min": 10080,
+      "burst_interval_min": 720,
+      "burst_trigger": "new_hit"
+    },
+    "admissions_page": {
+      "description": "Seasonal program admissions (MIT, Princeton, EPFL, IPP rolling)",
+      "default_interval_min": 10080,
+      "min_interval_min": 4320,
+      "max_interval_min": 43200,
+      "burst_interval_min": 1440,
+      "burst_trigger": "deadline_proximity"
+    }
+  },
+  "title_filter": {
+    "positive": [
+      "plasma", "fusion", "diagnostics", "diagnostic", "instrumentation",
+      "instrument", "detector", "readout", "ion optics", "mass spectrometry",
+      "tokamak", "stellarator", "neutron", "calibration", "DAQ",
+      "test engineer", "research scientist", "research associate",
+      "postdoc", "doctoral", "PhD", "experimental physicist"
+    ],
+    "negative": [
+      "sales", "account executive", "recruiter", "marketing",
+      "frontend", "mobile", "HR", "people ops", "legal",
+      "biomedical", "agriculture", "semiconductor fab operator"
+    ]
+  },
+  "sources": [
+    {
+      "id": "helion",
+      "name": "Helion Energy",
+      "source_type": "job_api",
+      "platform": "ashby",
+      "careers_url": "https://jobs.ashbyhq.com/helion",
+      "api_url": "https://api.ashbyhq.com/posting-api/job-board/helion?includeCompensation=true",
+      "importance": 0.95,
+      "h1b_status": "likely",
+      "enabled": true
+    },
+    {
+      "id": "cfs",
+      "name": "Commonwealth Fusion Systems",
+      "source_type": "job_api",
+      "platform": "lever",
+      "careers_url": "https://jobs.lever.co/cfsenergy",
+      "api_url": "https://api.lever.co/v0/postings/cfsenergy",
+      "importance": 0.98,
+      "h1b_status": "confirmed",
+      "enabled": true
+    },
+    {
+      "id": "pacific-fusion",
+      "name": "Pacific Fusion",
+      "source_type": "job_api",
+      "platform": "greenhouse",
+      "careers_url": "https://job-boards.greenhouse.io/pacificfusion",
+      "api_url": "https://boards-api.greenhouse.io/v1/boards/pacificfusion/jobs",
+      "importance": 0.90,
+      "h1b_status": "likely",
+      "enabled": true
+    },
+    {
+      "id": "tae",
+      "name": "TAE Technologies",
+      "source_type": "job_api",
+      "platform": "greenhouse",
+      "careers_url": "https://job-boards.greenhouse.io/taetechnologies",
+      "api_url": "https://boards-api.greenhouse.io/v1/boards/taetechnologies/jobs",
+      "importance": 0.85,
+      "h1b_status": "confirmed",
+      "enabled": true
+    },
+    {
+      "id": "zap-energy",
+      "name": "Zap Energy",
+      "source_type": "job_api",
+      "platform": "greenhouse",
+      "careers_url": "https://job-boards.greenhouse.io/zapenergy",
+      "api_url": "https://boards-api.greenhouse.io/v1/boards/zapenergy/jobs",
+      "importance": 0.75,
+      "h1b_status": "mixed",
+      "enabled": true
+    },
+    {
+      "id": "type-one-energy",
+      "name": "Type One Energy",
+      "source_type": "job_api",
+      "platform": "greenhouse",
+      "careers_url": "https://job-boards.greenhouse.io/typeoneenergy",
+      "api_url": "https://boards-api.greenhouse.io/v1/boards/typeoneenergy/jobs",
+      "importance": 0.70,
+      "h1b_status": "unknown",
+      "enabled": true
+    },
+    {
+      "id": "thea-energy",
+      "name": "Thea Energy",
+      "source_type": "job_api",
+      "platform": "greenhouse",
+      "careers_url": "https://job-boards.greenhouse.io/theaenergy",
+      "api_url": "https://boards-api.greenhouse.io/v1/boards/theaenergy/jobs",
+      "importance": 0.70,
+      "h1b_status": "unknown",
+      "enabled": true
+    },
+    {
+      "id": "marathon-fusion",
+      "name": "Marathon Fusion",
+      "source_type": "job_api",
+      "platform": "ashby",
+      "careers_url": "https://jobs.ashbyhq.com/Marathon%20Fusion",
+      "api_url": "https://api.ashbyhq.com/posting-api/job-board/Marathon%20Fusion?includeCompensation=true",
+      "importance": 0.65,
+      "h1b_status": "unknown",
+      "enabled": true
+    },
+    {
+      "id": "realta-fusion",
+      "name": "Realta Fusion",
+      "source_type": "job_api",
+      "platform": "ashby",
+      "careers_url": "https://jobs.ashbyhq.com/realtafusion",
+      "api_url": "https://api.ashbyhq.com/posting-api/job-board/realtafusion?includeCompensation=true",
+      "importance": 0.65,
+      "h1b_status": "unknown",
+      "enabled": true
+    },
+    {
+      "id": "avalanche-energy",
+      "name": "Avalanche Energy",
+      "source_type": "job_api",
+      "platform": "ashby",
+      "careers_url": "https://jobs.ashbyhq.com/avalanche",
+      "api_url": "https://api.ashbyhq.com/posting-api/job-board/avalanche?includeCompensation=true",
+      "importance": 0.60,
+      "h1b_status": "unknown",
+      "enabled": true
+    },
+    {
+      "id": "xcimer",
+      "name": "Xcimer Energy",
+      "source_type": "job_api",
+      "platform": "greenhouse",
+      "careers_url": "https://job-boards.greenhouse.io/xcimerenergy",
+      "api_url": "https://boards-api.greenhouse.io/v1/boards/xcimerenergy/jobs",
+      "importance": 0.70,
+      "h1b_status": "unknown",
+      "enabled": true
+    },
+    {
+      "id": "tokamak-energy",
+      "name": "Tokamak Energy",
+      "source_type": "job_api",
+      "platform": "greenhouse",
+      "careers_url": "https://job-boards.greenhouse.io/tokamakenergy",
+      "api_url": "https://boards-api.greenhouse.io/v1/boards/tokamakenergy/jobs",
+      "importance": 0.75,
+      "h1b_status": "n/a_uk",
+      "notes": "UK company — requires UK work authorization",
+      "enabled": true
+    },
+    {
+      "id": "proxima-fusion",
+      "name": "Proxima Fusion",
+      "source_type": "job_api",
+      "platform": "ashby",
+      "careers_url": "https://jobs.ashbyhq.com/proximafusion",
+      "api_url": "https://api.ashbyhq.com/posting-api/job-board/proximafusion?includeCompensation=true",
+      "importance": 0.65,
+      "h1b_status": "n/a_eu",
+      "notes": "EU company — requires EU/Swiss work authorization",
+      "enabled": true
+    },
+    {
+      "id": "general-atomics",
+      "name": "General Atomics / DIII-D",
+      "source_type": "lab_portal",
+      "platform": "custom",
+      "careers_url": "https://www.ga.com/careers",
+      "api_url": null,
+      "scrape_strategy": "periodic_check",
+      "importance": 0.85,
+      "h1b_status": "confirmed",
+      "enabled": true
+    },
+    {
+      "id": "pppl",
+      "name": "Princeton Plasma Physics Lab",
+      "source_type": "lab_portal",
+      "platform": "custom",
+      "careers_url": "https://www.pppl.gov/about/employment",
+      "api_url": null,
+      "scrape_strategy": "periodic_check",
+      "importance": 0.80,
+      "h1b_status": "cap_exempt",
+      "enabled": true
+    },
+    {
+      "id": "ornl-fusion",
+      "name": "ORNL Fusion Energy Division",
+      "source_type": "lab_portal",
+      "platform": "custom",
+      "careers_url": "https://jobs.ornl.gov/",
+      "api_url": null,
+      "scrape_strategy": "periodic_check",
+      "importance": 0.70,
+      "h1b_status": "restricted",
+      "enabled": true
+    },
+    {
+      "id": "iter",
+      "name": "ITER",
+      "source_type": "lab_portal",
+      "platform": "custom",
+      "careers_url": "https://www.iter.org/public/jobs/open-positions",
+      "api_url": null,
+      "scrape_strategy": "periodic_check",
+      "importance": 0.75,
+      "h1b_status": "n/a_international",
+      "enabled": true
+    },
+    {
+      "id": "euraxess-fusion",
+      "name": "EURAXESS — Fusion/Plasma",
+      "source_type": "phd_board",
+      "platform": "euraxess",
+      "careers_url": "https://euraxess.ec.europa.eu/jobs/search?keywords=fusion+plasma+diagnostics",
+      "api_url": null,
+      "scrape_strategy": "periodic_check",
+      "importance": 0.85,
+      "enabled": true
+    },
+    {
+      "id": "academictransfer",
+      "name": "AcademicTransfer — Plasma/Fusion",
+      "source_type": "phd_board",
+      "platform": "academictransfer",
+      "careers_url": "https://www.academictransfer.com/en/jobs/?q=plasma+fusion",
+      "api_url": null,
+      "scrape_strategy": "periodic_check",
+      "importance": 0.80,
+      "enabled": true
+    },
+    {
+      "id": "aps-physics-jobs",
+      "name": "APS Physics Jobs — Fusion",
+      "source_type": "phd_board",
+      "platform": "aps",
+      "careers_url": "https://www.apsphysicsjobs.com/jobs/fusion-and-plasma-science/",
+      "api_url": null,
+      "scrape_strategy": "periodic_check",
+      "importance": 0.80,
+      "enabled": true
+    },
+    {
+      "id": "findaphd-fusion",
+      "name": "FindAPhD — Plasma/Fusion",
+      "source_type": "phd_board",
+      "platform": "findaphd",
+      "careers_url": "https://www.findaphd.com/phds/?Keywords=plasma+fusion+diagnostics",
+      "api_url": null,
+      "scrape_strategy": "periodic_check",
+      "importance": 0.70,
+      "enabled": true
+    },
+    {
+      "id": "jobs-ac-uk",
+      "name": "jobs.ac.uk — Fusion/Plasma",
+      "source_type": "phd_board",
+      "platform": "jobs_ac_uk",
+      "careers_url": "https://www.jobs.ac.uk/search/phd?keywords=fusion+plasma",
+      "api_url": null,
+      "scrape_strategy": "periodic_check",
+      "importance": 0.75,
+      "enabled": true
+    },
+    {
+      "id": "ipp-phd",
+      "name": "Max Planck IPP — PhD Openings",
+      "source_type": "admissions_page",
+      "platform": "custom",
+      "careers_url": "https://www.ipp.mpg.de/yourphd",
+      "api_url": null,
+      "scrape_strategy": "periodic_check",
+      "importance": 0.95,
+      "opening_model": "rolling",
+      "notes": "Rolling admission — apply anytime",
+      "enabled": true
+    },
+    {
+      "id": "epfl-spc",
+      "name": "EPFL Swiss Plasma Center — PhD",
+      "source_type": "admissions_page",
+      "platform": "custom",
+      "careers_url": "https://www.epfl.ch/research/domains/swiss-plasma-center/education/",
+      "api_url": null,
+      "scrape_strategy": "periodic_check",
+      "importance": 0.90,
+      "opening_model": "rolling",
+      "notes": "Rolling admission — apply anytime",
+      "enabled": true
+    },
+    {
+      "id": "princeton-plasma",
+      "name": "Princeton Plasma Physics PhD",
+      "source_type": "admissions_page",
+      "platform": "custom",
+      "careers_url": "https://plasma.princeton.edu/admissions",
+      "api_url": null,
+      "scrape_strategy": "periodic_check",
+      "importance": 0.90,
+      "opening_model": "deadline_cycle",
+      "deadline": "2026-12-01",
+      "enabled": true
+    },
+    {
+      "id": "mit-psfc",
+      "name": "MIT PSFC (via NSE)",
+      "source_type": "admissions_page",
+      "platform": "custom",
+      "careers_url": "https://www.psfc.mit.edu/graduate-education/",
+      "api_url": null,
+      "scrape_strategy": "periodic_check",
+      "importance": 0.92,
+      "opening_model": "deadline_cycle",
+      "deadline": "2026-12-15",
+      "enabled": true
+    },
+    {
+      "id": "umich-ners",
+      "name": "UMich NERS — PhD",
+      "source_type": "admissions_page",
+      "platform": "custom",
+      "careers_url": "https://ners.engin.umich.edu/academics/graduate/",
+      "api_url": null,
+      "scrape_strategy": "periodic_check",
+      "importance": 0.88,
+      "opening_model": "deadline_cycle",
+      "deadline": "2027-01-15",
+      "enabled": true
+    }
+  ]
+}

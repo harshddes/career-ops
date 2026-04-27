@@ -1,0 +1,24 @@
+{
+  "name": "web-tracker",
+  "version": "1.0.0",
+  "description": "Adaptive Fusion Research OS — career intelligence dashboard",
+  "type": "module",
+  "scripts": {
+    "start": "node run.mjs",
+    "start:autopilot": "node run.mjs --mode autopilot",
+    "start:assisted": "node run.mjs --mode assisted",
+    "start:manual": "node run.mjs --mode manual",
+    "scan:jobs": "node fusion-scan.mjs --all",
+    "scan:phd": "node phd-scan.mjs --all",
+    "sync": "node adapters/sync-all.mjs",
+    "gate": "node deep-research-gate.mjs",
+    "gate:status": "node deep-research-gate.mjs --status",
+    "budget:reset": "node deep-research-gate.mjs --reset",
+    "install:windows-task": "powershell -ExecutionPolicy Bypass -File scripts/register-windows-task.ps1 -Mode assisted"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "chokidar": "^4.0.0",
+    "node-cron": "^3.0.3"
+  }
+}

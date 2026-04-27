@@ -1,0 +1,55 @@
+{
+  "version": "1.0.0",
+  "contacts": [
+    {
+      "id": "ryan-mcbride",
+      "name": "Ryan McBride",
+      "organization": "University of Michigan NERS",
+      "category": "academic",
+      "role_tag": "pi",
+      "title": "Professor, Director of Plasma/Pulsed Power Lab",
+      "priority": 1,
+      "why": "Magneto-inertial fusion, pulsed power, Sandia MagLIF background; strongest Michigan academic bridge."
+    },
+    {
+      "id": "john-foster",
+      "name": "John Foster",
+      "organization": "University of Michigan NERS",
+      "category": "academic",
+      "role_tag": "graduate_chair",
+      "title": "Professor, NERS Graduate Chair",
+      "priority": 1,
+      "why": "Space propulsion and plasma diagnostics overlap; bridges the user's space-plasma background into fusion."
+    },
+    {
+      "id": "david-kirtley",
+      "name": "David Kirtley",
+      "organization": "Helion Energy",
+      "category": "industry",
+      "role_tag": "executive",
+      "title": "CEO & Co-Founder",
+      "priority": 1,
+      "why": "Michigan Aerospace PhD leading a major fusion company; strong alumni-network target."
+    },
+    {
+      "id": "matthew-reinke",
+      "name": "Matthew Reinke",
+      "organization": "Commonwealth Fusion Systems",
+      "category": "industry",
+      "role_tag": "hiring_manager",
+      "title": "SPARC Diagnostic Team Lead",
+      "priority": 1,
+      "why": "Diagnostics decision-maker for SPARC; highest relevance for diagnostic-engineering roles."
+    },
+    {
+      "id": "fusion-recruiting",
+      "name": "Talent / Recruiting Contact",
+      "organization": "Target Company",
+      "category": "hr",
+      "role_tag": "recruiter",
+      "title": "Recruiting or Talent Partner",
+      "priority": 2,
+      "why": "Use for process, H-1B, green-card/PERM, and timeline questions after technical fit is established."
+    }
+  ]
+}

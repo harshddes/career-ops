@@ -1,0 +1,1819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FUSION PIVOT — Career Intelligence Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #12121a;
+  --bg-card: #18182480;
+  --bg-card-hover: #1e1e2a;
+  --border: #2a2a3a;
+  --border-glow: #ff6b3520;
+  --text-primary: #e8e8f0;
+  --text-secondary: #8888a0;
+  --text-muted: #555570;
+  --accent-plasma: #ff6b35;
+  --accent-fusion: #00d4ff;
+  --accent-nuclear: #9d4edd;
+  --accent-green: #00c853;
+  --accent-warn: #ffab00;
+  --accent-red: #ff1744;
+  --gradient-plasma: linear-gradient(135deg, #ff6b35, #ff3d00);
+  --gradient-fusion: linear-gradient(135deg, #00d4ff, #0091ea);
+  --gradient-nuclear: linear-gradient(135deg, #9d4edd, #6200ea);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.noise-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 0;
+}
+
+header {
+  position: relative;
+  padding: 3rem 4rem 2rem;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, #12121a 0%, var(--bg-primary) 100%);
+}
+
+header::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--accent-plasma), var(--accent-fusion), var(--accent-nuclear));
+}
+
+.header-grid {
+  display: flex; justify-content: space-between; align-items: flex-start;
+}
+
+h1 {
+  font-family: 'Instrument Serif', serif;
+  font-size: 3.2rem; font-weight: 400; line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+h1 span { color: var(--accent-plasma); }
+
+.header-meta {
+  text-align: right; font-size: 0.85rem; color: var(--text-secondary);
+  font-family: 'Space Mono', monospace;
+}
+
+.header-meta .name { font-size: 1rem; color: var(--text-primary); margin-bottom: 0.3rem; }
+
+.subtitle {
+  margin-top: 0.8rem; font-size: 1.1rem; color: var(--text-secondary);
+  font-weight: 300; max-width: 700px;
+}
+
+/* Navigation */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; gap: 0; border-bottom: 1px solid var(--border);
+  background: var(--bg-primary); backdrop-filter: blur(20px);
+}
+
+nav button {
+  flex: 1; padding: 1rem 1.5rem;
+  background: none; border: none; border-bottom: 2px solid transparent;
+  color: var(--text-secondary); cursor: pointer;
+  font-family: 'Space Mono', monospace; font-size: 0.8rem;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  transition: all 0.3s;
+}
+
+nav button:hover { color: var(--text-primary); background: var(--bg-card); }
+nav button.active { color: var(--accent-plasma); border-bottom-color: var(--accent-plasma); }
+
+/* Tab content */
+.tab-content { display: none; padding: 2rem 4rem 4rem; position: relative; z-index: 1; }
+.tab-content.active { display: block; }
+
+/* Stats bar */
+.stats-bar {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px;
+  background: var(--border); border-radius: 12px; overflow: hidden;
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  background: var(--bg-card); padding: 1.5rem;
+  text-align: center; transition: background 0.3s;
+}
+
+.stat-card:hover { background: var(--bg-card-hover); }
+
+.stat-number {
+  font-family: 'Space Mono', monospace;
+  font-size: 2.2rem; font-weight: 700;
+  background: var(--gradient-plasma);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-number.fusion-color {
+  background: var(--gradient-fusion);
+  -webkit-background-clip: text; background-clip: text;
+}
+
+.stat-number.nuclear-color {
+  background: var(--gradient-nuclear);
+  -webkit-background-clip: text; background-clip: text;
+}
+
+.stat-label {
+  font-size: 0.75rem; color: var(--text-secondary);
+  text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.4rem;
+  font-family: 'Space Mono', monospace;
+}
+
+/* Section headers */
+.section-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: 2rem; margin-bottom: 1.5rem; font-weight: 400;
+  display: flex; align-items: center; gap: 0.8rem;
+}
+
+.section-title::before {
+  content: ''; display: block; width: 4px; height: 28px;
+  background: var(--accent-plasma); border-radius: 2px;
+}
+
+/* Company cards */
+.company-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.company-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 1.5rem; transition: all 0.3s;
+  position: relative; overflow: hidden;
+}
+
+.company-card:hover {
+  border-color: var(--accent-plasma);
+  box-shadow: 0 0 30px var(--border-glow);
+  transform: translateY(-2px);
+}
+
+.company-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+}
+
+.company-card.tier-1::before { background: var(--gradient-plasma); }
+.company-card.tier-2::before { background: var(--gradient-fusion); }
+.company-card.tier-3::before { background: var(--gradient-nuclear); }
+
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
+
+.card-company {
+  font-size: 1.3rem; font-weight: 600; letter-spacing: -0.01em;
+}
+
+.card-badge {
+  font-family: 'Space Mono', monospace; font-size: 0.65rem;
+  padding: 0.25rem 0.6rem; border-radius: 4px;
+  text-transform: uppercase; letter-spacing: 0.05em;
+}
+
+.badge-tokamak { background: #ff6b3520; color: var(--accent-plasma); }
+.badge-frc { background: #00d4ff20; color: var(--accent-fusion); }
+.badge-stellarator { background: #9d4edd20; color: var(--accent-nuclear); }
+.badge-icf { background: #ffab0020; color: var(--accent-warn); }
+.badge-other { background: #00c85320; color: var(--accent-green); }
+
+.card-role { color: var(--accent-fusion); font-weight: 500; margin-bottom: 0.5rem; font-size: 0.95rem; }
+.card-detail { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.3rem; }
+.card-detail strong { color: var(--text-primary); font-weight: 500; }
+
+.card-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.8rem; }
+
+.tag {
+  font-size: 0.7rem; padding: 0.2rem 0.5rem;
+  border: 1px solid var(--border); border-radius: 4px;
+  color: var(--text-secondary); font-family: 'Space Mono', monospace;
+}
+
+.tag.match { border-color: var(--accent-green); color: var(--accent-green); }
+.tag.visa { border-color: var(--accent-fusion); color: var(--accent-fusion); }
+.tag.warn { border-color: var(--accent-warn); color: var(--accent-warn); }
+
+/* Skills Transfer */
+.transfer-grid {
+  display: grid; grid-template-columns: 1fr 60px 1fr; gap: 0; align-items: center;
+  margin-bottom: 3rem;
+}
+
+.transfer-item {
+  display: grid; grid-template-columns: 1fr 60px 1fr;
+  gap: 0; align-items: center; padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.transfer-from, .transfer-to {
+  padding: 0.8rem 1.2rem; border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.transfer-from {
+  background: #ff6b3510; border: 1px solid #ff6b3530;
+  text-align: right;
+}
+
+.transfer-arrow {
+  text-align: center; color: var(--text-muted); font-size: 1.4rem;
+  font-family: 'Space Mono', monospace;
+}
+
+.transfer-to {
+  background: #00d4ff10; border: 1px solid #00d4ff30;
+}
+
+/* Timeline */
+.timeline {
+  position: relative; padding-left: 3rem; margin-bottom: 3rem;
+}
+
+.timeline::before {
+  content: ''; position: absolute; left: 12px; top: 0; bottom: 0;
+  width: 2px; background: var(--border);
+}
+
+.timeline-item {
+  position: relative; margin-bottom: 2rem; padding: 1.2rem 1.5rem;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 10px; transition: all 0.3s;
+}
+
+.timeline-item:hover { border-color: var(--accent-fusion); }
+
+.timeline-item::before {
+  content: ''; position: absolute; left: -2.4rem; top: 1.5rem;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--accent-plasma); border: 2px solid var(--bg-primary);
+}
+
+.timeline-item.urgent::before { background: var(--accent-red); box-shadow: 0 0 12px var(--accent-red); }
+.timeline-item.important::before { background: var(--accent-warn); }
+.timeline-item.future::before { background: var(--text-muted); }
+
+.timeline-date {
+  font-family: 'Space Mono', monospace; font-size: 0.75rem;
+  color: var(--accent-plasma); margin-bottom: 0.4rem;
+  text-transform: uppercase;
+}
+
+.timeline-title { font-weight: 600; margin-bottom: 0.3rem; }
+.timeline-desc { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; }
+
+/* People / Contacts */
+.people-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.person-card {
+  display: flex; gap: 1rem; padding: 1.2rem;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 10px; transition: all 0.3s;
+}
+
+.person-card:hover { border-color: var(--accent-nuclear); }
+
+.person-avatar {
+  width: 48px; height: 48px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Space Mono', monospace; font-weight: 700;
+  font-size: 1rem; flex-shrink: 0;
+}
+
+.person-avatar.michigan { background: #00274c30; color: #ffcb05; border: 1px solid #ffcb0540; }
+.person-avatar.industry { background: #ff6b3520; color: var(--accent-plasma); border: 1px solid #ff6b3540; }
+.person-avatar.lab { background: #00d4ff20; color: var(--accent-fusion); border: 1px solid #00d4ff40; }
+.person-avatar.academic { background: #9d4edd20; color: var(--accent-nuclear); border: 1px solid #9d4edd40; }
+
+.person-info { flex: 1; min-width: 0; }
+.person-name { font-weight: 600; font-size: 0.95rem; }
+.person-title { color: var(--text-secondary); font-size: 0.8rem; margin-top: 0.2rem; }
+.person-why { color: var(--text-muted); font-size: 0.78rem; margin-top: 0.4rem; font-style: italic; }
+
+.priority-tag {
+  display: inline-block; font-family: 'Space Mono', monospace;
+  font-size: 0.6rem; padding: 0.15rem 0.4rem; border-radius: 3px;
+  margin-left: 0.5rem; vertical-align: middle;
+}
+
+.priority-1 { background: #ff174420; color: var(--accent-red); }
+.priority-2 { background: #ffab0020; color: var(--accent-warn); }
+.priority-3 { background: #00c85320; color: var(--accent-green); }
+
+/* Programs */
+.program-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+.program-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 10px; padding: 1.5rem; transition: all 0.3s;
+}
+
+.program-card:hover { border-color: var(--accent-nuclear); transform: translateY(-2px); }
+
+.program-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.8rem; }
+.program-school { font-size: 1.1rem; font-weight: 600; }
+.program-country { font-family: 'Space Mono', monospace; font-size: 0.75rem; color: var(--text-muted); }
+.program-field { color: var(--accent-nuclear); font-size: 0.85rem; margin-bottom: 0.6rem; }
+
+.program-funding {
+  display: inline-block; padding: 0.2rem 0.6rem; border-radius: 4px;
+  font-family: 'Space Mono', monospace; font-size: 0.7rem;
+  margin-bottom: 0.6rem;
+}
+
+.funding-full { background: #00c85320; color: var(--accent-green); }
+.funding-partial { background: #ffab0020; color: var(--accent-warn); }
+
+.program-detail { color: var(--text-secondary); font-size: 0.83rem; line-height: 1.5; }
+.program-deadline { font-family: 'Space Mono', monospace; color: var(--accent-plasma); font-size: 0.8rem; margin-top: 0.5rem; }
+.program-pipeline { color: var(--text-muted); font-size: 0.78rem; margin-top: 0.3rem; }
+
+/* The Prompt Section */
+.prompt-box {
+  background: var(--bg-secondary); border: 1px solid var(--border);
+  border-radius: 12px; padding: 2rem; margin-bottom: 2rem;
+  position: relative;
+}
+
+.prompt-box::before {
+  content: 'MULTI-AGENT PROMPT'; position: absolute; top: -10px; left: 20px;
+  font-family: 'Space Mono', monospace; font-size: 0.7rem;
+  color: var(--accent-plasma); background: var(--bg-primary);
+  padding: 0 0.5rem; letter-spacing: 0.1em;
+}
+
+.prompt-text {
+  font-family: 'Space Mono', monospace; font-size: 0.82rem;
+  line-height: 1.8; color: var(--text-primary); white-space: pre-wrap;
+}
+
+.prompt-text .highlight { color: var(--accent-fusion); font-weight: 700; }
+.prompt-text .section-label { color: var(--accent-plasma); font-weight: 700; display: block; margin-top: 1rem; }
+
+.copy-btn {
+  position: absolute; top: 1rem; right: 1rem;
+  background: var(--accent-plasma); color: white; border: none;
+  padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer;
+  font-family: 'Space Mono', monospace; font-size: 0.75rem;
+  transition: all 0.3s;
+}
+
+.copy-btn:hover { transform: scale(1.05); }
+
+/* Skill overlap meter */
+.overlap-bar-container { margin-bottom: 1rem; }
+.overlap-label { display: flex; justify-content: space-between; margin-bottom: 0.3rem; font-size: 0.85rem; }
+.overlap-bar { height: 8px; background: var(--bg-secondary); border-radius: 4px; overflow: hidden; }
+.overlap-fill { height: 100%; border-radius: 4px; transition: width 1s ease; }
+.overlap-fill.high { background: var(--gradient-plasma); }
+.overlap-fill.medium { background: var(--gradient-fusion); }
+.overlap-fill.low { background: var(--gradient-nuclear); }
+
+/* Reality check section */
+.reality-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.reality-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 2rem;
+}
+
+.reality-card h3 {
+  font-family: 'Instrument Serif', serif; font-size: 1.4rem;
+  margin-bottom: 1rem; font-weight: 400;
+}
+
+.reality-card p { color: var(--text-secondary); line-height: 1.7; font-size: 0.9rem; }
+.reality-card .yes { color: var(--accent-green); font-weight: 600; }
+.reality-card .no { color: var(--accent-red); font-weight: 600; }
+.reality-card .maybe { color: var(--accent-warn); font-weight: 600; }
+
+/* Control plane */
+.control-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.control-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 10px; padding: 1rem;
+}
+
+.control-card h3 { font-size: 1rem; margin-bottom: 0.4rem; }
+.control-card p { color: var(--text-secondary); font-size: 0.8rem; line-height: 1.5; margin-bottom: 0.8rem; }
+
+.control-btn {
+  background: var(--accent-plasma); color: white; border: none;
+  padding: 0.55rem 0.8rem; border-radius: 6px; cursor: pointer;
+  font-family: 'Space Mono', monospace; font-size: 0.7rem; margin-right: 0.4rem; margin-bottom: 0.4rem;
+}
+
+.control-btn.secondary { background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border); }
+.control-btn.warn { background: var(--accent-warn); color: #111; }
+.control-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.filter-panel {
+  display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1rem;
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem;
+}
+
+.filter-panel label {
+  font-family: 'Space Mono', monospace; color: var(--text-secondary);
+  font-size: 0.72rem; display: flex; gap: 0.35rem; align-items: center;
+}
+
+.job-log {
+  background: #050508; border: 1px solid var(--border); border-radius: 8px;
+  font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--text-secondary);
+  padding: 0.8rem; max-height: 320px; overflow-y: auto; white-space: pre-wrap;
+}
+
+.status-pill {
+  display: inline-block; padding: 0.15rem 0.45rem; border-radius: 999px;
+  border: 1px solid var(--border); font-family: 'Space Mono', monospace; font-size: 0.65rem;
+  color: var(--text-secondary);
+}
+
+.status-pill.running { border-color: var(--accent-fusion); color: var(--accent-fusion); }
+.status-pill.completed { border-color: var(--accent-green); color: var(--accent-green); }
+.status-pill.failed { border-color: var(--accent-red); color: var(--accent-red); }
+
+textarea.control-input, input.control-input, select.control-input {
+  width: 100%; background: var(--bg-secondary); color: var(--text-primary);
+  border: 1px solid var(--border); border-radius: 6px; padding: 0.6rem;
+  font-family: 'DM Sans', sans-serif; margin-bottom: 0.6rem;
+}
+
+/* Footer */
+footer {
+  padding: 2rem 4rem; border-top: 1px solid var(--border);
+  color: var(--text-muted); font-family: 'Space Mono', monospace;
+  font-size: 0.75rem; text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  header, .tab-content, footer { padding-left: 2rem; padding-right: 2rem; }
+  .stats-bar { grid-template-columns: repeat(3, 1fr); }
+  .reality-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  .stats-bar { grid-template-columns: 1fr 1fr; }
+  .company-grid, .people-grid, .program-grid { grid-template-columns: 1fr; }
+  nav { flex-wrap: wrap; }
+  nav button { flex-basis: 50%; font-size: 0.7rem; }
+}
+
+/* Animations */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.company-card, .person-card, .program-card, .timeline-item {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+</style>
+</head>
+<body>
+<div class="noise-overlay"></div>
+
+<header>
+  <div class="header-grid">
+    <div>
+      <h1>FUSION <span>PIVOT</span></h1>
+      <p class="subtitle">Career intelligence dashboard for transitioning from space plasma physics into the fusion energy industry. Every data point, every contact, every pathway — mapped.</p>
+    </div>
+    <div class="header-meta">
+      <div class="name">Harsh Desai</div>
+      <div>M.Eng Space Systems | UMich</div>
+      <div>Generated 2026-04-15</div>
+      <div>career-ops v1.3.0</div>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <button class="active" onclick="switchTab('overview')">Overview</button>
+  <button onclick="switchTab('companies')">Companies & Roles</button>
+  <button onclick="switchTab('contacts')">Key People</button>
+  <button onclick="switchTab('academic')">Academic Paths</button>
+  <button onclick="switchTab('timeline')">Action Timeline</button>
+  <button onclick="switchTab('livejobs')">Live Jobs</button>
+  <button onclick="switchTab('phdradar')">PhD Radar</button>
+  <button onclick="switchTab('pulse')">Career-Ops Pulse</button>
+  <button onclick="switchTab('operations')">Operations</button>
+  <button onclick="switchTab('outreach')">Outreach</button>
+  <button onclick="switchTab('system')">System</button>
+</nav>
+
+<!-- OVERVIEW TAB -->
+<div id="overview" class="tab-content active">
+  <div class="stats-bar">
+    <div class="stat-card">
+      <div class="stat-number">45+</div>
+      <div class="stat-label">Active Fusion Companies</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number fusion-color">$10B+</div>
+      <div class="stat-label">Private Investment</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number nuclear-color">34%</div>
+      <div class="stat-label">YoY Workforce Growth</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">12</div>
+      <div class="stat-label">Target Roles Identified</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number fusion-color">18</div>
+      <div class="stat-label">Funded PhD Programs</div>
+    </div>
+  </div>
+
+  <h2 class="section-title">The Reality Check</h2>
+  <div class="reality-grid">
+    <div class="reality-card">
+      <h3>Can you break into fusion with zero direct experience?</h3>
+      <p><span class="yes">YES — and it's been done before.</span> Joy Dunn spent a decade in aerospace before becoming VP Manufacturing at CFS. Alex Creely went from Mechanical Engineering undergrad to CFS employee #13. David Kirtley got his PhD in Aerospace at Michigan and now runs Helion — a $1B+ fusion company. CFS's diagnostic engineer posting <em>explicitly</em> encourages aerospace backgrounds.</p>
+    </div>
+    <div class="reality-card">
+      <h3>But let's be honest about the gaps</h3>
+      <p><span class="maybe">Your plasma diagnostics background is a genuine asset.</span> But you lack: (1) tokamak/stellarator-specific operational experience, (2) nuclear physics depth (MCNP, neutronics), (3) years of post-degree tenure that senior roles demand. The play is entry-level diagnostics or internship-to-hire pathways, not senior scientist roles.</p>
+    </div>
+    <div class="reality-card">
+      <h3>Your transferable skill overlap</h3>
+      <p><span class="yes">Higher than you think.</span> CEM/ESA calibration = charged particle detector characterization. SIMION = ion-optics beam transport. LVACCS test rig = plasma source commissioning. FPGA readout = real-time detector signal processing. The physics is the same physics. The plasmas are just hotter and more expensive.</p>
+    </div>
+    <div class="reality-card">
+      <h3>The best path forward</h3>
+      <p>Two parallel tracks: <span class="yes">(1) Apply now</span> to career-changer-friendly companies (CFS, Helion, Pacific Fusion internship). <span class="maybe">(2) Simultaneously prepare PhD applications</span> for Fall 2027 at MIT PSFC, Princeton, Max Planck IPP, or EPFL — all fully funded. If industry works, great. If not, you'll have world-class academic options ready.</p>
+    </div>
+  </div>
+
+  <h2 class="section-title">Skill Transfer Map</h2>
+  <div>
+    <div class="overlap-bar-container">
+      <div class="overlap-label"><span>Detector readout chains (CEM/ESA/SSD → fusion particle diagnostics)</span><span style="color:var(--accent-green)">92%</span></div>
+      <div class="overlap-bar"><div class="overlap-fill high" style="width:92%"></div></div>
+    </div>
+    <div class="overlap-bar-container">
+      <div class="overlap-label"><span>HV plasma test rigs → tokamak/stellarator test environments</span><span style="color:var(--accent-green)">88%</span></div>
+      <div class="overlap-bar"><div class="overlap-fill high" style="width:88%"></div></div>
+    </div>
+    <div class="overlap-bar-container">
+      <div class="overlap-label"><span>FPGA/ADC DAQ → fusion data acquisition systems</span><span style="color:var(--accent-green)">85%</span></div>
+      <div class="overlap-bar"><div class="overlap-fill high" style="width:85%"></div></div>
+    </div>
+    <div class="overlap-bar-container">
+      <div class="overlap-label"><span>SIMION/SRIM → MCNP / particle transport modeling</span><span style="color:var(--accent-fusion)">70%</span></div>
+      <div class="overlap-bar"><div class="overlap-fill medium" style="width:70%"></div></div>
+    </div>
+    <div class="overlap-bar-container">
+      <div class="overlap-label"><span>Calibration workflows → fusion diagnostic calibration</span><span style="color:var(--accent-green)">90%</span></div>
+      <div class="overlap-bar"><div class="overlap-fill high" style="width:90%"></div></div>
+    </div>
+    <div class="overlap-bar-container">
+      <div class="overlap-label"><span>Space plasma physics → fusion plasma physics</span><span style="color:var(--accent-fusion)">65%</span></div>
+      <div class="overlap-bar"><div class="overlap-fill medium" style="width:65%"></div></div>
+    </div>
+    <div class="overlap-bar-container">
+      <div class="overlap-label"><span>Systems engineering → fusion reactor systems</span><span style="color:var(--accent-fusion)">60%</span></div>
+      <div class="overlap-bar"><div class="overlap-fill medium" style="width:60%"></div></div>
+    </div>
+    <div class="overlap-bar-container">
+      <div class="overlap-label"><span>Nuclear physics / neutronics depth</span><span style="color:var(--accent-nuclear)">25%</span></div>
+      <div class="overlap-bar"><div class="overlap-fill low" style="width:25%"></div></div>
+    </div>
+  </div>
+  <br>
+  <p style="color:var(--text-muted); font-size:0.85rem; margin-top:1rem;">Salary reality: Your profile targets $50K-$100K. Entry-level fusion diagnostics starts at $90K-$130K. Helion's matching role pays $128K-$160K. Update your target.</p>
+</div>
+
+<!-- COMPANIES TAB -->
+<div id="companies" class="tab-content">
+  <h2 class="section-title">Tier 1 — Apply This Week</h2>
+  <div class="company-grid">
+    <div class="company-card tier-1">
+      <div class="card-header">
+        <span class="card-company">Commonwealth Fusion Systems</span>
+        <span class="card-badge badge-tokamak">Tokamak</span>
+      </div>
+      <div class="card-role">Diagnostic Engineer — SPARC</div>
+      <div class="card-detail"><strong>Location:</strong> Devens, MA</div>
+      <div class="card-detail"><strong>Salary:</strong> $120K-$170K (H-1B median)</div>
+      <div class="card-detail"><strong>Funding:</strong> ~$3B raised, SPARC 75% built</div>
+      <div class="card-detail"><strong>Why #1:</strong> JD explicitly says "aerospace backgrounds encouraged." MIT spinoff culture. 5/5 H-1B petitions approved.</div>
+      <div class="card-tags">
+        <span class="tag match">Diagnostics match</span>
+        <span class="tag visa">H-1B confirmed</span>
+        <span class="tag match">Career-changer friendly</span>
+      </div>
+    </div>
+
+    <div class="company-card tier-1">
+      <div class="card-header">
+        <span class="card-company">Helion Energy</span>
+        <span class="card-badge badge-frc">FRC</span>
+      </div>
+      <div class="card-role">Nuclear Engineer — Diagnostics</div>
+      <div class="card-detail"><strong>Location:</strong> Everett, WA</div>
+      <div class="card-detail"><strong>Salary:</strong> $128K-$160K</div>
+      <div class="card-detail"><strong>Funding:</strong> ~$1B+, achieved D-T fusion Feb 2026</div>
+      <div class="card-detail"><strong>Why:</strong> Requires 3+ years detector experience — your CEM/ESA/SSD work qualifies. CEO is a Michigan PhD.</div>
+      <div class="card-tags">
+        <span class="tag match">Detector match</span>
+        <span class="tag visa">H-1B likely</span>
+        <span class="tag match">Michigan alumni CEO</span>
+      </div>
+    </div>
+
+    <div class="company-card tier-1">
+      <div class="card-header">
+        <span class="card-company">Pacific Fusion</span>
+        <span class="card-badge badge-other">Pulsed Mag.</span>
+      </div>
+      <div class="card-role">Summer 2026 Intern — X-Ray Diagnostics</div>
+      <div class="card-detail"><strong>Location:</strong> San Leandro, CA</div>
+      <div class="card-detail"><strong>Salary:</strong> Paid internship + housing</div>
+      <div class="card-detail"><strong>Funding:</strong> ~$900M</div>
+      <div class="card-detail"><strong>Why:</strong> Perfect bridge role. Detector work at massively funded company. Internships convert to full-time.</div>
+      <div class="card-tags">
+        <span class="tag match">Detector overlap</span>
+        <span class="tag visa">H-1B likely</span>
+        <span class="tag">Low barrier entry</span>
+      </div>
+    </div>
+
+    <div class="company-card tier-1">
+      <div class="card-header">
+        <span class="card-company">Xcimer Energy</span>
+        <span class="card-badge badge-icf">ICF</span>
+      </div>
+      <div class="card-role">2026 Internship — Experimental Physics</div>
+      <div class="card-detail"><strong>Location:</strong> Denver, CO</div>
+      <div class="card-detail"><strong>Salary:</strong> Paid + housing stipend</div>
+      <div class="card-detail"><strong>Funding:</strong> ~$200M+</div>
+      <div class="card-detail"><strong>Why:</strong> 12-week program, 50% convert to full-time. Pulsed power + optical design tracks match your skills.</div>
+      <div class="card-tags">
+        <span class="tag match">Pulsed power match</span>
+        <span class="tag">50% conversion</span>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Tier 2 — Strong Fit, Apply Soon</h2>
+  <div class="company-grid">
+    <div class="company-card tier-2">
+      <div class="card-header">
+        <span class="card-company">TAE Technologies</span>
+        <span class="card-badge badge-frc">FRC</span>
+      </div>
+      <div class="card-role">Engineering Roles — Diagnostics/Instrumentation</div>
+      <div class="card-detail"><strong>Location:</strong> Foothill Ranch, CA</div>
+      <div class="card-detail"><strong>Funding:</strong> ~$1.5B, 25+ year track record</div>
+      <div class="card-detail"><strong>H-1B:</strong> Confirmed sponsor (5 LCAs filed, 2/2 approved)</div>
+      <div class="card-tags">
+        <span class="tag visa">H-1B confirmed</span>
+        <span class="tag match">FRC diagnostics</span>
+      </div>
+    </div>
+
+    <div class="company-card tier-2">
+      <div class="card-header">
+        <span class="card-company">Thea Energy</span>
+        <span class="card-badge badge-stellarator">Stellarator</span>
+      </div>
+      <div class="card-role">Burning Plasma Scientist — $135K-$210K</div>
+      <div class="card-detail"><strong>Location:</strong> Kearny, NJ</div>
+      <div class="card-detail"><strong>Funding:</strong> ~$50M+, Princeton spinoff</div>
+      <div class="card-detail"><strong>Why:</strong> SIMION/SRIM experience maps to their ion physics work</div>
+      <div class="card-tags">
+        <span class="tag match">Ion-optics match</span>
+        <span class="tag warn">Senior level</span>
+      </div>
+    </div>
+
+    <div class="company-card tier-2">
+      <div class="card-header">
+        <span class="card-company">General Atomics / DIII-D</span>
+        <span class="card-badge badge-tokamak">Tokamak</span>
+      </div>
+      <div class="card-role">Plasma Control Scientist / Internship</div>
+      <div class="card-detail"><strong>Location:</strong> San Diego, CA</div>
+      <div class="card-detail"><strong>Salary:</strong> $73K-$148K</div>
+      <div class="card-detail"><strong>Why:</strong> Largest US tokamak. World-class diagnostics training ground. H-1B confirmed.</div>
+      <div class="card-tags">
+        <span class="tag visa">H-1B confirmed</span>
+        <span class="tag match">100+ diagnostic systems</span>
+      </div>
+    </div>
+
+    <div class="company-card tier-2">
+      <div class="card-header">
+        <span class="card-company">Zap Energy</span>
+        <span class="card-badge badge-other">Z-Pinch</span>
+      </div>
+      <div class="card-role">Pulsed Power Engineer — $120K-$170K</div>
+      <div class="card-detail"><strong>Location:</strong> Everett, WA</div>
+      <div class="card-detail"><strong>Funding:</strong> ~$200M+</div>
+      <div class="card-detail"><strong>Why:</strong> Your HV test rig experience directly maps to pulsed power. 25-person R&E team.</div>
+      <div class="card-tags">
+        <span class="tag match">HV/pulsed power</span>
+        <span class="tag warn">Mixed visa signals</span>
+      </div>
+    </div>
+
+    <div class="company-card tier-2">
+      <div class="card-header">
+        <span class="card-company">Proxima Fusion</span>
+        <span class="card-badge badge-stellarator">Stellarator</span>
+      </div>
+      <div class="card-role">Instrumentation & Test Engineer</div>
+      <div class="card-detail"><strong>Location:</strong> Munich / Zurich / Oxford</div>
+      <div class="card-detail"><strong>Funding:</strong> ~$50M+ Series A</div>
+      <div class="card-detail"><strong>Note:</strong> Requires EU/UK/Swiss work permit, not H-1B</div>
+      <div class="card-tags">
+        <span class="tag match">Test engineering match</span>
+        <span class="tag warn">EU visa needed</span>
+      </div>
+    </div>
+
+    <div class="company-card tier-2">
+      <div class="card-header">
+        <span class="card-company">Realta Fusion</span>
+        <span class="card-badge badge-other">Mirror</span>
+      </div>
+      <div class="card-role">Experimental Scientist</div>
+      <div class="card-detail"><strong>Location:</strong> Madison, WI</div>
+      <div class="card-detail"><strong>Funding:</strong> ~$20M+</div>
+      <div class="card-detail"><strong>Why:</strong> Small team = more willing to take adjacent backgrounds. Plasma diagnostics core.</div>
+      <div class="card-tags">
+        <span class="tag match">Diagnostics core</span>
+        <span class="tag">Startup energy</span>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">H-1B Visa Sponsor Tracker</h2>
+  <div style="overflow-x:auto; margin-bottom:3rem;">
+    <table style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+      <thead>
+        <tr style="border-bottom:2px solid var(--accent-plasma);">
+          <th style="text-align:left; padding:0.8rem; color:var(--text-secondary); font-family:'Space Mono',monospace; font-size:0.75rem;">Company</th>
+          <th style="text-align:center; padding:0.8rem; color:var(--text-secondary); font-family:'Space Mono',monospace; font-size:0.75rem;">LCAs Filed</th>
+          <th style="text-align:center; padding:0.8rem; color:var(--text-secondary); font-family:'Space Mono',monospace; font-size:0.75rem;">Approved</th>
+          <th style="text-align:center; padding:0.8rem; color:var(--text-secondary); font-family:'Space Mono',monospace; font-size:0.75rem;">H-1B Salary</th>
+          <th style="text-align:center; padding:0.8rem; color:var(--text-secondary); font-family:'Space Mono',monospace; font-size:0.75rem;">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:0.8rem; font-weight:600;">CFS</td>
+          <td style="text-align:center; padding:0.8rem;">6</td>
+          <td style="text-align:center; padding:0.8rem; color:var(--accent-green);">5/5</td>
+          <td style="text-align:center; padding:0.8rem; font-family:'Space Mono',monospace;">$120K-$170K</td>
+          <td style="text-align:center; padding:0.8rem; color:var(--accent-green);">CONFIRMED</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:0.8rem; font-weight:600;">TAE Technologies</td>
+          <td style="text-align:center; padding:0.8rem;">5</td>
+          <td style="text-align:center; padding:0.8rem; color:var(--accent-green);">2/2</td>
+          <td style="text-align:center; padding:0.8rem; font-family:'Space Mono',monospace;">Varies</td>
+          <td style="text-align:center; padding:0.8rem; color:var(--accent-green);">CONFIRMED</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:0.8rem; font-weight:600;">General Atomics</td>
+          <td style="text-align:center; padding:0.8rem;">2</td>
+          <td style="text-align:center; padding:0.8rem; color:var(--accent-green);">1/1</td>
+          <td style="text-align:center; padding:0.8rem; font-family:'Space Mono',monospace;">$73K-$148K</td>
+          <td style="text-align:center; padding:0.8rem; color:var(--accent-green);">CONFIRMED</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:0.8rem; font-weight:600;">Helion Energy</td>
+          <td style="text-align:center; padding:0.8rem;">—</td>
+          <td style="text-align:center; padding:0.8rem;">—</td>
+          <td style="text-align:center; padding:0.8rem; font-family:'Space Mono',monospace;">$128K-$160K</td>
+          <td style="text-align:center; padding:0.8rem; color:var(--accent-warn);">LIKELY (500+ emp)</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:0.8rem; font-weight:600;">Pacific Fusion</td>
+          <td style="text-align:center; padding:0.8rem;">—</td>
+          <td style="text-align:center; padding:0.8rem;">—</td>
+          <td style="text-align:center; padding:0.8rem; font-family:'Space Mono',monospace;">TBD</td>
+          <td style="text-align:center; padding:0.8rem; color:var(--accent-warn);">LIKELY ($900M)</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:0.8rem; font-weight:600;">Zap Energy</td>
+          <td style="text-align:center; padding:0.8rem;">1</td>
+          <td style="text-align:center; padding:0.8rem;">Filed</td>
+          <td style="text-align:center; padding:0.8rem; font-family:'Space Mono',monospace;">$120K-$170K</td>
+          <td style="text-align:center; padding:0.8rem; color:var(--accent-warn);">MIXED SIGNALS</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- CONTACTS TAB -->
+<div id="contacts" class="tab-content">
+  <h2 class="section-title">University of Michigan — Warm Contacts (Start Here)</h2>
+  <div class="people-grid">
+    <div class="person-card">
+      <div class="person-avatar michigan">RM</div>
+      <div class="person-info">
+        <div class="person-name">Ryan McBride <span class="priority-tag priority-1">P1</span></div>
+        <div class="person-title">Professor, NERS — Director of Plasma/Pulsed Power Lab</div>
+        <div class="person-why">Runs magneto-inertial fusion research. Ex-Sandia MagLIF. Leads $14.5M NNSA Center. Your #1 Michigan target.</div>
+      </div>
+    </div>
+    <div class="person-card">
+      <div class="person-avatar michigan">JF</div>
+      <div class="person-info">
+        <div class="person-name">John Foster <span class="priority-tag priority-1">P1</span></div>
+        <div class="person-title">Professor, NERS Graduate Chair — MIPSE member</div>
+        <div class="person-why">Does space propulsion AND plasma diagnostics. The space-to-fusion bridge person. He speaks both your languages.</div>
+      </div>
+    </div>
+    <div class="person-card">
+      <div class="person-avatar michigan">CK</div>
+      <div class="person-info">
+        <div class="person-name">Carolyn Kuranz <span class="priority-tag priority-2">P2</span></div>
+        <div class="person-title">Assoc. Professor, NERS — Director of CHEDAR</div>
+        <div class="person-why">Runs experiments at NIF and Omega. $12.5M CHEDAR center. Great ICF entry point.</div>
+      </div>
+    </div>
+    <div class="person-card">
+      <div class="person-avatar michigan">KK</div>
+      <div class="person-info">
+        <div class="person-name">Karl Krushelnick <span class="priority-tag priority-2">P2</span></div>
+        <div class="person-title">Henry J. Gomberg Professor, NERS</div>
+        <div class="person-why">High-intensity lasers, nuclear fusion, laser-plasma. Just named AAAS Fellow (March 2026).</div>
+      </div>
+    </div>
+    <div class="person-card">
+      <div class="person-avatar michigan">MK</div>
+      <div class="person-info">
+        <div class="person-name">Mark Kushner <span class="priority-tag priority-2">P2</span></div>
+        <div class="person-title">Distinguished University Professor — MIPSE Director</div>
+        <div class="person-why">Connective tissue across ALL plasma groups at Michigan. Ask for introductions to fusion network.</div>
+      </div>
+    </div>
+    <div class="person-card">
+      <div class="person-avatar michigan">DK</div>
+      <div class="person-info">
+        <div class="person-name">David Kirtley <span class="priority-tag priority-1">P1</span></div>
+        <div class="person-title">CEO & Co-Founder, Helion Energy</div>
+        <div class="person-why">Michigan Aerospace PhD. Runs a $1B+ fusion company. The warmest possible intro via alumni network.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Industry Diagnostics Leaders</h2>
+  <div class="people-grid">
+    <div class="person-card">
+      <div class="person-avatar industry">MR</div>
+      <div class="person-info">
+        <div class="person-name">Matthew Reinke <span class="priority-tag priority-1">P1</span></div>
+        <div class="person-title">SPARC Diagnostic Team Lead — CFS</div>
+        <div class="person-why">Leads ALL diagnostics on SPARC. Ex-ORNL. The diagnostics decision-maker.</div>
+      </div>
+    </div>
+    <div class="person-card">
+      <div class="person-avatar industry">GV</div>
+      <div class="person-info">
+        <div class="person-name">George Votroubek <span class="priority-tag priority-2">P2</span></div>
+        <div class="person-title">Co-Founder & Director of Science — Helion</div>
+        <div class="person-why">Oversees all plasma diagnostics at Helion. Reach via David Kirtley intro.</div>
+      </div>
+    </div>
+    <div class="person-card">
+      <div class="person-avatar industry">JF</div>
+      <div class="person-info">
+        <div class="person-name">Joanne Flanagan <span class="priority-tag priority-2">P2</span></div>
+        <div class="person-title">Head of Diagnostics — Tokamak Energy (UK)</div>
+        <div class="person-why">21+ years fusion. Ex-UKAEA JET. Decision-maker. Actively hiring diagnostics roles.</div>
+      </div>
+    </div>
+    <div class="person-card">
+      <div class="person-avatar industry">TR</div>
+      <div class="person-info">
+        <div class="person-name">Thomas Roche <span class="priority-tag priority-3">P3</span></div>
+        <div class="person-title">Director of Applied Plasma Physics — TAE</div>
+        <div class="person-why">Was Director of Diagnostics (2021-2025). Knows the diagnostics inside and out.</div>
+      </div>
+    </div>
+    <div class="person-card">
+      <div class="person-avatar industry">SH</div>
+      <div class="person-info">
+        <div class="person-name">Suk-Ho Hong <span class="priority-tag priority-2">P2</span></div>
+        <div class="person-title">Director of Diagnostics — DIII-D</div>
+        <div class="person-why">Runs diagnostics on the largest US tokamak. 20+ years, 120+ papers.</div>
+      </div>
+    </div>
+    <div class="person-card">
+      <div class="person-avatar industry">BS</div>
+      <div class="person-info">
+        <div class="person-name">Brandon Sorbom <span class="priority-tag priority-3">P3</span></div>
+        <div class="person-title">Chief Scientific Officer — CFS</div>
+        <div class="person-why">Sets science direction. Good for understanding what CFS needs in 2-3 years.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">National Lab Contacts</h2>
+  <div class="people-grid">
+    <div class="person-card">
+      <div class="person-avatar lab">LD</div>
+      <div class="person-info">
+        <div class="person-name">Luis Felipe Delgado-Aparicio</div>
+        <div class="person-title">Head, Advanced Diagnostic Division — PPPL</div>
+        <div class="person-why">The diagnostics boss at PPPL. Principal Research Physicist.</div>
+      </div>
+    </div>
+    <div class="person-card">
+      <div class="person-avatar lab">EK</div>
+      <div class="person-info">
+        <div class="person-name">Egemen Kolemen</div>
+        <div class="person-title">Assoc. Professor — Princeton MAE + PPPL</div>
+        <div class="person-why">Real-time diagnostics and ML for plasma control. KSTAR, NSTX-U, DIII-D.</div>
+      </div>
+    </div>
+    <div class="person-card">
+      <div class="person-avatar lab">AL</div>
+      <div class="person-info">
+        <div class="person-name">Arnold Lumsdaine</div>
+        <div class="person-title">INFUSE Program Director — ORNL</div>
+        <div class="person-why">Runs the program that connects national labs with private fusion companies.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Networking Script</h2>
+  <div class="prompt-box">
+    <div class="prompt-text" style="font-size:0.85rem;">Don't say "I'm looking for a job." Say this:
+
+<span class="highlight">"I'm a plasma instrumentation engineer at Michigan transitioning into fusion. I've been building HV discharge diagnostics and detector readout systems. I read your paper on [X] and wanted to ask about [specific technical question]. Could I get 15 minutes of your time?"</span>
+
+That's how you go from "random applicant" to "that Michigan instrumentation person who actually knows diagnostics."</div>
+  </div>
+</div>
+
+<!-- ACADEMIC TAB -->
+<div id="academic" class="tab-content">
+  <h2 class="section-title">Top Funded PhD Programs — Ranked by "Harsh Gets Fully Funded" Probability</h2>
+  <div class="program-grid">
+    <div class="program-card">
+      <div class="program-header">
+        <div class="program-school">Max Planck IPP (HEPP)</div>
+        <div class="program-country">Germany</div>
+      </div>
+      <div class="program-field">PhD — Wendelstein 7-X Stellarator / ASDEX Upgrade Tokamak</div>
+      <div class="program-funding funding-full">SALARIED: ~€2,900-3,200/month</div>
+      <div class="program-detail">Rolling admission. No deadline. Apply ANYTIME. 3-year contract from Max Planck Society. Includes social security, health insurance. No tuition.</div>
+      <div class="program-deadline">DEADLINE: Rolling — apply now</div>
+      <div class="program-pipeline">Pipeline → Proxima Fusion, EUROfusion, ITER</div>
+    </div>
+
+    <div class="program-card">
+      <div class="program-header">
+        <div class="program-school">EPFL Swiss Plasma Center</div>
+        <div class="program-country">Switzerland</div>
+      </div>
+      <div class="program-field">PhD — TCV Tokamak (on campus)</div>
+      <div class="program-funding funding-full">SALARIED: ~CHF 52,000-54,000/year</div>
+      <div class="program-detail">Rolling admission. ~30 PhD students at any time. TCV tokamak literally on campus. One of the highest PhD salaries in the world.</div>
+      <div class="program-deadline">DEADLINE: Rolling — apply now</div>
+      <div class="program-pipeline">Pipeline → ITER, EUROfusion, Swiss fusion ecosystem</div>
+    </div>
+
+    <div class="program-card">
+      <div class="program-header">
+        <div class="program-school">MIT PSFC (via NSE)</div>
+        <div class="program-country">USA</div>
+      </div>
+      <div class="program-field">PhD — Nuclear Science & Engineering / Plasma Physics</div>
+      <div class="program-funding funding-full">FUNDED: $51,226/yr stipend + full tuition</div>
+      <div class="program-detail">THE direct pipeline to CFS. Co-founded by PSFC faculty. SPARC collaboration. Contact faculty this summer.</div>
+      <div class="program-deadline">DEADLINE: ~December 15, 2026</div>
+      <div class="program-pipeline">Pipeline → CFS (dominant), PPPL, LLNL, ORNL</div>
+    </div>
+
+    <div class="program-card">
+      <div class="program-header">
+        <div class="program-school">Princeton Plasma Physics</div>
+        <div class="program-country">USA</div>
+      </div>
+      <div class="program-field">PhD — Only dedicated plasma physics PhD in the US</div>
+      <div class="program-funding funding-full">FUNDED: Full tuition + generous stipend</div>
+      <div class="program-detail">NSTX-U spherical tokamak. World's premier plasma theory group. ~140 applicants/year. Horizon Fellowship available.</div>
+      <div class="program-deadline">DEADLINE: December 1, 2026 (firm)</div>
+      <div class="program-pipeline">Pipeline → PPPL, General Atomics, national labs</div>
+    </div>
+
+    <div class="program-card">
+      <div class="program-header">
+        <div class="program-school">University of Michigan NERS</div>
+        <div class="program-country">USA</div>
+      </div>
+      <div class="program-field">PhD — Nuclear Engineering (#1 ranked nationally)</div>
+      <div class="program-funding funding-full">FUNDED: GSRA/GSI + fellowships available</div>
+      <div class="program-detail">You're an alum. $31.6M research budget. Ryan McBride's pulsed power lab. Insider advantage is real.</div>
+      <div class="program-deadline">DEADLINE: ~December-January</div>
+      <div class="program-pipeline">Pipeline → National labs, CFS, Type One Energy</div>
+    </div>
+
+    <div class="program-card">
+      <div class="program-header">
+        <div class="program-school">DIFFER + TU Eindhoven</div>
+        <div class="program-country">Netherlands</div>
+      </div>
+      <div class="program-field">PhD — Integrated Tokamak Modeling / Plasma Exhaust</div>
+      <div class="program-funding funding-full">SALARIED: ~€2,800-3,600/month</div>
+      <div class="program-detail">Dutch PhD students are employees. Collaborations with EUROfusion, ITER, Google DeepMind.</div>
+      <div class="program-deadline">DEADLINE: Watch for posted positions</div>
+      <div class="program-pipeline">Pipeline → ITER, EUROfusion ecosystem</div>
+    </div>
+
+    <div class="program-card">
+      <div class="program-header">
+        <div class="program-school">KTH Stockholm</div>
+        <div class="program-country">Sweden</div>
+      </div>
+      <div class="program-field">PhD — Fusion Plasma Modelling / Disruption Physics</div>
+      <div class="program-funding funding-full">SALARIED: ~SEK 34,000-38,000/month</div>
+      <div class="program-detail">Currently hiring. Works with JET, ASDEX Upgrade, TCV. FP3 national platform.</div>
+      <div class="program-deadline">DEADLINE: When positions are posted</div>
+      <div class="program-pipeline">Pipeline → EUROfusion, Scandinavian labs</div>
+    </div>
+
+    <div class="program-card">
+      <div class="program-header">
+        <div class="program-school">University of York — Fusion CDT</div>
+        <div class="program-country">UK</div>
+      </div>
+      <div class="program-field">PhD — EPSRC Centre for Doctoral Training in Fusion</div>
+      <div class="program-funding funding-full">FUNDED: UKAEA £7.8M investment</div>
+      <div class="program-detail">6-university consortium. Access to MAST-U and JET data. Training at UKAEA Culham. Need to check international fee coverage.</div>
+      <div class="program-deadline">DEADLINE: Check annually</div>
+      <div class="program-pipeline">Pipeline → UKAEA, Tokamak Energy, First Light Fusion</div>
+    </div>
+  </div>
+
+  <h2 class="section-title">External Scholarship Mechanisms</h2>
+  <div class="company-grid">
+    <div class="company-card tier-2">
+      <div class="card-header"><span class="card-company">DAAD Research Grant</span><span class="card-badge badge-frc">Germany</span></div>
+      <div class="card-detail"><strong>Coverage:</strong> €1,300/month + travel + insurance (up to 4 years)</div>
+      <div class="card-detail"><strong>Deadline:</strong> ~October 2026</div>
+      <div class="card-detail"><strong>Best for:</strong> IPP Garching/Greifswald, KIT Karlsruhe</div>
+    </div>
+    <div class="company-card tier-2">
+      <div class="card-header"><span class="card-company">Japan MEXT</span><span class="card-badge badge-icf">Japan</span></div>
+      <div class="card-detail"><strong>Coverage:</strong> Full tuition + ¥145,000/month + airfare</div>
+      <div class="card-detail"><strong>Deadline:</strong> ~May 2026 (embassy route)</div>
+      <div class="card-detail"><strong>Best for:</strong> NIFS, University of Tokyo, Nagoya</div>
+    </div>
+    <div class="company-card tier-2">
+      <div class="card-header"><span class="card-company">Korean GKS/KGSP</span><span class="card-badge badge-stellarator">Korea</span></div>
+      <div class="card-detail"><strong>Coverage:</strong> Full tuition + KRW 900K-1.5M/month + airfare</div>
+      <div class="card-detail"><strong>Deadline:</strong> Varies by embassy/university track</div>
+      <div class="card-detail"><strong>Best for:</strong> KAIST + KSTAR access, SNU</div>
+    </div>
+    <div class="company-card tier-2">
+      <div class="card-header"><span class="card-company">Erasmus Mundus FUSION-EP</span><span class="card-badge badge-tokamak">EU</span></div>
+      <div class="card-detail"><strong>Coverage:</strong> Full tuition + stipend (when available)</div>
+      <div class="card-detail"><strong>Deadline:</strong> Feb 15 annually</div>
+      <div class="card-detail"><strong>Warning:</strong> 2026 intake has NO Erasmus scholarships. Check 2027.</div>
+    </div>
+  </div>
+</div>
+
+<!-- TIMELINE TAB -->
+<div id="timeline" class="tab-content">
+  <h2 class="section-title">Your Action Timeline — Next 18 Months</h2>
+  <div class="timeline">
+    <div class="timeline-item urgent">
+      <div class="timeline-date">THIS WEEK — April 15-22, 2026</div>
+      <div class="timeline-title">Email Ryan McBride & John Foster at Michigan NERS</div>
+      <div class="timeline-desc">Your pulsed power/diagnostics overlap is massive. McBride ran MagLIF at Sandia. Foster bridges space propulsion and plasma diagnostics. Walk to their offices.</div>
+    </div>
+    <div class="timeline-item urgent">
+      <div class="timeline-date">THIS WEEK</div>
+      <div class="timeline-title">Apply to Pacific Fusion Summer 2026 X-Ray Diagnostics Internship</div>
+      <div class="timeline-desc">$900M-funded company. Detector work. Perfect bridge from your CEM/ESA calibration experience.</div>
+    </div>
+    <div class="timeline-item urgent">
+      <div class="timeline-date">THIS WEEK</div>
+      <div class="timeline-title">Join FusionCoLab + Diagnostics Hub</div>
+      <div class="timeline-desc">2,847 professionals, 42 countries. The Diagnostics hub has 847 members. Free. Join at fusioncolab.com.</div>
+    </div>
+    <div class="timeline-item urgent">
+      <div class="timeline-date">April 17, 2026</div>
+      <div class="timeline-title">IAEA Fusion School — Financial Support Deadline</div>
+      <div class="timeline-desc">Erice, Italy, June 7-12. Covers MCF design, tritium fuel cycle, power exhaust, neutronics, safety. Apply NOW for financial support.</div>
+    </div>
+    <div class="timeline-item important">
+      <div class="timeline-date">April 2026</div>
+      <div class="timeline-title">Apply to CFS Diagnostic Engineer + Helion Nuclear Engineer Diagnostics</div>
+      <div class="timeline-desc">CFS explicitly welcomes aerospace backgrounds. Helion's 3-year detector requirement maps to your CEM/ESA/SSD work. Both have strong H-1B records.</div>
+    </div>
+    <div class="timeline-item important">
+      <div class="timeline-date">May 1, 2026</div>
+      <div class="timeline-title">IEEE FusionVision 2026 — Abstract Deadline</div>
+      <div class="timeline-desc">At MIT, Cambridge, MA. Small enough for real networking. Submit an abstract related to your plasma diagnostics work.</div>
+    </div>
+    <div class="timeline-item important">
+      <div class="timeline-date">May-June 2026</div>
+      <div class="timeline-title">Start MEXT Application (Japan)</div>
+      <div class="timeline-desc">Full ride for PhD at NIFS, U.Tokyo, Nagoya. Apply through Japanese Embassy. ¥145,000/month + tuition + airfare.</div>
+    </div>
+    <div class="timeline-item important">
+      <div class="timeline-date">May-June 2026</div>
+      <div class="timeline-title">Contact David Kirtley (Helion CEO) via Michigan Alumni Network</div>
+      <div class="timeline-desc">Michigan Aerospace PhD running a $1B+ fusion company. The warmest possible intro. Also email George Votroubek (Helion Science Director).</div>
+    </div>
+    <div class="timeline-item important">
+      <div class="timeline-date">Summer 2026</div>
+      <div class="timeline-title">Read 10-15 papers from target PhD advisors. Send personalized emails.</div>
+      <div class="timeline-desc">Focus on IPP, EPFL, MIT PSFC, Princeton, UMich NERS. "I read your paper on X, I have background in Y from my UMich M.Eng, interested in Fall 2027."</div>
+    </div>
+    <div class="timeline-item important">
+      <div class="timeline-date">Summer 2026</div>
+      <div class="timeline-title">GRE/TOEFL prep + Lock in 3 Recommenders</div>
+      <div class="timeline-desc">Many programs now GRE-optional but it doesn't hurt. Dr. Omar Leon, Prof. Stefano Livi, and one more for strong recommendation letters.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">September 2026</div>
+      <div class="timeline-title">Apply to Max Planck IPP and EPFL SPC</div>
+      <div class="timeline-desc">Both are rolling admission. IPP: €2,900-3,200/month salaried. EPFL: CHF 52K/year. No tuition. Apply early.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">October 2026</div>
+      <div class="timeline-title">DAAD Scholarship Deadline for Germany</div>
+      <div class="timeline-desc">€1,300/month + travel + insurance for up to 4 years. Need invitation from German professor (IPP or KIT).</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">November 2-6, 2026</div>
+      <div class="timeline-title">APS Division of Plasma Physics — Chicago</div>
+      <div class="timeline-desc">THE conference. Career Fair with General Fusion, LANL, PPPL, TAE, Thea Energy, Type One Energy. Chicago is a short trip from Ann Arbor. NO EXCUSES.</div>
+    </div>
+    <div class="timeline-item future">
+      <div class="timeline-date">December 1, 2026</div>
+      <div class="timeline-title">Princeton Plasma Physics PhD — Firm Deadline</div>
+      <div class="timeline-desc">Only dedicated plasma physics PhD in the US. Full funding. ~140 applicants/year.</div>
+    </div>
+    <div class="timeline-item future">
+      <div class="timeline-date">December 15, 2026</div>
+      <div class="timeline-title">UW-Madison + Most US Program Deadlines</div>
+      <div class="timeline-desc">MIT NSE, UT Austin, Columbia, Georgia Tech, Cornell, Rochester. Apply to 6-10 across tiers.</div>
+    </div>
+    <div class="timeline-item future">
+      <div class="timeline-date">January 8, 2027</div>
+      <div class="timeline-title">Oxford DPhil Deadline</div>
+      <div class="timeline-desc">DPhil in Theoretical Physics with plasma specialization. 2-3 fully funded positions expected.</div>
+    </div>
+    <div class="timeline-item future">
+      <div class="timeline-date">March-April 2027</div>
+      <div class="timeline-title">US Admission Decisions Arrive</div>
+      <div class="timeline-desc">Compare offers. April 15 is Graduate School Decision Day. Choose wisely.</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- LIVE JOBS TAB -->
+<div id="livejobs" class="tab-content">
+  <h2 class="section-title">Live Fusion Job Feed</h2>
+  <p style="color:var(--text-secondary); margin-bottom:1rem; font-size:0.85rem;" id="livejobs-meta">Loading from scanner...</p>
+  <div class="filter-panel" id="workauth-filters">
+    <label><input type="checkbox" value="h1b_confirmed"> H-1B confirmed</label>
+    <label><input type="checkbox" value="h1b_likely"> H-1B likely</label>
+    <label><input type="checkbox" value="cap_exempt"> Cap-exempt</label>
+    <label><input type="checkbox" value="green_card"> Green-card/PERM signal</label>
+    <label><input type="checkbox" value="non_us"> Europe / UK / non-US</label>
+    <label><input type="checkbox" value="hide_hard_itar" checked> Hide hard ITAR</label>
+    <button class="control-btn secondary" onclick="clearWorkAuthFilters()">Clear Filters</button>
+  </div>
+  <div id="livejobs-grid" class="company-grid"></div>
+</div>
+
+<!-- PHD RADAR TAB -->
+<div id="phdradar" class="tab-content">
+  <h2 class="section-title">PhD & Scholarship Deadline Tracker</h2>
+  <p style="color:var(--text-secondary); margin-bottom:1.5rem; font-size:0.85rem;">Rolling admissions show as "OPEN NOW". Deadline-based programs show countdown timers.</p>
+  <div id="phd-grid" class="program-grid"></div>
+</div>
+
+<!-- CAREER-OPS PULSE TAB -->
+<div id="pulse" class="tab-content">
+  <h2 class="section-title">Career-Ops Intelligence Pulse</h2>
+  <div class="stats-bar" id="pulse-stats" style="margin-bottom:2rem;"></div>
+  <h2 class="section-title">Application Tracker</h2>
+  <div style="overflow-x:auto; margin-bottom:2rem;" id="pulse-apps-table"></div>
+  <h2 class="section-title">Pipeline Inbox</h2>
+  <p style="color:var(--text-secondary); margin-bottom:1rem; font-size:0.85rem;" id="pipeline-meta">Loading...</p>
+</div>
+
+<!-- SYSTEM TAB -->
+<div id="system" class="tab-content">
+  <h2 class="section-title">System Health</h2>
+  <div class="stats-bar" id="system-stats" style="margin-bottom:2rem;"></div>
+  <h2 class="section-title">Automation & Source Health</h2>
+  <div id="source-health-panel" class="control-grid"></div>
+  <h2 class="section-title">Source State</h2>
+  <div style="overflow-x:auto;" id="source-state-table"></div>
+  <h2 class="section-title" style="margin-top:2rem;">Approval Queue</h2>
+  <p style="color:var(--text-secondary); margin-bottom:1rem; font-size:0.85rem;" id="approval-meta">Scanner events that scored medium — come back to Cursor and ask me to investigate these.</p>
+  <div id="approval-grid" class="company-grid"></div>
+  <h2 class="section-title" style="margin-top:2rem;">Event Log</h2>
+  <div id="event-log" style="font-family:'Space Mono',monospace; font-size:0.78rem; color:var(--text-secondary); max-height:400px; overflow-y:auto;"></div>
+</div>
+
+<!-- OPERATIONS TAB -->
+<div id="operations" class="tab-content">
+  <h2 class="section-title">Local Command Center</h2>
+  <p style="color:var(--text-secondary); margin-bottom:1rem; font-size:0.9rem;">These buttons call the local-only control API on this machine. They run allowlisted scripts only; no paid AI API is required.</p>
+  <div id="actions-grid" class="control-grid"></div>
+
+  <h2 class="section-title">Jobs</h2>
+  <div id="jobs-grid" class="control-grid"></div>
+  <div id="selected-job-log" class="job-log">Select or run a job to see logs here.</div>
+
+  <h2 class="section-title">Agent Task Queue</h2>
+  <p style="color:var(--text-secondary); margin-bottom:1rem; font-size:0.85rem;">Use this for work that needs judgment: evaluations, tailored CVs, deep research, and outreach drafts.</p>
+  <div id="agent-task-grid" class="control-grid"></div>
+</div>
+
+<!-- OUTREACH TAB -->
+<div id="outreach" class="tab-content">
+  <h2 class="section-title">Contact Drafts — Academic / Industry / HR</h2>
+  <div class="filter-panel">
+    <label><input type="radio" name="contact-filter" value="all" checked onchange="renderContacts()"> All contacts</label>
+    <label><input type="radio" name="contact-filter" value="academic" onchange="renderContacts()"> Academic</label>
+    <label><input type="radio" name="contact-filter" value="industry" onchange="renderContacts()"> Industry</label>
+    <label><input type="radio" name="contact-filter" value="hr" onchange="renderContacts()"> HR</label>
+  </div>
+  <div id="contacts-grid" class="people-grid"></div>
+  <div class="reality-grid">
+    <div class="reality-card">
+      <h3>Draft Generator</h3>
+      <select id="draft-category" class="control-input">
+        <option value="academic">Academic</option>
+        <option value="industry">Industry</option>
+        <option value="hr">HR / Recruiter</option>
+      </select>
+      <input id="draft-name" class="control-input" placeholder="Contact name">
+      <input id="draft-company" class="control-input" placeholder="Organization / company">
+      <input id="draft-role" class="control-input" placeholder="Role, lab, or program">
+      <textarea id="draft-hook" class="control-input" rows="2" placeholder="Specific hook: paper, JD detail, team problem"></textarea>
+      <textarea id="draft-proof" class="control-input" rows="2" placeholder="Your strongest proof point"></textarea>
+      <button class="control-btn" onclick="createOutreachDraft()">Generate Draft</button>
+      <button class="control-btn secondary" onclick="queueContactTask()">Queue Contact Task</button>
+    </div>
+    <div class="reality-card">
+      <h3>Draft Output</h3>
+      <input id="draft-subject" class="control-input" placeholder="Subject" readonly>
+      <textarea id="draft-body" class="control-input" rows="14" placeholder="Draft will appear here" readonly></textarea>
+      <p style="color:var(--text-muted); font-size:0.8rem;">Review-only: the dashboard creates text. It does not send email or LinkedIn messages.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SSE STATUS BAR -->
+<div id="sse-status" style="position:fixed; bottom:1rem; right:1rem; padding:0.5rem 1rem; border-radius:8px; background:var(--bg-card); border:1px solid var(--border); font-family:'Space Mono',monospace; font-size:0.7rem; color:var(--text-muted); z-index:200; display:flex; align-items:center; gap:0.5rem;">
+  <span id="sse-dot" style="width:8px; height:8px; border-radius:50%; background:var(--text-muted);"></span>
+  <span id="sse-text">Offline — run <code>node run.mjs</code> in WEB-TRACKER/</span>
+</div>
+
+<footer>
+  FUSION PIVOT Dashboard — Adaptive Research OS v1.0.0 — Data from: Fusion Industry Association, MyVisaJobs, H1BGrader, company career pages, academic program websites, APS DPP, FusionCoLab
+</footer>
+
+<script>
+function switchTab(tabId) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo({top: document.querySelector('nav').offsetTop, behavior: 'smooth'});
+}
+
+document.querySelectorAll('.overlap-fill').forEach(bar => {
+  const width = bar.style.width;
+  bar.style.width = '0%';
+  setTimeout(() => { bar.style.width = width; }, 300);
+});
+
+// ── Live data layer ─────────────────────────────────────────────────
+
+const API_BASE = window.location.port === '3737' ? '' : 'http://localhost:3737';
+
+async function fetchJSON(file) {
+  try {
+    const res = await fetch(`${API_BASE}/data/${file}`);
+    if (!res.ok) return null;
+    return await res.json();
+  } catch { return null; }
+}
+
+async function apiJSON(path, options = {}) {
+  const res = await fetch(`${API_BASE}${path}`, {
+    headers: { 'Content-Type': 'application/json' },
+    ...options,
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ error: res.statusText }));
+    throw new Error(err.error || res.statusText);
+  }
+  return await res.json();
+}
+
+function daysBetween(d1, d2) {
+  return Math.floor((d2 - d1) / 86400000);
+}
+
+function selectedWorkAuthFilters() {
+  return Array.from(document.querySelectorAll('#workauth-filters input:checked')).map(i => i.value);
+}
+
+function clearWorkAuthFilters() {
+  document.querySelectorAll('#workauth-filters input').forEach(i => { i.checked = i.value === 'hide_hard_itar'; });
+  renderLiveJobs();
+}
+
+function matchesWorkAuthFilters(job, filters) {
+  const active = filters.filter(f => f !== 'hide_hard_itar');
+  if (filters.includes('hide_hard_itar') && job.export_control === 'hard_us_person') return false;
+  if (active.length === 0) return true;
+  return active.some(f => {
+    if (f === 'h1b_confirmed') return job.h1b_sponsorship === 'confirmed' || job.h1b_status === 'confirmed';
+    if (f === 'h1b_likely') return ['confirmed', 'likely'].includes(job.h1b_sponsorship) || ['confirmed', 'likely'].includes(job.h1b_status);
+    if (f === 'cap_exempt') return job.h1b_sponsorship === 'cap_exempt' || job.h1b_status === 'cap_exempt';
+    if (f === 'green_card') return ['observed_perms', 'likely', 'confirmed'].includes(job.green_card_sponsorship);
+    if (f === 'non_us') return job.region && !['US', 'Unknown'].includes(job.region);
+    return false;
+  });
+}
+
+function workAuthBadges(job) {
+  const badges = [];
+  const h1b = job.h1b_sponsorship || job.h1b_status || 'unknown';
+  const region = job.region || 'Unknown';
+  if (h1b === 'confirmed') badges.push('<span class="tag visa">H-1B confirmed</span>');
+  else if (h1b === 'likely') badges.push('<span class="tag" style="border-color:var(--accent-warn);color:var(--accent-warn);">H-1B likely</span>');
+  else if (h1b === 'cap_exempt') badges.push('<span class="tag visa">Cap-exempt</span>');
+  else if (h1b === 'mixed') badges.push('<span class="tag warn">H-1B mixed</span>');
+  else if (h1b === 'unlikely') badges.push('<span class="tag warn">Sponsorship unlikely</span>');
+  else if (h1b === 'unknown') badges.push('<span class="tag">H-1B unknown</span>');
+  if (region && !['US', 'Unknown'].includes(region)) badges.push(`<span class="tag match">${region}</span>`);
+  if (job.green_card_sponsorship && job.green_card_sponsorship !== 'unknown') badges.push(`<span class="tag visa">GC ${job.green_card_sponsorship}</span>`);
+  if (job.export_control_risk && job.export_control_risk !== 'unknown') badges.push(`<span class="tag warn">Export ${job.export_control_risk}</span>`);
+  return badges.join('');
+}
+
+// ── Live Jobs Tab ───────────────────────────────────────────────────
+
+async function renderLiveJobs() {
+  const data = await fetchJSON('fusion-jobs.json');
+  if (!data) { document.getElementById('livejobs-meta').textContent = 'No data — run the scanner first.'; return; }
+
+  const filters = selectedWorkAuthFilters();
+  const filtered = data.jobs.filter(job => matchesWorkAuthFilters(job, filters));
+  document.getElementById('livejobs-meta').textContent =
+    `${filtered.length}/${data.total} jobs shown | ${data.new_this_run || 0} new last scan | Updated: ${new Date(data.generated_at).toLocaleString()}`;
+
+  const grid = document.getElementById('livejobs-grid');
+  grid.innerHTML = '';
+
+  const sorted = [...filtered].sort((a, b) => new Date(b.first_seen || 0) - new Date(a.first_seen || 0));
+  window.__liveJobsByUrl = Object.fromEntries(sorted.map(job => [job.url, job]));
+
+  for (const job of sorted.slice(0, 50)) {
+    const age = job.first_seen ? daysBetween(new Date(job.first_seen), new Date()) : '?';
+    grid.innerHTML += `
+      <div class="company-card tier-2" style="animation-delay:${Math.random()*0.3}s">
+        <div class="card-header">
+          <span class="card-company">${job.company}</span>
+          <span class="card-badge badge-frc">${age}d ago</span>
+        </div>
+        <div class="card-role"><a href="${job.url}" target="_blank" style="color:var(--accent-fusion); text-decoration:none;">${job.title}</a></div>
+        <div class="card-detail">${job.location || 'Location not specified'}</div>
+        ${job.salary ? `<div class="card-detail"><strong>Salary:</strong> ${job.salary}</div>` : ''}
+        <div class="card-tags">${workAuthBadges(job)}</div>
+        <button class="control-btn secondary" onclick="queueEvaluationTask(window.__liveJobsByUrl['${job.url.replace(/'/g, "\\'")}'])">Queue Evaluation</button>
+      </div>`;
+  }
+}
+
+// ── PhD Radar Tab ───────────────────────────────────────────────────
+
+async function renderPhdRadar() {
+  const data = await fetchJSON('phd-deadlines.json');
+  if (!data) return;
+
+  const grid = document.getElementById('phd-grid');
+  grid.innerHTML = '';
+
+  for (const d of data.deadlines) {
+    let countdown = '';
+    let urgencyClass = '';
+    if (d.model === 'rolling') {
+      countdown = '<span style="color:var(--accent-green); font-weight:700;">OPEN NOW — ROLLING</span>';
+    } else if (d.deadline) {
+      const days = daysBetween(new Date(), new Date(d.deadline));
+      if (days < 0) { countdown = '<span style="color:var(--accent-red);">DEADLINE PASSED</span>'; urgencyClass = 'opacity:0.5;'; }
+      else if (days < 30) { countdown = `<span style="color:var(--accent-red); font-weight:700;">${days} DAYS LEFT</span>`; }
+      else if (days < 90) { countdown = `<span style="color:var(--accent-warn);">${days} days left</span>`; }
+      else { countdown = `<span style="color:var(--text-secondary);">${days} days left</span>`; }
+    } else {
+      countdown = '<span style="color:var(--text-muted);">Check program page</span>';
+    }
+
+    const statusBadge = d.status === 'applied' ? '<span class="tag match">Applied</span>' :
+                        d.status === 'in_progress' ? '<span class="tag" style="border-color:var(--accent-warn);color:var(--accent-warn);">In Progress</span>' : '';
+
+    grid.innerHTML += `
+      <div class="program-card" style="${urgencyClass}">
+        <div class="program-header">
+          <div class="program-school">${d.program}</div>
+          <div class="program-country">${d.country}</div>
+        </div>
+        <div class="program-field">${d.type.toUpperCase()} — ${d.funding}</div>
+        <div class="program-funding funding-full">${d.funding_type.toUpperCase()}</div>
+        <div class="program-detail">${countdown} ${statusBadge}</div>
+        ${d.deadline ? `<div class="program-deadline">Deadline: ${d.deadline}</div>` : ''}
+        ${d.deadline_note ? `<div class="program-detail" style="font-style:italic;">${d.deadline_note}</div>` : ''}
+        <div class="program-pipeline">Pipeline → ${d.pipeline_to || 'TBD'}</div>
+      </div>`;
+  }
+
+}
+
+// ── Career-Ops Pulse Tab ────────────────────────────────────────────
+
+async function renderPulse() {
+  const apps = await fetchJSON('applications.json');
+  const pipeline = await fetchJSON('pipeline.json');
+
+  if (apps) {
+    const statsHtml = `
+      <div class="stat-card"><div class="stat-number">${apps.count}</div><div class="stat-label">Total Applications</div></div>
+      <div class="stat-card"><div class="stat-number fusion-color">${apps.status_summary?.evaluated || 0}</div><div class="stat-label">Evaluated</div></div>
+      <div class="stat-card"><div class="stat-number nuclear-color">${apps.status_summary?.applied || 0}</div><div class="stat-label">Applied</div></div>
+      <div class="stat-card"><div class="stat-number">${apps.entries.filter(e => e.score_num >= 4.0).length}</div><div class="stat-label">Score 4.0+</div></div>
+      <div class="stat-card"><div class="stat-number fusion-color">${apps.entries.filter(e => e.pdf).length}</div><div class="stat-label">CVs Generated</div></div>`;
+    document.getElementById('pulse-stats').innerHTML = statsHtml;
+
+    let tableHtml = '<table style="width:100%;border-collapse:collapse;font-size:0.82rem;"><thead><tr>';
+    ['#','Date','Company','Role','Score','Status','PDF','Notes'].forEach(h => {
+      tableHtml += `<th style="text-align:left;padding:0.6rem;color:var(--text-secondary);border-bottom:1px solid var(--border);font-family:'Space Mono',monospace;font-size:0.7rem;">${h}</th>`;
+    });
+    tableHtml += '</tr></thead><tbody>';
+    for (const a of apps.entries.sort((x,y) => y.score_num - x.score_num)) {
+      const scoreColor = a.score_num >= 4.0 ? 'var(--accent-green)' : a.score_num >= 3.5 ? 'var(--accent-warn)' : 'var(--text-muted)';
+      tableHtml += `<tr style="border-bottom:1px solid var(--border);">
+        <td style="padding:0.6rem;">${a.num}</td><td style="padding:0.6rem;">${a.date}</td>
+        <td style="padding:0.6rem;font-weight:600;">${a.company}</td><td style="padding:0.6rem;">${a.role}</td>
+        <td style="padding:0.6rem;color:${scoreColor};font-family:'Space Mono',monospace;">${a.score}</td>
+        <td style="padding:0.6rem;">${a.status}</td><td style="padding:0.6rem;">${a.pdf ? '✅' : '❌'}</td>
+        <td style="padding:0.6rem;color:var(--text-muted);font-size:0.78rem;">${a.notes}</td></tr>`;
+    }
+    tableHtml += '</tbody></table>';
+    document.getElementById('pulse-apps-table').innerHTML = tableHtml;
+  }
+
+  if (pipeline) {
+    document.getElementById('pipeline-meta').textContent =
+      `${pipeline.pending_count} pending URLs | ${pipeline.processed_count} processed | Source: pipeline.md`;
+  }
+}
+
+// ── System Tab ──────────────────────────────────────────────────────
+
+async function renderSystem() {
+  const budget = await fetchJSON('token-budget.json');
+  const state = await fetchJSON('source-state.json');
+  const scanHistory = await fetchJSON('scan-history.json');
+  renderSourceHealth();
+
+  const statsHtml = `
+    <div class="stat-card"><div class="stat-number">${budget ? budget.today_used : '?'}</div><div class="stat-label">Tokens Used Today</div></div>
+    <div class="stat-card"><div class="stat-number fusion-color">${budget ? budget.daily_limit : '?'}</div><div class="stat-label">Daily Budget</div></div>
+    <div class="stat-card"><div class="stat-number nuclear-color">${budget ? budget.week_used : '?'}</div><div class="stat-label">Tokens This Week</div></div>
+    <div class="stat-card"><div class="stat-number">${scanHistory ? scanHistory.count : '?'}</div><div class="stat-label">Scan History Entries</div></div>
+    <div class="stat-card"><div class="stat-number fusion-color">${state && state.sources ? Object.keys(state.sources).length : '?'}</div><div class="stat-label">Active Sources</div></div>`;
+  document.getElementById('system-stats').innerHTML = statsHtml;
+
+  if (state && state.sources) {
+    let tbl = '<table style="width:100%;border-collapse:collapse;font-size:0.78rem;"><thead><tr>';
+    ['Source','Last Poll','Next Poll','Heat','Hits','Polls'].forEach(h => {
+      tbl += `<th style="text-align:left;padding:0.5rem;color:var(--text-secondary);border-bottom:1px solid var(--border);font-family:'Space Mono',monospace;font-size:0.68rem;">${h}</th>`;
+    });
+    tbl += '</tr></thead><tbody>';
+    for (const [id, s] of Object.entries(state.sources)) {
+      tbl += `<tr style="border-bottom:1px solid var(--border);">
+        <td style="padding:0.5rem;font-weight:500;">${id}</td>
+        <td style="padding:0.5rem;">${s.last_poll ? new Date(s.last_poll).toLocaleString() : '—'}</td>
+        <td style="padding:0.5rem;">${s.next_poll ? new Date(s.next_poll).toLocaleString() : '—'}</td>
+        <td style="padding:0.5rem;font-family:'Space Mono',monospace;">${(s.heat||0).toFixed(2)}</td>
+        <td style="padding:0.5rem;">${s.total_hits||0}</td>
+        <td style="padding:0.5rem;">${s.total_polls||0}</td></tr>`;
+    }
+    tbl += '</tbody></table>';
+    document.getElementById('source-state-table').innerHTML = tbl;
+  }
+
+  const approvalData = await fetchJSON('approval-queue.json');
+  const approvalGrid = document.getElementById('approval-grid');
+  approvalGrid.innerHTML = '';
+  document.getElementById('approval-meta').textContent =
+    approvalData && approvalData.length > 0
+      ? `${approvalData.length} events pending — come to Cursor and ask me to investigate these`
+      : 'No pending events. All clear.';
+  if (approvalData) {
+    for (const ev of approvalData) {
+      approvalGrid.innerHTML += `
+        <div class="company-card tier-3">
+          <div class="card-header">
+            <span class="card-company">${ev.name || ev.source_id}</span>
+            <span class="card-badge badge-other">${ev.type}</span>
+          </div>
+          <div class="card-detail">Score: ${(ev.score||0).toFixed(2)} | Queued: ${new Date(ev.queued_at).toLocaleDateString()}</div>
+        </div>`;
+    }
+  }
+}
+
+// ── Operations Tab ───────────────────────────────────────────────────
+
+async function renderActions() {
+  const grid = document.getElementById('actions-grid');
+  if (!grid) return;
+  try {
+    const data = await apiJSON('/api/actions');
+    grid.innerHTML = '';
+    for (const action of data.actions) {
+      const dryRunButton = action.id === 'scan_root_jobs'
+        ? `<button class="control-btn secondary" onclick="runAction('${action.id}', { dry_run: true })">Dry Run</button>`
+        : '';
+      grid.innerHTML += `
+        <div class="control-card">
+          <h3>${action.label}</h3>
+          <p>${action.description}</p>
+          <span class="status-pill ${action.mutates ? 'running' : ''}">${action.mutates ? 'writes local files' : 'read-only'}</span><br><br>
+          ${dryRunButton}
+          <button class="control-btn ${action.mutates ? 'warn' : ''}" onclick="runAction('${action.id}')">Run</button>
+        </div>`;
+    }
+  } catch (err) {
+    grid.innerHTML = `<div class="control-card"><h3>Control API offline</h3><p>${err.message}</p></div>`;
+  }
+}
+
+async function runAction(action, input = {}) {
+  if (!input.dry_run && ['scan_root_jobs','scan_fusion_jobs','scan_phd_sources','research_gate_run','merge_tracker','daily_brief'].includes(action)) {
+    const ok = confirm(`Run ${action}? This may update local tracker/dashboard files.`);
+    if (!ok) return;
+  }
+  const { job } = await apiJSON(`/api/actions/${action}`, {
+    method: 'POST',
+    body: JSON.stringify(input),
+  });
+  await renderJobs(job.id);
+}
+
+async function renderJobs(selectId = null) {
+  const grid = document.getElementById('jobs-grid');
+  if (!grid) return;
+  try {
+    const data = await apiJSON('/api/jobs');
+    grid.innerHTML = '';
+    for (const job of data.jobs.slice(0, 12)) {
+      grid.innerHTML += `
+        <div class="control-card">
+          <h3>${job.action}</h3>
+          <p>${new Date(job.started_at).toLocaleString()} ${job.finished_at ? `→ ${new Date(job.finished_at).toLocaleTimeString()}` : ''}</p>
+          <span class="status-pill ${job.status}">${job.status}</span>
+          <button class="control-btn secondary" onclick="showJobLog('${job.id}')">Logs</button>
+        </div>`;
+    }
+    if (selectId) showJobLog(selectId);
+  } catch (err) {
+    grid.innerHTML = `<div class="control-card"><h3>No job data</h3><p>${err.message}</p></div>`;
+  }
+}
+
+async function showJobLog(id) {
+  const panel = document.getElementById('selected-job-log');
+  const { job } = await apiJSON(`/api/jobs/${id}`);
+  panel.textContent = job.logs.map(l => `[${l.stream}] ${l.text}`).join('\n') || 'No logs yet.';
+}
+
+async function renderSourceHealth() {
+  const panel = document.getElementById('source-health-panel');
+  if (!panel) return;
+  try {
+    const h = await apiJSON('/api/source-health');
+    panel.innerHTML = `
+      <div class="control-card"><h3>Sources</h3><p>${h.tracked_sources}/${h.sources_total} have poll state.</p></div>
+      <div class="control-card"><h3>Failing Sources</h3><p>${h.failing_sources.length} sources returned 4xx/5xx/0.</p></div>
+      <div class="control-card"><h3>Stale Sources</h3><p>${h.stale_sources.length} sources are past next poll.</p></div>
+      <div class="control-card"><h3>Freshness</h3><p>Jobs: ${h.data_freshness.fusion_jobs_generated_at || 'never'}<br>PhD: ${h.data_freshness.phd_opportunities_generated_at || 'never'}</p></div>`;
+  } catch (err) {
+    panel.innerHTML = `<div class="control-card"><h3>Health unavailable</h3><p>${err.message}</p></div>`;
+  }
+}
+
+async function renderAgentTasks() {
+  const grid = document.getElementById('agent-task-grid');
+  if (!grid) return;
+  try {
+    const data = await apiJSON('/api/agent-tasks');
+    grid.innerHTML = '';
+    if (data.tasks.length === 0) {
+      grid.innerHTML = '<div class="control-card"><h3>No queued agent tasks</h3><p>Queue evaluations or contact drafts from Live Jobs / Outreach.</p></div>';
+      return;
+    }
+    for (const task of data.tasks.slice(0, 20)) {
+      grid.innerHTML += `
+        <div class="control-card">
+          <h3>${task.type}: ${task.company || task.title || task.id}</h3>
+          <p>${task.title || task.mode}<br>${task.url ? `<a href="${task.url}" target="_blank" style="color:var(--accent-fusion);">Open URL</a>` : ''}</p>
+          <span class="status-pill ${task.status}">${task.status}</span>
+          <button class="control-btn secondary" onclick="copyTaskPrompt('${task.id}')">Copy Prompt</button>
+        </div>`;
+    }
+    window.__agentTasks = data.tasks;
+  } catch (err) {
+    grid.innerHTML = `<div class="control-card"><h3>Task queue unavailable</h3><p>${err.message}</p></div>`;
+  }
+}
+
+async function renderContacts() {
+  const grid = document.getElementById('contacts-grid');
+  if (!grid) return;
+  try {
+    const selected = document.querySelector('input[name="contact-filter"]:checked')?.value || 'all';
+    const data = await apiJSON('/api/contacts');
+    const contacts = data.contacts.filter(c => selected === 'all' || c.category === selected);
+    grid.innerHTML = '';
+    for (const c of contacts) {
+      grid.innerHTML += `
+        <div class="person-card">
+          <div class="person-avatar ${c.category === 'hr' ? 'industry' : c.category}">${c.category.slice(0, 2).toUpperCase()}</div>
+          <div class="person-info">
+            <div class="person-name">${c.name} <span class="priority-tag priority-${c.priority || 3}">P${c.priority || 3}</span></div>
+            <div class="person-title">${c.title} — ${c.organization}</div>
+            <div class="person-why">${c.why}</div>
+            <button class="control-btn secondary" onclick='prefillContactDraft(${JSON.stringify(c).replace(/'/g, "&apos;")})'>Draft</button>
+          </div>
+        </div>`;
+    }
+  } catch (err) {
+    grid.innerHTML = `<div class="person-card"><div class="person-info"><div class="person-name">Contacts unavailable</div><div class="person-why">${err.message}</div></div></div>`;
+  }
+}
+
+function prefillContactDraft(contact) {
+  document.getElementById('draft-category').value = contact.category;
+  document.getElementById('draft-name').value = contact.name;
+  document.getElementById('draft-company').value = contact.organization;
+  document.getElementById('draft-role').value = contact.title;
+  document.getElementById('draft-hook').value = contact.why;
+}
+
+async function queueEvaluationTask(job) {
+  const { task } = await apiJSON('/api/agent-tasks', {
+    method: 'POST',
+    body: JSON.stringify({
+      type: 'evaluation',
+      company: job.company,
+      title: job.title,
+      url: job.url,
+      source_id: job.source_id,
+      work_auth: {
+        h1b_sponsorship: job.h1b_sponsorship || job.h1b_status,
+        green_card_sponsorship: job.green_card_sponsorship,
+        region: job.region,
+        export_control_risk: job.export_control_risk,
+      },
+    }),
+  });
+  alert(`Queued ${task.id}`);
+  renderAgentTasks();
+}
+
+function copyTaskPrompt(id) {
+  const task = (window.__agentTasks || []).find(t => t.id === id);
+  if (!task) return;
+  navigator.clipboard?.writeText(task.prompt);
+}
+
+async function createOutreachDraft() {
+  const category = document.getElementById('draft-category').value;
+  const { draft } = await apiJSON('/api/outreach/draft', {
+    method: 'POST',
+    body: JSON.stringify({
+      category,
+      name: document.getElementById('draft-name').value,
+      company: document.getElementById('draft-company').value,
+      role: document.getElementById('draft-role').value,
+      specific_hook: document.getElementById('draft-hook').value,
+      proof_point: document.getElementById('draft-proof').value,
+    }),
+  });
+  document.getElementById('draft-subject').value = draft.subject;
+  document.getElementById('draft-body').value = draft.body;
+}
+
+async function queueContactTask() {
+  const { task } = await apiJSON('/api/agent-tasks', {
+    method: 'POST',
+    body: JSON.stringify({
+      type: 'contact_draft',
+      company: document.getElementById('draft-company').value,
+      title: document.getElementById('draft-role').value,
+      notes: document.getElementById('draft-hook').value,
+    }),
+  });
+  alert(`Queued ${task.id}`);
+  renderAgentTasks();
+}
+
+// ── SSE Connection ──────────────────────────────────────────────────
+
+function connectSSE() {
+  try {
+    const es = new EventSource(`${API_BASE}/stream`);
+    es.onopen = () => {
+      document.getElementById('sse-dot').style.background = 'var(--accent-green)';
+      document.getElementById('sse-text').textContent = 'Live — connected to server';
+    };
+    es.onmessage = (e) => {
+      const data = JSON.parse(e.data);
+      if (data.type === 'data_updated' || data.type === 'data_added') {
+        renderLiveJobs(); renderPhdRadar(); renderPulse(); renderSystem(); renderJobs(); renderAgentTasks();
+        const log = document.getElementById('event-log');
+        log.innerHTML = `<div style="margin-bottom:0.3rem;">[${new Date().toLocaleTimeString()}] ${data.type}: ${data.file}</div>` + log.innerHTML;
+      }
+      if (data.type?.startsWith('job_')) {
+        renderJobs(data.job_id || data.job?.id);
+      }
+      if (data.type?.startsWith('agent_task_')) {
+        renderAgentTasks();
+      }
+    };
+    es.onerror = () => {
+      document.getElementById('sse-dot').style.background = 'var(--accent-warn)';
+      document.getElementById('sse-text').textContent = 'Reconnecting...';
+      setTimeout(connectSSE, 5000);
+    };
+  } catch {
+    document.getElementById('sse-dot').style.background = 'var(--text-muted)';
+    document.getElementById('sse-text').textContent = 'Offline — static mode (open via server for live updates)';
+  }
+}
+
+// ── Boot ────────────────────────────────────────────────────────────
+
+document.querySelectorAll('#workauth-filters input').forEach(input => input.addEventListener('change', renderLiveJobs));
+renderLiveJobs(); renderPhdRadar(); renderPulse(); renderSystem(); renderActions(); renderJobs(); renderAgentTasks(); renderContacts();
+connectSSE();
+
+setInterval(() => { renderPhdRadar(); }, 60000);
+</script>
+</body>
+</html>
