@@ -23,6 +23,18 @@ The control API is local-first:
 - Scripts run through `spawn` with fixed command arguments.
 - Job logs are stored in `WEB-TRACKER/data/jobs.json`, which is ignored by git.
 
+## How To Use It
+
+Start on the `Today` tab. The dashboard intentionally shows only a few actions:
+
+1. Do the required action.
+2. If you have energy, do the next two.
+3. If the day is wrecked, do the minimum win.
+
+Every action can be marked `Done`, `Defer`, `Blocked`, or `Waiting`. Repeatedly deferred work gets shrunk into a smaller action instead of becoming weekend debt.
+
+The `Behind The Scenes` tab is for dashboard chores such as refreshing data and checking jobs. Start with `Update my dashboard`; you do not need to understand the underlying scripts.
+
 ## No Paid AI API Required
 
 Normal operations are deterministic and run on this PC:

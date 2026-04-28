@@ -36,11 +36,13 @@ export class JobStore {
     return this.jobs.find(job => job.id === id) || null;
   }
 
-  create(action, input = {}) {
+  create(action, input = {}, metadata = {}) {
     const now = new Date().toISOString();
     const job = {
       id: `job_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
       action,
+      action_label: metadata.label || action,
+      action_description: metadata.description || null,
       input,
       status: 'queued',
       started_at: now,

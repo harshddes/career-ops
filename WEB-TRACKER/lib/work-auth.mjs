@@ -87,9 +87,48 @@ export function normalizeWorkAuth(source = {}) {
 
 export function enrichOpportunityWithWorkAuth(opportunity, source = {}) {
   const workAuth = normalizeWorkAuth({ ...source, ...opportunity });
+  const adjacentFit = classifyAdjacentField(opportunity);
   return {
     ...opportunity,
     ...workAuth,
+    adjacent_fields: adjacentFit.fields,
+    opt_story_strength: adjacentFit.opt_story_strength,
+    opt_story_reason: adjacentFit.reason,
+  };
+}
+
+export function classifyAdjacentField(opportunity = {}) {
+  const text = `${opportunity.title || ''} ${opportunity.description || ''} ${opportunity.location || ''}`.toLowerCase();
+  const fields = [];
+  const checks = [
+    ['aerospace systems', ['space', 'satellite', 'spacecraft', 'aerospace', 'avionics']],
+    ['instrumentation and test', ['instrumentation', 'test engineer', 'integration', 'validation', 'verification', 'calibration']],
+    ['sensors and diagnostics', ['sensor', 'diagnostic', 'detector', 'readout', 'daq', 'measurement']],
+    ['plasma / vacuum / high voltage', ['plasma', 'vacuum', 'high voltage', 'hv', 'pulsed power', 'ion']],
+    ['rf / emi / emc', ['rf', 'emi', 'emc', 'antenna', 'radio frequency']],
+    ['semiconductor metrology', ['semiconductor', 'metrology', 'thin film', 'materials characterization', 'fab']],
+    ['research engineering', ['research engineer', 'research scientist', 'lab', 'experimental']],
+    ['energy systems', ['fusion', 'energy', 'power', 'reactor', 'nuclear']],
+  ];
+
+  for (const [field, keywords] of checks) {
+    if (keywords.some(keyword => text.includes(keyword))) fields.push(field);
+  }
+
+  const uniqueFields = [...new Set(fields)];
+  let opt_story_strength = 'weak';
+  if (uniqueFields.some(f => ['aerospace systems', 'instrumentation and test', 'sensors and diagnostics', 'plasma / vacuum / high voltage'].includes(f))) {
+    opt_story_strength = 'strong';
+  } else if (uniqueFields.length > 0) {
+    opt_story_strength = 'plausible';
+  }
+
+  return {
+    fields: uniqueFields,
+    opt_story_strength,
+    reason: uniqueFields.length
+      ? `Connect through ${uniqueFields.slice(0, 2).join(' + ')}.`
+      : 'Needs a stronger technical relevance story before prioritizing.',
   };
 }
 

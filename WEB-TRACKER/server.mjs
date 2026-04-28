@@ -11,6 +11,7 @@ import { watch } from 'chokidar';
 import { readFileSync, readdirSync, existsSync } from 'fs';
 import { join, dirname, basename, resolve } from 'path';
 import { fileURLToPath } from 'url';
+import { ActionPlanStore } from './lib/action-plan.mjs';
 import { createActionRegistry, listActions, runAction } from './lib/action-runner.mjs';
 import { AgentTaskQueue } from './lib/agent-task-queue.mjs';
 import { JobStore } from './lib/job-store.mjs';
@@ -96,6 +97,7 @@ function broadcast(eventType, payload) {
 
 const jobStore = new JobStore(join(DATA_DIR, 'jobs.json'), (type, payload) => broadcast(type, payload));
 const taskQueue = new AgentTaskQueue(join(DATA_DIR, 'agent-tasks.ndjson'));
+const actionPlan = new ActionPlanStore(join(DATA_DIR, 'action-plan.json'));
 const actionRegistry = createActionRegistry({ baseDir: BASE, repoRoot: CAREER_OPS, dataDir: DATA_DIR });
 
 // ── Local command/control API ─────────────────────────────────────────
@@ -142,6 +144,17 @@ app.get('/api/contacts', (req, res) => {
   const contactsPath = join(BASE, 'config', 'contacts-registry.json');
   if (!existsSync(contactsPath)) return res.json({ contacts: [] });
   res.json(JSON.parse(readFileSync(contactsPath, 'utf-8')));
+});
+
+app.get('/api/action-plan', (req, res) => {
+  res.json(actionPlan.dashboard());
+});
+
+app.patch('/api/action-plan/:id', (req, res) => {
+  const result = actionPlan.updateTask(req.params.id, req.body?.action, req.body || {});
+  if (!result) return res.status(404).json({ error: 'action item not found' });
+  broadcast('action_plan_updated', result);
+  res.json(result);
 });
 
 app.get('/api/agent-tasks', (req, res) => {

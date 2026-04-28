@@ -415,6 +415,42 @@ nav button.active { color: var(--accent-plasma); border-bottom-color: var(--acce
 .reality-card .no { color: var(--accent-red); font-weight: 600; }
 .reality-card .maybe { color: var(--accent-warn); font-weight: 600; }
 
+/* Coach dashboard */
+.coach-hero {
+  display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.coach-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 14px; padding: 1.5rem;
+}
+
+.coach-card.primary { border-color: var(--accent-plasma); box-shadow: 0 0 30px var(--border-glow); }
+.coach-card h3 { font-size: 1.2rem; margin-bottom: 0.7rem; }
+.coach-card p { color: var(--text-secondary); line-height: 1.55; font-size: 0.92rem; }
+
+.action-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 1.2rem; margin-bottom: 1rem;
+}
+
+.action-card.required { border-color: var(--accent-plasma); }
+.action-meta { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0.65rem 0; }
+.action-title { font-weight: 700; font-size: 1.05rem; margin-bottom: 0.35rem; }
+.action-next { color: var(--text-primary); margin-bottom: 0.4rem; }
+.action-why { color: var(--text-muted); font-size: 0.82rem; line-height: 1.45; }
+.progress-track { height: 8px; border-radius: 999px; background: var(--bg-secondary); overflow: hidden; margin: 0.6rem 0; }
+.progress-fill { height: 100%; background: var(--gradient-plasma); }
+
+.plain-help {
+  color: var(--text-muted); font-size: 0.8rem; line-height: 1.5; margin-top: 0.45rem;
+}
+
+.technical-details {
+  margin-top: 1rem; border-top: 1px solid var(--border); padding-top: 1rem;
+}
+
 /* Control plane */
 .control-grid {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem;
@@ -483,6 +519,7 @@ footer {
   header, .tab-content, footer { padding-left: 2rem; padding-right: 2rem; }
   .stats-bar { grid-template-columns: repeat(3, 1fr); }
   .reality-grid { grid-template-columns: 1fr; }
+  .coach-hero { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
@@ -512,34 +549,57 @@ footer {
 <header>
   <div class="header-grid">
     <div>
-      <h1>FUSION <span>PIVOT</span></h1>
-      <p class="subtitle">Career intelligence dashboard for transitioning from space plasma physics into the fusion energy industry. Every data point, every contact, every pathway — mapped.</p>
+      <h1>JOB <span>SPRINT</span></h1>
+      <p class="subtitle">Your plain-English job and PhD coach: today’s next moves, warm outreach, visa-safe targets, and a 90-day sprint clock.</p>
     </div>
     <div class="header-meta">
       <div class="name">Harsh Desai</div>
       <div>M.Eng Space Systems | UMich</div>
-      <div>Generated 2026-04-15</div>
-      <div>career-ops v1.3.0</div>
+      <div id="today-date-label">Loading today...</div>
+      <div>Local dashboard, no auto-submit</div>
     </div>
   </div>
 </header>
 
 <nav>
-  <button class="active" onclick="switchTab('overview')">Overview</button>
-  <button onclick="switchTab('companies')">Companies & Roles</button>
-  <button onclick="switchTab('contacts')">Key People</button>
-  <button onclick="switchTab('academic')">Academic Paths</button>
-  <button onclick="switchTab('timeline')">Action Timeline</button>
-  <button onclick="switchTab('livejobs')">Live Jobs</button>
-  <button onclick="switchTab('phdradar')">PhD Radar</button>
-  <button onclick="switchTab('pulse')">Career-Ops Pulse</button>
-  <button onclick="switchTab('operations')">Operations</button>
-  <button onclick="switchTab('outreach')">Outreach</button>
-  <button onclick="switchTab('system')">System</button>
+  <button class="active" onclick="switchTab('today', event)">Today</button>
+  <button onclick="switchTab('livejobs', event)">Jobs To Consider</button>
+  <button onclick="switchTab('outreach', event)">People To Contact</button>
+  <button onclick="switchTab('pulse', event)">Applications</button>
+  <button onclick="switchTab('phdradar', event)">PhD Options</button>
+  <button onclick="switchTab('weekly', event)">Weekly Review</button>
+  <button onclick="switchTab('operations', event)">Behind The Scenes</button>
+  <button onclick="switchTab('system', event)">Technical</button>
 </nav>
 
+<!-- TODAY TAB -->
+<div id="today" class="tab-content active">
+  <div class="coach-hero">
+    <div class="coach-card primary">
+      <h2 class="section-title">What Do I Do Now?</h2>
+      <div id="next-best-action">Loading your next move...</div>
+    </div>
+    <div class="coach-card">
+      <h3>90-Day Sprint Clock</h3>
+      <div class="stat-number" id="sprint-days-left">?</div>
+      <p>days left to create a job or PhD path. The dashboard will keep shrinking vague backlog into small daily moves.</p>
+      <div class="progress-track"><div class="progress-fill" id="sprint-progress" style="width:0%"></div></div>
+      <p class="plain-help" id="sprint-active-days">Active days this week: loading...</p>
+    </div>
+  </div>
+
+  <h2 class="section-title">Today’s Top 3</h2>
+  <div id="today-actions"></div>
+
+  <h2 class="section-title">Minimum Win</h2>
+  <div id="minimum-win"></div>
+
+  <h2 class="section-title">Daily / Weekly / Monthly Goals</h2>
+  <div class="control-grid" id="goal-grid"></div>
+</div>
+
 <!-- OVERVIEW TAB -->
-<div id="overview" class="tab-content active">
+<div id="overview" class="tab-content">
   <div class="stats-bar">
     <div class="stat-card">
       <div class="stat-number">45+</div>
@@ -1239,7 +1299,7 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
 
 <!-- CAREER-OPS PULSE TAB -->
 <div id="pulse" class="tab-content">
-  <h2 class="section-title">Career-Ops Intelligence Pulse</h2>
+  <h2 class="section-title">Applications</h2>
   <div class="stats-bar" id="pulse-stats" style="margin-bottom:2rem;"></div>
   <h2 class="section-title">Application Tracker</h2>
   <div style="overflow-x:auto; margin-bottom:2rem;" id="pulse-apps-table"></div>
@@ -1247,9 +1307,27 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
   <p style="color:var(--text-secondary); margin-bottom:1rem; font-size:0.85rem;" id="pipeline-meta">Loading...</p>
 </div>
 
+<!-- WEEKLY REVIEW TAB -->
+<div id="weekly" class="tab-content">
+  <h2 class="section-title">Weekly Review</h2>
+  <p style="color:var(--text-secondary); margin-bottom:1.5rem; font-size:0.9rem;">No shame, just systems engineering: what moved, what stalled, and what changes next week?</p>
+  <div class="coach-hero">
+    <div class="coach-card">
+      <h3>This Week’s Scoreboard</h3>
+      <div id="weekly-scoreboard">Loading...</div>
+    </div>
+    <div class="coach-card">
+      <h3>Bottleneck</h3>
+      <p id="weekly-bottleneck">Loading...</p>
+    </div>
+  </div>
+  <h2 class="section-title">Monthly Strategy</h2>
+  <div id="monthly-strategy" class="control-grid"></div>
+</div>
+
 <!-- SYSTEM TAB -->
 <div id="system" class="tab-content">
-  <h2 class="section-title">System Health</h2>
+  <h2 class="section-title">Is My Dashboard Up To Date?</h2>
   <div class="stats-bar" id="system-stats" style="margin-bottom:2rem;"></div>
   <h2 class="section-title">Automation & Source Health</h2>
   <div id="source-health-panel" class="control-grid"></div>
@@ -1264,16 +1342,16 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
 
 <!-- OPERATIONS TAB -->
 <div id="operations" class="tab-content">
-  <h2 class="section-title">Local Command Center</h2>
-  <p style="color:var(--text-secondary); margin-bottom:1rem; font-size:0.9rem;">These buttons call the local-only control API on this machine. They run allowlisted scripts only; no paid AI API is required.</p>
+  <h2 class="section-title">Behind The Scenes</h2>
+  <p style="color:var(--text-secondary); margin-bottom:1rem; font-size:0.9rem;">These buttons do dashboard chores on your computer. You do not need to understand the code. Start with “Update my dashboard”.</p>
   <div id="actions-grid" class="control-grid"></div>
 
-  <h2 class="section-title">Jobs</h2>
+  <h2 class="section-title">Background Updates</h2>
   <div id="jobs-grid" class="control-grid"></div>
   <div id="selected-job-log" class="job-log">Select or run a job to see logs here.</div>
 
-  <h2 class="section-title">Agent Task Queue</h2>
-  <p style="color:var(--text-secondary); margin-bottom:1rem; font-size:0.85rem;">Use this for work that needs judgment: evaluations, tailored CVs, deep research, and outreach drafts.</p>
+  <h2 class="section-title">Needs AI Review</h2>
+  <p style="color:var(--text-secondary); margin-bottom:1rem; font-size:0.85rem;">These are not tasks for you to decode. They are work orders for Cursor/me: evaluate a job, draft a CV, research a lab, or refine outreach.</p>
   <div id="agent-task-grid" class="control-grid"></div>
 </div>
 
@@ -1323,11 +1401,11 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
 </footer>
 
 <script>
-function switchTab(tabId) {
+function switchTab(tabId, evt = null) {
   document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
   document.getElementById(tabId).classList.add('active');
-  event.target.classList.add('active');
+  if (evt?.target) evt.target.classList.add('active');
   window.scrollTo({top: document.querySelector('nav').offsetTop, behavior: 'smooth'});
 }
 
@@ -1363,6 +1441,49 @@ async function apiJSON(path, options = {}) {
 
 function daysBetween(d1, d2) {
   return Math.floor((d2 - d1) / 86400000);
+}
+
+function friendlyStatus(status) {
+  return {
+    today: 'Today',
+    in_progress: 'In progress',
+    waiting: 'Waiting',
+    blocked: 'Blocked',
+    done: 'Done',
+    archived: 'Archived',
+    running: 'Running',
+    completed: 'Done',
+    failed: 'Needs attention',
+    queued: 'Waiting',
+  }[status] || status;
+}
+
+function escapeHTML(text = '') {
+  return String(text).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+function actionCard(task, index = 0) {
+  if (!task) return '<div class="action-card"><div class="action-title">No action loaded yet.</div></div>';
+  const requiredClass = index === 0 ? ' required' : '';
+  const progress = task.target ? Math.min(100, Math.round(((task.progress || 0) / task.target) * 100)) : 0;
+  return `
+    <div class="action-card${requiredClass}">
+      <div class="action-title">${index === 0 ? 'Required: ' : ''}${escapeHTML(task.title)}</div>
+      <div class="action-next">${escapeHTML(task.next_action || '')}</div>
+      <div class="action-meta">
+        <span class="status-pill">${friendlyStatus(task.status)}</span>
+        <span class="tag">${escapeHTML(task.effort || 'small')}</span>
+        <span class="tag match">${escapeHTML(task.category || 'action')}</span>
+        <span class="tag warn">${escapeHTML(task.impact || 'medium')} impact</span>
+      </div>
+      ${task.adaptation ? `<p class="plain-help">${escapeHTML(task.adaptation)}</p>` : ''}
+      ${task.target ? `<div class="progress-track"><div class="progress-fill" style="width:${progress}%"></div></div><p class="plain-help">${task.progress || 0}/${task.target} ${escapeHTML(task.unit || 'done')}</p>` : ''}
+      <p class="action-why">${escapeHTML(task.why || task.if_blocked || '')}</p>
+      <button class="control-btn" onclick="updateActionItem('${task.id}', 'done')">Done</button>
+      <button class="control-btn secondary" onclick="updateActionItem('${task.id}', 'defer')">Defer</button>
+      <button class="control-btn secondary" onclick="blockActionItem('${task.id}')">Blocked</button>
+      <button class="control-btn secondary" onclick="updateActionItem('${task.id}', 'waiting')">Waiting</button>
+    </div>`;
 }
 
 function selectedWorkAuthFilters() {
@@ -1401,7 +1522,85 @@ function workAuthBadges(job) {
   if (region && !['US', 'Unknown'].includes(region)) badges.push(`<span class="tag match">${region}</span>`);
   if (job.green_card_sponsorship && job.green_card_sponsorship !== 'unknown') badges.push(`<span class="tag visa">GC ${job.green_card_sponsorship}</span>`);
   if (job.export_control_risk && job.export_control_risk !== 'unknown') badges.push(`<span class="tag warn">Export ${job.export_control_risk}</span>`);
+  if (job.opt_story_strength) badges.push(`<span class="tag match">OPT story: ${job.opt_story_strength}</span>`);
+  for (const field of (job.adjacent_fields || []).slice(0, 2)) badges.push(`<span class="tag">${field}</span>`);
   return badges.join('');
+}
+
+// ── Today / coach plan ───────────────────────────────────────────────
+
+async function renderActionPlan() {
+  const plan = await apiJSON('/api/action-plan');
+  window.__actionPlan = plan;
+  document.getElementById('today-date-label').textContent = new Date().toLocaleDateString(undefined, {
+    weekday: 'long', month: 'short', day: 'numeric', year: 'numeric'
+  });
+  document.getElementById('sprint-days-left').textContent = plan.sprint.days_left;
+  const elapsed = Math.max(0, 90 - plan.sprint.days_left);
+  document.getElementById('sprint-progress').style.width = `${Math.min(100, Math.round((elapsed / 90) * 100))}%`;
+  document.getElementById('sprint-active-days').textContent = `Active days this week: ${plan.sprint.active_days_this_week}/5 target`;
+  document.getElementById('next-best-action').innerHTML = actionCard(plan.next_best_action, 0);
+  document.getElementById('today-actions').innerHTML = (plan.top_three || []).map((task, idx) => actionCard(task, idx)).join('');
+  document.getElementById('minimum-win').innerHTML = actionCard(plan.minimum_win, 3);
+  renderGoals(plan);
+  renderWeeklyReview(plan);
+}
+
+function renderGoals(plan) {
+  const grid = document.getElementById('goal-grid');
+  if (!grid) return;
+  const dailyDone = (plan.done_this_week || []).filter(t => t.horizon === 'daily').length;
+  const weeklyCards = (plan.weekly_goals || []).map(goalCard).join('');
+  const monthlyCards = (plan.monthly_goals || []).map(goalCard).join('');
+  grid.innerHTML = `
+    <div class="control-card"><h3>Daily</h3><p>Required: one real job-search action. Optional: one outreach and one application move.</p><p class="plain-help">${dailyDone} daily action(s) done this week.</p></div>
+    ${weeklyCards}
+    ${monthlyCards}`;
+}
+
+function goalCard(goal) {
+  const pct = goal.target ? Math.min(100, Math.round(((goal.progress || 0) / goal.target) * 100)) : 0;
+  return `
+    <div class="control-card">
+      <h3>${escapeHTML(goal.title)}</h3>
+      <p>${escapeHTML(goal.next_action || '')}</p>
+      ${goal.target ? `<div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div><p class="plain-help">${goal.progress || 0}/${goal.target} ${escapeHTML(goal.unit || '')}</p>` : `<p class="plain-help">Due ${escapeHTML(goal.due_date || '')}</p>`}
+    </div>`;
+}
+
+async function updateActionItem(id, action, input = {}) {
+  const plan = await apiJSON(`/api/action-plan/${id}`, {
+    method: 'PATCH',
+    body: JSON.stringify({ action, ...input }),
+  });
+  window.__actionPlan = plan;
+  renderActionPlan();
+}
+
+function blockActionItem(id) {
+  const reason = prompt('What blocked this? Type one: too_big, unclear, scary, low_value, waiting', 'too_big');
+  if (!reason) return;
+  updateActionItem(id, 'blocked', { reason });
+}
+
+function renderWeeklyReview(plan) {
+  const scoreboard = document.getElementById('weekly-scoreboard');
+  const bottleneck = document.getElementById('weekly-bottleneck');
+  const monthly = document.getElementById('monthly-strategy');
+  if (!scoreboard || !bottleneck || !monthly) return;
+  const wip = plan.review?.wip || {};
+  scoreboard.innerHTML = `
+    <p>Applications in progress: ${wip.applications || 0}/${wip.application_limit || 3}</p>
+    <p>Outreach threads active: ${wip.outreach || 0}/${wip.outreach_limit || 5}</p>
+    <p>Done this week: ${(plan.done_this_week || []).length}</p>
+    <p>Waiting: ${(plan.waiting || []).length} | Blocked: ${(plan.blocked || []).length}</p>`;
+  bottleneck.textContent = plan.review?.bottleneck || 'Keep moving one application and one contact at a time.';
+  monthly.innerHTML = (plan.monthly_goals || []).map(goal => `
+    <div class="control-card">
+      <h3>${escapeHTML(goal.title)}</h3>
+      <p>${escapeHTML(goal.next_action)}</p>
+      <p class="plain-help">This keeps your 3-month strategy broader than only fusion/space roles while preserving a defensible STEM/OPT story.</p>
+    </div>`).join('');
 }
 
 // ── Live Jobs Tab ───────────────────────────────────────────────────
@@ -1432,8 +1631,9 @@ async function renderLiveJobs() {
         <div class="card-role"><a href="${job.url}" target="_blank" style="color:var(--accent-fusion); text-decoration:none;">${job.title}</a></div>
         <div class="card-detail">${job.location || 'Location not specified'}</div>
         ${job.salary ? `<div class="card-detail"><strong>Salary:</strong> ${job.salary}</div>` : ''}
+        ${job.opt_story_reason ? `<div class="card-detail"><strong>OPT story:</strong> ${job.opt_story_reason}</div>` : ''}
         <div class="card-tags">${workAuthBadges(job)}</div>
-        <button class="control-btn secondary" onclick="queueEvaluationTask(window.__liveJobsByUrl['${job.url.replace(/'/g, "\\'")}'])">Queue Evaluation</button>
+        <button class="control-btn secondary" onclick="queueEvaluationTask(window.__liveJobsByUrl['${job.url.replace(/'/g, "\\'")}'])">Ask AI to evaluate this</button>
       </div>`;
   }
 }
@@ -1530,11 +1730,11 @@ async function renderSystem() {
   renderSourceHealth();
 
   const statsHtml = `
-    <div class="stat-card"><div class="stat-number">${budget ? budget.today_used : '?'}</div><div class="stat-label">Tokens Used Today</div></div>
-    <div class="stat-card"><div class="stat-number fusion-color">${budget ? budget.daily_limit : '?'}</div><div class="stat-label">Daily Budget</div></div>
-    <div class="stat-card"><div class="stat-number nuclear-color">${budget ? budget.week_used : '?'}</div><div class="stat-label">Tokens This Week</div></div>
-    <div class="stat-card"><div class="stat-number">${scanHistory ? scanHistory.count : '?'}</div><div class="stat-label">Scan History Entries</div></div>
-    <div class="stat-card"><div class="stat-number fusion-color">${state && state.sources ? Object.keys(state.sources).length : '?'}</div><div class="stat-label">Active Sources</div></div>`;
+    <div class="stat-card"><div class="stat-number">${budget ? budget.today_used : '?'}</div><div class="stat-label">Research Budget Used</div></div>
+    <div class="stat-card"><div class="stat-number fusion-color">${budget ? budget.daily_limit : '?'}</div><div class="stat-label">Daily Safety Limit</div></div>
+    <div class="stat-card"><div class="stat-number nuclear-color">${budget ? budget.week_used : '?'}</div><div class="stat-label">This Week</div></div>
+    <div class="stat-card"><div class="stat-number">${scanHistory ? scanHistory.count : '?'}</div><div class="stat-label">Jobs Seen Before</div></div>
+    <div class="stat-card"><div class="stat-number fusion-color">${state && state.sources ? Object.keys(state.sources).length : '?'}</div><div class="stat-label">Sources Watched</div></div>`;
   document.getElementById('system-stats').innerHTML = statsHtml;
 
   if (state && state.sources) {
@@ -1584,18 +1784,20 @@ async function renderActions() {
   if (!grid) return;
   try {
     const data = await apiJSON('/api/actions');
+    window.__actions = data.actions;
     grid.innerHTML = '';
     for (const action of data.actions) {
       const dryRunButton = action.id === 'scan_root_jobs'
-        ? `<button class="control-btn secondary" onclick="runAction('${action.id}', { dry_run: true })">Dry Run</button>`
+        ? `<button class="control-btn secondary" onclick="runAction('${action.id}', { dry_run: true })">Preview first</button>`
         : '';
       grid.innerHTML += `
         <div class="control-card">
           <h3>${action.label}</h3>
           <p>${action.description}</p>
-          <span class="status-pill ${action.mutates ? 'running' : ''}">${action.mutates ? 'writes local files' : 'read-only'}</span><br><br>
+          <p class="plain-help">${action.after || ''}</p>
+          <span class="status-pill ${action.mutates ? 'running' : ''}">${action.mutates ? 'updates local files' : 'just checks'}</span><br><br>
           ${dryRunButton}
-          <button class="control-btn ${action.mutates ? 'warn' : ''}" onclick="runAction('${action.id}')">Run</button>
+          <button class="control-btn ${action.mutates ? 'warn' : ''}" onclick="runAction('${action.id}')">${action.id === 'daily_brief' ? 'Update now' : 'Start'}</button>
         </div>`;
     }
   } catch (err) {
@@ -1604,8 +1806,9 @@ async function renderActions() {
 }
 
 async function runAction(action, input = {}) {
+  const meta = (window.__actions || []).find(a => a.id === action);
   if (!input.dry_run && ['scan_root_jobs','scan_fusion_jobs','scan_phd_sources','research_gate_run','merge_tracker','daily_brief'].includes(action)) {
-    const ok = confirm(`Run ${action}? This may update local tracker/dashboard files.`);
+    const ok = confirm(`${meta?.label || 'Start this'}?\n\n${meta?.description || 'This may update local dashboard files.'}`);
     if (!ok) return;
   }
   const { job } = await apiJSON(`/api/actions/${action}`, {
@@ -1624,10 +1827,11 @@ async function renderJobs(selectId = null) {
     for (const job of data.jobs.slice(0, 12)) {
       grid.innerHTML += `
         <div class="control-card">
-          <h3>${job.action}</h3>
-          <p>${new Date(job.started_at).toLocaleString()} ${job.finished_at ? `→ ${new Date(job.finished_at).toLocaleTimeString()}` : ''}</p>
+          <h3>${escapeHTML(job.action_label || job.action)}</h3>
+          <p>${escapeHTML(job.action_description || '')}</p>
+          <p class="plain-help">${new Date(job.started_at).toLocaleString()} ${job.finished_at ? `→ ${new Date(job.finished_at).toLocaleTimeString()}` : ''}</p>
           <span class="status-pill ${job.status}">${job.status}</span>
-          <button class="control-btn secondary" onclick="showJobLog('${job.id}')">Logs</button>
+          <details class="technical-details"><summary>Technical details</summary><button class="control-btn secondary" onclick="showJobLog('${job.id}')">Show logs</button></details>
         </div>`;
     }
     if (selectId) showJobLog(selectId);
@@ -1648,10 +1852,10 @@ async function renderSourceHealth() {
   try {
     const h = await apiJSON('/api/source-health');
     panel.innerHTML = `
-      <div class="control-card"><h3>Sources</h3><p>${h.tracked_sources}/${h.sources_total} have poll state.</p></div>
-      <div class="control-card"><h3>Failing Sources</h3><p>${h.failing_sources.length} sources returned 4xx/5xx/0.</p></div>
-      <div class="control-card"><h3>Stale Sources</h3><p>${h.stale_sources.length} sources are past next poll.</p></div>
-      <div class="control-card"><h3>Freshness</h3><p>Jobs: ${h.data_freshness.fusion_jobs_generated_at || 'never'}<br>PhD: ${h.data_freshness.phd_opportunities_generated_at || 'never'}</p></div>`;
+      <div class="control-card"><h3>Watchlist</h3><p>${h.tracked_sources}/${h.sources_total} sources have been checked at least once.</p></div>
+      <div class="control-card"><h3>Needs Fix</h3><p>${h.failing_sources.length} source(s) failed. This means fewer leads until fixed.</p></div>
+      <div class="control-card"><h3>Due For Refresh</h3><p>${h.stale_sources.length} source(s) should be checked again.</p></div>
+      <div class="control-card"><h3>Last Updated</h3><p>Jobs: ${h.data_freshness.fusion_jobs_generated_at || 'never'}<br>PhD: ${h.data_freshness.phd_opportunities_generated_at || 'never'}</p></div>`;
   } catch (err) {
     panel.innerHTML = `<div class="control-card"><h3>Health unavailable</h3><p>${err.message}</p></div>`;
   }
@@ -1664,16 +1868,16 @@ async function renderAgentTasks() {
     const data = await apiJSON('/api/agent-tasks');
     grid.innerHTML = '';
     if (data.tasks.length === 0) {
-      grid.innerHTML = '<div class="control-card"><h3>No queued agent tasks</h3><p>Queue evaluations or contact drafts from Live Jobs / Outreach.</p></div>';
+      grid.innerHTML = '<div class="control-card"><h3>No AI review waiting</h3><p>When you queue a job or contact draft, it will appear here as instructions for Cursor/me.</p></div>';
       return;
     }
     for (const task of data.tasks.slice(0, 20)) {
       grid.innerHTML += `
         <div class="control-card">
-          <h3>${task.type}: ${task.company || task.title || task.id}</h3>
+          <h3>${task.type === 'evaluation' ? 'AI should evaluate' : 'AI should help with'}: ${task.company || task.title || task.id}</h3>
           <p>${task.title || task.mode}<br>${task.url ? `<a href="${task.url}" target="_blank" style="color:var(--accent-fusion);">Open URL</a>` : ''}</p>
-          <span class="status-pill ${task.status}">${task.status}</span>
-          <button class="control-btn secondary" onclick="copyTaskPrompt('${task.id}')">Copy Prompt</button>
+          <span class="status-pill ${task.status}">${friendlyStatus(task.status)}</span>
+          <button class="control-btn secondary" onclick="copyTaskPrompt('${task.id}')">Copy instructions for Cursor</button>
         </div>`;
     }
     window.__agentTasks = data.tasks;
@@ -1732,7 +1936,7 @@ async function queueEvaluationTask(job) {
       },
     }),
   });
-  alert(`Queued ${task.id}`);
+  alert('Added to “Needs AI Review”. Next step: ask Cursor to process that item, or copy the instructions from Behind The Scenes.');
   renderAgentTasks();
 }
 
@@ -1769,7 +1973,7 @@ async function queueContactTask() {
       notes: document.getElementById('draft-hook').value,
     }),
   });
-  alert(`Queued ${task.id}`);
+  alert('Added to “Needs AI Review”. Review the draft before sending anything.');
   renderAgentTasks();
 }
 
@@ -1785,7 +1989,7 @@ function connectSSE() {
     es.onmessage = (e) => {
       const data = JSON.parse(e.data);
       if (data.type === 'data_updated' || data.type === 'data_added') {
-        renderLiveJobs(); renderPhdRadar(); renderPulse(); renderSystem(); renderJobs(); renderAgentTasks();
+        renderActionPlan(); renderLiveJobs(); renderPhdRadar(); renderPulse(); renderSystem(); renderJobs(); renderAgentTasks();
         const log = document.getElementById('event-log');
         log.innerHTML = `<div style="margin-bottom:0.3rem;">[${new Date().toLocaleTimeString()}] ${data.type}: ${data.file}</div>` + log.innerHTML;
       }
@@ -1794,6 +1998,9 @@ function connectSSE() {
       }
       if (data.type?.startsWith('agent_task_')) {
         renderAgentTasks();
+      }
+      if (data.type === 'action_plan_updated') {
+        renderActionPlan();
       }
     };
     es.onerror = () => {
@@ -1810,7 +2017,7 @@ function connectSSE() {
 // ── Boot ────────────────────────────────────────────────────────────
 
 document.querySelectorAll('#workauth-filters input').forEach(input => input.addEventListener('change', renderLiveJobs));
-renderLiveJobs(); renderPhdRadar(); renderPulse(); renderSystem(); renderActions(); renderJobs(); renderAgentTasks(); renderContacts();
+renderActionPlan(); renderLiveJobs(); renderPhdRadar(); renderPulse(); renderSystem(); renderActions(); renderJobs(); renderAgentTasks(); renderContacts();
 connectSSE();
 
 setInterval(() => { renderPhdRadar(); }, 60000);

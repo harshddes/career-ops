@@ -12,23 +12,26 @@ export function createActionRegistry({ baseDir, repoRoot, dataDir }) {
 
   const registry = {
     sync_career_ops: {
-      label: 'Sync career-ops data',
+      label: 'Refresh my dashboard data',
       mutates: true,
-      description: 'Refresh WEB-TRACKER JSON snapshots from career-ops markdown and reports.',
+      description: 'Pull the latest applications, reports, follow-ups, and saved jobs into the dashboard.',
+      after: 'Use this first if the numbers look stale.',
       buildSteps: () => [nodeStep(baseDir, join(baseDir, 'adapters', 'sync-all.mjs'))],
     },
     scan_root_jobs: {
-      label: 'Scan root career-ops portals',
+      label: 'Find new broad job leads',
       mutates: true,
-      description: 'Run the root zero-token portal scanner.',
+      description: 'Search the broader career-ops company list for possible jobs.',
+      after: 'Review new leads in Jobs To Consider and ignore visa-dead roles.',
       buildSteps: ({ dry_run = true } = {}) => [
         nodeStep(repoRoot, join(repoRoot, 'scan.mjs'), dry_run ? ['--dry-run'] : []),
       ],
     },
     scan_fusion_jobs: {
-      label: 'Scan fusion jobs',
+      label: 'Find new fusion jobs',
       mutates: true,
-      description: 'Run the fusion ATS API scanner.',
+      description: 'Check fusion-company job boards for roles matching instrumentation, diagnostics, test, and plasma keywords.',
+      after: 'Queue one promising job for AI review.',
       buildSteps: ({ all = false, dry_run = false } = {}) => [
         nodeStep(baseDir, join(baseDir, 'fusion-scan.mjs'), [
           ...(all ? ['--all'] : []),
@@ -37,9 +40,10 @@ export function createActionRegistry({ baseDir, repoRoot, dataDir }) {
       ],
     },
     scan_phd_sources: {
-      label: 'Scan PhD/lab sources',
+      label: 'Check PhD and lab openings',
       mutates: true,
-      description: 'Run PhD, lab, and admissions page change detection.',
+      description: 'Check lab, PhD, scholarship, and research pages for changes.',
+      after: 'If something changed, ask Cursor to investigate the specific source.',
       buildSteps: ({ all = false, dry_run = false } = {}) => [
         nodeStep(baseDir, join(baseDir, 'phd-scan.mjs'), [
           ...(all ? ['--all'] : []),
@@ -48,45 +52,52 @@ export function createActionRegistry({ baseDir, repoRoot, dataDir }) {
       ],
     },
     research_gate_status: {
-      label: 'Research gate status',
+      label: 'Check what needs research',
       mutates: false,
-      description: 'Show token budget, pending events, and approval queue status.',
+      description: 'See whether new scanner events need deeper review.',
+      after: 'Use this to decide what to ask the AI agent to research next.',
       buildSteps: () => [nodeStep(baseDir, join(baseDir, 'deep-research-gate.mjs'), ['--status'])],
     },
     research_gate_run: {
-      label: 'Run research gate',
+      label: 'Sort new research alerts',
       mutates: true,
-      description: 'Route queued scan events into auto, approval, or archive buckets.',
+      description: 'Sort scanner alerts into review, skip, or research buckets.',
+      after: 'Review anything that lands in Needs AI Review.',
       buildSteps: () => [nodeStep(baseDir, join(baseDir, 'deep-research-gate.mjs'))],
     },
     verify_pipeline: {
-      label: 'Verify pipeline',
+      label: 'Check tracker for mistakes',
       mutates: false,
-      description: 'Run career-ops tracker and report integrity checks.',
+      description: 'Make sure application statuses, report links, scores, and duplicates are clean.',
+      after: 'If this fails, ask Cursor to fix the tracker before applying to more roles.',
       buildSteps: () => [nodeStep(repoRoot, join(repoRoot, 'verify-pipeline.mjs'))],
     },
     analyze_patterns: {
-      label: 'Analyze patterns',
+      label: 'Find what is working',
       mutates: false,
-      description: 'Compute rejection/fit pattern analysis.',
+      description: 'Look for patterns in scores, skips, and application outcomes.',
+      after: 'Use the result in Weekly Review.',
       buildSteps: () => [nodeStep(repoRoot, join(repoRoot, 'analyze-patterns.mjs'))],
     },
     followup_cadence: {
-      label: 'Follow-up cadence',
+      label: 'Check who needs a follow-up',
       mutates: false,
-      description: 'Compute overdue and upcoming follow-up actions.',
+      description: 'Find companies or contacts that need a polite follow-up.',
+      after: 'Send one follow-up if any are overdue.',
       buildSteps: () => [nodeStep(repoRoot, join(repoRoot, 'followup-cadence.mjs'))],
     },
     merge_tracker: {
-      label: 'Merge tracker additions',
+      label: 'Save evaluated jobs to tracker',
       mutates: true,
-      description: 'Merge TSV tracker additions and verify the pipeline.',
+      description: 'Move completed evaluation rows into the main application tracker.',
+      after: 'Run “Check tracker for mistakes” if this reports a problem.',
       buildSteps: () => [nodeStep(repoRoot, join(repoRoot, 'merge-tracker.mjs'), ['--verify'])],
     },
     check_liveness: {
-      label: 'Check job liveness',
+      label: 'Check if selected jobs are still open',
       mutates: false,
-      description: 'Use Playwright to check whether selected job URLs are still active.',
+      description: 'Open selected job links in a browser and verify they have not closed.',
+      after: 'Discard expired roles so they do not clog today’s plan.',
       buildSteps: ({ urls = [] } = {}, ctx = {}) => {
         const cleanUrls = Array.isArray(urls) ? urls.map(String).filter(u => /^https?:\/\//.test(u)) : [];
         if (cleanUrls.length === 0) throw new Error('check_liveness requires at least one http(s) URL');
@@ -96,9 +107,10 @@ export function createActionRegistry({ baseDir, repoRoot, dataDir }) {
       },
     },
     daily_brief: {
-      label: 'Run daily brief',
+      label: 'Update my dashboard',
       mutates: true,
-      description: 'Run sync, scans, gate status, follow-up cadence, and pattern analysis in sequence.',
+      description: 'Run the normal daily refresh: sync data, scan jobs, check deadlines, follow-ups, and patterns.',
+      after: 'Go to Today and do the first recommended action.',
       buildSteps: () => [
         nodeStep(baseDir, join(baseDir, 'adapters', 'sync-all.mjs')),
         nodeStep(baseDir, join(baseDir, 'fusion-scan.mjs')),
@@ -119,6 +131,7 @@ export function listActions(registry) {
     label: action.label,
     mutates: action.mutates,
     description: action.description,
+    after: action.after,
   }));
 }
 
@@ -126,7 +139,7 @@ export async function runAction({ registry, jobStore, actionId, input = {} }) {
   const action = registry[actionId];
   if (!action) throw new Error(`Unknown action: ${actionId}`);
 
-  const job = jobStore.create(actionId, input);
+  const job = jobStore.create(actionId, input, action);
   jobStore.update(job.id, { status: 'running' });
 
   queueMicrotask(async () => {

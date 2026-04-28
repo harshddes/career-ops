@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { normalizeWorkAuth, parseExportControlVerdict, parseVisaVerdict } from '../lib/work-auth.mjs';
+import { classifyAdjacentField, normalizeWorkAuth, parseExportControlVerdict, parseVisaVerdict } from '../lib/work-auth.mjs';
 
 test('normalizes confirmed H-1B source', () => {
   const auth = normalizeWorkAuth({ h1b_status: 'confirmed' });
@@ -22,4 +22,11 @@ test('parses visa and export-control text', () => {
   assert.equal(parseVisaVerdict('Visa: Clear'), 'clear');
   assert.equal(parseExportControlVerdict('must be a U.S. person'), 'hard_us_person');
   assert.equal(parseExportControlVerdict('ITAR/EAR may require export authorization'), 'soft_or_review');
+});
+
+test('classifies OPT story strength for adjacent STEM roles', () => {
+  const fit = classifyAdjacentField({ title: 'Instrumentation and RF Test Engineer, Spacecraft Payloads' });
+  assert.equal(fit.opt_story_strength, 'strong');
+  assert.ok(fit.fields.includes('aerospace systems'));
+  assert.ok(fit.fields.includes('instrumentation and test'));
 });
