@@ -1,0 +1,315 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{latexsym}
+\usepackage[letterpaper,margin=0.1in]{geometry}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{textcomp} % For the currency symbol
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+% (handled by geometry)
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-6pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[1]{
+\item\small{#1}
+}
+
+\newcommand{\resumeSubItem}[2]{
+  \begin{itemize}[label={}, leftmargin=*]
+    \item\small{\hspace{11pt} \textbf{#1} #2}
+  \end{itemize}
+}
+% Define a new length measure to control the width of the date/location column
+\newlength{\leftcolwidth}
+\newlength{\colgap}
+\newlength{\rightcolindent}
+\setlength{\leftcolwidth}{0.155\textwidth} % date/institution column (tighter)
+\setlength{\colgap}{0.7em}                % fixed gap between columns (tighter)
+\setlength{\rightcolindent}{\dimexpr\leftcolwidth+\colgap\relax} % where bullets should start
+
+% Two-column subheading with a fixed, uniform column start (no stretchy whitespace)
+% Spacing is intentionally conservative to avoid any vertical overlap.
+\newcommand{\resumeSubheading}[4]{%
+  \vspace{0pt}
+\item[]
+  \begin{tabularx}{\textwidth}{@{}>{\raggedleft\arraybackslash}p{\leftcolwidth}@{\hspace{\colgap}}>{\raggedright\arraybackslash}X@{}}
+    \textbf{\small #2} & \textbf{#1} \\
+    \textit{\small #4} & \textit{\small #3} \\
+  \end{tabularx}\vspace{0pt}
+}
+
+% Items under each subheading start exactly under the right column
+\newcommand{\resumeItemListStart}{%
+  \begin{itemize}[leftmargin=\rightcolindent, label={}, itemindent=0pt,
+    itemsep=0.6mm, parsep=0pt, topsep=1pt, partopsep=0pt]}
+
+    % Item command for the contents in the right column
+    \renewcommand{\resumeItem}[1]{
+  \item\small{#1}}
+
+    \newcommand{\resumeSubHeadingListStart}{
+    \begin{itemize}[leftmargin=0pt, label={}, itemsep=3pt, parsep=0pt, topsep=0pt, partopsep=0pt]}
+        \newcommand{\resumeSubHeadingListEnd}{
+      \end{itemize}}
+    \newcommand{\resumeItemListEnd}{
+  \end{itemize}}
+
+\begin{document}
+
+\begin{center}
+  \textbf{\Huge Harsh Desai} \\ \vspace{4pt}
+  \small +1 7345481080 $|$ \href{mailto:harshdes@umich.edu}{harshdes@umich.edu} $|$ \href{https://harshddes.github.io/}{\underline{website: harshddes.github.io}} $|$
+  \href{https://www.linkedin.com/in/harshddes}{\underline{LinkedIn: www.linkedin.com/in/harshddes/}} \\
+  \vspace{2pt}
+  \small \textit{Space Plasma Diagnostics Instrumentation, Testing + Measurement \& readout chains; detector calibration, Ion Optics: SIMION/SRIM analysis, and systems engineering.}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{University of Michigan}{Ann Arbor, USA}
+{Master of Engineering(M.Eng) - Space Systems Engineering, CGPA: 3.787/4.0}{Aug'24 - Dec'25}
+\resumeItemListStart
+\resumeItem{Systems Engineering + Space Plasma Research}
+\resumeItem{Coursework: Plasma \& Fields Instrumentation, Plasma Measurement Techniques,  Magnetosphere, Space Plasma Physics, Adv Fluid Mechanics, Space Weather Modeling, Control for Aerospace Vehicles,  Space Systems Design and Mgmt., Spacecraft Technology}
+\resumeItemListEnd
+\resumeSubheading
+{Vellore Institute of Technology, Vellore}{Vellore, IND}
+{B. tech - Mechanical Engineering}{Jul'19 - Jul'23}
+\resumeItemListStart
+\resumeItem{Worked Majorly on: Computational Engineering \& Simulations - CFD, CAE }
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Skills Summary}
+\begin{itemize}[leftmargin=0pt, label={}, itemsep=0pt, parsep=0pt, topsep=0pt, partopsep=0pt]
+    \small{
+    \item{
+        \textbf{Languages}{: Python, SCPI, MATLAB(learning), Verilog(Learning), VHDL(learning)} \\
+        \textbf{Tools}{: FPGA Design Workflow, SIMION(Lua-learning), AMD Vivado, MATLAB HDL Coder \& DSP Toolbox, NI VISA(PyVISA and PySerial), SPENVIS, SWMF \& Global Magnetosphere-Ionosphere Models(MAGE, SWMF, HYPERS)\\
+          \textbf{Data Tools}{: Amptek DPPMCA, Keithley DAQs and SMUs, Google Data Studio, QGIS} \\
+          \textbf{Mech Tools}{: ANSYS(GUI/TUI): Fluent, Mechanical; PyANSYS, OptiSlang, OpenFOAM, SolidWorks, Fusion 360, AutoCAD, Autodesk Inventor, MIDO, Xflr5, RocketPy, OpenRocket}
+    }}}
+\end{itemize}
+
+%-----------WORK EXPERIENCE-----------
+% Save old definitions
+\let\oldresumeItem\resumeItem
+\let\oldresumeSubItem\resumeSubItem
+
+% Redefine for Work Experience section
+\renewcommand{\resumeItem}[1]{
+\item\small{#1}
+}
+
+\renewcommand{\resumeSubItem}[2]{
+\item[]\small{\hspace{10pt} \textbf{#1} #2}
+}
+
+\section{Work Experience}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Lunar Vehicle Active Charge Control System (LVACCS) Testing Rig Characterization}{Feb'26--Present}
+{Advisor: Dr. Omar Leon $|$ Space Physics Research Lab (SPRL)}{UM-Ann Arbor}
+\resumeItemListStart
+\resumeItem{- Designing and validating HV discharge-box power, protection, and data-acquisition (DAQ) interface controls for a hollow-cathode keeper/discharge plasma-source test rig.}
+\resumeItem{Characterizing the remote hollow-cathode ignition and measurement workflow to improve test repeatability; automating HV discharge-box monitoring, protection interlocks, and remote power-supply control during plasma turn-on.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Uranian Tropospheric Cloud Resolving Model}{Sep'25--Dec'25}
+{Report: \href{https://drive.google.com/file/d/1C0pvkdFD_uKkH5fhPCAocLPmi3Fg70xb/view?usp=sharing}{\underline{Link}} $|$ Advisor: \href{https://clasp.engin.umich.edu/people/li-cheng/}{Prof. Cheng Li}}{UM-Ann Arbor}
+\resumeItemListStart
+\resumeItem{- Researched methods to fine-tune a Snapy+Kintera chemical-kinetics Uranian troposphere cloud-resolving model using microwave radiometric synthetic validation techniques.}
+\resumeItem{- Investigated the physics of atmospheric modeling of Uranus, including how to implement microphysics and survey parametric changes in model behavior. Analyzing Voyager data to co-align and fine-tune the model.}
+
+\resumeItemListEnd
+
+\resumeSubheading
+{FPGA Design Implementation for Solid-State Detector (SSD) Readout Chain}{Jan'25--Dec'25}
+{Report: \href{https://drive.google.com/file/d/1cb_1Vx5w__6OxFU2j2_Tn59uFXkM9p9M/view?usp=sharing}{\underline{Link}} $|$ Pres: \href{https://drive.google.com/file/d/149WzLOPuB5uX1cVQB2b0kfdt1YkxJpFG/view?usp=sharing}{\underline{P1}}/\href{https://drive.google.com/file/d/1fP5PyrEaI2-hRiAlK8ebVCq7qUQ7X5Xv/view?usp=sharing}{\underline{P2}} $|$ Advisor: \href{https://clasp.engin.umich.edu/people/livi-stefano/}{Prof. Stefano Livi} $|$ SHRG}{UM-Ann Arbor}
+\resumeItemListStart
+\resumeItem{- Optimized hard ADC IPs on FPGA fabric for higher particle energy resolution on Solid State Detectors (SSDs). Replaced analog processing chains using shaping amplifiers with higher sampling rates, finer acquisition control, filtering, and pile-up rejection.}
+\resumeItem{- Worked on Xilinx Zynq architectures and DMA capabilities to improve digitization in XADC and board power efficiency.}
+\resumeItem{- Implemented a complete eFPGA optimization systems-engineering process in MATLAB HDL Coder and ran co-simulation on AMD Vivado, avoiding iterative VHDL/Verilog scripting.}
+\resumeItemListEnd
+\resumeSubheading
+{TestBedz: Small-Scale s/c Environmental Testing Facilitator Service}{May'25--Jul'25}
+{Project: \href{https://msehgal001.github.io/TestBedz/}{\underline{Link}} $|$ Advisor: \href{https://clasp.engin.umich.edu/people/battel-steven/}{Prof. Steven Battel}}{UM-Ann Arbor}
+\resumeItemListStart
+\resumeItem{Implemented a spacecraft environmental-test feasibility and routing system for SPRL, integrating facility capability models, test-profile constraints, and requirements into automated, contract-ready test plans.}
+\resumeItem{Developed a Client2Tester matching platform with requirement flowdown, lab-time allocation, and location-based filtering; aligned outputs to thermal-vacuum and vibration documentation practices.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Rivera Event-Directional Discontinuity Correlational Study }{May'25--Jul'25}
+{Advisor: \href{https://clasp.engin.umich.edu/people/akhavan-tafti-mojtaba/}{Mojtaba Akhavan-Tafti}}{UM-Ann Arbor}
+\resumeItemListStart
+\resumeItem{- Studied how Directional Discontinuities evolved in the Rivera conjunction to determine whether temporal matching and field-variable feature matching revealed correlation with solar-wind-stream heating. Developed the TS method to analyze \(\Delta B\) change and evaluated TS multi-s/c correlation and MVA differences in results and categorization.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Communications Lead - Uranian Orbiter and Probe mission}{Sep'24--Apr'25}
+{Report: \href{https://drive.google.com/file/d/1e4JlWVszDD1RgXqv2ruHCZQhk0sHbQ00/view?usp=sharing}{\underline{Link}} $|$ SPACE 582/583 $|$ L3Harris}{UM-Ann Arbor}
+\resumeItemListStart
+\resumeItem{- Led the Communications Subsystem of the Uranian Orbiter and Probe mission. Focused on Science Mission design and Traceability Scoping. Extrapolated the current Uranian known plasma environment to Science Instrumentation selection and design-for Fields \& Particles instrument package optimization.}
+\resumeItem{- Developed cost-effective alternatives to NASA's UOP Flagship Mission through trade studies across probe deployment, orbital optimization, telemetry allocation, and Ka-band/optical hybrid solutions for 4.5-year science operations.}
+\resumeItemListEnd
+% \resumeSubheading
+%  {Project Intern}{Jun'24--Aug'24}
+%  {PentaShield Technologies Pvt. Ltd.}{Vadodara, IND}
+%  % Your list of items here
+%  \resumeItemListStart
+%    \resumeItem{- Engineered a program capable of running multi-objective optimization of ballistic missile airframe designs, integrating a backend CFD solver, in line with surrogate modeling, and MODOs using only IGES geometry as input.}
+%    \resumeItem{Automated parametric design workflow using PyFluent to train the model to predict the best possible design output, enhancing efficiency in geometry pre-processing and validation for ANSYS simulations, while integrating PyOptiSLang for optimization.}
+%  \resumeItemListEnd
+% % \resumeSubheading
+% % {Intern - 3D Modeling and Workflow Automation}{Apr'24--Jul'24}
+% %{Desai Engineering Works}{Vadodara, IND}
+% % Your list of items here
+% %  \resumeItemListStart
+% %   \resumeItem{- Undertaking 3D modelling and drafting services for the company's tool designs. Utilizing Fusion 360 and AutoCAD to develop client-centric press tools.}
+% %  \resumeItem{- Improving workflow automation within the company's ERP system to reduce potential bottlenecks in pre-production.}
+% % \resumeItem{- Researching and building an automated Failure Modes and Effects Analysis(FMEA) tool to aid in process quality control.}
+% %\resumeItemListEnd
+% % \resumeSubheading
+% %   {Predictive Insurance Modeling for Agri-Insurance sector}{Nov'23--Dec'23}
+% %   {Research Assistant, @ Christ University}{Pune, IND}
+% %   % Your list of items here
+% %   \resumeItemListStart
+% %     \resumeItem{- Deploying a TensorFlow model for comprehensive weather prediction using time-series data.}
+% %     \resumeSubItem{Objective:}{Enhance weather forecasting to refine insurance rate predictions for the Agricultural Sector.Leveraging GeoSpatial data with QGIS + image processing to analyze crop \& soil for insurance risk assessment.Optimize premium adjustments based on real-time climate insights and crop/soil health.}
+% %   \resumeItemListEnd
+% % \resumeSubheading
+% %   {Data Analytics Intern}{Jan'23--Jul'23}
+% %   {ET Medialabs Pvt. Ltd. - ETML}{Noida, IND}
+% %   \resumeItemListStart
+% %     \resumeItem{- Implemented advanced data mapping and SKAdNetwork solutions for iOS targeting in UAE, Engineered S2S CRM integration with extensive Marketing Analytics and Consumer Pattern recognition to improve real-time lead quality assessment.}
+% %     \resumeItem{- Developed custom Google Ads scripts to extract non-standard metrics. Created Data Studio dashboard using BigQuery via Ads Script, bypassing PostGreSQL for comprehensive marketing analytics and consumer pattern recognition.}
+% %   \resumeItemListEnd
+  % \resumeSubheading
+  %   {R\&D Intern - Simulations for NSTL's IRSS}{Jun'22--Jul'22}
+  %   {PEC Simulations}{Visakhapatnam, IND}
+  %   \resumeItemListStart
+  %     \resumeItem{- Infrared Suppression: Optimizing an Infrared Suppression System model targeting a 50-60\% IR signature reduction used in Naval ships for NSTL, India.}
+  %     \resumeItem{- PIDO on OptiSlang - feedback to Fluent, Implemented ansys Discovery in the workflow for parametric design optimization across acctive and passive design series, by conducting sensitivity analysis with ansys Mechanical.}
+  %   \resumeItemListEnd
+
+% Restore old definitions
+\let\resumeItem\oldresumeItem
+\let\resumeSubItem\oldresumeSubItem
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+% \resumeSubheading
+%     {Space Weather Modeling Project}{2024--2025}
+%     {Report: \href{https://drive.google.com/file/d/1NGk9oWzdarwn_SQfDyNUzg5gyDZcq4sz/view?usp=sharing}{\underline{Link}}}{}
+%     \resumeItemListStart
+%       \resumeItem{- Technical report and analysis deliverable for a space-weather modeling study.}
+%     \resumeItemListEnd
+\resumeSubheading
+{Space Instrumentation Calibration \& Ion-Optics Project Series}{Sep'25--Dec'25}
+{SPACE 571 - Space Plasma Measuring Techniques}{}
+\resumeItemListStart
+\resumeItem{- \textbf{Channel Electron Multiplier (CEM) calibration} (\href{https://drive.google.com/file/d/105pfynwuIVg_TPy9G_9gr1c2rj9VWnWe/view}{\underline{Experiment}}): Charge-calibrated PocketMCA readout using an RC injector, measured CEM pulse-height distributions through a charge-sensitive amplifier (CSA), shaper, and multichannel analyzer (MCA), and used gain map $G(V)$ to select operating bias.}
+\resumeItem{- \textbf{Cylindrical Electrostatic Analyzer (ESA) calibration} (\href{https://drive.google.com/file/d/1SHQp0bJXxDF_AkgcvPOfZhSBFcBxT_Jf/view?usp=sharing}{\underline{Experiment}} $|$ \href{https://drive.google.com/file/d/1OWtlDylwIrSL-LJxO4SMOg75hnlVdVcA/view?usp=sharing}{\underline{SIMION analysis}}): Built transmission function $T(E,\alpha)$ from energy-angle scan data and extracted moments to quantify resolution and angular acceptance.}
+\resumeItem{- \textbf{SIMION dual-Einzel beam expander} (\href{https://drive.google.com/file/d/1NmYVhtXiXAdp2Q7RKIF5JIQZQjyVh4KB/view?usp=sharing}{\underline{Report}}): Performed an afocal lens-voltage sweep for exit collimation, then evaluated expansion ratio and beam quality using RMS radii and figure of merit (FoM).}
+\resumeItem{- \textbf{SIMION Bessel-box energy filter} (\href{https://drive.google.com/file/d/1yfdiA41DbK1-98C4qJLHxBM9xEWfD3NQ/view?usp=sharing}{\underline{Report}}): Estimated transmission function to fit a Gaussian obtaining central mean energy and full width at half maximum (FWHM) with propagated uncertainty.}
+\resumeItem{- \textbf{Stopping and Range of Ions in Matter (SRIM) carbon-foil $\Delta E$ study} (\href{https://drive.google.com/file/d/1m4qjyr0cgxBp8j9nEP0LaVEn09NEFOYl/view?usp=sharing}{\underline{Report}}): Used SRIM TRANSMIT to model energy loss and straggling for carbon foils, then inferred thickness by matching time-of-flight (TOF)-derived exit energies.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Spatial Ion-Electron Temperature Correlation Analysis Using Hybrid CCMC Models}{Feb'25--Apr'25}
+{Report: \href{https://drive.google.com/file/d/1x6fm2dZtLi4hjcGfQf2WpbNDZLsGMDGT/view?usp=sharing}{\underline{Link}}}{}
+\resumeItemListStart
+\resumeItem{- Multi-fluid simulation: Utilizing SWMFv23 with MAGE on CCMC, figuring out limitations in resolving independent ion and electron energy equations within a global multi-fluid MHD framework—to backtrace Ion- spatial distributions across bow shock and magnetosheath domains.}
+\resumeItem{- Had to further investigate using HYPERS- hybrid model on CCMC. Downstream reconnection‐driven \(E_{\parallel}J_{\parallel}\) heating reveals peak electron temperature excursions preceding ion maxima, with \(\Delta T_i - T_e\) oscillations dominated by convective transport, evidencing cross‐species energy partitioning during shock events}
+\resumeItemListEnd
+% \resumeSubheading
+% {FAA Class II Solid Motor Sounding Rocket (@ SA Cup)}{Aug'20--Jul'23}
+% {Project Technical Report: \href{https://drive.google.com/file/d/19GcuGf8MkgRR0t0MPE-XhEvW5EahuQBZ/view?usp=drive_link}{\underline{Link}} $|$ SA Cup / IREC: \href{https://drive.google.com/file/d/1P4UhVI_rwFcX9TgOPHBTPozDp-2OGiUQ/view?usp=sharing}{\underline{Link}}}{}
+% \resumeItemListStart
+% \resumeItem{- Built a Sounding Rocket targeting 10,000 ft. using a solid rocket motor capable of reaching 0.9 Mach. Successfully launched it this year at Spaceport America, USA.}
+% \resumeItem{- SA Cup / IREC: Team secured 23rd rank globally and 5th in Asia-Pacific (out of 75 teams) at first attempt.}
+% \resumeItem{- Developed a PID-controlled payload with real-time pitch correction and integrated advanced avionics using dual-deployment altimetry and GPS tracking.}
+% \resumeItem{- Built an SRAD FSW + Flight Simulator capable of predicting trajectory based on design optimization done via back-end CFD Simulation.}
+% \resumeItemListEnd
+\resumeSubheading
+{CANSAT 2021(Organized by NASA \& AAS)}{Aug'20--Jul'21}
+{Critical Design Review: \href{https://drive.google.com/file/d/1xcsrNZNLANhM8cnS2_iKqS9KlfMemFc_/view?usp=sharing}{\underline{Link}}}{}
+\resumeItemListStart
+\resumeItem{- Simulated an atmospheric re-entry vehicle in the CANSAT mission with two Maple Seed-inspired Monowing payloads for live telemetry; developed custom SRAD Ground Control Software.Created and optimized a Mono-wing design using transient simulation for flow analysis, employing a MATLAB script for maximum torque and efficiency.}
+\resumeItemListEnd
+\resumeSubheading
+  {CANSAT 2022 (Tethered Payload) (Organized by NASA \& AAS)}{Aug'21--Jul'22}
+  {Critical Design Review: \href{https://drive.google.com/file/d/1M-WQG0x1WI9SherThK6GIEdIPda9CDkr/view?usp=sharing}{\underline{Link}}}{}
+  \resumeItemListStart
+    \resumeItem{- Engineered a 10 m unidirectional tether-deployment mechanism using a DC motor and custom worm-gear spool, enabling non-backdrivable load transfer and controlled descent of a 2 mm braided-nylon payload line.}
+    \resumeItem{- Built a servo-actuated ejection and stabilization stack: elastic-lid release with torsion-spring lock for parachute deployment, plus a dual-servo 2-axis gimbal maintaining a fixed 45$^{\circ}$ downward south-facing camera vector.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+% % -----------POSITIONS OF RESPONSIBILITY -----------
+% \section{Positions of Responsibility}
+%   \resumeSubHeadingListStart
+%     \resumeSubheading
+%       {Association of Energy Engineers, AEE}{Vellore, IND}
+%       {Secretary}{Jan'21 - Apr'22}
+%       \resumeItemListStart
+%         \resumeItem{- Joined AEE as a technical member, leading research in wind and solar energy, optimized  Horizontal Axis Wind Turbine using CFD sim based on Blade Element Theory analysis. }
+%         \resumeItem{- As AEE Secretary, spearheaded technical workshops, industry-academia interfaces, and mentored engineers in renewable energy projects, addressing climate change awareness.
+
+%            }
+%         \resumeItemListEnd
+%   \resumeSubHeadingListEnd
+
+%-----------AWARDS-----------
+\section{Honors}
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{Special Achievers Award recipient 20219-22 \href{https://drive.google.com/file/d/1WLOBH4m6eUPxqF8WWfclOOagim9JJ596/view?usp=sharing}{\underline{(Link)}}} & \\
+  • Recognized as a Special Achiever by VIT for outstanding international representation and performance. & \\
+\end{tabular*}\vspace{5pt}
+ \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{SA Cup 2021 (organized by ESRA) \href{https://drive.google.com/file/d/1F4eyTNrddvHkXNUDX06rpD7Nm-byS2GG/view?usp=sharing}{\underline{(Link)}}} & \\
+  • The team secured 23rd rank globally, being 5th in Asia-Pacific(out of 75 teams) at our very first attempt. & \\
+\end{tabular*}\vspace{5pt}
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{CANSAT 2022 (Tethered Payload)-Organized by NASA \& AAS \href{https://drive.google.com/file/d/1wy3B8112TCHBuVJfQTUqal0ySfAxnZFM/view?usp=sharing}{\underline{(Link)}}} & \\
+  • secured a personal best worldwide rank of 7th(out of 42 teams). & \\
+\end{tabular*}\vspace{5pt}
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{CANSAT 2021 (Organized by NASA \& AAS) \href{https://drive.google.com/file/d/1xcsrNZNLANhM8cnS2_iKqS9KlfMemFc_/view?usp=sharing}{\underline{(Link)}}} & \\
+  • Team Sammard secured a brilliant position of 13th globally and 7th in Asia-Pacific. & \\
+\end{tabular*}\vspace{5pt}
+
+\end{document}
