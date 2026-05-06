@@ -57,7 +57,8 @@
       "careers_url": "https://jobs.ashbyhq.com/helion",
       "api_url": "https://api.ashbyhq.com/posting-api/job-board/helion?includeCompensation=true",
       "importance": 0.95,
-      "h1b_status": "likely",
+      "h1b_status": "unknown",
+      "notes": "No public H-1B record found in 2026-04-15 evaluation; ask early about sponsorship and export-control process.",
       "enabled": true
     },
     {

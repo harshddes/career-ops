@@ -29,6 +29,8 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+html { overflow-x: hidden; }
+
 body {
   background: var(--bg-primary);
   color: var(--text-primary);
@@ -98,6 +100,8 @@ nav button {
 
 nav button:hover { color: var(--text-primary); background: var(--bg-card); }
 nav button.active { color: var(--accent-plasma); border-bottom-color: var(--accent-plasma); }
+nav::-webkit-scrollbar { height: 6px; }
+nav::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; }
 
 /* Tab content */
 .tab-content { display: none; padding: 2rem 4rem 4rem; position: relative; z-index: 1; }
@@ -440,6 +444,12 @@ nav button.active { color: var(--accent-plasma); border-bottom-color: var(--acce
 .action-title { font-weight: 700; font-size: 1.05rem; margin-bottom: 0.35rem; }
 .action-next { color: var(--text-primary); margin-bottom: 0.4rem; }
 .action-why { color: var(--text-muted); font-size: 0.82rem; line-height: 1.45; }
+.action-feedback { margin-top: 0.45rem; font-size: 0.78rem; line-height: 1.4; color: var(--text-secondary); }
+.action-feedback.done { color: var(--accent-green); }
+.action-feedback.defer,
+.action-feedback.deferred,
+.action-feedback.waiting { color: var(--accent-fusion); }
+.action-feedback.blocked { color: var(--accent-warn); }
 .progress-track { height: 8px; border-radius: 999px; background: var(--bg-secondary); overflow: hidden; margin: 0.6rem 0; }
 .progress-fill { height: 100%; background: var(--gradient-plasma); }
 
@@ -474,6 +484,27 @@ nav button.active { color: var(--accent-plasma); border-bottom-color: var(--acce
 .control-btn.secondary { background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border); }
 .control-btn.warn { background: var(--accent-warn); color: #111; }
 .control-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.control-btn.is-active {
+  background: var(--accent-plasma);
+  color: #fff;
+  border: 1px solid transparent;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+}
+
+.inline-notice {
+  display: none;
+  margin-bottom: 1rem;
+  padding: 0.7rem 0.85rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+}
+.inline-notice.show { display: block; }
+.inline-notice.success { border-color: rgba(118, 255, 163, 0.45); color: var(--accent-green); }
+.inline-notice.warn { border-color: rgba(255, 184, 107, 0.5); color: var(--accent-warn); }
+.inline-notice.error { border-color: rgba(255, 107, 107, 0.5); color: var(--accent-red); }
 
 .filter-panel {
   display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1rem;
@@ -500,6 +531,13 @@ nav button.active { color: var(--accent-plasma); border-bottom-color: var(--acce
 .status-pill.running { border-color: var(--accent-fusion); color: var(--accent-fusion); }
 .status-pill.completed { border-color: var(--accent-green); color: var(--accent-green); }
 .status-pill.failed { border-color: var(--accent-red); color: var(--accent-red); }
+.status-pill.today,
+.status-pill.in_progress { border-color: var(--accent-plasma); color: var(--accent-plasma); }
+.status-pill.waiting,
+.status-pill.deferred,
+.status-pill.queued { border-color: var(--accent-fusion); color: var(--accent-fusion); }
+.status-pill.blocked { border-color: var(--accent-warn); color: var(--accent-warn); }
+.status-pill.done { border-color: var(--accent-green); color: var(--accent-green); }
 
 textarea.control-input, input.control-input, select.control-input {
   width: 100%; background: var(--bg-secondary); color: var(--text-primary);
@@ -517,6 +555,8 @@ footer {
 /* Responsive */
 @media (max-width: 1200px) {
   header, .tab-content, footer { padding-left: 2rem; padding-right: 2rem; }
+  .header-grid { flex-direction: column; gap: 1.2rem; }
+  .header-meta { text-align: left; }
   .stats-bar { grid-template-columns: repeat(3, 1fr); }
   .reality-grid { grid-template-columns: 1fr; }
   .coach-hero { grid-template-columns: 1fr; }
@@ -524,10 +564,34 @@ footer {
 
 @media (max-width: 768px) {
   h1 { font-size: 2rem; }
-  .stats-bar { grid-template-columns: 1fr 1fr; }
-  .company-grid, .people-grid, .program-grid { grid-template-columns: 1fr; }
-  nav { flex-wrap: wrap; }
-  nav button { flex-basis: 50%; font-size: 0.7rem; }
+  header { padding: 1.4rem 1rem 1rem; }
+  .subtitle { font-size: 0.95rem; }
+  .tab-content { padding: 1.2rem 1rem 2rem; }
+  footer { padding: 1rem; }
+  .stats-bar { grid-template-columns: 1fr; }
+  .company-grid, .people-grid, .program-grid, .control-grid { grid-template-columns: 1fr; }
+  .transfer-grid, .transfer-item { grid-template-columns: 1fr; gap: 0.65rem; }
+  .transfer-arrow { display: none; }
+  .transfer-from, .transfer-to { text-align: left; }
+  .filter-panel { flex-direction: column; align-items: flex-start; }
+  nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  nav button {
+    flex: 0 0 auto;
+    min-width: 9.2rem;
+    font-size: 0.68rem;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.7rem; }
+  .section-title { font-size: 1.55rem; }
+  .stat-number { font-size: 1.8rem; }
+  .control-btn { width: 100%; margin-right: 0; }
 }
 
 /* Animations */
@@ -589,6 +653,7 @@ footer {
   </div>
 
   <h2 class="section-title">Today’s Top 3</h2>
+  <div id="today-action-feedback" class="inline-notice" role="status" aria-live="polite"></div>
   <div id="today-actions"></div>
 
   <h2 class="section-title">Minimum Win</h2>
@@ -679,7 +744,7 @@ footer {
     </div>
   </div>
   <br>
-  <p style="color:var(--text-muted); font-size:0.85rem; margin-top:1rem;">Salary reality: Your profile targets $50K-$100K. Entry-level fusion diagnostics starts at $90K-$130K. Helion's matching role pays $128K-$160K. Update your target.</p>
+  <p style="color:var(--text-muted); font-size:0.85rem; margin-top:1rem;">Salary reality: Your profile targets $50K-$100K. Entry-level fusion diagnostics starts at $90K-$130K. Helion's matching diagnostics role pays $138K-$180K. Update your target.</p>
 </div>
 
 <!-- COMPANIES TAB -->
@@ -693,7 +758,7 @@ footer {
       </div>
       <div class="card-role">Diagnostic Engineer — SPARC</div>
       <div class="card-detail"><strong>Location:</strong> Devens, MA</div>
-      <div class="card-detail"><strong>Salary:</strong> $120K-$170K (H-1B median)</div>
+      <div class="card-detail"><strong>Salary:</strong> $110K-$185K role range; H-1B median ~$142.5K</div>
       <div class="card-detail"><strong>Funding:</strong> ~$3B raised, SPARC 75% built</div>
       <div class="card-detail"><strong>Why #1:</strong> JD explicitly says "aerospace backgrounds encouraged." MIT spinoff culture. 5/5 H-1B petitions approved.</div>
       <div class="card-tags">
@@ -710,12 +775,12 @@ footer {
       </div>
       <div class="card-role">Nuclear Engineer — Diagnostics</div>
       <div class="card-detail"><strong>Location:</strong> Everett, WA</div>
-      <div class="card-detail"><strong>Salary:</strong> $128K-$160K</div>
+      <div class="card-detail"><strong>Salary:</strong> $138K-$180K</div>
       <div class="card-detail"><strong>Funding:</strong> ~$1B+, achieved D-T fusion Feb 2026</div>
-      <div class="card-detail"><strong>Why:</strong> Requires 3+ years detector experience — your CEM/ESA/SSD work qualifies. CEO is a Michigan PhD.</div>
+      <div class="card-detail"><strong>Why:</strong> Strong detector/DAQ overlap from CEM, ESA, SSD readout, SCPI, NI VISA/PyVISA/PySerial, and Keithley DAQ/SMU exposure. Sponsorship is the open question.</div>
       <div class="card-tags">
         <span class="tag match">Detector match</span>
-        <span class="tag visa">H-1B likely</span>
+        <span class="tag warn">H-1B unknown</span>
         <span class="tag match">Michigan alumni CEO</span>
       </div>
     </div>
@@ -864,7 +929,7 @@ footer {
           <td style="padding:0.8rem; font-weight:600;">CFS</td>
           <td style="text-align:center; padding:0.8rem;">6</td>
           <td style="text-align:center; padding:0.8rem; color:var(--accent-green);">5/5</td>
-          <td style="text-align:center; padding:0.8rem; font-family:'Space Mono',monospace;">$120K-$170K</td>
+          <td style="text-align:center; padding:0.8rem; font-family:'Space Mono',monospace;">$110K-$185K role / ~$142.5K H-1B median</td>
           <td style="text-align:center; padding:0.8rem; color:var(--accent-green);">CONFIRMED</td>
         </tr>
         <tr style="border-bottom:1px solid var(--border);">
@@ -885,8 +950,8 @@ footer {
           <td style="padding:0.8rem; font-weight:600;">Helion Energy</td>
           <td style="text-align:center; padding:0.8rem;">—</td>
           <td style="text-align:center; padding:0.8rem;">—</td>
-          <td style="text-align:center; padding:0.8rem; font-family:'Space Mono',monospace;">$128K-$160K</td>
-          <td style="text-align:center; padding:0.8rem; color:var(--accent-warn);">LIKELY (500+ emp)</td>
+          <td style="text-align:center; padding:0.8rem; font-family:'Space Mono',monospace;">$138K-$180K</td>
+          <td style="text-align:center; padding:0.8rem; color:var(--accent-warn);">UNKNOWN — ask early</td>
         </tr>
         <tr style="border-bottom:1px solid var(--border);">
           <td style="padding:0.8rem; font-weight:600;">Pacific Fusion</td>
@@ -1344,6 +1409,7 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
 <div id="operations" class="tab-content">
   <h2 class="section-title">Behind The Scenes</h2>
   <p style="color:var(--text-secondary); margin-bottom:1rem; font-size:0.9rem;">These buttons do dashboard chores on your computer. You do not need to understand the code. Start with “Update my dashboard”.</p>
+  <div id="operations-feedback" class="inline-notice" role="status" aria-live="polite"></div>
   <div id="actions-grid" class="control-grid"></div>
 
   <h2 class="section-title">Background Updates</h2>
@@ -1417,7 +1483,11 @@ document.querySelectorAll('.overlap-fill').forEach(bar => {
 
 // ── Live data layer ─────────────────────────────────────────────────
 
-const API_BASE = window.location.port === '3737' ? '' : 'http://localhost:3737';
+const DASHBOARD_HOST = window.location.hostname || '127.0.0.1';
+const API_BASE = window.location.port === '3737' ? '' : `http://${DASHBOARD_HOST}:3737`;
+let sseConnection = null;
+let reconnectTimer = null;
+let refreshTimer = null;
 
 async function fetchJSON(file) {
   try {
@@ -1446,6 +1516,7 @@ function daysBetween(d1, d2) {
 function friendlyStatus(status) {
   return {
     today: 'Today',
+    deferred: 'Deferred',
     in_progress: 'In progress',
     waiting: 'Waiting',
     blocked: 'Blocked',
@@ -1458,20 +1529,100 @@ function friendlyStatus(status) {
   }[status] || status;
 }
 
+function statusClass(status = '') {
+  return String(status).toLowerCase().replace(/[^a-z0-9_-]/g, '');
+}
+
 function escapeHTML(text = '') {
   return String(text).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+function setInlineNotice(id, message = '', variant = 'success') {
+  const el = document.getElementById(id);
+  if (!el) return;
+  if (!message) {
+    el.className = 'inline-notice';
+    el.textContent = '';
+    return;
+  }
+  const safeVariant = ['success', 'warn', 'error'].includes(variant) ? variant : 'success';
+  el.className = `inline-notice show ${safeVariant}`;
+  el.textContent = message;
+}
+
+function setTodayFeedback(message = '', variant = 'success') {
+  setInlineNotice('today-action-feedback', message, variant);
+}
+
+function setOperationsFeedback(message = '', variant = 'success') {
+  setInlineNotice('operations-feedback', message, variant);
+}
+
+function selectedActionForTask(task) {
+  if (!task) return '';
+  if (task.status === 'done') return 'done';
+  if (task.status === 'deferred') return 'defer';
+  if (task.status === 'blocked') return 'blocked';
+  if (task.status === 'waiting') return 'waiting';
+  return '';
+}
+
+function actionButtonClass(task, action) {
+  const classes = ['control-btn', 'secondary'];
+  if (selectedActionForTask(task) === action) classes.push('is-active');
+  return classes.join(' ');
+}
+
+function actionFeedbackText(task) {
+  if (!task) return '';
+  if (task.last_action === 'done') return 'Saved: marked done.';
+  if (task.last_action === 'defer') return task.due_date ? `Saved: moved to ${task.due_date}.` : 'Saved: deferred.';
+  if (task.last_action === 'blocked') return task.blocked_reason ? `Saved: blocked (${task.blocked_reason}).` : 'Saved: blocked.';
+  if (task.last_action === 'waiting') return task.follow_up_date ? `Saved: waiting until ${task.follow_up_date}.` : 'Saved: waiting.';
+  if (task.status === 'deferred') return task.due_date ? `Deferred to ${task.due_date}.` : 'Deferred.';
+  return '';
+}
+
+function actionResultMessage(action, task) {
+  if (action === 'done') return 'Saved: marked done.';
+  if (action === 'defer') return task?.due_date ? `Saved: moved to ${task.due_date}.` : 'Saved: deferred.';
+  if (action === 'blocked') return task?.blocked_reason ? `Saved: blocked (${task.blocked_reason}).` : 'Saved: blocked.';
+  if (action === 'waiting') return task?.follow_up_date ? `Saved: waiting until ${task.follow_up_date}.` : 'Saved: waiting.';
+  return 'Saved.';
+}
+
+function renderAllPanels() {
+  renderActionPlan();
+  renderLiveJobs();
+  renderPhdRadar();
+  renderPulse();
+  renderSystem();
+  renderActions();
+  renderJobs();
+  renderAgentTasks();
+  renderContacts();
+}
+
+function queueRenderAllPanels() {
+  if (refreshTimer) return;
+  refreshTimer = setTimeout(() => {
+    refreshTimer = null;
+    renderAllPanels();
+  }, 200);
 }
 
 function actionCard(task, index = 0) {
   if (!task) return '<div class="action-card"><div class="action-title">No action loaded yet.</div></div>';
   const requiredClass = index === 0 ? ' required' : '';
   const progress = task.target ? Math.min(100, Math.round(((task.progress || 0) / task.target) * 100)) : 0;
+  const feedback = actionFeedbackText(task);
+  const feedbackClass = statusClass(task.last_action || task.status || '');
   return `
     <div class="action-card${requiredClass}">
       <div class="action-title">${index === 0 ? 'Required: ' : ''}${escapeHTML(task.title)}</div>
       <div class="action-next">${escapeHTML(task.next_action || '')}</div>
       <div class="action-meta">
-        <span class="status-pill">${friendlyStatus(task.status)}</span>
+        <span class="status-pill ${statusClass(task.status)}">${friendlyStatus(task.status)}</span>
         <span class="tag">${escapeHTML(task.effort || 'small')}</span>
         <span class="tag match">${escapeHTML(task.category || 'action')}</span>
         <span class="tag warn">${escapeHTML(task.impact || 'medium')} impact</span>
@@ -1479,10 +1630,11 @@ function actionCard(task, index = 0) {
       ${task.adaptation ? `<p class="plain-help">${escapeHTML(task.adaptation)}</p>` : ''}
       ${task.target ? `<div class="progress-track"><div class="progress-fill" style="width:${progress}%"></div></div><p class="plain-help">${task.progress || 0}/${task.target} ${escapeHTML(task.unit || 'done')}</p>` : ''}
       <p class="action-why">${escapeHTML(task.why || task.if_blocked || '')}</p>
-      <button class="control-btn" onclick="updateActionItem('${task.id}', 'done')">Done</button>
-      <button class="control-btn secondary" onclick="updateActionItem('${task.id}', 'defer')">Defer</button>
-      <button class="control-btn secondary" onclick="blockActionItem('${task.id}')">Blocked</button>
-      <button class="control-btn secondary" onclick="updateActionItem('${task.id}', 'waiting')">Waiting</button>
+      ${feedback ? `<p class="action-feedback ${feedbackClass}">${escapeHTML(feedback)}</p>` : ''}
+      <button class="${actionButtonClass(task, 'done')}" onclick="updateActionItem('${task.id}', 'done')">Done</button>
+      <button class="${actionButtonClass(task, 'defer')}" onclick="updateActionItem('${task.id}', 'defer')">Defer</button>
+      <button class="${actionButtonClass(task, 'blocked')}" onclick="blockActionItem('${task.id}')">Blocked</button>
+      <button class="${actionButtonClass(task, 'waiting')}" onclick="updateActionItem('${task.id}', 'waiting')">Waiting</button>
     </div>`;
 }
 
@@ -1569,12 +1721,18 @@ function goalCard(goal) {
 }
 
 async function updateActionItem(id, action, input = {}) {
-  const plan = await apiJSON(`/api/action-plan/${id}`, {
-    method: 'PATCH',
-    body: JSON.stringify({ action, ...input }),
-  });
-  window.__actionPlan = plan;
-  renderActionPlan();
+  try {
+    const plan = await apiJSON(`/api/action-plan/${id}`, {
+      method: 'PATCH',
+      body: JSON.stringify({ action, ...input }),
+    });
+    window.__actionPlan = plan;
+    renderActionPlan();
+    const task = (plan.all_tasks || []).find(t => t.id === id);
+    setTodayFeedback(actionResultMessage(action, task), action === 'blocked' ? 'warn' : 'success');
+  } catch (err) {
+    setTodayFeedback(`Could not save that update: ${err.message}`, 'error');
+  }
 }
 
 function blockActionItem(id) {
@@ -1784,6 +1942,7 @@ async function renderActions() {
   if (!grid) return;
   try {
     const data = await apiJSON('/api/actions');
+    setOperationsFeedback('');
     window.__actions = data.actions;
     grid.innerHTML = '';
     for (const action of data.actions) {
@@ -1801,6 +1960,7 @@ async function renderActions() {
         </div>`;
     }
   } catch (err) {
+    setOperationsFeedback(`Behind The Scenes is offline: ${err.message}`, 'error');
     grid.innerHTML = `<div class="control-card"><h3>Control API offline</h3><p>${err.message}</p></div>`;
   }
 }
@@ -1811,11 +1971,16 @@ async function runAction(action, input = {}) {
     const ok = confirm(`${meta?.label || 'Start this'}?\n\n${meta?.description || 'This may update local dashboard files.'}`);
     if (!ok) return;
   }
-  const { job } = await apiJSON(`/api/actions/${action}`, {
-    method: 'POST',
-    body: JSON.stringify(input),
-  });
-  await renderJobs(job.id);
+  try {
+    const { job } = await apiJSON(`/api/actions/${action}`, {
+      method: 'POST',
+      body: JSON.stringify(input),
+    });
+    setOperationsFeedback(`Started: ${meta?.label || action}. Check “Background Updates” for progress.`, 'success');
+    await renderJobs(job.id);
+  } catch (err) {
+    setOperationsFeedback(`Could not start that action: ${err.message}`, 'error');
+  }
 }
 
 async function renderJobs(selectId = null) {
@@ -1836,14 +2001,19 @@ async function renderJobs(selectId = null) {
     }
     if (selectId) showJobLog(selectId);
   } catch (err) {
+    setOperationsFeedback(`Could not load job status: ${err.message}`, 'error');
     grid.innerHTML = `<div class="control-card"><h3>No job data</h3><p>${err.message}</p></div>`;
   }
 }
 
 async function showJobLog(id) {
   const panel = document.getElementById('selected-job-log');
-  const { job } = await apiJSON(`/api/jobs/${id}`);
-  panel.textContent = job.logs.map(l => `[${l.stream}] ${l.text}`).join('\n') || 'No logs yet.';
+  try {
+    const { job } = await apiJSON(`/api/jobs/${id}`);
+    panel.textContent = job.logs.map(l => `[${l.stream}] ${l.text}`).join('\n') || 'No logs yet.';
+  } catch (err) {
+    panel.textContent = `Could not load logs: ${err.message}`;
+  }
 }
 
 async function renderSourceHealth() {
@@ -1980,16 +2150,25 @@ async function queueContactTask() {
 // ── SSE Connection ──────────────────────────────────────────────────
 
 function connectSSE() {
+  if (sseConnection) {
+    sseConnection.close();
+    sseConnection = null;
+  }
   try {
     const es = new EventSource(`${API_BASE}/stream`);
+    sseConnection = es;
     es.onopen = () => {
+      if (reconnectTimer) {
+        clearTimeout(reconnectTimer);
+        reconnectTimer = null;
+      }
       document.getElementById('sse-dot').style.background = 'var(--accent-green)';
       document.getElementById('sse-text').textContent = 'Live — connected to server';
     };
     es.onmessage = (e) => {
       const data = JSON.parse(e.data);
       if (data.type === 'data_updated' || data.type === 'data_added') {
-        renderActionPlan(); renderLiveJobs(); renderPhdRadar(); renderPulse(); renderSystem(); renderJobs(); renderAgentTasks();
+        queueRenderAllPanels();
         const log = document.getElementById('event-log');
         log.innerHTML = `<div style="margin-bottom:0.3rem;">[${new Date().toLocaleTimeString()}] ${data.type}: ${data.file}</div>` + log.innerHTML;
       }
@@ -2004,9 +2183,18 @@ function connectSSE() {
       }
     };
     es.onerror = () => {
+      if (sseConnection) {
+        sseConnection.close();
+        sseConnection = null;
+      }
       document.getElementById('sse-dot').style.background = 'var(--accent-warn)';
       document.getElementById('sse-text').textContent = 'Reconnecting...';
-      setTimeout(connectSSE, 5000);
+      if (!reconnectTimer) {
+        reconnectTimer = setTimeout(() => {
+          reconnectTimer = null;
+          connectSSE();
+        }, 5000);
+      }
     };
   } catch {
     document.getElementById('sse-dot').style.background = 'var(--text-muted)';
@@ -2017,7 +2205,7 @@ function connectSSE() {
 // ── Boot ────────────────────────────────────────────────────────────
 
 document.querySelectorAll('#workauth-filters input').forEach(input => input.addEventListener('change', renderLiveJobs));
-renderActionPlan(); renderLiveJobs(); renderPhdRadar(); renderPulse(); renderSystem(); renderActions(); renderJobs(); renderAgentTasks(); renderContacts();
+renderAllPanels();
 connectSSE();
 
 setInterval(() => { renderPhdRadar(); }, 60000);

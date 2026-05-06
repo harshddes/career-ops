@@ -14,6 +14,7 @@
     "gate": "node deep-research-gate.mjs",
     "gate:status": "node deep-research-gate.mjs --status",
     "budget:reset": "node deep-research-gate.mjs --reset",
+    "install:startup": "powershell -ExecutionPolicy Bypass -File scripts/install-user-startup.ps1 -Mode assisted",
     "install:windows-task": "powershell -ExecutionPolicy Bypass -File scripts/register-windows-task.ps1 -Mode assisted"
   },
   "dependencies": {

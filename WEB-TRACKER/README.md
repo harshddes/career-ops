@@ -59,14 +59,21 @@ The queue lives in `WEB-TRACKER/data/agent-tasks.ndjson` and is ignored by git.
 
 ## Windows Daily Automation
 
-Register a login task:
+Install no-admin auto-start (current user Startup folder):
+
+```powershell
+cd WEB-TRACKER
+npm run install:startup
+```
+
+This creates a Startup entry that runs `run.mjs --mode assisted --no-open` at login. Assisted mode runs scans and syncs, while applications and emails remain review-only.
+
+Optional fallback (may require higher permissions in some environments):
 
 ```powershell
 cd WEB-TRACKER
 npm run install:windows-task
 ```
-
-This starts `run.mjs --mode assisted --no-open` at login. Assisted mode runs scans and syncs, while applications and emails remain review-only.
 
 ## Key Files
 

@@ -234,13 +234,21 @@ careerOpsWatcher.on('add', () => triggerSync());
 app.get('/', (req, res) => res.redirect('/dashboard/fusion-pivot-dashboard.html'));
 
 export function startServer(port = PORT, host = HOST) {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
+    let settled = false;
     const server = app.listen(port, host, () => {
       console.log(`\n  Dashboard: http://${host}:${port}`);
       console.log(`  SSE stream: http://${host}:${port}/stream`);
       console.log(`  Data API: http://${host}:${port}/data/<file>.json`);
       console.log(`  Control API: http://${host}:${port}/api/actions\n`);
+      settled = true;
       resolve(server);
+    });
+    server.on('error', (err) => {
+      if (!settled) {
+        settled = true;
+        reject(err);
+      }
     });
   });
 }

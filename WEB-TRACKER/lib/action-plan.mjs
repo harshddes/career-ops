@@ -2,7 +2,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { dirname } from 'path';
 
 const DAY_MS = 86_400_000;
-const ACTIVE_STATUSES = new Set(['today', 'in_progress', 'blocked', 'waiting']);
+const ACTIVE_STATUSES = new Set(['today', 'in_progress', 'blocked', 'waiting', 'deferred']);
 const CLOSED_STATUSES = new Set(['done', 'archived']);
 
 function isoDate(date = new Date()) {
@@ -222,18 +222,23 @@ export class ActionPlanStore {
     if (!task) return null;
 
     const today = isoDate(now);
+    const nowIso = new Date().toISOString();
     if (action === 'done') {
       task.status = 'done';
-      task.completed_at = new Date().toISOString();
+      task.completed_at = nowIso;
       task.progress = task.target || task.progress || 1;
+      task.last_action = 'done';
+      task.last_action_at = nowIso;
       if (!plan.active_days.includes(today)) plan.active_days.push(today);
     } else if (action === 'defer') {
       task.defer_count = (task.defer_count || 0) + 1;
       task.due_date = addDays(now, task.defer_count >= 2 ? 1 : 1);
-      task.status = 'today';
+      task.status = 'deferred';
       task.adaptation = task.defer_count >= 2
         ? 'This kept slipping, so it has been shrunk to the smallest useful next step.'
         : 'Moved to tomorrow. Do not let it become weekend debt.';
+      task.last_action = 'defer';
+      task.last_action_at = nowIso;
       if (task.defer_count >= 2) {
         task.effort = '5 min';
         task.next_action = this.tinyAction(task);
@@ -242,16 +247,24 @@ export class ActionPlanStore {
       task.status = 'blocked';
       task.blocked_reason = input.reason || 'unclear';
       task.next_action = this.nextActionForBlocker(task.blocked_reason, task);
+      task.last_action = 'blocked';
+      task.last_action_at = nowIso;
     } else if (action === 'waiting') {
       task.status = 'waiting';
       task.waiting_on = input.waiting_on || 'someone else';
       task.follow_up_date = input.follow_up_date || addDays(now, 3);
       task.next_action = `Wait until ${task.follow_up_date}, then follow up if there is no response.`;
+      task.last_action = 'waiting';
+      task.last_action_at = nowIso;
     } else if (action === 'progress') {
       task.progress = Math.max(0, Number(input.progress || 0));
+      task.last_action = 'progress';
+      task.last_action_at = nowIso;
     } else if (action === 'reactivate') {
       task.status = 'today';
       task.due_date = today;
+      task.last_action = 'reactivate';
+      task.last_action_at = nowIso;
     }
 
     this.save(plan);
