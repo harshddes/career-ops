@@ -35,13 +35,27 @@ The evaluation uses 6 blocks (A-F) with a global score of 1-5:
 | Comp | Salary vs market (5=top quartile, 1=well below) |
 | Cultural signals | Company culture, growth, stability, remote policy |
 | Red flags | Blockers, warnings (negative adjustments) |
+| **Visa & Work Auth** | ITAR/export-control restrictions, sponsorship feasibility (see Block H in oferta.md) |
 | **Global** | Weighted average of above |
+
+**Visa & Work Auth dimension:**
+- If `config/profile.yml` `visa_status` is not "U.S. Citizen" or "Permanent Resident", Block H in `modes/oferta.md` MUST run before scoring.
+- If Block H verdict is **SKIP**, the global score is overridden: mark the role as SKIP regardless of the A-F score. Do NOT generate a PDF.
+- If Block H verdict is **Proceed with Caution** or **High Risk**, add a negative adjustment to the global score (-0.5 for Caution, -1.0 for High Risk) and note the risk prominently.
+- ITAR "must be U.S. person" language is a **hard blocker** for F-1 OPT candidates. Security clearance requirements (TS/SCI, Secret) are also hard blockers.
+
+**Red flags dimension -- additional signals:**
+- ITAR/EAR/export-control language in JD
+- Security clearance requirements
+- "U.S. persons only" or "U.S. citizens only"
+- Company has no H-1B sponsorship history for a candidate who needs sponsorship
 
 **Score interpretation:**
 - 4.5+ → Strong match, recommend applying immediately
 - 4.0-4.4 → Good match, worth applying
 - 3.5-3.9 → Decent but not ideal, apply only if specific reason
 - Below 3.5 → Recommend against applying (see Ethical Use in AGENTS.md)
+- **SKIP** → Visa hard block -- do not apply regardless of A-F score
 
 ## Posting Legitimacy (Block G)
 

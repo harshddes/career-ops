@@ -1,96 +1,186 @@
-# Modo: pdf — Generación de PDF ATS-Optimizado
+# Mode: pdf -- ATS-Optimized PDF Generation
 
-## Pipeline completo
+## Full Pipeline
 
-1. Lee `cv.md` como fuentes de verdad
-2. Pide al usuario el JD si no está en contexto (texto o URL)
-3. Extrae 15-20 keywords del JD
-4. Detecta idioma del JD → idioma del CV (EN default)
-5. Detecta ubicación empresa → formato papel:
-   - US/Canada → `letter`
-   - Resto del mundo → `a4`
-6. Detecta arquetipo del rol → adapta framing
-7. Reescribe Professional Summary inyectando keywords del JD + exit narrative bridge ("Built and sold a business. Now applying systems thinking to [domain del JD].")
-8. Selecciona top 3-4 proyectos más relevantes para la oferta
-9. Reordena bullets de experiencia por relevancia al JD
-10. Construye competency grid desde requisitos del JD (6-8 keyword phrases)
-11. Inyecta keywords naturalmente en logros existentes (NUNCA inventa)
-12. Genera HTML completo desde template + contenido personalizado
-13. Lee `name` de `config/profile.yml` → normaliza a kebab-case lowercase (e.g. "John Doe" → "john-doe") → `{candidate}`
-14. Escribe HTML a `/tmp/cv-{candidate}-{company}.html`
-15. Ejecuta: `node generate-pdf.mjs /tmp/cv-{candidate}-{company}.html output/cv-{candidate}-{company}-{YYYY-MM-DD}.pdf --format={letter|a4}`
-15. Reporta: ruta del PDF, nº páginas, % cobertura de keywords
+1. Read `cv.md` as the single source of truth for all content
+2. The JD must be in context (text or URL). If not, ask for it
+3. Extract 15-20 keywords from the JD
+4. Detect JD language (EN default)
+5. Detect company location for paper format:
+   - US/Canada -> `letter`
+   - Rest of world -> `a4`
+6. Detect role archetype -> adapt framing per `modes/_profile.md`
+7. Rewrite Professional Summary:
+   - Inject top 5 JD keywords naturally
+   - Open with exit narrative bridge from `config/profile.yml` (e.g. "Mechanical engineering foundation moved into space systems and plasma diagnostics instrumentation at Michigan.")
+   - End with portfolio URL inline (e.g. "Portfolio: harshddes.github.io")
+8. Select top 3-4 most relevant projects for this specific role
+9. Reorder experience bullets by relevance to JD (most relevant role first)
+10. Build competency grid from JD requirements (6-8 keyword phrases as tags)
+11. Inject JD keywords naturally into existing achievements (NEVER invent skills or experience)
+12. Generate HTML with the project's design system (Space Grotesk + DM Sans, gradient header, competency tags)
+13. Read `name` from `config/profile.yml` -> normalize to kebab-case lowercase -> `{candidate}`
+14. Write HTML to `output/cv-{candidate}-{company}-{YYYY-MM-DD}.html`
+15. Run: `node generate-pdf.mjs output/cv-{candidate}-{company}-{YYYY-MM-DD}.html output/cv-{candidate}-{company}-{YYYY-MM-DD}.pdf --format={letter|a4}`
+16. **DYNAMIC 1-PAGE CHECK (MANDATORY):** After generating, check page count. If >1 page, apply trim loop:
+    a. Remove the lowest-relevance work experience entry (furthest from JD match)
+    b. If still >1, condense the lowest-relevance project description
+    c. If still >1, reduce body font-size by 0.3px and line-height by 0.05
+    d. Regenerate and re-check. Repeat until exactly 1 page.
+    e. NEVER go below 8.5px body font or 1.25 line-height -- if still >1 page at that floor, remove another low-relevance entry
+17. If pages == 1 and significant whitespace remains at bottom (>15% of page blank), add content back:
+    a. Add next-most-relevant experience entry or project from `cv.md`
+    b. Expand bullet detail from `cv.md` source text (use full original wording, not condensed)
+    c. Regenerate and re-check stays at 1 page
+18. Report: PDF path, page count, file size
+19. **ATS TEXT EXTRACTION VERIFY (MANDATORY):** After final PDF is confirmed at 1 page:
+    a. Open the PDF in Playwright (`browser_navigate` to `file://` path)
+    b. Select all text on the page (`Ctrl+A` or equivalent) and extract it
+    c. Check that ALL section headers are present in extracted text: "Professional Summary", "Core Competencies", "Work Experience", "Selected Projects", "Education", "Skills", "Honors"
+    d. Check that candidate name, email, and phone are extractable
+    e. If any section is missing or text is garbled, flag the PDF as ATS-unsafe and investigate (likely a font embedding or layout issue)
+    f. Report: "ATS text extraction: PASS (all 7 sections detected)" or "ATS text extraction: FAIL (missing: [list])"
+20. **(OPTIONAL) External ATS score check:** User can request `ats-check` to upload the PDF to resumeatschecker.com or atsresumeschecker.com via browser automation and retrieve the score. This is not run automatically.
 
-## Reglas ATS (parseo limpio)
+## STRICT 1-PAGE RULE
 
-- Layout single-column (sin sidebars, sin columnas paralelas)
-- Headers estándar: "Professional Summary", "Work Experience", "Education", "Skills", "Certifications", "Projects"
-- Sin texto en imágenes/SVGs
-- Sin info crítica en headers/footers del PDF (ATS los ignora)
-- UTF-8, texto seleccionable (no rasterizado)
-- Sin tablas anidadas
-- Keywords del JD distribuidas: Summary (top 5), primer bullet de cada rol, Skills section
+Every generated PDF MUST be exactly 1 page. No exceptions. The dynamic check in steps 16-17 enforces this. The goal is to MAXIMIZE content density within the 1-page constraint -- fill the page, don't leave it half empty.
 
-## Diseño del PDF
+## ATS Rules (clean parsing)
+
+- Single-column layout (no sidebars, no parallel columns)
+- Standard section headers: "Professional Summary", "Work Experience", "Education", "Skills", "Projects", "Honors"
+- No text in images/SVGs
+- No critical info in PDF headers/footers (ATS ignores them)
+- UTF-8, selectable text (not rasterized)
+- No nested tables
+- JD keywords distributed: Summary (top 5), first bullet of each role, Skills section
+
+## Design Spec
 
 - **Fonts**: Space Grotesk (headings, 600-700) + DM Sans (body, 400-500)
 - **Fonts self-hosted**: `fonts/`
-- **Header**: nombre en Space Grotesk 24px bold + línea gradiente `linear-gradient(to right, hsl(187,74%,32%), hsl(270,70%,45%))` 2px + fila de contacto
-- **Section headers**: Space Grotesk 13px, uppercase, letter-spacing 0.05em, color cyan primary
-- **Body**: DM Sans 11px, line-height 1.5
-- **Company names**: color accent purple `hsl(270,70%,45%)`
-- **Márgenes**: 0.6in
-- **Background**: blanco puro
+- **Fallback font stacks (MANDATORY for ATS safety):** Body CSS must use `font-family: 'DM Sans', Calibri, Arial, sans-serif;` and headings must use `font-family: 'Space Grotesk', Calibri, Arial, sans-serif;` so that ATS parsers that ignore embedded web fonts still extract clean text via system fonts.
+- **Header**: Name in Space Grotesk 22px bold + gradient line `linear-gradient(to right, hsl(187,74%,32%), hsl(270,70%,45%))` 2px + contact row
+- **Section headers**: Space Grotesk 10px, uppercase, letter-spacing 0.06em, color cyan `hsl(187,74%,32%)`
+- **Body**: DM Sans 9.2px, line-height 1.35 (calibrated for 1-page fit with full content)
+- **Company names**: accent purple `hsl(270,70%,45%)`
+- **Section margins**: 5px bottom
+- **Job margins**: 4px bottom
+- **Background**: pure white
 
-## Orden de secciones (optimizado "6-second recruiter scan")
+These sizes are calibrated so that a full CV with 4-5 experience entries, 3 projects, education, skills, and honors fits exactly 1 page on US Letter. If content volume changes significantly, the dynamic check loop adjusts.
 
-1. Header (nombre grande, gradiente, contacto, link portfolio)
-2. Professional Summary (3-4 líneas, keyword-dense)
-3. Core Competencies (6-8 keyword phrases en flex-grid)
-4. Work Experience (cronológico inverso)
-5. Projects (top 3-4 más relevantes)
-6. Education & Certifications
-7. Skills (idiomas + técnicos)
+## Section Order (optimized for 6-second recruiter scan)
 
-## Estrategia de keyword injection (ético, basado en verdad)
+1. Header (name, gradient, contact row with portfolio link)
+2. Professional Summary (3-4 lines, keyword-dense, exit narrative bridge, portfolio URL)
+3. Core Competencies (6-9 keyword phrases in flex-grid tags)
+4. Work Experience (reordered by JD relevance, not strictly chronological)
+5. Selected Projects (top 3-4 most relevant)
+6. Education
+7. Skills
+8. Honors
 
-Ejemplos de reformulación legítima:
-- JD dice "RAG pipelines" y CV dice "LLM workflows with retrieval" → cambiar a "RAG pipeline design and LLM orchestration workflows"
-- JD dice "MLOps" y CV dice "observability, evals, error handling" → cambiar a "MLOps and observability: evals, error handling, cost monitoring"
-- JD dice "stakeholder management" y CV dice "collaborated with team" → cambiar a "stakeholder management across engineering, operations, and business"
+## Abbreviation and Naming Rules (CRITICAL)
 
-**NUNCA añadir skills que el candidato no tiene. Solo reformular experiencia real con el vocabulario exacto del JD.**
+### Abbreviations
+- On first use of any non-obvious abbreviation, write the full form followed by the abbreviation in parentheses. All subsequent uses can use the abbreviation alone.
+- **Obvious abbreviations that do NOT need expansion:** FPGA, PID, NASA, AAS, GPS, CFD, CAE, RF, DAQ, DMA, MHD, ADC, HV, CAD, ATS, TVAC, GPA, LED, USB, API, SDK, SQL
+- **Abbreviations that MUST be expanded on first use:**
+  - SA Cup -> Spaceport America Cup (SA Cup)
+  - IREC -> Intercollegiate Rocket Engineering Competition (IREC)
+  - SPRL -> Space Physics Research Lab (SPRL)
+  - SHRG -> Solar and Heliospheric Research Group (SHRG)
+  - SRAD -> Student Researched and Developed (SRAD)
+  - FSW -> Flight Software (FSW)
+  - CCMC -> Community Coordinated Modeling Center (CCMC)
+  - SWMF -> Space Weather Modeling Framework (SWMF)
+  - MAGE -> Multiscale Atmosphere-Geospace Environment (MAGE)
+  - CEM -> Channel Electron Multiplier (CEM)
+  - ESA -> Electrostatic Analyzer (ESA)
+  - CSA -> charge-sensitive amplifier (CSA)
+  - MCA -> multichannel analyzer (MCA)
+  - FoM -> figure of merit (FoM)
+  - FWHM -> full width at half maximum (FWHM)
+  - TOF -> time-of-flight (TOF)
+  - SSD -> Solid-State Detector (SSD)
+  - UOP -> Uranian Orbiter and Probe (UOP)
+  - DFM/DFA -> Design for Manufacturing/Assembly (DFM/DFA)
+  - AI&T -> Assembly, Integration, and Test (AI&T)
+  - V&V -> Verification and Validation (V&V)
+- When in doubt, expand it. Better to over-expand than leave a recruiter confused.
+
+### Institution and Organization Names
+- ALWAYS use the full official name on first mention. Never use only an acronym for a university or organization:
+  - VIT -> Vellore Institute of Technology (VIT)
+  - CANSAT -> use "CANSAT" (it is the established competition name, not an abbreviation)
+- For well-known organizations where the acronym IS the brand (NASA, AAS, IEEE), the acronym alone is fine.
+
+### Person Names
+- ALWAYS use full names for advisors and collaborators. Never "Prof. Battel" or "Dr. Leon" alone:
+  - "Advisor: Dr. Omar Leon" (full first + last)
+  - "Advisor: Prof. Steven Battel" (full first + last)
+  - "Advisor: Prof. Stefano Livi" (full first + last)
+  - "Advisor: Prof. Cheng Li" (full first + last)
+  - "Advisor: Mojtaba Akhavan-Tafti" (full first + last)
+
+### Honors Section Rules
+- Do NOT just list a rank/achievement. Always include what was technically built or demonstrated:
+  - BAD: "CANSAT 2022 (NASA & AAS) -- 7th worldwide out of 42 teams."
+  - GOOD: "CANSAT 2022 (NASA & AAS) -- Engineered a 10 m tether-deployment mechanism with DC motor worm-gear spool and dual-servo 2-axis gimbal for camera stabilization; ranked 7th worldwide out of 42 teams."
+  - BAD: "Special Achievers Award (VIT)"
+  - GOOD: "Special Achievers Award, Vellore Institute of Technology (2019-22) -- Recognized for international competition representation including rocketry and satellite design."
+- Keep each honor entry to 1-2 lines. Be technical but concise.
+
+## Keyword Injection Strategy (ethical, truth-based)
+
+Examples of legitimate reformulation:
+- JD says "instrument operations" and CV says "test rig characterization" -> use "instrument operations and test rig characterization"
+- JD says "ground support equipment" and CV says "environmental test facilitator" -> use "ground support equipment development and environmental test facilitation"
+- JD says "anomaly detection" and CV says "root cause analysis" -> use "anomaly detection and root cause analysis"
+
+**NEVER add skills the candidate does not have. Only reformulate real experience using the exact vocabulary of the JD.**
+
+## Content Sourcing Rules
+
+- ALL content must come from `cv.md`. Do not invent bullets, metrics, or experiences.
+- Use the FULL original bullet text from `cv.md` as the starting point. Condense only if needed for 1-page fit (step 16), and even then prefer removing a low-relevance entry over butchering a high-relevance bullet.
+- When rewriting bullets for JD alignment, the factual content must remain identical. Only the framing/vocabulary changes.
+
+## Professional Writing Rules
+
+(Inherited from `modes/_shared.md` -- these apply to all candidate-facing text)
+
+- Native tech English. Short sentences, action verbs, no passive voice.
+- Case study URLs in Professional Summary body (recruiter may only read the top third).
+- Avoid cliches: "passionate about", "results-oriented", "proven track record", "leveraged", "spearheaded", "facilitated", "synergies", "robust", "seamless", "cutting-edge", "innovative"
+- Vary sentence structure. Don't start every bullet with the same verb.
+- Prefer specifics over abstractions. Name tools, name projects, name outcomes.
 
 ## Template HTML
 
-Usar el template en `cv-template.html`. Reemplazar los placeholders `{{...}}` con contenido personalizado:
+Use the project's design system (Space Grotesk + DM Sans, gradient header, competency tags, purple accents). The base template is in `templates/cv-template.html` for reference, but the actual HTML is generated inline with the calibrated sizing from the Design Spec above.
 
-| Placeholder | Contenido |
-|-------------|-----------|
-| `{{LANG}}` | `en` o `es` |
-| `{{PAGE_WIDTH}}` | `8.5in` (letter) o `210mm` (A4) |
-| `{{NAME}}` | (from profile.yml) |
-| `{{PHONE}}` | (from profile.yml — include with its separator only when `profile.yml` has a non-empty `phone` value; omit both `<span>` and `<span class="separator">` otherwise) |
-| `{{EMAIL}}` | (from profile.yml) |
-| `{{LINKEDIN_URL}}` | [from profile.yml] |
-| `{{LINKEDIN_DISPLAY}}` | [from profile.yml] |
-| `{{PORTFOLIO_URL}}` | [from profile.yml] (o /es según idioma) |
-| `{{PORTFOLIO_DISPLAY}}` | [from profile.yml] (o /es según idioma) |
-| `{{LOCATION}}` | [from profile.yml] |
-| `{{SECTION_SUMMARY}}` | Professional Summary / Resumen Profesional |
-| `{{SUMMARY_TEXT}}` | Summary personalizado con keywords |
-| `{{SECTION_COMPETENCIES}}` | Core Competencies / Competencias Core |
-| `{{COMPETENCIES}}` | `<span class="competency-tag">keyword</span>` × 6-8 |
-| `{{SECTION_EXPERIENCE}}` | Work Experience / Experiencia Laboral |
-| `{{EXPERIENCE}}` | HTML de cada trabajo con bullets reordenados |
-| `{{SECTION_PROJECTS}}` | Projects / Proyectos |
-| `{{PROJECTS}}` | HTML de top 3-4 proyectos |
-| `{{SECTION_EDUCATION}}` | Education / Formación |
-| `{{EDUCATION}}` | HTML de educación |
-| `{{SECTION_CERTIFICATIONS}}` | Certifications / Certificaciones |
-| `{{CERTIFICATIONS}}` | HTML de certificaciones |
-| `{{SECTION_SKILLS}}` | Skills / Competencias |
-| `{{SKILLS}}` | HTML de skills |
+Placeholder reference (for content generation):
+
+| Placeholder | Content |
+|---|---|
+| `{{NAME}}` | from profile.yml |
+| `{{PHONE}}` | from profile.yml |
+| `{{EMAIL}}` | from profile.yml |
+| `{{LINKEDIN_URL}}` | from profile.yml |
+| `{{LINKEDIN_DISPLAY}}` | from profile.yml |
+| `{{PORTFOLIO_URL}}` | from profile.yml |
+| `{{PORTFOLIO_DISPLAY}}` | from profile.yml |
+| `{{LOCATION}}` | from profile.yml |
+| `{{SUMMARY_TEXT}}` | Tailored summary with JD keywords + exit narrative + portfolio URL |
+| `{{COMPETENCIES}}` | `<span class="competency-tag">keyword</span>` x 6-9 |
+| `{{EXPERIENCE}}` | HTML for each work entry, reordered by JD relevance |
+| `{{PROJECTS}}` | HTML for top 3-4 projects |
+| `{{EDUCATION}}` | HTML for education entries |
+| `{{SKILLS}}` | HTML for skills grid |
+| `{{HONORS}}` | HTML for honors with technical descriptions |
 
 ## Canva CV Generation (optional)
 
@@ -98,7 +188,7 @@ If `config/profile.yml` has `cv.canva_resume_design_id` set, offer the user a ch
 - **"HTML/PDF (fast, ATS-optimized)"** — existing flow above
 - **"Canva CV (visual, design-preserving)"** — new flow below
 
-If the user has no `cv.canva_resume_design_id`, skip this prompt and use the HTML/PDF flow.
+If the user has no `cv.canva_resume_design_id`, skip this prompt and use the HTML/PDF flow. If a legacy top-level `canva_resume_design_id` is present, treat it as equivalent and recommend moving it under `cv.` later.
 
 ### Canva workflow
 
@@ -108,72 +198,40 @@ a. `export-design` the base design (using `cv.canva_resume_design_id`) as PDF �
 b. `import-design-from-url` using that download URL → creates a new editable design (the duplicate)
 c. Note the new `design_id` for the duplicate
 
-#### Step 2 — Read the design structure
-
-a. `get-design-content` on the new design → returns all text elements (richtexts) with their content
-b. Map text elements to CV sections by content matching:
-   - Look for the candidate's name → header section
-   - Look for "Summary" or "Professional Summary" → summary section
-   - Look for company names from cv.md → experience sections
-   - Look for degree/school names → education section
-   - Look for skill keywords → skills section
+#### Step 2 -- Read the design structure
+a. `get-design-content` on the new design -> returns all text elements with their content
+b. Map text elements to CV sections by content matching
 c. If mapping fails, show the user what was found and ask for guidance
 
-#### Step 3 — Generate tailored content
-
+#### Step 3 -- Generate tailored content
 Same content generation as the HTML flow (Steps 1-11 above):
 - Rewrite Professional Summary with JD keywords + exit narrative
 - Reorder experience bullets by JD relevance
 - Select top competencies from JD requirements
 - Inject keywords naturally (NEVER invent)
+- Apply ALL abbreviation, naming, and honors rules from this file
 
-**IMPORTANT — Character budget rule:** Each replacement text MUST be approximately the same length as the original text it replaces (within ±15% character count). If tailored content is longer, condense it. The Canva design has fixed-size text boxes — longer text causes overlapping with adjacent elements. Count the characters in each original element from Step 2 and enforce this budget when generating replacements.
+**Character budget rule:** Each replacement text MUST be approximately the same length as the original (within +/-15% character count). Canva text boxes are fixed-size.
 
-#### Step 4 — Apply edits
-
+#### Step 4 -- Apply edits
 a. `start-editing-transaction` on the duplicate design
-b. `perform-editing-operations` with `find_and_replace_text` for each section:
-   - Replace summary text with tailored summary
-   - Replace each experience bullet with reordered/rewritten bullets
-   - Replace competency/skills text with JD-matched terms
-   - Replace project descriptions with top relevant projects
-c. **Reflow layout after text replacement:**
-   After applying all text replacements, the text boxes auto-resize but neighboring elements stay in place. This causes uneven spacing between work experience sections. Fix this:
-   1. Read the updated element positions and dimensions from the `perform-editing-operations` response
-   2. For each work experience section (top to bottom), calculate where the bullets text box ends: `end_y = top + height`
-   3. The next section's header should start at `end_y + consistent_gap` (use the original gap from the template, typically ~30px)
-   4. Use `position_element` to move the next section's date, company name, role title, and bullets elements to maintain even spacing
-   5. Repeat for all work experience sections
-d. **Verify layout before commit:**
-   - `get-design-thumbnail` with the transaction_id and page_index=1
-   - Visually inspect the thumbnail for: text overlapping, uneven spacing, text cut off, text too small
-   - If issues remain, adjust with `position_element`, `resize_element`, or `format_text`
-   - Repeat until layout is clean
-d. Show the user the final preview and ask for approval
-e. `commit-editing-transaction` to save (ONLY after user approval)
+b. `perform-editing-operations` with `find_and_replace_text` for each section
+c. Reflow layout after text replacement (adjust element positions for even spacing)
+d. Verify layout before commit via `get-design-thumbnail`
+e. Show user the final preview and ask for approval
+f. `commit-editing-transaction` to save (ONLY after user approval)
 
-#### Step 5 — Export and download PDF
-
-a. `export-design` the duplicate as PDF (format: a4 or letter based on JD location)
-b. **IMMEDIATELY** download the PDF using Bash:
-   ```bash
-   curl -sL -o "output/cv-{candidate}-{company}-canva-{YYYY-MM-DD}.pdf" "{download_url}"
-   ```
-   The export URL is a pre-signed S3 link that expires in ~2 hours. Download it right away.
-c. Verify the download:
-   ```bash
-   file output/cv-{candidate}-{company}-canva-{YYYY-MM-DD}.pdf
-   ```
-   Must show "PDF document". If it shows XML or HTML, the URL expired — re-export and retry.
-d. Report: PDF path, file size, Canva design URL (for manual tweaking)
+#### Step 5 -- Export and download PDF
+a. `export-design` the duplicate as PDF
+b. Download immediately (pre-signed URL expires in ~2 hours)
+c. Verify download: `file output/cv-{candidate}-{company}-canva-{YYYY-MM-DD}.pdf` must show "PDF document"
+d. Report: PDF path, file size, Canva design URL
 
 #### Error handling
+- If `import-design-from-url` fails -> fall back to HTML/PDF pipeline
+- If text elements can't be mapped -> warn user, ask for manual mapping
+- Always provide the Canva design URL for manual tweaking
 
-- If `import-design-from-url` fails → fall back to HTML/PDF pipeline with message
-- If text elements can't be mapped → warn user, show what was found, ask for manual mapping
-- If `find_and_replace_text` finds no matches → try broader substring matching
-- Always provide the Canva design URL so the user can edit manually if auto-edit fails
+## Post-generation
 
-## Post-generación
-
-Actualizar tracker si la oferta ya está registrada: cambiar PDF de ❌ a ✅.
+Update tracker if the offer is already registered: change PDF from X to checkmark.

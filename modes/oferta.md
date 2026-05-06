@@ -142,9 +142,86 @@ Analyze the job posting for signals that indicate whether this is a real, active
 
 ---
 
-## Post-evaluación
+## Block H -- Visa & Work Authorization Analysis (MANDATORY)
 
-**SIEMPRE** después de generar los bloques A-G:
+**This block runs BEFORE scoring and PDF generation.** If visa status is a hard blocker, the score is irrelevant and no PDF should be generated.
+
+**When to run:** ALWAYS run this block if `config/profile.yml` field `visa_status` is anything other than "U.S. Citizen" or "Permanent Resident". Skip this block only for U.S. citizens/green card holders.
+
+### Step 1 -- Detect restrictions in JD text
+
+Scan the full JD text (already extracted in Paso 0) for these keywords:
+
+**Hard-block signals:**
+- "must be a U.S. person" / "U.S. persons only"
+- "U.S. citizens only" / "U.S. citizenship required"
+- "active security clearance required" / "TS/SCI required" / "Secret clearance required"
+- "ITAR restricted" + "must be U.S. person"
+
+**Soft-block signals:**
+- "This position requires compliance with Export Control Laws"
+- "may require export authorization"
+- "ability to obtain clearance"
+- "ITAR/EAR" mentioned without explicit "must be U.S. person"
+- "eligible to access export controlled information without a required export authorization, or eligible and reasonably likely to obtain the required export authorization" (this is the softer ITAR clause -- some companies will pursue a license for the right candidate)
+
+**No restriction detected:** JD has no export/citizenship/clearance language at all.
+
+### Step 2 -- Research company sponsorship history
+
+Run 2-3 WebSearch queries:
+- `"{company}" H-1B visa sponsorship site:h1bdata.info OR site:h1b.ai`
+- `"{company}" green card PERM sponsorship`
+- `"{company}" hires foreign nationals` (for smaller companies with no H-1B data)
+
+Classify:
+- **Active sponsor:** Company has recent H-1B LCA filings (within last 2 years) or public statements about sponsoring
+- **Rare sponsor:** Few or old H-1B filings, or only for very senior roles
+- **No record:** No H-1B filings found and no public evidence of sponsoring
+
+### Step 3 -- Produce a verdict
+
+| JD Restriction | Company Sponsors? | Verdict |
+|---|---|---|
+| Hard block (U.S. person only) | Any | **SKIP** -- do not apply, do not generate PDF |
+| TS/SCI or Secret clearance required | Any | **SKIP** -- cannot obtain as F-1 |
+| Soft block (export auth possible) | Active sponsor | **Proceed with Caution** -- note risk in report header |
+| Soft block | Rare/No record | **High Risk** -- likely skip unless exceptionally strong fit |
+| No restriction | Active sponsor | **Clear** -- apply normally |
+| No restriction | Rare/No record | **Proceed with Caution** -- ask about sponsorship early in process |
+
+### Step 4 -- Impact on pipeline
+
+- **SKIP verdict:** Still write the report (for tracking), but:
+  - Mark status as `SKIP` in tracker (not `Evaluated`)
+  - Do NOT generate a PDF
+  - Add `**Visa:** SKIP -- {reason}` to the report header
+  - Explain the blocking restriction clearly in the report body
+- **Proceed with Caution verdict:**
+  - Generate PDF as normal
+  - Add `**Visa:** Caution -- {reason}` to the report header
+  - Note the specific risk in Block H of the report
+- **Clear verdict:**
+  - Generate PDF as normal
+  - Add `**Visa:** Clear` to the report header
+
+### Output format in report
+
+```
+## H) Visa & Work Authorization
+
+**JD Restriction Level:** {Hard Block / Soft Block / No Restriction}
+**Restriction Evidence:** {exact quotes from JD}
+**Company Sponsorship History:** {Active / Rare / No Record} -- {details}
+**Verdict:** {SKIP / Proceed with Caution / High Risk / Clear}
+**Reason:** {1-2 sentence explanation}
+```
+
+---
+
+## Post-evaluation
+
+ALWAYS after generating blocks A-H:
 
 ### 1. Guardar report .md
 
@@ -163,7 +240,8 @@ Guardar evaluación completa en `reports/{###}-{company-slug}-{YYYY-MM-DD}.md`.
 **Arquetipo:** {detectado}
 **Score:** {X/5}
 **Legitimacy:** {High Confidence | Proceed with Caution | Suspicious}
-**PDF:** {ruta o pendiente}
+**Visa:** {Clear | Caution -- reason | SKIP -- reason}
+**PDF:** {path or pending or SKIP}
 
 ---
 
@@ -186,10 +264,13 @@ Guardar evaluación completa en `reports/{###}-{company-slug}-{YYYY-MM-DD}.md`.
 (contenido completo del bloque F)
 
 ## G) Posting Legitimacy
-(contenido completo del bloque G)
+(full Block G content)
 
-## H) Draft Application Answers
-(solo si score >= 4.5 — borradores de respuestas para el formulario de aplicación)
+## H) Visa & Work Authorization
+(full Block H content -- restriction level, evidence, sponsorship history, verdict)
+
+## I) Draft Application Answers
+(only if score >= 4.5 AND visa verdict is not SKIP)
 
 ---
 
