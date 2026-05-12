@@ -41,6 +41,8 @@
 **Advisor:** Dr. Omar Leon | Space Physics Research Lab (SPRL)
 **Location:** UM-Ann Arbor
 
+- Designing and validating HV discharge-box power, protection, and DAQ interface controls for a hollow-cathode keeper/discharge plasma-source test rig.
+Characterizing remote hollow-cathode ignition and measurement workflow to improve test repeatability; automating HV discharge-box monitoring, protection interlocks, and remote power-supply control during plasma turn-on.
 - Configured Keithley DAQ + TDK Lambda HV sequencing for hollow-cathode discharge testing: 1.3 A constant-current mode, 1300 V supply headroom, and Xenon ignition targets near 500 V / 50 SCCM / 22 PSIA.
 - Built Python/PyVISA + Tkinter DAQ/HV automation for protection interlocks, calibration, remote plasma turn-on, and synchronized logging, reducing ~12-15 manual control/merge steps to ~3-5 GUI actions with 98.6% TDK-context coverage.
 
@@ -50,7 +52,9 @@
 **Report:** [Link](https://drive.google.com/file/d/1C0pvkdFD_uKkH5fhPCAocLPmi3Fg70xb/view?usp=sharing) | **Advisor:** [Prof. Cheng Li](https://clasp.engin.umich.edu/people/li-cheng/)
 **Location:** UM-Ann Arbor
 
-- Ran advisor-built Uranus cloud-resolving simulations on HPC, analyzing atmospheric microphysics, vertical velocity, plume structure, methane condensation, precipitation diagnostics, latent heating, and sedimentation.
+- Researched methods to fine-tune a Snapy+Kintera chemical-kinetics Uranian troposphere cloud-resolving model using microwave radiometric synthetic validation techniques.
+Investigated atmospheric modeling of Uranus, including microphysics implementation and parametric surveys; analyzed Voyager data to co-align and fine-tune the model.
+- Ran Uranus cloud-resolving simulations on HPC, analyzing atmospheric microphysics, vertical velocity, plume structure, methane condensation, precipitation diagnostics, latent heating, and sedimentation.
 - Designed parametric sensitivity sweeps for methane abundance/profile, microphysics, latent heating, and gravity to interpret convective intensity, cloud depth, and plume behavior.
 
 ### FPGA Design Implementation for Solid-State Detector (SSD) Readout Chain
@@ -59,6 +63,7 @@
 **Report:** [Link](https://drive.google.com/file/d/1cb_1Vx5w__6OxFU2j2_Tn59uFXkM9p9M/view?usp=sharing) | **Pres:** [P1](https://drive.google.com/file/d/149WzLOPuB5uX1cVQB2b0kfdt1YkxJpFG/view?usp=sharing)/[P2](https://drive.google.com/file/d/1fP5PyrEaI2-hRiAlK8ebVCq7qUQ7X5Xv/view?usp=sharing) | **Advisor:** [Prof. Stefano Livi](https://clasp.engin.umich.edu/people/livi-stefano/) | SHRG
 **Location:** UM-Ann Arbor
 
+- Optimized hard ADC IPs on FPGA fabric for higher particle energy resolution on SSDs. Replaced analog processing chains using shaping amplifiers with higher sampling rates, finer acquisition control, filtering, and pile-up rejection.
 - Developed a Zynq-7000/Eclypse Z7 SSD readout architecture for digital pulse acquisition, replacing the 1 MSPS XADC path with a 14-bit Zmod ADC 1410 concept at 125 MSPS.
 - Derived ADC bit-depth and sampling-rate requirements from a 25 keV ion charge case, CSA/ENC limits, and quantization-noise constraints.
 - Prototyped MATLAB/Simulink HDL Coder and Vivado co-simulation flows for AXI-stream pulse acquisition, DMA-oriented data movement, and candidate FIR/trapezoidal digital shaping.
@@ -69,6 +74,8 @@
 **Project:** [Link](https://msehgal001.github.io/TestBedz/) | **Advisor:** [Prof. Steven Battel](https://clasp.engin.umich.edu/people/battel-steven/)
 **Location:** UM-Ann Arbor
 
+- Implemented a spacecraft environmental-test feasibility and routing system for SPRL, integrating facility capability models, test-profile constraints, and requirements into automated, contract-ready test plans.
+Developed a Client2Tester matching platform with requirement flowdown, lab-time allocation, and location-based filtering; aligned outputs to thermal-vacuum and vibration documentation practices.
 - Built SPRL test-intake and routing platform using Vanilla JS/Tailwind, Node/Express, SQLite, and JWT/bcrypt with client, builder, and technician role gates.
 - Structured 6 environmental-test profiles to capture requirement flowdown, standards tags, lab-time constraints, cycles, dwell time, target pressure, thermocouple coverage, and mounting needs.
 

@@ -516,6 +516,63 @@ nav::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; 
   font-size: 0.72rem; display: flex; gap: 0.35rem; align-items: center;
 }
 
+.jobs-toolbar {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+  gap: 0.8rem; margin-bottom: 1rem;
+}
+
+.jobs-section {
+  margin-bottom: 2rem;
+}
+
+.jobs-section-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  margin: 1.2rem 0 0.8rem;
+}
+
+.jobs-empty {
+  color: var(--text-muted);
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+  background: var(--bg-card);
+}
+
+.job-apply-toggle {
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  margin: 0.6rem 0;
+}
+
+.job-resource-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+}
+
+.job-resource-link {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--accent-fusion);
+  padding: 0.25rem 0.55rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.66rem;
+  text-decoration: none;
+}
+
+.job-resource-link:hover {
+  border-color: var(--accent-fusion);
+}
+
 .job-log {
   background: #050508; border: 1px solid var(--border); border-radius: 8px;
   font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--text-secondary);
@@ -543,6 +600,199 @@ textarea.control-input, input.control-input, select.control-input {
   width: 100%; background: var(--bg-secondary); color: var(--text-primary);
   border: 1px solid var(--border); border-radius: 6px; padding: 0.6rem;
   font-family: 'DM Sans', sans-serif; margin-bottom: 0.6rem;
+}
+
+.pulse-tracker-table {
+  width: 100%;
+  min-width: 1080px;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.pulse-tracker-table th {
+  text-align: left;
+  padding: 0.6rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+}
+
+.pulse-tracker-table td {
+  padding: 0.6rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.pulse-row-readonly {
+  font-family: 'Space Mono', monospace;
+  color: var(--text-muted);
+}
+
+.pulse-score-cell {
+  min-width: 110px;
+}
+
+input.pulse-edit-field,
+select.pulse-edit-field {
+  width: 100%;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.4rem 0.5rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+}
+
+.pulse-actions {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  min-width: 140px;
+}
+
+.pulse-workspace {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.pulse-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+}
+
+.pulse-toolbar-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: flex-end;
+}
+
+.pulse-toolbar label,
+.column-filter label {
+  display: block;
+  color: var(--text-secondary);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.pulse-toolbar select,
+.pulse-toolbar input,
+.column-filter input,
+.column-filter select,
+.schedule-input {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.45rem 0.55rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+}
+
+.pulse-table-wrap {
+  overflow: auto;
+  max-height: 72vh;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.pulse-tracker-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #11111a;
+}
+
+.pulse-tracker-table th {
+  min-width: 140px;
+}
+
+.pulse-tracker-table th.pulse-col-notes,
+.pulse-tracker-table th.pulse-col-research_interest,
+.pulse-tracker-table th.pulse-col-missions {
+  min-width: 280px;
+}
+
+.pulse-sort-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  padding: 0 0 0.35rem;
+}
+
+.pulse-edit-field.pulse-long-field {
+  min-width: 260px;
+  min-height: 4.6rem;
+  resize: vertical;
+}
+
+textarea.pulse-edit-field {
+  width: 100%;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.45rem 0.55rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+}
+
+.pulse-add-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.pulse-add-row.hidden {
+  display: none;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: 90px repeat(7, minmax(120px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: auto;
+}
+
+.schedule-cell {
+  background: var(--bg-secondary);
+  padding: 0.7rem;
+  min-height: 48px;
+}
+
+.schedule-cell.header {
+  color: var(--accent-fusion);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+}
+
+.schedule-checkbox-cell {
+  text-align: center;
 }
 
 /* Footer */
@@ -659,7 +909,7 @@ footer {
   <h2 class="section-title">Minimum Win</h2>
   <div id="minimum-win"></div>
 
-  <h2 class="section-title">Daily / Weekly / Monthly Goals</h2>
+  <h2 class="section-title">Pipeline Facts</h2>
   <div class="control-grid" id="goal-grid"></div>
 </div>
 
@@ -1341,8 +1591,16 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
 
 <!-- LIVE JOBS TAB -->
 <div id="livejobs" class="tab-content">
-  <h2 class="section-title">Live Fusion Job Feed</h2>
-  <p style="color:var(--text-secondary); margin-bottom:1rem; font-size:0.85rem;" id="livejobs-meta">Loading from scanner...</p>
+  <h2 class="section-title">Jobs To Consider</h2>
+  <p style="color:var(--text-secondary); margin-bottom:1rem; font-size:0.85rem;" id="livejobs-meta">Loading researched jobs...</p>
+  <div id="livejobs-feedback" class="inline-notice" role="status" aria-live="polite"></div>
+  <div class="jobs-toolbar">
+    <div>
+      <button id="livejobs-view-cards" class="control-btn secondary" onclick="setLiveJobsView('cards')">Card view</button>
+      <button id="livejobs-view-table" class="control-btn secondary" onclick="setLiveJobsView('table')">Sheet view</button>
+    </div>
+    <div style="color:var(--text-muted); font-size:0.78rem; font-family:'Space Mono',monospace;">Checked jobs move into Applications.</div>
+  </div>
   <div class="filter-panel" id="workauth-filters">
     <label><input type="checkbox" value="h1b_confirmed"> H-1B confirmed</label>
     <label><input type="checkbox" value="h1b_likely"> H-1B likely</label>
@@ -1352,7 +1610,9 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
     <label><input type="checkbox" value="hide_hard_itar" checked> Hide hard ITAR</label>
     <button class="control-btn secondary" onclick="clearWorkAuthFilters()">Clear Filters</button>
   </div>
-  <div id="livejobs-grid" class="company-grid"></div>
+  <div id="livejobs-to-consider" class="jobs-section"></div>
+  <div id="livejobs-applied" class="jobs-section"></div>
+  <div id="livejobs-closed" class="jobs-section"></div>
 </div>
 
 <!-- PHD RADAR TAB -->
@@ -1366,8 +1626,28 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
 <div id="pulse" class="tab-content">
   <h2 class="section-title">Applications</h2>
   <div class="stats-bar" id="pulse-stats" style="margin-bottom:2rem;"></div>
+  <div id="pulse-feedback" class="inline-notice" role="status" aria-live="polite"></div>
   <h2 class="section-title">Application Tracker</h2>
-  <div style="overflow-x:auto; margin-bottom:2rem;" id="pulse-apps-table"></div>
+  <div class="pulse-workspace">
+    <div class="pulse-toolbar">
+      <div class="pulse-toolbar-group">
+        <div>
+          <label for="pulse-view-select">View</label>
+          <select id="pulse-view-select" onchange="setPulseView(this.value)"></select>
+        </div>
+        <div>
+          <label for="pulse-global-search">Search all columns</label>
+          <input id="pulse-global-search" placeholder="company, professor, status..." oninput="setPulseGlobalSearch(this.value)">
+        </div>
+      </div>
+      <div class="pulse-toolbar-group">
+        <button class="control-btn secondary" onclick="clearPulseFilters()">Clear filters</button>
+        <button class="control-btn" onclick="togglePulseAddRow()">Add application / contact</button>
+      </div>
+    </div>
+    <div id="pulse-add-row" class="pulse-add-row hidden"></div>
+    <div id="pulse-apps-table"></div>
+  </div>
   <h2 class="section-title">Pipeline Inbox</h2>
   <p style="color:var(--text-secondary); margin-bottom:1rem; font-size:0.85rem;" id="pipeline-meta">Loading...</p>
 </div>
@@ -1472,7 +1752,6 @@ function switchTab(tabId, evt = null) {
   document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
   document.getElementById(tabId).classList.add('active');
   if (evt?.target) evt.target.classList.add('active');
-  window.scrollTo({top: document.querySelector('nav').offsetTop, behavior: 'smooth'});
 }
 
 document.querySelectorAll('.overlap-fill').forEach(bar => {
@@ -1488,6 +1767,143 @@ const API_BASE = window.location.port === '3737' ? '' : `http://${DASHBOARD_HOST
 let sseConnection = null;
 let reconnectTimer = null;
 let refreshTimer = null;
+const TRACKER_STATUSES = ['Evaluated', 'Applied', 'Responded', 'Interview', 'Offer', 'Rejected', 'Discarded', 'SKIP'];
+const TRACKER_EDITABLE_FIELDS = ['date', 'company', 'role', 'score', 'status', 'pdf', 'report', 'notes'];
+const TRACKER_METADATA_FIELDS = [
+  'division_field', 'date_due', 'posting_url', 'submitted_date', 'followup_date',
+  'no_response_followup_date', 'contact', 'outreach_date', 'response', 'alignment',
+  'way_to_apply', 'email', 'university', 'department', 'lab', 'designation', 'field',
+  'research_interest', 'missions', 'linkedin_url',
+];
+const PULSE_FIELD_LABELS = {
+  num: '#',
+  date: 'Date',
+  company: 'Company / Organization',
+  role: 'Role / Position',
+  score: 'Score',
+  status: 'Status',
+  pdf: 'PDF',
+  report: 'Report',
+  notes: 'Notes',
+  division_field: 'Division / Field',
+  date_due: 'Date Due',
+  posting_url: 'Posting / Description Link',
+  submitted_date: 'Submitted Date',
+  followup_date: 'Follow-Up Date',
+  no_response_followup_date: 'No-Response Follow-Up',
+  contact: 'Contact',
+  outreach_date: 'Date of Outreach',
+  response: 'Response?',
+  alignment: 'Examples of Alignment',
+  way_to_apply: 'Way to Apply / Contact',
+  email: 'Email',
+  university: 'University',
+  department: 'Department',
+  lab: 'Lab / Research Group',
+  designation: 'Designation',
+  field: 'Field',
+  research_interest: 'Research Interest',
+  missions: 'Missions',
+  linkedin_url: 'UCAN / LinkedIn / Profile',
+};
+const PULSE_VIEWS = {
+  career: {
+    label: 'Career-Ops Tracker',
+    type: 'applications',
+    columns: ['num', 'date', 'company', 'role', 'score', 'status', 'pdf', 'report', 'notes'],
+  },
+  applied: {
+    label: "Where I've Applied",
+    type: 'applications',
+    columns: ['company', 'division_field', 'role', 'date_due', 'posting_url', 'submitted_date', 'followup_date', 'no_response_followup_date', 'status', 'notes'],
+  },
+  contacts: {
+    label: 'Contacts / Research',
+    type: 'applications',
+    columns: ['contact', 'email', 'university', 'department', 'lab', 'designation', 'field', 'research_interest', 'missions', 'way_to_apply', 'linkedin_url', 'outreach_date', 'response'],
+  },
+  schedule: {
+    label: 'Weekly Routine',
+    type: 'schedule',
+    columns: [],
+  },
+};
+const pulseDraftRows = new Map();
+const pulseSavingRows = new Set();
+let pulseEntriesByNum = new Map();
+let pulseDashboardData = { entries: {}, schedule: { slots: {}, weeks: {} } };
+let pulseCurrentView = 'applied';
+let pulseFilters = {};
+let pulseGlobalSearch = '';
+let pulseSort = { field: 'date', direction: 'desc' };
+let pulseAddRowOpen = false;
+let agentDebugPulseRenderSeq = 0;
+let pulseRenderPendingAfterInteraction = false;
+let pulseLastRenderedSignature = '';
+let pulseLastAddRowSignature = '';
+let liveJobsView = localStorage.getItem('jobsToConsiderView') || 'cards';
+
+// #region agent log
+function agentDebugActiveElement() {
+  const el = document.activeElement;
+  return {
+    tag: el?.tagName || '',
+    id: el?.id || '',
+    name: el?.getAttribute?.('name') || '',
+    type: el?.getAttribute?.('type') || '',
+    value: el?.value || '',
+    inPulse: Boolean(el?.closest?.('#pulse')),
+    inPulseAddRow: Boolean(el?.closest?.('#pulse-add-row')),
+    inPulseTable: Boolean(el?.closest?.('#pulse-apps-table')),
+    inColumnFilter: Boolean(el?.closest?.('.column-filter')),
+  };
+}
+
+function agentDebugLog(hypothesisId, location, message, data = {}) {
+  fetch('http://127.0.0.1:7769/ingest/68caffdd-f1f0-4f5d-bcd1-25ea99059dee',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'5c07d9'},body:JSON.stringify({sessionId:'5c07d9',runId:'initial',hypothesisId,location,message,data,timestamp:Date.now()})}).catch(()=>{});
+}
+// #endregion
+
+function isPulseWorkspaceControlActive() {
+  const el = document.activeElement;
+  return Boolean(
+    el?.closest?.('#pulse-add-row, #pulse-apps-table')
+    && ['INPUT', 'SELECT', 'TEXTAREA'].includes(el.tagName)
+  );
+}
+
+function queuePulseRenderAfterInteraction() {
+  pulseRenderPendingAfterInteraction = true;
+}
+
+function flushPulseRenderAfterInteraction() {
+  if (!pulseRenderPendingAfterInteraction || isPulseWorkspaceControlActive()) return;
+  pulseRenderPendingAfterInteraction = false;
+  renderPulse();
+}
+
+function pulseRenderedSignature(view, columns, entries) {
+  if (view.type === 'schedule') {
+    return JSON.stringify({ view: pulseCurrentView, schedule: pulseDashboardData.schedule || {} });
+  }
+  return JSON.stringify({
+    view: pulseCurrentView,
+    filters: pulseFilters,
+    globalSearch: pulseGlobalSearch,
+    sort: pulseSort,
+    rows: entries.map(entry => columns.map(field => getPulseValue(entry, field))),
+  });
+}
+
+function pulseAddRowSignature(view) {
+  if (!pulseAddRowOpen || view.type === 'schedule') return `closed:${pulseCurrentView}`;
+  const fields = view.columns.filter(field => field !== 'num' && field !== 'pdf' && field !== 'report');
+  return JSON.stringify({
+    open: true,
+    view: pulseCurrentView,
+    fields: [...new Set(['company', 'role', ...fields, 'status', 'notes'])],
+  });
+}
 
 async function fetchJSON(file) {
   try {
@@ -1556,6 +1972,419 @@ function setTodayFeedback(message = '', variant = 'success') {
 
 function setOperationsFeedback(message = '', variant = 'success') {
   setInlineNotice('operations-feedback', message, variant);
+}
+
+function setPulseFeedback(message = '', variant = 'success') {
+  setInlineNotice('pulse-feedback', message, variant);
+}
+
+function setLiveJobsFeedback(message = '', variant = 'success') {
+  setInlineNotice('livejobs-feedback', message, variant);
+}
+
+function normalizePulseText(value = '') {
+  return String(value ?? '').replace(/\r?\n/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+function normalizePulseScore(value = '') {
+  return normalizePulseText(value).toUpperCase();
+}
+
+function normalizePulseStatus(value = '') {
+  const clean = normalizePulseText(value);
+  const match = TRACKER_STATUSES.find(status => status.toLowerCase() === clean.toLowerCase());
+  return match || clean || 'Evaluated';
+}
+
+function pulseScoreColor(score = '') {
+  const num = Number.parseFloat(String(score).replace(/[^0-9.]/g, ''));
+  if (Number.isNaN(num)) return 'var(--text-muted)';
+  if (num >= 4.0) return 'var(--accent-green)';
+  if (num >= 3.5) return 'var(--accent-warn)';
+  return 'var(--text-muted)';
+}
+
+function isPulseMetaField(field) {
+  return TRACKER_METADATA_FIELDS.includes(field);
+}
+
+function isPulseCoreField(field) {
+  return TRACKER_EDITABLE_FIELDS.includes(field);
+}
+
+function basePulseDraft(entry = {}) {
+  const metadata = pulseDashboardData.entries?.[String(entry.num)] || {};
+  return {
+    date: entry.date || '',
+    company: entry.company || '',
+    role: entry.role || '',
+    score: entry.score || '',
+    status: normalizePulseStatus(entry.status || 'Evaluated'),
+    pdf: entry.pdf ? '✅' : '❌',
+    report: entry.report_link || '',
+    notes: entry.notes || '',
+    ...Object.fromEntries(TRACKER_METADATA_FIELDS.map(field => [field, metadata[field] || ''])),
+  };
+}
+
+function getPulseDraft(num) {
+  const existing = pulseDraftRows.get(num);
+  if (existing) return existing;
+  const entry = pulseEntriesByNum.get(num);
+  return basePulseDraft(entry);
+}
+
+function updatePulseDraft(num, field, value) {
+  if (!isPulseCoreField(field) && !isPulseMetaField(field)) return;
+  const draft = getPulseDraft(num);
+  if (!draft) return;
+  draft[field] = String(value ?? '');
+  pulseDraftRows.set(num, draft);
+}
+
+function resetPulseRow(num) {
+  pulseDraftRows.delete(num);
+  setPulseFeedback('');
+  renderPulse();
+}
+
+function normalizedPulseField(field, value = '') {
+  if (field === 'score') return normalizePulseScore(value);
+  if (field === 'status') return normalizePulseStatus(value);
+  if (field === 'pdf') return String(value).includes('✅') || String(value).toLowerCase() === 'true' ? '✅' : '❌';
+  return normalizePulseText(value);
+}
+
+function pulsePatchPayload(num, onlyField = null) {
+  const entry = pulseEntriesByNum.get(num);
+  if (!entry) return {};
+  const draft = getPulseDraft(num);
+  const original = basePulseDraft(entry);
+  const payload = {};
+  const fields = onlyField ? [onlyField] : [...TRACKER_EDITABLE_FIELDS, ...TRACKER_METADATA_FIELDS];
+  for (const field of fields) {
+    if (!isPulseCoreField(field) && !isPulseMetaField(field)) continue;
+    const draftValue = normalizedPulseField(field, draft[field] || '');
+    const originalValue = normalizedPulseField(field, original[field] || '');
+    if (draftValue !== originalValue) {
+      payload[field] = draftValue;
+    }
+  }
+  return payload;
+}
+
+function pulseHasChanges(num) {
+  return Object.keys(pulsePatchPayload(num)).length > 0;
+}
+
+function pulseStatusOptions(selectedStatus) {
+  const normalized = normalizePulseStatus(selectedStatus);
+  return TRACKER_STATUSES.map(status => `<option value="${status}"${status === normalized ? ' selected' : ''}>${status}</option>`).join('');
+}
+
+async function commitPulseField(num, field, value) {
+  // #region agent log
+  agentDebugLog('H4', 'WEB-TRACKER/dashboard/fusion-pivot-dashboard.html:commitPulseField', 'commitPulseField entered before autosave/render', {
+    num,
+    field,
+    value,
+    activeElement: agentDebugActiveElement(),
+    pulseSavingRows: pulseSavingRows.size,
+  });
+  // #endregion
+  updatePulseDraft(num, field, value);
+  if (pulseSavingRows.has(num)) return;
+  const payload = pulsePatchPayload(num, field);
+  if (Object.keys(payload).length === 0) {
+    return;
+  }
+
+  pulseSavingRows.add(num);
+  try {
+    await apiJSON(`/api/applications/${num}`, {
+      method: 'PATCH',
+      body: JSON.stringify(payload),
+    });
+    const entry = pulseEntriesByNum.get(num);
+    if (entry && isPulseCoreField(field)) {
+      if (field === 'pdf') entry.pdf = normalizedPulseField(field, value) === '✅';
+      else if (field === 'report') entry.report_link = normalizePulseText(value);
+      else entry[field] = payload[field];
+    }
+    if (isPulseMetaField(field)) {
+      const key = String(num);
+      pulseDashboardData.entries[key] = { ...(pulseDashboardData.entries[key] || {}), [field]: payload[field] };
+    }
+    pulseDraftRows.delete(num);
+    setPulseFeedback(`Saved #${num} ${PULSE_FIELD_LABELS[field] || field}.`, 'success');
+  } catch (err) {
+    setPulseFeedback(`Could not save #${num}: ${err.message}`, 'error');
+  } finally {
+    pulseSavingRows.delete(num);
+    renderPulse();
+  }
+}
+
+function setPulseView(view) {
+  if (!PULSE_VIEWS[view]) return;
+  pulseCurrentView = view;
+  pulseFilters = {};
+  pulseAddRowOpen = false;
+  pulseLastAddRowSignature = '';
+  pulseLastRenderedSignature = '';
+  pulseSort = view === 'career' ? { field: 'score', direction: 'desc' } : { field: 'date', direction: 'desc' };
+  renderPulse();
+}
+
+function setPulseGlobalSearch(value) {
+  // #region agent log
+  agentDebugLog('H1', 'WEB-TRACKER/dashboard/fusion-pivot-dashboard.html:setPulseGlobalSearch', 'global search input will renderPulse', {
+    value,
+    activeElement: agentDebugActiveElement(),
+  });
+  // #endregion
+  pulseGlobalSearch = value || '';
+  renderPulse();
+}
+
+function setPulseFilter(field, value) {
+  // #region agent log
+  agentDebugLog('H1', 'WEB-TRACKER/dashboard/fusion-pivot-dashboard.html:setPulseFilter', 'column filter changed and will renderPulse', {
+    field,
+    value,
+    activeElement: agentDebugActiveElement(),
+  });
+  // #endregion
+  if (value) pulseFilters[field] = value;
+  else delete pulseFilters[field];
+  renderPulse();
+}
+
+function clearPulseFilters() {
+  pulseFilters = {};
+  pulseGlobalSearch = '';
+  renderPulse();
+}
+
+function setPulseSort(field) {
+  if (pulseSort.field === field) {
+    pulseSort.direction = pulseSort.direction === 'asc' ? 'desc' : 'asc';
+  } else {
+    pulseSort = { field, direction: 'asc' };
+  }
+  renderPulse();
+}
+
+function togglePulseAddRow() {
+  pulseAddRowOpen = !pulseAddRowOpen;
+  pulseLastAddRowSignature = '';
+  renderPulse();
+}
+
+function getPulseValue(entry, field) {
+  if (field === 'num') return entry.num;
+  const draft = getPulseDraft(entry.num);
+  if (field === 'pdf') return draft.pdf || (entry.pdf ? '✅' : '❌');
+  if (field === 'report') return draft.report || entry.report_link || '';
+  return draft[field] ?? '';
+}
+
+function pulseMatchesFilters(entry, columns) {
+  const haystack = columns.map(field => String(getPulseValue(entry, field))).join(' ').toLowerCase();
+  if (pulseGlobalSearch && !haystack.includes(pulseGlobalSearch.toLowerCase())) return false;
+  return Object.entries(pulseFilters).every(([field, filter]) => {
+    const value = String(getPulseValue(entry, field)).toLowerCase();
+    return value.includes(String(filter).toLowerCase());
+  });
+}
+
+function sortedPulseEntries(entries, columns) {
+  const filtered = entries.filter(entry => pulseMatchesFilters(entry, columns));
+  const direction = pulseSort.direction === 'desc' ? -1 : 1;
+  return filtered.sort((a, b) => {
+    const av = getPulseValue(a, pulseSort.field);
+    const bv = getPulseValue(b, pulseSort.field);
+    if (pulseSort.field === 'score') return direction * ((a.score_num || 0) - (b.score_num || 0));
+    if (pulseSort.field === 'num') return direction * ((Number(av) || 0) - (Number(bv) || 0));
+    return direction * String(av || '').localeCompare(String(bv || ''), undefined, { numeric: true, sensitivity: 'base' });
+  });
+}
+
+function pulseFieldControl(entry, field) {
+  const value = getPulseValue(entry, field);
+  const safeValue = escapeHTML(value || '');
+  if (field === 'num') return `<span class="pulse-row-readonly">${entry.num}</span>`;
+  if (field === 'status') {
+    return `<select class="pulse-edit-field" onchange="commitPulseField(${entry.num}, '${field}', this.value)">${pulseStatusOptions(value)}</select>`;
+  }
+  if (field === 'pdf') {
+    return `<select class="pulse-edit-field" onchange="commitPulseField(${entry.num}, '${field}', this.value)">
+      <option value="❌"${value !== '✅' ? ' selected' : ''}>❌</option>
+      <option value="✅"${value === '✅' ? ' selected' : ''}>✅</option>
+    </select>`;
+  }
+  if (['notes', 'alignment', 'research_interest', 'missions'].includes(field)) {
+    return `<textarea class="pulse-edit-field pulse-long-field" oninput="updatePulseDraft(${entry.num}, '${field}', this.value)" onblur="commitPulseField(${entry.num}, '${field}', this.value)">${safeValue}</textarea>`;
+  }
+  const type = ['date', 'date_due', 'submitted_date', 'followup_date', 'no_response_followup_date', 'outreach_date'].includes(field) ? 'date' : 'text';
+  const style = field === 'score' ? ` style="color:${pulseScoreColor(value)};"` : '';
+  return `<input class="pulse-edit-field" type="${type}" value="${safeValue}"${style} oninput="updatePulseDraft(${entry.num}, '${field}', this.value)" onchange="commitPulseField(${entry.num}, '${field}', this.value)" onblur="commitPulseField(${entry.num}, '${field}', this.value)">`;
+}
+
+function pulseFilterControl(field) {
+  const value = pulseFilters[field] || '';
+  if (field === 'status') {
+    return `<select onchange="setPulseFilter('${field}', this.value)">
+      <option value="">All</option>
+      ${TRACKER_STATUSES.map(status => `<option value="${status}"${value === status ? ' selected' : ''}>${status}</option>`).join('')}
+    </select>`;
+  }
+  if (field === 'pdf') {
+    return `<select onchange="setPulseFilter('${field}', this.value)">
+      <option value="">All</option>
+      <option value="✅"${value === '✅' ? ' selected' : ''}>✅</option>
+      <option value="❌"${value === '❌' ? ' selected' : ''}>❌</option>
+    </select>`;
+  }
+  return `<input value="${escapeHTML(value)}" placeholder="Filter" oninput="setPulseFilter('${field}', this.value)">`;
+}
+
+function renderPulseViewSelector() {
+  const select = document.getElementById('pulse-view-select');
+  if (!select) return;
+  select.innerHTML = Object.entries(PULSE_VIEWS)
+    .map(([id, view]) => `<option value="${id}"${id === pulseCurrentView ? ' selected' : ''}>${view.label}</option>`)
+    .join('');
+  const search = document.getElementById('pulse-global-search');
+  if (search && search.value !== pulseGlobalSearch) search.value = pulseGlobalSearch;
+}
+
+function renderPulseAddRow(view) {
+  const container = document.getElementById('pulse-add-row');
+  if (!container) return;
+  const signature = pulseAddRowSignature(view);
+  if (signature === pulseLastAddRowSignature) return;
+  if (!pulseAddRowOpen || view.type === 'schedule') {
+    if (container.contains(document.activeElement)) return;
+    container.className = 'pulse-add-row hidden';
+    container.innerHTML = '';
+    pulseLastAddRowSignature = signature;
+    return;
+  }
+  if (container.contains(document.activeElement)) {
+    queuePulseRenderAfterInteraction();
+    return;
+  }
+  container.className = 'pulse-add-row';
+  const fields = view.columns.filter(field => field !== 'num' && field !== 'pdf' && field !== 'report');
+  const uniqueFields = [...new Set(['company', 'role', ...fields, 'status', 'notes'])];
+  container.innerHTML = uniqueFields.map(field => {
+    const label = PULSE_FIELD_LABELS[field] || field;
+    if (field === 'status') {
+      return `<div><label>${label}</label><select data-add-field="${field}">${pulseStatusOptions(pulseCurrentView === 'applied' ? 'Applied' : 'Evaluated')}</select></div>`;
+    }
+    if (['notes', 'alignment', 'research_interest', 'missions'].includes(field)) {
+      return `<div><label>${label}</label><textarea data-add-field="${field}" class="pulse-edit-field pulse-long-field"></textarea></div>`;
+    }
+    const type = ['date', 'date_due', 'submitted_date', 'followup_date', 'no_response_followup_date', 'outreach_date'].includes(field) ? 'date' : 'text';
+    return `<div><label>${label}</label><input data-add-field="${field}" type="${type}" placeholder="${escapeHTML(label)}"></div>`;
+  }).join('') + `<div style="align-self:end;"><button class="control-btn" onclick="createPulseApplication()">Create row</button></div>`;
+  pulseLastAddRowSignature = signature;
+}
+
+async function createPulseApplication() {
+  const fields = Array.from(document.querySelectorAll('#pulse-add-row [data-add-field]'));
+  const payload = {};
+  for (const field of fields) {
+    if (field.dataset.addField) payload[field.dataset.addField] = field.value || '';
+  }
+  if (!payload.company) payload.company = payload.university || payload.department || 'Network';
+  if (!payload.role) payload.role = payload.contact ? `Contact: ${payload.contact}` : 'External application';
+  if (!payload.score) payload.score = 'N/A';
+  if (!payload.status) payload.status = pulseCurrentView === 'applied' ? 'Applied' : 'Evaluated';
+  try {
+    const result = await apiJSON('/api/applications', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    });
+    setPulseFeedback(result.duplicate ? `Updated existing row #${result.num}; duplicate was not created.` : `Created row #${result.num}.`, 'success');
+    pulseAddRowOpen = false;
+    await renderPulse();
+  } catch (err) {
+    setPulseFeedback(`Could not create row: ${err.message}`, 'error');
+  }
+}
+
+async function deletePulseRow(num) {
+  const entry = pulseEntriesByNum.get(num);
+  const label = entry ? `${entry.company} — ${entry.role}` : `#${num}`;
+  if (!confirm(`Delete application #${num}?\n\n${label}\n\nThis removes the row from data/applications.md.`)) return;
+
+  try {
+    await apiJSON(`/api/applications/${num}`, { method: 'DELETE' });
+    pulseDraftRows.delete(num);
+    pulseSavingRows.delete(num);
+    pulseEntriesByNum.delete(num);
+    setPulseFeedback(`Deleted row #${num}.`, 'success');
+    await renderPulse();
+  } catch (err) {
+    setPulseFeedback(`Could not delete #${num}: ${err.message}`, 'error');
+  }
+}
+
+function pulseDeleteControl(entry) {
+  return `<button class="control-btn secondary" onclick="deletePulseRow(${entry.num})">Delete</button>`;
+}
+
+function renderScheduleView() {
+  const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  const slots = pulseDashboardData.schedule?.slots || {};
+  const weeks = pulseDashboardData.schedule?.weeks || {};
+  let html = '<div class="schedule-grid">';
+  html += '<div class="schedule-cell header"></div>';
+  html += days.map(day => `<div class="schedule-cell header">${day}</div>`).join('');
+  for (const period of ['AM', 'PM']) {
+    html += `<div class="schedule-cell header">${period}</div>`;
+    html += days.map(day => {
+      const key = `${period.toLowerCase()}_${day.toLowerCase()}`;
+      return `<div class="schedule-cell"><input class="schedule-input" value="${escapeHTML(slots[key] || '')}" placeholder="e.g. 9-10am" onblur="commitScheduleSlot('${key}', this.value)"></div>`;
+    }).join('');
+  }
+  for (let week = 1; week <= 16; week += 1) {
+    html += `<div class="schedule-cell header">Week ${week}</div>`;
+    html += days.map(day => {
+      const checked = weeks[String(week)]?.[day.toLowerCase()] ? ' checked' : '';
+      return `<div class="schedule-cell schedule-checkbox-cell"><input type="checkbox"${checked} onchange="commitScheduleWeek(${week}, '${day.toLowerCase()}', this.checked)"></div>`;
+    }).join('');
+  }
+  html += '</div>';
+  return html;
+}
+
+async function commitScheduleSlot(key, value) {
+  try {
+    await apiJSON('/api/applications/dashboard/schedule', {
+      method: 'PATCH',
+      body: JSON.stringify({ slots: { [key]: value } }),
+    });
+    pulseDashboardData.schedule.slots[key] = value;
+    setPulseFeedback('Saved schedule cell.', 'success');
+  } catch (err) {
+    setPulseFeedback(`Could not save schedule: ${err.message}`, 'error');
+  }
+}
+
+async function commitScheduleWeek(week, day, checked) {
+  try {
+    await apiJSON('/api/applications/dashboard/schedule', {
+      method: 'PATCH',
+      body: JSON.stringify({ weeks: { [week]: { [day]: checked } } }),
+    });
+    pulseDashboardData.schedule.weeks[String(week)] = { ...(pulseDashboardData.schedule.weeks[String(week)] || {}), [day]: checked };
+    setPulseFeedback('Saved schedule checkbox.', 'success');
+  } catch (err) {
+    setPulseFeedback(`Could not save schedule: ${err.message}`, 'error');
+  }
 }
 
 function selectedActionForTask(task) {
@@ -1682,20 +2511,129 @@ function workAuthBadges(job) {
 // ── Today / coach plan ───────────────────────────────────────────────
 
 async function renderActionPlan() {
-  const plan = await apiJSON('/api/action-plan');
+  const [plan, jobsData, appsData] = await Promise.all([
+    apiJSON('/api/action-plan').catch(() => null),
+    fetchJSON('jobs-to-consider.json'),
+    fetchJSON('applications.json'),
+  ]);
   window.__actionPlan = plan;
   document.getElementById('today-date-label').textContent = new Date().toLocaleDateString(undefined, {
     weekday: 'long', month: 'short', day: 'numeric', year: 'numeric'
   });
-  document.getElementById('sprint-days-left').textContent = plan.sprint.days_left;
-  const elapsed = Math.max(0, 90 - plan.sprint.days_left);
+  const daysLeft = plan?.sprint?.days_left ?? '?';
+  document.getElementById('sprint-days-left').textContent = daysLeft;
+  const elapsed = Number.isFinite(Number(daysLeft)) ? Math.max(0, 90 - Number(daysLeft)) : 0;
   document.getElementById('sprint-progress').style.width = `${Math.min(100, Math.round((elapsed / 90) * 100))}%`;
-  document.getElementById('sprint-active-days').textContent = `Active days this week: ${plan.sprint.active_days_this_week}/5 target`;
-  document.getElementById('next-best-action').innerHTML = actionCard(plan.next_best_action, 0);
-  document.getElementById('today-actions').innerHTML = (plan.top_three || []).map((task, idx) => actionCard(task, idx)).join('');
-  document.getElementById('minimum-win').innerHTML = actionCard(plan.minimum_win, 3);
-  renderGoals(plan);
-  renderWeeklyReview(plan);
+  document.getElementById('sprint-active-days').textContent = `Active days this week: ${plan?.sprint?.active_days_this_week ?? 0}/5 target`;
+
+  const jobs = jobsData?.jobs || [];
+  const apps = appsData?.entries || [];
+  const activeJobs = jobs
+    .filter(job => !job.applied && job.status === 'to_consider')
+    .sort((a, b) => scoreValue(b.score) - scoreValue(a.score));
+  const appliedJobs = jobs.filter(job => job.applied || job.status === 'applied');
+  const archivedJobs = jobs.filter(job => ['closed', 'archived'].includes(job.status));
+  const readyPackages = activeJobs.filter(job => job.resources?.resume_pdf || job.resources?.cover_letter_pdf);
+
+  document.getElementById('next-best-action').innerHTML = todayNextBestAction(activeJobs, apps);
+  document.getElementById('today-actions').innerHTML = todayTopActions(activeJobs, appliedJobs);
+  document.getElementById('minimum-win').innerHTML = todayMinimumWin(activeJobs);
+  document.getElementById('goal-grid').innerHTML = todayPipelineFacts({
+    activeJobs,
+    appliedJobs,
+    archivedJobs,
+    readyPackages,
+    apps,
+  });
+  renderWeeklyReview(plan || { tasks: [] });
+}
+
+function scoreValue(score = '') {
+  const match = String(score).match(/\d+(\.\d+)?/);
+  return match ? Number(match[0]) : 0;
+}
+
+function todayJobCard(job, index = 0) {
+  const requiredClass = index === 0 ? ' required' : '';
+  return `
+    <div class="action-card${requiredClass}">
+      <div class="action-title">${index === 0 ? 'Required: ' : ''}${escapeHTML(job.company)} — ${escapeHTML(job.title)}</div>
+      <div class="action-next">Decision needed: review the prepared package, then either apply today or archive it. Do not let it rot in dashboard purgatory.</div>
+      <div class="action-meta">
+        <span class="status-pill in_progress">${escapeHTML(job.score || 'N/A')}</span>
+        <span class="tag match">Jobs To Consider</span>
+        <span class="tag warn">${escapeHTML(job.liveness || 'unchecked')}</span>
+      </div>
+      <p class="action-why">${escapeHTML(job.fit_summary || job.recommendation || job.notes || '')}</p>
+      ${jobResourceLinks(job)}
+      <button class="control-btn" onclick='toggleJobApplied(${JSON.stringify(job.id)}, true)'>Mark Applied</button>
+      <button class="control-btn secondary" onclick="switchTab('livejobs')">Open Jobs To Consider</button>
+      ${job.url ? `<a class="control-btn secondary" href="${escapeHTML(job.url)}" target="_blank" rel="noreferrer" style="text-decoration:none;">Open Posting</a>` : ''}
+    </div>`;
+}
+
+function todayNextBestAction(activeJobs, apps) {
+  if (activeJobs.length) return todayJobCard(activeJobs[0], 0);
+  if (apps.length) {
+    return `
+      <div class="action-card required">
+        <div class="action-title">Required: follow up on your applied roles</div>
+        <div class="action-next">Open Applications and update the next follow-up date for one row.</div>
+        <div class="action-meta"><span class="status-pill waiting">${apps.length} applied rows</span><span class="tag match">follow-up</span></div>
+        <p class="action-why">Once a role is applied, the next useful move is usually follow-up, not staring at the portal like it owes you money.</p>
+        <button class="control-btn" onclick="switchTab('pulse')">Open Applications</button>
+      </div>`;
+  }
+  return `
+    <div class="action-card required">
+      <div class="action-title">Required: add one real target</div>
+      <div class="action-next">Run a job scan or research one role, then put it in Jobs To Consider before applying.</div>
+      <div class="action-meta"><span class="status-pill blocked">empty pipeline</span><span class="tag warn">needs input</span></div>
+      <p class="action-why">No target means no next action. Very Zen. Completely useless.</p>
+      <button class="control-btn" onclick="switchTab('operations')">Open Behind The Scenes</button>
+    </div>`;
+}
+
+function todayTopActions(activeJobs, appliedJobs) {
+  const actions = activeJobs.slice(0, 3).map((job, idx) => todayJobCard(job, idx + 1));
+  if (actions.length) return actions.join('');
+  if (appliedJobs.length) {
+    return appliedJobs.slice(0, 3).map(job => `
+      <div class="action-card">
+        <div class="action-title">${escapeHTML(job.company)} — ${escapeHTML(job.title)}</div>
+        <div class="action-next">Already marked applied. Next action: record the submitted date and follow-up date in Applications.</div>
+        <button class="control-btn secondary" onclick="switchTab('pulse')">Open Applications</button>
+      </div>`).join('');
+  }
+  return '<div class="jobs-empty">No concrete actions because there are no open Jobs To Consider. Run scan/research first.</div>';
+}
+
+function todayMinimumWin(activeJobs) {
+  const job = activeJobs[0];
+  if (!job) {
+    return '<div class="action-card"><div class="action-title">Minimum win: add one URL</div><div class="action-next">Paste one role into chat and ask for evaluation. Five minutes, not a hero quest.</div></div>';
+  }
+  return `
+    <div class="action-card">
+      <div class="action-title">Minimum win: decide on ${escapeHTML(job.company)}</div>
+      <div class="action-next">Open the research report and answer one question: apply today, keep, or archive?</div>
+      ${job.resources?.report_md ? `<a class="control-btn secondary" href="${API_BASE}/preview?path=${encodeURIComponent(job.resources.report_md)}" target="_blank" style="text-decoration:none;">Open Research Report</a>` : ''}
+    </div>`;
+}
+
+function todayPipelineFacts({ activeJobs, appliedJobs, archivedJobs, readyPackages, apps }) {
+  const facts = [
+    ['Open jobs to decide', activeJobs.length, 'These are the only jobs that should demand attention today.'],
+    ['Prepared packages', readyPackages.length, 'Jobs with at least a resume or cover letter attached.'],
+    ['Marked applied', appliedJobs.length || apps.length, 'These belong in Applications and need follow-up tracking.'],
+    ['Archived / closed', archivedJobs.length, 'Preserved for history, not daily action.'],
+  ];
+  return facts.map(([title, value, help]) => `
+    <div class="control-card">
+      <h3>${escapeHTML(title)}</h3>
+      <div class="stat-number fusion-color" style="font-size:1.7rem;">${value}</div>
+      <p>${escapeHTML(help)}</p>
+    </div>`).join('');
 }
 
 function renderGoals(plan) {
@@ -1763,37 +2701,145 @@ function renderWeeklyReview(plan) {
 
 // ── Live Jobs Tab ───────────────────────────────────────────────────
 
-async function renderLiveJobs() {
-  const data = await fetchJSON('fusion-jobs.json');
-  if (!data) { document.getElementById('livejobs-meta').textContent = 'No data — run the scanner first.'; return; }
+function setLiveJobsView(view) {
+  liveJobsView = view === 'table' ? 'table' : 'cards';
+  localStorage.setItem('jobsToConsiderView', liveJobsView);
+  renderLiveJobs();
+}
 
-  const filters = selectedWorkAuthFilters();
-  const filtered = data.jobs.filter(job => matchesWorkAuthFilters(job, filters));
-  document.getElementById('livejobs-meta').textContent =
-    `${filtered.length}/${data.total} jobs shown | ${data.new_this_run || 0} new last scan | Updated: ${new Date(data.generated_at).toLocaleString()}`;
+function updateLiveJobsViewButtons() {
+  document.getElementById('livejobs-view-cards')?.classList.toggle('is-active', liveJobsView === 'cards');
+  document.getElementById('livejobs-view-table')?.classList.toggle('is-active', liveJobsView === 'table');
+}
 
-  const grid = document.getElementById('livejobs-grid');
-  grid.innerHTML = '';
+function jobResourceLinks(job) {
+  const resources = job.resources || {};
+  const links = [];
+  if (resources.resume_pdf) {
+    links.push(`<a class="job-resource-link" href="${API_BASE}/${escapeHTML(resources.resume_pdf)}" download>Resume PDF</a>`);
+  }
+  if (resources.cover_letter_pdf) {
+    links.push(`<a class="job-resource-link" href="${API_BASE}/${escapeHTML(resources.cover_letter_pdf)}" download>Cover Letter PDF</a>`);
+  }
+  if (resources.email_draft) {
+    links.push(`<a class="job-resource-link" href="${API_BASE}/preview?path=${encodeURIComponent(resources.email_draft)}" target="_blank">Email Draft</a>`);
+  }
+  if (resources.report_md) {
+    links.push(`<a class="job-resource-link" href="${API_BASE}/preview?path=${encodeURIComponent(resources.report_md)}" target="_blank">Research Report</a>`);
+  }
+  return links.length ? `<div class="job-resource-links">${links.join('')}</div>` : '';
+}
 
-  const sorted = [...filtered].sort((a, b) => new Date(b.first_seen || 0) - new Date(a.first_seen || 0));
-  window.__liveJobsByUrl = Object.fromEntries(sorted.map(job => [job.url, job]));
+function jobAppliedToggle(job) {
+  const id = JSON.stringify(job.id);
+  const checked = job.applied || job.status === 'applied' ? 'checked' : '';
+  return `<label class="job-apply-toggle"><input type="checkbox" ${checked} onchange='toggleJobApplied(${id}, this.checked)'> Applied</label>`;
+}
 
-  for (const job of sorted.slice(0, 50)) {
+function jobStatusBadge(job) {
+  if (job.status === 'closed') return '<span class="tag warn">Closed / archived</span>';
+  if (job.status === 'applied') return '<span class="tag match">Applied</span>';
+  return '<span class="tag visa">To consider</span>';
+}
+
+function renderJobCards(jobs) {
+  if (jobs.length === 0) return '<div class="jobs-empty">Nothing here.</div>';
+  return `<div class="company-grid">${jobs.map(job => {
     const age = job.first_seen ? daysBetween(new Date(job.first_seen), new Date()) : '?';
-    grid.innerHTML += `
-      <div class="company-card tier-2" style="animation-delay:${Math.random()*0.3}s">
+    const safeUrl = escapeHTML(job.url || '#');
+    return `
+      <div class="company-card tier-2">
         <div class="card-header">
-          <span class="card-company">${job.company}</span>
+          <span class="card-company">${escapeHTML(job.company)}</span>
           <span class="card-badge badge-frc">${age}d ago</span>
         </div>
-        <div class="card-role"><a href="${job.url}" target="_blank" style="color:var(--accent-fusion); text-decoration:none;">${job.title}</a></div>
-        <div class="card-detail">${job.location || 'Location not specified'}</div>
-        ${job.salary ? `<div class="card-detail"><strong>Salary:</strong> ${job.salary}</div>` : ''}
-        ${job.opt_story_reason ? `<div class="card-detail"><strong>OPT story:</strong> ${job.opt_story_reason}</div>` : ''}
-        <div class="card-tags">${workAuthBadges(job)}</div>
-        <button class="control-btn secondary" onclick="queueEvaluationTask(window.__liveJobsByUrl['${job.url.replace(/'/g, "\\'")}'])">Ask AI to evaluate this</button>
+        <div class="card-role"><a href="${safeUrl}" target="_blank" rel="noreferrer" style="color:var(--accent-fusion); text-decoration:none;">${escapeHTML(job.title)}</a></div>
+        <div class="card-detail">${escapeHTML(job.location || 'Location not specified')}</div>
+        ${job.team ? `<div class="card-detail"><strong>Team:</strong> ${escapeHTML(job.team)}</div>` : ''}
+        ${job.score ? `<div class="card-detail"><strong>Score:</strong> ${escapeHTML(job.score)}</div>` : ''}
+        ${job.fit_summary ? `<div class="card-detail"><strong>Why:</strong> ${escapeHTML(job.fit_summary)}</div>` : ''}
+        ${job.recommendation ? `<div class="card-detail"><strong>Next:</strong> ${escapeHTML(job.recommendation)}</div>` : ''}
+        <div class="card-tags">${jobStatusBadge(job)}${workAuthBadges(job)}</div>
+        ${jobAppliedToggle(job)}
+        ${jobResourceLinks(job)}
+        <button class="control-btn secondary" onclick='queueEvaluationTask(window.__liveJobsByUrl[${JSON.stringify(job.id)}])'>Ask AI to evaluate this</button>
       </div>`;
+  }).join('')}</div>`;
+}
+
+function renderJobTable(jobs) {
+  if (jobs.length === 0) return '<div class="jobs-empty">Nothing here.</div>';
+  const rows = jobs.map(job => `
+    <tr>
+      <td>${jobAppliedToggle(job)}</td>
+      <td><strong>${escapeHTML(job.company)}</strong></td>
+      <td><a href="${escapeHTML(job.url || '#')}" target="_blank" rel="noreferrer" style="color:var(--accent-fusion);">${escapeHTML(job.title)}</a></td>
+      <td>${escapeHTML(job.location || '')}</td>
+      <td>${escapeHTML(job.score || '')}</td>
+      <td>${jobStatusBadge(job)}</td>
+      <td>${escapeHTML(job.fit_summary || job.notes || '')}</td>
+      <td>${jobResourceLinks(job)}</td>
+    </tr>`).join('');
+  return `<div class="pulse-table-wrap"><table class="pulse-tracker-table">
+    <thead><tr>
+      <th>Applied</th><th>Company</th><th>Role</th><th>Location</th><th>Score</th><th>Status</th><th>Why</th><th>Resources</th>
+    </tr></thead>
+    <tbody>${rows}</tbody>
+  </table></div>`;
+}
+
+function renderJobsSection(title, jobs, targetId) {
+  const target = document.getElementById(targetId);
+  if (!target) return;
+  target.innerHTML = `
+    <div class="jobs-section-title">${escapeHTML(title)} (${jobs.length})</div>
+    ${liveJobsView === 'table' ? renderJobTable(jobs) : renderJobCards(jobs)}
+  `;
+}
+
+async function toggleJobApplied(id, applied) {
+  if (!applied && !confirm('Move this job back to To Consider and remove its linked Applications row?')) {
+    renderLiveJobs();
+    return;
   }
+  try {
+    setLiveJobsFeedback(applied ? 'Saving as applied...' : 'Moving back to Jobs to Consider...', 'warn');
+    await apiJSON(`/api/jobs-to-consider/${encodeURIComponent(id)}/apply`, {
+      method: 'POST',
+      body: JSON.stringify({ applied }),
+    });
+    setLiveJobsFeedback(applied ? 'Saved: job moved into Applications.' : 'Saved: job removed from Applications.', 'success');
+    await renderLiveJobs();
+    await renderPulse();
+  } catch (err) {
+    setLiveJobsFeedback(err.message || 'Could not update job.', 'error');
+    await renderLiveJobs();
+  }
+}
+
+async function renderLiveJobs() {
+  updateLiveJobsViewButtons();
+  const data = await fetchJSON('jobs-to-consider.json');
+  if (!data) {
+    document.getElementById('livejobs-meta').textContent = 'No curated jobs yet. Research a role, then add it here before applying.';
+    return;
+  }
+
+  const filters = selectedWorkAuthFilters();
+  const filtered = (data.jobs || []).filter(job => matchesWorkAuthFilters(job, filters));
+  const sorted = [...filtered].sort((a, b) => new Date(b.first_seen || 0) - new Date(a.first_seen || 0));
+  window.__liveJobsByUrl = Object.fromEntries(sorted.map(job => [job.id, job]));
+
+  const activeJobs = sorted.filter(job => !job.applied && job.status !== 'applied' && job.status !== 'closed' && job.status !== 'archived');
+  const appliedJobs = sorted.filter(job => job.applied || job.status === 'applied');
+  const closedJobs = sorted.filter(job => job.status === 'closed' || job.status === 'archived');
+
+  document.getElementById('livejobs-meta').textContent =
+    `${filtered.length}/${data.total || data.jobs?.length || 0} researched jobs shown | ${activeJobs.length} to consider | ${appliedJobs.length} applied | ${closedJobs.length} archived | Updated: ${data.generated_at ? new Date(data.generated_at).toLocaleString() : 'unknown'}`;
+
+  renderJobsSection('To Consider', activeJobs, 'livejobs-to-consider');
+  renderJobsSection('Applied', appliedJobs, 'livejobs-applied');
+  renderJobsSection('Closed / Archived', closedJobs, 'livejobs-closed');
 }
 
 // ── PhD Radar Tab ───────────────────────────────────────────────────
@@ -1843,8 +2889,21 @@ async function renderPhdRadar() {
 // ── Career-Ops Pulse Tab ────────────────────────────────────────────
 
 async function renderPulse() {
+  const renderSeq = ++agentDebugPulseRenderSeq;
+  // #region agent log
+  agentDebugLog('H1,H2,H3,H5', 'WEB-TRACKER/dashboard/fusion-pivot-dashboard.html:renderPulse:start', 'renderPulse started', {
+    renderSeq,
+    view: pulseCurrentView,
+    filters: pulseFilters,
+    globalSearch: pulseGlobalSearch,
+    activeElement: agentDebugActiveElement(),
+  });
+  // #endregion
   const apps = await fetchJSON('applications.json');
   const pipeline = await fetchJSON('pipeline.json');
+  const dashboardData = await apiJSON('/api/applications/dashboard').catch(() => null);
+  if (dashboardData) pulseDashboardData = dashboardData;
+  renderPulseViewSelector();
 
   if (apps) {
     const statsHtml = `
@@ -1855,21 +2914,69 @@ async function renderPulse() {
       <div class="stat-card"><div class="stat-number fusion-color">${apps.entries.filter(e => e.pdf).length}</div><div class="stat-label">CVs Generated</div></div>`;
     document.getElementById('pulse-stats').innerHTML = statsHtml;
 
-    let tableHtml = '<table style="width:100%;border-collapse:collapse;font-size:0.82rem;"><thead><tr>';
-    ['#','Date','Company','Role','Score','Status','PDF','Notes'].forEach(h => {
-      tableHtml += `<th style="text-align:left;padding:0.6rem;color:var(--text-secondary);border-bottom:1px solid var(--border);font-family:'Space Mono',monospace;font-size:0.7rem;">${h}</th>`;
-    });
-    tableHtml += '</tr></thead><tbody>';
-    for (const a of apps.entries.sort((x,y) => y.score_num - x.score_num)) {
-      const scoreColor = a.score_num >= 4.0 ? 'var(--accent-green)' : a.score_num >= 3.5 ? 'var(--accent-warn)' : 'var(--text-muted)';
-      tableHtml += `<tr style="border-bottom:1px solid var(--border);">
-        <td style="padding:0.6rem;">${a.num}</td><td style="padding:0.6rem;">${a.date}</td>
-        <td style="padding:0.6rem;font-weight:600;">${a.company}</td><td style="padding:0.6rem;">${a.role}</td>
-        <td style="padding:0.6rem;color:${scoreColor};font-family:'Space Mono',monospace;">${a.score}</td>
-        <td style="padding:0.6rem;">${a.status}</td><td style="padding:0.6rem;">${a.pdf ? '✅' : '❌'}</td>
-        <td style="padding:0.6rem;color:var(--text-muted);font-size:0.78rem;">${a.notes}</td></tr>`;
+    const entries = [...apps.entries];
+    pulseEntriesByNum = new Map(entries.map(entry => [entry.num, entry]));
+    for (const num of pulseDraftRows.keys()) {
+      if (!pulseEntriesByNum.has(num)) pulseDraftRows.delete(num);
     }
-    tableHtml += '</tbody></table>';
+    for (const num of pulseSavingRows.values()) {
+      if (!pulseEntriesByNum.has(num)) pulseSavingRows.delete(num);
+    }
+
+    const view = PULSE_VIEWS[pulseCurrentView] || PULSE_VIEWS.applied;
+    renderPulseAddRow(view);
+
+    if (view.type === 'schedule') {
+      const signature = pulseRenderedSignature(view, [], []);
+      if (signature === pulseLastRenderedSignature) return;
+      if (isPulseWorkspaceControlActive()) {
+        queuePulseRenderAfterInteraction();
+        return;
+      }
+      pulseLastRenderedSignature = signature;
+      document.getElementById('pulse-apps-table').innerHTML = renderScheduleView();
+      return;
+    }
+
+    const columns = view.columns;
+    const sortedEntries = sortedPulseEntries(entries, columns);
+    const signature = pulseRenderedSignature(view, columns, sortedEntries);
+    if (signature === pulseLastRenderedSignature) return;
+    let tableHtml = '<div class="pulse-table-wrap"><table class="pulse-tracker-table"><thead><tr>';
+    for (const field of columns) {
+      const arrow = pulseSort.field === field ? (pulseSort.direction === 'asc' ? ' ▲' : ' ▼') : '';
+      tableHtml += `<th class="pulse-col-${field}">
+        <button class="pulse-sort-btn" onclick="setPulseSort('${field}')">${escapeHTML(PULSE_FIELD_LABELS[field] || field)}${arrow}</button>
+        <div class="column-filter">${pulseFilterControl(field)}</div>
+      </th>`;
+    }
+    tableHtml += '<th class="pulse-col-actions"><button class="pulse-sort-btn" type="button">Actions</button></th>';
+    tableHtml += '</tr></thead><tbody>';
+    for (const entry of sortedEntries) {
+      tableHtml += '<tr>';
+      for (const field of columns) {
+        tableHtml += `<td>${pulseFieldControl(entry, field)}</td>`;
+      }
+      tableHtml += `<td>${pulseDeleteControl(entry)}</td>`;
+      tableHtml += '</tr>';
+    }
+    if (sortedEntries.length === 0) {
+      tableHtml += `<tr><td colspan="${columns.length + 1}" class="pulse-row-readonly">No rows match the current filters.</td></tr>`;
+    }
+    tableHtml += '</tbody></table></div>';
+    // #region agent log
+    agentDebugLog('H1,H5', 'WEB-TRACKER/dashboard/fusion-pivot-dashboard.html:renderPulse:replaceTable', 'renderPulse replacing pulse-apps-table HTML', {
+      renderSeq,
+      rowCount: sortedEntries.length,
+      columns,
+      activeElement: agentDebugActiveElement(),
+    });
+    // #endregion
+    if (isPulseWorkspaceControlActive()) {
+      queuePulseRenderAfterInteraction();
+      return;
+    }
+    pulseLastRenderedSignature = signature;
     document.getElementById('pulse-apps-table').innerHTML = tableHtml;
   }
 
@@ -2168,7 +3275,17 @@ function connectSSE() {
     es.onmessage = (e) => {
       const data = JSON.parse(e.data);
       if (data.type === 'data_updated' || data.type === 'data_added') {
-        queueRenderAllPanels();
+        if (data.file === 'jobs-to-consider.json') {
+          renderLiveJobs();
+        } else if (data.file === 'applications.json') {
+          renderPulse();
+        } else if (data.file === 'reports.json') {
+          renderSystem();
+        } else if (data.file === 'jobs.json') {
+          renderJobs();
+        } else {
+          queueRenderAllPanels();
+        }
         const log = document.getElementById('event-log');
         log.innerHTML = `<div style="margin-bottom:0.3rem;">[${new Date().toLocaleTimeString()}] ${data.type}: ${data.file}</div>` + log.innerHTML;
       }
@@ -2180,6 +3297,21 @@ function connectSSE() {
       }
       if (data.type === 'action_plan_updated') {
         renderActionPlan();
+      }
+      if (data.type === 'application_updated' || data.type === 'application_dashboard_updated' || data.type === 'career_ops_synced') {
+        // #region agent log
+        agentDebugLog('H3', 'WEB-TRACKER/dashboard/fusion-pivot-dashboard.html:connectSSE:onmessage', 'SSE event will renderPulse', {
+          eventType: data.type,
+          activeElement: agentDebugActiveElement(),
+        });
+        // #endregion
+        renderPulse();
+      }
+      if (data.type === 'jobs_to_consider_updated') {
+        renderLiveJobs();
+      }
+      if (data.type === 'application_deleted') {
+        renderPulse();
       }
     };
     es.onerror = () => {
@@ -2205,6 +3337,9 @@ function connectSSE() {
 // ── Boot ────────────────────────────────────────────────────────────
 
 document.querySelectorAll('#workauth-filters input').forEach(input => input.addEventListener('change', renderLiveJobs));
+document.addEventListener('focusout', (event) => {
+  if (event.target?.closest?.('#pulse-add-row, #pulse-apps-table')) flushPulseRenderAfterInteraction();
+});
 renderAllPanels();
 connectSSE();
 

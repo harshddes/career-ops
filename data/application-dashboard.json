@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "entries": {
+    "5": {
+      "division_field": ""
+    }
+  },
+  "schedule": {
+    "slots": {},
+    "weeks": {
+      "1": {
+        "monday": false,
+        "wednesday": true
+      }
+    }
+  }
+}

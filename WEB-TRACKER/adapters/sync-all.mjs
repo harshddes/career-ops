@@ -12,6 +12,7 @@ import { run as syncReports } from './reports-adapter.mjs';
 import { run as syncScanHistory } from './scan-history-adapter.mjs';
 import { run as syncPatterns } from './patterns-adapter.mjs';
 import { run as syncFollowups } from './followups-adapter.mjs';
+import { run as syncJobsToConsider } from './jobs-to-consider-adapter.mjs';
 
 const adapters = [
   { name: 'applications', fn: syncApplications },
@@ -20,6 +21,7 @@ const adapters = [
   { name: 'scan-history', fn: syncScanHistory },
   { name: 'patterns', fn: syncPatterns },
   { name: 'followups', fn: syncFollowups },
+  { name: 'jobs-to-consider', fn: syncJobsToConsider },
 ];
 
 console.log(`\n[sync-all] Refreshing ${adapters.length} career-ops data feeds...\n`);
