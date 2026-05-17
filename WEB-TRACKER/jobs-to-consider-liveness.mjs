@@ -2,8 +2,8 @@
 /**
  * jobs-to-consider-liveness.mjs
  *
- * Weekly liveness checker for curated researched jobs. Closed roles are kept
- * for history, but moved out of the main Jobs to Consider section.
+ * Liveness checker for curated researched jobs. Closed roles are kept for
+ * history, but moved out of the main Jobs to Consider section.
  */
 
 import { chromium } from 'playwright';
@@ -13,7 +13,7 @@ import { patchConsiderJob, readConsiderJobs, syncConsiderJobsToDashboard } from 
 const args = process.argv.slice(2);
 const DRY_RUN = args.includes('--dry-run');
 
-async function checkUrl(page, url) {
+export async function checkUrl(page, url) {
   try {
     const response = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 15000 });
     const status = response?.status() ?? 0;
@@ -47,14 +47,14 @@ async function checkUrl(page, url) {
   }
 }
 
-async function main() {
+export async function runLivenessSweep({ dryRun = DRY_RUN, logger = console, now = new Date() } = {}) {
   const store = readConsiderJobs();
   const candidates = store.jobs.filter(job => job.url && !['closed', 'archived'].includes(job.status));
 
-  console.log(`[jobs-to-consider-liveness] Checking ${candidates.length} job(s)${DRY_RUN ? ' (dry run)' : ''}...\n`);
+  logger.log(`[jobs-to-consider-liveness] Checking ${candidates.length} job(s)${dryRun ? ' (dry run)' : ''}...\n`);
   if (candidates.length === 0) {
     syncConsiderJobsToDashboard();
-    return;
+    return { checked: 0, active: 0, closed: 0, uncertain: 0 };
   }
 
   const browser = await chromium.launch({ headless: true });
@@ -72,15 +72,15 @@ async function main() {
       else if (result === 'expired') closed += 1;
       else uncertain += 1;
 
-      console.log(`${result.padEnd(9)} ${job.company} -- ${job.title}`);
-      if (reason) console.log(`          ${reason}`);
+      logger.log(`${result.padEnd(9)} ${job.company} -- ${job.title}`);
+      if (reason) logger.log(`          ${reason}`);
 
-      if (!DRY_RUN) {
+      if (!dryRun) {
         patchConsiderJob(job.id, {
           status: nextStatus,
           liveness: nextLiveness,
           liveness_reason: reason,
-          last_checked: new Date().toISOString(),
+          last_checked: now.toISOString(),
         });
       }
     }
@@ -88,11 +88,14 @@ async function main() {
     await browser.close();
   }
 
-  if (!DRY_RUN) syncConsiderJobsToDashboard();
-  console.log(`\n[jobs-to-consider-liveness] Results: ${active} active, ${closed} closed, ${uncertain} uncertain`);
+  if (!dryRun) syncConsiderJobsToDashboard();
+  logger.log(`\n[jobs-to-consider-liveness] Results: ${active} active, ${closed} closed, ${uncertain} uncertain`);
+  return { checked: candidates.length, active, closed, uncertain };
 }
 
-main().catch((err) => {
-  console.error('[jobs-to-consider-liveness] Fatal:', err.message);
-  process.exit(1);
-});
+if (process.argv[1]?.endsWith('jobs-to-consider-liveness.mjs')) {
+  runLivenessSweep().catch((err) => {
+    console.error('[jobs-to-consider-liveness] Fatal:', err.message);
+    process.exit(1);
+  });
+}

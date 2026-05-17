@@ -13,8 +13,10 @@ import { run as syncScanHistory } from './scan-history-adapter.mjs';
 import { run as syncPatterns } from './patterns-adapter.mjs';
 import { run as syncFollowups } from './followups-adapter.mjs';
 import { run as syncJobsToConsider } from './jobs-to-consider-adapter.mjs';
+import { syncArtifactResources } from '../lib/artifact-resource-sync.mjs';
 
 const adapters = [
+  { name: 'application-artifacts', fn: () => ({ count: syncArtifactResources().updated }) },
   { name: 'applications', fn: syncApplications },
   { name: 'pipeline', fn: syncPipeline },
   { name: 'reports', fn: syncReports },

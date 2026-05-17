@@ -483,6 +483,7 @@ nav::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; 
 
 .control-btn.secondary { background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border); }
 .control-btn.warn { background: var(--accent-warn); color: #111; }
+.control-btn.danger { border-color: rgba(255, 23, 68, 0.55); color: var(--accent-red); }
 .control-btn:disabled { opacity: 0.45; cursor: not-allowed; }
 .control-btn.is-active {
   background: var(--accent-plasma);
@@ -571,6 +572,17 @@ nav::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; 
 
 .job-resource-link:hover {
   border-color: var(--accent-fusion);
+}
+
+.job-artifact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.8rem;
+}
+
+.job-artifact-actions .control-btn {
+  margin-right: 0;
 }
 
 .job-log {
@@ -2712,6 +2724,46 @@ function updateLiveJobsViewButtons() {
   document.getElementById('livejobs-view-table')?.classList.toggle('is-active', liveJobsView === 'table');
 }
 
+const ARTIFACT_REQUESTS = {
+  resume: {
+    label: 'Request Resume',
+    doneLabel: 'Resume ready',
+    resourceKeys: ['resume_pdf'],
+  },
+  cover_letter: {
+    label: 'Request Cover Letter',
+    doneLabel: 'Cover letter ready',
+    resourceKeys: ['cover_letter_pdf'],
+  },
+  application_email: {
+    label: 'Request Application Email',
+    doneLabel: 'Email draft ready',
+    resourceKeys: ['email_draft'],
+  },
+  application_pack: {
+    label: 'Request Full Application Pack',
+    doneLabel: 'Application pack ready',
+    resourceKeys: ['resume_pdf', 'cover_letter_pdf', 'email_draft'],
+  },
+};
+
+function hasArtifactResources(job, artifactKind) {
+  const spec = ARTIFACT_REQUESTS[artifactKind];
+  const resources = job.resources || {};
+  return Boolean(spec && spec.resourceKeys.every(key => resources[key]));
+}
+
+function jobArtifactActions(job) {
+  const actions = Object.entries(ARTIFACT_REQUESTS).map(([kind, spec]) => {
+    const hasResources = hasArtifactResources(job, kind);
+    const label = hasResources ? spec.doneLabel : spec.label;
+    const disabled = hasResources ? 'disabled' : '';
+    const title = hasResources ? 'This artifact is already linked on this job.' : `Queue ${label.toLowerCase()} for Cursor.`;
+    return `<button class="control-btn secondary" ${disabled} title="${escapeHTML(title)}" onclick='queueArtifactTask(window.__liveJobsByUrl[${JSON.stringify(job.id)}], ${JSON.stringify(kind)})'>${escapeHTML(label)}</button>`;
+  });
+  return `<div class="job-artifact-actions">${actions.join('')}</div>`;
+}
+
 function jobResourceLinks(job) {
   const resources = job.resources || {};
   const links = [];
@@ -2742,6 +2794,10 @@ function jobStatusBadge(job) {
   return '<span class="tag visa">To consider</span>';
 }
 
+function jobDeleteControl(job) {
+  return `<button class="control-btn secondary danger" onclick='deleteJobPosting(${JSON.stringify(job.id)})'>Delete Posting</button>`;
+}
+
 function renderJobCards(jobs) {
   if (jobs.length === 0) return '<div class="jobs-empty">Nothing here.</div>';
   return `<div class="company-grid">${jobs.map(job => {
@@ -2762,7 +2818,9 @@ function renderJobCards(jobs) {
         <div class="card-tags">${jobStatusBadge(job)}${workAuthBadges(job)}</div>
         ${jobAppliedToggle(job)}
         ${jobResourceLinks(job)}
+        ${jobArtifactActions(job)}
         <button class="control-btn secondary" onclick='queueEvaluationTask(window.__liveJobsByUrl[${JSON.stringify(job.id)}])'>Ask AI to evaluate this</button>
+        ${jobDeleteControl(job)}
       </div>`;
   }).join('')}</div>`;
 }
@@ -2779,10 +2837,11 @@ function renderJobTable(jobs) {
       <td>${jobStatusBadge(job)}</td>
       <td>${escapeHTML(job.fit_summary || job.notes || '')}</td>
       <td>${jobResourceLinks(job)}</td>
+      <td>${jobArtifactActions(job)}<button class="control-btn secondary" onclick='queueEvaluationTask(window.__liveJobsByUrl[${JSON.stringify(job.id)}])'>Evaluate</button>${jobDeleteControl(job)}</td>
     </tr>`).join('');
   return `<div class="pulse-table-wrap"><table class="pulse-tracker-table">
     <thead><tr>
-      <th>Applied</th><th>Company</th><th>Role</th><th>Location</th><th>Score</th><th>Status</th><th>Why</th><th>Resources</th>
+      <th>Applied</th><th>Company</th><th>Role</th><th>Location</th><th>Score</th><th>Status</th><th>Why</th><th>Resources</th><th>Actions</th>
     </tr></thead>
     <tbody>${rows}</tbody>
   </table></div>`;
@@ -2795,6 +2854,74 @@ function renderJobsSection(title, jobs, targetId) {
     <div class="jobs-section-title">${escapeHTML(title)} (${jobs.length})</div>
     ${liveJobsView === 'table' ? renderJobTable(jobs) : renderJobCards(jobs)}
   `;
+}
+
+const LIVE_JOBS_SECTION_IDS = ['livejobs-to-consider', 'livejobs-applied', 'livejobs-closed'];
+const LIVE_JOBS_SCROLL_IDLE_MS = 800;
+let liveJobsRenderInFlight = false;
+let liveJobsRenderQueued = false;
+let liveJobsDeferredRenderTimer = null;
+let liveJobsUserScrollingUntil = 0;
+
+function isLiveJobsScrollTarget(target) {
+  return Boolean(target?.closest?.('#livejobs .pulse-table-wrap, #livejobs .jobs-section'));
+}
+
+function queueLiveJobsRenderAfterScrollIdle() {
+  if (liveJobsDeferredRenderTimer) clearTimeout(liveJobsDeferredRenderTimer);
+  liveJobsDeferredRenderTimer = setTimeout(() => {
+    liveJobsDeferredRenderTimer = null;
+    if (!liveJobsRenderQueued) return;
+    liveJobsRenderQueued = false;
+    renderLiveJobs();
+  }, LIVE_JOBS_SCROLL_IDLE_MS + 50);
+}
+
+document.addEventListener('scroll', (event) => {
+  if (!isLiveJobsScrollTarget(event.target)) return;
+  liveJobsUserScrollingUntil = Date.now() + LIVE_JOBS_SCROLL_IDLE_MS;
+  queueLiveJobsRenderAfterScrollIdle();
+}, true);
+
+function captureLiveJobsScrollState() {
+  const sections = Object.fromEntries(LIVE_JOBS_SECTION_IDS.map(id => {
+    const section = document.getElementById(id);
+    const tableWrap = section?.querySelector('.pulse-table-wrap');
+    return [id, {
+      sectionTop: section?.scrollTop || 0,
+      sectionLeft: section?.scrollLeft || 0,
+      tableTop: tableWrap?.scrollTop || 0,
+      tableLeft: tableWrap?.scrollLeft || 0,
+    }];
+  }));
+
+  return {
+    pageX: window.scrollX,
+    pageY: window.scrollY,
+    restorePage: document.getElementById('livejobs')?.classList.contains('active') || false,
+    sections,
+  };
+}
+
+function restoreLiveJobsScrollState(state) {
+  if (!state) return;
+  requestAnimationFrame(() => {
+    for (const [id, scroll] of Object.entries(state.sections || {})) {
+      const section = document.getElementById(id);
+      const tableWrap = section?.querySelector('.pulse-table-wrap');
+      if (section) {
+        section.scrollTop = scroll.sectionTop;
+        section.scrollLeft = scroll.sectionLeft;
+      }
+      if (tableWrap) {
+        tableWrap.scrollTop = Math.min(scroll.tableTop, tableWrap.scrollHeight);
+        tableWrap.scrollLeft = Math.min(scroll.tableLeft, tableWrap.scrollWidth);
+      }
+    }
+    if (state.restorePage && document.getElementById('livejobs')?.classList.contains('active')) {
+      window.scrollTo(state.pageX, state.pageY);
+    }
+  });
 }
 
 async function toggleJobApplied(id, applied) {
@@ -2817,29 +2944,69 @@ async function toggleJobApplied(id, applied) {
   }
 }
 
+async function deleteJobPosting(id) {
+  const job = window.__liveJobsByUrl?.[id];
+  const label = job ? `${job.company} -- ${job.title}` : id;
+  const applicationNote = job?.application_num
+    ? `\n\nLinked application #${job.application_num} stays in Applications.`
+    : '';
+  if (!confirm(`Delete this Jobs to Consider posting?\n\n${label}${applicationNote}\n\nThis removes it from data/jobs-to-consider.json only.`)) return;
+
+  try {
+    setLiveJobsFeedback('Deleting posting...', 'warn');
+    await apiJSON(`/api/jobs-to-consider/${encodeURIComponent(id)}`, { method: 'DELETE' });
+    if (window.__liveJobsByUrl) delete window.__liveJobsByUrl[id];
+    setLiveJobsFeedback('Deleted posting from Jobs to Consider.', 'success');
+    await renderLiveJobs();
+    await renderActionPlan();
+  } catch (err) {
+    setLiveJobsFeedback(`Could not delete posting: ${err.message}`, 'error');
+  }
+}
+
 async function renderLiveJobs() {
-  updateLiveJobsViewButtons();
-  const data = await fetchJSON('jobs-to-consider.json');
-  if (!data) {
-    document.getElementById('livejobs-meta').textContent = 'No curated jobs yet. Research a role, then add it here before applying.';
+  const liveJobsActive = document.getElementById('livejobs')?.classList.contains('active') || false;
+  if (liveJobsActive && Date.now() < liveJobsUserScrollingUntil) {
+    liveJobsRenderQueued = true;
+    queueLiveJobsRenderAfterScrollIdle();
+    return;
+  }
+  if (liveJobsRenderInFlight) {
+    liveJobsRenderQueued = true;
     return;
   }
 
-  const filters = selectedWorkAuthFilters();
-  const filtered = (data.jobs || []).filter(job => matchesWorkAuthFilters(job, filters));
-  const sorted = [...filtered].sort((a, b) => new Date(b.first_seen || 0) - new Date(a.first_seen || 0));
-  window.__liveJobsByUrl = Object.fromEntries(sorted.map(job => [job.id, job]));
+  liveJobsRenderInFlight = true;
+  updateLiveJobsViewButtons();
+  try {
+    const data = await fetchJSON('jobs-to-consider.json');
+    const scrollState = captureLiveJobsScrollState();
+    if (!data) {
+      document.getElementById('livejobs-meta').textContent = 'No curated jobs yet. Research a role, then add it here before applying.';
+      restoreLiveJobsScrollState(scrollState);
+      return;
+    }
 
-  const activeJobs = sorted.filter(job => !job.applied && job.status !== 'applied' && job.status !== 'closed' && job.status !== 'archived');
-  const appliedJobs = sorted.filter(job => job.applied || job.status === 'applied');
-  const closedJobs = sorted.filter(job => job.status === 'closed' || job.status === 'archived');
+    const filters = selectedWorkAuthFilters();
+    const filtered = (data.jobs || []).filter(job => matchesWorkAuthFilters(job, filters));
+    const sorted = [...filtered].sort((a, b) => new Date(b.first_seen || 0) - new Date(a.first_seen || 0));
+    window.__liveJobsByUrl = Object.fromEntries(sorted.map(job => [job.id, job]));
 
-  document.getElementById('livejobs-meta').textContent =
-    `${filtered.length}/${data.total || data.jobs?.length || 0} researched jobs shown | ${activeJobs.length} to consider | ${appliedJobs.length} applied | ${closedJobs.length} archived | Updated: ${data.generated_at ? new Date(data.generated_at).toLocaleString() : 'unknown'}`;
+    const activeJobs = sorted.filter(job => !job.applied && job.status !== 'applied' && job.status !== 'closed' && job.status !== 'archived');
+    const appliedJobs = sorted.filter(job => job.applied || job.status === 'applied');
+    const closedJobs = sorted.filter(job => job.status === 'closed' || job.status === 'archived');
 
-  renderJobsSection('To Consider', activeJobs, 'livejobs-to-consider');
-  renderJobsSection('Applied', appliedJobs, 'livejobs-applied');
-  renderJobsSection('Closed / Archived', closedJobs, 'livejobs-closed');
+    document.getElementById('livejobs-meta').textContent =
+      `${filtered.length}/${data.total || data.jobs?.length || 0} researched jobs shown | ${activeJobs.length} to consider | ${appliedJobs.length} applied | ${closedJobs.length} archived | Updated: ${data.generated_at ? new Date(data.generated_at).toLocaleString() : 'unknown'}`;
+
+    renderJobsSection('To Consider', activeJobs, 'livejobs-to-consider');
+    renderJobsSection('Applied', appliedJobs, 'livejobs-applied');
+    renderJobsSection('Closed / Archived', closedJobs, 'livejobs-closed');
+    restoreLiveJobsScrollState(scrollState);
+  } finally {
+    liveJobsRenderInFlight = false;
+    if (liveJobsRenderQueued) queueLiveJobsRenderAfterScrollIdle();
+  }
 }
 
 // ── PhD Radar Tab ───────────────────────────────────────────────────
@@ -3143,21 +3310,34 @@ async function renderAgentTasks() {
   if (!grid) return;
   try {
     const data = await apiJSON('/api/agent-tasks');
+    const activeTasks = data.tasks.filter(task => !['completed', 'cancelled'].includes(task.status));
     grid.innerHTML = '';
-    if (data.tasks.length === 0) {
+    if (activeTasks.length === 0) {
       grid.innerHTML = '<div class="control-card"><h3>No AI review waiting</h3><p>When you queue a job or contact draft, it will appear here as instructions for Cursor/me.</p></div>';
       return;
     }
-    for (const task of data.tasks.slice(0, 20)) {
+    for (const task of activeTasks.slice(0, 20)) {
+      const taskLabel = task.type === 'evaluation'
+        ? 'AI should evaluate'
+        : task.type === 'application_artifact'
+          ? `AI should create ${String(task.artifact_kind || 'application artifact').replace(/_/g, ' ')}`
+          : 'AI should help with';
+      const resourceHint = Array.isArray(task.expected_resources) && task.expected_resources.length
+        ? `<p class="plain-help">Attach when done: ${task.expected_resources.map(escapeHTML).join(', ')}</p>`
+        : '';
+      const taskName = escapeHTML(task.company || task.title || task.id);
+      const taskContext = escapeHTML(task.title || task.mode);
+      const taskUrl = escapeHTML(task.url || '');
       grid.innerHTML += `
         <div class="control-card">
-          <h3>${task.type === 'evaluation' ? 'AI should evaluate' : 'AI should help with'}: ${task.company || task.title || task.id}</h3>
-          <p>${task.title || task.mode}<br>${task.url ? `<a href="${task.url}" target="_blank" style="color:var(--accent-fusion);">Open URL</a>` : ''}</p>
+          <h3>${escapeHTML(taskLabel)}: ${taskName}</h3>
+          <p>${taskContext}<br>${taskUrl ? `<a href="${taskUrl}" target="_blank" style="color:var(--accent-fusion);">Open URL</a>` : ''}</p>
+          ${resourceHint}
           <span class="status-pill ${task.status}">${friendlyStatus(task.status)}</span>
           <button class="control-btn secondary" onclick="copyTaskPrompt('${task.id}')">Copy instructions for Cursor</button>
         </div>`;
     }
-    window.__agentTasks = data.tasks;
+    window.__agentTasks = activeTasks;
   } catch (err) {
     grid.innerHTML = `<div class="control-card"><h3>Task queue unavailable</h3><p>${err.message}</p></div>`;
   }
@@ -3197,6 +3377,10 @@ function prefillContactDraft(contact) {
 }
 
 async function queueEvaluationTask(job) {
+  if (!job) {
+    setLiveJobsFeedback('Could not find that job in the current dashboard data. Refresh and try again.', 'error');
+    return;
+  }
   const { task } = await apiJSON('/api/agent-tasks', {
     method: 'POST',
     body: JSON.stringify({
@@ -3215,6 +3399,43 @@ async function queueEvaluationTask(job) {
   });
   alert('Added to “Needs AI Review”. Next step: ask Cursor to process that item, or copy the instructions from Behind The Scenes.');
   renderAgentTasks();
+}
+
+async function queueArtifactTask(job, artifactKind) {
+  const spec = ARTIFACT_REQUESTS[artifactKind];
+  if (!job || !spec) {
+    setLiveJobsFeedback('Could not queue that artifact request. Refresh the dashboard and try again.', 'error');
+    return;
+  }
+  if (hasArtifactResources(job, artifactKind)) {
+    setLiveJobsFeedback(`${spec.doneLabel}. Use the download/preview link on this job.`, 'success');
+    return;
+  }
+  try {
+    setLiveJobsFeedback(`Queueing ${spec.label.toLowerCase()}...`, 'warn');
+    await apiJSON('/api/agent-tasks', {
+      method: 'POST',
+      body: JSON.stringify({
+        type: 'application_artifact',
+        artifact_kind: artifactKind,
+        expected_resources: spec.resourceKeys,
+        company: job.company,
+        title: job.title,
+        url: job.url,
+        source_id: job.id,
+        work_auth: {
+          h1b_sponsorship: job.h1b_sponsorship || job.h1b_status,
+          green_card_sponsorship: job.green_card_sponsorship,
+          region: job.region,
+          export_control_risk: job.export_control_risk,
+        },
+      }),
+    });
+    setLiveJobsFeedback(`Queued ${spec.label.toLowerCase()}. Open Behind The Scenes to copy/process the Cursor instructions.`, 'success');
+    await renderAgentTasks();
+  } catch (err) {
+    setLiveJobsFeedback(err.message || 'Could not queue artifact request.', 'error');
+  }
 }
 
 function copyTaskPrompt(id) {

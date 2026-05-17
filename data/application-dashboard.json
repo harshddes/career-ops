@@ -1,6 +1,18 @@
 {
   "version": 1,
   "entries": {
+    "1": {
+      "posting_url": "https://jobs.lever.co/cfsenergy/3bf339e5-3587-411c-b82b-5aabf4f725b0",
+      "way_to_apply": ""
+    },
+    "2": {
+      "posting_url": "https://www.pranosfusion.energy/careers/instrumentation-engineer",
+      "way_to_apply": "output/application-email-pranos-fusion-instrumentation-engineer-2026-05-06.md"
+    },
+    "3": {
+      "posting_url": "https://jobs.ashbyhq.com/helion/92b6a700-14e7-471f-b53d-c830045e40ea",
+      "way_to_apply": ""
+    },
     "5": {
       "division_field": ""
     }

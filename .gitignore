@@ -26,11 +26,13 @@ modes/_profile.md
 .resolved-prompt-*
 node_modules/
 bun.lock
+data/*.tmp-*
 
 # WEB-TRACKER local runtime data
 WEB-TRACKER/data/*.json
 WEB-TRACKER/data/*.ndjson
 WEB-TRACKER/data/*.tmp
+WEB-TRACKER/data/*.tmp-*
 WEB-TRACKER/data/*.log
 WEB-TRACKER/data/tmp/
 WEB-TRACKER/runtime/
@@ -45,3 +47,10 @@ WEB-TRACKER/runtime/
 .claude/memory/
 career-dashboard
 package-lock.json
+
+# Cursor local artifacts
+.cursor/debug-*.log
+.cursor/plans/*.plan.md
+
+# Local scratch files
+harsh/Untitled spreadsheet.xlsx

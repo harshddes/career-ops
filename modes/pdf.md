@@ -18,7 +18,7 @@
 9. Reorder experience bullets by relevance to JD (most relevant role first)
 10. Build competency grid from JD requirements (6-8 keyword phrases as tags)
 11. Inject JD keywords naturally into existing achievements (NEVER invent skills or experience)
-12. Generate HTML with the project's design system (Space Grotesk + DM Sans, gradient header, competency tags)
+12. Generate HTML using `templates/cv-template.html` (single ATS shell: dense Pranos/Fusion-style layout, Space Grotesk + DM Sans, `.tag` competency pills, `Selected Projects`, two-column Skills grid — match reference `output/cv-harsh-desai-pranos-fusion-instrumentation-engineer-2026-05-06.html`).
 13. Read `name` from `config/profile.yml` -> normalize to kebab-case lowercase -> `{candidate}`
 14. Write HTML to `output/cv-{candidate}-{company}-{YYYY-MM-DD}.html`
 15. Run: `node generate-pdf.mjs output/cv-{candidate}-{company}-{YYYY-MM-DD}.html output/cv-{candidate}-{company}-{YYYY-MM-DD}.pdf --format={letter|a4}`
@@ -42,14 +42,24 @@
     f. Report: "ATS text extraction: PASS (all 7 sections detected)" or "ATS text extraction: FAIL (missing: [list])"
 20. **(OPTIONAL) External ATS score check:** User can request `ats-check` to upload the PDF to resumeatschecker.com or atsresumeschecker.com via browser automation and retrieve the score. This is not run automatically.
 
+## Local Format Smoke Test
+
+For non-JD sample generation from `cv.md` only (same HTML shell as job-tailored output):
+
+```bash
+node generate-cv.mjs --output=output/cv-harsh-desai-ats.html --pdf=output/cv-harsh-desai-ats.pdf --paper=letter
+```
+
+This renders the full Markdown CV into `templates/cv-template.html`; it is not JD-trimmed, so PDF page count may exceed one until the tailoring loop runs.
+
 ## STRICT 1-PAGE RULE
 
 Every generated PDF MUST be exactly 1 page. No exceptions. The dynamic check in steps 16-17 enforces this. The goal is to MAXIMIZE content density within the 1-page constraint -- fill the page, don't leave it half empty.
 
 ## ATS Rules (clean parsing)
 
-- Single-column layout (no sidebars, no parallel columns)
-- Standard section headers: "Professional Summary", "Work Experience", "Education", "Skills", "Projects", "Honors"
+- Single primary column narrative (no side-by-side Experience columns); a two-column **Skills** subsection using CSS Grid is permitted for ATS output when using `templates/cv-template.html`.
+- Standard section headers: "Professional Summary", "Work Experience", "Education", "Skills", "Selected Projects", "Honors"
 - No text in images/SVGs
 - No critical info in PDF headers/footers (ATS ignores them)
 - UTF-8, selectable text (not rasterized)
@@ -58,6 +68,7 @@ Every generated PDF MUST be exactly 1 page. No exceptions. The dynamic check in 
 
 ## Design Spec
 
+Concrete typography and spacing live in **`templates/cv-template.html`** (dense, Pranos-aligned one-page sizing). Values below summarize intent during tailoring iterations:
 - **Fonts**: Space Grotesk (headings, 600-700) + DM Sans (body, 400-500)
 - **Fonts self-hosted**: `fonts/`
 - **Fallback font stacks (MANDATORY for ATS safety):** Body CSS must use `font-family: 'DM Sans', Calibri, Arial, sans-serif;` and headings must use `font-family: 'Space Grotesk', Calibri, Arial, sans-serif;` so that ATS parsers that ignore embedded web fonts still extract clean text via system fonts.
@@ -160,27 +171,33 @@ Examples of legitimate reformulation:
 
 ## Template HTML
 
-Use the project's design system (Space Grotesk + DM Sans, gradient header, competency tags, purple accents). The base template is in `templates/cv-template.html` for reference, but the actual HTML is generated inline with the calibrated sizing from the Design Spec above.
+Use `templates/cv-template.html` as the ATS shell — this is aligned with curated one-page emits (dense typography, `.tag` competency pills, `Selected Projects`, two-column `Skills`). Reference snapshot: `output/cv-harsh-desai-pranos-fusion-instrumentation-engineer-2026-05-06.html`. Do not resurrect parallel HTML/CSS variants (`cv-harsh-desai-ats-one-page-*`, bespoke `fonts/*.ttf` under `output/`, etc.). Job-tailoring loops adjust **copy** inside this shell; typography stays here.
 
-Placeholder reference (for content generation):
+When authoring HTML from scratch in this mode (without `generate-cv.mjs`), fill the placeholders below.
+
+
+Placeholder reference:
 
 | Placeholder | Content |
 |---|---|
-| `{{NAME}}` | from profile.yml |
-| `{{PHONE}}` | from profile.yml |
-| `{{EMAIL}}` | from profile.yml |
-| `{{LINKEDIN_URL}}` | from profile.yml |
-| `{{LINKEDIN_DISPLAY}}` | from profile.yml |
-| `{{PORTFOLIO_URL}}` | from profile.yml |
-| `{{PORTFOLIO_DISPLAY}}` | from profile.yml |
-| `{{LOCATION}}` | from profile.yml |
-| `{{SUMMARY_TEXT}}` | Tailored summary with JD keywords + exit narrative + portfolio URL |
-| `{{COMPETENCIES}}` | `<span class="competency-tag">keyword</span>` x 6-9 |
-| `{{EXPERIENCE}}` | HTML for each work entry, reordered by JD relevance |
-| `{{PROJECTS}}` | HTML for top 3-4 projects |
-| `{{EDUCATION}}` | HTML for education entries |
-| `{{SKILLS}}` | HTML for skills grid |
-| `{{HONORS}}` | HTML for honors with technical descriptions |
+| `{{LANG}}` | `en` (or JD language) |
+| `{{PAGE_WIDTH}}` | `7.25in` (Letter) / `7.2in` (A4) |
+| `{{NAME}}` | from `config/profile.yml` |
+| `{{PHONE}}` | from `config/profile.yml` |
+| `{{EMAIL}}` | from `config/profile.yml` |
+| `{{LOCATION}}` | city/region line (ATS plain text — no URL) |
+| `{{LINKEDIN_DISPLAY}}` | host + path text (e.g. `linkedin.com/in/...`), not a clickable row of links unless required |
+| `{{PORTFOLIO_LINE}}` | e.g. `Portfolio: harshddes.github.io` |
+| `{{SECTION_SUMMARY}}` … | section titles (`Professional Summary`, `Core Competencies`, … `Honors`) |
+| `{{SUMMARY_TEXT}}` | JD-tailored summary paragraph |
+| `{{COMPETENCIES}}` | repeated `<span class="tag">…</span>` |
+| `{{EXPERIENCE}}` | stacked `.item` blocks with bullets |
+| `{{PROJECTS}}` | same structure for selected projects |
+| `{{EDUCATION}}` | `.item` blocks + `<p>` for coursework narratives |
+| `{{SKILLS}}` | two-column `.skills-grid` |
+| `{{CERTIFICATIONS}}` | `Honors`: `<ul class="compact-list">…</ul>` |
+
+**Deprecated:** Separate “wide” ATS markup (old `.job-header` layout, gigantic header, or unrelated CSS in one-off outputs). Treat anything not matching `templates/cv-template.html` as stale.
 
 ## Canva CV Generation (optional)
 

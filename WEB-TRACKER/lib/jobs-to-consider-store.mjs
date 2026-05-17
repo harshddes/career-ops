@@ -168,6 +168,16 @@ export function patchConsiderJob(id, updates = {}, filePath = CANONICAL_JOBS_FIL
   return { store: nextStore, job: nextStore.jobs[index] };
 }
 
+export function deleteConsiderJob(id, filePath = CANONICAL_JOBS_FILE) {
+  const store = readConsiderJobs(filePath);
+  const index = store.jobs.findIndex(job => job.id === id || job.url === id);
+  if (index < 0) throw new Error(`job not found: ${id}`);
+
+  const [job] = store.jobs.splice(index, 1);
+  const nextStore = writeConsiderJobs(store, filePath);
+  return { store: nextStore, job };
+}
+
 export function syncConsiderJobsToDashboard({
   sourcePath = CANONICAL_JOBS_FILE,
   outputPath = DASHBOARD_JOBS_FILE,

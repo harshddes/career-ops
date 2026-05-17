@@ -13,18 +13,21 @@ import { join, dirname, basename, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { ActionPlanStore } from './lib/action-plan.mjs';
 import { createActionRegistry, listActions, runAction } from './lib/action-runner.mjs';
+import { syncArtifactResources } from './lib/artifact-resource-sync.mjs';
 import { AgentTaskQueue } from './lib/agent-task-queue.mjs';
 import { JobStore } from './lib/job-store.mjs';
 import { buildOutreachDraft } from './lib/outreach-drafts.mjs';
 import { summarizeSourceHealth } from './lib/source-health.mjs';
 import {
   CANONICAL_JOBS_FILE,
+  deleteConsiderJob,
   findConsiderJob,
   patchConsiderJob,
   readConsiderJobs,
   syncConsiderJobsToDashboard,
   upsertConsiderJob,
 } from './lib/jobs-to-consider-store.mjs';
+import { runLivenessSweep } from './jobs-to-consider-liveness.mjs';
 import {
   TRACKER_EDITABLE_FIELDS,
   TRACKER_METADATA_FIELDS,
@@ -44,6 +47,10 @@ const PORT = process.env.PORT || 3737;
 const HOST = process.env.HOST || '127.0.0.1';
 const CAREER_OPS = join(BASE, '..');
 const OUTPUT_DIR = join(CAREER_OPS, 'output');
+const SOURCE_REGISTRY_FILE = join(BASE, 'config', 'source-registry.json');
+const DEFAULT_LIVENESS_INTERVAL_MIN = 8 * 60;
+const MIN_LIVENESS_INTERVAL_MIN = 15;
+const MAX_TIMER_DELAY_MS = 2_147_000_000;
 
 const app = express();
 
@@ -266,10 +273,187 @@ function broadcast(eventType, payload) {
   }
 }
 
+function syncArtifactsToDashboard({ notify = false } = {}) {
+  const artifacts = syncArtifactResources();
+  const dashboard = syncConsiderJobsToDashboard();
+  const completedTasks = completeSatisfiedArtifactTasks();
+  if (notify || artifacts.changed) {
+    broadcast('jobs_to_consider_updated', {
+      total: dashboard.total,
+      artifact_resources: artifacts.linked,
+    });
+  }
+  return { artifacts, completedTasks, dashboard };
+}
+
+function completeSatisfiedArtifactTasks() {
+  if (!taskQueue) return [];
+
+  const store = readConsiderJobs();
+  const completed = [];
+  for (const task of taskQueue.list()) {
+    if (task.type !== 'application_artifact') continue;
+    if (['completed', 'cancelled'].includes(task.status)) continue;
+    if (!task.source_id || !Array.isArray(task.expected_resources) || !task.expected_resources.length) continue;
+
+    const job = findConsiderJob(task.source_id, store);
+    if (!job) continue;
+    const hasAllResources = task.expected_resources.every(key => Boolean(job.resources?.[key]));
+    if (!hasAllResources) continue;
+
+    const updated = taskQueue.update(task.id, {
+      status: 'completed',
+      notes: 'Completed automatically after expected job resources were linked.',
+    });
+    if (updated) {
+      completed.push(updated);
+      broadcast('agent_task_updated', { task: updated });
+    }
+  }
+  return completed;
+}
+
+function readJsonFile(filePath, fallback = {}) {
+  if (!existsSync(filePath)) return fallback;
+  try {
+    return JSON.parse(readFileSync(filePath, 'utf-8'));
+  } catch {
+    return fallback;
+  }
+}
+
+function positiveNumber(value) {
+  const parsed = Number(value);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : null;
+}
+
+function configuredLivenessIntervalMin() {
+  const envMinutes = positiveNumber(process.env.JOBS_TO_CONSIDER_LIVENESS_INTERVAL_MIN);
+  if (envMinutes) return Math.max(MIN_LIVENESS_INTERVAL_MIN, envMinutes);
+
+  const envHours = positiveNumber(process.env.JOBS_TO_CONSIDER_LIVENESS_INTERVAL_HOURS);
+  if (envHours) return Math.max(MIN_LIVENESS_INTERVAL_MIN, envHours * 60);
+
+  const registry = readJsonFile(SOURCE_REGISTRY_FILE, {});
+  const configured = positiveNumber(registry.automation?.jobs_to_consider_liveness_interval_min)
+    || positiveNumber(registry.liveness?.jobs_to_consider_interval_min)
+    || positiveNumber(registry.cadence_policy?.jobs_to_consider?.default_interval_min)
+    || positiveNumber(registry.cadence_policy?.job_api?.default_interval_min)
+    || DEFAULT_LIVENESS_INTERVAL_MIN;
+
+  return Math.max(MIN_LIVENESS_INTERVAL_MIN, configured);
+}
+
+function livenessDisabled() {
+  return ['0', 'false', 'off', 'disabled'].includes(
+    String(process.env.JOBS_TO_CONSIDER_LIVENESS || '').toLowerCase()
+  );
+}
+
+function activeLivenessCandidates(store = readConsiderJobs()) {
+  return store.jobs.filter(job => job.url && !['closed', 'archived'].includes(job.status));
+}
+
+function lastCheckedMs(job) {
+  const parsed = Date.parse(job.last_checked || '');
+  return Number.isFinite(parsed) ? parsed : 0;
+}
+
+function nextLivenessDelayMs(nowMs = Date.now()) {
+  const intervalMs = configuredLivenessIntervalMin() * 60_000;
+  if (livenessFailureCount > 0) {
+    return Math.min(60 * 60_000, 5 * 60_000 * (2 ** Math.min(livenessFailureCount - 1, 4)));
+  }
+
+  const candidates = activeLivenessCandidates();
+  if (!candidates.length) return intervalMs;
+
+  const nextDueMs = Math.min(...candidates.map(job => lastCheckedMs(job) + intervalMs));
+  if (!Number.isFinite(nextDueMs) || nextDueMs <= nowMs) return 2_000;
+  return Math.max(2_000, nextDueMs - nowMs);
+}
+
+let livenessTimer = null;
+let livenessSchedulerStarted = false;
+let livenessSweepPromise = null;
+let livenessFailureCount = 0;
+
+function scheduleNextLivenessSweep(reason = 'scheduled') {
+  if (livenessDisabled()) {
+    console.log('[liveness-scheduler] disabled by JOBS_TO_CONSIDER_LIVENESS');
+    return;
+  }
+
+  if (livenessTimer) clearTimeout(livenessTimer);
+  const delayMs = Math.min(nextLivenessDelayMs(), MAX_TIMER_DELAY_MS);
+  livenessTimer = setTimeout(() => {
+    livenessTimer = null;
+    runScheduledLivenessSweep(reason);
+  }, delayMs);
+
+  const minutes = Math.max(1, Math.round(delayMs / 60_000));
+  console.log(`[liveness-scheduler] Next Jobs to Consider sweep in ~${minutes} min (${reason})`);
+}
+
+function queueLivenessSweep(reason = 'jobs updated') {
+  if (!livenessSchedulerStarted || livenessDisabled()) return;
+  if (livenessTimer) clearTimeout(livenessTimer);
+  livenessTimer = setTimeout(() => {
+    livenessTimer = null;
+    runScheduledLivenessSweep(reason);
+  }, 2_000);
+}
+
+async function runScheduledLivenessSweep(reason = 'scheduled') {
+  if (livenessSweepPromise) {
+    console.log(`[liveness-scheduler] Sweep already running; skipped ${reason}`);
+    return livenessSweepPromise;
+  }
+
+  livenessSweepPromise = (async () => {
+    try {
+      console.log(`[liveness-scheduler] Starting Jobs to Consider sweep (${reason})`);
+      broadcast('jobs_to_consider_liveness_started', { reason });
+      const summary = await runLivenessSweep({ now: new Date() });
+      const dashboard = syncArtifactsToDashboard({ notify: true }).dashboard;
+      triggerSync();
+      livenessFailureCount = 0;
+      broadcast('jobs_to_consider_liveness_completed', {
+        reason,
+        summary,
+        total: dashboard.total,
+      });
+      return summary;
+    } catch (err) {
+      livenessFailureCount += 1;
+      console.warn(`[liveness-scheduler] Sweep failed: ${err.message}`);
+      broadcast('jobs_to_consider_liveness_failed', { reason, error: err.message });
+      return null;
+    } finally {
+      livenessSweepPromise = null;
+      scheduleNextLivenessSweep('after sweep');
+    }
+  })();
+
+  return livenessSweepPromise;
+}
+
+function startLivenessScheduler() {
+  if (livenessSchedulerStarted) return;
+  livenessSchedulerStarted = true;
+  scheduleNextLivenessSweep('server start');
+}
+
 const jobStore = new JobStore(join(DATA_DIR, 'jobs.json'), (type, payload) => broadcast(type, payload));
 const taskQueue = new AgentTaskQueue(join(DATA_DIR, 'agent-tasks.ndjson'));
 const actionPlan = new ActionPlanStore(join(DATA_DIR, 'action-plan.json'));
 const actionRegistry = createActionRegistry({ baseDir: BASE, repoRoot: CAREER_OPS, dataDir: DATA_DIR });
+
+try {
+  syncArtifactsToDashboard();
+} catch (err) {
+  console.warn(`[artifact-sync] startup sync failed: ${err.message}`);
+}
 
 // ── Local command/control API ─────────────────────────────────────────
 
@@ -349,6 +533,7 @@ app.post('/api/jobs-to-consider', (req, res) => {
     const store = upsertConsiderJob(req.body || {});
     const dashboard = syncConsiderJobsToDashboard();
     broadcast('jobs_to_consider_updated', { total: dashboard.total });
+    queueLivenessSweep('job created');
     return res.status(201).json(store);
   } catch (err) {
     return res.status(400).json({ error: err?.message || 'failed to create job to consider' });
@@ -360,10 +545,25 @@ app.patch('/api/jobs-to-consider/:id', (req, res) => {
     const result = patchConsiderJob(req.params.id, req.body || {});
     const dashboard = syncConsiderJobsToDashboard();
     broadcast('jobs_to_consider_updated', { id: result.job.id, total: dashboard.total });
+    if (req.body?.url || req.body?.status) queueLivenessSweep('job updated');
     return res.json(result);
   } catch (err) {
     const status = /not found/i.test(err?.message || '') ? 404 : 400;
     return res.status(status).json({ error: err?.message || 'failed to update job to consider' });
+  }
+});
+
+app.delete('/api/jobs-to-consider/:id', (req, res) => {
+  try {
+    const result = deleteConsiderJob(req.params.id);
+    const dashboard = syncConsiderJobsToDashboard();
+    triggerSync();
+    broadcast('jobs_to_consider_deleted', { id: result.job.id, total: dashboard.total });
+    broadcast('jobs_to_consider_updated', { id: result.job.id, total: dashboard.total });
+    return res.json({ ...result, total: dashboard.total });
+  } catch (err) {
+    const status = /not found/i.test(err?.message || '') ? 404 : 400;
+    return res.status(status).json({ error: err?.message || 'failed to delete job to consider' });
   }
 });
 
@@ -608,6 +808,33 @@ const careerOpsWatcher = watch([...careerOpsFiles, reportsGlob], {
 careerOpsWatcher.on('change', () => triggerSync());
 careerOpsWatcher.on('add', () => triggerSync());
 
+let artifactSyncDebounce = null;
+function triggerArtifactResourceSync() {
+  if (artifactSyncDebounce) return;
+  artifactSyncDebounce = setTimeout(() => {
+    artifactSyncDebounce = null;
+    try {
+      syncArtifactsToDashboard({ notify: true });
+    } catch (err) {
+      console.warn(`[artifact-sync] output watcher sync failed: ${err.message}`);
+    }
+  }, 500);
+}
+
+const outputWatcherBase = resolve(OUTPUT_DIR);
+const outputWatcher = watch(OUTPUT_DIR, {
+  ignoreInitial: true,
+  awaitWriteFinish: { stabilityThreshold: 1000 },
+  ignored: (filePath, stats) => {
+    if (resolve(filePath) === outputWatcherBase) return false;
+    if (stats?.isDirectory?.()) return false;
+    return !/\.(pdf|html|md)$/i.test(filePath);
+  },
+});
+
+outputWatcher.on('change', () => triggerArtifactResourceSync());
+outputWatcher.on('add', () => triggerArtifactResourceSync());
+
 // ── Root redirect ───────────────────────────────────────────────────
 
 app.get('/', (req, res) => res.redirect('/dashboard/fusion-pivot-dashboard.html'));
@@ -620,6 +847,7 @@ export function startServer(port = PORT, host = HOST) {
       console.log(`  SSE stream: http://${host}:${port}/stream`);
       console.log(`  Data API: http://${host}:${port}/data/<file>.json`);
       console.log(`  Control API: http://${host}:${port}/api/actions\n`);
+      startLivenessScheduler();
       settled = true;
       resolve(server);
     });

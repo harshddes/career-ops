@@ -107,13 +107,6 @@ if (MODE !== 'manual') {
     await runScript('adapters/sync-all.mjs');
   });
 
-  // Jobs to Consider liveness: weekly, archive closed/missing postings
-  cron.schedule('0 9 * * 1', async () => {
-    console.log(`\n[cron] Checking Jobs to Consider liveness...`);
-    await runScript('jobs-to-consider-liveness.mjs');
-    await runScript('adapters/sync-all.mjs');
-  });
-
   if (MODE === 'autopilot') {
     // Deep research gate: every 4 hours
     cron.schedule('0 */4 * * *', async () => {
@@ -122,7 +115,8 @@ if (MODE !== 'manual') {
     });
   }
 
-  console.log(`[cron] Scheduled: jobs (8h), PhD (48h), sync (2h), jobs liveness (weekly)${MODE === 'autopilot' ? ', gate (4h)' : ''}`);
+  console.log(`[cron] Scheduled: jobs (8h), PhD (48h), sync (2h)${MODE === 'autopilot' ? ', gate (4h)' : ''}`);
+  console.log('[cron] Jobs to Consider liveness is scheduled by the dashboard server.');
 }
 
 console.log(`\n[ready] Dashboard running at http://localhost:3737`);
