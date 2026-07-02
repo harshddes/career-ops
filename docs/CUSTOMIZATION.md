@@ -33,14 +33,37 @@ Copy from `templates/portals.example.yml` and customize:
 3. **search_queries**: WebSearch queries for job boards (Ashby, Greenhouse, Lever)
 4. **tracked_companies**: Companies to check directly
 
-## CV Template (templates/cv-template.html)
+## Resume Template Selection
 
-The HTML template uses these design tokens:
+Tailored resumes are LaTeX-first. Format guidance comes from:
+
+1. A user-approved personal LaTeX reference, if one exists.
+2. Files in `harsh/`, if present and the user wants that style.
+3. The generic fallback `templates/cv-template.tex`.
+
+Current optional personal reference:
+
+- `harsh/Harsh_Desai_Resume_OnePage_AlignedFullSkills_A4.tex`
+- `harsh/Harsh_Desai_Resume_OnePage_AlignedFullSkills_A4.pdf`
+
+Edit the personal LaTeX sample only if you want to keep using that style. You can delete or replace it; the career-ops workflow should not depend on it. The resume-generation rules live in `modes/pdf.md`.
+
+If the optional sample exists, compile it with:
+
+```bash
+npm run latex -- harsh/Harsh_Desai_Resume_OnePage_AlignedFullSkills_A4.tex output/cv-harsh-desai-latex-smoke.pdf
+```
+
+## Legacy HTML Resume Template (templates/cv-template.html)
+
+The HTML template is retained for legacy HTML resumes, tests, and reusable HTML/PDF styling patterns. It is no longer the default for new tailored resumes.
+
+It uses these design tokens:
 - **Fonts**: Space Grotesk (headings) + DM Sans (body) -- self-hosted in `fonts/`
 - **Colors**: Cyan primary (`hsl(187,74%,32%)`) + Purple accent (`hsl(270,70%,45%)`)
 - **Layout**: Single-column, ATS-optimized
 
-To customize fonts/colors, edit the CSS in the template. Update font files in `fonts/` if switching fonts.
+Only edit this file when intentionally changing legacy HTML output or cover-letter-adjacent HTML styling.
 
 ## Negotiation Scripts (modes/_shared.md)
 

@@ -1,0 +1,148 @@
+{
+  "version": 1,
+  "updated_at": "2026-07-02T22:41:24.434Z",
+  "sources": {
+    "umich": {
+      "plasma-lab-contact": {
+        "updated_at": "2026-07-02T22:41:24.420Z",
+        "status": "follow_up",
+        "last_contacted": "2026-07-02",
+        "last_followed_up": "2026-07-02",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "api-read-prof": {
+        "updated_at": "2026-07-02T22:41:24.434Z",
+        "status": "follow_up",
+        "last_contacted": "",
+        "last_followed_up": "2026-07-02",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-ryan-mcbride-ppml": {
+        "updated_at": "2026-07-01T22:06:30.148Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-01",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-karl-krushelnick-cuos-zeus": {
+        "updated_at": "2026-07-01T16:37:56.532Z",
+        "status": "contacted",
+        "last_contacted": "2026-06-30",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-igor-jovanovic-ansg": {
+        "updated_at": "2026-07-01T22:06:39.364Z",
+        "status": "follow_up",
+        "last_contacted": "2026-07-01",
+        "last_followed_up": "2026-07-01",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-gennady-fiksel-cuos": {
+        "updated_at": "2026-07-01T20:52:34.786Z",
+        "status": "archived",
+        "last_contacted": "",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-alec-thomas-cuos": {
+        "updated_at": "2026-07-01T21:27:05.613Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-john-foster-pstl": {
+        "updated_at": "2026-07-01T20:52:44.600Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-01",
+        "last_followed_up": "2026-07-01",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-benjamin-jorns-pepl": {
+        "updated_at": "2026-07-01T20:53:14.137Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-01",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-nicholas-jordan-ppml": {
+        "updated_at": "2026-07-01T20:53:44.842Z",
+        "status": "responded",
+        "last_contacted": "2026-07-01",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-amy-brooks-cuos": {
+        "updated_at": "2026-07-01T20:54:20.810Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-01",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-u-m-careers-research-278715": {
+        "updated_at": "2026-07-01T20:55:01.420Z",
+        "status": "archived",
+        "last_contacted": "",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-timothy-smith-pepl": {
+        "updated_at": "2026-07-01T23:52:26.152Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-01",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-carolyn-kuranz-chedar": {
+        "updated_at": "2026-07-01T23:59:09.455Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-01",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-almantas-galvanauskas-fiber-lasers": {
+        "updated_at": "2026-07-02T00:07:46.589Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-01",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      }
+    },
+    "private-co": {
+      "tokamak-energy-industrial-phd": {
+        "updated_at": "2026-07-01T16:37:56.535Z",
+        "status": "draft_ready",
+        "last_contacted": "",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "First card in Private Company PhD Paths source. Speculative CV email drafted 2026-06-28."
+      }
+    },
+    "ipp": {
+      "ipp-hans-meister-iter-diagnostics": {
+        "updated_at": "2026-07-01T21:36:55.787Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      }
+    }
+  }
+}

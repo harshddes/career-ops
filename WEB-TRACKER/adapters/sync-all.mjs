@@ -14,6 +14,9 @@ import { run as syncPatterns } from './patterns-adapter.mjs';
 import { run as syncFollowups } from './followups-adapter.mjs';
 import { run as syncJobsToConsider } from './jobs-to-consider-adapter.mjs';
 import { syncArtifactResources } from '../lib/artifact-resource-sync.mjs';
+import { syncActivityLogToDashboard } from '../lib/activity-log.mjs';
+import { syncJobsUserStateToDashboard } from '../lib/jobs-user-state.mjs';
+import { syncResearchUserStateToDashboard } from '../lib/research-user-state.mjs';
 
 const adapters = [
   { name: 'application-artifacts', fn: () => ({ count: syncArtifactResources().updated }) },
@@ -24,6 +27,9 @@ const adapters = [
   { name: 'patterns', fn: syncPatterns },
   { name: 'followups', fn: syncFollowups },
   { name: 'jobs-to-consider', fn: syncJobsToConsider },
+  { name: 'jobs-user-state', fn: syncJobsUserStateToDashboard },
+  { name: 'activity-log', fn: syncActivityLogToDashboard },
+  { name: 'research-user-state', fn: syncResearchUserStateToDashboard },
 ];
 
 console.log(`\n[sync-all] Refreshing ${adapters.length} career-ops data feeds...\n`);

@@ -38,3 +38,21 @@ Only these roles survived the visa check:
 - Helion roles are worth pursuing but carry uncertainty -- no documented sponsorship
 - Periodic Labs is the safest visa-wise but has PhD + 5yr seniority requirements (stretch)
 - Next step: generate tailored PDFs for CFS (#4) and Helion (#5, #6), then scan for new non-ITAR roles
+
+## Oklo Full Board Scan (2026-07-01) — 60 roles
+
+**Master report:** `reports/030-oklo-portfolio-master-2026-07-01.md`  
+**Deep research:** `batch/oklo-company-research-2026-07-01.json`  
+**Artifacts:** `output/oklo/` (4 application packs + playbook)
+
+| Priority | Role | Technical | Overall | Visa | Action |
+|----------|------|-----------|---------|------|--------|
+| 1 | [Open Call for Engineers](https://job-boards.greenhouse.io/oklo/jobs/4714198004) | 4.3/5 | 3.9/5 | **Caution** (Part 810 / no H-1B record) | Apply first — probe export + sponsorship |
+| 2 | [Hardware Test Engineer](https://job-boards.greenhouse.io/oklo/jobs/5544852004) | 4.6/5 | 4.3/5 | **Caution** | Apply — best technical fit; 4+ yr ask |
+| 3 | [Thermal Hydraulic Test Engineer](https://job-boards.greenhouse.io/oklo/jobs/5710536004) | 4.5/5 | 4.2/5 | **Caution** | Consider — 5+ yr ask |
+| 4 | [Mechatronics Engineer](https://job-boards.greenhouse.io/oklo/jobs/5677684004) | 4.2/5 | 4.0/5 | **Caution** | Apply — fuel recycling; confirm export |
+| 5 | [Systems Engineer, R&I](https://job-boards.greenhouse.io/oklo/jobs/5649054004) | 4.1/5 | 3.7/5 | **Caution** | Apply — TestBedz/UOP fit |
+
+**SKIP (export language in JD):** Instrumentation and Control Engineer - Fuel Recycling, several senior fuel-recycling/hardware integration roles.
+
+**SKIP (role mismatch):** 28 roles — procurement, legal, finance, radiochemistry, construction, directors, etc.

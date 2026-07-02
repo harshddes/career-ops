@@ -1,5 +1,7 @@
 # Fusion Energy Industry Hiring Landscape — April 2026
 
+**Update 2026-06-14:** Company-specific sweep for First Light Fusion, General Fusion, and Kyoto Fusioneering — see [fusion-firstlight-generalfusion-kyoto-2026.md](./fusion-firstlight-generalfusion-kyoto-2026.md).
+
 **Compiled for:** Harsh Desai (M.Eng Space Systems, UMich | F-1 OPT)  
 **Date:** 2026-04-15  
 **Purpose:** Identify fusion companies hiring, H-1B sponsorship status, career-changer friendliness, and optimal targets for a plasma-adjacent space systems engineer.

@@ -6,6 +6,10 @@
  * Watches WEB-TRACKER/data/ for changes and pushes updates via SSE.
  */
 
+import { loadEnv } from './lib/load-env.mjs';
+
+loadEnv();
+
 import express from 'express';
 import { watch } from 'chokidar';
 import { readFileSync, readdirSync, existsSync } from 'fs';
@@ -13,11 +17,34 @@ import { join, dirname, basename, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { ActionPlanStore } from './lib/action-plan.mjs';
 import { createActionRegistry, listActions, runAction } from './lib/action-runner.mjs';
+import { setActivityAppendedHook } from './lib/activity-log.mjs';
+import { bootstrapResearchUserStateFromCanonical } from './lib/research-user-state.mjs';
+import {
+  logApplicationPatchEvents,
+  logApplicationRecordedEvent,
+  logJobConsiderPatchEvent,
+  logResearchStatusEvent,
+} from './lib/dashboard-activity.mjs';
 import { syncArtifactResources } from './lib/artifact-resource-sync.mjs';
 import { AgentTaskQueue } from './lib/agent-task-queue.mjs';
+import { createAutonomyOrchestrator } from './lib/autonomy/orchestrator.mjs';
 import { JobStore } from './lib/job-store.mjs';
+import { ollamaJsonSanity } from './lib/local-llm/ollama-client.mjs';
+import { pullOllamaModel, startOllama } from './lib/local-llm/ollama-runtime.mjs';
 import { buildOutreachDraft } from './lib/outreach-drafts.mjs';
 import { summarizeSourceHealth } from './lib/source-health.mjs';
+import { buildExportBuffer, EXPORT_FORMATS, EXPORT_SCOPES } from './lib/dashboard-export.mjs';
+import { buildDailyDigest, sendDailyDigest } from './lib/daily-digest.mjs';
+import { smtpConfigFromEnv, validateSmtpConfig } from './lib/mail-sender.mjs';
+import { writeDailyActivityCsv } from './lib/daily-activity-csv.mjs';
+import {
+  DEFAULT_DIGEST_TIMEZONE,
+  buildTodaySnapshot,
+  getTodayActivity,
+  localDateString,
+  mergeApplicationMetadata,
+} from './lib/today-activity.mjs';
+import { run as syncApplications } from './adapters/applications-adapter.mjs';
 import {
   CANONICAL_JOBS_FILE,
   deleteConsiderJob,
@@ -27,6 +54,13 @@ import {
   syncConsiderJobsToDashboard,
   upsertConsiderJob,
 } from './lib/jobs-to-consider-store.mjs';
+import {
+  findResearchProspect,
+  patchResearchProspect,
+  readResearchProspects,
+  syncResearchProspectsToDashboard,
+  upsertResearchProspect,
+} from './lib/research-prospect-store.mjs';
 import { runLivenessSweep } from './jobs-to-consider-liveness.mjs';
 import {
   TRACKER_EDITABLE_FIELDS,
@@ -51,6 +85,9 @@ const SOURCE_REGISTRY_FILE = join(BASE, 'config', 'source-registry.json');
 const DEFAULT_LIVENESS_INTERVAL_MIN = 8 * 60;
 const MIN_LIVENESS_INTERVAL_MIN = 15;
 const MAX_TIMER_DELAY_MS = 2_147_000_000;
+const SSE_HEARTBEAT_MS = 20_000;
+const SERVER_KEEP_ALIVE_MS = 5 * 60_000;
+const SERVER_HEADERS_TIMEOUT_MS = SERVER_KEEP_ALIVE_MS + 10_000;
 
 const app = express();
 
@@ -67,7 +104,21 @@ app.use((req, res, next) => {
 });
 
 app.use(express.json({ limit: '1mb' }));
-app.use('/dashboard', express.static(DASHBOARD_DIR));
+app.use('/api', (req, res, next) => {
+  res.setHeader('Cache-Control', 'no-store');
+  next();
+});
+function dashboardStaticHeaders(res, filePath) {
+  if (/\.html$/i.test(filePath)) {
+    res.setHeader('Cache-Control', 'no-cache, must-revalidate');
+    return;
+  }
+  res.setHeader('Cache-Control', 'public, max-age=300');
+}
+
+app.use('/dashboard', express.static(DASHBOARD_DIR, {
+  setHeaders: dashboardStaticHeaders,
+}));
 app.use('/research', express.static(RESEARCH_DIR));
 app.use('/output', express.static(OUTPUT_DIR, {
   index: false,
@@ -102,6 +153,56 @@ function escapeHtml(value = '') {
     '"': '&quot;',
     "'": '&#39;',
   }[c]));
+}
+
+function attachmentDisposition(filename) {
+  const safeFilename = String(filename || 'career-ops-export')
+    .replace(/[\r\n"]/g, '')
+    .replace(/[\\/]/g, '-');
+  return `attachment; filename="${safeFilename}"`;
+}
+
+function todaySnapshotForResponse() {
+  const activity = buildTodaySnapshot({ timeZone: DEFAULT_DIGEST_TIMEZONE });
+  writeDailyActivityCsv(activity);
+  return {
+    date: activity.date,
+    timeZone: activity.timeZone,
+    summary: activity.summary,
+  };
+}
+
+function withToday(payload = {}) {
+  return {
+    ...payload,
+    today: todaySnapshotForResponse(),
+  };
+}
+
+function applicationsPayload() {
+  const entries = mergeApplicationMetadata();
+  const statusSummary = {};
+  for (const entry of entries) {
+    const status = String(entry.status || '').toLowerCase();
+    statusSummary[status] = (statusSummary[status] || 0) + 1;
+  }
+  return {
+    generated_at: new Date().toISOString(),
+    count: entries.length,
+    entries,
+    status_summary: statusSummary,
+  };
+}
+
+function parseEmailRecipients(value) {
+  if (value === undefined || value === null || value === '') return [];
+  const raw = Array.isArray(value) ? value : String(value).split(/[;,]/);
+  const recipients = [...new Set(raw.map(item => String(item || '').trim()).filter(Boolean))];
+  const invalid = recipients.filter(email => !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email));
+  if (invalid.length) {
+    throw new Error(`invalid recipient email: ${invalid.join(', ')}`);
+  }
+  return recipients;
 }
 
 function renderInlineMarkdown(value = '') {
@@ -228,6 +329,7 @@ app.get('/data/:file', (req, res) => {
   } else if (ext === 'ndjson') {
     res.setHeader('Content-Type', 'application/x-ndjson');
   }
+  res.setHeader('Cache-Control', 'no-store');
   res.send(readFileSync(filePath, 'utf-8'));
 });
 
@@ -258,20 +360,42 @@ app.get('/stream', (req, res) => {
     'Content-Type': 'text/event-stream',
     'Cache-Control': 'no-cache',
     'Connection': 'keep-alive',
+    'X-Accel-Buffering': 'no',
   });
 
+  res.flushHeaders?.();
+  res.write('retry: 5000\n\n');
   res.write(`data: ${JSON.stringify({ type: 'connected', timestamp: new Date().toISOString() })}\n\n`);
 
   sseClients.add(res);
-  req.on('close', () => sseClients.delete(res));
+  const heartbeat = setInterval(() => {
+    try {
+      res.write(`: keep-alive ${new Date().toISOString()}\n\n`);
+    } catch {
+      clearInterval(heartbeat);
+      sseClients.delete(res);
+    }
+  }, SSE_HEARTBEAT_MS);
+  heartbeat.unref?.();
+
+  req.on('close', () => {
+    clearInterval(heartbeat);
+    sseClients.delete(res);
+  });
 });
 
 function broadcast(eventType, payload) {
   const data = JSON.stringify({ type: eventType, ...payload, timestamp: new Date().toISOString() });
   for (const client of sseClients) {
-    client.write(`data: ${data}\n\n`);
+    try {
+      client.write(`data: ${data}\n\n`);
+    } catch {
+      sseClients.delete(client);
+    }
   }
 }
+
+setActivityAppendedHook(event => broadcast('activity_updated', event));
 
 function syncArtifactsToDashboard({ notify = false } = {}) {
   const artifacts = syncArtifactResources();
@@ -446,6 +570,12 @@ function startLivenessScheduler() {
 
 const jobStore = new JobStore(join(DATA_DIR, 'jobs.json'), (type, payload) => broadcast(type, payload));
 const taskQueue = new AgentTaskQueue(join(DATA_DIR, 'agent-tasks.ndjson'));
+const autonomy = createAutonomyOrchestrator({
+  dataDir: DATA_DIR,
+  careerOpsDir: CAREER_OPS,
+  taskQueue,
+  onEvent: (type, payload) => broadcast(type, payload),
+});
 const actionPlan = new ActionPlanStore(join(DATA_DIR, 'action-plan.json'));
 const actionRegistry = createActionRegistry({ baseDir: BASE, repoRoot: CAREER_OPS, dataDir: DATA_DIR });
 
@@ -505,6 +635,92 @@ app.get('/api/action-plan', (req, res) => {
   res.json(actionPlan.dashboard());
 });
 
+app.get('/api/today-activity', (req, res) => {
+  try {
+    const activity = getTodayActivity({
+      date: req.query.date,
+      timeZone: req.query.timezone,
+    });
+    writeDailyActivityCsv(activity);
+    return res.json(activity);
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to build today activity' });
+  }
+});
+
+app.get('/api/export/:scope', async (req, res) => {
+  const scope = req.params.scope;
+  const format = String(req.query.format || 'xlsx').toLowerCase();
+  if (!EXPORT_SCOPES.has(scope)) return res.status(404).json({ error: `unsupported export scope: ${scope}` });
+  if (!EXPORT_FORMATS.has(format)) return res.status(400).json({ error: `unsupported export format: ${format}` });
+
+  try {
+    const file = await buildExportBuffer({
+      scope,
+      format,
+      date: req.query.date,
+      timeZone: req.query.timezone,
+    });
+    if (scope === 'today-activity' && file.exportData?.activity) {
+      writeDailyActivityCsv(file.exportData.activity);
+    }
+    res.setHeader('Content-Type', file.contentType);
+    res.setHeader('Content-Disposition', attachmentDisposition(file.filename));
+    return res.send(file.buffer);
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to export dashboard data' });
+  }
+});
+
+app.get('/api/daily-digest/smtp-status', (_req, res) => {
+  const config = smtpConfigFromEnv();
+  const validation = validateSmtpConfig(config);
+  const envPath = join(dirname(fileURLToPath(import.meta.url)), '.env');
+  return res.json({
+    ok: validation.ok,
+    missing: validation.missing,
+    env_file: envPath,
+    env_exists: existsSync(envPath),
+    from: config.from || '',
+    host: config.host || '',
+    user: config.user || '',
+    setup_hint: validation.ok
+      ? 'SMTP is configured. Use Email Today CSV Now to send.'
+      : 'Copy WEB-TRACKER/.env.example to WEB-TRACKER/.env, set SMTP_PASS to a Gmail App Password, then restart the dashboard.',
+  });
+});
+
+app.post('/api/daily-digest/send', async (req, res) => {
+  try {
+    const recipients = parseEmailRecipients(req.body?.recipients || req.body?.recipient || req.body?.to);
+    const options = {
+      date: req.body?.date,
+      timeZone: req.body?.timezone,
+      recipients: recipients.length ? recipients : undefined,
+    };
+    if (req.body?.dry_run !== false) {
+      const digest = await buildDailyDigest(options);
+      return res.json({
+        sent: false,
+        dry_run: true,
+        subject: digest.subject,
+        recipients,
+        activity: digest.activity,
+        attachments: digest.attachments.map(attachment => ({
+          filename: attachment.filename,
+          contentType: attachment.contentType,
+          bytes: attachment.content.length,
+        })),
+      });
+    }
+
+    const result = await sendDailyDigest(options);
+    return res.json({ ...result, recipients });
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to send daily digest' });
+  }
+});
+
 app.patch('/api/action-plan/:id', (req, res) => {
   const result = actionPlan.updateTask(req.params.id, req.body?.action, req.body || {});
   if (!result) return res.status(404).json({ error: 'action item not found' });
@@ -517,6 +733,14 @@ app.get('/api/applications/dashboard', (req, res) => {
     res.json(readDashboardData());
   } catch (err) {
     return res.status(400).json({ error: err?.message || 'failed to read dashboard application data' });
+  }
+});
+
+app.get('/api/applications', (req, res) => {
+  try {
+    return res.json(applicationsPayload());
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to read applications' });
   }
 });
 
@@ -542,11 +766,15 @@ app.post('/api/jobs-to-consider', (req, res) => {
 
 app.patch('/api/jobs-to-consider/:id', (req, res) => {
   try {
-    const result = patchConsiderJob(req.params.id, req.body || {});
+    const updates = req.body || {};
+    const result = patchConsiderJob(req.params.id, updates);
+    if (updates.status !== undefined || updates.applied !== undefined) {
+      logJobConsiderPatchEvent(result.job, updates);
+    }
     const dashboard = syncConsiderJobsToDashboard();
     broadcast('jobs_to_consider_updated', { id: result.job.id, total: dashboard.total });
-    if (req.body?.url || req.body?.status) queueLivenessSweep('job updated');
-    return res.json(result);
+    if (updates.url || updates.status) queueLivenessSweep('job updated');
+    return res.json(withToday(result));
   } catch (err) {
     const status = /not found/i.test(err?.message || '') ? 404 : 400;
     return res.status(status).json({ error: err?.message || 'failed to update job to consider' });
@@ -555,15 +783,153 @@ app.patch('/api/jobs-to-consider/:id', (req, res) => {
 
 app.delete('/api/jobs-to-consider/:id', (req, res) => {
   try {
-    const result = deleteConsiderJob(req.params.id);
+    const result = deleteConsiderJob({ id: req.params.id, ...(req.body || {}) }, CANONICAL_JOBS_FILE, { missingOk: true });
     const dashboard = syncConsiderJobsToDashboard();
     triggerSync();
-    broadcast('jobs_to_consider_deleted', { id: result.job.id, total: dashboard.total });
-    broadcast('jobs_to_consider_updated', { id: result.job.id, total: dashboard.total });
+    const id = result.job?.id || req.params.id;
+    broadcast('jobs_to_consider_deleted', { id, missing: Boolean(result.missing), total: dashboard.total });
+    broadcast('jobs_to_consider_updated', { id, missing: Boolean(result.missing), total: dashboard.total });
     return res.json({ ...result, total: dashboard.total });
   } catch (err) {
     const status = /not found/i.test(err?.message || '') ? 404 : 400;
     return res.status(status).json({ error: err?.message || 'failed to delete job to consider' });
+  }
+});
+
+app.get('/api/research-prospects', (req, res) => {
+  try {
+    res.json(readResearchProspects());
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to read research prospects' });
+  }
+});
+
+app.post('/api/research-prospects', (req, res) => {
+  try {
+    const store = upsertResearchProspect(req.body || {});
+    const dashboard = syncResearchProspectsToDashboard();
+    broadcast('research_prospects_updated', { total: dashboard.total });
+    return res.status(201).json(store);
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to create research prospect' });
+  }
+});
+
+app.patch('/api/research-prospects/:id', (req, res) => {
+  try {
+    const result = patchResearchProspect(req.params.id, req.body || {});
+    const dashboard = syncResearchProspectsToDashboard();
+    if (req.body?.status) logResearchStatusEvent(result.prospect, 'umich');
+    broadcast('research_prospects_updated', { id: result.prospect.id, total: dashboard.total });
+    return res.json(withToday(result));
+  } catch (err) {
+    const status = /not found/i.test(err?.message || '') ? 404 : 400;
+    return res.status(status).json({ error: err?.message || 'failed to update research prospect' });
+  }
+});
+
+app.get('/api/research-prospects/:id', (req, res) => {
+  try {
+    const prospect = findResearchProspect(req.params.id);
+    if (!prospect) return res.status(404).json({ error: 'research prospect not found' });
+    return res.json({ prospect });
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to read research prospect' });
+  }
+});
+
+app.get('/api/kth-research-prospects', (req, res) => {
+  try {
+    res.json(readResearchProspects({ institution: 'kth' }));
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to read KTH research prospects' });
+  }
+});
+
+app.post('/api/kth-research-prospects', (req, res) => {
+  try {
+    const store = upsertResearchProspect({
+      ...(req.body || {}),
+      institution: req.body?.institution || 'kth',
+    }, { institution: 'kth' });
+    const dashboard = syncResearchProspectsToDashboard({ institution: 'kth' });
+    broadcast('kth_research_prospects_updated', { total: dashboard.total });
+    return res.status(201).json(store);
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to create KTH research prospect' });
+  }
+});
+
+app.patch('/api/kth-research-prospects/:id', (req, res) => {
+  try {
+    const result = patchResearchProspect(req.params.id, req.body || {}, { institution: 'kth' });
+    const dashboard = syncResearchProspectsToDashboard({ institution: 'kth' });
+    if (req.body?.status) logResearchStatusEvent(result.prospect, 'kth');
+    broadcast('kth_research_prospects_updated', { id: result.prospect.id, total: dashboard.total });
+    return res.json(withToday(result));
+  } catch (err) {
+    const status = /not found/i.test(err?.message || '') ? 404 : 400;
+    return res.status(status).json({ error: err?.message || 'failed to update KTH research prospect' });
+  }
+});
+
+app.get('/api/kth-research-prospects/:id', (req, res) => {
+  try {
+    const prospect = findResearchProspect(req.params.id, { institution: 'kth' });
+    if (!prospect) return res.status(404).json({ error: 'KTH research prospect not found' });
+    return res.json({ prospect });
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to read KTH research prospect' });
+  }
+});
+
+app.get('/api/phd-research-prospects/:source', (req, res) => {
+  try {
+    res.json(readResearchProspects({ source: req.params.source }));
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to read PhD research prospects' });
+  }
+});
+
+app.post('/api/phd-research-prospects/:source', (req, res) => {
+  const source = req.params.source;
+  try {
+    const store = upsertResearchProspect({
+      ...(req.body || {}),
+      source,
+      institution: req.body?.institution || source,
+    }, { source });
+    const dashboard = syncResearchProspectsToDashboard({ source });
+    broadcast('phd_research_prospects_updated', { source, total: dashboard.total });
+    if (source === 'kth') broadcast('kth_research_prospects_updated', { total: dashboard.total });
+    return res.status(201).json(store);
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to create PhD research prospect' });
+  }
+});
+
+app.patch('/api/phd-research-prospects/:source/:id', (req, res) => {
+  const source = req.params.source;
+  try {
+    const result = patchResearchProspect(req.params.id, req.body || {}, { source });
+    const dashboard = syncResearchProspectsToDashboard({ source });
+    if (req.body?.status) logResearchStatusEvent(result.prospect, source);
+    broadcast('phd_research_prospects_updated', { source, id: result.prospect.id, total: dashboard.total });
+    if (source === 'kth') broadcast('kth_research_prospects_updated', { id: result.prospect.id, total: dashboard.total });
+    return res.json(withToday(result));
+  } catch (err) {
+    const status = /not found/i.test(err?.message || '') ? 404 : 400;
+    return res.status(status).json({ error: err?.message || 'failed to update PhD research prospect' });
+  }
+});
+
+app.get('/api/phd-research-prospects/:source/:id', (req, res) => {
+  try {
+    const prospect = findResearchProspect(req.params.id, { source: req.params.source });
+    if (!prospect) return res.status(404).json({ error: 'PhD research prospect not found' });
+    return res.json({ prospect });
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to read PhD research prospect' });
   }
 });
 
@@ -589,10 +955,11 @@ app.post('/api/jobs-to-consider/:id/apply', (req, res) => {
         applied_at: '',
       });
       const dashboard = syncConsiderJobsToDashboard();
+      syncApplications();
       triggerSync();
       broadcast('jobs_to_consider_updated', { id: result.job.id, total: dashboard.total });
       broadcast('application_deleted', { num: job.application_num || null });
-      return res.json({ job: result.job, application: null });
+      return res.json(withToday({ job: result.job, application: null }));
     }
 
     const reportPath = job.resources?.report_md || '';
@@ -601,7 +968,7 @@ app.post('/api/jobs-to-consider/:id/apply', (req, res) => {
       : '-';
     const trackerResult = createTrackerRow({
       entry: {
-        date: new Date().toISOString().slice(0, 10),
+        date: localDateString(new Date(), DEFAULT_DIGEST_TIMEZONE),
         company: job.company,
         role: job.title,
         score: job.score || 'N/A',
@@ -612,6 +979,7 @@ app.post('/api/jobs-to-consider/:id/apply', (req, res) => {
       },
       metadata: {
         posting_url: job.url,
+        submitted_date: localDateString(new Date(), DEFAULT_DIGEST_TIMEZONE),
         way_to_apply: job.resources?.email_draft || '',
       },
     });
@@ -622,7 +990,9 @@ app.post('/api/jobs-to-consider/:id/apply', (req, res) => {
       application_num: trackerResult.num,
       applied_at: new Date().toISOString(),
     });
+    logJobConsiderPatchEvent(result.job, { applied: true, status: 'applied', application_num: trackerResult.num });
     const dashboard = syncConsiderJobsToDashboard();
+    syncApplications();
     triggerSync();
     broadcast('jobs_to_consider_updated', { id: result.job.id, total: dashboard.total });
     broadcast('application_updated', {
@@ -630,7 +1000,7 @@ app.post('/api/jobs-to-consider/:id/apply', (req, res) => {
       created: !trackerResult.duplicate,
       duplicate: trackerResult.duplicate,
     });
-    return res.json({ job: result.job, application: trackerResult });
+    return res.json(withToday({ job: result.job, application: trackerResult }));
   } catch (err) {
     return res.status(400).json({ error: err?.message || 'failed to update applied state' });
   }
@@ -652,11 +1022,18 @@ app.post('/api/applications', (req, res) => {
       if (TRACKER_METADATA_FIELDS.includes(field)) metadata[field] = value;
       if (field === 'position') core.role = value;
     }
+    if (String(core.status || '').toLowerCase() === 'applied' && metadata.submitted_date === undefined) {
+      metadata.submitted_date = localDateString(new Date(), DEFAULT_DIGEST_TIMEZONE);
+    }
 
     const result = createTrackerRow({ entry: core, metadata });
+    if (String(core.status || '').toLowerCase() === 'applied' || metadata.submitted_date) {
+      logApplicationRecordedEvent({ num: result.num, core, metadata, payload });
+    }
+    syncApplications();
     triggerSync();
     broadcast('application_updated', { num: result.num, created: !result.duplicate, duplicate: result.duplicate });
-    return res.status(result.duplicate ? 200 : 201).json(result);
+    return res.status(result.duplicate ? 200 : 201).json(withToday(result));
   } catch (err) {
     return res.status(400).json({ error: err?.message || 'failed to create application' });
   }
@@ -683,6 +1060,9 @@ app.patch('/api/applications/:num', (req, res) => {
       if (TRACKER_METADATA_FIELDS.includes(field)) metadata[field] = value;
       if (field === 'position') core.role = value;
     }
+    if (String(core.status || '').toLowerCase() === 'applied' && metadata.submitted_date === undefined) {
+      metadata.submitted_date = localDateString(new Date(), DEFAULT_DIGEST_TIMEZONE);
+    }
 
     const result = Object.keys(core).length
       ? updateTrackerRow({ num, updates: core })
@@ -692,6 +1072,14 @@ app.patch('/api/applications/:num', (req, res) => {
       : { changed: false, updated_fields: [], metadata: readDashboardData().entries[String(num)] || {} };
 
     if (result.changed || metaResult.changed) {
+      logApplicationPatchEvents({
+        num,
+        core,
+        metadata: { ...metaResult.metadata, ...metadata },
+        entry: result.entry || {},
+        payload,
+      });
+      syncApplications();
       triggerSync();
       broadcast('application_updated', {
         num,
@@ -699,7 +1087,8 @@ app.patch('/api/applications/:num', (req, res) => {
       });
     }
 
-    return res.json({ ...result, metadata: metaResult.metadata, changed: result.changed || metaResult.changed });
+    const entry = applicationsPayload().entries.find(item => Number(item.num) === num) || result.entry;
+    return res.json(withToday({ ...result, entry, metadata: metaResult.metadata, changed: result.changed || metaResult.changed }));
   } catch (err) {
     const message = err?.message || 'failed to update application';
     const status = /not found/i.test(message) ? 404 : 400;
@@ -715,9 +1104,10 @@ app.delete('/api/applications/:num', (req, res) => {
     }
 
     const result = deleteTrackerRow({ num });
+    syncApplications();
     triggerSync();
     broadcast('application_deleted', { num });
-    return res.json(result);
+    return res.json(withToday(result));
   } catch (err) {
     const message = err?.message || 'failed to delete application';
     const status = /not found/i.test(message) ? 404 : 400;
@@ -750,6 +1140,91 @@ app.patch('/api/agent-tasks/:id', (req, res) => {
   if (!task) return res.status(404).json({ error: 'task not found' });
   broadcast('agent_task_updated', { task });
   res.json({ task });
+});
+
+app.get('/api/autonomy/model-health', async (req, res) => {
+  try {
+    res.json(await autonomy.modelHealth());
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.post('/api/autonomy/model/start', async (req, res) => {
+  try {
+    res.json(await startOllama());
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+app.post('/api/autonomy/model/pull', async (req, res) => {
+  try {
+    res.json(await pullOllamaModel(req.body?.model || null));
+  } catch (err) {
+    res.status(400).json({ error: err.stderr || err.message });
+  }
+});
+
+app.post('/api/autonomy/model/json-sanity', async (req, res) => {
+  try {
+    res.json({ ok: true, result: await ollamaJsonSanity({ model: req.body?.model || null }) });
+  } catch (err) {
+    res.status(400).json({ ok: false, error: err.message });
+  }
+});
+
+app.get('/api/autonomy/research-budget', (req, res) => {
+  res.json(autonomy.researchBudget());
+});
+
+app.get('/api/autonomy/runs', (req, res) => {
+  res.json({ runs: autonomy.listRuns(25) });
+});
+
+app.post('/api/autonomy/run-pending', (req, res) => {
+  const input = req.body || {};
+  const job = jobStore.create('process_ai_queue', input, {
+    label: 'Process AI queue autonomously',
+    description: 'Run queued tasks through Parallel research and local AI reasoning.',
+  });
+  jobStore.update(job.id, { status: 'running' });
+  queueMicrotask(async () => {
+    try {
+      const result = await autonomy.runPending({
+        maxTasks: input.max_tasks || input.max || 1,
+        pollTimeoutSec: input.poll_timeout || input.poll_timeout_sec || 120,
+        researchOnly: Boolean(input.research_only),
+      });
+      jobStore.appendLog(job.id, 'stdout', JSON.stringify(result, null, 2));
+      jobStore.finish(job.id, 0);
+      broadcast('autonomy_updated', result);
+    } catch (err) {
+      jobStore.appendLog(job.id, 'stderr', err.message);
+      jobStore.finish(job.id, 1, err.message);
+    }
+  });
+  res.status(202).json({ job });
+});
+
+app.post('/api/autonomy/tasks/:id/approve', async (req, res) => {
+  try {
+    const result = await autonomy.approveTask(req.params.id);
+    broadcast('agent_task_updated', { task: result.task });
+    res.json(result);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+app.post('/api/autonomy/tasks/:id/reject', (req, res) => {
+  try {
+    const result = autonomy.rejectTask(req.params.id, req.body?.reason || 'Rejected by user.');
+    broadcast('agent_task_updated', { task: result.task });
+    res.json(result);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
 });
 
 app.post('/api/outreach/draft', (req, res) => {
@@ -837,20 +1312,39 @@ outputWatcher.on('add', () => triggerArtifactResourceSync());
 
 // ── Root redirect ───────────────────────────────────────────────────
 
+app.get('/healthz', (req, res) => {
+  res.setHeader('Cache-Control', 'no-store');
+  res.json({
+    ok: true,
+    mode: process.env.AUTONOMY_MODE || 'unknown',
+    uptime_sec: Math.round(process.uptime()),
+    timestamp: new Date().toISOString(),
+  });
+});
+
 app.get('/', (req, res) => res.redirect('/dashboard/fusion-pivot-dashboard.html'));
 
 export function startServer(port = PORT, host = HOST) {
   return new Promise((resolve, reject) => {
     let settled = false;
     const server = app.listen(port, host, () => {
+      const migrated = bootstrapResearchUserStateFromCanonical();
+      if (migrated > 0) {
+        console.log(`[boot] Migrated ${migrated} research prospect status(es) into user-state overlay`);
+      }
       console.log(`\n  Dashboard: http://${host}:${port}`);
       console.log(`  SSE stream: http://${host}:${port}/stream`);
       console.log(`  Data API: http://${host}:${port}/data/<file>.json`);
       console.log(`  Control API: http://${host}:${port}/api/actions\n`);
-      startLivenessScheduler();
+      if (!['1', 'true', 'yes'].includes(String(process.env.PUBLISH_SNAPSHOT || '').toLowerCase())) {
+        startLivenessScheduler();
+      }
       settled = true;
       resolve(server);
     });
+    server.keepAliveTimeout = SERVER_KEEP_ALIVE_MS;
+    server.headersTimeout = SERVER_HEADERS_TIMEOUT_MS;
+    server.requestTimeout = 0;
     server.on('error', (err) => {
       if (!settled) {
         settled = true;

@@ -15,6 +15,9 @@ These files contain your personal data, customizations, and work product. Update
 | `interview-prep/story-bank.md` | Your accumulated STAR+R stories |
 | `portals.yml` | Your customized company list |
 | `data/applications.md` | Your application tracker |
+| `data/application-dashboard.json` | Your dashboard-only application edits and outreach metadata |
+| `data/research-prospect-user-state.json` | Your research/PhD status, contact, follow-up, and notes edits |
+| `data/jobs-to-consider-user-state.json` | Your Jobs to Consider applied/status/user-resource edits |
 | `data/pipeline.md` | Your URL inbox |
 | `data/scan-history.tsv` | Your scan history |
 | `data/follow-ups.md` | Your follow-up history |
@@ -22,6 +25,7 @@ These files contain your personal data, customizations, and work product. Update
 | `reports/*` | Your evaluation reports |
 | `output/*` | Your generated PDFs |
 | `jds/*` | Your saved job descriptions |
+| `harsh/*` | Your personal LaTeX resume samples and reference PDFs |
 
 ## System Layer (safe to auto-update)
 
@@ -32,6 +36,7 @@ These files contain system logic, scripts, templates, and instructions that impr
 | `modes/_shared.md` | Scoring system, global rules, tools |
 | `modes/oferta.md` | Evaluation mode instructions |
 | `modes/pdf.md` | PDF generation instructions |
+| `modes/application-artifacts.md` | Resume/cover-letter pack + mandatory Jobs to Consider tracker attachment |
 | `modes/scan.md` | Portal scanner instructions |
 | `modes/batch.md` | Batch processing instructions |
 | `modes/apply.md` | Application assistant instructions |

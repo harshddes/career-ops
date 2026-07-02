@@ -18,8 +18,11 @@ Eres un worker de evaluación de ofertas de empleo for the candidate (read name 
 | llms.txt | `llms.txt (if exists)` | SIEMPRE |
 | article-digest.md | `article-digest.md (project root)` | SIEMPRE (proof points) |
 | i18n.ts | `i18n.ts (if exists, optional)` | Solo entrevistas/deep |
-| cv-template.html | `templates/cv-template.html` | Para PDF |
-| generate-pdf.mjs | `generate-pdf.mjs` | Para PDF |
+| Optional personal LaTeX sample | `harsh/Harsh_Desai_Resume_OnePage_AlignedFullSkills_A4.tex` (if present) | Referencia opcional de estilo personal |
+| Generic LaTeX template | `templates/cv-template.tex` | Fallback si no existe una referencia personal |
+| generate-latex.mjs | `generate-latex.mjs` | Para compilar CV LaTeX a PDF |
+| cv-template.html | `templates/cv-template.html` | Legacy/fallback CV HTML y referencia para cover letters |
+| generate-pdf.mjs | `generate-pdf.mjs` | Para cover letters HTML -> PDF y legacy HTML PDFs |
 
 **REGLA: NUNCA escribir en cv.md ni i18n.ts.** Son read-only.
 **REGLA: NUNCA hardcodear métricas.** Leerlas de cv.md + article-digest.md en el momento.
@@ -216,79 +219,66 @@ Donde `{company-slug}` es el nombre de empresa en lowercase, sin espacios, con g
 (15-20 keywords del JD para ATS)
 ```
 
-### Paso 4 — Generar PDF
+### Paso 4 — Generar CV LaTeX + PDF
 
-1. Lee `cv.md` + `i18n.ts`
-2. Extrae 15-20 keywords del JD
-3. Detecta idioma del JD → idioma del CV (EN default)
-4. Detecta ubicación empresa → formato papel: US/Canada → `letter`, resto → `a4`
-5. Detecta arquetipo → adapta framing
-6. Reescribe Professional Summary inyectando keywords
-7. Selecciona top 3-4 proyectos más relevantes
-8. Reordena bullets de experiencia por relevancia al JD
-9. Construye competency grid (6-8 keyword phrases)
-10. Inyecta keywords en logros existentes (**NUNCA inventa**)
-11. Genera HTML completo desde template (lee `templates/cv-template.html`)
-12. Escribe HTML a `/tmp/cv-candidate-{company-slug}.html`
+1. Lee `cv.md`, `config/profile.yml`, `modes/_profile.md`, `article-digest.md`, y la referencia LaTeX disponible: primero una referencia personal aprobada por el usuario, si existe; si no, `templates/cv-template.tex`.
+2. Extrae 15-20 keywords del JD.
+3. Detecta idioma del JD -> idioma del CV (EN default).
+4. Detecta ubicación empresa -> formato papel: US/Canada -> `letter`, resto -> `a4`.
+5. Detecta arquetipo -> adapta framing con `modes/_profile.md`.
+6. Decide si hace falta profile/summary corto. Para roles directos, normalmente NO. Para pivot fusion/nuclear/plasma, usa 1-2 lineas tecnicas.
+7. Reordena grupos de skills por relevancia: fusion -> HV/DAQ/calibration primero; aerospace -> space systems/requirements primero; FPGA -> FPGA/signal chain primero.
+8. Selecciona top 2-4 proyectos relevantes. No volcar todo.
+9. Reordena bullets de experiencia por relevancia al JD; el primer bullet debe ser el mas fuerte para el rol.
+10. Inyecta vocabulario del JD en logros existentes (**NUNCA inventa**).
+11. Genera LaTeX completo siguiendo la referencia LaTeX seleccionada. No dependas de `harsh/`; es personal y puede no existir.
+12. Escribe LaTeX a:
+```text
+output/cv-candidate-{company-slug}-{{DATE}}.tex
+```
 13. Ejecuta:
 ```bash
-node generate-pdf.mjs \
-  /tmp/cv-candidate-{company-slug}.html \
+node generate-latex.mjs \
+  output/cv-candidate-{company-slug}-{{DATE}}.tex \
   output/cv-candidate-{company-slug}-{{DATE}}.pdf \
-  --format={letter|a4}
+  --engine=xelatex
 ```
-14. Reporta: ruta PDF, nº páginas, % cobertura keywords
+14. Si el PDF pasa de 1 pagina, trim loop: corta proyecto menos relevante, bullet menos relevante, o profile opcional antes de reducir tipografia.
+15. Reporta: ruta `.tex`, ruta PDF, nº paginas, engine, % cobertura keywords.
 
 **Reglas ATS:**
-- Single-column (sin sidebars)
-- Headers estándar: "Professional Summary", "Work Experience", "Education", "Skills", "Certifications", "Projects"
-- Sin texto en imágenes/SVGs
-- Sin info crítica en headers/footers
-- UTF-8, texto seleccionable
-- Keywords distribuidas: Summary (top 5), primer bullet de cada rol, Skills section
+- PDF text-based generado desde LaTeX.
+- One-column body (sin sidebars).
+- Headers estándar: "Education", "Technical Skills", "Research & Engineering Experience", "Selected Technical Projects", "Projects & Leadership" u "Honors".
+- Sin texto en imágenes/SVGs.
+- Sin info crítica en headers/footers.
+- Sin iconos para email/phone/LinkedIn.
+- Texto seleccionable.
+- Comprobar extracción de texto: header -> education -> skills -> experience -> projects.
+- Keywords distribuidas: skills, primer bullet de cada rol, y proyectos seleccionados.
 
-**Diseño:**
-- Fonts: Space Grotesk (headings, 600-700) + DM Sans (body, 400-500)
-- Fonts self-hosted: `fonts/`
-- Header: Space Grotesk 24px bold + gradiente cyan→purple 2px + contacto
-- Section headers: Space Grotesk 13px uppercase, color cyan `hsl(187,74%,32%)`
-- Body: DM Sans 11px, line-height 1.5
-- Company names: purple `hsl(270,70%,45%)`
-- Márgenes: 0.6in
-- Background: blanco
+**Diseño activo:**
+- LaTeX reference: optional user-approved personal sample if present; otherwise `templates/cv-template.tex`.
+- Engine default: `xelatex` porque el sample usa `fontspec`.
+- One-column body.
+- Blue institution/project headers.
+- Left/right aligned title-location and role-date lines.
+- Clear section rules.
+- Clickable simple links.
+- No icons, photos, sidebars, or graphics.
+- HTML resume path is deprecated for resumes; use only if LaTeX tooling is unavailable and the user approves fallback.
 
 **Estrategia keyword injection (ético):**
 - Reformular experiencia real con vocabulario exacto del JD
 - NUNCA añadir skills the candidate doesn't have
 - Ejemplo: JD dice "RAG pipelines" y CV dice "LLM workflows with retrieval" → "RAG pipeline design and LLM orchestration workflows"
 
-**Template placeholders (en cv-template.html):**
-
-| Placeholder | Contenido |
-|-------------|-----------|
-| `{{LANG}}` | `en` o `es` |
-| `{{PAGE_WIDTH}}` | `8.5in` (letter) o `210mm` (A4) |
-| `{{NAME}}` | (from profile.yml) |
-| `{{EMAIL}}` | (from profile.yml) |
-| `{{LINKEDIN_URL}}` | (from profile.yml) |
-| `{{LINKEDIN_DISPLAY}}` | (from profile.yml) |
-| `{{PORTFOLIO_URL}}` | (from profile.yml) |
-| `{{PORTFOLIO_DISPLAY}}` | (from profile.yml) |
-| `{{LOCATION}}` | (from profile.yml) |
-| `{{SECTION_SUMMARY}}` | Professional Summary / Resumen Profesional |
-| `{{SUMMARY_TEXT}}` | Summary personalizado con keywords |
-| `{{SECTION_COMPETENCIES}}` | Core Competencies / Competencias Core |
-| `{{COMPETENCIES}}` | `<span class="competency-tag">keyword</span>` × 6-8 |
-| `{{SECTION_EXPERIENCE}}` | Work Experience / Experiencia Laboral |
-| `{{EXPERIENCE}}` | HTML de cada trabajo con bullets reordenados |
-| `{{SECTION_PROJECTS}}` | Projects / Proyectos |
-| `{{PROJECTS}}` | HTML de top 3-4 proyectos |
-| `{{SECTION_EDUCATION}}` | Education / Formación |
-| `{{EDUCATION}}` | HTML de educación |
-| `{{SECTION_CERTIFICATIONS}}` | Certifications / Certificaciones |
-| `{{CERTIFICATIONS}}` | HTML de certificaciones |
-| `{{SECTION_SKILLS}}` | Skills / Competencias |
-| `{{SKILLS}}` | HTML de skills |
+**LaTeX source conventions:**
+- Escape LaTeX special characters in generated text: `&`, `%`, `$`, `#`, `_`, `{`, `}`, `~`, `^`, `\`.
+- Keep links simple with `\href{url}{label}`.
+- Keep `\sectiontitle`, `\entryheader`, `\roleline`, `\skillline`, and `\resitem` command style from the sample.
+- Do not add packages unless necessary.
+- Preserve abbreviation expansion rules from `modes/pdf.md`.
 
 ### Paso 5 — Tracker Line
 

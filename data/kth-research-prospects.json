@@ -1,0 +1,2155 @@
+{
+  "version": 1,
+  "generated_at": "2026-06-27T23:58:25.558Z",
+  "scope": "KTH Royal Institute of Technology and FP3 fusion research prospects",
+  "prospects": [
+    {
+      "id": "kth-marek-rubel-pwi",
+      "source": "kth",
+      "name": "Marek Rubel",
+      "title": "Professor emeritus",
+      "unit": "KTH School of Electrical Engineering and Computer Science",
+      "department": "Electromagnetics and Plasma Physics",
+      "lab": "Plasma-Wall Interaction (PWI)",
+      "institution": "kth",
+      "application_route": "email_supervisor_first",
+      "application_url": "https://intra.kth.se/en/eecs/forskarutbildning/admission-1.813300",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Stockholm / Sweden network",
+      "profile_url": "https://www.kth.se/profile/rubel?l=en",
+      "lab_url": "https://www.kth.se/emp/research/fusion/plasma-wall-interaction-pwi",
+      "linkedin_url": "",
+      "contact_email": "rubel@kth.se",
+      "contact_page": "https://www.kth.se/profile/rubel?l=en",
+      "phone": "+46 8 790 60 93",
+      "research_keywords": [
+        "plasma-wall interaction",
+        "ITER plasma-facing components",
+        "tritium inventory",
+        "dust formation",
+        "surface analysis"
+      ],
+      "methods": [
+        "in-vessel diagnostics",
+        "surface analysis",
+        "nuclear microprobe",
+        "material migration studies",
+        "JET/WEST/W7-X sample analysis"
+      ],
+      "facilities": [
+        "EXTRAP T2R",
+        "JET",
+        "WEST",
+        "Wendelstein 7-X",
+        "Uppsala Tandem Laboratory"
+      ],
+      "transfer_vectors": [
+        "plasma diagnostics",
+        "vacuum systems",
+        "ion beam analysis",
+        "surface analysis",
+        "ITER materials"
+      ],
+      "hiring_signals": [
+        {
+          "type": "hiring_signal",
+          "label": "KTH PWI research programme",
+          "url": "https://www.kth.se/emp/research/fusion/plasma-wall-interaction-pwi",
+          "date": "2026-06-27",
+          "note": "PWI page lists active ITER/EUROfusion tasks and in-vessel diagnostic development."
+        }
+      ],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "KTH PWI group page",
+          "url": "https://www.kth.se/emp/research/fusion/plasma-wall-interaction-pwi",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Marek Rubel KTH profile",
+          "url": "https://www.kth.se/profile/rubel?l=en",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Uppsala Tandem Lab contact page",
+          "url": "https://www.uu.se/en/centre/tandemlab/contact",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 4.9,
+      "tier": "A",
+      "fit_rationale": "Highest-fit contact: PWI directly uses plasma-facing material diagnostics, tritium/fuel-inventory analysis, nuclear microprobes, and ITER-relevant material migration studies.",
+      "outreach_angle": "Lead with LVACCS vacuum/HV plasma-source test automation plus SIMION/SRIM ion-analysis preparation for PWI/Uppsala Tandem workflows.",
+      "likely_route": "Supervisor-first email, then KTH doctoral application or advertised KTH/Varbi position when a funded slot opens.",
+      "opt_h1b_notes": "Swedish doctoral positions are salaried employee roles. Work-permit feasibility should be checked after a supervisor or posted position is identified.",
+      "uncertainty_notes": "Emeritus status means a younger co-supervisor should be confirmed before committing to a PhD plan.",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "A",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/kth-fusion-epp-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.729Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "Marek Rubel works in Plasma-Wall Interaction (PWI) (Electromagnetics and Plasma Physics).\n\nResearch focus: plasma-wall interaction, ITER plasma-facing components, tritium inventory, dust formation, surface analysis.\n\nMethods and tools: in-vessel diagnostics, surface analysis, nuclear microprobe, material migration studies, JET/WEST/W7-X sample analysis.\n\nHighest-fit contact: PWI directly uses plasma-facing material diagnostics, tritium/fuel-inventory analysis, nuclear microprobes, and ITER-relevant material migration studies.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "Report-supported: KTH PWI, Rubel profile, and Uppsala Tandem collaboration. The researched interests are plasma-facing materials, tritium/hydrogen retention, dust, fuel removal, in-vessel diagnostics, and ITER-relevant material migration with post-exposure ion-beam analysis.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted in our report. Report-supported current line: PFC lifetime, tritium inventory, and nuclear microprobe / ion-beam analysis of plasma-exposed samples. Before emailing, verify one recent PWI / retention / microprobe paper from the KTH profile or Google Scholar and write the title in column 3.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Lead with LVACCS vacuum/HV plasma-source test automation plus SIMION/SRIM ion-analysis preparation for PWI/Uppsala Tandem workflows.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: plasma diagnostics, vacuum systems, ion beam analysis, surface analysis.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: plasma diagnostics, vacuum systems, ion beam analysis, surface analysis.\n- Their facilities (EXTRAP T2R, JET, WEST, Wendelstein 7-X) need reliable experimental execution — that is the part you can defend.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Uncertainty to verify first: Emeritus status means a younger co-supervisor should be confirmed before committing to a PhD plan.\n\nReview this line before sending:\n\"Lead with LVACCS vacuum/HV plasma-source test automation plus SIMION/SRIM ion-analysis preparation for PWI/Uppsala Tandem workflows.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "kth-henrik-bergsaker-pwi",
+      "source": "kth",
+      "name": "Henrik Bergsåker",
+      "title": "Associate professor",
+      "unit": "KTH School of Electrical Engineering and Computer Science",
+      "department": "Electromagnetics and Plasma Physics",
+      "lab": "Plasma-Wall Interaction (PWI)",
+      "institution": "kth",
+      "application_route": "email_supervisor_first",
+      "application_url": "https://intra.kth.se/en/eecs/forskarutbildning/admission-1.813300",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Stockholm / Sweden network",
+      "profile_url": "https://www.kth.se/profile/henricb?l=en",
+      "lab_url": "https://www.kth.se/emp/research/fusion/plasma-wall-interaction-pwi",
+      "linkedin_url": "",
+      "contact_email": "henricb@kth.se",
+      "contact_page": "https://www.kth.se/profile/henricb?l=en",
+      "phone": "+46 8 790 60 94",
+      "research_keywords": [
+        "plasma-facing materials",
+        "fusion technology",
+        "plasma-wall interaction",
+        "fuel retention"
+      ],
+      "methods": [
+        "surface analysis",
+        "PFC diagnostics",
+        "fusion materials coursework",
+        "atomic physics for fusion"
+      ],
+      "facilities": [
+        "EXTRAP T2R",
+        "Uppsala Tandem Laboratory"
+      ],
+      "transfer_vectors": [
+        "plasma diagnostics",
+        "vacuum systems",
+        "surface analysis",
+        "fusion materials"
+      ],
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "KTH PWI group page",
+          "url": "https://www.kth.se/emp/research/fusion/plasma-wall-interaction-pwi",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Henrik Bergsåker KTH profile",
+          "url": "https://www.kth.se/profile/henricb?l=en",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 4.8,
+      "tier": "A",
+      "fit_rationale": "Best active KTH PWI supervisor target: direct PWI alignment plus active teaching in fusion technology and atomic physics for fusion.",
+      "outreach_angle": "Frame yourself as an experimental diagnostics/test engineer who can support sample exposure, post-exposure analysis, and repeatable test workflows.",
+      "likely_route": "Email before posted vacancies; ask whether PWI expects a funded doctoral or project assistant opening tied to EUROfusion/ITER materials work.",
+      "opt_h1b_notes": "Swedish doctoral positions are salaried employee roles. Work-permit feasibility should be checked after a supervisor or posted position is identified.",
+      "uncertainty_notes": "",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "A",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/kth-fusion-epp-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.729Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "Henrik Bergsåker works in Plasma-Wall Interaction (PWI) (Electromagnetics and Plasma Physics).\n\nResearch focus: plasma-facing materials, fusion technology, plasma-wall interaction, fuel retention.\n\nMethods and tools: surface analysis, PFC diagnostics, fusion materials coursework, atomic physics for fusion.\n\nBest active KTH PWI supervisor target: direct PWI alignment plus active teaching in fusion technology and atomic physics for fusion.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "Report-supported: Bergsaker is the active PWI associate-professor contact in the KTH PWI cluster. The researched interests are plasma-facing materials, fusion technology, fuel retention, surface analysis, and experimental PWI workflows tied to KTH/Sweden fusion-materials work.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted in our report. Report-supported current line: PFM/PFC lifetime diagnostics, sample exposure or insertion workflows, and post-exposure surface analysis. Verify a 2023-2026 PWI / retention paper from his profile before citing it.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Frame yourself as an experimental diagnostics/test engineer who can support sample exposure, post-exposure analysis, and repeatable test workflows.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: plasma diagnostics, vacuum systems, surface analysis, fusion materials.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: plasma diagnostics, vacuum systems, surface analysis, fusion materials.\n- Their facilities (EXTRAP T2R, Uppsala Tandem Laboratory) need reliable experimental execution — that is the part you can defend.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Review this line before sending:\n\"Frame yourself as an experimental diagnostics/test engineer who can support sample exposure, post-exposure analysis, and repeatable test workflows.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "kth-per-petersson-pwi",
+      "source": "kth",
+      "name": "Per Petersson",
+      "title": "Researcher; visiting researcher at Uppsala Tandem Laboratory",
+      "unit": "KTH / Uppsala Tandem Laboratory",
+      "department": "Electromagnetics and Plasma Physics",
+      "lab": "Plasma-Wall Interaction (PWI); Uppsala Tandem Lab",
+      "institution": "kth",
+      "application_route": "email_supervisor_first",
+      "application_url": "https://intra.kth.se/en/eecs/forskarutbildning/admission-1.813300",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Stockholm / Sweden network",
+      "profile_url": "https://www.kth.se/emp/research/fusion/plasma-wall-interaction-pwi",
+      "lab_url": "https://www.uu.se/en/centre/tandemlab/contact",
+      "linkedin_url": "",
+      "contact_email": "ppeter@kth.se",
+      "contact_page": "https://www.kth.se/emp/research/fusion/plasma-wall-interaction-pwi",
+      "phone": "+46 18 471 30 58",
+      "research_keywords": [
+        "ion beam analysis",
+        "plasma-facing materials",
+        "deuterium retention",
+        "surface analysis"
+      ],
+      "methods": [
+        "ERDA",
+        "RBS",
+        "NRA",
+        "PIXE",
+        "ion beam materials analysis"
+      ],
+      "facilities": [
+        "Uppsala Tandem Laboratory",
+        "EXTRAP T2R"
+      ],
+      "transfer_vectors": [
+        "ion beam analysis",
+        "SIMION/SRIM",
+        "surface analysis",
+        "fusion materials"
+      ],
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "KTH PWI members list",
+          "url": "https://www.kth.se/emp/research/fusion/plasma-wall-interaction-pwi",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Uppsala Tandem Lab staff list",
+          "url": "https://www.uu.se/en/centre/tandemlab/contact",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Uppsala IBA methods",
+          "url": "https://www.uu.se/en/centre/tandemlab/research-activities/materials-research/iba",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 4.7,
+      "tier": "A",
+      "fit_rationale": "Strong practical bridge from KTH PWI into Uppsala beamline analysis; useful for understanding the hands-on workflow even if not the principal supervisor.",
+      "outreach_angle": "Ask about how KTH PWI plans ion-beam analysis campaigns and where SIMION/SRIM or detector-readout skills would help.",
+      "likely_route": "Secondary technical contact after Rubel/Bergsåker; possible co-supervisor or beamline collaborator.",
+      "opt_h1b_notes": "Swedish doctoral positions are salaried employee roles. Work-permit feasibility should be checked after a supervisor or posted position is identified.",
+      "uncertainty_notes": "",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "A",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/kth-fusion-epp-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.729Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "Per Petersson works in Plasma-Wall Interaction (PWI); Uppsala Tandem Lab (Electromagnetics and Plasma Physics).\n\nResearch focus: ion beam analysis, plasma-facing materials, deuterium retention, surface analysis.\n\nMethods and tools: ERDA, RBS, NRA, PIXE, ion beam materials analysis.\n\nStrong practical bridge from KTH PWI into Uppsala beamline analysis; useful for understanding the hands-on workflow even if not the principal supervisor.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "Report-supported: Petersson is a PWI researcher connected to Uppsala Tandem work. The researched interests are ion-beam analysis (ERDA, RBS, NRA, PIXE), deuterium retention, and beamline campaigns supporting fusion-materials analysis.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted in our report. Report-supported current line: IBA campaigns for plasma-exposed samples at Uppsala Tandem Lab. Verify one recent IBA / retention / PFC analysis paper before citing it.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Ask about how KTH PWI plans ion-beam analysis campaigns and where SIMION/SRIM or detector-readout skills would help.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: ion beam analysis, SIMION/SRIM, surface analysis, fusion materials.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: ion beam analysis, SIMION/SRIM, surface analysis, fusion materials.\n- Their facilities (Uppsala Tandem Laboratory, EXTRAP T2R) need reliable experimental execution — that is the part you can defend.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Review this line before sending:\n\"Ask about how KTH PWI plans ion-beam analysis campaigns and where SIMION/SRIM or detector-readout skills would help.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "kth-lorenzo-frassinetti-pedestal",
+      "source": "kth",
+      "name": "Lorenzo Frassinetti",
+      "title": "Professor",
+      "unit": "KTH School of Electrical Engineering and Computer Science",
+      "department": "Electromagnetics and Plasma Physics",
+      "lab": "Pedestal Physics",
+      "institution": "kth",
+      "application_route": "email_supervisor_first",
+      "application_url": "https://intra.kth.se/en/eecs/forskarutbildning/admission-1.813300",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Stockholm / Sweden network",
+      "profile_url": "https://www.kth.se/profile/lorenzof?l=en",
+      "lab_url": "https://www.kth.se/emp/research/fusion/pedestal-physics",
+      "linkedin_url": "",
+      "contact_email": "lorenzof@kth.se",
+      "contact_page": "https://www.kth.se/profile/lorenzof?l=en",
+      "phone": "+46 8 790 65 75",
+      "research_keywords": [
+        "H-mode pedestal",
+        "JET",
+        "ASDEX Upgrade",
+        "TCV",
+        "MAST-U",
+        "ITER pedestal prediction"
+      ],
+      "methods": [
+        "experimental data analysis",
+        "Python pedestal database workflows",
+        "MHD modelling",
+        "multi-tokamak experiments"
+      ],
+      "facilities": [
+        "JET",
+        "ASDEX Upgrade",
+        "TCV",
+        "MAST-U"
+      ],
+      "transfer_vectors": [
+        "plasma diagnostics",
+        "Python data analysis",
+        "fusion modelling",
+        "tokamak experiments"
+      ],
+      "hiring_signals": [
+        {
+          "type": "hiring_signal",
+          "label": "Pedestal thesis route",
+          "url": "https://www.kth.se/emp/research/fusion/pedestal-physics",
+          "date": "2026-06-27",
+          "note": "KTH page states doctoral positions are announced via the official KTH portal and describes project types."
+        }
+      ],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "KTH Pedestal Physics group page",
+          "url": "https://www.kth.se/emp/research/fusion/pedestal-physics",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Lorenzo Frassinetti KTH profile",
+          "url": "https://www.kth.se/profile/lorenzof?l=en",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 4.5,
+      "tier": "A",
+      "fit_rationale": "Strong diagnostics/data-analysis fit through multi-machine pedestal databases, Python tooling, and experimental campaign analysis.",
+      "outreach_angle": "Lead with plasma instrumentation plus Python data-processing discipline; ask whether pedestal database or diagnostic-analysis projects need a systems-minded engineer.",
+      "likely_route": "Monitor KTH Varbi for PhD openings and send a targeted email referencing the JET/AUG/TCV/MAST-U database work.",
+      "opt_h1b_notes": "Swedish doctoral positions are salaried employee roles. Work-permit feasibility should be checked after a supervisor or posted position is identified.",
+      "uncertainty_notes": "",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "A",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/kth-fusion-epp-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.729Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "Lorenzo Frassinetti works in Pedestal Physics (Electromagnetics and Plasma Physics).\n\nResearch focus: H-mode pedestal, JET, ASDEX Upgrade, TCV, MAST-U, ITER pedestal prediction.\n\nMethods and tools: experimental data analysis, Python pedestal database workflows, MHD modelling, multi-tokamak experiments.\n\nStrong diagnostics/data-analysis fit through multi-machine pedestal databases, Python tooling, and experimental campaign analysis.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "Report-supported: Frassinetti is the Pedestal Physics contact. The researched interests are multi-tokamak pedestal experiments, pedestal MHD modelling, and diagnostic/database work across European tokamak campaigns.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted in our report. Report-supported current line: European tokamak pedestal campaigns and pedestal MHD modelling. Verify one 2023-2026 pedestal / ELM / H-mode paper before using this as an email hook.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Lead with plasma instrumentation plus Python data-processing discipline; ask whether pedestal database or diagnostic-analysis projects need a systems-minded engineer.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: plasma diagnostics, Python data analysis, fusion modelling, tokamak experiments.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: plasma diagnostics, Python data analysis, fusion modelling, tokamak experiments.\n- Their facilities (JET, ASDEX Upgrade, TCV, MAST-U) need reliable experimental execution — that is the part you can defend.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Review this line before sending:\n\"Lead with plasma instrumentation plus Python data-processing discipline; ask whether pedestal database or diagnostic-analysis projects need a systems-minded engineer.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "kth-per-brunsell-extrap-control",
+      "source": "kth",
+      "name": "Per Brunsell",
+      "title": "Professor; leader of EXTRAP T2R; Deputy Head of Division",
+      "unit": "KTH School of Electrical Engineering and Computer Science",
+      "department": "Electromagnetics and Plasma Physics",
+      "lab": "Plasma Control / EXTRAP T2R",
+      "institution": "kth",
+      "application_route": "email_supervisor_first",
+      "application_url": "https://intra.kth.se/en/eecs/forskarutbildning/admission-1.813300",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Stockholm / Sweden network",
+      "profile_url": "https://www.kth.se/profile/brunsell?l=en",
+      "lab_url": "https://www.kth.se/emp/research/fusion/plasma-control-1.1091471",
+      "linkedin_url": "",
+      "contact_email": "brunsell@kth.se",
+      "contact_page": "https://www.kth.se/profile/brunsell?l=en",
+      "phone": "+46 8 790 62 46",
+      "research_keywords": [
+        "EXTRAP T2R",
+        "resistive wall mode control",
+        "reversed-field pinch",
+        "digital feedback control",
+        "MHD instabilities"
+      ],
+      "methods": [
+        "real-time control",
+        "sensor arrays",
+        "ADC/DAC feedback systems",
+        "plasma operation",
+        "system identification"
+      ],
+      "facilities": [
+        "EXTRAP T2R"
+      ],
+      "transfer_vectors": [
+        "plasma control",
+        "DAQ",
+        "FPGA/digital systems",
+        "high-voltage systems",
+        "vacuum systems"
+      ],
+      "hiring_signals": [
+        {
+          "type": "hiring_signal",
+          "label": "Active supervision signal",
+          "url": "https://www.kth.se/profile/brunsell?l=en",
+          "date": "2026-06-27",
+          "note": "Profile states he currently supervises three PhD students."
+        }
+      ],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "KTH Plasma Control page",
+          "url": "https://www.kth.se/emp/research/fusion/plasma-control-1.1091471",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "KTH EXTRAP page",
+          "url": "https://www.kth.se/emp/research/fusion/extrap-1.897096",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Per Brunsell KTH profile",
+          "url": "https://www.kth.se/profile/brunsell?l=en",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 4.5,
+      "tier": "A",
+      "fit_rationale": "Excellent controls/instrumentation backup to PWI: EXTRAP T2R uses sensor arrays, feedback control, digital controller logic, and plasma operation.",
+      "outreach_angle": "Lead with high-voltage plasma-source operation, PyVISA automation, detector readout, and interest in RWM control diagnostics.",
+      "likely_route": "Supervisor-first email for EXTRAP T2R control/diagnostic support; monitor KTH Varbi for EMP doctoral positions.",
+      "opt_h1b_notes": "Swedish doctoral positions are salaried employee roles. Work-permit feasibility should be checked after a supervisor or posted position is identified.",
+      "uncertainty_notes": "",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "A",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/kth-fusion-epp-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.729Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "Per Brunsell works in Plasma Control / EXTRAP T2R (Electromagnetics and Plasma Physics).\n\nResearch focus: EXTRAP T2R, resistive wall mode control, reversed-field pinch, digital feedback control, MHD instabilities.\n\nMethods and tools: real-time control, sensor arrays, ADC/DAC feedback systems, plasma operation, system identification.\n\nExcellent controls/instrumentation backup to PWI: EXTRAP T2R uses sensor arrays, feedback control, digital controller logic, and plasma operation.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "Report-supported: Brunsell is the Plasma Control / EXTRAP T2R contact. The researched interests are reversed-field-pinch operation, resistive-wall-mode feedback, digital control, sensor arrays, and real-time DAQ.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted in our report. Report-supported current line: EXTRAP T2R RWM feedback and real-time control. Open Brunsell KTH profile and verify one recent RWM / RFP / control paper.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Lead with high-voltage plasma-source operation, PyVISA automation, detector readout, and interest in RWM control diagnostics.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: plasma control, DAQ, FPGA/digital systems, high-voltage systems.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: plasma control, DAQ, FPGA/digital systems, high-voltage systems.\n- Their facilities (EXTRAP T2R) need reliable experimental execution — that is the part you can defend.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Review this line before sending:\n\"Lead with high-voltage plasma-source operation, PyVISA automation, detector readout, and interest in RWM control diagnostics.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "uppsala-daniel-primetzhofer-tandem",
+      "source": "uppsala",
+      "name": "Daniel Primetzhofer",
+      "title": "Director, Tandem Laboratory",
+      "unit": "Uppsala University",
+      "department": "Tandem Laboratory",
+      "lab": "Tandem Laboratory / Ion Technology Center",
+      "institution": "uppsala",
+      "application_route": "email_supervisor_first",
+      "application_url": "https://www.uu.se/en/study/doctoral-studies",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Stockholm / Sweden network",
+      "profile_url": "https://www.uu.se/en/contact-and-organisation/staff?query=N11-1921",
+      "lab_url": "https://www.uu.se/en/centre/tandemlab/contact",
+      "linkedin_url": "",
+      "contact_email": "daniel.primetzhofer@physics.uu.se",
+      "contact_page": "https://www.uu.se/en/contact-and-organisation/staff?query=N11-1921",
+      "phone": "+46 73 469 77 38",
+      "research_keywords": [
+        "ion beam analysis",
+        "fusion materials",
+        "hydrogen in solids",
+        "reactor-relevant materials"
+      ],
+      "methods": [
+        "in-situ ion beam analysis",
+        "operando materials studies",
+        "ERDA",
+        "RBS",
+        "NRA",
+        "PIXE"
+      ],
+      "facilities": [
+        "Uppsala Tandem Laboratory"
+      ],
+      "transfer_vectors": [
+        "ion beam analysis",
+        "SIMION/SRIM",
+        "surface analysis",
+        "fusion materials",
+        "vacuum systems"
+      ],
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "Uppsala Tandem Lab contact page",
+          "url": "https://www.uu.se/en/centre/tandemlab/contact",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Uppsala fusion materials page",
+          "url": "https://www.uu.se/en/centre/tandemlab/research-activities/materials-research/energy-materials",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Uppsala IBA methods page",
+          "url": "https://www.uu.se/en/centre/tandemlab/research-activities/materials-research/iba",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "KTH PWI cooperation list",
+          "url": "https://www.kth.se/emp/research/fusion/plasma-wall-interaction-pwi",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 4.3,
+      "tier": "A",
+      "fit_rationale": "Best FP3-adjacent collaborator outside KTH because Tandem Lab is the named PWI ion-beam analysis partner and studies fusion plasma-facing materials.",
+      "outreach_angle": "Ask about ion-beam analysis projects connected to KTH PWI and whether detector/readout or ion-trajectory simulation skills are useful.",
+      "likely_route": "Uppsala doctoral/posting route or KTH PWI co-supervision via Tandem Lab.",
+      "opt_h1b_notes": "Swedish doctoral positions are salaried employee roles. Work-permit feasibility should be checked after a supervisor or posted position is identified.",
+      "uncertainty_notes": "",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "A",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/kth-fusion-epp-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.729Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "Daniel Primetzhofer works in Tandem Laboratory / Ion Technology Center (Tandem Laboratory).\n\nResearch focus: ion beam analysis, fusion materials, hydrogen in solids, reactor-relevant materials.\n\nMethods and tools: in-situ ion beam analysis, operando materials studies, ERDA, RBS, NRA.\n\nBest FP3-adjacent collaborator outside KTH because Tandem Lab is the named PWI ion-beam analysis partner and studies fusion plasma-facing materials.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "Report-supported: Primetzhofer / Uppsala Tandem Lab is a KTH PWI collaborator route. The researched interests are ion-beam analysis for fusion materials, energy materials, and IBA methods supporting sample campaigns.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted in our report. Uppsala IBA / energy-materials pages support active beamline-analysis work; verify one Primetzhofer or Tandem Lab IBA / materials paper before citing.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Ask about ion-beam analysis projects connected to KTH PWI and whether detector/readout or ion-trajectory simulation skills are useful.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: ion beam analysis, SIMION/SRIM, surface analysis, fusion materials.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: ion beam analysis, SIMION/SRIM, surface analysis, fusion materials.\n- Their facilities (Uppsala Tandem Laboratory) need reliable experimental execution — that is the part you can defend.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Review this line before sending:\n\"Ask about ion-beam analysis projects connected to KTH PWI and whether detector/readout or ion-trajectory simulation skills are useful.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "kth-per-arne-lindqvist-mms",
+      "source": "kth",
+      "name": "Per Arne Lindqvist",
+      "title": "Senior researcher",
+      "unit": "KTH School of Electrical Engineering and Computer Science",
+      "department": "Electromagnetics and Plasma Physics",
+      "lab": "Space and Plasma Physics / MMS electric-field instrumentation",
+      "institution": "kth",
+      "application_route": "email_supervisor_first",
+      "application_url": "https://intra.kth.se/en/eecs/forskarutbildning/admission-1.813300",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Stockholm / Sweden network",
+      "profile_url": "https://www.kth.se/profile/pal?l=en",
+      "lab_url": "https://www.kth.se/emp/research/space-and-plasma-physics/missions/ongoing-satellite-mi/mms-magnetospheric-multiscale-1.1016328",
+      "linkedin_url": "",
+      "contact_email": "pal@kth.se",
+      "contact_page": "https://www.kth.se/profile/pal?l=en",
+      "phone": "+46 8 790 76 96",
+      "research_keywords": [
+        "space plasma instrumentation",
+        "electric field instruments",
+        "MMS",
+        "Cluster",
+        "spacecraft-plasma interactions"
+      ],
+      "methods": [
+        "space plasma data analysis",
+        "electric field sensors",
+        "instrument electronics",
+        "measurement quality"
+      ],
+      "facilities": [
+        "MMS",
+        "Cluster",
+        "Viking",
+        "Freja",
+        "Astrid"
+      ],
+      "transfer_vectors": [
+        "space plasma instrumentation",
+        "detector readout",
+        "DAQ",
+        "space systems",
+        "sensors"
+      ],
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "MMS mission page",
+          "url": "https://www.kth.se/emp/research/space-and-plasma-physics/missions/ongoing-satellite-mi/mms-magnetospheric-multiscale-1.1016328",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Per Arne Lindqvist KTH profile",
+          "url": "https://www.kth.se/profile/pal?l=en",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 4.2,
+      "tier": "A",
+      "fit_rationale": "One of the best non-fusion KTH matches because your space-plasma instrumentation and detector-readout background maps directly to electric-field instrument work.",
+      "outreach_angle": "Ask for advice on KTH space-plasma instrument projects and whether doctoral work exists around measurement quality or spacecraft-plasma interactions.",
+      "likely_route": "Exploratory supervisor/mentor contact; lower priority than fusion PWI if the immediate goal is fusion PhD.",
+      "opt_h1b_notes": "Swedish doctoral positions are salaried employee roles. Work-permit feasibility should be checked after a supervisor or posted position is identified.",
+      "uncertainty_notes": "",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "A",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/kth-fusion-epp-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.729Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "Per Arne Lindqvist works in Space and Plasma Physics / MMS electric-field instrumentation (Electromagnetics and Plasma Physics).\n\nResearch focus: space plasma instrumentation, electric field instruments, MMS, Cluster, spacecraft-plasma interactions.\n\nMethods and tools: space plasma data analysis, electric field sensors, instrument electronics, measurement quality.\n\nOne of the best non-fusion KTH matches because your space-plasma instrumentation and detector-readout background maps directly to electric-field instrument work.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "Report-supported: Lindqvist is an MMS / space-plasma instrumentation contact. The researched interests are electric-field measurements, spacecraft-plasma interactions, and instrument-quality issues on magnetospheric missions.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted in our report. Report-supported current line: MMS electric-field instrument science and magnetospheric data. Verify one recent MMS / E-field / space-plasma instrumentation paper.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Ask for advice on KTH space-plasma instrument projects and whether doctoral work exists around measurement quality or spacecraft-plasma interactions.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: space plasma instrumentation, detector readout, DAQ, space systems.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: space plasma instrumentation, detector readout, DAQ, space systems.\n- Their facilities (MMS, Cluster, Viking, Freja) need reliable experimental execution — that is the part you can defend.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Review this line before sending:\n\"Ask for advice on KTH space-plasma instrument projects and whether doctoral work exists around measurement quality or spacecraft-plasma interactions.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "uppsala-tandem-lab-iba-contact",
+      "source": "uppsala",
+      "name": "Uppsala Tandem Laboratory",
+      "title": "Ion beam analysis facility contact",
+      "unit": "Uppsala University",
+      "department": "Tandem Laboratory",
+      "lab": "Tandem Laboratory",
+      "institution": "uppsala",
+      "application_route": "email_supervisor_first",
+      "application_url": "https://www.uu.se/en/study/doctoral-studies",
+      "role_type": "job_board_signal",
+      "campus": "Stockholm / Sweden network",
+      "profile_url": "https://www.uu.se/en/centre/tandemlab/contact",
+      "lab_url": "https://www.uu.se/en/centre/tandemlab/research-activities/materials-research/iba",
+      "linkedin_url": "",
+      "contact_email": "tandemlaboratoriet@physics.uu.se",
+      "contact_page": "https://www.uu.se/en/centre/tandemlab/contact",
+      "phone": "+46 18 471 31 24",
+      "research_keywords": [
+        "ion beam analysis",
+        "fusion materials",
+        "plasma-facing components",
+        "hydrogen depth profiling"
+      ],
+      "methods": [
+        "RBS",
+        "ERDA",
+        "NRA",
+        "PIXE",
+        "microbeam analysis"
+      ],
+      "facilities": [
+        "Tandem Laboratory"
+      ],
+      "transfer_vectors": [
+        "ion beam analysis",
+        "surface analysis",
+        "fusion materials",
+        "vacuum systems"
+      ],
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "Uppsala Tandem Lab contact page",
+          "url": "https://www.uu.se/en/centre/tandemlab/contact",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Uppsala IBA methods page",
+          "url": "https://www.uu.se/en/centre/tandemlab/research-activities/materials-research/iba",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Uppsala fusion materials page",
+          "url": "https://www.uu.se/en/centre/tandemlab/research-activities/materials-research/energy-materials",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 4.1,
+      "tier": "A",
+      "fit_rationale": "Facility-level contact for the KTH PWI analysis chain; not a PI, but a high-signal place to understand beamline project needs.",
+      "outreach_angle": "Use after KTH PWI contact to ask who handles PWI sample analysis and whether technical doctoral projects are opening.",
+      "likely_route": "Facility inquiry and Uppsala doctoral postings; not the first cold email.",
+      "opt_h1b_notes": "Swedish doctoral positions are salaried employee roles. Work-permit feasibility should be checked after a supervisor or posted position is identified.",
+      "uncertainty_notes": "",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "A",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/kth-fusion-epp-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.729Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "Uppsala Tandem Laboratory works in Tandem Laboratory (Tandem Laboratory).\n\nResearch focus: ion beam analysis, fusion materials, plasma-facing components, hydrogen depth profiling.\n\nMethods and tools: RBS, ERDA, NRA, PIXE, microbeam analysis.\n\nFacility-level contact for the KTH PWI analysis chain; not a PI, but a high-signal place to understand beamline project needs.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "Report-supported: Uppsala Tandem is a facility/contact route for IBA methods. The researched methods are ERDA, RBS, NRA, and PIXE for post-exposure fusion-material analysis linked to KTH PWI.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "Facility-level contact, not a professor-specific publication row. Use the Tandem Lab publications list or staff page to verify one recent IBA / fusion-materials paper before referencing it.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Use after KTH PWI contact to ask who handles PWI sample analysis and whether technical doctoral projects are opening.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: ion beam analysis, surface analysis, fusion materials, vacuum systems.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: ion beam analysis, surface analysis, fusion materials, vacuum systems.\n- Their facilities (Tandem Laboratory) need reliable experimental execution — that is the part you can defend.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Review this line before sending:\n\"Use after KTH PWI contact to ask who handles PWI sample analysis and whether technical doctoral projects are opening.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "kth-varbi-emp-phd-monitor",
+      "source": "kth",
+      "name": "KTH Varbi EMP/Fusion Doctoral Vacancies",
+      "title": "Official KTH doctoral job portal monitor",
+      "unit": "KTH Royal Institute of Technology",
+      "department": "Doctoral recruitment",
+      "lab": "KTH vacancies portal",
+      "institution": "kth",
+      "application_route": "kth_jobs_portal",
+      "application_url": "https://kth.varbi.com/en/nl?o=2&os=1&s=0&ss=1",
+      "role_type": "job_board_signal",
+      "campus": "Stockholm / Sweden network",
+      "profile_url": "https://kth.varbi.com/en/nl?o=2&os=1&s=0&ss=1",
+      "lab_url": "",
+      "linkedin_url": "",
+      "contact_email": "doctoral-education-support@eecs.kth.se",
+      "contact_page": "https://kth.varbi.com/en/nl?o=2&os=1&s=0&ss=1",
+      "phone": "",
+      "research_keywords": [
+        "doctoral vacancies",
+        "EMP",
+        "fusion",
+        "plasma",
+        "KTH admissions"
+      ],
+      "methods": [
+        "weekly vacancy monitoring"
+      ],
+      "facilities": [],
+      "transfer_vectors": [
+        "PhD application route",
+        "hiring intelligence"
+      ],
+      "hiring_signals": [
+        {
+          "type": "hiring_signal",
+          "label": "KTH Varbi vacancy portal",
+          "url": "https://kth.varbi.com/en/nl?o=2&os=1&s=0&ss=1",
+          "date": "2026-06-27",
+          "note": "Official route for advertised doctoral positions at KTH."
+        }
+      ],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "KTH vacancies portal",
+          "url": "https://kth.varbi.com/en/nl?o=2&os=1&s=0&ss=1",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "KTH EECS doctoral admission page",
+          "url": "https://intra.kth.se/en/eecs/forskarutbildning/admission-1.813300",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 4,
+      "tier": "A",
+      "fit_rationale": "This is the mandatory application channel when a funded KTH PhD slot is posted.",
+      "outreach_angle": "Monitor weekly for EMP, fusion, plasma, PWI, EXTRAP, pedestal, or fast-electron keywords.",
+      "likely_route": "Apply through Varbi, then email the matching PI with a focused fit memo.",
+      "opt_h1b_notes": "Swedish doctoral positions are salaried employee roles. Work-permit feasibility should be checked after a supervisor or posted position is identified.",
+      "uncertainty_notes": "",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "A",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/kth-fusion-epp-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.730Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "KTH Varbi EMP/Fusion Doctoral Vacancies works in KTH vacancies portal (Doctoral recruitment).\n\nResearch focus: doctoral vacancies, EMP, fusion, plasma, KTH admissions.\n\nMethods and tools: weekly vacancy monitoring.\n\nThis is the mandatory application channel when a funded KTH PhD slot is posted.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "What we researched (career-ops deep research):\nReport: WEB-TRACKER/research/kth-fusion-epp-prospects-2026.json\nPrimary sources checked:\n- KTH vacancies portal: https://kth.varbi.com/en/nl?o=2&os=1&s=0&ss=1\n- KTH EECS doctoral admission page: https://intra.kth.se/en/eecs/forskarutbildning/admission-1.813300\nWhat this person works on:\nKTH Varbi EMP/Fusion Doctoral Vacancies, Official KTH doctoral job portal monitor\nLab/group: KTH vacancies portal\nResearch interests: doctoral vacancies, EMP, fusion, plasma, KTH admissions.\nMethods/approach: weekly vacancy monitoring.\nThis is the mandatory application channel when a funded KTH PhD slot is posted.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted for this contact. Current research lines from lab-page / report research, to verify against one recent paper before emailing:\n- weekly vacancy monitoring\nActive programme notes: Official route for advertised doctoral positions at KTH.\n\nAction: Open https://kth.varbi.com/en/nl?o=2&os=1&s=0&ss=1 or Google Scholar -> pick one paper from 2023-2026 -> write title + one-sentence takeaway in column 3.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Monitor weekly for EMP, fusion, plasma, PWI, EXTRAP, pedestal, or fast-electron keywords.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: PhD application route, hiring intelligence.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: PhD application route, hiring intelligence.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Review this line before sending:\n\"Monitor weekly for EMP, fusion, plasma, PWI, EXTRAP, pedestal, or fast-electron keywords.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "kth-mathias-hoppe-fast-electrons",
+      "source": "kth",
+      "name": "Mathias Hoppe",
+      "title": "Assistant professor",
+      "unit": "KTH School of Electrical Engineering and Computer Science",
+      "department": "Electromagnetics and Plasma Physics",
+      "lab": "Fast Electron Physics",
+      "institution": "kth",
+      "application_route": "email_supervisor_first",
+      "application_url": "https://intra.kth.se/en/eecs/forskarutbildning/admission-1.813300",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Stockholm / Sweden network",
+      "profile_url": "https://www.kth.se/profile/mhop?l=en",
+      "lab_url": "https://www.kth.se/emp/research/fusion/fast-electron-physics-1.1472187",
+      "linkedin_url": "",
+      "contact_email": "mhop@kth.se",
+      "contact_page": "https://www.kth.se/profile/mhop?l=en",
+      "phone": "+46 8 790 60 53",
+      "research_keywords": [
+        "runaway electrons",
+        "tokamak disruptions",
+        "DREAM",
+        "STREAM",
+        "SOFT",
+        "YODA",
+        "ITER"
+      ],
+      "methods": [
+        "scientific computing",
+        "synthetic diagnostics",
+        "tokamak disruption modelling",
+        "fluid-kinetic simulation"
+      ],
+      "facilities": [
+        "TCV collaboration",
+        "EUROfusion TSVV",
+        "ITER/ITPEA networks"
+      ],
+      "transfer_vectors": [
+        "scientific computing",
+        "diagnostic modelling",
+        "Python/MATLAB analysis",
+        "fusion modelling"
+      ],
+      "hiring_signals": [
+        {
+          "type": "hiring_signal",
+          "label": "Explicit thesis-project invitation",
+          "url": "https://www.kth.se/emp/research/fusion/fast-electron-physics-1.1472187",
+          "date": "2026-06-27",
+          "note": "The group page invites students to contact Mathias about thesis and PhD topics."
+        }
+      ],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "KTH Fast Electron Physics page",
+          "url": "https://www.kth.se/emp/research/fusion/fast-electron-physics-1.1472187",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Mathias Hoppe KTH profile",
+          "url": "https://www.kth.se/profile/mhop?l=en",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 4,
+      "tier": "A",
+      "fit_rationale": "Best modelling fallback: less hands-on than PWI, but synthetic diagnostics and fast-electron radiation modelling can use detector/readout intuition.",
+      "outreach_angle": "Position your SSD readout and SIMION/SRIM work as instrumentation-aware modelling rather than pure theory.",
+      "likely_route": "Direct email is appropriate because the group page explicitly invites thesis/PhD topic discussions.",
+      "opt_h1b_notes": "Swedish doctoral positions are salaried employee roles. Work-permit feasibility should be checked after a supervisor or posted position is identified.",
+      "uncertainty_notes": "",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "A",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/kth-fusion-epp-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.730Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "Mathias Hoppe works in Fast Electron Physics (Electromagnetics and Plasma Physics).\n\nResearch focus: runaway electrons, tokamak disruptions, DREAM, STREAM, SOFT, YODA.\n\nMethods and tools: scientific computing, synthetic diagnostics, tokamak disruption modelling, fluid-kinetic simulation.\n\nBest modelling fallback: less hands-on than PWI, but synthetic diagnostics and fast-electron radiation modelling can use detector/readout intuition.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "Report-supported: Hoppe is the Fast Electron Physics contact. The researched interests are runaway electrons, synthetic diagnostics, numerical modelling, and codes including DREAM, SOFT, STREAM, and YODA.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted in our report. Report-supported current line: numerical modelling of fast-electron physics and code development. Verify one recent runaway-electron or synthetic-diagnostic paper before referencing it.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Position your SSD readout and SIMION/SRIM work as instrumentation-aware modelling rather than pure theory.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: scientific computing, diagnostic modelling, Python/MATLAB analysis, fusion modelling.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: scientific computing, diagnostic modelling, Python/MATLAB analysis, fusion modelling.\n- Their facilities (TCV collaboration, EUROfusion TSVV, ITER/ITPEA networks) need reliable experimental execution — that is the part you can defend.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Review this line before sending:\n\"Position your SSD readout and SIMION/SRIM work as instrumentation-aware modelling rather than pure theory.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "kth-tomas-karlsson-space-plasma",
+      "source": "kth",
+      "name": "Tomas Karlsson",
+      "title": "Professor",
+      "unit": "KTH School of Electrical Engineering and Computer Science",
+      "department": "Electromagnetics and Plasma Physics",
+      "lab": "Space and Plasma Physics",
+      "institution": "kth",
+      "application_route": "email_supervisor_first",
+      "application_url": "https://intra.kth.se/en/eecs/forskarutbildning/admission-1.813300",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Stockholm / Sweden network",
+      "profile_url": "https://www.kth.se/profile/tomask?l=en",
+      "lab_url": "https://www.kth.se/emp/research/space-and-plasma-physics",
+      "linkedin_url": "",
+      "contact_email": "tomask@kth.se",
+      "contact_page": "https://www.kth.se/profile/tomask?l=en",
+      "phone": "+46 8 790 77 01",
+      "research_keywords": [
+        "solar wind-magnetosphere-ionosphere interaction",
+        "bow shocks",
+        "magnetosheath jets",
+        "auroral physics"
+      ],
+      "methods": [
+        "space plasma data analysis",
+        "MMS/Cluster observations",
+        "space physics teaching"
+      ],
+      "facilities": [
+        "MMS",
+        "Cluster"
+      ],
+      "transfer_vectors": [
+        "space plasma physics",
+        "data analysis",
+        "space systems",
+        "plasma instrumentation"
+      ],
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "Tomas Karlsson KTH profile",
+          "url": "https://www.kth.se/profile/tomask?l=en",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Near Earth space area",
+          "url": "https://www.kth.se/emp/research/space-and-plasma-physics/area/near-earth-space-1.1016425",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 4,
+      "tier": "A",
+      "fit_rationale": "Strong space-plasma academic fit, especially if you want a PhD bridge from UMich space systems into KTH EMP rather than fusion materials.",
+      "outreach_angle": "Frame your M.Eng space systems, plasma coursework, and instrumentation background around MMS/Cluster data and space-plasma measurement problems.",
+      "likely_route": "Secondary track if KTH fusion slots are closed; monitor EMP doctoral openings.",
+      "opt_h1b_notes": "Swedish doctoral positions are salaried employee roles. Work-permit feasibility should be checked after a supervisor or posted position is identified.",
+      "uncertainty_notes": "",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "A",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/kth-fusion-epp-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.730Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "Tomas Karlsson works in Space and Plasma Physics (Electromagnetics and Plasma Physics).\n\nResearch focus: solar wind-magnetosphere-ionosphere interaction, bow shocks, magnetosheath jets, auroral physics.\n\nMethods and tools: space plasma data analysis, MMS/Cluster observations, space physics teaching.\n\nStrong space-plasma academic fit, especially if you want a PhD bridge from UMich space systems into KTH EMP rather than fusion materials.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "Report-supported: Karlsson is a KTH space-plasma contact. The researched interests are space plasma physics, MMS/Cluster data, and auroral or substorm-related plasma processes.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted in our report. Report-supported current line: magnetospheric plasma physics using MMS/Cluster datasets. Verify one recent substorm / auroral / space-plasma paper before email outreach.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Frame your M.Eng space systems, plasma coursework, and instrumentation background around MMS/Cluster data and space-plasma measurement problems.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: space plasma physics, data analysis, space systems, plasma instrumentation.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: space plasma physics, data analysis, space systems, plasma instrumentation.\n- Their facilities (MMS, Cluster) need reliable experimental execution — that is the part you can defend.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Review this line before sending:\n\"Frame your M.Eng space systems, plasma coursework, and instrumentation background around MMS/Cluster data and space-plasma measurement problems.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "kth-mykola-ivchenko-space-systems",
+      "source": "kth",
+      "name": "Mykola Ivchenko",
+      "title": "Professor",
+      "unit": "KTH School of Electrical Engineering and Computer Science",
+      "department": "Electromagnetics and Plasma Physics",
+      "lab": "Space and Plasma Physics / space systems",
+      "institution": "kth",
+      "application_route": "email_supervisor_first",
+      "application_url": "https://intra.kth.se/en/eecs/forskarutbildning/admission-1.813300",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Stockholm / Sweden network",
+      "profile_url": "https://www.kth.se/profile/nickolay?l=en",
+      "lab_url": "https://www.kth.se/emp/research/space-and-plasma-physics/area/solar-system-plasma-physics-1.1016426",
+      "linkedin_url": "",
+      "contact_email": "nickolay@kth.se",
+      "contact_page": "https://www.kth.se/profile/nickolay?l=en",
+      "phone": "+46 8 790 76 74",
+      "research_keywords": [
+        "space systems",
+        "satellite data handling",
+        "plasma physics",
+        "solar system plasma physics"
+      ],
+      "methods": [
+        "satellite operations",
+        "space environment engineering",
+        "plasma physics teaching"
+      ],
+      "facilities": [
+        "BepiColombo",
+        "JUICE",
+        "MMS"
+      ],
+      "transfer_vectors": [
+        "space systems",
+        "data handling",
+        "space plasma instrumentation",
+        "mission operations"
+      ],
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "Mykola Ivchenko KTH profile",
+          "url": "https://www.kth.se/profile/nickolay?l=en",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Solar system plasma physics page",
+          "url": "https://www.kth.se/emp/research/space-and-plasma-physics/area/solar-system-plasma-physics-1.1016426",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 3.9,
+      "tier": "B",
+      "fit_rationale": "Good space-systems bridge because he teaches satellite data handling, operation of space systems, and plasma physics in the same KTH division.",
+      "outreach_angle": "Lead with M.Eng space systems and instrumentation/test background; ask about space-plasma instrumentation projects rather than fusion PWI.",
+      "likely_route": "Secondary KTH EMP route; use if you want to preserve space-plasma PhD optionality.",
+      "opt_h1b_notes": "Swedish doctoral positions are salaried employee roles. Work-permit feasibility should be checked after a supervisor or posted position is identified.",
+      "uncertainty_notes": "",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "B",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/kth-fusion-epp-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.730Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "Mykola Ivchenko works in Space and Plasma Physics / space systems (Electromagnetics and Plasma Physics).\n\nResearch focus: space systems, satellite data handling, plasma physics, solar system plasma physics.\n\nMethods and tools: satellite operations, space environment engineering, plasma physics teaching.\n\nGood space-systems bridge because he teaches satellite data handling, operation of space systems, and plasma physics in the same KTH division.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "Report-supported: Ivchenko is a space-systems bridge inside KTH EMP. The researched interests are satellite data handling, operation of space systems, and plasma-physics-adjacent teaching/research.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted in our report. Report-supported current line: spacecraft operations and space-plasma data handling. Verify a recent space-systems or space-plasma data paper before citing.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Lead with M.Eng space systems and instrumentation/test background; ask about space-plasma instrumentation projects rather than fusion PWI.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: space systems, data handling, space plasma instrumentation, mission operations.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: space systems, data handling, space plasma instrumentation, mission operations.\n- Their facilities (BepiColombo, JUICE, MMS) need reliable experimental execution — that is the part you can defend.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Review this line before sending:\n\"Lead with M.Eng space systems and instrumentation/test background; ask about space-plasma instrumentation projects rather than fusion PWI.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "kth-andris-vaivads-space-plasma",
+      "source": "kth",
+      "name": "Andris Vaivads",
+      "title": "Professor",
+      "unit": "KTH School of Electrical Engineering and Computer Science",
+      "department": "Electromagnetics and Plasma Physics",
+      "lab": "Space and Plasma Physics",
+      "institution": "kth",
+      "application_route": "email_supervisor_first",
+      "application_url": "https://intra.kth.se/en/eecs/forskarutbildning/admission-1.813300",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Stockholm / Sweden network",
+      "profile_url": "https://www.kth.se/profile/vaivads?l=en",
+      "lab_url": "https://www.kth.se/emp/research/space-and-plasma-physics/area/solar-system-plasma-physics-1.1016426",
+      "linkedin_url": "",
+      "contact_email": "vaivads@kth.se",
+      "contact_page": "https://www.kth.se/profile/vaivads?l=en",
+      "phone": "+46 8 790 76 97",
+      "research_keywords": [
+        "space plasma",
+        "solar system plasma physics",
+        "BepiColombo",
+        "JUICE"
+      ],
+      "methods": [
+        "spacecraft measurements",
+        "plasma data analysis",
+        "mission science"
+      ],
+      "facilities": [
+        "BepiColombo",
+        "JUICE"
+      ],
+      "transfer_vectors": [
+        "space plasma physics",
+        "space systems",
+        "plasma instrumentation"
+      ],
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "Andris Vaivads KTH profile",
+          "url": "https://www.kth.se/profile/vaivads?l=en",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Solar system plasma physics page",
+          "url": "https://www.kth.se/emp/research/space-and-plasma-physics/area/solar-system-plasma-physics-1.1016426",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 3.8,
+      "tier": "B",
+      "fit_rationale": "Good broader EMP contact for space-plasma doctoral paths, but weaker than PWI for the fusion-materials theme.",
+      "outreach_angle": "Ask about space-plasma research paths that use spacecraft instrumentation and data analysis.",
+      "likely_route": "Secondary route after the fusion/PWI shortlist.",
+      "opt_h1b_notes": "Swedish doctoral positions are salaried employee roles. Work-permit feasibility should be checked after a supervisor or posted position is identified.",
+      "uncertainty_notes": "",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "B",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/kth-fusion-epp-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.730Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "Andris Vaivads works in Space and Plasma Physics (Electromagnetics and Plasma Physics).\n\nResearch focus: space plasma, solar system plasma physics, BepiColombo, JUICE.\n\nMethods and tools: spacecraft measurements, plasma data analysis, mission science.\n\nGood broader EMP contact for space-plasma doctoral paths, but weaker than PWI for the fusion-materials theme.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "Report-supported: Vaivads is a broader EMP space-plasma contact. The researched fit is space plasma physics and instrument/data-analysis paths at KTH, with weaker fusion-PWI overlap.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted in our report. Verify a recent space-plasma paper on his profile before using this contact.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Ask about space-plasma research paths that use spacecraft instrumentation and data analysis.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: space plasma physics, space systems, plasma instrumentation.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: space plasma physics, space systems, plasma instrumentation.\n- Their facilities (BepiColombo, JUICE) need reliable experimental execution — that is the part you can defend.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Review this line before sending:\n\"Ask about space-plasma research paths that use spacecraft instrumentation and data analysis.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "eurofusion-engineering-grants-monitor",
+      "source": "eu_collaborator",
+      "name": "EUROfusion Engineering / Researcher Grants",
+      "title": "EUROfusion grant route for post-Master fusion placements",
+      "unit": "EUROfusion",
+      "department": "EUROfusion programme",
+      "lab": "EUROfusion grants",
+      "institution": "eu_collaborator",
+      "application_route": "euraxess_position",
+      "application_url": "https://euro-fusion.org/eurofusion-news/applications-open-for-the-2026-eurofusion-engineering-grants",
+      "role_type": "job_board_signal",
+      "campus": "Stockholm / Sweden network",
+      "profile_url": "https://euro-fusion.org/eurofusion-news/applications-open-for-the-2026-eurofusion-engineering-grants",
+      "lab_url": "",
+      "linkedin_url": "",
+      "contact_email": "",
+      "contact_page": "https://euro-fusion.org/eurofusion-news/applications-open-for-the-2026-eurofusion-engineering-grants",
+      "phone": "",
+      "research_keywords": [
+        "EUROfusion grants",
+        "post-master engineering",
+        "fusion placements",
+        "ITER"
+      ],
+      "methods": [
+        "grant-backed placement monitoring"
+      ],
+      "facilities": [],
+      "transfer_vectors": [
+        "fusion network",
+        "grant route",
+        "research placement"
+      ],
+      "hiring_signals": [
+        {
+          "type": "hiring_signal",
+          "label": "EUROfusion Engineering Grants",
+          "url": "https://euro-fusion.org/eurofusion-news/applications-open-for-the-2026-eurofusion-engineering-grants",
+          "date": "2026-06-27",
+          "note": "EUROfusion opened engineering grants for young engineers entering the programme."
+        }
+      ],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "EUROfusion Engineering Grants",
+          "url": "https://euro-fusion.org/eurofusion-news/applications-open-for-the-2026-eurofusion-engineering-grants",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "EUROfusion 2026 awards",
+          "url": "https://euro-fusion.org/eurofusion-news/2026-researcher-and-engineering-grants",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 3.8,
+      "tier": "B",
+      "fit_rationale": "Useful non-PhD route into the same KTH/Chalmers/Uppsala network, especially if no KTH doctoral vacancy exists.",
+      "outreach_angle": "Ask a target KTH PI whether your PWI diagnostics profile could support a EUROfusion Engineering Grant pitch.",
+      "likely_route": "Grant-backed placement, not a standard university application.",
+      "opt_h1b_notes": "Swedish doctoral positions are salaried employee roles. Work-permit feasibility should be checked after a supervisor or posted position is identified.",
+      "uncertainty_notes": "",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "B",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/kth-fusion-epp-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.730Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "EUROfusion Engineering / Researcher Grants works in EUROfusion grants (EUROfusion programme).\n\nResearch focus: EUROfusion grants, post-master engineering, fusion placements, ITER.\n\nMethods and tools: grant-backed placement monitoring.\n\nUseful non-PhD route into the same KTH/Chalmers/Uppsala network, especially if no KTH doctoral vacancy exists.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "What we researched (career-ops deep research):\nReport: WEB-TRACKER/research/kth-fusion-epp-prospects-2026.json\nPrimary sources checked:\n- EUROfusion Engineering Grants: https://euro-fusion.org/eurofusion-news/applications-open-for-the-2026-eurofusion-engineering-grants\n- EUROfusion 2026 awards: https://euro-fusion.org/eurofusion-news/2026-researcher-and-engineering-grants\nWhat this person works on:\nEUROfusion Engineering / Researcher Grants, EUROfusion grant route for post-Master fusion placements\nLab/group: EUROfusion grants\nResearch interests: EUROfusion grants, post-master engineering, fusion placements, ITER.\nMethods/approach: grant-backed placement monitoring.\nUseful non-PhD route into the same KTH/Chalmers/Uppsala network, especially if no KTH doctoral vacancy exists.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted for this contact. Current research lines from lab-page / report research, to verify against one recent paper before emailing:\n- grant-backed placement monitoring\nActive programme notes: EUROfusion opened engineering grants for young engineers entering the programme.\n\nAction: Open https://euro-fusion.org/eurofusion-news/applications-open-for-the-2026-eurofusion-engineering-grants or Google Scholar -> pick one paper from 2023-2026 -> write title + one-sentence takeaway in column 3.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Ask a target KTH PI whether your PWI diagnostics profile could support a EUROfusion Engineering Grant pitch.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: fusion network, grant route, research placement.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: fusion network, grant route, research placement.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Review this line before sending:\n\"Ask a target KTH PI whether your PWI diagnostics profile could support a EUROfusion Engineering Grant pitch.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "chalmers-tunde-fulop-plasma-theory",
+      "source": "chalmers",
+      "name": "Tünde-Maria Fülöp",
+      "title": "Full Professor, Subatomic, High Energy and Plasma Physics",
+      "unit": "Chalmers University of Technology",
+      "department": "Physics and Astronomy",
+      "lab": "Chalmers Plasma Theory",
+      "institution": "chalmers",
+      "application_route": "email_supervisor_first",
+      "application_url": "https://www.chalmers.se/en/education/doctoral-studies/",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Stockholm / Sweden network",
+      "profile_url": "https://www.chalmers.se/en/persons/tunde/",
+      "lab_url": "https://ft.nephy.chalmers.se/?id=2&p=people",
+      "linkedin_url": "",
+      "contact_email": "tunde.fulop@chalmers.se",
+      "contact_page": "https://www.chalmers.se/en/persons/tunde/",
+      "phone": "+46 31 772 31 80",
+      "research_keywords": [
+        "runaway electrons",
+        "plasma theory",
+        "tokamak disruption physics",
+        "EUROfusion"
+      ],
+      "methods": [
+        "plasma theory",
+        "simulation tools",
+        "runaway-electron modelling"
+      ],
+      "facilities": [
+        "Chalmers Plasma Theory"
+      ],
+      "transfer_vectors": [
+        "fusion modelling",
+        "scientific computing",
+        "diagnostic interpretation"
+      ],
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "Chalmers Tünde-Maria Fülöp profile",
+          "url": "https://www.chalmers.se/en/persons/tunde/",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Chalmers Plasma Theory people page",
+          "url": "https://ft.nephy.chalmers.se/?id=2&p=people",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "KTH Plasma Control collaboration with Chalmers",
+          "url": "https://www.kth.se/emp/research/fusion/plasma-control-1.1091471",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 3.7,
+      "tier": "B",
+      "fit_rationale": "Important FP3/Swedish fusion-theory collaborator, especially for runaway-electron modelling, but less aligned with your hands-on diagnostics profile than KTH PWI.",
+      "outreach_angle": "Use as a collaborator/contact if a KTH project needs Chalmers theory support; pitch instrumentation-aware modelling rather than lab operations.",
+      "likely_route": "Chalmers doctoral postings or co-supervision through a KTH/FP3 project.",
+      "opt_h1b_notes": "Swedish doctoral positions are salaried employee roles. Work-permit feasibility should be checked after a supervisor or posted position is identified.",
+      "uncertainty_notes": "",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "B",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/kth-fusion-epp-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.730Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "Tünde-Maria Fülöp works in Chalmers Plasma Theory (Physics and Astronomy).\n\nResearch focus: runaway electrons, plasma theory, tokamak disruption physics, EUROfusion.\n\nMethods and tools: plasma theory, simulation tools, runaway-electron modelling.\n\nImportant FP3/Swedish fusion-theory collaborator, especially for runaway-electron modelling, but less aligned with your hands-on diagnostics profile than KTH PWI.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "Report-supported: Fulop is a Chalmers FP3 collaborator, not a KTH employee. The researched interests are plasma theory, fusion-relevant transport, and kinetic modelling.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted in our report. Check Fulop publications for a recent fusion transport / runaway / tokamak modelling paper before citing.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Use as a collaborator/contact if a KTH project needs Chalmers theory support; pitch instrumentation-aware modelling rather than lab operations.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: fusion modelling, scientific computing, diagnostic interpretation.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: fusion modelling, scientific computing, diagnostic interpretation.\n- Their facilities (Chalmers Plasma Theory) need reliable experimental execution — that is the part you can defend.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Review this line before sending:\n\"Use as a collaborator/contact if a KTH project needs Chalmers theory support; pitch instrumentation-aware modelling rather than lab operations.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "euraxess-sweden-fusion-monitor",
+      "source": "eu_collaborator",
+      "name": "EURAXESS Sweden Fusion/Plasma Monitor",
+      "title": "European research-job board signal",
+      "unit": "EURAXESS",
+      "department": "Research jobs",
+      "lab": "Sweden fusion/plasma search",
+      "institution": "eu_collaborator",
+      "application_route": "euraxess_position",
+      "application_url": "https://euraxess.ec.europa.eu/jobs",
+      "role_type": "job_board_signal",
+      "campus": "Stockholm / Sweden network",
+      "profile_url": "https://euraxess.ec.europa.eu/jobs",
+      "lab_url": "",
+      "linkedin_url": "",
+      "contact_email": "",
+      "contact_page": "https://euraxess.ec.europa.eu/jobs",
+      "phone": "",
+      "research_keywords": [
+        "EURAXESS",
+        "Sweden",
+        "fusion",
+        "plasma",
+        "doctoral positions"
+      ],
+      "methods": [
+        "weekly job-board monitoring"
+      ],
+      "facilities": [],
+      "transfer_vectors": [
+        "PhD application route",
+        "research job monitoring"
+      ],
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "EURAXESS jobs portal",
+          "url": "https://euraxess.ec.europa.eu/jobs",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 3.6,
+      "tier": "B",
+      "fit_rationale": "Backup monitor for cross-posted KTH, Chalmers, Uppsala, and EUROfusion doctoral positions.",
+      "outreach_angle": "Use with keyword filters: Sweden, fusion, plasma, KTH, Chalmers, Uppsala, materials, diagnostics.",
+      "likely_route": "Apply to posted positions only.",
+      "opt_h1b_notes": "Swedish doctoral positions are salaried employee roles. Work-permit feasibility should be checked after a supervisor or posted position is identified.",
+      "uncertainty_notes": "",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "B",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/kth-fusion-epp-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.731Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "EURAXESS Sweden Fusion/Plasma Monitor works in Sweden fusion/plasma search (Research jobs).\n\nResearch focus: EURAXESS, Sweden, fusion, plasma, doctoral positions.\n\nMethods and tools: weekly job-board monitoring.\n\nBackup monitor for cross-posted KTH, Chalmers, Uppsala, and EUROfusion doctoral positions.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "What we researched (career-ops deep research):\nReport: WEB-TRACKER/research/kth-fusion-epp-prospects-2026.json\nPrimary sources checked:\n- EURAXESS jobs portal: https://euraxess.ec.europa.eu/jobs\nWhat this person works on:\nEURAXESS Sweden Fusion/Plasma Monitor, European research-job board signal\nLab/group: Sweden fusion/plasma search\nResearch interests: EURAXESS, Sweden, fusion, plasma, doctoral positions.\nMethods/approach: weekly job-board monitoring.\nBackup monitor for cross-posted KTH, Chalmers, Uppsala, and EUROfusion doctoral positions.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted for this contact. Current research lines from lab-page / report research, to verify against one recent paper before emailing:\n- weekly job-board monitoring\n\nAction: Open https://euraxess.ec.europa.eu/jobs or Google Scholar -> pick one paper from 2023-2026 -> write title + one-sentence takeaway in column 3.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Use with keyword filters: Sweden, fusion, plasma, KTH, Chalmers, Uppsala, materials, diagnostics.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: PhD application route, research job monitoring.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: PhD application route, research job monitoring.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Review this line before sending:\n\"Use with keyword filters: Sweden, fusion, plasma, KTH, Chalmers, Uppsala, materials, diagnostics.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "kth-lorenz-roth-planetary-plasma",
+      "source": "kth",
+      "name": "Lorenz Roth",
+      "title": "Associate professor",
+      "unit": "KTH School of Electrical Engineering and Computer Science",
+      "department": "Electromagnetics and Plasma Physics",
+      "lab": "Solar System Plasma Physics",
+      "institution": "kth",
+      "application_route": "kth_jobs_portal",
+      "application_url": "https://kth.varbi.com/en/nl?o=2&os=1&s=0&ss=1",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Stockholm / Sweden network",
+      "profile_url": "https://www.kth.se/profile/lorenzr?l=en",
+      "lab_url": "https://www.kth.se/emp/research/space-and-plasma-physics/area/solar-system-plasma-physics-1.1016426",
+      "linkedin_url": "",
+      "contact_email": "lorenzr@kth.se",
+      "contact_page": "https://www.kth.se/profile/lorenzr?l=en",
+      "phone": "+46 8 790 76 91",
+      "research_keywords": [
+        "planetary plasma environments",
+        "Galilean moons",
+        "Hubble",
+        "JWST",
+        "Juno",
+        "JUICE"
+      ],
+      "methods": [
+        "remote telescope observations",
+        "in-situ spacecraft measurements",
+        "planetary environment modelling"
+      ],
+      "facilities": [
+        "JWST",
+        "HST",
+        "Juno",
+        "JUICE"
+      ],
+      "transfer_vectors": [
+        "space plasma physics",
+        "data analysis",
+        "scientific modelling"
+      ],
+      "hiring_signals": [
+        {
+          "type": "hiring_signal",
+          "label": "Open-position-only PhD note",
+          "url": "https://www.kth.se/profile/lorenzr?l=en",
+          "date": "2026-06-27",
+          "note": "Profile asks prospective PhD candidates not to email and to apply only to open KTH positions."
+        }
+      ],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "Lorenz Roth KTH profile",
+          "url": "https://www.kth.se/profile/lorenzr?l=en",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Solar system plasma physics page",
+          "url": "https://www.kth.se/emp/research/space-and-plasma-physics/area/solar-system-plasma-physics-1.1016426",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 3.4,
+      "tier": "B",
+      "fit_rationale": "Relevant space-plasma backup, but his profile explicitly discourages unsolicited PhD email.",
+      "outreach_angle": "Do not cold-email for PhD; watch KTH posted positions and use only if an advertised project matches planetary plasma instrumentation/data analysis.",
+      "likely_route": "Apply only through posted KTH positions.",
+      "opt_h1b_notes": "Swedish doctoral positions are salaried employee roles. Work-permit feasibility should be checked after a supervisor or posted position is identified.",
+      "uncertainty_notes": "",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "B",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/kth-fusion-epp-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.731Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "Lorenz Roth works in Solar System Plasma Physics (Electromagnetics and Plasma Physics).\n\nResearch focus: planetary plasma environments, Galilean moons, Hubble, JWST, Juno, JUICE.\n\nMethods and tools: remote telescope observations, in-situ spacecraft measurements, planetary environment modelling.\n\nRelevant space-plasma backup, but his profile explicitly discourages unsolicited PhD email.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "Report-supported: Roth is a planetary-plasma contact. The report also flagged that unsolicited PhD email may be discouraged, so treat this as a posted-position monitor unless a specific advert matches.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "Do not cold-email for PhD. If a posted project matches, verify one recent planetary-plasma paper from the advert or profile first.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Do not cold-email for PhD; watch KTH posted positions and use only if an advertised project matches planetary plasma instrumentation/data analysis.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: space plasma physics, data analysis, scientific modelling.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: space plasma physics, data analysis, scientific modelling.\n- Their facilities (JWST, HST, Juno, JUICE) need reliable experimental execution — that is the part you can defend.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Review this line before sending:\n\"Do not cold-email for PhD; watch KTH posted positions and use only if an advertised project matches planetary plasma instrumentation/data analysis.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "kth-anita-kullen-near-earth",
+      "source": "kth",
+      "name": "Anita Kullen",
+      "title": "Associate professor",
+      "unit": "KTH School of Electrical Engineering and Computer Science",
+      "department": "Electromagnetics and Plasma Physics",
+      "lab": "Near Earth Space",
+      "institution": "kth",
+      "application_route": "email_supervisor_first",
+      "application_url": "https://intra.kth.se/en/eecs/forskarutbildning/admission-1.813300",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Stockholm / Sweden network",
+      "profile_url": "https://www.kth.se/profile/kullen?l=en",
+      "lab_url": "https://www.kth.se/emp/research/space-and-plasma-physics/area/near-earth-space-1.1016425",
+      "linkedin_url": "",
+      "contact_email": "kullen@kth.se",
+      "contact_page": "https://www.kth.se/profile/kullen?l=en",
+      "phone": "+46 8 790 76 84",
+      "research_keywords": [
+        "near-Earth space",
+        "auroral physics",
+        "magnetosphere-ionosphere coupling"
+      ],
+      "methods": [
+        "space plasma data analysis",
+        "MMS/Cluster mission science"
+      ],
+      "facilities": [
+        "MMS",
+        "Cluster"
+      ],
+      "transfer_vectors": [
+        "space plasma physics",
+        "data analysis",
+        "space systems"
+      ],
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "Anita Kullen KTH profile",
+          "url": "https://www.kth.se/profile/kullen?l=en",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Near Earth space team",
+          "url": "https://www.kth.se/emp/research/space-and-plasma-physics/area/near-earth-space-1.1016425",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 3.3,
+      "tier": "B",
+      "fit_rationale": "Useful broader space-plasma contact but less direct than instrument-heavy MMS contacts.",
+      "outreach_angle": "Use only after higher-fit fusion and MMS instrumentation contacts.",
+      "likely_route": "Secondary exploratory contact or posted KTH position route.",
+      "opt_h1b_notes": "Swedish doctoral positions are salaried employee roles. Work-permit feasibility should be checked after a supervisor or posted position is identified.",
+      "uncertainty_notes": "",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "B",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/kth-fusion-epp-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.731Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "Anita Kullen works in Near Earth Space (Electromagnetics and Plasma Physics).\n\nResearch focus: near-Earth space, auroral physics, magnetosphere-ionosphere coupling.\n\nMethods and tools: space plasma data analysis, MMS/Cluster mission science.\n\nUseful broader space-plasma contact but less direct than instrument-heavy MMS contacts.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "Report-supported: Kullen is a near-Earth space-plasma backup contact. The researched interests are magnetospheric physics and adjacent space-plasma themes, with less direct instrumentation overlap than MMS contacts.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted in our report. Verify one recent near-Earth plasma paper on the profile if you pursue this path.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Use only after higher-fit fusion and MMS instrumentation contacts.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: space plasma physics, data analysis, space systems.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: space plasma physics, data analysis, space systems.\n- Their facilities (MMS, Cluster) need reliable experimental execution — that is the part you can defend.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Review this line before sending:\n\"Use only after higher-fit fusion and MMS instrumentation contacts.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    }
+  ],
+  "research_run": "trun_dd47611047ba45198346da4ec9345d77",
+  "research_date": "2026-06-27",
+  "source_report": "WEB-TRACKER/research/kth-fusion-epp-prospects-2026.md"
+}

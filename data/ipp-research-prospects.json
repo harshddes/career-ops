@@ -1,0 +1,1410 @@
+{
+  "version": 1,
+  "generated_at": "2026-07-01T21:36:55.795Z",
+  "scope": "Max Planck IPP ITER technology and diagnostics research prospects",
+  "prospects": [
+    {
+      "id": "ipp-hans-meister-iter-diagnostics",
+      "source": "ipp",
+      "name": "Hans Meister",
+      "title": "Dr.; ITER Diagnostics Group contact",
+      "unit": "Max Planck Institute for Plasma Physics",
+      "department": "ITER Technology & Diagnostics",
+      "lab": "ITER Diagnostics Group",
+      "institution": "ipp",
+      "application_route": "email_supervisor_first",
+      "application_url": "https://www.ipp.mpg.de/yourphd",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Garching",
+      "profile_url": "https://www.ipp.mpg.de/person/139781/5497858",
+      "lab_url": "https://www.ipp.mpg.de/3704112/diagnostik",
+      "linkedin_url": "",
+      "contact_email": "hans.meister@ipp.mpg.de",
+      "contact_page": "https://www.ipp.mpg.de/person/139781/5497858",
+      "phone": "+49 89 3299 1885",
+      "research_keywords": [
+        "ITER diagnostics",
+        "bolometry",
+        "pressure gauges",
+        "ASDEX pressure gauges",
+        "upper port diagnostics"
+      ],
+      "methods": [
+        "bolometer cameras",
+        "ionization pressure gauges",
+        "tomographic reconstruction",
+        "sensor qualification",
+        "commissioning support"
+      ],
+      "facilities": [
+        "ITER",
+        "ASDEX Upgrade",
+        "Garching diagnostics laboratories"
+      ],
+      "transfer_vectors": [
+        "ITER diagnostics",
+        "FPGA/DAQ",
+        "detector readout",
+        "vacuum instrumentation",
+        "high-voltage systems"
+      ],
+      "hiring_signals": [
+        {
+          "type": "hiring_signal",
+          "label": "ITER Diagnostics Group deliverables",
+          "url": "https://www.ipp.mpg.de/3704112/diagnostik",
+          "date": "2026-06-27",
+          "note": "IPP develops ITER bolometers and pressure gauges from design through commissioning."
+        }
+      ],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "ITER Diagnostics Group",
+          "url": "https://www.ipp.mpg.de/3704112/diagnostik",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Hans Meister IPP profile",
+          "url": "https://www.ipp.mpg.de/person/139781/5497858",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "ITER pressure gauges",
+          "url": "https://www.ipp.mpg.de/3704145/pressure_gauges",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 5,
+      "tier": "A",
+      "fit_rationale": "Highest-fit IPP contact: ITER bolometry and pressure gauges directly intersect detector readout, DAQ, vacuum instrumentation, sensor electronics, and high-voltage test discipline.",
+      "outreach_angle": "Lead with SSD FPGA readout plus LVACCS vacuum/HV DAQ automation; ask whether bolometer or pressure-gauge qualification projects need a doctoral researcher.",
+      "likely_route": "Email Meister first with a one-page ITER diagnostics fit memo, then submit HEPP rolling application and watch IPP positions.",
+      "opt_h1b_notes": "German Max Planck doctoral contracts and researcher roles require German/EU work authorization processing. HEPP and IPP HR should confirm route and timing after supervisor interest.",
+      "uncertainty_notes": "",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "A",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "last_followed_up": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/ipp-iter-technology-diagnostics-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-07-01T21:36:55.786Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "Hans Meister works in ITER Diagnostics Group (ITER Technology & Diagnostics).\n\nResearch focus: ITER diagnostics, bolometry, pressure gauges, ASDEX pressure gauges, upper port diagnostics.\n\nMethods and tools: bolometer cameras, ionization pressure gauges, tomographic reconstruction, sensor qualification, commissioning support.\n\nHighest-fit IPP contact: ITER bolometry and pressure gauges directly intersect detector readout, DAQ, vacuum instrumentation, sensor electronics, and high-voltage test discipline.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "Report-supported: Meister is the ITER Diagnostics contact. The researched interests are ITER upper-port bolometers, ionisation pressure gauges, tomographic reconstruction, sensor qualification, and commissioning support.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted in our report. Report-supported current line: ITER upper-port bolometer and pressure-gauge deliverables. Verify one 2023-2026 bolometer / pressure-gauge / ITER diagnostics paper before citing.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Lead with SSD FPGA readout plus LVACCS vacuum/HV DAQ automation; ask whether bolometer or pressure-gauge qualification projects need a doctoral researcher.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: ITER diagnostics, FPGA/DAQ, detector readout, vacuum instrumentation.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: ITER diagnostics, FPGA/DAQ, detector readout, vacuum instrumentation.\n- Their facilities (ITER, ASDEX Upgrade, Garching diagnostics laboratories) need reliable experimental execution — that is the part you can defend.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Review this line before sending:\n\"Lead with SSD FPGA readout plus LVACCS vacuum/HV DAQ automation; ask whether bolometer or pressure-gauge qualification projects need a doctoral researcher.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "ipp-ursel-fantz-ited-nbi",
+      "source": "ipp",
+      "name": "Ursel Fantz",
+      "title": "Prof. Dr.; Head of ITER Technology & Diagnostics Division",
+      "unit": "Max Planck Institute for Plasma Physics",
+      "department": "ITER Technology & Diagnostics",
+      "lab": "ITED / Neutral Beam Injection",
+      "institution": "ipp",
+      "application_route": "email_supervisor_first",
+      "application_url": "https://www.ipp.mpg.de/yourphd",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Garching",
+      "profile_url": "https://www.ipp.mpg.de/4464403/fantz",
+      "lab_url": "https://www.ipp.mpg.de/technologie",
+      "linkedin_url": "",
+      "contact_email": "ursel.fantz@ipp.mpg.de",
+      "contact_page": "https://www.ipp.mpg.de/4464403/fantz",
+      "phone": "+49 89 3299 1958",
+      "research_keywords": [
+        "ITER Technology & Diagnostics",
+        "neutral beam injection",
+        "negative ion sources",
+        "ELISE",
+        "BATMAN Upgrade",
+        "DEMO NBI"
+      ],
+      "methods": [
+        "negative-ion source development",
+        "neutral beam heating",
+        "beam characterization",
+        "ITER technology coordination"
+      ],
+      "facilities": [
+        "ELISE",
+        "BATMAN Upgrade",
+        "ASDEX Upgrade",
+        "Wendelstein 7-X",
+        "ITER"
+      ],
+      "transfer_vectors": [
+        "neutral beam injection",
+        "high-voltage systems",
+        "vacuum systems",
+        "plasma diagnostics",
+        "beam instrumentation"
+      ],
+      "hiring_signals": [
+        {
+          "type": "hiring_signal",
+          "label": "ITED division scope",
+          "url": "https://www.ipp.mpg.de/technologie",
+          "date": "2026-06-27",
+          "note": "Division hosts IPP technology contributions to ITER including NBI and diagnostics."
+        }
+      ],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "ITER Technology & Diagnostics division",
+          "url": "https://www.ipp.mpg.de/technologie",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Ursel Fantz profile",
+          "url": "https://www.ipp.mpg.de/4464403/fantz",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 4.9,
+      "tier": "A",
+      "fit_rationale": "Best division-level gatekeeper for ITER technology; can route toward NBI, diagnostics, or cross-division ITER contributions.",
+      "outreach_angle": "Frame your vacuum/HV plasma-source workflow and SIMION/SRIM beam intuition as a fit for negative-ion-source and beam-diagnostic test stands.",
+      "likely_route": "Supervisor-first email plus HEPP application; ask which ITED group is most appropriate for an instrumentation-heavy doctoral profile.",
+      "opt_h1b_notes": "German Max Planck doctoral contracts and researcher roles require German/EU work authorization processing. HEPP and IPP HR should confirm route and timing after supervisor interest.",
+      "uncertainty_notes": "",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "A",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "last_followed_up": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/ipp-iter-technology-diagnostics-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.832Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "Ursel Fantz works in ITED / Neutral Beam Injection (ITER Technology & Diagnostics).\n\nResearch focus: ITER Technology & Diagnostics, neutral beam injection, negative ion sources, ELISE, BATMAN Upgrade, DEMO NBI.\n\nMethods and tools: negative-ion source development, neutral beam heating, beam characterization, ITER technology coordination.\n\nBest division-level gatekeeper for ITER technology; can route toward NBI, diagnostics, or cross-division ITER contributions.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "Report-supported: Fantz is the ITED division head. The researched interests are neutral beam injection, negative-ion sources, ELISE, BATMAN Upgrade, ITER technology coordination, and plasma-for-gas-conversion as a lower-priority adjacent line.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted in our report. Report-supported current line: ITER NBI and diagnostics contributions, including ELISE/BATMAN test-stand work. Verify one recent negative-ion source or ITER technology paper before citing.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Frame your vacuum/HV plasma-source workflow and SIMION/SRIM beam intuition as a fit for negative-ion-source and beam-diagnostic test stands.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: neutral beam injection, high-voltage systems, vacuum systems, plasma diagnostics.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: neutral beam injection, high-voltage systems, vacuum systems, plasma diagnostics.\n- Their facilities (ELISE, BATMAN Upgrade, ASDEX Upgrade, Wendelstein 7-X) need reliable experimental execution — that is the part you can defend.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Review this line before sending:\n\"Frame your vacuum/HV plasma-source workflow and SIMION/SRIM beam intuition as a fit for negative-ion-source and beam-diagnostic test stands.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "ipp-hepp-rolling-phd-application",
+      "source": "ipp",
+      "name": "IPP HEPP Rolling PhD Application",
+      "title": "International Helmholtz Graduate School for Plasma Physics application route",
+      "unit": "IPP / TUM / University of Greifswald",
+      "department": "HEPP doctoral programme",
+      "lab": "Garching and Greifswald doctoral pool",
+      "institution": "ipp",
+      "application_route": "hepp_rolling_application",
+      "application_url": "https://www.ipp.mpg.de/yourphd",
+      "role_type": "job_board_signal",
+      "campus": "Garching / Greifswald",
+      "profile_url": "https://www.ipp.mpg.de/yourphd",
+      "lab_url": "https://www.ipp.mpg.de/25364/about",
+      "linkedin_url": "",
+      "contact_email": "",
+      "contact_page": "https://www.ipp.mpg.de/yourphd",
+      "phone": "",
+      "research_keywords": [
+        "HEPP",
+        "rolling PhD application",
+        "IPP doctoral positions",
+        "TUM",
+        "University of Greifswald"
+      ],
+      "methods": [
+        "rolling application pool",
+        "supervisor matching",
+        "doctoral contract"
+      ],
+      "facilities": [],
+      "transfer_vectors": [
+        "PhD application route",
+        "supervisor matching",
+        "funding route"
+      ],
+      "hiring_signals": [
+        {
+          "type": "hiring_signal",
+          "label": "HEPP rolling application",
+          "url": "https://www.ipp.mpg.de/yourphd",
+          "date": "2026-06-27",
+          "note": "IPP states doctoral applications can be submitted any time and supervisors select from the pool."
+        }
+      ],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "HEPP application page",
+          "url": "https://www.ipp.mpg.de/yourphd",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "HEPP about page",
+          "url": "https://www.ipp.mpg.de/25364/about",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "HEPP financial support",
+          "url": "https://www.ipp.mpg.de/3968816/Financial-Support",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 4.5,
+      "tier": "A",
+      "fit_rationale": "This is the core IPP PhD mechanism; it matters even more than individual job ads because IPP says specific doctoral projects are usually not advertised.",
+      "outreach_angle": "Submit HEPP after tailoring the statement to Meister/Fantz/Wolf/Klinger, not as a generic plasma application.",
+      "likely_route": "Apply through HEPP while emailing technical contacts.",
+      "opt_h1b_notes": "German Max Planck doctoral contracts and researcher roles require German/EU work authorization processing. HEPP and IPP HR should confirm route and timing after supervisor interest.",
+      "uncertainty_notes": "",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "A",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "last_followed_up": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/ipp-iter-technology-diagnostics-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.833Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "IPP HEPP Rolling PhD Application works in Garching and Greifswald doctoral pool (HEPP doctoral programme).\n\nResearch focus: HEPP, rolling PhD application, IPP doctoral positions, TUM, University of Greifswald.\n\nMethods and tools: rolling application pool, supervisor matching, doctoral contract.\n\nThis is the core IPP PhD mechanism; it matters even more than individual job ads because IPP says specific doctoral projects are usually not advertised.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "What we researched (career-ops deep research):\nReport: WEB-TRACKER/research/ipp-iter-technology-diagnostics-prospects-2026.json\nPrimary sources checked:\n- HEPP application page: https://www.ipp.mpg.de/yourphd\n- HEPP about page: https://www.ipp.mpg.de/25364/about\n- HEPP financial support: https://www.ipp.mpg.de/3968816/Financial-Support\nWhat this person works on:\nIPP HEPP Rolling PhD Application, International Helmholtz Graduate School for Plasma Physics application route\nLab/group: Garching and Greifswald doctoral pool\nResearch interests: HEPP, rolling PhD application, IPP doctoral positions, TUM, University of Greifswald.\nMethods/approach: rolling application pool, supervisor matching, doctoral contract.\nThis is the core IPP PhD mechanism; it matters even more than individual job ads because IPP says specific doctoral projects are usually not advertised.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted for this contact. Current research lines from lab-page / report research, to verify against one recent paper before emailing:\n- rolling application pool\n- supervisor matching\n- doctoral contract\nActive programme notes: IPP states doctoral applications can be submitted any time and supervisors select from the pool.\n\nAction: Open https://www.ipp.mpg.de/yourphd or Google Scholar -> pick one paper from 2023-2026 -> write title + one-sentence takeaway in column 3.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Submit HEPP after tailoring the statement to Meister/Fantz/Wolf/Klinger, not as a generic plasma application.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: PhD application route, supervisor matching, funding route.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: PhD application route, supervisor matching, funding route.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Review this line before sending:\n\"Submit HEPP after tailoring the statement to Meister/Fantz/Wolf/Klinger, not as a generic plasma application.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "ipp-robert-wolf-nbi-heating",
+      "source": "ipp",
+      "name": "Robert Wolf",
+      "title": "Prof. Dr.; Director and Scientific Member",
+      "unit": "Max Planck Institute for Plasma Physics",
+      "department": "Greifswald Branch / Experimental Heating",
+      "lab": "W7-X heating and current drive / NBI-relevant research",
+      "institution": "ipp",
+      "application_route": "email_supervisor_first",
+      "application_url": "https://www.ipp.mpg.de/yourphd",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Greifswald",
+      "profile_url": "https://www.mpg.de/391046/plasma-physics-wolf",
+      "lab_url": "https://www.ipp.mpg.de/17313/greifswald",
+      "linkedin_url": "",
+      "contact_email": "robert.wolf@ipp.mpg.de",
+      "contact_page": "https://www.mpg.de/391046/plasma-physics-wolf",
+      "phone": "+49 3834 88 1205",
+      "research_keywords": [
+        "heating and current drive",
+        "JET",
+        "W7-X",
+        "neutral beam physics",
+        "fusion operations"
+      ],
+      "methods": [
+        "experimental heating",
+        "neutral beam systems",
+        "operation planning",
+        "fusion diagnostics"
+      ],
+      "facilities": [
+        "Wendelstein 7-X",
+        "JET",
+        "IPP Greifswald"
+      ],
+      "transfer_vectors": [
+        "neutral beam injection",
+        "high-voltage systems",
+        "vacuum systems",
+        "beam diagnostics",
+        "fusion operations"
+      ],
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "Robert Wolf MPG profile",
+          "url": "https://www.mpg.de/391046/plasma-physics-wolf",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "IPP Greifswald branch",
+          "url": "https://www.ipp.mpg.de/17313/greifswald",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "ITED NBI scope",
+          "url": "https://www.ipp.mpg.de/technologie",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 4.5,
+      "tier": "A",
+      "fit_rationale": "Strong NBI/heating route for your HV/vacuum background, especially if you pitch beamline diagnostics and test-stand operations.",
+      "outreach_angle": "Lead with plasma-source HV operations, vacuum testing, and ion-trajectory modelling interest; ask who owns W7-X/NBI diagnostic doctoral projects.",
+      "likely_route": "Secondary to Fantz/Meister if the target is direct ITER, primary if you want W7-X heating or beam-test work.",
+      "opt_h1b_notes": "German Max Planck doctoral contracts and researcher roles require German/EU work authorization processing. HEPP and IPP HR should confirm route and timing after supervisor interest.",
+      "uncertainty_notes": "",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "A",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "last_followed_up": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/ipp-iter-technology-diagnostics-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.833Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "Robert Wolf works in W7-X heating and current drive / NBI-relevant research (Greifswald Branch / Experimental Heating).\n\nResearch focus: heating and current drive, JET, W7-X, neutral beam physics, fusion operations.\n\nMethods and tools: experimental heating, neutral beam systems, operation planning, fusion diagnostics.\n\nStrong NBI/heating route for your HV/vacuum background, especially if you pitch beamline diagnostics and test-stand operations.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "Report-supported: Wolf is a Greifswald senior experimental-heating contact. The researched interests are neutral beam heating/current drive, NBI test stands, and ITER-relevant heating physics.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted in our report. Report-supported current line: NBI / heating work connected to ITER-relevant beam systems. Check MPG or IPP profile for a recent NBI / heating publication before citing.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Lead with plasma-source HV operations, vacuum testing, and ion-trajectory modelling interest; ask who owns W7-X/NBI diagnostic doctoral projects.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: neutral beam injection, high-voltage systems, vacuum systems, beam diagnostics.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: neutral beam injection, high-voltage systems, vacuum systems, beam diagnostics.\n- Their facilities (Wendelstein 7-X, JET, IPP Greifswald) need reliable experimental execution — that is the part you can defend.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Review this line before sending:\n\"Lead with plasma-source HV operations, vacuum testing, and ion-trajectory modelling interest; ask who owns W7-X/NBI diagnostic doctoral projects.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "ipp-thomas-klinger-w7x",
+      "source": "ipp",
+      "name": "Thomas Klinger",
+      "title": "Prof. Dr.; Head of Stellarator Dynamics and Transport; W7-X Scientific Director",
+      "unit": "Max Planck Institute for Plasma Physics",
+      "department": "Stellarator Dynamics and Transport",
+      "lab": "Wendelstein 7-X",
+      "institution": "ipp",
+      "application_route": "email_supervisor_first",
+      "application_url": "https://www.ipp.mpg.de/yourphd",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Greifswald",
+      "profile_url": "https://www.ipp.mpg.de/1084836/klinger",
+      "lab_url": "https://www.ipp.mpg.de/w7x",
+      "linkedin_url": "",
+      "contact_email": "thomas.klinger@ipp.mpg.de",
+      "contact_page": "https://www.ipp.mpg.de/1084836/klinger",
+      "phone": "+49 3834 88 2501",
+      "research_keywords": [
+        "Wendelstein 7-X",
+        "stellarator dynamics",
+        "transport",
+        "long-pulse operation",
+        "plasma instabilities"
+      ],
+      "methods": [
+        "stellarator experiments",
+        "long-pulse diagnostics",
+        "transport analysis",
+        "operation campaigns"
+      ],
+      "facilities": [
+        "Wendelstein 7-X"
+      ],
+      "transfer_vectors": [
+        "plasma diagnostics",
+        "DAQ",
+        "fusion operations",
+        "control systems",
+        "space plasma physics"
+      ],
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "Thomas Klinger IPP profile",
+          "url": "https://www.ipp.mpg.de/1084836/klinger",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Wendelstein 7-X page",
+          "url": "https://www.ipp.mpg.de/w7x",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 4.3,
+      "tier": "A",
+      "fit_rationale": "Strong W7-X route: less direct ITER than ITED, but rich in diagnostics, long-pulse operations, control, and instrumentation-heavy campaigns.",
+      "outreach_angle": "Position yourself as an instrumentation and test-automation engineer for long-pulse diagnostic reliability and operations data workflows.",
+      "likely_route": "HEPP application plus targeted W7-X email if you want stellarator diagnostics or operations.",
+      "opt_h1b_notes": "German Max Planck doctoral contracts and researcher roles require German/EU work authorization processing. HEPP and IPP HR should confirm route and timing after supervisor interest.",
+      "uncertainty_notes": "",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "A",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "last_followed_up": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/ipp-iter-technology-diagnostics-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.833Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "Thomas Klinger works in Wendelstein 7-X (Stellarator Dynamics and Transport).\n\nResearch focus: Wendelstein 7-X, stellarator dynamics, transport, long-pulse operation, plasma instabilities.\n\nMethods and tools: stellarator experiments, long-pulse diagnostics, transport analysis, operation campaigns.\n\nStrong W7-X route: less direct ITER than ITED, but rich in diagnostics, long-pulse operations, control, and instrumentation-heavy campaigns.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "Report-supported: Klinger is the W7-X / Stellarator Dynamics and Transport contact. The researched interests are W7-X operations, stellarator dynamics/transport, and diagnostic-heavy long-pulse experimental campaigns.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted in our report. Report-supported current line: W7-X diagnostics and long-pulse data acquisition. Verify a recent W7-X / stellarator diagnostics paper before citing.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Position yourself as an instrumentation and test-automation engineer for long-pulse diagnostic reliability and operations data workflows.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: plasma diagnostics, DAQ, fusion operations, control systems.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: plasma diagnostics, DAQ, fusion operations, control systems.\n- Their facilities (Wendelstein 7-X) need reliable experimental execution — that is the part you can defend.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Review this line before sending:\n\"Position yourself as an instrumentation and test-automation engineer for long-pulse diagnostic reliability and operations data workflows.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "ipp-rachael-mcdermott-asdex",
+      "source": "ipp",
+      "name": "Rachael McDermott",
+      "title": "Dr.; Scientific Member and Director",
+      "unit": "Max Planck Institute for Plasma Physics",
+      "department": "ASDEX Upgrade / Experimental plasma transport and stability",
+      "lab": "ASDEX Upgrade",
+      "institution": "ipp",
+      "application_route": "hepp_rolling_application",
+      "application_url": "https://www.ipp.mpg.de/yourphd",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Garching",
+      "profile_url": "http://ipp.mpg.de/5338813/Vorstellung_McDermott_2023",
+      "lab_url": "https://www.ipp.mpg.de/16195/asdex",
+      "linkedin_url": "",
+      "contact_email": "",
+      "contact_page": "http://ipp.mpg.de/5338813/Vorstellung_McDermott_2023",
+      "phone": "",
+      "research_keywords": [
+        "ASDEX Upgrade",
+        "plasma edge",
+        "transport",
+        "stability",
+        "diagnostics",
+        "scenario development"
+      ],
+      "methods": [
+        "active spectroscopy",
+        "turbulence diagnostics",
+        "edge-stability analysis",
+        "scenario development"
+      ],
+      "facilities": [
+        "ASDEX Upgrade"
+      ],
+      "transfer_vectors": [
+        "plasma diagnostics",
+        "Python data analysis",
+        "fusion operations",
+        "control-room support"
+      ],
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "Rachael McDermott IPP announcement",
+          "url": "http://ipp.mpg.de/5338813/Vorstellung_McDermott_2023",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "ASDEX Upgrade page",
+          "url": "https://www.ipp.mpg.de/16195/asdex",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 4.2,
+      "tier": "A",
+      "fit_rationale": "Strong ASDEX route because her division operates key diagnostics and systems for interpreting ASDEX Upgrade plasmas.",
+      "outreach_angle": "Use HEPP application and mention diagnostic operations, automated test workflows, and plasma-edge instrumentation support.",
+      "likely_route": "Apply through HEPP and IPP positions; direct email only after finding a public group contact or posted project.",
+      "opt_h1b_notes": "German Max Planck doctoral contracts and researcher roles require German/EU work authorization processing. HEPP and IPP HR should confirm route and timing after supervisor interest.",
+      "uncertainty_notes": "Direct public email was not confirmed in the official source pass.",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "A",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "last_followed_up": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/ipp-iter-technology-diagnostics-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.833Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "Rachael McDermott works in ASDEX Upgrade (ASDEX Upgrade / Experimental plasma transport and stability).\n\nResearch focus: ASDEX Upgrade, plasma edge, transport, stability, diagnostics, scenario development.\n\nMethods and tools: active spectroscopy, turbulence diagnostics, edge-stability analysis, scenario development.\n\nStrong ASDEX route because her division operates key diagnostics and systems for interpreting ASDEX Upgrade plasmas.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "Report-supported: McDermott is an ASDEX Upgrade / plasma-scenario contact. The researched interests are ITER-relevant AUG scenarios, tungsten-divertor operation, and diagnostic implications of AUG upgrades.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted in our report. Report-supported current line: AUG ITER-scenario and divertor-upgrade work. Check IPP ASDEX pages or profile for a recent AUG scenario / divertor paper before citing.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Use HEPP application and mention diagnostic operations, automated test workflows, and plasma-edge instrumentation support.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: plasma diagnostics, Python data analysis, fusion operations, control-room support.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: plasma diagnostics, Python data analysis, fusion operations, control-room support.\n- Their facilities (ASDEX Upgrade) need reliable experimental execution — that is the part you can defend.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Uncertainty to verify first: Direct public email was not confirmed in the official source pass.\n\nReview this line before sending:\n\"Use HEPP application and mention diagnostic operations, automated test workflows, and plasma-edge instrumentation support.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "ipp-open-positions-monitor",
+      "source": "ipp",
+      "name": "IPP Open Positions",
+      "title": "Official IPP positions monitor",
+      "unit": "Max Planck Institute for Plasma Physics",
+      "department": "Personnel / Careers",
+      "lab": "IPP vacancies",
+      "institution": "ipp",
+      "application_route": "ipp_jobs_portal",
+      "application_url": "https://www.ipp.mpg.de/17953/stellen",
+      "role_type": "job_board_signal",
+      "campus": "Garching / Greifswald",
+      "profile_url": "https://www.ipp.mpg.de/17953/stellen",
+      "lab_url": "",
+      "linkedin_url": "",
+      "contact_email": "",
+      "contact_page": "https://www.ipp.mpg.de/17953/stellen",
+      "phone": "",
+      "research_keywords": [
+        "IPP jobs",
+        "postdoctoral positions",
+        "research engineering",
+        "doctoral positions"
+      ],
+      "methods": [
+        "weekly vacancy monitoring"
+      ],
+      "facilities": [],
+      "transfer_vectors": [
+        "job-board monitoring",
+        "research engineer route",
+        "PhD application route"
+      ],
+      "hiring_signals": [
+        {
+          "type": "hiring_signal",
+          "label": "IPP positions vacant",
+          "url": "https://www.ipp.mpg.de/17953/stellen",
+          "date": "2026-06-27",
+          "note": "Official IPP careers page for Garching and Greifswald roles."
+        }
+      ],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "IPP positions vacant",
+          "url": "https://www.ipp.mpg.de/17953/stellen",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "IPP home career section",
+          "url": "https://www.ipp.mpg.de/en",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 4.1,
+      "tier": "A",
+      "fit_rationale": "Required monitor for posted research engineer, doctoral, and postdoc roles, especially if HEPP alone is too broad.",
+      "outreach_angle": "Filter for diagnostics, NBI, ASDEX Upgrade, W7-X, electronics, DAQ, control, and high-voltage keywords.",
+      "likely_route": "Apply to listed roles; use a technical contact email as a parallel warm route.",
+      "opt_h1b_notes": "German Max Planck doctoral contracts and researcher roles require German/EU work authorization processing. HEPP and IPP HR should confirm route and timing after supervisor interest.",
+      "uncertainty_notes": "",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "A",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "last_followed_up": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/ipp-iter-technology-diagnostics-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.833Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "IPP Open Positions works in IPP vacancies (Personnel / Careers).\n\nResearch focus: IPP jobs, postdoctoral positions, research engineering, doctoral positions.\n\nMethods and tools: weekly vacancy monitoring.\n\nRequired monitor for posted research engineer, doctoral, and postdoc roles, especially if HEPP alone is too broad.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "What we researched (career-ops deep research):\nReport: WEB-TRACKER/research/ipp-iter-technology-diagnostics-prospects-2026.json\nPrimary sources checked:\n- IPP positions vacant: https://www.ipp.mpg.de/17953/stellen\n- IPP home career section: https://www.ipp.mpg.de/en\nWhat this person works on:\nIPP Open Positions, Official IPP positions monitor\nLab/group: IPP vacancies\nResearch interests: IPP jobs, postdoctoral positions, research engineering, doctoral positions.\nMethods/approach: weekly vacancy monitoring.\nRequired monitor for posted research engineer, doctoral, and postdoc roles, especially if HEPP alone is too broad.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted for this contact. Current research lines from lab-page / report research, to verify against one recent paper before emailing:\n- weekly vacancy monitoring\nActive programme notes: Official IPP careers page for Garching and Greifswald roles.\n\nAction: Open https://www.ipp.mpg.de/17953/stellen or Google Scholar -> pick one paper from 2023-2026 -> write title + one-sentence takeaway in column 3.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Filter for diagnostics, NBI, ASDEX Upgrade, W7-X, electronics, DAQ, control, and high-voltage keywords.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: job-board monitoring, research engineer route, PhD application route.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: job-board monitoring, research engineer route, PhD application route.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Review this line before sending:\n\"Filter for diagnostics, NBI, ASDEX Upgrade, W7-X, electronics, DAQ, control, and high-voltage keywords.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "ipp-eurofusion-grants-monitor",
+      "source": "ipp",
+      "name": "EUROfusion Engineering / Researcher Grants for IPP",
+      "title": "EUROfusion grant route into IPP projects",
+      "unit": "EUROfusion",
+      "department": "Researcher and Engineering Grants",
+      "lab": "EUROfusion / IPP network",
+      "institution": "eu_collaborator",
+      "application_route": "eurofusion_route",
+      "application_url": "https://euro-fusion.org/eurofusion-news/applications-open-for-the-2026-eurofusion-engineering-grants",
+      "role_type": "job_board_signal",
+      "campus": "Germany / EUROfusion",
+      "profile_url": "https://euro-fusion.org/eurofusion-news/applications-open-for-the-2026-eurofusion-engineering-grants",
+      "lab_url": "",
+      "linkedin_url": "",
+      "contact_email": "",
+      "contact_page": "https://euro-fusion.org/eurofusion-news/applications-open-for-the-2026-eurofusion-engineering-grants",
+      "phone": "",
+      "research_keywords": [
+        "EUROfusion grants",
+        "engineering grants",
+        "fusion diagnostics",
+        "ITER technology"
+      ],
+      "methods": [
+        "grant-backed placement monitoring"
+      ],
+      "facilities": [],
+      "transfer_vectors": [
+        "fusion network",
+        "grant route",
+        "research placement"
+      ],
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "EUROfusion Engineering Grants",
+          "url": "https://euro-fusion.org/eurofusion-news/applications-open-for-the-2026-eurofusion-engineering-grants",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 3.8,
+      "tier": "B",
+      "fit_rationale": "Useful parallel route if IPP group interest exists but no direct HEPP/job opening is ready.",
+      "outreach_angle": "Ask Meister/Fantz whether a diagnostics or NBI project could be framed as a EUROfusion Engineering Grant.",
+      "likely_route": "Grant-backed placement or research role.",
+      "opt_h1b_notes": "German Max Planck doctoral contracts and researcher roles require German/EU work authorization processing. HEPP and IPP HR should confirm route and timing after supervisor interest.",
+      "uncertainty_notes": "",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "B",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "last_followed_up": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/ipp-iter-technology-diagnostics-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.833Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "EUROfusion Engineering / Researcher Grants for IPP works in EUROfusion / IPP network (Researcher and Engineering Grants).\n\nResearch focus: EUROfusion grants, engineering grants, fusion diagnostics, ITER technology.\n\nMethods and tools: grant-backed placement monitoring.\n\nUseful parallel route if IPP group interest exists but no direct HEPP/job opening is ready.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "What we researched (career-ops deep research):\nReport: WEB-TRACKER/research/ipp-iter-technology-diagnostics-prospects-2026.json\nPrimary sources checked:\n- EUROfusion Engineering Grants: https://euro-fusion.org/eurofusion-news/applications-open-for-the-2026-eurofusion-engineering-grants\nWhat this person works on:\nEUROfusion Engineering / Researcher Grants for IPP, EUROfusion grant route into IPP projects\nLab/group: EUROfusion / IPP network\nResearch interests: EUROfusion grants, engineering grants, fusion diagnostics, ITER technology.\nMethods/approach: grant-backed placement monitoring.\nUseful parallel route if IPP group interest exists but no direct HEPP/job opening is ready.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted for this contact. Current research lines from lab-page / report research, to verify against one recent paper before emailing:\n- grant-backed placement monitoring\n\nAction: Open https://euro-fusion.org/eurofusion-news/applications-open-for-the-2026-eurofusion-engineering-grants or Google Scholar -> pick one paper from 2023-2026 -> write title + one-sentence takeaway in column 3.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Ask Meister/Fantz whether a diagnostics or NBI project could be framed as a EUROfusion Engineering Grant.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: fusion network, grant route, research placement.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: fusion network, grant route, research placement.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Review this line before sending:\n\"Ask Meister/Fantz whether a diagnostics or NBI project could be framed as a EUROfusion Engineering Grant.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "ipp-tim-happel-asdex-transition",
+      "source": "ipp",
+      "name": "Tim Happel",
+      "title": "Dr.; ASDEX Upgrade director / TUM transition signal",
+      "unit": "Max Planck Institute for Plasma Physics",
+      "department": "ASDEX Upgrade",
+      "lab": "ASDEX Upgrade",
+      "institution": "ipp",
+      "application_route": "hepp_rolling_application",
+      "application_url": "https://www.ipp.mpg.de/yourphd",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Garching",
+      "profile_url": "https://www.ipp.mpg.de/16195/asdex",
+      "lab_url": "https://www.ipp.mpg.de/16195/asdex",
+      "linkedin_url": "",
+      "contact_email": "",
+      "contact_page": "https://www.ipp.mpg.de/16195/asdex",
+      "phone": "",
+      "research_keywords": [
+        "ASDEX Upgrade",
+        "divertor upgrade",
+        "scenario development",
+        "diagnostics"
+      ],
+      "methods": [
+        "tokamak experiments",
+        "divertor instrumentation",
+        "diagnostic data analysis"
+      ],
+      "facilities": [
+        "ASDEX Upgrade"
+      ],
+      "transfer_vectors": [
+        "plasma diagnostics",
+        "DAQ",
+        "high-voltage systems",
+        "fusion operations"
+      ],
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "ASDEX Upgrade page",
+          "url": "https://www.ipp.mpg.de/16195/asdex",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Parallel IPP research report",
+          "url": "WEB-TRACKER/research/ipp-iter-technology-diagnostics-prospects-2026.json",
+          "date": "2026-06-27",
+          "note": "Parallel flagged ASDEX leadership transition; verify before outreach."
+        }
+      ],
+      "score": 3.7,
+      "tier": "B",
+      "fit_rationale": "Relevant ASDEX contact/signal, but lower priority because the research output flagged a 2026 transition risk.",
+      "outreach_angle": "Use as an ASDEX topic signal rather than first contact; prioritize McDermott or HEPP application routing.",
+      "likely_route": "HEPP or posted ASDEX roles.",
+      "opt_h1b_notes": "German Max Planck doctoral contracts and researcher roles require German/EU work authorization processing. HEPP and IPP HR should confirm route and timing after supervisor interest.",
+      "uncertainty_notes": "Treat as a transition/hiring-signal record until a stable current profile/contact is verified.",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "B",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "last_followed_up": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/ipp-iter-technology-diagnostics-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.833Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "Tim Happel works in ASDEX Upgrade (ASDEX Upgrade).\n\nResearch focus: ASDEX Upgrade, divertor upgrade, scenario development, diagnostics.\n\nMethods and tools: tokamak experiments, divertor instrumentation, diagnostic data analysis.\n\nRelevant ASDEX contact/signal, but lower priority because the research output flagged a 2026 transition risk.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "Report-supported: Happel is an ASDEX Upgrade experiments/diagnostics contact. The report also flagged a 2026 transition to TUM, so treat the supervisor path as potentially transitional.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted in our report. Report-supported current line: AUG diagnostics/scenario work with transition risk. Verify a recent AUG diagnostics/scenario paper and note the leadership transition before outreach.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Use as an ASDEX topic signal rather than first contact; prioritize McDermott or HEPP application routing.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: plasma diagnostics, DAQ, high-voltage systems, fusion operations.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: plasma diagnostics, DAQ, high-voltage systems, fusion operations.\n- Their facilities (ASDEX Upgrade) need reliable experimental execution — that is the part you can defend.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Uncertainty to verify first: Treat as a transition/hiring-signal record until a stable current profile/contact is verified.\n\nReview this line before sending:\n\"Use as an ASDEX topic signal rather than first contact; prioritize McDermott or HEPP application routing.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "ipp-euraxess-germany-monitor",
+      "source": "ipp",
+      "name": "EURAXESS Germany IPP/Fusion Monitor",
+      "title": "European research-job board signal",
+      "unit": "EURAXESS",
+      "department": "Research jobs",
+      "lab": "Germany fusion/plasma search",
+      "institution": "eu_collaborator",
+      "application_route": "euraxess_position",
+      "application_url": "https://euraxess.ec.europa.eu/jobs",
+      "role_type": "job_board_signal",
+      "campus": "Germany / EU",
+      "profile_url": "https://euraxess.ec.europa.eu/jobs",
+      "lab_url": "",
+      "linkedin_url": "",
+      "contact_email": "",
+      "contact_page": "https://euraxess.ec.europa.eu/jobs",
+      "phone": "",
+      "research_keywords": [
+        "EURAXESS Germany",
+        "fusion jobs",
+        "plasma PhD",
+        "IPP postings"
+      ],
+      "methods": [
+        "weekly job-board monitoring"
+      ],
+      "facilities": [],
+      "transfer_vectors": [
+        "research job monitoring",
+        "PhD application route"
+      ],
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "EURAXESS jobs portal",
+          "url": "https://euraxess.ec.europa.eu/jobs",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 3.5,
+      "tier": "B",
+      "fit_rationale": "Backup monitor for externally posted IPP, Max Planck, TUM, Greifswald, and EUROfusion roles.",
+      "outreach_angle": "Use filters for Germany, IPP, ITER, diagnostics, neutral beam, W7-X, ASDEX Upgrade, plasma.",
+      "likely_route": "Apply to posted positions only.",
+      "opt_h1b_notes": "German Max Planck doctoral contracts and researcher roles require German/EU work authorization processing. HEPP and IPP HR should confirm route and timing after supervisor interest.",
+      "uncertainty_notes": "",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "B",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "last_followed_up": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/ipp-iter-technology-diagnostics-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.833Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "EURAXESS Germany IPP/Fusion Monitor works in Germany fusion/plasma search (Research jobs).\n\nResearch focus: EURAXESS Germany, fusion jobs, plasma PhD, IPP postings.\n\nMethods and tools: weekly job-board monitoring.\n\nBackup monitor for externally posted IPP, Max Planck, TUM, Greifswald, and EUROfusion roles.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "What we researched (career-ops deep research):\nReport: WEB-TRACKER/research/ipp-iter-technology-diagnostics-prospects-2026.json\nPrimary sources checked:\n- EURAXESS jobs portal: https://euraxess.ec.europa.eu/jobs\nWhat this person works on:\nEURAXESS Germany IPP/Fusion Monitor, European research-job board signal\nLab/group: Germany fusion/plasma search\nResearch interests: EURAXESS Germany, fusion jobs, plasma PhD, IPP postings.\nMethods/approach: weekly job-board monitoring.\nBackup monitor for externally posted IPP, Max Planck, TUM, Greifswald, and EUROfusion roles.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted for this contact. Current research lines from lab-page / report research, to verify against one recent paper before emailing:\n- weekly job-board monitoring\n\nAction: Open https://euraxess.ec.europa.eu/jobs or Google Scholar -> pick one paper from 2023-2026 -> write title + one-sentence takeaway in column 3.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Use filters for Germany, IPP, ITER, diagnostics, neutral beam, W7-X, ASDEX Upgrade, plasma.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: research job monitoring, PhD application route.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: research job monitoring, PhD application route.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Review this line before sending:\n\"Use filters for Germany, IPP, ITER, diagnostics, neutral beam, W7-X, ASDEX Upgrade, plasma.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "ipp-sibylle-guenter-directorate",
+      "source": "ipp",
+      "name": "Sibylle Guenter",
+      "title": "Prof. Dr.; Scientific Director",
+      "unit": "Max Planck Institute for Plasma Physics",
+      "department": "Directorate",
+      "lab": "IPP Directorate",
+      "institution": "ipp",
+      "application_route": "ipp_jobs_portal",
+      "application_url": "https://www.ipp.mpg.de/17953/stellen",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Garching",
+      "profile_url": "http://ipp.mpg.de/1084794/guenter",
+      "lab_url": "https://www.ipp.mpg.de/en",
+      "linkedin_url": "",
+      "contact_email": "sibylle.guenter@ipp.mpg.de",
+      "contact_page": "http://ipp.mpg.de/1084794/guenter",
+      "phone": "",
+      "research_keywords": [
+        "IPP scientific direction",
+        "fusion research strategy",
+        "ASDEX Upgrade",
+        "W7-X"
+      ],
+      "methods": [
+        "institutional research direction",
+        "fusion programme strategy"
+      ],
+      "facilities": [
+        "ASDEX Upgrade",
+        "Wendelstein 7-X"
+      ],
+      "transfer_vectors": [
+        "institutional referral",
+        "fusion network",
+        "research strategy"
+      ],
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "IPP home page",
+          "url": "https://www.ipp.mpg.de/en",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Sibylle Guenter IPP profile",
+          "url": "http://ipp.mpg.de/1084794/guenter",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 3.4,
+      "tier": "B",
+      "fit_rationale": "High institutional relevance but not the right first technical contact for an instrumentation PhD.",
+      "outreach_angle": "Use only if a formal application or referral path needs directorate-level routing.",
+      "likely_route": "Do not cold-email first; use HEPP/IPP jobs and technical group contacts.",
+      "opt_h1b_notes": "German Max Planck doctoral contracts and researcher roles require German/EU work authorization processing. HEPP and IPP HR should confirm route and timing after supervisor interest.",
+      "uncertainty_notes": "",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "B",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "last_followed_up": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/ipp-iter-technology-diagnostics-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.833Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "Sibylle Guenter works in IPP Directorate (Directorate).\n\nResearch focus: IPP scientific direction, fusion research strategy, ASDEX Upgrade, W7-X.\n\nMethods and tools: institutional research direction, fusion programme strategy.\n\nHigh institutional relevance but not the right first technical contact for an instrumentation PhD.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "Report-supported: Guenter is IPP scientific director. This is a strategic/directorate contact, not a first instrumentation PhD target.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted in our report. Use only if routed through IPP leadership, and verify a recent IPP / strategic fusion publication before citing.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Use only if a formal application or referral path needs directorate-level routing.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: institutional referral, fusion network, research strategy.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: institutional referral, fusion network, research strategy.\n- Their facilities (ASDEX Upgrade, Wendelstein 7-X) need reliable experimental execution — that is the part you can defend.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Review this line before sending:\n\"Use only if a formal application or referral path needs directorate-level routing.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    },
+    {
+      "id": "ipp-per-helander-stellarator-theory",
+      "source": "ipp",
+      "name": "Per Helander",
+      "title": "Prof. Dr.; Director Greifswald; Head of Stellarator Theory",
+      "unit": "Max Planck Institute for Plasma Physics",
+      "department": "Stellarator Theory",
+      "lab": "Stellarator Theory",
+      "institution": "ipp",
+      "application_route": "hepp_rolling_application",
+      "application_url": "https://www.ipp.mpg.de/yourphd",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Greifswald",
+      "profile_url": "https://www.ipp.mpg.de/1084958/helander",
+      "lab_url": "https://www.ipp.mpg.de/17313/greifswald",
+      "linkedin_url": "",
+      "contact_email": "",
+      "contact_page": "https://www.ipp.mpg.de/1084958/helander",
+      "phone": "",
+      "research_keywords": [
+        "stellarator theory",
+        "transport",
+        "fusion theory",
+        "W7-X"
+      ],
+      "methods": [
+        "plasma theory",
+        "stellarator transport modelling",
+        "scientific computing"
+      ],
+      "facilities": [
+        "Wendelstein 7-X"
+      ],
+      "transfer_vectors": [
+        "fusion modelling",
+        "scientific computing",
+        "data interpretation"
+      ],
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "Per Helander IPP profile",
+          "url": "https://www.ipp.mpg.de/1084958/helander",
+          "date": "2026-06-27",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "IPP Greifswald branch",
+          "url": "https://www.ipp.mpg.de/17313/greifswald",
+          "date": "2026-06-27",
+          "note": ""
+        }
+      ],
+      "score": 3.2,
+      "tier": "B",
+      "fit_rationale": "Important Greifswald scientific contact, but the fit is theory-heavy compared with your instrumentation/DAQ profile.",
+      "outreach_angle": "Use only if you want a modelling-heavy W7-X route with diagnostics-validation framing.",
+      "likely_route": "HEPP application rather than direct first outreach.",
+      "opt_h1b_notes": "German Max Planck doctoral contracts and researcher roles require German/EU work authorization processing. HEPP and IPP HR should confirm route and timing after supervisor interest.",
+      "uncertainty_notes": "",
+      "research_interests_summary": "",
+      "recent_publication": "",
+      "priority": "B",
+      "status": "not_contacted",
+      "last_contacted": "",
+      "last_followed_up": "",
+      "follow_up_date": "",
+      "notes": "",
+      "source_report": "WEB-TRACKER/research/ipp-iter-technology-diagnostics-prospects-2026.json",
+      "first_seen": "2026-06-27T00:00:00.000Z",
+      "last_updated": "2026-06-27T16:40:42.833Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "Per Helander works in Stellarator Theory (Stellarator Theory).\n\nResearch focus: stellarator theory, transport, fusion theory, W7-X.\n\nMethods and tools: plasma theory, stellarator transport modelling, scientific computing.\n\nImportant Greifswald scientific contact, but the fit is theory-heavy compared with your instrumentation/DAQ profile.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "Report-supported: Helander is the Stellarator Theory contact. The researched interests are stellarator transport theory and modelling; this is lower fit for an instrumentation-heavy PhD.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted in our report. Check Helander recent theory papers before citing; the report ranks this as a weak top-level instrumentation target.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Use only if you want a modelling-heavy W7-X route with diagnostics-validation framing.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: fusion modelling, scientific computing, data interpretation.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: fusion modelling, scientific computing, data interpretation.\n- Their facilities (Wendelstein 7-X) need reliable experimental execution — that is the part you can defend.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Review this line before sending:\n\"Use only if you want a modelling-heavy W7-X route with diagnostics-validation framing.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ]
+    }
+  ],
+  "research_run": "trun_dd47611047ba45198fed4e7b9a424cfd",
+  "research_date": "2026-06-27",
+  "source_report": "WEB-TRACKER/research/ipp-iter-technology-diagnostics-prospects-2026.md"
+}

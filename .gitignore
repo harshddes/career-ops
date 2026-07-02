@@ -29,12 +29,14 @@ bun.lock
 data/*.tmp-*
 
 # WEB-TRACKER local runtime data
+WEB-TRACKER/.env
 WEB-TRACKER/data/*.json
 WEB-TRACKER/data/*.ndjson
 WEB-TRACKER/data/*.tmp
 WEB-TRACKER/data/*.tmp-*
 WEB-TRACKER/data/*.log
 WEB-TRACKER/data/tmp/
+WEB-TRACKER/data/research-runs/
 WEB-TRACKER/runtime/
 
 # OS

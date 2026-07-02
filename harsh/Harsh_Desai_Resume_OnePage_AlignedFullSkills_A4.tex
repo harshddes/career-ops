@@ -1,0 +1,142 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[a4paper,left=0.46in,right=0.46in,top=0.34in,bottom=0.30in]{geometry}
+\usepackage{fontspec}
+\setmainfont{Tinos}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{ragged2e}
+\usepackage{microtype}
+
+\definecolor{resumeBlue}{RGB}{31,78,121}
+\definecolor{linkBlue}{RGB}{0,0,238}
+\hypersetup{colorlinks=true,urlcolor=linkBlue,linkcolor=linkBlue}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\AtBeginDocument{\fontsize{9.35pt}{10.28pt}\selectfont}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\sloppy
+
+\newcommand{\namefont}{\fontsize{15.8pt}{17.0pt}\bfseries\color{resumeBlue}}
+\newcommand{\sectionfont}{\fontsize{10.9pt}{11.4pt}\bfseries}
+\newcommand{\headingfont}{\bfseries}
+\newcommand{\blueheading}{\bfseries\color{resumeBlue}}
+\newcommand{\subital}{\itshape}
+
+\newcommand{\sectiontitle}[1]{%
+  \vspace{4.2pt}%
+  {\sectionfont #1}\par\vspace{1.0pt}%
+  \rule{\textwidth}{0.95pt}\vspace{1.8pt}%
+}
+
+\newcommand{\entryheader}[2]{%
+  \noindent{\headingfont #1}\hfill{\blueheading #2}\par\vspace{0.1pt}%
+}
+\newcommand{\roleline}[2]{%
+  \noindent#1\hfill#2\par\vspace{-0.2pt}%
+}
+\newcommand{\skillline}[2]{\textbf{#1:} #2\par\vspace{0.4pt}}
+\newcommand{\entryv}{\vspace{2.3pt}}
+\newcommand{\smallv}{\vspace{1.3pt}}
+
+\setlist[itemize]{
+  leftmargin=0.205in,
+  labelsep=0.115in,
+  itemsep=0.25pt,
+  topsep=0.45pt,
+  parsep=0pt,
+  partopsep=0pt,
+  label=\raisebox{0.08ex}{\fontsize{9.2pt}{9.2pt}\selectfont\textbullet},
+  before={\justifying}
+}
+\newcommand{\resitem}[1]{\item #1}
+
+\begin{document}
+
+\noindent{\namefont Harsh Desai}\hfill{Ann Arbor, MI, USA $\mid$ \href{mailto:harshdes@umich.edu}{harshdes@umich.edu} $\mid$ +1-734-548-1080 $\mid$ \href{https://linkedin.com/in/harshddes}{LinkedIn} $\mid$ \href{https://harshddes.github.io}{harshddes.github.io}}\par
+\vspace{3.8pt}
+
+\sectiontitle{EDUCATION}
+\entryheader{University of Michigan}{Ann Arbor, MI, USA}
+\roleline{Master of Engineering, Space Systems Engineering $\mid$ GPA: 3.79/4.0}{Aug 2024--Dec 2025}
+\smallv
+\entryheader{Vellore Institute of Technology (VIT)}{Vellore, India}
+\roleline{Bachelor of Technology, Mechanical Engineering $\mid$ GPA: 7.78/10}{Jul 2019--Jul 2023}
+
+\sectiontitle{TECHNICAL SKILLS}
+\skillline{Programming Languages}{Python, LabView(learning), MATLAB (learning), Verilog (learning), VHDL (learning)}
+\skillline{Instrumentation \& DAQ / Hardware}{GPIB/IEEE-488, USB-serial, serial data logging, NI VISA (PyVISA, PyMeasure), Keithley DAQs and SMUs, TDK Lambda PSUs, High Voltage Switching Operations, Vacuum Chamber Operation (CTI-Cryogenics Hi-Vac; roughing pump operated at 1 mTorr)}
+\skillline{FPGA, Plasma \& Modeling Tools}{SIMION, SRIM, Amptek DPPMCA, FPGA Design Workflow, AMD Vivado, MATLAB HDL Coder \& DSP Toolbox, SPENVIS, SWMF \& Magnetosphere-Ionosphere Models (MAGE, SWMF, HYPERS), Google Data Studio}
+\skillline{Mechanical Engineering Tools}{ANSYS (GUI/TUI): Fluent, Mechanical; PyANSYS, OptiSlang, OpenFOAM, SolidWorks, Fusion 360, AutoCAD, Autodesk Inventor, SpaceClaim, MIDO, Xflr5, RocketPy, OpenRocket}
+
+\sectiontitle{RESEARCH \& ENGINEERING EXPERIENCE}
+\entryheader{Space Physics Research Lab, University of Michigan}{Ann Arbor, MI, USA}
+\roleline{Research Assistant, LVACCS Testing Rig Characterization}{Feb 2026--Present}
+\begin{itemize}
+  \resitem{Validated a 1300 V hollow-cathode plasma-source test workflow by combining HV discharge-box FMEA, Python/PyVISA ignition control, PSU logging, and DAQ synchronization; cut manual steps 15$\rightarrow$5 and achieved 98.6\% synchronized data}
+  \resitem{Characterized remote ignition and post-run processing workflows for Spacecraft Charging Device test readiness, improving experimental repeatability and saving $\sim$15 minutes of processing per run}
+\end{itemize}
+\smallv
+\roleline{Summer Intern, TestBedz Spacecraft Qualification Platform}{May 2025--Jul 2025}
+\begin{itemize}
+  \resitem{Built a full-stack requirement-flowdown platform for TVAC, vibration, and EMI test submissions, matching spacecraft hardware profiles to facility limits across 6 test-type workflows}
+\end{itemize}
+\entryv
+
+\entryheader{Climate and Space Sciences and Engineering, University of Michigan}{Ann Arbor, MI, USA}
+\roleline{Research Assistant, Uranian Tropospheric Cloud Resolving Model}{Sep 2025--Dec 2025}
+\begin{itemize}
+  \resitem{Ran Uranian cloud-resolving model sensitivity studies on Great Lakes HPC, linking methane profile, microphysics, latent heating, gravity, and sedimentation effects to vertical-velocity and condensation diagnostics}
+\end{itemize}
+\entryv
+
+\entryheader{Solar and Heliospheric Research Group, University of Michigan}{Ann Arbor, MI, USA}
+\roleline{Graduate Student Research Assistant, SSD Readout Chain}{Jan 2025--Dec 2025}
+\begin{itemize}
+  \resitem{Designed an SSD readout roadmap around science-driven energy-resolution targets, integrating a Zmod ADC 1410 path with a Zynq-7000 architecture to evaluate a 1 MSPS$\rightarrow$125 MSPS digitization upgrade}
+  \resitem{Verified MATLAB HDL Coder golden models against Vivado co-simulations and diagnosed 125 MHz post-synthesis timing limits, including Worst Negative Slack constraints in the Zynq SoC signal path}
+\end{itemize}
+\entryv
+
+\entryheader{L3Harris and University of Michigan}{Ann Arbor, MI, USA}
+\roleline{Communications Lead, Uranian Orbiter and Probe Mission Study}{Sep 2024--May 2025}
+\begin{itemize}
+  \resitem{Led Uranian mission communications architecture trades and DSN/fault-tolerance requirement flowdown, managing 15 traceable requirements and supporting a 16\% (\$450M) cost reduction through an orbiter-only configuration trade}
+\end{itemize}
+
+\sectiontitle{SELECTED TECHNICAL PROJECTS}
+\roleline{{\headingfont Space Instrumentation Calibration \& Ion-Optics Series}}{Jul 2025--Dec 2025}
+{\subital Graduate Course: SPACE 571 $\mid$ Supervisor: Prof. Stefano Livi}\par\vspace{-0.7pt}
+\begin{itemize}
+  \resitem{Calibrated CEM detector response by mapping operating bias, pulse-height distributions, and amplifier gain behavior, connecting detector settings to usable signal quality and count-rate interpretation}
+  \resitem{Modeled ESA and ion-optics performance using lab energy-angle scans, SIMION, and SRIM to quantify transmission, angular acceptance, energy resolution, FWHM, and filter response}
+\end{itemize}
+\entryv
+
+\roleline{{\headingfont Spatial Ion-Electron Temperature Correlation}}{Jan 2025--Apr 2025}
+{\subital Graduate Course: SPACE 477 $\mid$ Supervisor: Prof. Xianzhe Jia}\par\vspace{-0.7pt}
+\begin{itemize}
+  \resitem{Analyzed ion-electron temperature structure in SWMF/HYPERS simulations, tracing magnetosheath ion distributions and reconnection-driven electron heating during simulated shock events}
+\end{itemize}
+
+\sectiontitle{PROJECTS \& LEADERSHIP}
+\roleline{{\headingfont CANSAT 2022 (NASA \& AAS) $\mid$ Ranked 7th worldwide out of 42 teams}}{Aug 2021--Jul 2022}
+\begin{itemize}
+  \resitem{Built a 10 m tether-deployment, payload release, and camera-stabilization system using a DC motor, worm gear, torsion-spring latch, and dual-servo gimbal for controlled descent and fixed 45$^{\circ}$ imaging}
+\end{itemize}
+\smallv
+\roleline{{\headingfont Spaceport America Cup / IREC $\mid$ Placed 23rd globally and 5th in Asia-Pacific}}{Apr 2020--Jul 2021}
+\begin{itemize}
+  \resitem{Launched a Mach 0.9 solid-motor rocket to 10,000 ft and developed an SRAD trajectory simulator using CFD-backed aerodynamic data for flight prediction}
+\end{itemize}
+\smallv
+\roleline{{\headingfont CANSAT 2021 (NASA \& AAS) $\mid$ Placed 13th globally and 7th in Asia-Pacific}}{Aug 2020--Jul 2021}
+\begin{itemize}
+  \resitem{Modeled maple-seed mono-wing payload descent using Blade Element Theory and transient CFD, with MATLAB telemetry software for real-time dual-payload deployment monitoring}
+\end{itemize}
+
+\end{document}

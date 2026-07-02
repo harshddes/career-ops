@@ -65,7 +65,7 @@ async function checkUrl(page, url) {
     return classifyLiveness({ status, finalUrl, bodyText, applyControls });
 
   } catch (err) {
-    return { result: 'expired', reason: `navigation error: ${err.message.split('\n')[0]}` };
+    return { result: 'uncertain', reason: `navigation error: ${err.message.split('\n')[0]}` };
   }
 }
 

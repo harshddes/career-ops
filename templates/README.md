@@ -6,37 +6,37 @@ System-layer template files used by career-ops scripts and modes. These files ar
 
 | File | Used By | Purpose |
 |------|---------|---------|
-| `cv-template.html` | `generate-pdf.mjs` | HTML/CSS template for ATS-optimized CV PDFs |
-| `cv-template.tex` | `generate-latex.mjs` | LaTeX/Overleaf template for ATS-optimized CV PDFs |
+| `cv-template.html` | `generate-pdf.mjs` | Legacy/fallback HTML resume template and reusable HTML/PDF pattern for cover letters |
+| `cv-template.tex` | `generate-latex.mjs` | Generic LaTeX/Overleaf template reference |
 | `portals.example.yml` | Onboarding | Example portal scanner configuration (copy to `portals.yml` to activate) |
 | `states.yml` | `verify-pipeline.mjs`, `normalize-statuses.mjs`, `merge-tracker.mjs` | Canonical application states and their aliases |
 
 ### cv-template.html
 
-The HTML template rendered by Playwright into PDF. Uses placeholder tokens (`{{NAME}}`, `{{SUMMARY_TEXT}}`, `{{EXPERIENCE}}`, etc.) that the PDF pipeline fills at generation time.
+The legacy HTML resume template rendered by Playwright into PDF. New tailored resumes should use the LaTeX flow in `modes/pdf.md`. Keep this template for older outputs, tests, and any explicit HTML fallback.
 
 **Design:** Space Grotesk headings + DM Sans body, single-column ATS-safe layout, self-hosted fonts from `fonts/`.
 
-**Customization:** Edit this file to change colors, spacing, or section order. The placeholder tokens are documented in `batch/batch-prompt.md` under "Template placeholders."
+**Customization:** Edit this file only for legacy HTML resumes or HTML/PDF styling patterns. For active LaTeX resume design, use a user-approved LaTeX reference or `templates/cv-template.tex`.
 
 ### cv-template.tex
 
-LaTeX template for Overleaf-compatible CV generation. Based on the [sb2nov/resume](https://github.com/sb2nov/resume) format. Uses placeholder tokens (`{{NAME}}`, `{{EXPERIENCE}}`, `{{PROJECTS}}`, etc.) that the LaTeX pipeline fills at generation time.
+Generic LaTeX template for Overleaf-compatible CV generation. Use this when no user-approved personal LaTeX reference is available.
 
-**Design:** Single-column ATS-safe layout using standard CTAN packages (`fontawesome5`, `enumitem`, `hyperref`, `titlesec`). No custom fonts or external dependencies — uploads directly to Overleaf.
+**Design:** Single-column ATS-safe layout using standard CTAN packages (`fontawesome5`, `enumitem`, `hyperref`, `titlesec`). No custom fonts or external dependencies; uploads directly to Overleaf.
 
 **Usage:**
 ```bash
-# Validate and compile .tex → .pdf (requires pdflatex on PATH)
+# Compile LaTeX resumes with xelatex (default)
 node generate-latex.mjs output/cv-name-company-date.tex
 
 # Or specify a custom output path
 node generate-latex.mjs output/cv-name-company-date.tex output/custom-name.pdf
 ```
 
-**Prerequisites:** `pdflatex` via [MiKTeX](https://miktex.org/) (Windows) or TeX Live (Linux/macOS). First compilation may auto-install missing LaTeX packages. Alternatively, upload the `.tex` file directly to [Overleaf](https://www.overleaf.com) — no local install needed.
+**Prerequisites:** `xelatex` via [MiKTeX](https://miktex.org/) (Windows) or TeX Live (Linux/macOS) for `fontspec`-based resumes. The script also supports `--engine=lualatex` and `--engine=pdflatex` for compatible files. Alternatively, upload the `.tex` file directly to [Overleaf](https://www.overleaf.com).
 
-**Customization:** Edit this file to change margins, section order, or formatting commands. The placeholder tokens are documented in `modes/latex.md` under "Template Placeholders."
+**Customization:** Edit this file for the generic fallback template. If the user provides a personal LaTeX reference, use that instead and keep it in user-layer files.
 
 ### portals.example.yml
 

@@ -64,11 +64,11 @@ export function classifyLiveness({ status = 0, finalUrl = '', bodyText = '', app
 
   const listingPage = firstMatch(LISTING_PAGE_PATTERNS, bodyText);
   if (listingPage) {
-    return { result: 'expired', reason: `pattern matched: ${listingPage.source}` };
+    return { result: 'uncertain', reason: `listing page detected: ${listingPage.source}` };
   }
 
   if (bodyText.trim().length < MIN_CONTENT_CHARS) {
-    return { result: 'expired', reason: 'insufficient content — likely nav/footer only' };
+    return { result: 'uncertain', reason: 'insufficient content — likely nav/footer only' };
   }
 
   return { result: 'uncertain', reason: 'content present but no visible apply control found' };

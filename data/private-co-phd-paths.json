@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "generated_at": "2026-06-28T18:00:00.000Z",
+  "scope": "Private company PhD collaboration paths — university enrollment with industrial co-supervision",
+  "path_model": "Apply to university PhD programmes; company provides co-supervision, facility access, and sponsored topics — not direct enrollment at the company.",
+  "prospects": [
+    {
+      "id": "tokamak-energy-industrial-phd",
+      "source": "private-co",
+      "name": "Tokamak Energy",
+      "title": "Industrial PhD Sponsorship — ST40 / Diagnostics Route",
+      "unit": "Private Fusion Company",
+      "department": "Tokamak Energy Ltd · Oxfordshire, UK",
+      "lab": "ST40 Spherical Tokamak · HTS Magnet Systems · Magnetics Diagnostics",
+      "institution": "private-co",
+      "application_route": "apply_via_university_partner",
+      "application_url": "https://tokamakenergy.com/early-careers-fusion-energy-apprenticeships-student-placements-phd-sponsorship/",
+      "role_type": "industrial_phd_sponsor",
+      "campus": "Milton Park, Abingdon · UKAEA/Culham ecosystem",
+      "profile_url": "https://tokamakenergy.com/",
+      "lab_url": "https://tokamakenergy.com/early-careers-fusion-energy-apprenticeships-student-placements-phd-sponsorship/",
+      "contact_email": "careers@tokamakenergy.com",
+      "contact_page": "https://tokamakenergy.com/careers-at-tokamak-energy-fusion-energy/",
+      "research_keywords": [
+        "industrial PhD sponsorship",
+        "university partnership",
+        "spherical tokamak diagnostics",
+        "magnetics diagnostics",
+        "plasma diagnostics",
+        "experimental data analysis",
+        "FOSTER programme",
+        "ST40"
+      ],
+      "methods": [
+        "university PhD enrollment + company co-supervision",
+        "ST40 experimental campaigns",
+        "diagnostics development and calibration",
+        "vacuum and cryogenic test hardware",
+        "FOSTER summer placement bridge"
+      ],
+      "facilities": [
+        "ST40 tokamak (Milton Park)",
+        "University of York Fusion CDT pipeline",
+        "UKAEA Culham / FOSTER network",
+        "Oxford-area fusion cluster"
+      ],
+      "transfer_vectors": [
+        "plasma diagnostics",
+        "DAQ automation",
+        "detector calibration",
+        "vacuum systems",
+        "HV test workflows",
+        "ion optics"
+      ],
+      "hiring_signals": [
+        {
+          "type": "hiring_signal",
+          "label": "Senior Instrumentation Engineer — Magnetics Diagnostics",
+          "url": "https://apply.workable.com/tokamak-energy/?lng=en",
+          "date": "2026-06-28",
+          "note": "Open role confirms active magnetics/diagnostics hiring — adjacent to PhD diagnostics themes."
+        },
+        {
+          "type": "hiring_signal",
+          "label": "Official PhD Sponsorships page",
+          "url": "https://tokamakenergy.com/early-careers-fusion-energy-apprenticeships-student-placements-phd-sponsorship/",
+          "date": "2026-06-28",
+          "note": "Applications via university; careers@ for general questions on research priorities."
+        }
+      ],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "PhD Sponsorships — Early Careers",
+          "url": "https://tokamakenergy.com/early-careers-fusion-energy-apprenticeships-student-placements-phd-sponsorship/",
+          "date": "2026-06-28",
+          "note": "Official industrial PhD route documentation"
+        },
+        {
+          "type": "source",
+          "label": "University of York Fusion CDT",
+          "url": "https://www.york.ac.uk/fusion-cdt/",
+          "date": "2026-06-28",
+          "note": "Lists Tokamak Energy in industry pipeline"
+        },
+        {
+          "type": "source",
+          "label": "Career-ops research note",
+          "url": "WEB-TRACKER/research/private-company-phd-collaboration-2026.md",
+          "date": "2026-06-28",
+          "note": "Full path model and strategy"
+        },
+        {
+          "type": "source",
+          "label": "Speculative outreach draft",
+          "url": "output/tokamak-energy/application-email-tokamak-energy-speculative-outreach-2026-06-28.md",
+          "date": "2026-06-28",
+          "note": "Email template asking for university programme pointers"
+        }
+      ],
+      "score": 4.1,
+      "tier": "A",
+      "fit_rationale": "Official university-partnership PhD route in UK fusion heartland. Strong diagnostics overlap (ST40, magnetics instrumentation, experimental data analysis). Harsh's space plasma instrumentation, DAQ, and calibration work maps to company-stated placement themes. Not a direct professor email path — enroll via UK university (York CDT, Oxford/Culham-linked programmes) and target Tokamak co-supervision.",
+      "outreach_angle": "Ask careers@ which university programmes or sponsored diagnostics topics align with plasma measurement / test-hardware work before choosing where to apply. Frame as UK PhD applicant exploring industrial co-supervision, not a request to enroll directly at the company.",
+      "likely_route": "1) Apply to UK fusion PhD (York CDT, UKAEA-linked programmes). 2) Parallel email to careers@tokamakenergy.com for sponsored-topic guidance. 3) Optional FOSTER summer placement as bridge. 4) Research statement names ST40 diagnostics / magnetics instrumentation interest.",
+      "opt_h1b_notes": "UK PhD route — separate from US OPT. Student visa for PhD; post-PhD skilled worker route possible. Confirm international fee coverage on CDT programmes.",
+      "uncertainty_notes": "Specific university partners and sponsored topic list change yearly — verify before applying. Do not assume direct PhD enrollment at Tokamak Energy.",
+      "research_interests_summary": "Tokamak Energy sponsors PhD research through university partnerships while hosting collaboration at ST40 and magnetics/diagnostics teams. Official focus areas include diagnostics, plasma physics, experimental data analysis, and materials — aligned with Harsh's instrumentation background.",
+      "priority": "A",
+      "status": "draft_ready",
+      "notes": "First card in Private Company PhD Paths source. Speculative CV email drafted 2026-06-28.",
+      "source_report": "WEB-TRACKER/research/private-company-phd-collaboration-2026.md"
+    }
+  ]
+}

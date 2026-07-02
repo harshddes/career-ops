@@ -65,6 +65,54 @@ export function createActionRegistry({ baseDir, repoRoot, dataDir }) {
       after: 'Review anything that lands in Needs AI Review.',
       buildSteps: () => [nodeStep(baseDir, join(baseDir, 'deep-research-gate.mjs'))],
     },
+    research_parallel: {
+      label: 'Run Parallel research for one queued task',
+      mutates: true,
+      description: 'Submit or resume one queued AI task with Parallel research, then save the research artifact.',
+      after: 'If the local model is offline, the task will stay in Needs AI Review with research attached.',
+      buildSteps: ({ poll_timeout = 120 } = {}) => [
+        nodeStep(baseDir, join(baseDir, 'autonomy-runner.mjs'), ['--max', '1', '--poll-timeout', String(poll_timeout), '--research-only']),
+      ],
+    },
+    local_model_health: {
+      label: 'Check local AI runtime',
+      mutates: false,
+      description: 'Check Ollama/compatible local model availability and show repair guidance.',
+      after: 'Use this before autonomous evaluation if the model status looks broken.',
+      buildSteps: () => [nodeStep(baseDir, join(baseDir, 'autonomy-runner.mjs'), ['--health'])],
+    },
+    local_model_start: {
+      label: 'Start local AI runtime',
+      mutates: true,
+      description: 'Start the local Ollama server if Ollama is installed but not running.',
+      after: 'Then run the JSON sanity test or pull a fallback model.',
+      buildSteps: () => [nodeStep(baseDir, join(baseDir, 'autonomy-runner.mjs'), ['--model-start'])],
+    },
+    local_model_json_sanity: {
+      label: 'Test local AI JSON output',
+      mutates: false,
+      description: 'Ask the selected local model for a strict JSON autonomy response.',
+      after: 'If this passes, local reasoning is ready for dry-run autonomy.',
+      buildSteps: () => [nodeStep(baseDir, join(baseDir, 'autonomy-runner.mjs'), ['--json-sanity'])],
+    },
+    evaluate_with_local_ai: {
+      label: 'Evaluate one task with local AI',
+      mutates: true,
+      description: 'Use the local OpenAI-compatible model to turn completed research into proposed tracker/report actions.',
+      after: 'Review proposed writes before approving anything that changes tracker files.',
+      buildSteps: ({ poll_timeout = 5 } = {}) => [
+        nodeStep(baseDir, join(baseDir, 'autonomy-runner.mjs'), ['--max', '1', '--poll-timeout', String(poll_timeout)]),
+      ],
+    },
+    process_ai_queue: {
+      label: 'Process AI queue autonomously',
+      mutates: true,
+      description: 'Research and reason over queued AI tasks using Parallel plus the local model.',
+      after: 'Defaults to dry-run/approval mode; submitted applications and outreach remain blocked.',
+      buildSteps: ({ max = 1, poll_timeout = 120 } = {}) => [
+        nodeStep(baseDir, join(baseDir, 'autonomy-runner.mjs'), ['--max', String(max), '--poll-timeout', String(poll_timeout)]),
+      ],
+    },
     verify_pipeline: {
       label: 'Check tracker for mistakes',
       mutates: false,
@@ -118,6 +166,19 @@ export function createActionRegistry({ baseDir, repoRoot, dataDir }) {
         nodeStep(baseDir, join(baseDir, 'deep-research-gate.mjs'), ['--status']),
         nodeStep(repoRoot, join(repoRoot, 'followup-cadence.mjs')),
         nodeStep(repoRoot, join(repoRoot, 'analyze-patterns.mjs')),
+      ],
+    },
+    autonomous_daily_review: {
+      label: 'Autonomous daily research review',
+      mutates: true,
+      description: 'Run scanner refresh, sort research alerts, then process one queued task through Parallel/local AI.',
+      after: 'Designed for dry-run first; approve proposed writes from Behind The Scenes.',
+      buildSteps: () => [
+        nodeStep(baseDir, join(baseDir, 'adapters', 'sync-all.mjs')),
+        nodeStep(baseDir, join(baseDir, 'fusion-scan.mjs')),
+        nodeStep(baseDir, join(baseDir, 'phd-scan.mjs')),
+        nodeStep(baseDir, join(baseDir, 'deep-research-gate.mjs')),
+        nodeStep(baseDir, join(baseDir, 'autonomy-runner.mjs'), ['--max', '1', '--poll-timeout', '120']),
       ],
     },
   };

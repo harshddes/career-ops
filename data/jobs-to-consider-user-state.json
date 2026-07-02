@@ -1,0 +1,491 @@
+{
+  "version": 1,
+  "updated_at": "2026-07-02T22:54:18.177Z",
+  "jobs": {
+    "ornl-mechanical-design-and-test-engineer-temporary-1403782600": {
+      "updated_at": "2026-07-02T22:53:57.983Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Temporary 24-month role. Strongest temporary technical fit, but posting requires access to export-controlled technology without an export-control license. This is a serious F-1/foreign-person risk.",
+      "resources": {
+        "resume_tex": "output/ornl/cv-harsh-desai-ornl-mechanical-design-and-test-engineer-temporary-2026-06-28.tex",
+        "resume_pdf": "output/ornl/cv-harsh-desai-ornl-mechanical-design-and-test-engineer-temporary-2026-06-28.pdf",
+        "cover_letter_html": "output/ornl/cover-letter-harsh-desai-ornl-mechanical-design-and-test-engineer-temporary-2026-06-28.html",
+        "cover_letter_pdf": "output/ornl/cover-letter-harsh-desai-ornl-mechanical-design-and-test-engineer-temporary-2026-06-28.pdf"
+      }
+    },
+    "ornl-beam-instrumentation-systems-lead-16335": {
+      "updated_at": "2026-07-02T22:54:00.183Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Live in official ORNL search on 2026-06-28; posted Jun 25. No visa sponsorship found; no Q/L clearance language captured. Strong domain relevance, weak level fit.",
+      "resources": {
+        "resume_tex": "output/ornl/cv-harsh-desai-ornl-beam-instrumentation-systems-lead-2026-06-28.tex",
+        "resume_pdf": "output/ornl/cv-harsh-desai-ornl-beam-instrumentation-systems-lead-2026-06-28.pdf",
+        "cover_letter_html": "output/ornl/cover-letter-harsh-desai-ornl-beam-instrumentation-systems-lead-2026-06-28.html",
+        "cover_letter_pdf": "output/ornl/cover-letter-harsh-desai-ornl-beam-instrumentation-systems-lead-2026-06-28.pdf"
+      }
+    },
+    "ornl-experiment-project-engineer-16622": {
+      "updated_at": "2026-07-02T22:53:53.587Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Requires DOE clearance (L/Q preferred), BS+5 years nuclear environment, no visa sponsorship. User-requested cover letter generated 2026-06-28. Apply URL also career_job_req_id=16622 on SuccessFactors portal.",
+      "resources": {
+        "cover_letter_html": "output/ornl/cover-letter-harsh-desai-ornl-experiment-project-engineer-2026-06-28.html",
+        "cover_letter_pdf": "output/ornl/cover-letter-harsh-desai-ornl-experiment-project-engineer-2026-06-28.pdf",
+        "report_md": "WEB-TRACKER/research/ornl-graduate-research-pathways-2026.md"
+      }
+    },
+    "bosch-usa-associate-calibration-engineer": {
+      "updated_at": "2026-07-02T22:54:02.358Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-06-25T01:08:18.025Z",
+      "application_num": 26,
+      "notes": "Applied 2026-06-24 via LinkedIn. Tailored one-page resume and cover-letter-style hiring-team message generated.",
+      "resources": {
+        "resume_tex": "output/bosch-usa/cv-harsh-desai-bosch-associate-calibration-engineer-2026-06-24.tex",
+        "resume_pdf": "output/bosch-usa/cv-harsh-desai-bosch-associate-calibration-engineer-2026-06-24.pdf",
+        "email_draft": "output/bosch-usa/application-message-bosch-associate-calibration-engineer-2026-06-24.md"
+      }
+    },
+    "ornl-technician-grid-systems-hardware-temporary-1399116900": {
+      "updated_at": "2026-07-02T22:53:55.826Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Temporary 24-month role; no visa sponsorship; relocation unavailable. Technically adjacent but below target level and technician-track.",
+      "resources": {
+        "resume_tex": "output/ornl/cv-harsh-desai-ornl-technician-grid-systems-hardware-temporary-2026-06-28.tex",
+        "resume_pdf": "output/ornl/cv-harsh-desai-ornl-technician-grid-systems-hardware-temporary-2026-06-28.pdf",
+        "cover_letter_html": "output/ornl/cover-letter-harsh-desai-ornl-technician-grid-systems-hardware-temporary-2026-06-28.html",
+        "cover_letter_pdf": "output/ornl/cover-letter-harsh-desai-ornl-technician-grid-systems-hardware-temporary-2026-06-28.pdf"
+      }
+    },
+    "isar-aerospace-mission-analysis-engineer": {
+      "updated_at": "2026-07-02T22:54:04.711Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-06-27T15:41:02.557Z",
+      "application_num": 28,
+      "notes": "Verified active 2026-06-24. Report only.",
+      "resources": {
+        "report_md": "reports/024-isar-aerospace-mission-analysis-engineer-2026-06-24.md",
+        "cover_letter_html": "output/isar-aerospace/cover-letter-harsh-desai-isar-aerospace-mission-analysis-engineer-2026-06-24.html",
+        "cover_letter_pdf": "output/isar-aerospace/cover-letter-harsh-desai-isar-aerospace-mission-analysis-engineer-2026-06-24.pdf"
+      }
+    },
+    "isar-aerospace-propulsion-design-engineer": {
+      "updated_at": "2026-07-02T22:54:06.989Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-06-25T01:14:16.827Z",
+      "application_num": 27,
+      "notes": "Verified active 2026-06-24. Report only.",
+      "resources": {
+        "report_md": "reports/022-isar-aerospace-propulsion-design-engineer-2026-06-24.md"
+      }
+    },
+    "isar-aerospace-ait-operations-engineer-launch-vehicle": {
+      "updated_at": "2026-07-02T22:54:09.240Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-06-24T23:44:30.595Z",
+      "application_num": 24,
+      "notes": "Verified active 2026-06-24. Full pack plus custom form answer generated.",
+      "resources": {
+        "report_md": "reports/020-isar-aerospace-ait-operations-engineer-launch-vehicle-2026-06-24.md",
+        "resume_tex": "output/isar-aerospace/cv-harsh-desai-isar-aerospace-ait-operations-engineer-launch-vehicle-2026-06-24.tex",
+        "resume_pdf": "output/isar-aerospace/cv-harsh-desai-isar-aerospace-ait-operations-engineer-launch-vehicle-2026-06-24.pdf",
+        "cover_letter_html": "output/isar-aerospace/cover-letter-harsh-desai-isar-aerospace-ait-operations-engineer-launch-vehicle-2026-06-24.html",
+        "cover_letter_pdf": "output/isar-aerospace/cover-letter-harsh-desai-isar-aerospace-ait-operations-engineer-launch-vehicle-2026-06-24.pdf",
+        "email_draft": "output/isar-aerospace/application-email-isar-aerospace-ait-operations-engineer-launch-vehicle-2026-06-24.md",
+        "application_answer_md": "output/isar-aerospace/application-answer-isar-aerospace-ait-operations-engineer-launch-vehicle-2026-06-24.md"
+      }
+    },
+    "isar-aerospace-propulsion-test-engineer": {
+      "updated_at": "2026-07-02T22:54:11.484Z",
+      "status": "to_consider",
+      "applied": true,
+      "applied_at": "2026-06-24T23:47:26.132Z",
+      "application_num": 25,
+      "notes": "Verified active 2026-06-24. Full application pack generated.",
+      "resources": {
+        "report_md": "reports/019-isar-aerospace-propulsion-test-engineer-2026-06-24.md",
+        "resume_tex": "output/isar-aerospace/cv-harsh-desai-isar-aerospace-propulsion-test-engineer-2026-06-24.tex",
+        "resume_pdf": "output/isar-aerospace/cv-harsh-desai-isar-aerospace-propulsion-test-engineer-2026-06-24.pdf",
+        "cover_letter_html": "output/isar-aerospace/cover-letter-harsh-desai-isar-aerospace-propulsion-test-engineer-2026-06-24.html",
+        "cover_letter_pdf": "output/isar-aerospace/cover-letter-harsh-desai-isar-aerospace-propulsion-test-engineer-2026-06-24.pdf",
+        "email_draft": "output/isar-aerospace/application-email-isar-aerospace-propulsion-test-engineer-2026-06-24.md"
+      }
+    },
+    "ornl-instrument-design-engineer-16596": {
+      "updated_at": "2026-07-02T22:54:13.832Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Score 3.6/5. HFIR/SNS neutron instrument design: vacuum/pressure vessels, CAD, validation testing. BS+5yrs gate is the big stretch (MS preferred). No visa sponsorship; Tier 1 only.",
+      "resources": {
+        "resume_tex": "output/ornl/cv-harsh-desai-ornl-instrument-design-engineer-2026-06-12.tex",
+        "resume_pdf": "output/ornl/cv-harsh-desai-ornl-instrument-design-engineer-2026-06-12.pdf",
+        "report_md": "reports/014-ornl-instrument-design-engineer-2026-06-12.md",
+        "cover_letter_html": "output/ornl/cover-letter-harsh-desai-ornl-instrument-design-engineer-2026-06-12.html",
+        "cover_letter_pdf": "output/ornl/cover-letter-harsh-desai-ornl-instrument-design-engineer-2026-06-12.pdf"
+      }
+    },
+    "ornl-applications-engineer-advanced-manufacturing-16196": {
+      "updated_at": "2026-07-02T22:54:16.005Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Score 3.8/5. Sensor Application Engineer, Manufacturing Science Division. BS+4yrs (meets 3-of-6 skill gate: CAD, sensor instrumentation, real-time DAQ software). No visa sponsorship; Tier 1 only. Experience years are the stretch.",
+      "resources": {
+        "resume_tex": "output/ornl/cv-harsh-desai-ornl-applications-engineer-advanced-manufacturing-2026-06-12.tex",
+        "resume_pdf": "output/ornl/cv-harsh-desai-ornl-applications-engineer-advanced-manufacturing-2026-06-12.pdf",
+        "report_md": "reports/013-ornl-applications-engineer-advanced-manufacturing-2026-06-12.md",
+        "cover_letter_html": "output/ornl/cover-letter-harsh-desai-ornl-applications-engineer-advanced-manufacturing-2026-06-12.html",
+        "cover_letter_pdf": "output/ornl/cover-letter-harsh-desai-ornl-applications-engineer-advanced-manufacturing-2026-06-12.pdf"
+      }
+    },
+    "ornl-control-system-software-engineer-16433": {
+      "updated_at": "2026-07-02T22:54:18.177Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Score 3.9/5. SNS Controls Integration Group, EPICS/embedded/FPGA. MS+1yr accepted. No visa sponsorship; Tier 1 background check only (no Q clearance); foreign-national LSSO pathway applies. C++ is the main gap.",
+      "resources": {
+        "resume_tex": "output/ornl/cv-harsh-desai-ornl-control-system-software-engineer-2026-06-12.tex",
+        "resume_pdf": "output/ornl/cv-harsh-desai-ornl-control-system-software-engineer-2026-06-12.pdf",
+        "report_md": "reports/012-ornl-control-system-software-engineer-2026-06-12.md",
+        "cover_letter_html": "output/ornl/cover-letter-harsh-desai-ornl-control-system-software-engineer-2026-06-12.html",
+        "cover_letter_pdf": "output/ornl/cover-letter-harsh-desai-ornl-control-system-software-engineer-2026-06-12.pdf"
+      }
+    },
+    "iter-instrumentation-technician-io0214": {
+      "updated_at": "2026-07-02T22:53:23.981Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-06-09T00:33:57.275Z",
+      "application_num": 16,
+      "notes": "Application pack generated 2026-06-08. Deadline 16/06/2026. Shift/on-call role; French driving license required for on-call coverage.",
+      "resources": {
+        "resume_tex": "output/iter/cv-harsh-desai-iter-instrumentation-technician-io0214-2026-06-08.tex",
+        "resume_pdf": "output/iter/cv-harsh-desai-iter-instrumentation-technician-io0214-2026-06-08.pdf",
+        "cover_letter_pdf": "output/iter/cover-letter-harsh-desai-iter-instrumentation-technician-io0214-2026-06-08.pdf"
+      }
+    },
+    "helion-r-and-d-engineer-fusion-generator-operations": {
+      "updated_at": "2026-07-02T22:53:26.296Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-05-18T23:51:58.567Z",
+      "application_num": 13,
+      "notes": "Prioritize for review; ask early about sponsorship/export-control scope before applying. Compensation: $130K-$220K.",
+      "resources": {
+        "resume_pdf": "output/helion/cv-harsh-desai-helion-r-and-d-engineer-fusion-generator-operations-2026-05-17.pdf",
+        "cover_letter_pdf": "output/helion/cover-letter-harsh-desai-helion-r-and-d-engineer-fusion-generator-operations-2026-05-17.pdf",
+        "email_draft": "output/helion/application-email-helion-r-and-d-engineer-fusion-generator-operations-2026-05-17.md"
+      }
+    },
+    "pranos-fusion-instrumentation-engineer": {
+      "updated_at": "2026-07-02T22:53:28.505Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-05-16T21:11:02.418Z",
+      "application_num": 2,
+      "notes": "Electrical Engineer is adjacent only if it includes diagnostics/control instrumentation. Mechanical Engineer is weak-fit and should not be the lead application.",
+      "resources": {
+        "resume_pdf": "output/pranos/cv-harsh-desai-pranos-fusion-instrumentation-engineer-2026-05-06.pdf",
+        "cover_letter_pdf": "output/pranos/cover-letter-harsh-desai-pranos-fusion-instrumentation-engineer-2026-05-06.pdf",
+        "email_draft": "output/pranos/application-email-pranos-fusion-instrumentation-engineer-2026-05-06.md",
+        "report_md": "reports/011-pranos-fusion-2026-05-06.md"
+      }
+    },
+    "commonwealth-fusion-systems-diagnostician": {
+      "updated_at": "2026-07-02T22:53:31.668Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-05-13T17:15:26.079Z",
+      "application_num": 1,
+      "notes": "VISA CAUTION: Export ctrl soft block; CFS has 6 H-1B filings 2024",
+      "resources": {
+        "resume_pdf": "output/cfs/cv-harsh-desai-cfs-diagnostician-2026-04-28.pdf",
+        "report_md": "reports/004-commonwealth-fusion-systems-2026-04-15.md",
+        "cover_letter_pdf": "output/cfs/cover-letter-harsh-desai-cfs-diagnostician-2026-05-12.pdf"
+      }
+    },
+    "helion-nuclear-engineer-diagnostics": {
+      "updated_at": "2026-07-02T22:53:33.880Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-05-17T15:53:19.830Z",
+      "application_num": 3,
+      "notes": "VISA CAUTION: No ITAR in JD but no H-1B record found",
+      "resources": {
+        "resume_pdf": "output/helion/cv-harsh-desai-helion-nuclear-diagnostics-2026-04-28.pdf",
+        "report_md": "reports/005-helion-2026-04-15.md"
+      }
+    },
+    "helion-integration-and-test-engineer": {
+      "updated_at": "2026-07-02T22:53:36.147Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-05-19T02:01:33.785Z",
+      "application_num": 14,
+      "notes": "VISA CAUTION: No ITAR in JD but no H-1B record found",
+      "resources": {
+        "resume_pdf": "output/helion/cv-harsh-desai-helion-integration-test-2026-04-28.pdf",
+        "report_md": "reports/006-helion-2026-04-15.md",
+        "cover_letter_pdf": "output/helion/cover-letter-harsh-desai-helion-integration-and-test-engineer-2026-05-18.pdf"
+      }
+    },
+    "oklo-portfolio-2026-07-01": {
+      "updated_at": "2026-07-02T22:53:44.041Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "60-role Oklo Greenhouse scan; 4 artifact packs generated; ITAR/Part 810 risk flagged",
+      "resources": {
+        "report_md": "reports/030-oklo-portfolio-master-2026-07-01.md",
+        "research_md": "batch/oklo-company-research-2026-07-01.json",
+        "outreach_playbook": "output/oklo/outreach-playbook-2026-07-01.md"
+      }
+    },
+    "oklo-reactor-core-thermal-fluids-engineer": {
+      "updated_at": "2026-07-02T22:02:31.091Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "CFD/HPC overlap; secondary to test roles",
+      "resources": {
+        "report_md": "reports/035-oklo-reactor-core-thermal-fluids-engineer-2026-07-01.md",
+        "portfolio_report_md": "reports/030-oklo-portfolio-master-2026-07-01.md",
+        "outreach_playbook": "output/oklo/outreach-playbook-2026-07-01.md"
+      }
+    },
+    "oklo-thermal-hydraulic-test-engineer": {
+      "updated_at": "2026-07-02T22:53:46.241Z",
+      "status": "to_consider",
+      "applied": true,
+      "applied_at": "2026-07-01T23:33:16.071Z",
+      "application_num": 40,
+      "notes": "Strong fluids+test fit; 5+ yr ask — stretch on tenure",
+      "resources": {
+        "report_md": "reports/032-oklo-thermal-hydraulic-test-engineer-2026-07-01.md",
+        "portfolio_report_md": "reports/030-oklo-portfolio-master-2026-07-01.md",
+        "outreach_playbook": "output/oklo/outreach-playbook-2026-07-01.md"
+      }
+    },
+    "oklo-mechatronics-engineer": {
+      "updated_at": "2026-07-02T22:53:48.470Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Fuel recycling automation; hot-cell stretch; confirm export scope",
+      "resources": {
+        "report_md": "reports/033-oklo-mechatronics-engineer-2026-07-01.md",
+        "portfolio_report_md": "reports/030-oklo-portfolio-master-2026-07-01.md",
+        "outreach_playbook": "output/oklo/outreach-playbook-2026-07-01.md",
+        "resume_tex": "output/oklo/cv-harsh-desai-oklo-mechatronics-engineer-2026-07-01.tex",
+        "resume_pdf": "output/oklo/cv-harsh-desai-oklo-mechatronics-engineer-2026-07-01.pdf",
+        "cover_letter_pdf": "output/oklo/cover-letter-harsh-desai-oklo-mechatronics-engineer-2026-07-01.pdf",
+        "email_draft": "output/oklo/application-email-oklo-mechatronics-engineer-2026-07-01.md"
+      }
+    },
+    "oklo-systems-engineer-requirements-integration": {
+      "updated_at": "2026-07-02T22:53:21.531Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-07-01T23:34:00.724Z",
+      "application_num": 42,
+      "notes": "TestBedz + UOP RTM fit; remote possible",
+      "resources": {
+        "report_md": "reports/036-oklo-systems-engineer-requirements-and-integration-2026-07-01.md",
+        "portfolio_report_md": "reports/030-oklo-portfolio-master-2026-07-01.md",
+        "outreach_playbook": "output/oklo/outreach-playbook-2026-07-01.md",
+        "resume_tex": "output/oklo/cv-harsh-desai-oklo-systems-engineer-requirements-and-integration-2026-07-01.tex",
+        "resume_pdf": "output/oklo/cv-harsh-desai-oklo-systems-engineer-requirements-and-integration-2026-07-01.pdf",
+        "cover_letter_pdf": "output/oklo/cover-letter-harsh-desai-oklo-systems-engineer-requirements-and-integration-2026-07-01.pdf",
+        "email_draft": "output/oklo/application-email-oklo-systems-engineer-requirements-and-integration-2026-07-01.md"
+      }
+    },
+    "oklo-hardware-test-engineer": {
+      "updated_at": "2026-07-02T22:53:52.846Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-07-01T23:34:03.145Z",
+      "application_num": 43,
+      "notes": "Best technical fit — thermo-hydraulic test; 4+ yr ask; onsite Idaho Falls",
+      "resources": {
+        "report_md": "reports/031-oklo-hardware-test-engineer-2026-07-01.md",
+        "portfolio_report_md": "reports/030-oklo-portfolio-master-2026-07-01.md",
+        "outreach_playbook": "output/oklo/outreach-playbook-2026-07-01.md",
+        "resume_tex": "output/oklo/cv-harsh-desai-oklo-hardware-test-engineer-2026-07-01.tex",
+        "resume_pdf": "output/oklo/cv-harsh-desai-oklo-hardware-test-engineer-2026-07-01.pdf",
+        "cover_letter_pdf": "output/oklo/cover-letter-harsh-desai-oklo-hardware-test-engineer-2026-07-01.pdf",
+        "email_draft": "output/oklo/application-email-oklo-hardware-test-engineer-2026-07-01.md"
+      }
+    },
+    "oklo-open-call-for-engineers": {
+      "updated_at": "2026-07-02T22:53:55.042Z",
+      "status": "to_consider",
+      "applied": true,
+      "applied_at": "2026-07-01T23:33:31.518Z",
+      "application_num": 41,
+      "notes": "Primary entry router; verify ITAR/Part 810 + H-1B before deep investment",
+      "resources": {
+        "report_md": "reports/034-oklo-open-call-for-engineers-2026-07-01.md",
+        "portfolio_report_md": "reports/030-oklo-portfolio-master-2026-07-01.md",
+        "outreach_playbook": "output/oklo/outreach-playbook-2026-07-01.md",
+        "resume_tex": "output/oklo/cv-harsh-desai-oklo-open-call-for-engineers-2026-07-01.tex",
+        "resume_pdf": "output/oklo/cv-harsh-desai-oklo-open-call-for-engineers-2026-07-01.pdf",
+        "cover_letter_pdf": "output/oklo/cover-letter-harsh-desai-oklo-open-call-for-engineers-2026-07-01.pdf",
+        "email_draft": "output/oklo/application-email-oklo-open-call-for-engineers-2026-07-01.md"
+      }
+    },
+    "zephyr-fusion-intern-outreach": {
+      "updated_at": "2026-07-02T22:53:55.088Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-07-01T22:56:23.330Z",
+      "application_num": 36,
+      "notes": "YC Fall 2025 in-orbit fusion power startup. Mailto application only. Ask early about H-1B and ITAR scope.",
+      "resources": {
+        "email_draft": "output/zephyr-fusion/application-email-zephyr-fusion-founder-intern-outreach-2026-07-01.md",
+        "report_md": "WEB-TRACKER/research/zephyr-fusion-careers-2026.md",
+        "resume_tex": "output/zephyr-fusion/cv-harsh-desai-zephyr-fusion-founding-electrical-engineer-2026-07-01.tex",
+        "resume_pdf": "output/zephyr-fusion/cv-harsh-desai-zephyr-fusion-founding-electrical-engineer-2026-07-01.pdf",
+        "cover_letter_pdf": "output/zephyr-fusion/cover-letter-harsh-desai-zephyr-fusion-founding-electrical-engineer-2026-07-01.pdf"
+      }
+    },
+    "southern-california-edison-energy-marketing-trading-financial-analyst-associate-specialist": {
+      "updated_at": "2026-07-02T22:53:57.566Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-06-30T21:50:54.613Z",
+      "application_num": 35,
+      "notes": "Hybrid role; CA residency required. Pay range $79,200–$118,700. Job ID 7393.",
+      "resources": {
+        "cover_letter_html": "output/southern-california-edison/cover-letter-harsh-desai-southern-california-edison-energy-marketing-trading-financial-analyst-associate-specialist-2026-06-30.html",
+        "cover_letter_pdf": "output/southern-california-edison/cover-letter-harsh-desai-southern-california-edison-energy-marketing-trading-financial-analyst-associate-specialist-2026-06-30.pdf"
+      }
+    },
+    "skyroot-aerospace-hardware-design-engineer-avionics": {
+      "updated_at": "2026-07-02T22:54:02.681Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-07-01T21:06:44.534Z",
+      "application_num": 34,
+      "notes": "",
+      "resources": {
+        "resume_tex": "output/skyroot-aerospace/cv-harsh-desai-skyroot-aerospace-hardware-design-engineer-avionics-2026-06-28.tex",
+        "resume_pdf": "output/skyroot-aerospace/cv-harsh-desai-skyroot-aerospace-hardware-design-engineer-avionics-2026-06-28.pdf",
+        "cover_letter_html": "output/skyroot-aerospace/cover-letter-harsh-desai-skyroot-aerospace-hardware-design-engineer-avionics-2026-06-28.html",
+        "cover_letter_pdf": "output/skyroot-aerospace/cover-letter-harsh-desai-skyroot-aerospace-hardware-design-engineer-avionics-2026-06-28.pdf",
+        "email_draft": "output/skyroot-aerospace/application-email-skyroot-aerospace-hardware-design-engineer-avionics-2026-06-28.md",
+        "report_md": "reports/028-skyroot-aerospace-hardware-design-engineer-avionics-2026-06-28.md"
+      }
+    },
+    "skyroot-aerospace-electrical-integration-test-engineer": {
+      "updated_at": "2026-07-02T22:54:07.204Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "",
+      "resources": {
+        "resume_tex": "output/skyroot-aerospace/cv-harsh-desai-skyroot-aerospace-electrical-integration-test-engineer-2026-06-28.tex",
+        "resume_pdf": "output/skyroot-aerospace/cv-harsh-desai-skyroot-aerospace-electrical-integration-test-engineer-2026-06-28.pdf",
+        "cover_letter_html": "output/skyroot-aerospace/cover-letter-harsh-desai-skyroot-aerospace-electrical-integration-test-engineer-2026-06-28.html",
+        "cover_letter_pdf": "output/skyroot-aerospace/cover-letter-harsh-desai-skyroot-aerospace-electrical-integration-test-engineer-2026-06-28.pdf",
+        "email_draft": "output/skyroot-aerospace/application-email-skyroot-aerospace-electrical-integration-test-engineer-2026-06-28.md",
+        "report_md": "reports/027-skyroot-aerospace-electrical-integration-test-engineer-2026-06-28.md"
+      }
+    },
+    "skyroot-aerospace-hardware-quality-engineer": {
+      "updated_at": "2026-07-02T22:54:11.931Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-07-01T23:27:59.039Z",
+      "application_num": 32,
+      "notes": "",
+      "resources": {
+        "resume_tex": "output/skyroot-aerospace/cv-harsh-desai-skyroot-aerospace-hardware-quality-engineer-2026-06-28.tex",
+        "resume_pdf": "output/skyroot-aerospace/cv-harsh-desai-skyroot-aerospace-hardware-quality-engineer-2026-06-28.pdf",
+        "cover_letter_html": "output/skyroot-aerospace/cover-letter-harsh-desai-skyroot-aerospace-hardware-quality-engineer-2026-06-28.html",
+        "cover_letter_pdf": "output/skyroot-aerospace/cover-letter-harsh-desai-skyroot-aerospace-hardware-quality-engineer-2026-06-28.pdf",
+        "email_draft": "output/skyroot-aerospace/application-email-skyroot-aerospace-hardware-quality-engineer-2026-06-28.md",
+        "report_md": "reports/026-skyroot-aerospace-hardware-quality-engineer-2026-06-28.md"
+      }
+    },
+    "skyroot-aerospace-mechanical-cad-engineer": {
+      "updated_at": "2026-07-02T22:54:16.469Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-06-29T04:12:35.070Z",
+      "application_num": 31,
+      "notes": "",
+      "resources": {
+        "resume_tex": "output/skyroot-aerospace/cv-harsh-desai-skyroot-aerospace-mechanical-cad-engineer-2026-06-28.tex",
+        "resume_pdf": "output/skyroot-aerospace/cv-harsh-desai-skyroot-aerospace-mechanical-cad-engineer-2026-06-28.pdf",
+        "cover_letter_html": "output/skyroot-aerospace/cover-letter-harsh-desai-skyroot-aerospace-mechanical-cad-engineer-2026-06-28.html",
+        "cover_letter_pdf": "output/skyroot-aerospace/cover-letter-harsh-desai-skyroot-aerospace-mechanical-cad-engineer-2026-06-28.pdf",
+        "email_draft": "output/skyroot-aerospace/application-email-skyroot-aerospace-mechanical-cad-engineer-2026-06-28.md",
+        "report_md": "reports/025-skyroot-aerospace-mechanical-cad-engineer-2026-06-28.md"
+      }
+    },
+    "kyoto-fusioneering-project-manager-karlsruhe": {
+      "updated_at": "2026-07-02T22:54:16.779Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Fresh verification 2026-06-28. Native German is a major blocker.",
+      "resources": {
+        "report_md": "WEB-TRACKER/research/fusion-firstlight-generalfusion-kyoto-2026.md"
+      }
+    },
+    "kyoto-fusioneering-engineer-fuel-cycle-karlsruhe": {
+      "updated_at": "2026-07-02T22:54:17.026Z",
+      "status": "to_consider",
+      "applied": true,
+      "applied_at": "2026-07-01T23:24:32.460Z",
+      "application_num": 37,
+      "notes": "Fresh verification 2026-06-28. Current role replaces stale I&C/Cryo postings. Cover letter not explicitly required in extract.",
+      "resources": {
+        "resume_tex": "output/kyoto-fusioneering/cv-harsh-desai-kyoto-fusioneering-engineer-fuel-cycle-2026-06-28.tex",
+        "resume_pdf": "output/kyoto-fusioneering/cv-harsh-desai-kyoto-fusioneering-engineer-fuel-cycle-2026-06-28.pdf",
+        "cover_letter_html": "output/kyoto-fusioneering/cover-letter-harsh-desai-kyoto-fusioneering-engineer-fuel-cycle-2026-06-28.html",
+        "cover_letter_pdf": "output/kyoto-fusioneering/cover-letter-harsh-desai-kyoto-fusioneering-engineer-fuel-cycle-2026-06-28.pdf",
+        "email_draft": "output/kyoto-fusioneering/application-email-kyoto-fusioneering-engineer-fuel-cycle-2026-06-28.md",
+        "report_md": "reports/025-kyoto-fusioneering-engineer-fuel-cycle-2026-06-28.md"
+      }
+    },
+    "tokamak-energy-mechanical-design-engineer": {
+      "updated_at": "2026-07-02T22:53:50.672Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-06-28T18:34:58.872Z",
+      "application_num": 29,
+      "notes": "Hybrid 60% onsite. Speculative outreach email also at application-email-tokamak-energy-speculative-outreach-2026-06-28.md",
+      "resources": {
+        "cover_letter_pdf": "output/tokamak-energy/cover-letter-harsh-desai-tokamak-energy-mechanical-design-engineer-2026-06-28.pdf",
+        "email_draft": "output/tokamak-energy/application-email-tokamak-energy-mechanical-design-engineer-2026-06-28.md"
+      }
+    }
+  }
+}

@@ -114,6 +114,18 @@ try {
   } else {
     fail(`Active job page misclassified as ${activeWorkdayPage.result}`);
   }
+
+  const { checkUrl } = await import(pathToFileURL(join(ROOT, 'WEB-TRACKER/jobs-to-consider-liveness.mjs')).href);
+  const transientNavigationFailure = await checkUrl({
+    async goto() {
+      throw new Error('page.goto: net::ERR_NETWORK_IO_SUSPENDED at https://example.com/job/123');
+    },
+  }, 'https://example.com/job/123');
+  if (transientNavigationFailure.result === 'uncertain') {
+    pass('Navigation errors do not archive Jobs to Consider entries');
+  } else {
+    fail(`Navigation error misclassified as ${transientNavigationFailure.result}`);
+  }
 } catch (e) {
   fail(`Liveness classification tests crashed: ${e.message}`);
 }

@@ -13,7 +13,7 @@ The portfolio that goes with this system is also open source: [cv-santiago](http
 There are two layers. Read `DATA_CONTRACT.md` for the full list.
 
 **User Layer (NEVER auto-updated, personalization goes HERE):**
-- `cv.md`, `config/profile.yml`, `modes/_profile.md`, `article-digest.md`, `portals.yml`
+- `cv.md`, `config/profile.yml`, `modes/_profile.md`, `article-digest.md`, `portals.yml`, `harsh/*`
 - `data/*`, `reports/*`, `output/*`, `interview-prep/*`
 
 **System Layer (auto-updatable, DON'T put user data here):**
@@ -54,10 +54,11 @@ AI-powered, CLI-agnostic job search automation: pipeline tracking, offer evaluat
 | `data/pipeline.md` | Inbox of pending URLs |
 | `data/scan-history.tsv` | Scanner dedup history |
 | `portals.yml` | Query and company config |
-| `templates/cv-template.html` | HTML template for CVs |
-| `templates/cv-template.tex` | LaTeX/Overleaf template for CVs |
-| `generate-pdf.mjs` | Playwright: HTML to PDF |
-| `generate-latex.mjs` | LaTeX CV validator + pdflatex compiler |
+| `harsh/Harsh_Desai_Resume_OnePage_AlignedFullSkills_A4.tex` | Optional personal LaTeX resume style reference, if present |
+| `templates/cv-template.html` | Deprecated/fallback HTML resume template; still useful for legacy CVs and cover-letter rendering patterns |
+| `templates/cv-template.tex` | Generic LaTeX/Overleaf template reference |
+| `generate-pdf.mjs` | Playwright: HTML to PDF for cover letters and legacy HTML PDFs |
+| `generate-latex.mjs` | LaTeX resume compiler (`xelatex` default for fontspec-based resumes) |
 | `article-digest.md` | Compact proof points from portfolio (optional) |
 | `interview-prep/story-bank.md` | Accumulated STAR+R stories across evaluations |
 | `interview-prep/{company}-{role}.md` | Company-specific interview intel reports |
@@ -162,7 +163,7 @@ This system is designed to be customized by YOU (AI Agent). When the user asks y
 - "Translate the modes to English" → edit all files in `modes/`
 - "Add these companies to my portals" → edit `portals.yml`
 - "Update my profile" → edit `config/profile.yml`
-- "Change the CV template design" → edit `templates/cv-template.html`
+- "Change the CV template design" → edit `modes/pdf.md` for generation rules, use/update a personal LaTeX reference if the user wants one, or edit `templates/cv-template.tex` for the generic fallback. Edit `templates/cv-template.html` only for legacy HTML resumes or cover-letter styling
 - "Adjust the scoring weights" → edit `modes/_profile.md` for user-specific weighting, or edit `modes/_shared.md` and `batch/batch-prompt.md` only when changing the shared system defaults for everyone
 
 ### Language Modes
@@ -279,6 +280,7 @@ When spawning headless workers for batch processing, use the appropriate command
 - Report numbering: sequential 3-digit zero-padded, max existing + 1
 - **RULE: After each batch of evaluations, run `node merge-tracker.mjs`** to merge tracker additions and avoid duplications.
 - **RULE: NEVER create new entries in applications.md if company+role already exists.** Update the existing entry.
+- **RULE: Jobs to Consider tracker attachment is mandatory.** Whenever you create any application resource (resume, cover letter, application email, or other `job.resources` artifact), immediately link it on the Jobs to Consider tracker in the same turn. Use `upsertConsiderJob()` / `patchConsiderJob()` from `WEB-TRACKER/lib/jobs-to-consider-store.mjs`, then `syncConsiderJobsToDashboard()`. Create the job entry if missing. Never leave files only in `output/` without updating `data/jobs-to-consider.json`. See `modes/application-artifacts.md`.
 
 ### TSV Format for Tracker Additions
 

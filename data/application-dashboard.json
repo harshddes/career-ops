@@ -7,7 +7,7 @@
     },
     "2": {
       "posting_url": "https://www.pranosfusion.energy/careers/instrumentation-engineer",
-      "way_to_apply": "output/application-email-pranos-fusion-instrumentation-engineer-2026-05-06.md"
+      "way_to_apply": "output/pranos/application-email-pranos-fusion-instrumentation-engineer-2026-05-06.md"
     },
     "3": {
       "posting_url": "https://jobs.ashbyhq.com/helion/92b6a700-14e7-471f-b53d-c830045e40ea",
@@ -15,14 +15,137 @@
     },
     "5": {
       "division_field": ""
+    },
+    "13": {
+      "posting_url": "https://jobs.ashbyhq.com/helion/bcf1cf97-2e73-4e8c-b55f-a26b685ea3f2",
+      "way_to_apply": "output/helion/application-email-helion-r-and-d-engineer-fusion-generator-operations-2026-05-17.md"
+    },
+    "14": {
+      "posting_url": "https://jobs.ashbyhq.com/helion/bfb14f68-c80a-4c07-8552-4c9bf5bed413",
+      "way_to_apply": ""
+    },
+    "16": {
+      "posting_url": "https://iter.jobs.hr.cloud.sap/job/St-Paul-Lez-Durance-Instrumentation-Technician-IO0214-Bouc-13067/1390757233/",
+      "submitted_date": "2026-06-09",
+      "way_to_apply": ""
+    },
+    "17": {
+      "posting_url": "https://www.tesla.com/careers/search/job/257547",
+      "submitted_date": "2026-06-11",
+      "way_to_apply": ""
+    },
+    "18": {
+      "posting_url": "https://www.tesla.com/careers/search/?query=test%20engineer%20power%20electronics&site=US",
+      "submitted_date": "2026-06-11",
+      "way_to_apply": ""
+    },
+    "19": {
+      "posting_url": "https://www.tesla.com/careers/search/job/261361",
+      "submitted_date": "2026-06-11",
+      "way_to_apply": ""
+    },
+    "24": {
+      "posting_url": "https://job-boards.eu.greenhouse.io/isaraerospace/jobs/4843468101",
+      "submitted_date": "2026-06-24",
+      "way_to_apply": "output/isar-aerospace/application-email-isar-aerospace-ait-operations-engineer-launch-vehicle-2026-06-24.md"
+    },
+    "25": {
+      "posting_url": "https://job-boards.eu.greenhouse.io/isaraerospace/jobs/4354664101",
+      "submitted_date": "2026-06-24",
+      "way_to_apply": "output/isar-aerospace/application-email-isar-aerospace-propulsion-test-engineer-2026-06-24.md"
+    },
+    "26": {
+      "posting_url": "https://www.linkedin.com/jobs/view/4429402829",
+      "submitted_date": "2026-06-24",
+      "way_to_apply": "output/bosch-usa/application-message-bosch-associate-calibration-engineer-2026-06-24.md"
+    },
+    "27": {
+      "posting_url": "https://job-boards.eu.greenhouse.io/isaraerospace/jobs/4858365101",
+      "submitted_date": "2026-06-25",
+      "way_to_apply": ""
+    },
+    "28": {
+      "posting_url": "https://job-boards.eu.greenhouse.io/isaraerospace/jobs/4875375101",
+      "submitted_date": "2026-06-27",
+      "way_to_apply": ""
+    },
+    "29": {
+      "posting_url": "https://apply.workable.com/tokamak-energy/j/AE5AA47B0E/apply/",
+      "submitted_date": "2026-06-28",
+      "way_to_apply": "output/tokamak-energy/application-email-tokamak-energy-mechanical-design-engineer-2026-06-28.md"
+    },
+    "30": {
+      "division_field": "",
+      "date_due": "2026-06-28",
+      "posting_url": "https://apply.workable.com/tokamak-energy/j/555EB238BA/apply/?success",
+      "submitted_date": "2026-06-28",
+      "followup_date": "",
+      "no_response_followup_date": ""
+    },
+    "31": {
+      "posting_url": "https://skyroot.zohorecruit.in/jobs/Careers/64470000005310535/Mechanical-CAD-Engineer?source=CareerSite",
+      "submitted_date": "2026-06-29",
+      "way_to_apply": "output/skyroot-aerospace/application-email-skyroot-aerospace-mechanical-cad-engineer-2026-06-28.md"
+    },
+    "32": {
+      "posting_url": "https://skyroot.zohorecruit.in/jobs/Careers/64470000004688330/Hardware-Quality-Engineer?source=CareerSite",
+      "submitted_date": "2026-07-01",
+      "way_to_apply": "output/skyroot-aerospace/application-email-skyroot-aerospace-hardware-quality-engineer-2026-06-28.md"
+    },
+    "33": {
+      "posting_url": "https://skyroot.zohorecruit.in/jobs/Careers/64470000000644090/Electrical-Integration-Test-Engineer?source=CareerSite",
+      "submitted_date": "",
+      "way_to_apply": "output/skyroot-aerospace/application-email-skyroot-aerospace-electrical-integration-test-engineer-2026-06-28.md"
+    },
+    "34": {
+      "posting_url": "https://skyroot.zohorecruit.in/jobs/Careers/64470000000388022/Hardware-Design-Engineer-AVIONICS-?source=CareerSite",
+      "submitted_date": "2026-07-01",
+      "way_to_apply": "output/skyroot-aerospace/application-email-skyroot-aerospace-hardware-design-engineer-avionics-2026-06-28.md"
+    },
+    "35": {
+      "posting_url": "https://www.edisoncareers.com/job/23543288/energy-marketing-trading-financial-analyst-associate-specialist/?source=Socaledison%20Careers%20Site",
+      "submitted_date": "2026-06-30",
+      "way_to_apply": ""
+    },
+    "36": {
+      "posting_url": "mailto:founders@zephyrfusion.com?subject=Internship%20inquiry",
+      "submitted_date": "2026-07-01",
+      "way_to_apply": "output/zephyr-fusion/application-email-zephyr-fusion-founder-intern-outreach-2026-07-01.md"
+    },
+    "37": {
+      "posting_url": "https://hrmos.co/pages/kfandsle/jobs/2230986973781717052",
+      "submitted_date": "2026-07-01",
+      "way_to_apply": "output/kyoto-fusioneering/application-email-kyoto-fusioneering-engineer-fuel-cycle-2026-06-28.md"
+    },
+    "40": {
+      "posting_url": "https://job-boards.greenhouse.io/oklo/jobs/5710536004",
+      "submitted_date": "2026-07-01",
+      "way_to_apply": ""
+    },
+    "41": {
+      "posting_url": "https://job-boards.greenhouse.io/oklo/jobs/4714198004",
+      "submitted_date": "2026-07-01",
+      "way_to_apply": "output/oklo/application-email-oklo-open-call-for-engineers-2026-07-01.md"
+    },
+    "42": {
+      "posting_url": "https://job-boards.greenhouse.io/oklo/jobs/5649054004",
+      "submitted_date": "2026-07-01",
+      "way_to_apply": "output/oklo/application-email-oklo-systems-engineer-requirements-and-integration-2026-07-01.md"
+    },
+    "43": {
+      "posting_url": "https://job-boards.greenhouse.io/oklo/jobs/5544852004",
+      "submitted_date": "2026-07-01",
+      "way_to_apply": "output/oklo/application-email-oklo-hardware-test-engineer-2026-07-01.md"
     }
   },
   "schedule": {
-    "slots": {},
+    "slots": {
+      "am_monday": ""
+    },
     "weeks": {
       "1": {
-        "monday": false,
-        "wednesday": true
+        "monday": true,
+        "wednesday": false
       }
     }
   }

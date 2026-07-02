@@ -21,12 +21,16 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { AgentTaskQueue } from './lib/agent-task-queue.mjs';
+import { slugify } from './lib/jobs-to-consider-store.mjs';
 
 const BASE = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = join(BASE, 'data');
 const EVENT_QUEUE_PATH = join(DATA_DIR, 'event-queue.ndjson');
 const BUDGET_PATH = join(DATA_DIR, 'token-budget.json');
 const APPROVAL_QUEUE_PATH = join(DATA_DIR, 'approval-queue.json');
+const AGENT_TASKS_PATH = join(DATA_DIR, 'agent-tasks.ndjson');
+const FUSION_JOBS_PATH = join(DATA_DIR, 'fusion-jobs.json');
 
 mkdirSync(DATA_DIR, { recursive: true });
 
@@ -137,6 +141,82 @@ function saveApprovalQueue(queue) {
   writeFileSync(APPROVAL_QUEUE_PATH, JSON.stringify(queue, null, 2));
 }
 
+function loadFusionJobs() {
+  if (!existsSync(FUSION_JOBS_PATH)) return [];
+  const parsed = JSON.parse(readFileSync(FUSION_JOBS_PATH, 'utf-8'));
+  return Array.isArray(parsed.jobs) ? parsed.jobs : [];
+}
+
+function normalizeKey(value) {
+  return String(value || '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function titlesMatch(a, b) {
+  const left = normalizeKey(a);
+  const right = normalizeKey(b);
+  return Boolean(left && right && (left === right || left.includes(right) || right.includes(left)));
+}
+
+function approvalKey(event) {
+  const titleKey = Array.isArray(event.titles) ? event.titles.map(normalizeKey).join(',') : '';
+  return [event.type, event.source_id, titleKey || normalizeKey(event.name)].join('|');
+}
+
+function enqueueApproval(queue, approvalKeys, event, score, route, note = null) {
+  const key = approvalKey(event);
+  if (approvalKeys.has(key)) return false;
+  approvalKeys.add(key);
+  queue.push({ ...event, score, route, note, queued_at: new Date().toISOString() });
+  return true;
+}
+
+function taskAlreadyExists(tasks, job) {
+  return tasks.some(task => {
+    if (task.url && job.url && task.url === job.url) return true;
+    return normalizeKey(task.company) === normalizeKey(job.company)
+      && titlesMatch(task.title, job.title);
+  });
+}
+
+function workAuthForJob(job) {
+  return {
+    h1b_sponsorship: job.h1b_sponsorship || job.h1b_status || null,
+    green_card_sponsorship: job.green_card_sponsorship || null,
+    region: job.region || job.country || null,
+    export_control_risk: job.export_control_risk || null,
+  };
+}
+
+function queueAgentTasksForEvent(event, score, taskQueue, knownTasks, fusionJobs) {
+  if (event.type !== 'new_jobs' || !Array.isArray(event.titles) || event.titles.length === 0) return [];
+
+  const matches = fusionJobs.filter(job =>
+    job.source_id === event.source_id &&
+    event.titles.some(title => titlesMatch(title, job.title))
+  );
+  const created = [];
+
+  for (const job of matches) {
+    if (taskAlreadyExists([...knownTasks, ...created], job)) continue;
+    const task = taskQueue.create({
+      type: 'evaluation',
+      company: job.company,
+      title: job.title,
+      url: job.url,
+      source_id: slugify(`${job.company}-${job.title}`),
+      work_auth: workAuthForJob(job),
+      notes: `Queued by deep-research-gate from ${event.type} score ${score.toFixed(2)}.`,
+    });
+    created.push(task);
+  }
+
+  return created;
+}
+
 // ── Load source importance from registry ────────────────────────────
 
 function loadSourceImportance() {
@@ -179,10 +259,15 @@ if (events.length === 0) {
 
 const importanceMap = loadSourceImportance();
 const approvalQueue = loadApprovalQueue();
+const approvalKeys = new Set(approvalQueue.map(approvalKey));
+const taskQueue = new AgentTaskQueue(AGENT_TASKS_PATH);
+const fusionJobs = loadFusionJobs();
+const knownTasks = taskQueue.list();
 
-let autoCount = 0;
+let agentTaskCount = 0;
 let approvalCount = 0;
 let archiveCount = 0;
+let duplicateCount = 0;
 
 console.log(`\n[deep-research-gate] Processing ${events.length} events...\n`);
 
@@ -193,13 +278,36 @@ for (const event of events) {
   const route = routeEvent(score, budgetOk);
 
   if (route === 'auto_deep_research') {
-    chargeDeepResearch(budget);
-    autoCount++;
-    console.log(`  AUTO  (${score.toFixed(2)}) ${event.type}: ${event.source_id} — ${event.titles?.join(', ') || event.name || ''}`);
+    const tasks = queueAgentTasksForEvent(event, score, taskQueue, knownTasks, fusionJobs);
+    if (tasks.length > 0) {
+      knownTasks.push(...tasks);
+      agentTaskCount += tasks.length;
+      console.log(`  AGENT (${score.toFixed(2)}) ${event.type}: ${event.source_id} — ${tasks.length} task(s) queued`);
+    } else if (event.type === 'new_jobs') {
+      duplicateCount++;
+      console.log(`  DUP   (${score.toFixed(2)}) ${event.type}: ${event.source_id} — already queued/evaluated`);
+    } else if (enqueueApproval(
+      approvalQueue,
+      approvalKeys,
+      event,
+      score,
+      route,
+      'High-score event requires an agent; queued for review instead of pretending auto research ran.'
+    )) {
+      approvalCount++;
+      console.log(`  QUEUE (${score.toFixed(2)}) ${event.type}: ${event.source_id}`);
+    } else {
+      duplicateCount++;
+      console.log(`  DUP   (${score.toFixed(2)}) ${event.type}: ${event.source_id}`);
+    }
   } else if (route === 'needs_user_approval') {
-    approvalQueue.push({ ...event, score, route, queued_at: new Date().toISOString() });
-    approvalCount++;
-    console.log(`  QUEUE (${score.toFixed(2)}) ${event.type}: ${event.source_id}`);
+    if (enqueueApproval(approvalQueue, approvalKeys, event, score, route)) {
+      approvalCount++;
+      console.log(`  QUEUE (${score.toFixed(2)}) ${event.type}: ${event.source_id}`);
+    } else {
+      duplicateCount++;
+      console.log(`  DUP   (${score.toFixed(2)}) ${event.type}: ${event.source_id}`);
+    }
   } else {
     archiveCount++;
     console.log(`  SKIP  (${score.toFixed(2)}) ${event.type}: ${event.source_id}`);
@@ -210,4 +318,4 @@ saveBudget(budget);
 saveApprovalQueue(approvalQueue);
 clearEvents();
 
-console.log(`\n[deep-research-gate] auto: ${autoCount}, queued: ${approvalCount}, archived: ${archiveCount}\n`);
+console.log(`\n[deep-research-gate] agent_tasks: ${agentTaskCount}, approvals: ${approvalCount}, archived: ${archiveCount}, duplicates: ${duplicateCount}\n`);

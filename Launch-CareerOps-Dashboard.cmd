@@ -1,10 +1,11 @@
 @echo off
-setlocal EnableExtensions
+setlocal EnableExtensions EnableDelayedExpansion
 
 set "REPO_ROOT=%~dp0"
 set "TRACKER_DIR=%REPO_ROOT%WEB-TRACKER"
 set "DASHBOARD_URL=http://127.0.0.1:3737/dashboard/fusion-pivot-dashboard.html"
-set "DASHBOARD_API=http://127.0.0.1:3737/api/actions"
+set "DASHBOARD_HEALTH=http://127.0.0.1:3737/healthz"
+set "RUNTIME_DIR=%TRACKER_DIR%\runtime"
 set "MODE=%~1"
 
 if "%MODE%"=="" set "MODE=assisted"
@@ -59,31 +60,47 @@ if not exist "node_modules\express\package.json" (
 )
 
 echo [career-ops] Starting dashboard in %MODE% mode...
-if /I "%MODE%"=="assisted" call npm run start:assisted
-if /I "%MODE%"=="autopilot" call npm run start:autopilot
-if /I "%MODE%"=="manual" call npm run start:manual
+if not exist "%RUNTIME_DIR%" mkdir "%RUNTIME_DIR%"
 
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$ErrorActionPreference='Stop'; $out='%RUNTIME_DIR%\dashboard.out.log'; $err='%RUNTIME_DIR%\dashboard.err.log'; $pidFile='%RUNTIME_DIR%\dashboard.pid'; $p = Start-Process -FilePath 'node' -ArgumentList @('run.mjs','--mode','%MODE%','--no-open') -WorkingDirectory '%TRACKER_DIR%' -WindowStyle Hidden -RedirectStandardOutput $out -RedirectStandardError $err -PassThru; Set-Content -Path $pidFile -Value $p.Id"
 if errorlevel 1 (
-  call :is_dashboard_running
-  if "%DASHBOARD_RUNNING%"=="1" (
-    echo [career-ops] Dashboard is already active on port 3737. Opening browser...
-    start "" "%DASHBOARD_URL%"
-    exit /b 0
-  )
   echo [career-ops] Dashboard failed to start.
   call :print_port_owner
   goto fail
 )
 
+call :wait_dashboard_running
+if "%DASHBOARD_RUNNING%"=="1" (
+  echo [career-ops] Dashboard is ready. Opening browser...
+  start "" "%DASHBOARD_URL%"
+  exit /b 0
+)
+
+echo [career-ops] Dashboard process started, but health check did not pass in time.
+echo [career-ops] Logs:
+echo [career-ops]   %RUNTIME_DIR%\dashboard.out.log
+echo [career-ops]   %RUNTIME_DIR%\dashboard.err.log
+call :print_port_owner
+goto fail
+
 exit /b 0
 
 :is_dashboard_running
 set "DASHBOARD_RUNNING=0"
-powershell -NoProfile -ExecutionPolicy Bypass -Command "try { $r = Invoke-WebRequest -Uri '%DASHBOARD_API%' -UseBasicParsing -TimeoutSec 2; if ($r.StatusCode -eq 200) { exit 0 } else { exit 1 } } catch { exit 1 }" >nul 2>nul
+powershell -NoProfile -ExecutionPolicy Bypass -Command "try { $r = Invoke-WebRequest -Uri '%DASHBOARD_HEALTH%' -UseBasicParsing -TimeoutSec 2; if ($r.StatusCode -eq 200) { exit 0 } else { exit 1 } } catch { exit 1 }" >nul 2>nul
 if errorlevel 1 (
   set "DASHBOARD_RUNNING=0"
 ) else (
   set "DASHBOARD_RUNNING=1"
+)
+exit /b 0
+
+:wait_dashboard_running
+set "DASHBOARD_RUNNING=0"
+for /L %%I in (1,1,30) do (
+  call :is_dashboard_running
+  if "!DASHBOARD_RUNNING!"=="1" exit /b 0
+  timeout /t 1 /nobreak >nul
 )
 exit /b 0
 

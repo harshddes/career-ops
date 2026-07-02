@@ -1,6 +1,7 @@
 import { existsSync, mkdirSync, readFileSync, renameSync, unlinkSync, writeFileSync } from 'fs';
 import { basename, dirname, join } from 'path';
 import { fileURLToPath } from 'url';
+import { applyJobsUserStateToStore, patchJobsUserState, removeJobsUserState } from './jobs-user-state.mjs';
 
 const LIB_DIR = dirname(fileURLToPath(import.meta.url));
 export const WEB_TRACKER_DIR = join(LIB_DIR, '..');
@@ -62,6 +63,24 @@ function normalizeResources(resources = {}) {
   return out;
 }
 
+function normalizeStringArray(value = []) {
+  if (!Array.isArray(value)) return [];
+  return value.map(cleanText).filter(Boolean);
+}
+
+function normalizeJobScore(value) {
+  const clean = cleanText(value);
+  if (!clean) return '';
+  if (/^\d+(\.\d+)?\/5$/i.test(clean)) {
+    return `${Number(clean.replace(/\/5$/i, '')).toFixed(1)}/5`;
+  }
+  if (/^\d+(\.\d+)?$/.test(clean)) {
+    const num = Number(clean);
+    if (num >= 0 && num <= 5) return `${num.toFixed(1)}/5`;
+  }
+  return clean;
+}
+
 export function normalizeConsiderJob(raw = {}) {
   const company = cleanText(raw.company);
   const title = cleanText(raw.title || raw.role);
@@ -79,15 +98,26 @@ export function normalizeConsiderJob(raw = {}) {
     source: cleanText(raw.source || 'manual_research'),
     status,
     applied: Boolean(raw.applied || status === 'applied'),
-    score: cleanText(raw.score),
+    score: normalizeJobScore(raw.score),
     fit_summary: cleanText(raw.fit_summary),
     recommendation: cleanText(raw.recommendation),
     notes: cleanText(raw.notes),
     first_seen: cleanText(raw.first_seen || raw.created_at || now),
     last_updated: cleanText(raw.last_updated || now),
     last_checked: cleanText(raw.last_checked),
+    region: cleanText(raw.region),
+    h1b_status: cleanText(raw.h1b_status),
+    h1b_sponsorship: cleanText(raw.h1b_sponsorship),
+    green_card_sponsorship: cleanText(raw.green_card_sponsorship),
+    export_control: cleanText(raw.export_control),
+    export_control_risk: cleanText(raw.export_control_risk),
+    opt_story_strength: cleanText(raw.opt_story_strength),
+    adjacent_fields: normalizeStringArray(raw.adjacent_fields),
     liveness: cleanText(raw.liveness || 'active'),
     liveness_reason: cleanText(raw.liveness_reason),
+    // Exempts bot-walled career sites (e.g. Tesla/Akamai) from automated liveness
+    // sweeps, which misclassify blocked pages as expired postings.
+    liveness_exempt: Boolean(raw.liveness_exempt),
     application_num: raw.application_num === undefined || raw.application_num === null
       ? null
       : Number(raw.application_num),
@@ -100,12 +130,12 @@ export function readConsiderJobs(filePath = CANONICAL_JOBS_FILE) {
   if (!existsSync(filePath)) return emptyStore();
   const parsed = JSON.parse(readFileSync(filePath, 'utf-8'));
   const jobs = Array.isArray(parsed.jobs) ? parsed.jobs.map(normalizeConsiderJob) : [];
-  return {
+  return applyJobsUserStateToStore({
     ...emptyStore(),
     ...parsed,
     version: 1,
     jobs,
-  };
+  });
 }
 
 export function writeConsiderJobs(store, filePath = CANONICAL_JOBS_FILE) {
@@ -118,8 +148,56 @@ export function writeConsiderJobs(store, filePath = CANONICAL_JOBS_FILE) {
   return next;
 }
 
-export function findConsiderJob(id, store = readConsiderJobs()) {
-  return store.jobs.find(job => job.id === id || job.url === id) || null;
+function normalizeLookup(input = {}) {
+  const raw = input && typeof input === 'object' && !Array.isArray(input)
+    ? input
+    : { id: input };
+  const id = cleanText(raw.id || raw.lookup || raw.key);
+  const url = cleanText(raw.url);
+  const company = cleanText(raw.company);
+  const title = cleanText(raw.title || raw.role);
+  const slugs = new Set([
+    id,
+    company && title ? slugify(`${company}-${title}`) : '',
+  ].filter(Boolean));
+  return {
+    id,
+    url,
+    company,
+    title,
+    companyKey: company.toLowerCase(),
+    titleKey: title.toLowerCase(),
+    slugs,
+  };
+}
+
+function jobMatchesLookup(job, lookup) {
+  if (!job || !lookup) return false;
+  if (lookup.id && (job.id === lookup.id || job.url === lookup.id)) return true;
+  if (lookup.url && job.url === lookup.url) return true;
+  if (lookup.slugs.has(job.id)) return true;
+  if (
+    lookup.companyKey
+    && lookup.titleKey
+    && cleanText(job.company).toLowerCase() === lookup.companyKey
+    && cleanText(job.title).toLowerCase() === lookup.titleKey
+  ) {
+    return true;
+  }
+  if (lookup.companyKey && lookup.titleKey && lookup.slugs.has(slugify(`${job.company}-${job.title}`))) {
+    return true;
+  }
+  return false;
+}
+
+export function findConsiderJobIndex(input, store = readConsiderJobs()) {
+  const lookup = normalizeLookup(input);
+  return store.jobs.findIndex(job => jobMatchesLookup(job, lookup));
+}
+
+export function findConsiderJob(input, store = readConsiderJobs()) {
+  const index = findConsiderJobIndex(input, store);
+  return index >= 0 ? store.jobs[index] : null;
 }
 
 export function upsertConsiderJob(raw, filePath = CANONICAL_JOBS_FILE) {
@@ -131,11 +209,17 @@ export function upsertConsiderJob(raw, filePath = CANONICAL_JOBS_FILE) {
 
   const index = store.jobs.findIndex(job => job.id === incoming.id || (incoming.url && job.url === incoming.url));
   if (index >= 0) {
+    const existing = store.jobs[index];
     store.jobs[index] = normalizeConsiderJob({
-      ...store.jobs[index],
+      ...existing,
       ...incoming,
-      resources: { ...(store.jobs[index].resources || {}), ...(incoming.resources || {}) },
-      first_seen: store.jobs[index].first_seen || incoming.first_seen,
+      status: existing.status,
+      applied: existing.applied,
+      applied_at: existing.applied_at,
+      application_num: existing.application_num,
+      notes: existing.notes || incoming.notes,
+      resources: { ...(incoming.resources || {}), ...(existing.resources || {}) },
+      first_seen: existing.first_seen || incoming.first_seen,
       last_updated: new Date().toISOString(),
     });
   } else {
@@ -146,7 +230,7 @@ export function upsertConsiderJob(raw, filePath = CANONICAL_JOBS_FILE) {
 
 export function patchConsiderJob(id, updates = {}, filePath = CANONICAL_JOBS_FILE) {
   const store = readConsiderJobs(filePath);
-  const index = store.jobs.findIndex(job => job.id === id || job.url === id);
+  const index = findConsiderJobIndex({ id, ...updates }, store);
   if (index < 0) throw new Error(`job not found: ${id}`);
 
   const current = store.jobs[index];
@@ -164,18 +248,34 @@ export function patchConsiderJob(id, updates = {}, filePath = CANONICAL_JOBS_FIL
   }
 
   store.jobs[index] = normalizeConsiderJob(nextRaw);
+  patchJobsUserState(store.jobs[index].id, {
+    status: store.jobs[index].status,
+    applied: store.jobs[index].applied,
+    applied_at: store.jobs[index].applied_at,
+    application_num: store.jobs[index].application_num,
+    notes: store.jobs[index].notes,
+    resources: store.jobs[index].resources,
+  });
   const nextStore = writeConsiderJobs(store, filePath);
   return { store: nextStore, job: nextStore.jobs[index] };
 }
 
-export function deleteConsiderJob(id, filePath = CANONICAL_JOBS_FILE) {
+export function deleteConsiderJob(input, filePath = CANONICAL_JOBS_FILE, options = {}) {
   const store = readConsiderJobs(filePath);
-  const index = store.jobs.findIndex(job => job.id === id || job.url === id);
-  if (index < 0) throw new Error(`job not found: ${id}`);
+  const lookup = normalizeLookup(input);
+  const index = findConsiderJobIndex(lookup, store);
+  if (index < 0) {
+    if (options.missingOk) {
+      if (filePath === CANONICAL_JOBS_FILE) removeJobsUserState([lookup.id, lookup.url]);
+      return { store, job: null, missing: true, lookup };
+    }
+    throw new Error(`job not found: ${lookup.id || lookup.url || 'unknown'}`);
+  }
 
   const [job] = store.jobs.splice(index, 1);
+  if (filePath === CANONICAL_JOBS_FILE) removeJobsUserState([lookup.id, lookup.url, job.id, job.url]);
   const nextStore = writeConsiderJobs(store, filePath);
-  return { store: nextStore, job };
+  return { store: nextStore, job, missing: false, lookup };
 }
 
 export function syncConsiderJobsToDashboard({

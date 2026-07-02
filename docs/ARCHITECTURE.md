@@ -78,12 +78,16 @@ article-digest.md        →  Proof points for matching
 config/profile.yml       →  Candidate identity
 portals.yml              →  Scanner configuration
 templates/states.yml     →  Canonical status values
-templates/cv-template.html → PDF generation template
+user-approved .tex       →  Optional personal LaTeX resume style reference
+templates/cv-template.tex → Generic LaTeX fallback template
+generate-latex.mjs       →  Resume PDF compiler
+templates/cv-template.html → Legacy HTML resume / cover-letter PDF pattern
 ```
 
 ## File Naming Conventions
 
 - Reports: `{###}-{company-slug}-{YYYY-MM-DD}.md` (3-digit zero-padded)
+- Resume sources: `cv-candidate-{company-slug}-{YYYY-MM-DD}.tex`
 - PDFs: `cv-candidate-{company-slug}-{YYYY-MM-DD}.pdf`
 - Tracker TSVs: `batch/tracker-additions/{id}.tsv`
 

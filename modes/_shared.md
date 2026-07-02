@@ -125,9 +125,10 @@ After detecting archetype, read `modes/_profile.md` for the user's specific fram
 6. Generate content in the language of the JD (EN default)
 7. Be direct and actionable -- no fluff
 8. Native tech English for generated text. Short sentences, action verbs, no passive voice.
-8b. Case study URLs in PDF Professional Summary (recruiter may only read this).
+8b. Put the strongest role-relevant technical identity in the resume's top third; use project links only when they support the role.
 9. **Tracker additions as TSV** -- NEVER edit applications.md directly. Write TSV in `batch/tracker-additions/`.
-10. **Include `**URL:**` in every report header.**
+10. **Jobs to Consider resource attachment is mandatory** -- Whenever you create a resume, cover letter, application email, or any other application artifact under `output/`, immediately attach it to `data/jobs-to-consider.json` (`job.resources`) and run dashboard sync. Create the job if it does not exist. See `modes/application-artifacts.md`.
+11. **Include `**URL:**` in every report header.**
 
 ### Tools
 
@@ -136,11 +137,11 @@ After detecting archetype, read `modes/_profile.md` for the user's specific fram
 | WebSearch | Comp research, trends, company culture, LinkedIn contacts, fallback for JDs |
 | WebFetch | Fallback for extracting JDs from static pages |
 | Playwright | Verify offers (browser_navigate + browser_snapshot). **NEVER 2+ agents with Playwright in parallel.** |
-| Read | cv.md, _profile.md, article-digest.md, cv-template.html |
-| Write | Temporary HTML for PDF, applications.md, reports .md |
+| Read | cv.md, _profile.md, article-digest.md, optional user-approved LaTeX reference, templates/cv-template.tex fallback, cv-template.html for legacy resume or cover-letter format |
+| Write | Resume .tex/.pdf, cover-letter HTML/PDF, applications.md, reports .md |
 | Edit | Update tracker |
 | Canva MCP | Optional visual CV generation. Duplicate base design, edit text, export PDF. Requires `cv.canva_resume_design_id` in profile.yml. |
-| Bash | `node generate-pdf.mjs` |
+| Bash | `node generate-latex.mjs` for resumes; `node generate-pdf.mjs` for cover letters and legacy HTML PDFs |
 
 ### Time-to-offer priority
 - Working demo + metrics > perfection
@@ -239,8 +240,8 @@ These rules apply to ALL generated text that ends up in candidate-facing documen
 - "in today's fast-paced world"
 - "demonstrated ability to" / "best practices" (name the practice)
 
-### Unicode normalization for ATS
-`generate-pdf.mjs` automatically normalizes em-dashes, smart quotes, and zero-width characters to ASCII equivalents for maximum ATS compatibility. But avoid generating them in the first place.
+### PDF generation and ATS text safety
+New tailored resumes are LaTeX-first and compile with `generate-latex.mjs`. Cover letters and legacy HTML PDFs render with `generate-pdf.mjs`, which normalizes em-dashes, smart quotes, and zero-width characters to ASCII equivalents. Avoid generating those characters in the first place.
 
 ### Vary sentence structure
 - Don't start every bullet with the same verb

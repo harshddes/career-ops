@@ -1,0 +1,107 @@
+{
+  "date": "2026-07-01",
+  "company": "Oklo",
+  "totalJobs": 60,
+  "apply": [
+    {
+      "title": "Hardware Test Engineer",
+      "url": "https://job-boards.greenhouse.io/oklo/jobs/5544852004",
+      "overall": 4.3
+    },
+    {
+      "title": "Thermal Hydraulic Test Engineer",
+      "url": "https://job-boards.greenhouse.io/oklo/jobs/5710536004",
+      "overall": 4.2
+    },
+    {
+      "title": "Mechatronics Engineer",
+      "url": "https://job-boards.greenhouse.io/oklo/jobs/5677684004",
+      "overall": 4
+    }
+  ],
+  "consider": [
+    {
+      "title": "Open Call for Engineers",
+      "url": "https://job-boards.greenhouse.io/oklo/jobs/4714198004",
+      "overall": 3.9
+    },
+    {
+      "title": "Reactor Core Thermal Fluids Engineer",
+      "url": "https://job-boards.greenhouse.io/oklo/jobs/6015809004",
+      "overall": 3.8
+    },
+    {
+      "title": "Systems Engineer, Requirements and Integration",
+      "url": "https://job-boards.greenhouse.io/oklo/jobs/5649054004",
+      "overall": 3.7
+    }
+  ],
+  "reports": [
+    {
+      "num": 30,
+      "slug": "portfolio-master",
+      "title": "Oklo Portfolio Master",
+      "file": "030-oklo-portfolio-master-2026-07-01.md"
+    },
+    {
+      "num": 31,
+      "slug": "hardware-test-engineer",
+      "title": "Hardware Test Engineer",
+      "file": "031-oklo-hardware-test-engineer-2026-07-01.md"
+    },
+    {
+      "num": 32,
+      "slug": "thermal-hydraulic-test-engineer",
+      "title": "Thermal Hydraulic Test Engineer",
+      "file": "032-oklo-thermal-hydraulic-test-engineer-2026-07-01.md"
+    },
+    {
+      "num": 33,
+      "slug": "mechatronics-engineer",
+      "title": "Mechatronics Engineer",
+      "file": "033-oklo-mechatronics-engineer-2026-07-01.md"
+    },
+    {
+      "num": 34,
+      "slug": "open-call-for-engineers",
+      "title": "Open Call for Engineers",
+      "file": "034-oklo-open-call-for-engineers-2026-07-01.md"
+    },
+    {
+      "num": 35,
+      "slug": "reactor-core-thermal-fluids-engineer",
+      "title": "Reactor Core Thermal Fluids Engineer",
+      "file": "035-oklo-reactor-core-thermal-fluids-engineer-2026-07-01.md"
+    },
+    {
+      "num": 36,
+      "slug": "systems-engineer-requirements-and-integration",
+      "title": "Systems Engineer, Requirements and Integration",
+      "file": "036-oklo-systems-engineer-requirements-and-integration-2026-07-01.md"
+    },
+    {
+      "num": 37,
+      "slug": "software-engineer",
+      "title": "Software Engineer",
+      "file": "037-oklo-software-engineer-2026-07-01.md"
+    },
+    {
+      "num": 38,
+      "slug": "instrumentation-and-control-engineer-fuel-recycling",
+      "title": "Instrumentation and Control Engineer - Fuel Recycling",
+      "file": "038-oklo-instrumentation-and-control-engineer-fuel-recycling-2026-07-01.md"
+    },
+    {
+      "num": 39,
+      "slug": "mechanical-design-engineer-fuel-recycling",
+      "title": "Mechanical Design Engineer - Fuel Recycling",
+      "file": "039-oklo-mechanical-design-engineer-fuel-recycling-2026-07-01.md"
+    },
+    {
+      "num": 40,
+      "slug": "process-engineer",
+      "title": "Process Engineer",
+      "file": "040-oklo-process-engineer-2026-07-01.md"
+    }
+  ]
+}

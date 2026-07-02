@@ -10,6 +10,7 @@ import {
 
 const ARTIFACT_SPECS = [
   { prefix: 'cover-letter-', extensions: new Set(['.pdf']), resourceKey: 'cover_letter_pdf' },
+  { prefix: 'cv-', extensions: new Set(['.tex']), resourceKey: 'resume_tex' },
   { prefix: 'cv-', extensions: new Set(['.pdf']), resourceKey: 'resume_pdf' },
   { prefix: 'application-email-', extensions: new Set(['.md']), resourceKey: 'email_draft' },
 ];
@@ -62,7 +63,7 @@ function jobAliases(job) {
     slugify(`${job.company} ${job.title}`),
   ]);
 
-  for (const key of ['resume_pdf', 'cover_letter_pdf', 'email_draft']) {
+  for (const key of ['resume_tex', 'resume_pdf', 'cover_letter_pdf', 'email_draft']) {
     const alias = resourceAliasFromPath(job.resources?.[key], key);
     if (alias) aliases.add(alias);
   }

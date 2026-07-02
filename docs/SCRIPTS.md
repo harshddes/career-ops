@@ -12,6 +12,7 @@ All scripts live in the project root as `.mjs` modules and are exposed via `npm 
 | `npm run dedup` | `dedup-tracker.mjs` | Remove duplicate tracker entries |
 | `npm run merge` | `merge-tracker.mjs` | Merge batch TSVs into applications.md |
 | `npm run pdf` | `generate-pdf.mjs` | Convert HTML to ATS-optimized PDF |
+| `npm run latex` | `generate-latex.mjs` | Compile LaTeX resume source to PDF |
 | `npm run sync-check` | `cv-sync-check.mjs` | Validate CV/profile consistency |
 | `npm run update:check` | `update-system.mjs check` | Check for upstream updates |
 | `npm run update` | `update-system.mjs apply` | Apply upstream update |
@@ -93,7 +94,7 @@ Processed TSVs are moved to `batch/tracker-additions/merged/`.
 
 ## pdf
 
-Renders an HTML file to a print-quality, ATS-parseable PDF via headless Chromium. Resolves font paths from `fonts/`, normalizes Unicode for ATS compatibility (em-dashes, smart quotes, zero-width characters), and reports page count and file size.
+Renders an HTML file to a print-quality, ATS-parseable PDF via headless Chromium. This remains the active renderer for cover letters and legacy HTML PDFs. New tailored resumes should use `npm run latex`.
 
 ```bash
 npm run pdf -- input.html output.pdf
@@ -102,6 +103,22 @@ npm run pdf -- input.html output.pdf --format=a4        # A4 (default)
 ```
 
 **Exit codes:** `0` PDF generated, `1` missing arguments or generation failure.
+
+---
+
+## latex
+
+Compiles a LaTeX resume source file to PDF. The default engine is `xelatex` because personal resume references may use `fontspec`.
+
+```bash
+npm run latex -- output/cv-harsh-company-date.tex output/cv-harsh-company-date.pdf
+npm run latex -- harsh/Harsh_Desai_Resume_OnePage_AlignedFullSkills_A4.tex output/cv-harsh-desai-latex-smoke.pdf --engine=xelatex
+npm run latex -- output/cv-name.tex output/cv-name.pdf --engine=lualatex
+```
+
+**Exit codes:** `0` PDF generated, `1` missing arguments, missing TeX engine, or compiler failure.
+
+After generating a tailored resume or cover letter, agents **must** attach `output/` paths to `data/jobs-to-consider.json` (`job.resources`) and run dashboard sync in the same turn. See `modes/application-artifacts.md` (`## MANDATORY: Jobs Tracker Attachment`).
 
 ---
 
@@ -187,3 +204,32 @@ npm run scan
 ```
 
 **Exit codes:** `0` scan completed, `1` configuration error or no portals.yml found.
+
+---
+
+## Daily digest email (WEB-TRACKER)
+
+Sends a nightly summary of today's dashboard activity (applied, contacted, followed, follow-ups) with XLSX/CSV attachments and the live audit CSV from `output/digests/today-activity-YYYY-MM-DD.csv`.
+
+### Gmail App Password setup
+
+1. Enable 2-Step Verification on your Google account.
+2. Open [Google App Passwords](https://myaccount.google.com/apppasswords) and create a password for "Mail" / "Other (Career-Ops)".
+3. Copy `WEB-TRACKER/.env.example` to `WEB-TRACKER/.env` and set:
+   - `SMTP_USER` / `SMTP_FROM` — your Gmail address (default: `harshddes@gmail.com`)
+   - `SMTP_PASS` — the 16-character app password (not your regular Gmail password)
+   - `DAILY_DIGEST_RECIPIENTS` — comma-separated recipients (default: `harshddes@gmail.com`)
+4. All "today" bucketing uses `DAILY_DIGEST_TIMEZONE=America/New_York`.
+
+```bash
+# Dry run (no email sent)
+node WEB-TRACKER/scripts/send-daily-digest.mjs
+
+# Send to configured recipients
+node WEB-TRACKER/scripts/send-daily-digest.mjs --send
+
+# Send to a specific address
+node WEB-TRACKER/scripts/send-daily-digest.mjs --send --to harshddes@gmail.com
+```
+
+**Blockers:** Email will not send until `SMTP_PASS` is set in `WEB-TRACKER/.env`. Without SMTP env vars, dry-run still builds attachments locally.

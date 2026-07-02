@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="career-dashboard-mode" content="dynamic">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FUSION PIVOT — Career Intelligence Dashboard</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg-primary: #0a0a0f;
+  color-scheme: dark;
   --bg-secondary: #12121a;
   --bg-card: #18182480;
   --bg-card-hover: #1e1e2a;
@@ -103,13 +105,35 @@ nav button.active { color: var(--accent-plasma); border-bottom-color: var(--acce
 nav::-webkit-scrollbar { height: 6px; }
 nav::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; }
 
+#static-publish-banner {
+  position: sticky; top: 0; z-index: 200;
+  padding: 0.55rem 1.25rem;
+  background: linear-gradient(90deg, #1a2744, #12121a);
+  border-bottom: 1px solid var(--accent-fusion);
+  color: var(--text-secondary);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  text-align: center;
+}
+
+body.read-only .write-only { display: none !important; }
+body.read-only #operations { display: none !important; }
+body.read-only nav button[data-tab="operations"] { display: none !important; }
+body.read-only #pulse-add-row,
+body.read-only .pulse-row-actions,
+body.read-only .job-card-actions,
+body.read-only .prospect-status-edit { display: none !important; }
+body.read-only #pulse-apps-table input:not([type="search"]),
+body.read-only #pulse-apps-table select,
+body.read-only #pulse-apps-table textarea { pointer-events: none; opacity: 0.85; }
+
 /* Tab content */
 .tab-content { display: none; padding: 2rem 4rem 4rem; position: relative; z-index: 1; }
 .tab-content.active { display: block; }
 
 /* Stats bar */
 .stats-bar {
-  display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px;
   background: var(--border); border-radius: 12px; overflow: hidden;
   margin-bottom: 3rem;
 }
@@ -182,6 +206,72 @@ nav::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; 
 .company-card.tier-1::before { background: var(--gradient-plasma); }
 .company-card.tier-2::before { background: var(--gradient-fusion); }
 .company-card.tier-3::before { background: var(--gradient-nuclear); }
+
+/* Prospect outreach status — left accent + subtle wash (cards + sheet rows) */
+.company-card.prospect-status-not_contacted {
+  box-shadow: inset 4px 0 0 rgba(136, 136, 160, 0.55);
+  background: linear-gradient(90deg, rgba(136, 136, 160, 0.07) 0%, transparent 28%), var(--bg-card);
+}
+.company-card.prospect-status-draft_ready {
+  box-shadow: inset 4px 0 0 var(--accent-fusion);
+  background: linear-gradient(90deg, rgba(0, 212, 255, 0.1) 0%, transparent 28%), var(--bg-card);
+}
+.company-card.prospect-status-contacted {
+  box-shadow: inset 4px 0 0 var(--accent-plasma);
+  background: linear-gradient(90deg, rgba(255, 107, 53, 0.12) 0%, transparent 28%), var(--bg-card);
+}
+.company-card.prospect-status-follow_up {
+  box-shadow: inset 4px 0 0 var(--accent-warn);
+  background: linear-gradient(90deg, rgba(255, 171, 0, 0.12) 0%, transparent 28%), var(--bg-card);
+}
+.company-card.prospect-status-responded {
+  box-shadow: inset 4px 0 0 var(--accent-green);
+  background: linear-gradient(90deg, rgba(0, 200, 83, 0.1) 0%, transparent 28%), var(--bg-card);
+}
+.company-card.prospect-status-archived {
+  box-shadow: inset 4px 0 0 var(--accent-red);
+  background: linear-gradient(90deg, rgba(255, 23, 68, 0.08) 0%, transparent 28%), var(--bg-card);
+  opacity: 0.82;
+}
+
+.research-sheet-container {
+  display: block;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.research-sheet-container .pulse-table-wrap {
+  width: 100%;
+  max-width: 100%;
+}
+
+.research-sheet-table {
+  min-width: 1680px;
+}
+
+.research-sheet-table th,
+.research-sheet-table td {
+  min-width: 100px;
+  vertical-align: top;
+}
+
+.research-sheet-table tr.prospect-row-status-not_contacted td { background-color: rgba(136, 136, 160, 0.04); }
+.research-sheet-table tr.prospect-row-status-draft_ready td { background-color: rgba(0, 212, 255, 0.06); }
+.research-sheet-table tr.prospect-row-status-contacted td { background-color: rgba(255, 107, 53, 0.07); }
+.research-sheet-table tr.prospect-row-status-follow_up td { background-color: rgba(255, 171, 0, 0.07); }
+.research-sheet-table tr.prospect-row-status-responded td { background-color: rgba(0, 200, 83, 0.06); }
+.research-sheet-table tr.prospect-row-status-archived td { background-color: rgba(255, 23, 68, 0.05); opacity: 0.75; }
+
+.prospect-status-pill {
+  display: inline-block;
+  margin-left: 0.45rem;
+  vertical-align: middle;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  padding: 0.12rem 0.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+}
 
 .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
 
@@ -389,6 +479,10 @@ nav::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; 
 
 .copy-btn:hover { transform: scale(1.05); }
 
+.share-copy-btn {
+  margin-top: 0.7rem;
+}
+
 /* Skill overlap meter */
 .overlap-bar-container { margin-bottom: 1rem; }
 .overlap-label { display: flex; justify-content: space-between; margin-bottom: 0.3rem; font-size: 0.85rem; }
@@ -517,6 +611,18 @@ nav::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; 
   font-size: 0.72rem; display: flex; gap: 0.35rem; align-items: center;
 }
 
+.filter-panel input[type="search"],
+.filter-panel input[type="text"] {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.45rem 0.55rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  color-scheme: dark;
+}
+
 .jobs-toolbar {
   display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
   gap: 0.8rem; margin-bottom: 1rem;
@@ -608,6 +714,63 @@ nav::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; 
 .status-pill.blocked { border-color: var(--accent-warn); color: var(--accent-warn); }
 .status-pill.done { border-color: var(--accent-green); color: var(--accent-green); }
 
+.prospect-status-select,
+.pulse-status-select,
+.filter-panel select {
+  border-radius: 6px;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid var(--border);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  color-scheme: dark;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.prospect-status-select {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.pulse-status-select {
+  width: 100%;
+}
+
+.filter-panel select {
+  min-width: 9rem;
+}
+
+.prospect-status-select option,
+.pulse-status-select option,
+.pulse-edit-field option,
+.filter-panel select option,
+.column-filter select option {
+  background-color: #181824;
+  color: #e8e8f0;
+}
+
+.status-not_contacted,
+.tracker-status-evaluated { background: rgba(136, 136, 160, 0.12); color: var(--text-primary); border-color: rgba(136, 136, 160, 0.35); }
+.status-draft_ready,
+.tracker-status-interview { background: rgba(0, 212, 255, 0.14); color: var(--accent-fusion); border-color: rgba(0, 212, 255, 0.45); }
+.status-contacted,
+.tracker-status-applied { background: rgba(255, 107, 53, 0.16); color: var(--accent-plasma); border-color: rgba(255, 107, 53, 0.5); }
+.status-follow_up,
+.tracker-status-responded { background: rgba(255, 171, 0, 0.16); color: var(--accent-warn); border-color: rgba(255, 171, 0, 0.5); }
+.status-responded,
+.tracker-status-offer { background: rgba(0, 200, 83, 0.16); color: var(--accent-green); border-color: rgba(0, 200, 83, 0.5); }
+.status-archived,
+.tracker-status-discarded,
+.tracker-status-skip,
+.tracker-status-rejected { background: rgba(255, 23, 68, 0.12); color: var(--accent-red); border-color: rgba(255, 23, 68, 0.42); }
+
+.prospect-status-pill.status-not_contacted { background: rgba(136, 136, 160, 0.12); color: var(--text-secondary); border-color: rgba(136, 136, 160, 0.35); }
+.prospect-status-pill.status-draft_ready { background: rgba(0, 212, 255, 0.14); color: var(--accent-fusion); border-color: rgba(0, 212, 255, 0.45); }
+.prospect-status-pill.status-contacted { background: rgba(255, 107, 53, 0.16); color: var(--accent-plasma); border-color: rgba(255, 107, 53, 0.5); }
+.prospect-status-pill.status-follow_up { background: rgba(255, 171, 0, 0.16); color: var(--accent-warn); border-color: rgba(255, 171, 0, 0.5); }
+.prospect-status-pill.status-responded { background: rgba(0, 200, 83, 0.16); color: var(--accent-green); border-color: rgba(0, 200, 83, 0.5); }
+.prospect-status-pill.status-archived { background: rgba(255, 23, 68, 0.12); color: var(--accent-red); border-color: rgba(255, 23, 68, 0.42); }
+
 textarea.control-input, input.control-input, select.control-input {
   width: 100%; background: var(--bg-secondary); color: var(--text-primary);
   border: 1px solid var(--border); border-radius: 6px; padding: 0.6rem;
@@ -636,9 +799,116 @@ textarea.control-input, input.control-input, select.control-input {
   vertical-align: top;
 }
 
+.application-recency-row {
+  background:
+    linear-gradient(90deg, rgba(0, 212, 255, var(--application-recency-alpha, 0)) 0%, rgba(0, 212, 255, 0) 78%),
+    var(--bg-card);
+}
+
+.application-recency-today {
+  box-shadow: inset 3px 0 0 var(--accent-fusion);
+}
+
+.application-date-cell {
+  font-family: 'Space Mono', monospace;
+}
+
+.application-date-today {
+  color: var(--accent-fusion);
+  font-weight: 700;
+}
+
+.application-date-recent {
+  color: var(--text-primary);
+}
+
+.followup-overdue {
+  background: rgba(255, 23, 68, 0.08);
+  color: var(--accent-red);
+}
+
+.followup-due-today {
+  background: rgba(255, 171, 0, 0.08);
+  color: var(--accent-warn);
+}
+
 .pulse-row-readonly {
   font-family: 'Space Mono', monospace;
   color: var(--text-muted);
+}
+
+.defense-sheet {
+  margin-top: 0.85rem;
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+  overflow-x: auto;
+}
+
+.defense-sheet summary {
+  cursor: pointer;
+  color: var(--accent-fusion);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.defense-sheet-table {
+  width: 100%;
+  min-width: 920px;
+  border-collapse: collapse;
+  margin-top: 0.65rem;
+  font-size: 0.78rem;
+}
+
+.defense-sheet-table th {
+  text-align: left;
+  padding: 0.45rem 0.5rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+}
+
+.defense-sheet-table td {
+  padding: 0.45rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.defense-sheet-table td:first-child {
+  width: 22%;
+  color: var(--text-secondary);
+  font-size: 0.74rem;
+}
+
+.defense-sheet-table textarea {
+  width: 100%;
+  min-width: 14rem;
+  min-height: 4.5rem;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.45rem 0.55rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  resize: both;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+.defense-sheet-table textarea:focus {
+  border-color: var(--accent-fusion);
+  outline: none;
+}
+
+.defense-sheet-hint {
+  margin-top: 0.45rem;
+  color: var(--text-muted);
+  font-size: 0.72rem;
 }
 
 .pulse-score-cell {
@@ -655,6 +925,7 @@ select.pulse-edit-field {
   padding: 0.4rem 0.5rem;
   font-family: 'DM Sans', sans-serif;
   font-size: 0.78rem;
+  color-scheme: dark;
 }
 
 .pulse-actions {
@@ -885,11 +1156,14 @@ footer {
       <div>Local dashboard, no auto-submit</div>
     </div>
   </div>
+  <div class="stats-bar global-today-stats" id="global-today-stats" style="margin-top:1.5rem;"></div>
 </header>
 
 <nav>
   <button class="active" onclick="switchTab('today', event)">Today</button>
   <button onclick="switchTab('livejobs', event)">Jobs To Consider</button>
+  <button onclick="switchTab('researchprospects', event)">U-M Research</button>
+  <button onclick="switchTab('targetcompanies', event)">Target Companies</button>
   <button onclick="switchTab('outreach', event)">People To Contact</button>
   <button onclick="switchTab('pulse', event)">Applications</button>
   <button onclick="switchTab('phdradar', event)">PhD Options</button>
@@ -915,6 +1189,17 @@ footer {
   </div>
 
   <h2 class="section-title">Today’s Top 3</h2>
+  <div class="jobs-toolbar" style="margin-bottom:1rem;">
+    <div>
+      <button class="control-btn secondary" onclick="downloadDashboardExport('today-activity', 'csv')">Export Today CSV</button>
+      <button class="control-btn secondary" onclick="downloadDashboardExport('today-activity', 'xlsx')">Export Today XLSX</button>
+    </div>
+    <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+      <input id="today-email-recipient" type="email" value="harshddes@gmail.com" placeholder="email@example.com" style="min-width:260px;">
+      <button id="today-email-send-btn" class="control-btn" onclick="sendTodayDigestNow()">Email Today CSV Now</button>
+    </div>
+  </div>
+  <div id="today-email-feedback" class="inline-notice" role="status" aria-live="polite"></div>
   <div id="today-action-feedback" class="inline-notice" role="status" aria-live="polite"></div>
   <div id="today-actions"></div>
 
@@ -1610,6 +1895,8 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
     <div>
       <button id="livejobs-view-cards" class="control-btn secondary" onclick="setLiveJobsView('cards')">Card view</button>
       <button id="livejobs-view-table" class="control-btn secondary" onclick="setLiveJobsView('table')">Sheet view</button>
+      <button class="control-btn secondary" onclick="downloadDashboardExport('jobs-to-consider', 'xlsx')">Export XLSX</button>
+      <button class="control-btn secondary" onclick="downloadDashboardExport('jobs-to-consider', 'csv')">Export CSV</button>
     </div>
     <div style="color:var(--text-muted); font-size:0.78rem; font-family:'Space Mono',monospace;">Checked jobs move into Applications.</div>
   </div>
@@ -1622,9 +1909,85 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
     <label><input type="checkbox" value="hide_hard_itar" checked> Hide hard ITAR</label>
     <button class="control-btn secondary" onclick="clearWorkAuthFilters()">Clear Filters</button>
   </div>
+  <div class="filter-panel" id="fusion-company-filters" style="margin-bottom:1.5rem;">
+    <span style="color:var(--text-muted); font-size:0.78rem; font-family:'Space Mono',monospace;">Fusion sweep:</span>
+    <button class="control-btn secondary" onclick="openLiveJobsForCompany('Kyoto Fusioneering')">Kyoto Fusioneering</button>
+    <button class="control-btn secondary" onclick="openLiveJobsForCompany('General Fusion')">General Fusion</button>
+    <button class="control-btn secondary" onclick="openLiveJobsForCompany('First Light Fusion')">First Light Fusion</button>
+    <button class="control-btn secondary" onclick="clearLiveJobsCompanyFilter()">Clear company</button>
+  </div>
   <div id="livejobs-to-consider" class="jobs-section"></div>
   <div id="livejobs-applied" class="jobs-section"></div>
   <div id="livejobs-closed" class="jobs-section"></div>
+</div>
+
+<!-- U-M RESEARCH PROSPECTS TAB -->
+<div id="researchprospects" class="tab-content">
+  <h2 class="section-title">U-M Research Prospects</h2>
+  <p style="color:var(--text-secondary); margin-bottom:1rem; font-size:0.85rem;" id="researchprospects-meta">Loading Ann Arbor research contacts...</p>
+  <div id="researchprospects-feedback" class="inline-notice" role="status" aria-live="polite"></div>
+  <div class="filter-panel" style="margin-bottom:1rem;">
+    <label>Tier
+      <select id="researchprospects-tier" onchange="renderResearchProspects({ force: true })">
+        <option value="all">All tiers</option>
+        <option value="A">Tier A</option>
+        <option value="B">Tier B</option>
+        <option value="C">Tier C</option>
+        <option value="D">Tier D</option>
+      </select>
+    </label>
+    <label>Transfer vector
+      <select id="researchprospects-vector" onchange="renderResearchProspects({ force: true })">
+        <option value="all">All vectors</option>
+      </select>
+    </label>
+    <label>Contact type
+      <select id="researchprospects-role" onchange="renderResearchProspects({ force: true })">
+        <option value="all">All</option>
+        <option value="faculty_or_research_staff">Faculty / research staff</option>
+        <option value="lab_member_signal">Lab-member signal</option>
+        <option value="job_board_signal">Job-board signal</option>
+      </select>
+    </label>
+    <label>Status
+      <select id="researchprospects-status" onchange="renderResearchProspects({ force: true })">
+        <option value="all">All statuses</option>
+      </select>
+    </label>
+    <input id="researchprospects-search" type="search" placeholder="Search name, lab, department, method..." oninput="renderResearchProspects({ force: true })" style="min-width:260px;">
+  </div>
+  <div class="jobs-toolbar">
+    <div>
+      <button id="researchprospects-view-cards" class="control-btn secondary" onclick="setResearchProspectsView('cards')">Card view</button>
+      <button id="researchprospects-view-table" class="control-btn secondary" onclick="setResearchProspectsView('table')">Sheet view</button>
+      <button class="control-btn secondary" onclick="downloadDashboardExport('research-prospects', 'xlsx')">Export XLSX</button>
+      <button class="control-btn secondary" onclick="downloadDashboardExport('research-prospects', 'csv')">Export CSV</button>
+    </div>
+    <div style="color:var(--text-muted); font-size:0.78rem; font-family:'Space Mono',monospace;">Sheet view is for fast scanning; cards keep the richer context.</div>
+  </div>
+  <div class="stats-bar" id="researchprospects-stats" style="margin-bottom:2rem;"></div>
+  <div id="researchprospects-grid" class="company-grid"></div>
+  <p style="color:var(--text-muted); font-size:0.8rem; margin-top:2rem;">Research source: <code>WEB-TRACKER/research/umich-research-prospects-ann-arbor-2026.json</code></p>
+</div>
+
+<!-- TARGET COMPANIES TAB -->
+<div id="targetcompanies" class="tab-content">
+  <h2 class="section-title">Vacuum & Industrial Targets</h2>
+  <p style="color:var(--text-secondary); margin-bottom:1rem; font-size:0.85rem;" id="targetcompanies-meta">Loading company research...</p>
+  <div class="filter-panel" id="targetcompanies-region-filters" style="margin-bottom:1.5rem;">
+    <label><input type="radio" name="target-region" value="all" checked onchange="renderTargetCompanies()"> All</label>
+    <label><input type="radio" name="target-region" value="us" onchange="renderTargetCompanies()"> US (H-1B track)</label>
+    <label><input type="radio" name="target-region" value="eu_ch" onchange="renderTargetCompanies()"> EU / CH</label>
+    <label><input type="radio" name="target-region" value="eu_fr" onchange="renderTargetCompanies()"> France</label>
+    <label><input type="radio" name="target-region" value="canada" onchange="renderTargetCompanies()"> Canada</label>
+    <label><input type="radio" name="target-region" value="india" onchange="renderTargetCompanies()"> India</label>
+    <label><input type="radio" name="target-region" value="fusion" onchange="renderTargetCompanies()"> Fusion (FLF / GF / KF)</label>
+  </div>
+  <div class="stats-bar" id="targetcompanies-stats" style="margin-bottom:2rem;"></div>
+  <div id="targetcompanies-tier1"></div>
+  <div id="targetcompanies-tier2"></div>
+  <div id="targetcompanies-tier3"></div>
+  <p style="color:var(--text-muted); font-size:0.8rem; margin-top:2rem;">Full research file: <code>WEB-TRACKER/research/vacuum-industrial-targets-2026.md</code></p>
 </div>
 
 <!-- PHD RADAR TAB -->
@@ -1632,6 +1995,80 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
   <h2 class="section-title">PhD & Scholarship Deadline Tracker</h2>
   <p style="color:var(--text-secondary); margin-bottom:1.5rem; font-size:0.85rem;">Rolling admissions show as "OPEN NOW". Deadline-based programs show countdown timers.</p>
   <div id="phd-grid" class="program-grid"></div>
+
+  <h2 class="section-title" style="margin-top:2rem;">Private Company PhD Collaboration Paths</h2>
+  <div class="coach-card" style="margin-bottom:1rem;">
+    <h3>University degree · Company co-supervision</h3>
+    <p>These are <strong>not</strong> direct professor-email paths like KTH or IPP. You enroll at a university PhD programme; the company sponsors topics, co-supervises, and provides facility access (e.g. ST40 tokamak, diagnostics labs). Applications go to the <strong>university</strong>, not the company — but careers teams can point you to aligned programmes.</p>
+    <p class="plain-help">Add future companies to <code>data/private-co-phd-paths.json</code>. Research file: <code>WEB-TRACKER/research/private-company-phd-collaboration-2026.md</code></p>
+  </div>
+  <p style="color:var(--text-secondary); margin-bottom:1rem; font-size:0.85rem;" id="private-co-phd-meta">Loading private company PhD paths...</p>
+  <div id="private-co-phd-grid" class="company-grid" style="margin-bottom:2.5rem;"></div>
+
+  <h2 class="section-title" style="margin-top:2rem;">PhD Advisor Prospects — University / Institute Sources</h2>
+  <div class="coach-card" style="margin-bottom:1rem;">
+    <h3>How This Section Works</h3>
+    <p>Each source below is a researched university or institute network. The cards combine contact details, fit score, application route, evidence links, and outreach angle so future universities can be added without creating new dashboard tabs.</p>
+    <p class="plain-help">Three source paths: <strong>KTH & FP3</strong>, <strong>Max Planck IPP</strong>, and <strong>Private Company PhD Paths</strong> (industrial co-supervision). Priority themes: KTH PWI, IPP ITER diagnostics, neutral beam instrumentation, ASDEX Upgrade, W7-X, ST40 diagnostics, and space plasma instrumentation.</p>
+  </div>
+  <p style="color:var(--text-secondary); margin-bottom:1rem; font-size:0.85rem;" id="phd-researchprospects-meta">Loading PhD advisor prospects...</p>
+  <div id="phd-researchprospects-feedback" class="inline-notice" role="status" aria-live="polite"></div>
+  <div class="jobs-toolbar" style="margin-bottom:1rem;">
+    <div>
+      <button class="control-btn secondary" onclick="downloadDashboardExport('phd-options', 'xlsx')">Export PhD XLSX</button>
+      <button class="control-btn secondary" onclick="downloadDashboardExport('phd-options', 'csv')">Export PhD CSV</button>
+    </div>
+    <div style="color:var(--text-muted); font-size:0.78rem; font-family:'Space Mono',monospace;">Exports advisor prospects and PhD opportunity sources.</div>
+  </div>
+  <div class="filter-panel" style="margin-bottom:1rem;">
+    <label>Source
+      <select id="phd-researchprospects-source" onchange="renderPhdResearchProspects({ force: true })">
+        <option value="all">All sources</option>
+      </select>
+    </label>
+    <label>Tier
+      <select id="phd-researchprospects-tier" onchange="renderPhdResearchProspects({ force: true })">
+        <option value="all">All tiers</option>
+        <option value="A">Tier A</option>
+        <option value="B">Tier B</option>
+        <option value="C">Tier C</option>
+        <option value="D">Tier D</option>
+      </select>
+    </label>
+    <label>Transfer vector
+      <select id="phd-researchprospects-vector" onchange="renderPhdResearchProspects({ force: true })">
+        <option value="all">All vectors</option>
+      </select>
+    </label>
+    <label>Institution
+      <select id="phd-researchprospects-institution" onchange="renderPhdResearchProspects({ force: true })">
+        <option value="all">All</option>
+      </select>
+    </label>
+    <label>Campus
+      <select id="phd-researchprospects-campus" onchange="renderPhdResearchProspects({ force: true })">
+        <option value="all">All campuses</option>
+      </select>
+    </label>
+    <label>Contact type
+      <select id="phd-researchprospects-role" onchange="renderPhdResearchProspects({ force: true })">
+        <option value="all">All</option>
+        <option value="faculty_or_research_staff">Faculty / research staff</option>
+        <option value="lab_member_signal">Lab-member signal</option>
+        <option value="job_board_signal">Job-board signal</option>
+        <option value="industrial_phd_sponsor">Industrial PhD sponsor</option>
+      </select>
+    </label>
+    <label>Status
+      <select id="phd-researchprospects-status" onchange="renderPrivateCompanyPhdPaths({ force: true }); renderPhdResearchProspects({ force: true })">
+        <option value="all">All statuses</option>
+      </select>
+    </label>
+    <input id="phd-researchprospects-search" type="search" placeholder="Search PWI, ITER, diagnostics, NBI, W7-X, ST40..." oninput="renderPhdResearchProspects({ force: true })" style="min-width:300px;">
+  </div>
+  <div class="stats-bar" id="phd-researchprospects-stats" style="margin-bottom:2rem;"></div>
+  <div id="phd-researchprospects-grid" class="company-grid"></div>
+  <p style="color:var(--text-muted); font-size:0.8rem; margin-top:2rem;" id="phd-researchprospects-source-note">Research sources loading...</p>
 </div>
 
 <!-- CAREER-OPS PULSE TAB -->
@@ -1653,6 +2090,7 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
         </div>
       </div>
       <div class="pulse-toolbar-group">
+        <button id="pulse-today-filter" class="control-btn secondary" onclick="setPulseTodayFilter()">Applications Today</button>
         <button class="control-btn secondary" onclick="clearPulseFilters()">Clear filters</button>
         <button class="control-btn" onclick="togglePulseAddRow()">Add application / contact</button>
       </div>
@@ -1704,12 +2142,23 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
   <div id="operations-feedback" class="inline-notice" role="status" aria-live="polite"></div>
   <div id="actions-grid" class="control-grid"></div>
 
+  <h2 class="section-title">Autonomous Research</h2>
+  <p style="color:var(--text-secondary); margin-bottom:0.6rem; font-size:0.85rem;">Parallel handles external research, your local model turns it into proposed tracker/report actions, and policy gates keep writes reviewable.</p>
+  <div id="autonomy-status" class="control-grid"></div>
+  <div style="margin:0.75rem 0 1rem 0;">
+    <button class="control-btn warn" onclick="runAutonomyPending()">Run queued autonomy task</button>
+    <button class="control-btn secondary" onclick="renderAutonomy()">Refresh autonomy status</button>
+  </div>
+  <div id="autonomy-runs" class="control-grid"></div>
+
   <h2 class="section-title">Background Updates</h2>
   <div id="jobs-grid" class="control-grid"></div>
   <div id="selected-job-log" class="job-log">Select or run a job to see logs here.</div>
 
   <h2 class="section-title">Needs AI Review</h2>
-  <p style="color:var(--text-secondary); margin-bottom:1rem; font-size:0.85rem;">These are not tasks for you to decode. They are work orders for Cursor/me: evaluate a job, draft a CV, research a lab, or refine outreach.</p>
+  <p style="color:var(--text-secondary); margin-bottom:0.6rem; font-size:0.85rem;">Human-in-the-loop queue: Cursor handles these work orders, you keep final approval. Queue lanes are P0 (needs user), P1 (time-sensitive artifact), and P2 (general review).</p>
+  <p style="color:var(--text-muted); margin-bottom:1rem; font-size:0.78rem;">Workflow: New → In review → Completed / Needs user / Failed. If an item waits too long, copy the prompt into Cursor and process it.</p>
+  <div id="agent-task-meta" class="stats-bar" style="margin-bottom:1rem;"></div>
   <div id="agent-task-grid" class="control-grid"></div>
 </div>
 
@@ -1759,11 +2208,40 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
 </footer>
 
 <script>
+const TAB_RENDERERS = {
+  today: () => { renderActionPlan(); renderTodayActivityTracker(); },
+  livejobs: () => renderLiveJobs(),
+  researchprospects: () => renderResearchProspects(),
+  targetcompanies: () => renderTargetCompanies(),
+  outreach: () => renderContacts(),
+  pulse: () => renderPulse(),
+  phdradar: () => {
+    renderPhdRadar();
+    renderPrivateCompanyPhdPaths();
+    renderPhdResearchProspects();
+  },
+  weekly: () => renderActionPlan(),
+  operations: () => {
+    renderActions();
+    renderAutonomy();
+    renderJobs();
+    renderAgentTasks();
+  },
+  system: () => renderSystem(),
+};
+
 function switchTab(tabId, evt = null) {
   document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
   document.getElementById(tabId).classList.add('active');
-  if (evt?.target) evt.target.classList.add('active');
+  const activeButton = evt?.target || Array.from(document.querySelectorAll('nav button'))
+    .find(button => (button.getAttribute('onclick') || '').includes(`'${tabId}'`));
+  if (activeButton) activeButton.classList.add('active');
+  TAB_RENDERERS[tabId]?.();
+  if (tabId !== 'researchprospects' && deferredFullPanelRender) {
+    deferredFullPanelRender = false;
+    queueRenderAllPanels();
+  }
 }
 
 document.querySelectorAll('.overlap-fill').forEach(bar => {
@@ -1774,11 +2252,67 @@ document.querySelectorAll('.overlap-fill').forEach(bar => {
 
 // ── Live data layer ─────────────────────────────────────────────────
 
+const STATIC_PUBLISH = (() => {
+  const meta = document.querySelector('meta[name="career-dashboard-mode"]');
+  if (meta?.content === 'static') return true;
+  return /\/career-dashboard(\/|$)/.test(window.location.pathname);
+})();
+
 const DASHBOARD_HOST = window.location.hostname || '127.0.0.1';
-const API_BASE = window.location.port === '3737' ? '' : `http://${DASHBOARD_HOST}:3737`;
+const API_BASE = STATIC_PUBLISH
+  ? ''
+  : (window.location.protocol.startsWith('http') ? window.location.origin : `http://${DASHBOARD_HOST}:3737`);
+const API_TIMEOUT_MS = 15_000;
+const API_GET_CACHE_MS = 1_500;
+const apiInflightGet = new Map();
+const apiGetCache = new Map();
+
+function staticApiPath(path) {
+  const pathname = path.split('?')[0];
+  if (pathname === '/api/today-activity') return './static-api/api/today-activity.json';
+  return `./static-api${pathname}.json`;
+}
+
+function timeoutSignal(timeoutMs = API_TIMEOUT_MS) {
+  if (typeof AbortSignal !== 'undefined' && typeof AbortSignal.timeout === 'function') {
+    return AbortSignal.timeout(timeoutMs);
+  }
+  const controller = new AbortController();
+  setTimeout(() => controller.abort(), timeoutMs);
+  return controller.signal;
+}
+
+async function fetchWithTimeout(url, options = {}, timeoutMs = API_TIMEOUT_MS) {
+  return fetch(url, {
+    ...options,
+    signal: options.signal || timeoutSignal(timeoutMs),
+  });
+}
+
+function initStaticPublishMode() {
+  if (!STATIC_PUBLISH) return;
+  document.body.classList.add('read-only');
+  if (!document.getElementById('static-publish-banner')) {
+    const banner = document.createElement('div');
+    banner.id = 'static-publish-banner';
+    banner.textContent = 'Public snapshot — auto-synced from career-ops. Read-only view.';
+    document.body.insertBefore(banner, document.body.firstChild);
+  }
+  document.querySelector('nav button[onclick*="operations"]')?.setAttribute('data-tab', 'operations');
+}
+const DASHBOARD_TIMEZONE = 'America/New_York';
 let sseConnection = null;
 let reconnectTimer = null;
 let refreshTimer = null;
+let visibleRefreshTimer = null;
+let todayRefreshTimer = null;
+let deferredFullPanelRender = false;
+let sseEverConnected = false;
+let saveSequence = 0;
+const pendingPulseSaves = new Map();
+const pendingJobSaves = new Map();
+const pendingResearchSaves = new Map();
+const pendingPhdResearchSaves = new Map();
 const TRACKER_STATUSES = ['Evaluated', 'Applied', 'Responded', 'Interview', 'Offer', 'Rejected', 'Discarded', 'SKIP'];
 const TRACKER_EDITABLE_FIELDS = ['date', 'company', 'role', 'score', 'status', 'pdf', 'report', 'notes'];
 const TRACKER_METADATA_FIELDS = [
@@ -1849,32 +2383,11 @@ let pulseFilters = {};
 let pulseGlobalSearch = '';
 let pulseSort = { field: 'date', direction: 'desc' };
 let pulseAddRowOpen = false;
-let agentDebugPulseRenderSeq = 0;
 let pulseRenderPendingAfterInteraction = false;
 let pulseLastRenderedSignature = '';
 let pulseLastAddRowSignature = '';
 let liveJobsView = localStorage.getItem('jobsToConsiderView') || 'cards';
-
-// #region agent log
-function agentDebugActiveElement() {
-  const el = document.activeElement;
-  return {
-    tag: el?.tagName || '',
-    id: el?.id || '',
-    name: el?.getAttribute?.('name') || '',
-    type: el?.getAttribute?.('type') || '',
-    value: el?.value || '',
-    inPulse: Boolean(el?.closest?.('#pulse')),
-    inPulseAddRow: Boolean(el?.closest?.('#pulse-add-row')),
-    inPulseTable: Boolean(el?.closest?.('#pulse-apps-table')),
-    inColumnFilter: Boolean(el?.closest?.('.column-filter')),
-  };
-}
-
-function agentDebugLog(hypothesisId, location, message, data = {}) {
-  fetch('http://127.0.0.1:7769/ingest/68caffdd-f1f0-4f5d-bcd1-25ea99059dee',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'5c07d9'},body:JSON.stringify({sessionId:'5c07d9',runId:'initial',hypothesisId,location,message,data,timestamp:Date.now()})}).catch(()=>{});
-}
-// #endregion
+let researchProspectsView = localStorage.getItem('researchProspectsView') || 'cards';
 
 function isPulseWorkspaceControlActive() {
   const el = document.activeElement;
@@ -1919,26 +2432,161 @@ function pulseAddRowSignature(view) {
 
 async function fetchJSON(file) {
   try {
-    const res = await fetch(`${API_BASE}/data/${file}`);
+    const url = STATIC_PUBLISH ? `./data/${file}` : `${API_BASE}/data/${file}`;
+    const res = await fetchWithTimeout(url, { cache: 'no-store' });
     if (!res.ok) return null;
     return await res.json();
   } catch { return null; }
 }
 
 async function apiJSON(path, options = {}) {
-  const res = await fetch(`${API_BASE}${path}`, {
-    headers: { 'Content-Type': 'application/json' },
+  const method = (options.method || 'GET').toUpperCase();
+  const requestOptions = {
+    headers: { 'Content-Type': 'application/json', ...(options.headers || {}) },
+    cache: 'no-store',
     ...options,
-  });
-  if (!res.ok) {
-    const err = await res.json().catch(() => ({ error: res.statusText }));
-    throw new Error(err.error || res.statusText);
+  };
+  if (STATIC_PUBLISH) {
+    if (method !== 'GET') throw new Error('Read-only public snapshot');
+    const res = await fetchWithTimeout(staticApiPath(path), { cache: 'no-store' });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({ error: res.statusText }));
+      throw new Error(err.error || res.statusText);
+    }
+    return await res.json();
   }
-  return await res.json();
+  const url = `${API_BASE}${path}`;
+  const key = `${method}:${path}`;
+  if (method !== 'GET') apiGetCache.clear();
+  const cached = method === 'GET' ? apiGetCache.get(key) : null;
+  if (cached && Date.now() - cached.timestamp < API_GET_CACHE_MS) return cached.value;
+  if (method === 'GET' && apiInflightGet.has(key)) return apiInflightGet.get(key);
+  const request = (async () => {
+    const res = await fetchWithTimeout(url, requestOptions);
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({ error: res.statusText }));
+      throw new Error(err.error || res.statusText);
+    }
+    const value = await res.json();
+    if (method === 'GET') apiGetCache.set(key, { timestamp: Date.now(), value });
+    return value;
+  })();
+  if (method !== 'GET') return request;
+
+  apiInflightGet.set(key, request);
+  try {
+    return await request;
+  } finally {
+    apiInflightGet.delete(key);
+  }
+}
+
+function downloadDashboardExport(scope, format = 'xlsx') {
+  const params = new URLSearchParams({
+    format,
+    date: easternISODate(),
+    timezone: DASHBOARD_TIMEZONE,
+  });
+  window.location.href = `${API_BASE}/api/export/${encodeURIComponent(scope)}?${params.toString()}`;
+}
+
+async function sendTodayDigestNow() {
+  const input = document.getElementById('today-email-recipient');
+  const button = document.getElementById('today-email-send-btn');
+  const recipient = input?.value?.trim() || '';
+  if (!recipient) {
+    setInlineNotice('today-email-feedback', 'Enter an email address first.', 'error');
+    return;
+  }
+  if (button) button.disabled = true;
+  setInlineNotice('today-email-feedback', 'Sending today CSV/XLSX...', 'warn');
+  try {
+    const result = await apiJSON('/api/daily-digest/send', {
+      method: 'POST',
+      body: JSON.stringify({
+        date: easternISODate(),
+        timezone: DASHBOARD_TIMEZONE,
+        recipients: recipient,
+        dry_run: false,
+      }),
+    });
+    const accepted = Array.isArray(result.accepted) && result.accepted.length
+      ? ` Accepted: ${result.accepted.join(', ')}.`
+      : '';
+    setInlineNotice('today-email-feedback', `Sent today digest.${accepted}`, 'success');
+  } catch (err) {
+    const message = String(err.message || 'unknown error');
+    if (message.includes('missing SMTP configuration')) {
+      setInlineNotice(
+        'today-email-feedback',
+        'Email is not configured yet. Create WEB-TRACKER/.env from .env.example, set SMTP_PASS to a Gmail App Password (https://myaccount.google.com/apppasswords), then restart the dashboard.',
+        'error'
+      );
+    } else {
+      setInlineNotice('today-email-feedback', `Could not send email: ${message}`, 'error');
+    }
+  } finally {
+    if (button) button.disabled = false;
+  }
+}
+
+function todayTrackerCard(value, label, className = '') {
+  const colorClass = className ? ` ${className}` : '';
+  return `<div class="stat-card"><div class="stat-number${colorClass}">${Number(value || 0)}</div><div class="stat-label">${escapeHTML(label)}</div></div>`;
+}
+
+function renderTodayActivitySummary(summary = {}) {
+  const statsEl = document.getElementById('global-today-stats');
+  if (!statsEl) return;
+  statsEl.innerHTML = [
+    todayTrackerCard(summary.applied_today, 'Applied Today', 'fusion-color'),
+    todayTrackerCard(summary.contacted_today, 'Contacted Today'),
+    todayTrackerCard(summary.followed_today, 'Followed Today', 'nuclear-color'),
+    todayTrackerCard(summary.followups_due_today, 'Follow-ups Due Today'),
+  ].join('');
+}
+
+function applyTodayFromResponse(result = {}) {
+  if (result?.today?.summary) renderTodayActivitySummary(result.today.summary);
+}
+
+async function renderTodayActivityTracker() {
+  const statsEl = document.getElementById('global-today-stats');
+  if (!statsEl) return;
+  try {
+    const date = easternISODate();
+    const data = await apiJSON(`/api/today-activity?date=${encodeURIComponent(date)}&timezone=${encodeURIComponent(DASHBOARD_TIMEZONE)}`);
+    renderTodayActivitySummary(data.summary || {});
+  } catch (err) {
+    statsEl.innerHTML = `<div class="jobs-empty">Today tracker unavailable: ${escapeHTML(err.message)}</div>`;
+  }
 }
 
 function daysBetween(d1, d2) {
   return Math.floor((d2 - d1) / 86400000);
+}
+
+function easternISODate() {
+  return new Intl.DateTimeFormat('en-CA', { timeZone: DASHBOARD_TIMEZONE }).format(new Date());
+}
+
+function todayISODate() {
+  return easternISODate();
+}
+
+function parseISODateOnly(value = '') {
+  const match = String(value || '').match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (!match) return null;
+  const date = new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
+  return Number.isNaN(date.getTime()) ? null : date;
+}
+
+function pulseDateAgeDays(value = '') {
+  const date = parseISODateOnly(value);
+  if (!date) return null;
+  const now = new Date();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  return daysBetween(date, today);
 }
 
 function friendlyStatus(status) {
@@ -1954,6 +2602,8 @@ function friendlyStatus(status) {
     completed: 'Done',
     failed: 'Needs attention',
     queued: 'Waiting',
+    needs_user: 'Needs user',
+    cancelled: 'Cancelled',
   }[status] || status;
 }
 
@@ -1963,6 +2613,124 @@ function statusClass(status = '') {
 
 function escapeHTML(text = '') {
   return String(text).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+function humanizeKey(key = '') {
+  return String(key)
+    .replace(/_/g, ' ')
+    .replace(/\b\w/g, char => char.toUpperCase());
+}
+
+function isShareEmpty(value) {
+  if (value === null || value === undefined) return true;
+  if (typeof value === 'string') return value.trim() === '';
+  if (Array.isArray(value)) return value.length === 0;
+  if (typeof value === 'object') return Object.keys(value).length === 0;
+  return false;
+}
+
+function shareScalar(value) {
+  const text = String(value ?? '').trim();
+  if (/^https?:\/\//i.test(text)) return `<${text}>`;
+  return text;
+}
+
+function shareValueToMarkdown(value, depth = 0) {
+  const indent = '  '.repeat(depth);
+  if (Array.isArray(value)) {
+    if (!value.length) return `${indent}- none`;
+    return value.map((item, index) => {
+      if (item && typeof item === 'object') {
+        return `${indent}${index + 1}. ${shareValueToMarkdown(item, depth + 1).trimStart()}`;
+      }
+      return `${indent}${index + 1}. ${shareScalar(item)}`;
+    }).join('\n');
+  }
+  if (value && typeof value === 'object') {
+    const lines = [];
+    for (const [key, item] of Object.entries(value)) {
+      if (isShareEmpty(item)) continue;
+      if (item && typeof item === 'object') {
+        lines.push(`${indent}- ${humanizeKey(key)}:`);
+        lines.push(shareValueToMarkdown(item, depth + 1));
+      } else {
+        lines.push(`${indent}- ${humanizeKey(key)}: ${shareScalar(item)}`);
+      }
+    }
+    return lines.join('\n') || `${indent}- none`;
+  }
+  return `${indent}- ${shareScalar(value)}`;
+}
+
+function shareTitle(record = {}, kind = 'card') {
+  if (kind === 'job') return `${record.company || 'Job'} - ${record.title || record.role || 'Role'}`;
+  return `${record.name || record.company || record.program || 'Prospect'} - ${record.title || record.role || record.lab || kind}`;
+}
+
+function formatSharePayload(record = {}, options = {}) {
+  const kind = options.kind || 'card';
+  const title = shareTitle(record, kind);
+  const source = options.sourceLabel || humanizeKey(kind);
+  return [
+    `# ${title}`,
+    '',
+    `Source: ${source}`,
+    `Copied from: Fusion Pivot dashboard`,
+    `Copied at: ${new Date().toISOString()}`,
+    '',
+    '## Complete Card Data',
+    shareValueToMarkdown(record),
+    '',
+    '## Raw JSON',
+    '```json',
+    JSON.stringify(record, null, 2),
+    '```',
+  ].join('\n');
+}
+
+async function writeClipboardText(text) {
+  if (navigator.clipboard?.writeText) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  textarea.setAttribute('readonly', '');
+  textarea.style.position = 'fixed';
+  textarea.style.left = '-9999px';
+  document.body.appendChild(textarea);
+  textarea.select();
+  const ok = document.execCommand('copy');
+  document.body.removeChild(textarea);
+  if (!ok) throw new Error('clipboard unavailable');
+}
+
+function shareButton(kind, key) {
+  return `<button class="control-btn secondary share-copy-btn" onclick="copyCardInfo('${kind}', '${escapeHTML(key)}')">Share / Copy</button>`;
+}
+
+async function copyCardInfo(kind, key) {
+  const stores = {
+    research: window.__researchProspectsById || {},
+    phd: window.__phdProspectsByKey || {},
+    job: window.__liveJobsByUrl || {},
+  };
+  const record = stores[kind]?.[key];
+  const feedback = {
+    research: setResearchProspectsFeedback,
+    phd: setPhdResearchProspectsFeedback,
+    job: setLiveJobsFeedback,
+  }[kind] || (() => {});
+  if (!record) {
+    feedback('Could not find that card in the current dashboard view.', 'error');
+    return;
+  }
+  try {
+    await writeClipboardText(formatSharePayload(record, { kind }));
+    feedback('Copied full card info as Markdown with links.', 'success');
+  } catch (err) {
+    feedback(`Copy failed: ${err.message}`, 'error');
+  }
 }
 
 function setInlineNotice(id, message = '', variant = 'success') {
@@ -1992,6 +2760,10 @@ function setPulseFeedback(message = '', variant = 'success') {
 
 function setLiveJobsFeedback(message = '', variant = 'success') {
   setInlineNotice('livejobs-feedback', message, variant);
+}
+
+function setResearchProspectsFeedback(message = '', variant = 'success') {
+  setInlineNotice('researchprospects-feedback', message, variant);
 }
 
 function normalizePulseText(value = '') {
@@ -2094,46 +2866,103 @@ function pulseStatusOptions(selectedStatus) {
   return TRACKER_STATUSES.map(status => `<option value="${status}"${status === normalized ? ' selected' : ''}>${status}</option>`).join('');
 }
 
+function trackerStatusClass(status = '') {
+  return `tracker-status-${statusClass(normalizePulseStatus(status))}`;
+}
+
+function pulseEntryMetadata(entry = {}) {
+  return pulseDashboardData.entries?.[String(entry.num)] || {};
+}
+
+function pulseEntryTrackingDate(entry = {}) {
+  const draft = pulseDraftRows.get(entry.num) || {};
+  const metadata = pulseEntryMetadata(entry);
+  return draft.submitted_date || metadata.submitted_date || draft.date || entry.date || '';
+}
+
+function isPulseTodayEntry(entry = {}) {
+  return pulseEntryTrackingDate(entry) === todayISODate();
+}
+
+function pulseRecencyStyle(entry = {}) {
+  const age = pulseDateAgeDays(pulseEntryTrackingDate(entry));
+  if (age === null || age < 0 || age > 14) return '';
+  const alpha = Math.max(0.035, 0.24 - (age * 0.014));
+  return ` style="--application-recency-alpha:${alpha.toFixed(3)};"`;
+}
+
+function pulseRecencyClass(entry = {}) {
+  const age = pulseDateAgeDays(pulseEntryTrackingDate(entry));
+  if (age === 0) return 'application-recency-row application-recency-today';
+  if (age !== null && age > 0 && age <= 14) return 'application-recency-row';
+  return '';
+}
+
+function pulseCellClass(entry = {}, field = '') {
+  const classes = [];
+  if (['date', 'submitted_date'].includes(field)) {
+    classes.push('application-date-cell');
+    const age = pulseDateAgeDays(getPulseValue(entry, field));
+    if (age === 0) classes.push('application-date-today');
+    else if (age !== null && age > 0 && age <= 14) classes.push('application-date-recent');
+  }
+  if (['followup_date', 'no_response_followup_date'].includes(field)) {
+    const age = pulseDateAgeDays(getPulseValue(entry, field));
+    if (age === 0) classes.push('followup-due-today');
+    else if (age !== null && age > 0) classes.push('followup-overdue');
+  }
+  return classes.join(' ');
+}
+
+function mergePulseEntry(num, field, value, result = {}) {
+  const entry = pulseEntriesByNum.get(num);
+  if (entry && isPulseCoreField(field)) {
+    if (field === 'pdf') entry.pdf = normalizedPulseField(field, value) === '✅';
+    else if (field === 'report') entry.report_link = normalizePulseText(value);
+    else entry[field] = normalizedPulseField(field, value);
+  }
+  if (isPulseMetaField(field)) {
+    const key = String(num);
+    pulseDashboardData.entries[key] = { ...(pulseDashboardData.entries[key] || {}), [field]: normalizedPulseField(field, value) };
+  }
+  if (result.entry) pulseEntriesByNum.set(num, result.entry);
+  if (result.metadata) {
+    pulseDashboardData.entries[String(num)] = {
+      ...(pulseDashboardData.entries[String(num)] || {}),
+      ...result.metadata,
+    };
+  }
+}
+
 async function commitPulseField(num, field, value) {
-  // #region agent log
-  agentDebugLog('H4', 'WEB-TRACKER/dashboard/fusion-pivot-dashboard.html:commitPulseField', 'commitPulseField entered before autosave/render', {
-    num,
-    field,
-    value,
-    activeElement: agentDebugActiveElement(),
-    pulseSavingRows: pulseSavingRows.size,
-  });
-  // #endregion
   updatePulseDraft(num, field, value);
-  if (pulseSavingRows.has(num)) return;
   const payload = pulsePatchPayload(num, field);
   if (Object.keys(payload).length === 0) {
     return;
   }
 
+  const saveKey = `${num}:${field}`;
+  const sequence = ++saveSequence;
+  pendingPulseSaves.set(saveKey, sequence);
   pulseSavingRows.add(num);
+  mergePulseEntry(num, field, payload[field]);
   try {
-    await apiJSON(`/api/applications/${num}`, {
+    const result = await apiJSON(`/api/applications/${num}`, {
       method: 'PATCH',
       body: JSON.stringify(payload),
     });
-    const entry = pulseEntriesByNum.get(num);
-    if (entry && isPulseCoreField(field)) {
-      if (field === 'pdf') entry.pdf = normalizedPulseField(field, value) === '✅';
-      else if (field === 'report') entry.report_link = normalizePulseText(value);
-      else entry[field] = payload[field];
-    }
-    if (isPulseMetaField(field)) {
-      const key = String(num);
-      pulseDashboardData.entries[key] = { ...(pulseDashboardData.entries[key] || {}), [field]: payload[field] };
-    }
-    pulseDraftRows.delete(num);
+    if (pendingPulseSaves.get(saveKey) !== sequence) return;
+    applyTodayFromResponse(result);
+    mergePulseEntry(num, field, payload[field], result);
     setPulseFeedback(`Saved #${num} ${PULSE_FIELD_LABELS[field] || field}.`, 'success');
   } catch (err) {
+    if (pendingPulseSaves.get(saveKey) !== sequence) return;
     setPulseFeedback(`Could not save #${num}: ${err.message}`, 'error');
   } finally {
-    pulseSavingRows.delete(num);
-    renderPulse();
+    if (pendingPulseSaves.get(saveKey) === sequence) pendingPulseSaves.delete(saveKey);
+    if (![...pendingPulseSaves.keys()].some(key => key.startsWith(`${num}:`))) {
+      pulseSavingRows.delete(num);
+    }
   }
 }
 
@@ -2149,24 +2978,11 @@ function setPulseView(view) {
 }
 
 function setPulseGlobalSearch(value) {
-  // #region agent log
-  agentDebugLog('H1', 'WEB-TRACKER/dashboard/fusion-pivot-dashboard.html:setPulseGlobalSearch', 'global search input will renderPulse', {
-    value,
-    activeElement: agentDebugActiveElement(),
-  });
-  // #endregion
   pulseGlobalSearch = value || '';
   renderPulse();
 }
 
 function setPulseFilter(field, value) {
-  // #region agent log
-  agentDebugLog('H1', 'WEB-TRACKER/dashboard/fusion-pivot-dashboard.html:setPulseFilter', 'column filter changed and will renderPulse', {
-    field,
-    value,
-    activeElement: agentDebugActiveElement(),
-  });
-  // #endregion
   if (value) pulseFilters[field] = value;
   else delete pulseFilters[field];
   renderPulse();
@@ -2176,6 +2992,16 @@ function clearPulseFilters() {
   pulseFilters = {};
   pulseGlobalSearch = '';
   renderPulse();
+}
+
+function setPulseTodayFilter() {
+  pulseFilters = { ...pulseFilters, __today: todayISODate() };
+  pulseGlobalSearch = '';
+  renderPulse();
+}
+
+function updatePulseQuickFilterButtons() {
+  document.getElementById('pulse-today-filter')?.classList.toggle('is-active', Boolean(pulseFilters.__today));
 }
 
 function setPulseSort(field) {
@@ -2204,7 +3030,8 @@ function getPulseValue(entry, field) {
 function pulseMatchesFilters(entry, columns) {
   const haystack = columns.map(field => String(getPulseValue(entry, field))).join(' ').toLowerCase();
   if (pulseGlobalSearch && !haystack.includes(pulseGlobalSearch.toLowerCase())) return false;
-  return Object.entries(pulseFilters).every(([field, filter]) => {
+  if (pulseFilters.__today && !isPulseTodayEntry(entry)) return false;
+  return Object.entries(pulseFilters).filter(([field]) => field !== '__today').every(([field, filter]) => {
     const value = String(getPulseValue(entry, field)).toLowerCase();
     return value.includes(String(filter).toLowerCase());
   });
@@ -2227,7 +3054,7 @@ function pulseFieldControl(entry, field) {
   const safeValue = escapeHTML(value || '');
   if (field === 'num') return `<span class="pulse-row-readonly">${entry.num}</span>`;
   if (field === 'status') {
-    return `<select class="pulse-edit-field" onchange="commitPulseField(${entry.num}, '${field}', this.value)">${pulseStatusOptions(value)}</select>`;
+    return `<select class="pulse-edit-field pulse-status-select ${trackerStatusClass(value)}" onchange="this.className = 'pulse-edit-field pulse-status-select ' + trackerStatusClass(this.value); commitPulseField(${entry.num}, '${field}', this.value)">${pulseStatusOptions(value)}</select>`;
   }
   if (field === 'pdf') {
     return `<select class="pulse-edit-field" onchange="commitPulseField(${entry.num}, '${field}', this.value)">
@@ -2269,6 +3096,7 @@ function renderPulseViewSelector() {
     .join('');
   const search = document.getElementById('pulse-global-search');
   if (search && search.value !== pulseGlobalSearch) search.value = pulseGlobalSearch;
+  updatePulseQuickFilterButtons();
 }
 
 function renderPulseAddRow(view) {
@@ -2319,6 +3147,7 @@ async function createPulseApplication() {
       method: 'POST',
       body: JSON.stringify(payload),
     });
+    applyTodayFromResponse(result);
     setPulseFeedback(result.duplicate ? `Updated existing row #${result.num}; duplicate was not created.` : `Created row #${result.num}.`, 'success');
     pulseAddRowOpen = false;
     await renderPulse();
@@ -2333,7 +3162,8 @@ async function deletePulseRow(num) {
   if (!confirm(`Delete application #${num}?\n\n${label}\n\nThis removes the row from data/applications.md.`)) return;
 
   try {
-    await apiJSON(`/api/applications/${num}`, { method: 'DELETE' });
+    const result = await apiJSON(`/api/applications/${num}`, { method: 'DELETE' });
+    applyTodayFromResponse(result);
     pulseDraftRows.delete(num);
     pulseSavingRows.delete(num);
     pulseEntriesByNum.delete(num);
@@ -2435,21 +3265,111 @@ function actionResultMessage(action, task) {
 function renderAllPanels() {
   renderActionPlan();
   renderLiveJobs();
+  renderResearchProspects();
+  renderTargetCompanies();
   renderPhdRadar();
+  renderPrivateCompanyPhdPaths();
+  renderPhdResearchProspects();
   renderPulse();
   renderSystem();
   renderActions();
+  renderAutonomy();
   renderJobs();
   renderAgentTasks();
   renderContacts();
+  renderTodayActivityTracker();
+}
+
+function renderInitialDashboard() {
+  renderActionPlan();
+  renderTodayActivityTracker();
+}
+
+function activeTabId() {
+  return document.querySelector('.tab-content.active')?.id || 'today';
+}
+
+function refreshVisibleDashboard() {
+  const activeTab = activeTabId();
+  TAB_RENDERERS[activeTab]?.();
+  if (activeTab !== 'today') renderTodayActivityTracker();
+}
+
+function queueVisibleDashboardRefresh(delay = 400) {
+  if (visibleRefreshTimer) return;
+  visibleRefreshTimer = setTimeout(() => {
+    visibleRefreshTimer = null;
+    refreshVisibleDashboard();
+  }, delay);
+}
+
+function queueTodayActivityRefresh(delay = 400) {
+  if (todayRefreshTimer) return;
+  todayRefreshTimer = setTimeout(() => {
+    todayRefreshTimer = null;
+    renderTodayActivityTracker();
+  }, delay);
 }
 
 function queueRenderAllPanels() {
+  const activeTab = document.querySelector('.tab-content.active')?.id || '';
+  if (pendingPulseSaves.size || pendingJobSaves.size || pendingResearchSaves.size || pendingPhdResearchSaves.size) {
+    return;
+  }
+  if (activeTab === 'researchprospects') {
+    deferredFullPanelRender = true;
+    return;
+  }
   if (refreshTimer) return;
   refreshTimer = setTimeout(() => {
     refreshTimer = null;
     renderAllPanels();
   }, 200);
+}
+
+function shouldSkipPulseSseRender() {
+  return pendingPulseSaves.size > 0 || isPulseWorkspaceControlActive();
+}
+
+function shouldSkipJobsSseRender() {
+  if (pendingJobSaves.size > 0) return true;
+  if (document.hidden) {
+    liveJobsRenderQueued = true;
+    return true;
+  }
+  return false;
+}
+
+function shouldSkipResearchSseRender() {
+  return pendingResearchSaves.size > 0 || researchProspectsControlActive();
+}
+
+function shouldSkipPhdResearchSseRender() {
+  return pendingPhdResearchSaves.size > 0 || phdResearchProspectsControlActive();
+}
+
+function renderPulseFromSse() {
+  if (!shouldSkipPulseSseRender()) renderPulse();
+}
+
+function renderLiveJobsFromSse() {
+  if (!shouldSkipJobsSseRender()) renderLiveJobs();
+}
+
+function renderResearchProspectsFromSse() {
+  if (shouldSkipResearchSseRender()) return;
+  researchProspectsCache = null;
+  researchProspectsRenderedSignature = '';
+  renderResearchProspects({ force: true });
+}
+
+function renderPhdResearchProspectsFromSse(source = '') {
+  if (shouldSkipPhdResearchSseRender()) return;
+  if (source) phdResearchProspectsCache.delete(source);
+  else phdResearchProspectsCache = new Map();
+  phdResearchProspectsRenderedSignature = '';
+  if (!source || source === 'private-co') renderPrivateCompanyPhdPaths({ force: true });
+  renderPhdResearchProspects({ force: true });
 }
 
 function actionCard(task, index = 0) {
@@ -2525,8 +3445,8 @@ function workAuthBadges(job) {
 async function renderActionPlan() {
   const [plan, jobsData, appsData] = await Promise.all([
     apiJSON('/api/action-plan').catch(() => null),
-    fetchJSON('jobs-to-consider.json'),
-    fetchJSON('applications.json'),
+    apiJSON('/api/jobs-to-consider').catch(() => null),
+    apiJSON('/api/applications').catch(() => null),
   ]);
   window.__actionPlan = plan;
   document.getElementById('today-date-label').textContent = new Date().toLocaleDateString(undefined, {
@@ -2728,7 +3648,7 @@ const ARTIFACT_REQUESTS = {
   resume: {
     label: 'Request Resume',
     doneLabel: 'Resume ready',
-    resourceKeys: ['resume_pdf'],
+    resourceKeys: ['resume_tex', 'resume_pdf'],
   },
   cover_letter: {
     label: 'Request Cover Letter',
@@ -2743,7 +3663,7 @@ const ARTIFACT_REQUESTS = {
   application_pack: {
     label: 'Request Full Application Pack',
     doneLabel: 'Application pack ready',
-    resourceKeys: ['resume_pdf', 'cover_letter_pdf', 'email_draft'],
+    resourceKeys: ['resume_tex', 'resume_pdf', 'cover_letter_pdf', 'email_draft'],
   },
 };
 
@@ -2770,6 +3690,9 @@ function jobResourceLinks(job) {
   if (resources.resume_pdf) {
     links.push(`<a class="job-resource-link" href="${API_BASE}/${escapeHTML(resources.resume_pdf)}" download>Resume PDF</a>`);
   }
+  if (resources.resume_tex) {
+    links.push(`<a class="job-resource-link" href="${API_BASE}/${escapeHTML(resources.resume_tex)}" download>Resume TeX</a>`);
+  }
   if (resources.cover_letter_pdf) {
     links.push(`<a class="job-resource-link" href="${API_BASE}/${escapeHTML(resources.cover_letter_pdf)}" download>Cover Letter PDF</a>`);
   }
@@ -2785,7 +3708,7 @@ function jobResourceLinks(job) {
 function jobAppliedToggle(job) {
   const id = JSON.stringify(job.id);
   const checked = job.applied || job.status === 'applied' ? 'checked' : '';
-  return `<label class="job-apply-toggle"><input type="checkbox" ${checked} onchange='toggleJobApplied(${id}, this.checked)'> Applied</label>`;
+  return `<label class="job-apply-toggle"><input type="checkbox" ${checked} onchange='toggleJobApplied(${id}, this.checked, this)'> Applied</label>`;
 }
 
 function jobStatusBadge(job) {
@@ -2795,7 +3718,7 @@ function jobStatusBadge(job) {
 }
 
 function jobDeleteControl(job) {
-  return `<button class="control-btn secondary danger" onclick='deleteJobPosting(${JSON.stringify(job.id)})'>Delete Posting</button>`;
+  return `<button class="control-btn secondary danger write-only" onclick='deleteJobPosting(${JSON.stringify(job.id)})'>Delete Posting</button>`;
 }
 
 function renderJobCards(jobs) {
@@ -2819,6 +3742,7 @@ function renderJobCards(jobs) {
         ${jobAppliedToggle(job)}
         ${jobResourceLinks(job)}
         ${jobArtifactActions(job)}
+        ${shareButton('job', job.id)}
         <button class="control-btn secondary" onclick='queueEvaluationTask(window.__liveJobsByUrl[${JSON.stringify(job.id)}])'>Ask AI to evaluate this</button>
         ${jobDeleteControl(job)}
       </div>`;
@@ -2837,7 +3761,7 @@ function renderJobTable(jobs) {
       <td>${jobStatusBadge(job)}</td>
       <td>${escapeHTML(job.fit_summary || job.notes || '')}</td>
       <td>${jobResourceLinks(job)}</td>
-      <td>${jobArtifactActions(job)}<button class="control-btn secondary" onclick='queueEvaluationTask(window.__liveJobsByUrl[${JSON.stringify(job.id)}])'>Evaluate</button>${jobDeleteControl(job)}</td>
+      <td>${jobArtifactActions(job)}${shareButton('job', job.id)}<button class="control-btn secondary" onclick='queueEvaluationTask(window.__liveJobsByUrl[${JSON.stringify(job.id)}])'>Evaluate</button>${jobDeleteControl(job)}</td>
     </tr>`).join('');
   return `<div class="pulse-table-wrap"><table class="pulse-tracker-table">
     <thead><tr>
@@ -2858,13 +3782,21 @@ function renderJobsSection(title, jobs, targetId) {
 
 const LIVE_JOBS_SECTION_IDS = ['livejobs-to-consider', 'livejobs-applied', 'livejobs-closed'];
 const LIVE_JOBS_SCROLL_IDLE_MS = 800;
+const LIVE_JOBS_SCROLL_STORAGE_KEY = 'careerOps.liveJobsScrollState.v1';
+let liveJobsCompanyFilter = '';
+let targetCompaniesCache = null;
 let liveJobsRenderInFlight = false;
 let liveJobsRenderQueued = false;
 let liveJobsDeferredRenderTimer = null;
 let liveJobsUserScrollingUntil = 0;
+let liveJobsScrollCache = null;
 
 function isLiveJobsScrollTarget(target) {
   return Boolean(target?.closest?.('#livejobs .pulse-table-wrap, #livejobs .jobs-section'));
+}
+
+function isLiveJobsActive() {
+  return document.getElementById('livejobs')?.classList.contains('active') || false;
 }
 
 function queueLiveJobsRenderAfterScrollIdle() {
@@ -2880,8 +3812,15 @@ function queueLiveJobsRenderAfterScrollIdle() {
 document.addEventListener('scroll', (event) => {
   if (!isLiveJobsScrollTarget(event.target)) return;
   liveJobsUserScrollingUntil = Date.now() + LIVE_JOBS_SCROLL_IDLE_MS;
+  saveLiveJobsScrollState();
   queueLiveJobsRenderAfterScrollIdle();
 }, true);
+
+window.addEventListener('scroll', () => {
+  if (!isLiveJobsActive()) return;
+  liveJobsUserScrollingUntil = Date.now() + LIVE_JOBS_SCROLL_IDLE_MS;
+  saveLiveJobsScrollState();
+}, { passive: true });
 
 function captureLiveJobsScrollState() {
   const sections = Object.fromEntries(LIVE_JOBS_SECTION_IDS.map(id => {
@@ -2903,9 +3842,29 @@ function captureLiveJobsScrollState() {
   };
 }
 
+function readLiveJobsScrollState() {
+  if (liveJobsScrollCache) return liveJobsScrollCache;
+  try {
+    const parsed = JSON.parse(sessionStorage.getItem(LIVE_JOBS_SCROLL_STORAGE_KEY) || 'null');
+    if (parsed && typeof parsed === 'object') {
+      liveJobsScrollCache = parsed;
+      return parsed;
+    }
+  } catch {}
+  return null;
+}
+
+function saveLiveJobsScrollState(state = captureLiveJobsScrollState()) {
+  liveJobsScrollCache = state;
+  try {
+    sessionStorage.setItem(LIVE_JOBS_SCROLL_STORAGE_KEY, JSON.stringify(state));
+  } catch {}
+  return state;
+}
+
 function restoreLiveJobsScrollState(state) {
   if (!state) return;
-  requestAnimationFrame(() => {
+  const apply = () => {
     for (const [id, scroll] of Object.entries(state.sections || {})) {
       const section = document.getElementById(id);
       const tableWrap = section?.querySelector('.pulse-table-wrap');
@@ -2921,26 +3880,53 @@ function restoreLiveJobsScrollState(state) {
     if (state.restorePage && document.getElementById('livejobs')?.classList.contains('active')) {
       window.scrollTo(state.pageX, state.pageY);
     }
+  };
+  apply();
+  requestAnimationFrame(() => {
+    apply();
+    requestAnimationFrame(apply);
   });
+  setTimeout(apply, 75);
+  setTimeout(apply, 250);
 }
 
-async function toggleJobApplied(id, applied) {
+async function toggleJobApplied(id, applied, inputEl = null) {
   if (!applied && !confirm('Move this job back to To Consider and remove its linked Applications row?')) {
-    renderLiveJobs();
+    if (inputEl) inputEl.checked = true;
     return;
   }
+  const sequence = ++saveSequence;
+  pendingJobSaves.set(id, sequence);
+  const job = window.__liveJobsByUrl?.[id];
+  const previous = job ? { ...job } : null;
+  if (job) {
+    job.applied = Boolean(applied);
+    job.status = applied ? 'applied' : 'to_consider';
+    if (applied && !job.applied_at) job.applied_at = new Date().toISOString();
+    if (!applied) {
+      job.applied_at = '';
+      job.application_num = null;
+    }
+  }
+  if (inputEl) inputEl.disabled = true;
   try {
     setLiveJobsFeedback(applied ? 'Saving as applied...' : 'Moving back to Jobs to Consider...', 'warn');
-    await apiJSON(`/api/jobs-to-consider/${encodeURIComponent(id)}/apply`, {
+    const result = await apiJSON(`/api/jobs-to-consider/${encodeURIComponent(id)}/apply`, {
       method: 'POST',
       body: JSON.stringify({ applied }),
     });
+    if (pendingJobSaves.get(id) !== sequence) return;
+    applyTodayFromResponse(result);
+    if (result.job && window.__liveJobsByUrl) window.__liveJobsByUrl[id] = result.job;
     setLiveJobsFeedback(applied ? 'Saved: job moved into Applications.' : 'Saved: job removed from Applications.', 'success');
-    await renderLiveJobs();
-    await renderPulse();
   } catch (err) {
+    if (pendingJobSaves.get(id) !== sequence) return;
+    if (previous && window.__liveJobsByUrl) window.__liveJobsByUrl[id] = previous;
+    if (inputEl) inputEl.checked = Boolean(previous?.applied || previous?.status === 'applied');
     setLiveJobsFeedback(err.message || 'Could not update job.', 'error');
-    await renderLiveJobs();
+  } finally {
+    if (pendingJobSaves.get(id) === sequence) pendingJobSaves.delete(id);
+    if (inputEl) inputEl.disabled = false;
   }
 }
 
@@ -2954,9 +3940,20 @@ async function deleteJobPosting(id) {
 
   try {
     setLiveJobsFeedback('Deleting posting...', 'warn');
-    await apiJSON(`/api/jobs-to-consider/${encodeURIComponent(id)}`, { method: 'DELETE' });
+    const result = await apiJSON(`/api/jobs-to-consider/${encodeURIComponent(id)}`, {
+      method: 'DELETE',
+      body: JSON.stringify({
+        id,
+        url: job?.url,
+        company: job?.company,
+        title: job?.title,
+      }),
+    });
     if (window.__liveJobsByUrl) delete window.__liveJobsByUrl[id];
-    setLiveJobsFeedback('Deleted posting from Jobs to Consider.', 'success');
+    setLiveJobsFeedback(
+      result?.missing ? 'That posting was already removed. Refreshed Jobs to Consider.' : 'Deleted posting from Jobs to Consider.',
+      'success'
+    );
     await renderLiveJobs();
     await renderActionPlan();
   } catch (err) {
@@ -2978,9 +3975,9 @@ async function renderLiveJobs() {
 
   liveJobsRenderInFlight = true;
   updateLiveJobsViewButtons();
+  const scrollState = saveLiveJobsScrollState();
   try {
-    const data = await fetchJSON('jobs-to-consider.json');
-    const scrollState = captureLiveJobsScrollState();
+    const data = await apiJSON('/api/jobs-to-consider');
     if (!data) {
       document.getElementById('livejobs-meta').textContent = 'No curated jobs yet. Research a role, then add it here before applying.';
       restoreLiveJobsScrollState(scrollState);
@@ -2988,9 +3985,13 @@ async function renderLiveJobs() {
     }
 
     const filters = selectedWorkAuthFilters();
-    const filtered = (data.jobs || []).filter(job => matchesWorkAuthFilters(job, filters));
+    let filtered = (data.jobs || []).filter(job => matchesWorkAuthFilters(job, filters));
+    if (liveJobsCompanyFilter) {
+      const needle = liveJobsCompanyFilter.toLowerCase();
+      filtered = filtered.filter(job => (job.company || '').toLowerCase().includes(needle));
+    }
     const sorted = [...filtered].sort((a, b) => new Date(b.first_seen || 0) - new Date(a.first_seen || 0));
-    window.__liveJobsByUrl = Object.fromEntries(sorted.map(job => [job.id, job]));
+    window.__liveJobsByUrl = Object.fromEntries(sorted.flatMap(job => [[job.id, job], ...(job.url ? [[job.url, job]] : [])]));
 
     const activeJobs = sorted.filter(job => !job.applied && job.status !== 'applied' && job.status !== 'closed' && job.status !== 'archived');
     const appliedJobs = sorted.filter(job => job.applied || job.status === 'applied');
@@ -3009,6 +4010,936 @@ async function renderLiveJobs() {
   }
 }
 
+// ── U-M Research Prospects Tab ───────────────────────────────────────
+
+let researchProspectsCache = null;
+let researchProspectsVectorOptionsLoaded = false;
+let researchProspectsRenderedSignature = '';
+let researchProspectsRenderInFlight = false;
+let researchProspectsRenderQueued = false;
+let researchProspectsDeferredRenderTimer = null;
+let researchProspectsUserInteractingUntil = 0;
+const RESEARCH_PROSPECTS_INTERACTION_IDLE_MS = 2000;
+const RESEARCH_PROSPECT_STATUSES = ['not_contacted', 'draft_ready', 'contacted', 'follow_up', 'responded', 'archived'];
+
+function prospectStatusLabel(status = '') {
+  return {
+    not_contacted: 'Not contacted',
+    draft_ready: 'Draft ready',
+    contacted: 'Contacted',
+    follow_up: 'Follow up',
+    responded: 'Responded',
+    archived: 'Archived',
+  }[status] || status || 'Not contacted';
+}
+
+function prospectStatusClass(status = '') {
+  return `status-${statusClass(status || 'not_contacted')}`;
+}
+
+function prospectCardStatusClass(prospect = {}) {
+  return `prospect-status-${statusClass(prospect.status || 'not_contacted')}`;
+}
+
+function prospectRowStatusClass(prospect = {}) {
+  return `prospect-row-status-${statusClass(prospect.status || 'not_contacted')}`;
+}
+
+function prospectStatusPill(status = '') {
+  const normalized = status || 'not_contacted';
+  return `<span class="prospect-status-pill ${prospectStatusClass(normalized)}">${prospectStatusLabel(normalized)}</span>`;
+}
+
+function jsStringLiteral(value = '') {
+  return JSON.stringify(String(value ?? ''));
+}
+
+function prospectStatusOnChangeAttr(prospect, updateFunctionName = 'updateResearchProspectStatus') {
+  const id = jsStringLiteral(prospect.id);
+  const source = jsStringLiteral(prospect.source || prospect.institution || '');
+  const classUpdate = "this.className = 'prospect-status-select ' + prospectStatusClass(this.value);";
+  const handler = updateFunctionName === 'updateResearchProspectStatus'
+    ? `${classUpdate} ${updateFunctionName}(${id}, this.value, this);`
+    : `${classUpdate} ${updateFunctionName}(${id}, this.value, ${source}, this);`;
+  return `onchange="${escapeHTML(handler)}"`;
+}
+
+function prospectTierClass(tier = '') {
+  if (tier === 'A') return 'tier-1';
+  if (tier === 'B') return 'tier-2';
+  return 'tier-3';
+}
+
+function prospectBadgeClass(prospect = {}) {
+  if (prospect.role_type === 'job_board_signal') return 'badge-icf';
+  if (prospect.role_type === 'lab_member_signal') return 'badge-frc';
+  if ((prospect.transfer_vectors || []).some(v => /plasma/i.test(v))) return 'badge-tokamak';
+  if ((prospect.transfer_vectors || []).some(v => /optics|laser/i.test(v))) return 'badge-stellarator';
+  return 'badge-other';
+}
+
+function prospectScoreColor(score = 0) {
+  const num = Number(score);
+  if (Number.isNaN(num)) return 'var(--text-muted)';
+  if (num >= 4.0) return 'var(--accent-green)';
+  if (num >= 3.0) return 'var(--accent-warn)';
+  return 'var(--text-secondary)';
+}
+
+function prospectEvidenceLinks(items = []) {
+  const links = (items || []).filter(item => item.url).slice(0, 4).map(item =>
+    `<a href="${escapeHTML(item.url)}" target="_blank" rel="noreferrer" style="color:var(--accent-fusion);">${escapeHTML(item.label || item.type || 'source')}</a>`
+  );
+  return links.length ? links.join(' · ') : '<span style="color:var(--text-muted);">No source link</span>';
+}
+
+function prospectStatusSelect(prospect, updateFunctionName = 'updateResearchProspectStatus') {
+  const currentStatus = prospect.status || 'not_contacted';
+  const options = RESEARCH_PROSPECT_STATUSES.map(status =>
+    `<option value="${status}" ${currentStatus === status ? 'selected' : ''}>${prospectStatusLabel(status)}</option>`
+  ).join('');
+  return `<select class="prospect-status-select ${prospectStatusClass(currentStatus)}" ${prospectStatusOnChangeAttr(prospect, updateFunctionName)}>${options}</select>`;
+}
+
+function prospectSourceId(prospect = {}) {
+  const source = String(prospect.source || prospect.institution || 'umich').toLowerCase();
+  if (source === 'umich' || source.includes('michigan')) return 'umich';
+  return source.replace(/[^a-z0-9-]+/g, '-').replace(/^-+|-+$/g, '') || 'umich';
+}
+
+function shareKeyForProspect(prospect = {}) {
+  const sourceId = prospectSourceId(prospect);
+  return sourceId === 'umich' ? prospect.id : `${sourceId}::${prospect.id}`;
+}
+
+function populateProspectStatusOptions(selectId) {
+  const select = document.getElementById(selectId);
+  if (!select || select.dataset.loaded === 'true') return;
+  const current = select.value || 'all';
+  select.innerHTML = '<option value="all">All statuses</option>' + RESEARCH_PROSPECT_STATUSES.map(status =>
+    `<option value="${status}"${current === status ? ' selected' : ''}>${prospectStatusLabel(status)}</option>`
+  ).join('');
+  select.dataset.loaded = 'true';
+}
+
+function setResearchProspectsView(view) {
+  researchProspectsView = view === 'table' ? 'table' : 'cards';
+  localStorage.setItem('researchProspectsView', researchProspectsView);
+  researchProspectsRenderedSignature = '';
+  const grid = document.getElementById('researchprospects-grid');
+  if (grid) grid.className = researchProspectsView === 'table' ? 'research-sheet-container' : 'company-grid';
+  updateResearchProspectsViewButtons();
+  renderResearchProspects({ force: true });
+}
+
+function updateResearchProspectsViewButtons() {
+  document.getElementById('researchprospects-view-cards')?.classList.toggle('is-active', researchProspectsView === 'cards');
+  document.getElementById('researchprospects-view-table')?.classList.toggle('is-active', researchProspectsView === 'table');
+}
+
+function markProspectInteraction() {
+  researchProspectsUserInteractingUntil = Date.now() + RESEARCH_PROSPECTS_INTERACTION_IDLE_MS;
+}
+
+function defenseSheetTextarea(prospect, row, field) {
+  const sourceId = prospectSourceId(prospect);
+  const value = escapeHTML(row[field] || '');
+  return `<textarea class="defense-sheet-field" data-prospect-id="${escapeHTML(prospect.id)}" data-source-id="${escapeHTML(sourceId)}" data-question-id="${escapeHTML(row.id)}" data-field="${field}" onfocus="markProspectInteraction()" onblur="saveDefenseSheetField(this)">${value}</textarea>`;
+}
+
+function defenseSheetSection(prospect) {
+  const rows = Array.isArray(prospect.defense_sheet) ? prospect.defense_sheet : [];
+  if (!rows.length) return '';
+  const body = rows.map(row => `
+    <tr>
+      <td>${escapeHTML(row.question)}</td>
+      <td>${defenseSheetTextarea(prospect, row, 'researched_answer')}</td>
+      <td>${defenseSheetTextarea(prospect, row, 'user_response')}</td>
+    </tr>
+  `).join('');
+  return `
+    <details class="defense-sheet">
+      <summary>Defense sheet — verify before emailing</summary>
+      <table class="defense-sheet-table">
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th>Researched answer (editable)</th>
+            <th>My response (your research)</th>
+          </tr>
+        </thead>
+        <tbody>${body}</tbody>
+      </table>
+      <div class="defense-sheet-hint">Target 10–15 min per contact: read the lab page or one paper, fill column 3, soften any risky line. Edits save on blur.</div>
+    </details>`;
+}
+
+async function saveDefenseSheetField(el) {
+  if (!el) return;
+  const prospectId = el.dataset.prospectId;
+  const sourceId = el.dataset.sourceId || 'umich';
+  const questionId = el.dataset.questionId;
+  const field = el.dataset.field;
+  const value = el.value;
+  if (!prospectId || !questionId || !field) return;
+
+  markProspectInteraction();
+
+  try {
+    let prospect = null;
+    if (sourceId === 'umich') {
+      const data = researchProspectsCache || await apiJSON('/api/research-prospects');
+      prospect = data?.prospects?.find(p => p.id === prospectId) || null;
+      if (data) researchProspectsCache = data;
+    } else {
+      const cached = phdResearchProspectsCache.get(sourceId);
+      if (cached) {
+        prospect = cached.prospects?.find(p => p.id === prospectId) || null;
+      } else {
+        const data = await apiJSON(`/api/phd-research-prospects/${encodeURIComponent(sourceId)}`);
+        phdResearchProspectsCache.set(sourceId, data);
+        prospect = data?.prospects?.find(p => p.id === prospectId) || null;
+      }
+    }
+    if (!prospect) throw new Error('prospect not found');
+
+    const defense_sheet = (prospect.defense_sheet || []).map(row =>
+      row.id === questionId ? { ...row, [field]: value } : row
+    );
+    const apiPath = sourceId === 'umich'
+      ? `/api/research-prospects/${encodeURIComponent(prospectId)}`
+      : `/api/phd-research-prospects/${encodeURIComponent(sourceId)}/${encodeURIComponent(prospectId)}`;
+
+    await apiJSON(apiPath, {
+      method: 'PATCH',
+      body: JSON.stringify({ defense_sheet }),
+    });
+
+    prospect.defense_sheet = defense_sheet;
+    if (sourceId === 'umich') setResearchProspectsFeedback('Saved defense sheet.', 'success');
+    else setPhdResearchProspectsFeedback('Saved defense sheet.', 'success');
+  } catch (err) {
+    const msg = `Could not save defense sheet: ${err.message}`;
+    if (sourceId === 'umich') setResearchProspectsFeedback(msg, 'error');
+    else setPhdResearchProspectsFeedback(msg, 'error');
+  }
+}
+
+function companyPhdPathCard(prospect, updateFunctionName = 'updatePhdResearchProspectStatus') {
+  const tags = [
+    'industrial PhD',
+    ...(prospect.transfer_vectors || []).slice(0, 4),
+    ...(prospect.contact_email ? ['email'] : ['email missing']),
+    ...(prospect.hiring_signals?.length ? ['hiring signal'] : []),
+  ].map(tag => `<span class="tag ${tag === 'email' || tag === 'hiring signal' ? 'match' : tag === 'email missing' ? 'warn' : ''}">${escapeHTML(tag)}</span>`).join('');
+  const contact = prospect.contact_email
+    ? `<a href="mailto:${escapeHTML(prospect.contact_email)}" style="color:var(--accent-green);">${escapeHTML(prospect.contact_email)}</a>`
+    : '<span style="color:var(--accent-warn);">Email needs verification</span>';
+  const hiringSignals = (prospect.hiring_signals || []).length
+    ? `<div class="card-detail"><strong>Signals:</strong> ${prospectEvidenceLinks(prospect.hiring_signals)}</div>`
+    : '';
+  const partners = (prospect.facilities || []).length
+    ? `<div class="card-detail"><strong>University / facility ecosystem:</strong> ${escapeHTML((prospect.facilities || []).join(' · '))}</div>`
+    : '';
+  const methods = (prospect.methods || []).length
+    ? `<div class="card-detail"><strong>Path mechanics:</strong> ${escapeHTML((prospect.methods || []).slice(0, 4).join(' · '))}</div>`
+    : '';
+
+  return `
+    <div class="company-card ${prospectTierClass(prospect.tier)} ${prospectCardStatusClass(prospect)}">
+      <div class="card-header">
+        <span class="card-company">${escapeHTML(prospect.name)}${prospectStatusPill(prospect.status)}</span>
+        <span class="card-badge ${prospectBadgeClass(prospect)}">Tier ${escapeHTML(prospect.tier || '?')} · ${Number(prospect.score || 0).toFixed(1)}</span>
+      </div>
+      <div class="card-role">${escapeHTML(prospect.title || '')}</div>
+      <div class="card-detail"><strong>Location:</strong> ${escapeHTML(prospect.department || prospect.unit || '')}</div>
+      <div class="card-detail"><strong>Facility focus:</strong> ${escapeHTML(prospect.lab || 'N/A')}</div>
+      <div class="card-detail"><strong>Contact:</strong> ${contact}</div>
+      ${prospect.application_url ? `<div class="card-detail"><strong>Official route:</strong> <a href="${escapeHTML(prospect.application_url)}" target="_blank" rel="noreferrer" style="color:var(--accent-fusion);">${escapeHTML(prospect.application_route || 'PhD sponsorship page')}</a></div>` : ''}
+      <div class="card-detail"><strong>How to apply:</strong> ${escapeHTML(prospect.likely_route || '')}</div>
+      ${methods}
+      ${partners}
+      <div class="card-detail"><strong>Why fit:</strong> ${escapeHTML(prospect.fit_rationale || '')}</div>
+      <div class="card-detail"><strong>Outreach angle:</strong> ${escapeHTML(prospect.outreach_angle || '')}</div>
+      ${prospect.opt_h1b_notes ? `<div class="card-detail"><strong>Visa notes:</strong> ${escapeHTML(prospect.opt_h1b_notes)}</div>` : ''}
+      ${prospect.uncertainty_notes ? `<div class="card-detail"><strong>Verify first:</strong> ${escapeHTML(prospect.uncertainty_notes)}</div>` : ''}
+      ${hiringSignals}
+      <div class="card-detail"><strong>Sources:</strong> ${prospectEvidenceLinks(prospect.evidence)}</div>
+      <div class="card-tags">${tags}</div>
+      ${prospectStatusSelect(prospect, updateFunctionName)}
+      ${shareButton('phd', shareKeyForProspect(prospect))}
+    </div>`;
+}
+
+function prospectCard(prospect, updateFunctionName = 'updateResearchProspectStatus') {
+  if (prospect.role_type === 'industrial_phd_sponsor' || prospect.source === 'private-co') {
+    return companyPhdPathCard(prospect, updateFunctionName);
+  }
+  const tags = [
+    ...(prospect.institution ? [prospect.institution] : []),
+    ...(prospect.transfer_vectors || []).slice(0, 4),
+    ...(prospect.contact_email ? ['email'] : ['email missing']),
+    ...(prospect.hiring_signals?.length ? ['hiring signal'] : []),
+  ].map(tag => `<span class="tag ${tag === 'email' || tag === 'hiring signal' ? 'match' : tag === 'email missing' ? 'warn' : ''}">${escapeHTML(tag)}</span>`).join('');
+  const contact = prospect.contact_email
+    ? `<a href="mailto:${escapeHTML(prospect.contact_email)}" style="color:var(--accent-green);">${escapeHTML(prospect.contact_email)}</a>`
+    : '<span style="color:var(--accent-warn);">Email needs verification</span>';
+  const hiringSignals = (prospect.hiring_signals || []).length
+    ? `<div class="card-detail"><strong>Hiring signal:</strong> ${prospectEvidenceLinks(prospect.hiring_signals)}</div>`
+    : '';
+
+  return `
+    <div class="company-card ${prospectTierClass(prospect.tier)} ${prospectCardStatusClass(prospect)}">
+      <div class="card-header">
+        <span class="card-company">${escapeHTML(prospect.name)}${prospectStatusPill(prospect.status)}</span>
+        <span class="card-badge ${prospectBadgeClass(prospect)}">Tier ${escapeHTML(prospect.tier || '?')} · ${Number(prospect.score || 0).toFixed(1)}</span>
+      </div>
+      <div class="card-role">${escapeHTML(prospect.title || '')}</div>
+      <div class="card-detail"><strong>Unit:</strong> ${escapeHTML(prospect.department || prospect.unit || '')}</div>
+      <div class="card-detail"><strong>Lab:</strong> ${escapeHTML(prospect.lab || 'N/A')}</div>
+      <div class="card-detail"><strong>Email:</strong> ${contact}</div>
+      ${prospect.application_url ? `<div class="card-detail"><strong>Apply:</strong> <a href="${escapeHTML(prospect.application_url)}" target="_blank" rel="noreferrer" style="color:var(--accent-fusion);">${escapeHTML(prospect.application_route || 'application route')}</a></div>` : ''}
+      <div class="card-detail"><strong>Route:</strong> ${escapeHTML(prospect.likely_route || '')}</div>
+      <div class="card-detail"><strong>Why fit:</strong> ${escapeHTML(prospect.fit_rationale || '')}</div>
+      <div class="card-detail"><strong>Outreach angle:</strong> ${escapeHTML(prospect.outreach_angle || '')}</div>
+      ${hiringSignals}
+      <div class="card-detail"><strong>Sources:</strong> ${prospectEvidenceLinks(prospect.evidence)}</div>
+      <div class="card-tags">${tags}</div>
+      ${defenseSheetSection(prospect)}
+      ${prospectStatusSelect(prospect, updateFunctionName)}
+      ${shareButton(prospectSourceId(prospect) === 'umich' ? 'research' : 'phd', shareKeyForProspect(prospect))}
+    </div>`;
+}
+
+function prospectMatchesFilters(prospect, filters) {
+  if (filters.source && filters.source !== 'all' && (prospect.source || prospect.institution) !== filters.source) return false;
+  if (filters.tier !== 'all' && prospect.tier !== filters.tier) return false;
+  if (filters.role !== 'all' && prospect.role_type !== filters.role) return false;
+  if (filters.status && filters.status !== 'all' && (prospect.status || 'not_contacted') !== filters.status) return false;
+  if (filters.institution && filters.institution !== 'all' && prospect.institution !== filters.institution) return false;
+  if (filters.campus && filters.campus !== 'all' && prospect.campus !== filters.campus) return false;
+  if (filters.vector !== 'all' && !(prospect.transfer_vectors || []).some(v => v === filters.vector)) return false;
+  if (!filters.query) return true;
+  const haystack = [
+    prospect.name,
+    prospect.title,
+    prospect.department,
+    prospect.lab,
+    prospect.fit_rationale,
+    prospect.outreach_angle,
+    ...(prospect.research_keywords || []),
+    ...(prospect.methods || []),
+    ...(prospect.transfer_vectors || []),
+  ].join(' ').toLowerCase();
+  return haystack.includes(filters.query.toLowerCase());
+}
+
+function researchProspectFilters() {
+  return {
+    tier: document.getElementById('researchprospects-tier')?.value || 'all',
+    vector: document.getElementById('researchprospects-vector')?.value || 'all',
+    role: document.getElementById('researchprospects-role')?.value || 'all',
+    status: document.getElementById('researchprospects-status')?.value || 'all',
+    query: document.getElementById('researchprospects-search')?.value.trim() || '',
+  };
+}
+
+function researchProspectsActive() {
+  return document.getElementById('researchprospects')?.classList.contains('active') || false;
+}
+
+function researchProspectsControlActive() {
+  return Boolean(document.activeElement?.closest?.('#researchprospects'));
+}
+
+function researchProspectsSignature(data, filters, shown) {
+  return JSON.stringify({
+    generatedAt: data?.generated_at || '',
+    view: researchProspectsView,
+    filters,
+    shown: shown.map(prospect => [prospect.id, prospect.status, prospect.score, prospect.contact_email]),
+  });
+}
+
+function queueResearchProspectsRenderAfterIdle() {
+  if (researchProspectsDeferredRenderTimer) clearTimeout(researchProspectsDeferredRenderTimer);
+  researchProspectsDeferredRenderTimer = setTimeout(() => {
+    researchProspectsDeferredRenderTimer = null;
+    if (!researchProspectsRenderQueued) return;
+    researchProspectsRenderQueued = false;
+    renderResearchProspects({ force: true });
+  }, RESEARCH_PROSPECTS_INTERACTION_IDLE_MS + 100);
+}
+
+function renderResearchProspectStats(allProspects, shownProspects) {
+  const statsEl = document.getElementById('researchprospects-stats');
+  if (!statsEl) return;
+  const directEmails = shownProspects.filter(p => p.contact_email).length;
+  const tierA = shownProspects.filter(p => p.tier === 'A').length;
+  const hiringSignals = shownProspects.filter(p => p.hiring_signals?.length || p.role_type === 'job_board_signal').length;
+  const avgScore = shownProspects.length
+    ? shownProspects.reduce((sum, p) => sum + Number(p.score || 0), 0) / shownProspects.length
+    : 0;
+  statsEl.innerHTML = `
+    <div class="stat-card"><div class="stat-number">${shownProspects.length}</div><div class="stat-label">Shown / ${allProspects.length} Total</div></div>
+    <div class="stat-card"><div class="stat-number fusion-color">${tierA}</div><div class="stat-label">Tier A</div></div>
+    <div class="stat-card"><div class="stat-number nuclear-color">${directEmails}</div><div class="stat-label">Direct Emails</div></div>
+    <div class="stat-card"><div class="stat-number">${hiringSignals}</div><div class="stat-label">Hiring Signals</div></div>
+    <div class="stat-card"><div class="stat-number" style="color:${prospectScoreColor(avgScore)}; -webkit-text-fill-color:initial; background:none;">${avgScore.toFixed(1)}</div><div class="stat-label">Average Score</div></div>`;
+}
+
+function renderResearchProspectTable(prospects = []) {
+  if (!prospects.length) return '<div class="jobs-empty">No prospects match these filters.</div>';
+  const rows = prospects.map(prospect => `
+    <tr class="${prospectRowStatusClass(prospect)}">
+      <td>${prospectStatusSelect(prospect)}</td>
+      <td><span class="card-badge ${prospectBadgeClass(prospect)}">Tier ${escapeHTML(prospect.tier || '?')}</span></td>
+      <td><strong style="color:${prospectScoreColor(prospect.score)};">${Number(prospect.score || 0).toFixed(1)}</strong></td>
+      <td><strong>${escapeHTML(prospect.name)}</strong></td>
+      <td>${escapeHTML(prospect.title || '')}</td>
+      <td>${escapeHTML(prospect.department || prospect.unit || '')}</td>
+      <td>${escapeHTML(prospect.lab || '')}</td>
+      <td>${prospect.contact_email ? `<a href="mailto:${escapeHTML(prospect.contact_email)}" style="color:var(--accent-green);">${escapeHTML(prospect.contact_email)}</a>` : '<span style="color:var(--accent-warn);">Needs verification</span>'}</td>
+      <td>${escapeHTML(prospect.likely_route || '')}</td>
+      <td>${escapeHTML(prospect.fit_rationale || '')}</td>
+      <td>${escapeHTML(prospect.outreach_angle || '')}</td>
+      <td>${prospectEvidenceLinks(prospect.evidence)}</td>
+      <td>${shareButton('research', shareKeyForProspect(prospect))}</td>
+    </tr>`).join('');
+  return `<div class="pulse-table-wrap"><table class="pulse-tracker-table research-sheet-table">
+    <thead><tr>
+      <th>Status</th><th>Tier</th><th>Score</th><th>Name</th><th>Title</th><th>Department</th><th>Lab</th><th>Email</th><th>Route</th><th>Why fit</th><th>Outreach angle</th><th>Sources</th><th>Actions</th>
+    </tr></thead>
+    <tbody>${rows}</tbody>
+  </table></div>`;
+}
+
+function populateResearchVectorOptions(prospects = []) {
+  const select = document.getElementById('researchprospects-vector');
+  if (!select || researchProspectsVectorOptionsLoaded) return;
+  const vectors = [...new Set(prospects.flatMap(p => p.transfer_vectors || []))].sort((a, b) => a.localeCompare(b));
+  select.innerHTML = '<option value="all">All vectors</option>' + vectors.map(vector =>
+    `<option value="${escapeHTML(vector)}">${escapeHTML(vector)}</option>`
+  ).join('');
+  researchProspectsVectorOptionsLoaded = true;
+}
+
+function setProspectStatusInDom(selectEl, status) {
+  if (!selectEl) return;
+  selectEl.value = status;
+  selectEl.className = `prospect-status-select ${prospectStatusClass(status)}`;
+  const container = selectEl.closest('.company-card, tr');
+  if (!container) return;
+  const pill = container.querySelector('.prospect-status-pill');
+  if (pill) {
+    pill.className = `prospect-status-pill ${prospectStatusClass(status)}`;
+    pill.textContent = prospectStatusLabel(status);
+  }
+  for (const className of [...container.classList]) {
+    if (className.startsWith('prospect-status-') || className.startsWith('prospect-row-status-')) {
+      container.classList.remove(className);
+    }
+  }
+  if (container.matches('tr')) container.classList.add(`prospect-row-status-${statusClass(status || 'not_contacted')}`);
+  else container.classList.add(`prospect-status-${statusClass(status || 'not_contacted')}`);
+}
+
+function mergeResearchProspectCache(id, updates = {}) {
+  if (!researchProspectsCache?.prospects) return null;
+  let previous = null;
+  researchProspectsCache = {
+    ...researchProspectsCache,
+    prospects: researchProspectsCache.prospects.map(prospect => {
+      if (prospect.id !== id) return prospect;
+      previous = { ...prospect };
+      return { ...prospect, ...updates };
+    }),
+  };
+  return previous;
+}
+
+function mergePhdResearchProspectCache(source, id, updates = {}) {
+  const store = phdResearchProspectsCache.get(source);
+  if (!store?.prospects) return null;
+  let previous = null;
+  phdResearchProspectsCache.set(source, {
+    ...store,
+    prospects: store.prospects.map(prospect => {
+      if (prospect.id !== id) return prospect;
+      previous = { ...prospect };
+      return { ...prospect, ...updates };
+    }),
+  });
+  return previous;
+}
+
+async function updateResearchProspectStatus(id, status, selectEl = null) {
+  const sequence = ++saveSequence;
+  pendingResearchSaves.set(id, sequence);
+  const previous = mergeResearchProspectCache(id, { status });
+  setProspectStatusInDom(selectEl, status);
+  try {
+    setResearchProspectsFeedback('Saving prospect status...', 'warn');
+    const result = await apiJSON(`/api/research-prospects/${encodeURIComponent(id)}`, {
+      method: 'PATCH',
+      body: JSON.stringify({ status }),
+    });
+    if (pendingResearchSaves.get(id) !== sequence) return;
+    applyTodayFromResponse(result);
+    if (result?.prospect) mergeResearchProspectCache(id, result.prospect);
+    researchProspectsRenderedSignature = '';
+    setResearchProspectsFeedback(`Saved: ${prospectStatusLabel(status)}`, 'success');
+  } catch (err) {
+    if (pendingResearchSaves.get(id) !== sequence) return;
+    if (previous) {
+      mergeResearchProspectCache(id, previous);
+      setProspectStatusInDom(selectEl, previous.status || 'not_contacted');
+    }
+    setResearchProspectsFeedback(`Could not save prospect: ${err.message}`, 'error');
+  } finally {
+    if (pendingResearchSaves.get(id) === sequence) pendingResearchSaves.delete(id);
+  }
+}
+
+async function renderResearchProspects({ force = false } = {}) {
+  const meta = document.getElementById('researchprospects-meta');
+  const grid = document.getElementById('researchprospects-grid');
+  if (!meta || !grid) return;
+  if (!force && researchProspectsActive() && researchProspectsControlActive() && Date.now() < researchProspectsUserInteractingUntil) {
+    researchProspectsRenderQueued = true;
+    queueResearchProspectsRenderAfterIdle();
+    return;
+  }
+  if (researchProspectsRenderInFlight) {
+    researchProspectsRenderQueued = true;
+    return;
+  }
+
+  researchProspectsRenderInFlight = true;
+  try {
+    const data = force
+      ? await apiJSON('/api/research-prospects')
+      : (researchProspectsCache || await apiJSON('/api/research-prospects'));
+    if (!data) {
+      meta.textContent = 'No U-M research prospects found yet. Run the importer to create data/umich-research-prospects.json.';
+      grid.innerHTML = '';
+      return;
+    }
+
+    researchProspectsCache = data;
+    const prospects = [...(data.prospects || [])].sort((a, b) => Number(b.score || 0) - Number(a.score || 0));
+    populateProspectStatusOptions('researchprospects-status');
+    populateResearchVectorOptions(prospects);
+    updateResearchProspectsViewButtons();
+    const filters = researchProspectFilters();
+    const shown = prospects.filter(prospect => prospectMatchesFilters(prospect, filters));
+    window.__researchProspectsById = Object.fromEntries(prospects.map(prospect => [shareKeyForProspect(prospect), prospect]));
+    const signature = researchProspectsSignature(data, filters, shown);
+    if (!force && signature === researchProspectsRenderedSignature) return;
+    researchProspectsRenderedSignature = signature;
+    renderResearchProspectStats(prospects, shown);
+    meta.textContent = `${shown.length}/${prospects.length} Ann Arbor prospects shown | ${prospects.filter(p => p.contact_email).length} direct emails | Updated: ${data.generated_at ? new Date(data.generated_at).toLocaleString() : 'unknown'}`;
+    grid.className = researchProspectsView === 'table' ? 'research-sheet-container' : 'company-grid';
+    grid.innerHTML = shown.length
+      ? researchProspectsView === 'table'
+        ? renderResearchProspectTable(shown)
+        : shown.map(prospect => prospectCard(prospect)).join('')
+      : '<div class="jobs-empty">No prospects match these filters.</div>';
+  } finally {
+    researchProspectsRenderInFlight = false;
+    if (researchProspectsRenderQueued) queueResearchProspectsRenderAfterIdle();
+  }
+}
+
+// ── PhD Advisor Prospect Sources ─────────────────────────────────────
+
+let phdResearchProspectSourcesCache = null;
+let phdResearchProspectsCache = new Map();
+let phdResearchProspectsOptionsLoaded = false;
+let phdResearchProspectsRenderedSignature = '';
+
+function setPhdResearchProspectsFeedback(message, variant = 'success') {
+  setInlineNotice('phd-researchprospects-feedback', message, variant);
+}
+
+function phdResearchProspectFilters() {
+  return {
+    source: document.getElementById('phd-researchprospects-source')?.value || 'all',
+    tier: document.getElementById('phd-researchprospects-tier')?.value || 'all',
+    vector: document.getElementById('phd-researchprospects-vector')?.value || 'all',
+    institution: document.getElementById('phd-researchprospects-institution')?.value || 'all',
+    campus: document.getElementById('phd-researchprospects-campus')?.value || 'all',
+    role: document.getElementById('phd-researchprospects-role')?.value || 'all',
+    status: document.getElementById('phd-researchprospects-status')?.value || 'all',
+    query: document.getElementById('phd-researchprospects-search')?.value.trim() || '',
+  };
+}
+
+function cachePhdProspects(prospects = []) {
+  window.__phdProspectsByKey = {
+    ...(window.__phdProspectsByKey || {}),
+    ...Object.fromEntries(prospects.map(prospect => [shareKeyForProspect(prospect), prospect])),
+  };
+}
+
+async function loadPhdResearchSources() {
+  if (phdResearchProspectSourcesCache) return phdResearchProspectSourcesCache;
+  const data = await fetchJSON('phd-prospect-sources.json');
+  const fallback = {
+    sources: [{
+      id: 'kth',
+      label: 'KTH & FP3 Network',
+      country: 'Sweden',
+      prospects_file: 'kth-research-prospects.json',
+      research_report: 'WEB-TRACKER/research/kth-fusion-epp-prospects-2026.md',
+      primary_theme: 'PWI, fusion diagnostics, space plasma',
+      api_prefix: '/api/phd-research-prospects/kth',
+    }],
+  };
+  phdResearchProspectSourcesCache = data?.sources?.length ? data : fallback;
+  return phdResearchProspectSourcesCache;
+}
+
+async function loadPhdResearchProspectData() {
+  const registry = await loadPhdResearchSources();
+  const stores = [];
+  for (const source of registry.sources || []) {
+    let store = phdResearchProspectsCache.get(source.id);
+    if (!store) {
+      store = await apiJSON(`/api/phd-research-prospects/${encodeURIComponent(source.id)}`);
+      if (store) phdResearchProspectsCache.set(source.id, store);
+    }
+    if (store) stores.push({ source, store });
+  }
+  return stores;
+}
+
+function populatePhdResearchOptions(sources = [], prospects = []) {
+  if (phdResearchProspectsOptionsLoaded) return;
+  populateProspectStatusOptions('phd-researchprospects-status');
+  const sourceSelect = document.getElementById('phd-researchprospects-source');
+  if (sourceSelect) {
+    sourceSelect.innerHTML = '<option value="all">All sources</option>' + sources.map(source =>
+      `<option value="${escapeHTML(source.id)}">${escapeHTML(source.label)}</option>`
+    ).join('');
+  }
+
+  const vectorSelect = document.getElementById('phd-researchprospects-vector');
+  const vectors = [...new Set(prospects.flatMap(p => p.transfer_vectors || []))].sort((a, b) => a.localeCompare(b));
+  if (vectorSelect) {
+    vectorSelect.innerHTML = '<option value="all">All vectors</option>' + vectors.map(vector =>
+      `<option value="${escapeHTML(vector)}">${escapeHTML(vector)}</option>`
+    ).join('');
+  }
+
+  const institutionSelect = document.getElementById('phd-researchprospects-institution');
+  const institutions = [...new Set(prospects.map(p => p.institution).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+  if (institutionSelect) {
+    institutionSelect.innerHTML = '<option value="all">All</option>' + institutions.map(institution =>
+      `<option value="${escapeHTML(institution)}">${escapeHTML(institution)}</option>`
+    ).join('');
+  }
+
+  const campusSelect = document.getElementById('phd-researchprospects-campus');
+  const campuses = [...new Set(prospects.map(p => p.campus).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+  if (campusSelect) {
+    campusSelect.innerHTML = '<option value="all">All campuses</option>' + campuses.map(campus =>
+      `<option value="${escapeHTML(campus)}">${escapeHTML(campus)}</option>`
+    ).join('');
+  }
+
+  phdResearchProspectsOptionsLoaded = true;
+}
+
+function phdResearchProspectsSignature(stores, filters, shown) {
+  return JSON.stringify({
+    generatedAt: stores.map(({ source, store }) => [source.id, store.generated_at || '']),
+    filters,
+    shown: shown.map(prospect => [prospect.source, prospect.id, prospect.status, prospect.score, prospect.contact_email]),
+  });
+}
+
+function renderPhdResearchProspectStats(allProspects, shownProspects, sources) {
+  const statsEl = document.getElementById('phd-researchprospects-stats');
+  if (!statsEl) return;
+  const directEmails = shownProspects.filter(p => p.contact_email).length;
+  const tierA = shownProspects.filter(p => p.tier === 'A').length;
+  const sourceCount = new Set(shownProspects.map(p => p.source || p.institution).filter(Boolean)).size;
+  const diagnosticsCount = shownProspects.filter(p => /diagnostic|DAQ|NBI|PWI|ITER|W7-X|ASDEX|instrument/i.test([
+    p.lab,
+    p.fit_rationale,
+    ...(p.research_keywords || []),
+    ...(p.transfer_vectors || []),
+  ].join(' '))).length;
+  const avgScore = shownProspects.length
+    ? shownProspects.reduce((sum, p) => sum + Number(p.score || 0), 0) / shownProspects.length
+    : 0;
+  statsEl.innerHTML = `
+    <div class="stat-card"><div class="stat-number">${shownProspects.length}</div><div class="stat-label">Shown / ${allProspects.length} Total</div></div>
+    <div class="stat-card"><div class="stat-number fusion-color">${tierA}</div><div class="stat-label">Tier A</div></div>
+    <div class="stat-card"><div class="stat-number nuclear-color">${directEmails}</div><div class="stat-label">Direct Emails</div></div>
+    <div class="stat-card"><div class="stat-number">${sourceCount}</div><div class="stat-label">Sources / ${sources.length}</div></div>
+    <div class="stat-card"><div class="stat-number fusion-color">${diagnosticsCount}</div><div class="stat-label">Diagnostics / ITER Fit</div></div>
+    <div class="stat-card"><div class="stat-number" style="color:${prospectScoreColor(avgScore)}; -webkit-text-fill-color:initial; background:none;">${avgScore.toFixed(1)}</div><div class="stat-label">Average Score</div></div>`;
+}
+
+function renderPhdResearchSourceNote(sources = []) {
+  const note = document.getElementById('phd-researchprospects-source-note');
+  if (!note) return;
+  const links = sources.map(source =>
+    `<code>${escapeHTML(source.research_report || source.prospects_file || source.id)}</code>`
+  ).join(' · ');
+  note.innerHTML = `Research sources: ${links || 'none loaded'}`;
+}
+
+async function updatePhdResearchProspectStatus(id, status, sourceId = '', selectEl = null) {
+  const source = sourceId || 'kth';
+  const saveKey = `${source}:${id}`;
+  const sequence = ++saveSequence;
+  pendingPhdResearchSaves.set(saveKey, sequence);
+  const previous = mergePhdResearchProspectCache(source, id, { status });
+  setProspectStatusInDom(selectEl, status);
+  try {
+    setPhdResearchProspectsFeedback(`Saving ${source.toUpperCase()} prospect status...`, 'warn');
+    const result = await apiJSON(`/api/phd-research-prospects/${encodeURIComponent(source)}/${encodeURIComponent(id)}`, {
+      method: 'PATCH',
+      body: JSON.stringify({ status }),
+    });
+    if (pendingPhdResearchSaves.get(saveKey) !== sequence) return;
+    applyTodayFromResponse(result);
+    if (result?.prospect) mergePhdResearchProspectCache(source, id, result.prospect);
+    phdResearchProspectsRenderedSignature = '';
+    setPhdResearchProspectsFeedback('Saved PhD prospect status.', 'success');
+  } catch (err) {
+    if (pendingPhdResearchSaves.get(saveKey) !== sequence) return;
+    if (previous) {
+      mergePhdResearchProspectCache(source, id, previous);
+      setProspectStatusInDom(selectEl, previous.status || 'not_contacted');
+    }
+    setPhdResearchProspectsFeedback(`Could not save PhD prospect: ${err.message}`, 'error');
+  } finally {
+    if (pendingPhdResearchSaves.get(saveKey) === sequence) pendingPhdResearchSaves.delete(saveKey);
+  }
+}
+
+async function renderPrivateCompanyPhdPaths({ force = false } = {}) {
+  const meta = document.getElementById('private-co-phd-meta');
+  const grid = document.getElementById('private-co-phd-grid');
+  if (!meta || !grid) return;
+
+  let store = phdResearchProspectsCache.get('private-co');
+  if (!store) {
+    store = await apiJSON('/api/phd-research-prospects/private-co');
+    if (store) phdResearchProspectsCache.set('private-co', store);
+  }
+  if (!store?.prospects?.length) {
+    meta.textContent = 'No private company PhD paths yet. Add entries to data/private-co-phd-paths.json.';
+    grid.innerHTML = '<div class="jobs-empty">No industrial PhD collaboration paths configured.</div>';
+    return;
+  }
+
+  const prospects = [...store.prospects].sort((a, b) => Number(b.score || 0) - Number(a.score || 0));
+  const filters = phdResearchProspectFilters();
+  const shown = prospects.filter(prospect => prospectMatchesFilters({ ...prospect, source: prospect.source || 'private-co' }, {
+    ...filters,
+    source: 'all',
+    tier: 'all',
+    vector: 'all',
+    institution: 'all',
+    campus: 'all',
+    role: 'all',
+    query: '',
+  }));
+  const renderedProspects = shown.map(prospect => ({
+    ...prospect,
+    source: prospect.source || 'private-co',
+  }));
+  cachePhdProspects(renderedProspects);
+  meta.textContent = `${shown.length}/${prospects.length} company path${prospects.length === 1 ? '' : 's'} shown · Updated: ${store.generated_at ? new Date(store.generated_at).toLocaleString() : 'unknown'}`;
+  grid.innerHTML = renderedProspects.length
+    ? renderedProspects.map(prospect => companyPhdPathCard(prospect, 'updatePhdResearchProspectStatus')).join('')
+    : '<div class="jobs-empty">No private company PhD paths match the status filter.</div>';
+}
+
+async function renderPhdResearchProspects({ force = false } = {}) {
+  const meta = document.getElementById('phd-researchprospects-meta');
+  const grid = document.getElementById('phd-researchprospects-grid');
+  if (!meta || !grid) return;
+
+  const stores = await loadPhdResearchProspectData();
+  const sources = (phdResearchProspectSourcesCache?.sources || []);
+  if (!stores.length) {
+    meta.textContent = 'No PhD research prospect sources found yet. Add a source to phd-prospect-sources.json and run its importer.';
+    grid.innerHTML = '';
+    return;
+  }
+
+  const prospects = stores.flatMap(({ source, store }) =>
+    (store.prospects || []).map(prospect => ({
+      ...prospect,
+      source: prospect.source || source.id,
+      source_label: source.label,
+      source_country: source.country,
+      source_theme: source.primary_theme,
+      source_report: prospect.source_report || source.research_report,
+    }))
+  ).sort((a, b) => Number(b.score || 0) - Number(a.score || 0));
+
+  populatePhdResearchOptions(sources, prospects);
+  cachePhdProspects(prospects);
+  const filters = phdResearchProspectFilters();
+  const advisorProspects = filters.source === 'private-co'
+    ? prospects
+    : prospects.filter(prospect => {
+      if (filters.source === 'all' && (prospect.source === 'private-co' || prospect.role_type === 'industrial_phd_sponsor')) return false;
+      return true;
+    });
+  const shown = advisorProspects.filter(prospect => prospectMatchesFilters(prospect, filters));
+  const signature = phdResearchProspectsSignature(stores, filters, shown);
+  if (!force && signature === phdResearchProspectsRenderedSignature) return;
+  phdResearchProspectsRenderedSignature = signature;
+
+  renderPhdResearchProspectStats(advisorProspects, shown, sources);
+  renderPhdResearchSourceNote(sources);
+  const updatedAt = stores.map(({ store }) => store.generated_at).filter(Boolean).sort().at(-1);
+  const advisorCount = advisorProspects.length;
+  meta.textContent = `${shown.length}/${advisorCount} advisor prospects shown | ${sources.length} sources | ${advisorProspects.filter(p => p.contact_email).length} direct emails | Updated: ${updatedAt ? new Date(updatedAt).toLocaleString() : 'unknown'}`;
+  grid.innerHTML = shown.length
+    ? shown.map(prospect => prospectCard(prospect, 'updatePhdResearchProspectStatus')).join('')
+    : filters.source === 'private-co'
+      ? '<div class="jobs-empty">Private company paths are shown in the section above. Use KTH or IPP filters here for professor prospects.</div>'
+      : '<div class="jobs-empty">No PhD advisor prospects match these filters.</div>';
+}
+
+async function updateKthResearchProspectStatus(id, status) {
+  return updatePhdResearchProspectStatus(id, status, 'kth');
+}
+
+async function renderKthResearchProspects(options = {}) {
+  return renderPhdResearchProspects(options);
+}
+
+// ── Target Companies Tab ─────────────────────────────────────────────
+
+function selectedTargetRegion() {
+  const input = document.querySelector('input[name="target-region"]:checked');
+  return input?.value || 'all';
+}
+
+function workAuthTagForCompany(workAuth = {}) {
+  const status = workAuth.status || 'unknown';
+  if (status === 'confirmed') return '<span class="tag visa">H-1B confirmed</span>';
+  if (status === 'likely') return '<span class="tag visa">H-1B likely</span>';
+  if (status === 'n_a_eu' || status === 'n_a_canada' || status === 'n_a_india') {
+    return '<span class="tag warn">Work permit required</span>';
+  }
+  if (status === 'unknown') return '<span class="tag warn">H-1B unknown</span>';
+  return '<span class="tag">Check work auth</span>';
+}
+
+function renderTargetCompanyCard(company) {
+  const jobCount = (company.jobs_found || []).length;
+  const jobsLabel = jobCount
+    ? `<button type="button" class="control-btn secondary" style="margin-top:0.6rem;" onclick="openLiveJobsForCompany(${JSON.stringify(company.name)})">${jobCount} open role${jobCount === 1 ? '' : 's'} in Jobs To Consider</button>`
+    : '<p class="plain-help" style="margin-top:0.6rem;">No public roles found — use careers link or direct outreach.</p>';
+  const targetRoles = (company.target_roles || []).slice(0, 4).map(r =>
+    `<span class="tag match">${escapeHTML(r)}</span>`
+  ).join('');
+  return `
+    <div class="company-card tier-${company.tier}">
+      <div class="card-header">
+        <span class="card-company">${escapeHTML(company.name)}</span>
+        <span class="card-badge badge-other">${escapeHTML(company.sector_badge || 'Industrial')}</span>
+      </div>
+      <div class="card-detail"><strong>Location:</strong> ${escapeHTML(company.location)}</div>
+      <div class="card-detail">${escapeHTML(company.summary)}</div>
+      <div class="card-detail"><strong>Why fit:</strong> ${escapeHTML(company.why_fit)}</div>
+      <div class="card-detail"><strong>Work auth:</strong> ${escapeHTML(company.work_auth?.notes || '')}</div>
+      <div class="card-tags">
+        ${workAuthTagForCompany(company.work_auth)}
+        ${targetRoles}
+      </div>
+      <div class="card-detail"><a href="${escapeHTML(company.careers_url)}" target="_blank" rel="noopener" style="color:var(--accent-fusion);">Careers portal</a></div>
+      ${jobsLabel}
+    </div>`;
+}
+
+function openLiveJobsForCompany(companyName) {
+  liveJobsCompanyFilter = companyName;
+  switchTab('livejobs');
+  const navButtons = document.querySelectorAll('nav button');
+  navButtons.forEach(b => b.classList.remove('active'));
+  const jobsBtn = Array.from(navButtons).find(b => (b.textContent || '').includes('Jobs To Consider'));
+  if (jobsBtn) jobsBtn.classList.add('active');
+  renderLiveJobs();
+  const meta = document.getElementById('livejobs-meta');
+  if (meta) meta.textContent = `Filtered to ${companyName} — clear by reloading tab or refresh dashboard.`;
+}
+
+function clearLiveJobsCompanyFilter() {
+  liveJobsCompanyFilter = '';
+  renderLiveJobs();
+}
+
+async function renderTargetCompanies() {
+  const meta = document.getElementById('targetcompanies-meta');
+  const statsEl = document.getElementById('targetcompanies-stats');
+  if (!meta || !statsEl) return;
+
+  const data = targetCompaniesCache || await Promise.all([
+    fetchJSON('target-companies.json'),
+    fetchJSON('fusion-target-companies.json'),
+  ]).then(([vacuum, fusion]) => {
+    const vacuumCompanies = (vacuum?.companies || []).map(company => ({ ...company, track: 'vacuum-industrial' }));
+    const fusionCompanies = (fusion?.companies || []).map(company => ({ ...company, track: 'fusion-three-company-sweep' }));
+    return {
+      version: 1,
+      generated_at: [vacuum?.generated_at, fusion?.generated_at].filter(Boolean).sort().at(-1),
+      companies: [...fusionCompanies, ...vacuumCompanies],
+    };
+  });
+  if (!data?.companies?.length) {
+    meta.textContent = 'No target company data yet. Run vacuum research sync.';
+    return;
+  }
+  targetCompaniesCache = data;
+
+  const region = selectedTargetRegion();
+  const companies = data.companies.filter(c => {
+    if (region === 'all') return true;
+    if (region === 'fusion') return c.track === 'fusion-three-company-sweep';
+    return c.region === region;
+  });
+  const tier1 = companies.filter(c => c.tier === 1);
+  const tier2 = companies.filter(c => c.tier === 2);
+  const tier3 = companies.filter(c => c.tier === 3);
+  const rolesLinked = data.companies.reduce((n, c) => n + (c.jobs_found?.length || 0), 0);
+  const fusionTrack = data.companies.filter(c => c.track === 'fusion-three-company-sweep').length;
+
+  meta.textContent = `${companies.length} companies shown | Tracks: fusion + vacuum-industrial | Updated: ${data.generated_at ? new Date(data.generated_at).toLocaleString() : 'unknown'}`;
+
+  statsEl.innerHTML = `
+    <div class="stat-card"><div class="stat-number">${data.companies.length}</div><div class="stat-label">Target Companies</div></div>
+    <div class="stat-card"><div class="stat-number fusion-color">${tier1.length}</div><div class="stat-label">Tier 1 (vacuum core)</div></div>
+    <div class="stat-card"><div class="stat-number nuclear-color">${fusionTrack}</div><div class="stat-label">Fusion sweep companies</div></div>
+    <div class="stat-card"><div class="stat-number">${rolesLinked}</div><div class="stat-label">Roles in Jobs To Consider</div></div>
+    <div class="stat-card"><div class="stat-number fusion-color">${region === 'all' ? 'ALL' : region.toUpperCase()}</div><div class="stat-label">Region filter</div></div>`;
+
+  const renderTier = (title, list, containerId) => {
+    const el = document.getElementById(containerId);
+    if (!el) return;
+    if (!list.length) {
+      el.innerHTML = '';
+      return;
+    }
+    el.innerHTML = `<h2 class="section-title">${title}</h2><div class="company-grid">${list.map(renderTargetCompanyCard).join('')}</div>`;
+  };
+
+  renderTier('Tier 1 — Strong Fit / Apply First', tier1, 'targetcompanies-tier1');
+  renderTier('Tier 2 — Adjacent / Large Industrial', tier2, 'targetcompanies-tier2');
+  renderTier('Tier 3 — Weak Fit or Geo Block', tier3, 'targetcompanies-tier3');
+}
+
 // ── PhD Radar Tab ───────────────────────────────────────────────────
 
 async function renderPhdRadar() {
@@ -3017,10 +4948,13 @@ async function renderPhdRadar() {
 
   const grid = document.getElementById('phd-grid');
   grid.innerHTML = '';
+  window.__phdProspectsByKey = { ...(window.__phdProspectsByKey || {}) };
 
-  for (const d of data.deadlines) {
+  for (const [index, d] of data.deadlines.entries()) {
     let countdown = '';
     let urgencyClass = '';
+    const shareKey = `program::${index}`;
+    window.__phdProspectsByKey[shareKey] = { ...d, source: 'phd-deadline-tracker' };
     if (d.model === 'rolling') {
       countdown = '<span style="color:var(--accent-green); font-weight:700;">OPEN NOW — ROLLING</span>';
     } else if (d.deadline) {
@@ -3048,6 +4982,7 @@ async function renderPhdRadar() {
         ${d.deadline ? `<div class="program-deadline">Deadline: ${d.deadline}</div>` : ''}
         ${d.deadline_note ? `<div class="program-detail" style="font-style:italic;">${d.deadline_note}</div>` : ''}
         <div class="program-pipeline">Pipeline → ${d.pipeline_to || 'TBD'}</div>
+        ${shareButton('phd', shareKey)}
       </div>`;
   }
 
@@ -3056,31 +4991,13 @@ async function renderPhdRadar() {
 // ── Career-Ops Pulse Tab ────────────────────────────────────────────
 
 async function renderPulse() {
-  const renderSeq = ++agentDebugPulseRenderSeq;
-  // #region agent log
-  agentDebugLog('H1,H2,H3,H5', 'WEB-TRACKER/dashboard/fusion-pivot-dashboard.html:renderPulse:start', 'renderPulse started', {
-    renderSeq,
-    view: pulseCurrentView,
-    filters: pulseFilters,
-    globalSearch: pulseGlobalSearch,
-    activeElement: agentDebugActiveElement(),
-  });
-  // #endregion
-  const apps = await fetchJSON('applications.json');
+  const apps = await apiJSON('/api/applications');
   const pipeline = await fetchJSON('pipeline.json');
   const dashboardData = await apiJSON('/api/applications/dashboard').catch(() => null);
   if (dashboardData) pulseDashboardData = dashboardData;
   renderPulseViewSelector();
 
   if (apps) {
-    const statsHtml = `
-      <div class="stat-card"><div class="stat-number">${apps.count}</div><div class="stat-label">Total Applications</div></div>
-      <div class="stat-card"><div class="stat-number fusion-color">${apps.status_summary?.evaluated || 0}</div><div class="stat-label">Evaluated</div></div>
-      <div class="stat-card"><div class="stat-number nuclear-color">${apps.status_summary?.applied || 0}</div><div class="stat-label">Applied</div></div>
-      <div class="stat-card"><div class="stat-number">${apps.entries.filter(e => e.score_num >= 4.0).length}</div><div class="stat-label">Score 4.0+</div></div>
-      <div class="stat-card"><div class="stat-number fusion-color">${apps.entries.filter(e => e.pdf).length}</div><div class="stat-label">CVs Generated</div></div>`;
-    document.getElementById('pulse-stats').innerHTML = statsHtml;
-
     const entries = [...apps.entries];
     pulseEntriesByNum = new Map(entries.map(entry => [entry.num, entry]));
     for (const num of pulseDraftRows.keys()) {
@@ -3089,6 +5006,15 @@ async function renderPulse() {
     for (const num of pulseSavingRows.values()) {
       if (!pulseEntriesByNum.has(num)) pulseSavingRows.delete(num);
     }
+    const todayApplications = entries.filter(isPulseTodayEntry).length;
+    const statsHtml = `
+      <div class="stat-card"><div class="stat-number">${apps.count}</div><div class="stat-label">Total Applications</div></div>
+      <div class="stat-card"><div class="stat-number fusion-color">${apps.status_summary?.evaluated || 0}</div><div class="stat-label">Evaluated</div></div>
+      <div class="stat-card"><div class="stat-number nuclear-color">${apps.status_summary?.applied || 0}</div><div class="stat-label">Applied</div></div>
+      <div class="stat-card"><div class="stat-number fusion-color">${todayApplications}</div><div class="stat-label">Applications Today</div></div>
+      <div class="stat-card"><div class="stat-number">${apps.entries.filter(e => e.score_num >= 4.0).length}</div><div class="stat-label">Score 4.0+</div></div>
+      <div class="stat-card"><div class="stat-number fusion-color">${apps.entries.filter(e => e.pdf).length}</div><div class="stat-label">CVs Generated</div></div>`;
+    document.getElementById('pulse-stats').innerHTML = statsHtml;
 
     const view = PULSE_VIEWS[pulseCurrentView] || PULSE_VIEWS.applied;
     renderPulseAddRow(view);
@@ -3120,9 +5046,11 @@ async function renderPulse() {
     tableHtml += '<th class="pulse-col-actions"><button class="pulse-sort-btn" type="button">Actions</button></th>';
     tableHtml += '</tr></thead><tbody>';
     for (const entry of sortedEntries) {
-      tableHtml += '<tr>';
+      const recencyClass = pulseRecencyClass(entry);
+      tableHtml += `<tr${recencyClass ? ` class="${recencyClass}"` : ''}${pulseRecencyStyle(entry)}>`;
       for (const field of columns) {
-        tableHtml += `<td>${pulseFieldControl(entry, field)}</td>`;
+        const cellClass = pulseCellClass(entry, field);
+        tableHtml += `<td${cellClass ? ` class="${cellClass}"` : ''}>${pulseFieldControl(entry, field)}</td>`;
       }
       tableHtml += `<td>${pulseDeleteControl(entry)}</td>`;
       tableHtml += '</tr>';
@@ -3131,14 +5059,6 @@ async function renderPulse() {
       tableHtml += `<tr><td colspan="${columns.length + 1}" class="pulse-row-readonly">No rows match the current filters.</td></tr>`;
     }
     tableHtml += '</tbody></table></div>';
-    // #region agent log
-    agentDebugLog('H1,H5', 'WEB-TRACKER/dashboard/fusion-pivot-dashboard.html:renderPulse:replaceTable', 'renderPulse replacing pulse-apps-table HTML', {
-      renderSeq,
-      rowCount: sortedEntries.length,
-      columns,
-      activeElement: agentDebugActiveElement(),
-    });
-    // #endregion
     if (isPulseWorkspaceControlActive()) {
       queuePulseRenderAfterInteraction();
       return;
@@ -3241,7 +5161,7 @@ async function renderActions() {
 
 async function runAction(action, input = {}) {
   const meta = (window.__actions || []).find(a => a.id === action);
-  if (!input.dry_run && ['scan_root_jobs','scan_fusion_jobs','scan_phd_sources','research_gate_run','merge_tracker','daily_brief'].includes(action)) {
+  if (!input.dry_run && ['scan_root_jobs','scan_fusion_jobs','scan_phd_sources','research_gate_run','research_parallel','local_model_start','evaluate_with_local_ai','process_ai_queue','autonomous_daily_review','merge_tracker','daily_brief'].includes(action)) {
     const ok = confirm(`${meta?.label || 'Start this'}?\n\n${meta?.description || 'This may update local dashboard files.'}`);
     if (!ok) return;
   }
@@ -3254,6 +5174,155 @@ async function runAction(action, input = {}) {
     await renderJobs(job.id);
   } catch (err) {
     setOperationsFeedback(`Could not start that action: ${err.message}`, 'error');
+  }
+}
+
+async function renderAutonomy() {
+  const status = document.getElementById('autonomy-status');
+  const runsPanel = document.getElementById('autonomy-runs');
+  if (!status || !runsPanel) return;
+  try {
+    const [health, budget, runsData] = await Promise.all([
+      apiJSON('/api/autonomy/model-health'),
+      apiJSON('/api/autonomy/research-budget'),
+      apiJSON('/api/autonomy/runs'),
+    ]);
+    const localClass = health.local?.ok ? 'completed' : 'failed';
+    const parallelClass = health.parallel?.ok ? 'completed' : 'failed';
+    status.innerHTML = `
+      <div class="control-card">
+        <h3>Parallel Research</h3>
+        <p>${escapeHTML(health.parallel?.detail || 'Unknown')}</p>
+        <span class="status-pill ${parallelClass}">${health.parallel?.ok ? 'ready' : 'unavailable'}</span>
+      </div>
+      <div class="control-card">
+        <h3>Local Model</h3>
+        <p>${escapeHTML(health.local?.selected_model || health.local?.model || 'No model selected')}<br>${escapeHTML(health.local?.detail || 'Unknown')}</p>
+        ${health.local?.fallback_chain ? `<p class="plain-help">Fallback chain: ${health.local.fallback_chain.map(escapeHTML).join(' → ')}</p>` : ''}
+        ${health.local?.missing_models?.length ? `<p class="plain-help">Missing: ${health.local.missing_models.slice(0, 3).map(escapeHTML).join(', ')}</p>` : ''}
+        ${modelRepairActionsHTML(health.local)}
+        <span class="status-pill ${localClass}">${health.local?.ok ? 'ready' : 'unavailable'}</span>
+      </div>
+      <div class="control-card">
+        <h3>Research Budget</h3>
+        <p>${budget.remaining_today}/${budget.daily_limit} Parallel runs left today.</p>
+        <span class="status-pill ${budget.limited ? 'failed' : 'completed'}">${budget.limited ? 'limited' : 'available'}</span>
+      </div>
+      <div class="control-card">
+        <h3>Autonomy Mode</h3>
+        <p>Default is dry-run/approval-first. Submitting applications and outreach remains forbidden.</p>
+        <span class="status-pill queued">safe by default</span>
+      </div>`;
+
+    const runs = runsData.runs || [];
+    runsPanel.innerHTML = runs.length
+      ? runs.slice(0, 6).map(run => `
+        <div class="control-card">
+          <h3>${escapeHTML(run.provider || 'autonomy')} · ${escapeHTML(run.status || '')}</h3>
+          <p>${escapeHTML(run.task_id || run.run_id || run.id || '')}</p>
+          <p class="plain-help">${new Date(run.created_at || Date.now()).toLocaleString()}</p>
+          ${run.result_md ? `<p><a href="${API_BASE}/preview?path=${encodeURIComponent(run.result_md.replace(/\\/g, '/'))}" target="_blank" style="color:var(--accent-fusion);">Open result</a></p>` : ''}
+        </div>`).join('')
+      : '<div class="control-card"><h3>No autonomy runs yet</h3><p>Run a queued task to create the first audit entry.</p></div>';
+  } catch (err) {
+    status.innerHTML = `<div class="control-card"><h3>Autonomy unavailable</h3><p>${escapeHTML(err.message)}</p></div>`;
+    runsPanel.innerHTML = '';
+  }
+}
+
+function modelRepairActionsHTML(local = {}) {
+  const actions = Array.isArray(local.repair_actions) ? local.repair_actions : [];
+  if (!actions.length) return '';
+  return `<div style="margin:0.7rem 0;">${actions.map(action => {
+    if (action.kind === 'manual') {
+      return `<button class="control-btn secondary" onclick="copyText(${JSON.stringify(action.command || '')})">${escapeHTML(action.label)}</button>
+              <p class="plain-help">Command: ${escapeHTML(action.command || '')}</p>`;
+    }
+    return `<button class="control-btn secondary" onclick='runModelRepair(${JSON.stringify(action)})'>${escapeHTML(action.label)}</button>`;
+  }).join(' ')}</div>`;
+}
+
+async function copyText(text) {
+  try {
+    await writeClipboardText(text);
+    setOperationsFeedback('Copied command. Review it before running.', 'success');
+  } catch {
+    setOperationsFeedback(text, 'warn');
+  }
+}
+
+async function runModelRepair(action) {
+  if (!action?.endpoint) return;
+  const detail = action.model ? `\n\nModel: ${action.model}` : '';
+  const ok = confirm(`${action.label}?\n\n${action.description || 'Run local model repair action.'}${detail}`);
+  if (!ok) return;
+  try {
+    setOperationsFeedback(`Running: ${action.label}. Model downloads can take a while.`, 'warn');
+    const result = await apiJSON(action.endpoint, {
+      method: 'POST',
+      body: JSON.stringify({ model: action.model || null }),
+    });
+    const message = result.ok === false ? (result.error || 'Repair failed.') : `${action.label} completed.`;
+    setOperationsFeedback(message, result.ok === false ? 'error' : 'success');
+    await renderAutonomy();
+  } catch (err) {
+    setOperationsFeedback(`Model repair failed: ${err.message}`, 'error');
+  }
+}
+
+async function runAutonomyPending() {
+  const ok = confirm('Run one queued task through Parallel/local AI?\n\nThis defaults to dry-run and approval-required writes. It will not submit applications or send outreach.');
+  if (!ok) return;
+  try {
+    const { job } = await apiJSON('/api/autonomy/run-pending', {
+      method: 'POST',
+      body: JSON.stringify({ max_tasks: 1, poll_timeout: 120 }),
+    });
+    setOperationsFeedback('Started autonomous queue processing. Check Background Updates for logs.', 'success');
+    await renderJobs(job.id);
+  } catch (err) {
+    setOperationsFeedback(`Could not start autonomy: ${err.message}`, 'error');
+  }
+}
+
+function proposedWritesHTML(task) {
+  const writes = Array.isArray(task.proposed_writes) ? task.proposed_writes : [];
+  if (!writes.length) return '';
+  const rows = writes.map(write => {
+    const lane = write.policy?.lane || 'approval_required';
+    return `<li><strong>${escapeHTML(write.action)}</strong> · ${escapeHTML(lane)}<br><span class="plain-help">${escapeHTML(write.summary || write.relative_path || '')}</span></li>`;
+  }).join('');
+  const controls = task.approval_required
+    ? `<button class="control-btn warn" onclick="approveAutonomyTask('${task.id}')">Approve writes</button>
+       <button class="control-btn secondary" onclick="rejectAutonomyTask('${task.id}')">Reject</button>`
+    : '';
+  return `<details class="technical-details" open><summary>Proposed autonomous actions</summary><ul>${rows}</ul>${controls}</details>`;
+}
+
+async function approveAutonomyTask(id) {
+  const ok = confirm('Approve these proposed writes?\n\nOnly policy-allowed local writes will run. Forbidden actions stay blocked.');
+  if (!ok) return;
+  try {
+    await apiJSON(`/api/autonomy/tasks/${id}/approve`, { method: 'POST', body: JSON.stringify({}) });
+    setOperationsFeedback('Approved autonomy task and executed allowed writes.', 'success');
+    await Promise.all([renderAgentTasks(), renderAutonomy(), renderJobs()]);
+  } catch (err) {
+    setOperationsFeedback(`Could not approve task: ${err.message}`, 'error');
+  }
+}
+
+async function rejectAutonomyTask(id) {
+  const reason = prompt('Reason for rejection?', 'Rejected after review.');
+  if (reason === null) return;
+  try {
+    await apiJSON(`/api/autonomy/tasks/${id}/reject`, {
+      method: 'POST',
+      body: JSON.stringify({ reason }),
+    });
+    setOperationsFeedback('Rejected autonomy task.', 'success');
+    await renderAgentTasks();
+  } catch (err) {
+    setOperationsFeedback(`Could not reject task: ${err.message}`, 'error');
   }
 }
 
@@ -3307,10 +5376,27 @@ async function renderSourceHealth() {
 
 async function renderAgentTasks() {
   const grid = document.getElementById('agent-task-grid');
+  const meta = document.getElementById('agent-task-meta');
   if (!grid) return;
   try {
     const data = await apiJSON('/api/agent-tasks');
     const activeTasks = data.tasks.filter(task => !['completed', 'cancelled'].includes(task.status));
+    const inProgress = activeTasks.filter(task => task.status === 'in_progress').length;
+    const needsUser = activeTasks.filter(task => task.status === 'needs_user').length;
+    const now = Date.now();
+    const oldestHours = activeTasks.length
+      ? Math.max(...activeTasks.map(task => {
+          const created = new Date(task.created_at || task.updated_at || now).getTime();
+          return Math.max(0, (now - created) / (1000 * 60 * 60));
+        }))
+      : 0;
+    if (meta) {
+      meta.innerHTML = `
+        <div class="stat-card"><div class="stat-number">${activeTasks.length}</div><div class="stat-label">Open queue</div></div>
+        <div class="stat-card"><div class="stat-number">${inProgress}</div><div class="stat-label">In review</div></div>
+        <div class="stat-card"><div class="stat-number">${needsUser}</div><div class="stat-label">Needs user</div></div>
+        <div class="stat-card"><div class="stat-number">${oldestHours.toFixed(1)}h</div><div class="stat-label">Oldest open item</div></div>`;
+    }
     grid.innerHTML = '';
     if (activeTasks.length === 0) {
       grid.innerHTML = '<div class="control-card"><h3>No AI review waiting</h3><p>When you queue a job or contact draft, it will appear here as instructions for Cursor/me.</p></div>';
@@ -3325,14 +5411,23 @@ async function renderAgentTasks() {
       const resourceHint = Array.isArray(task.expected_resources) && task.expected_resources.length
         ? `<p class="plain-help">Attach when done: ${task.expected_resources.map(escapeHTML).join(', ')}</p>`
         : '';
+      const queueLane = task.status === 'needs_user'
+        ? 'P0'
+        : task.type === 'application_artifact'
+          ? 'P1'
+          : 'P2';
       const taskName = escapeHTML(task.company || task.title || task.id);
       const taskContext = escapeHTML(task.title || task.mode);
       const taskUrl = escapeHTML(task.url || '');
+      const proposedWrites = proposedWritesHTML(task);
       grid.innerHTML += `
         <div class="control-card">
           <h3>${escapeHTML(taskLabel)}: ${taskName}</h3>
           <p>${taskContext}<br>${taskUrl ? `<a href="${taskUrl}" target="_blank" style="color:var(--accent-fusion);">Open URL</a>` : ''}</p>
           ${resourceHint}
+          ${task.result_path ? `<p class="plain-help">Research/result: ${escapeHTML(task.result_path)}</p>` : ''}
+          ${proposedWrites}
+          <p class="plain-help">Lane ${queueLane} · Created ${new Date(task.created_at || task.updated_at || Date.now()).toLocaleString()}</p>
           <span class="status-pill ${task.status}">${friendlyStatus(task.status)}</span>
           <button class="control-btn secondary" onclick="copyTaskPrompt('${task.id}')">Copy instructions for Cursor</button>
         </div>`;
@@ -3438,10 +5533,10 @@ async function queueArtifactTask(job, artifactKind) {
   }
 }
 
-function copyTaskPrompt(id) {
+async function copyTaskPrompt(id) {
   const task = (window.__agentTasks || []).find(t => t.id === id);
   if (!task) return;
-  navigator.clipboard?.writeText(task.prompt);
+  await writeClipboardText(task.prompt);
 }
 
 async function createOutreachDraft() {
@@ -3478,6 +5573,13 @@ async function queueContactTask() {
 // ── SSE Connection ──────────────────────────────────────────────────
 
 function connectSSE() {
+  if (STATIC_PUBLISH) {
+    const dot = document.getElementById('sse-dot');
+    const text = document.getElementById('sse-text');
+    if (dot) dot.style.background = 'var(--accent-fusion)';
+    if (text) text.textContent = 'Public snapshot — auto-synced';
+    return;
+  }
   if (sseConnection) {
     sseConnection.close();
     sseConnection = null;
@@ -3486,53 +5588,98 @@ function connectSSE() {
     const es = new EventSource(`${API_BASE}/stream`);
     sseConnection = es;
     es.onopen = () => {
+      const shouldRefresh = sseEverConnected;
+      sseEverConnected = true;
       if (reconnectTimer) {
         clearTimeout(reconnectTimer);
         reconnectTimer = null;
       }
       document.getElementById('sse-dot').style.background = 'var(--accent-green)';
       document.getElementById('sse-text').textContent = 'Live — connected to server';
+      if (shouldRefresh && !document.hidden) refreshVisibleDashboard();
     };
     es.onmessage = (e) => {
       const data = JSON.parse(e.data);
+      if (data.type === 'activity_updated') {
+        queueTodayActivityRefresh();
+      }
       if (data.type === 'data_updated' || data.type === 'data_added') {
         if (data.file === 'jobs-to-consider.json') {
-          renderLiveJobs();
+          if (activeTabId() === 'livejobs') renderLiveJobsFromSse();
+          if (activeTabId() === 'today') queueVisibleDashboardRefresh();
+          queueTodayActivityRefresh();
+        } else if (data.file === 'umich-research-prospects.json') {
+          if (activeTabId() === 'researchprospects') renderResearchProspectsFromSse();
+          queueTodayActivityRefresh();
+        } else if (data.file === 'phd-prospect-sources.json') {
+          phdResearchProspectSourcesCache = null;
+          phdResearchProspectsOptionsLoaded = false;
+          if (activeTabId() === 'phdradar') renderPhdResearchProspectsFromSse();
+          queueTodayActivityRefresh();
+        } else if (data.file === 'kth-research-prospects.json') {
+          if (activeTabId() === 'phdradar') renderPhdResearchProspectsFromSse('kth');
+          queueTodayActivityRefresh();
+        } else if (data.file === 'ipp-research-prospects.json') {
+          if (activeTabId() === 'phdradar') renderPhdResearchProspectsFromSse('ipp');
+          queueTodayActivityRefresh();
+        } else if (data.file === 'private-co-phd-paths.json') {
+          if (activeTabId() === 'phdradar') renderPhdResearchProspectsFromSse('private-co');
+        } else if (data.file === 'dashboard-activity-log.ndjson' || data.file === 'research-prospect-user-state.json') {
+          queueTodayActivityRefresh();
         } else if (data.file === 'applications.json') {
-          renderPulse();
+          if (activeTabId() === 'pulse') renderPulseFromSse();
+          if (activeTabId() === 'today') queueVisibleDashboardRefresh();
+          queueTodayActivityRefresh();
         } else if (data.file === 'reports.json') {
-          renderSystem();
+          if (activeTabId() === 'system') renderSystem();
         } else if (data.file === 'jobs.json') {
-          renderJobs();
+          if (activeTabId() === 'operations') renderJobs();
         } else {
-          queueRenderAllPanels();
+          queueVisibleDashboardRefresh();
         }
         const log = document.getElementById('event-log');
         log.innerHTML = `<div style="margin-bottom:0.3rem;">[${new Date().toLocaleTimeString()}] ${data.type}: ${data.file}</div>` + log.innerHTML;
       }
       if (data.type?.startsWith('job_')) {
-        renderJobs(data.job_id || data.job?.id);
+        if (activeTabId() === 'operations') renderJobs(data.job_id || data.job?.id);
       }
       if (data.type?.startsWith('agent_task_')) {
-        renderAgentTasks();
+        if (activeTabId() === 'operations') renderAgentTasks();
+      }
+      if (data.type?.startsWith('autonomy_')) {
+        if (activeTabId() === 'operations') {
+          renderAutonomy();
+          renderAgentTasks();
+        }
       }
       if (data.type === 'action_plan_updated') {
-        renderActionPlan();
+        if (activeTabId() === 'today' || activeTabId() === 'weekly') queueVisibleDashboardRefresh();
       }
-      if (data.type === 'application_updated' || data.type === 'application_dashboard_updated' || data.type === 'career_ops_synced') {
-        // #region agent log
-        agentDebugLog('H3', 'WEB-TRACKER/dashboard/fusion-pivot-dashboard.html:connectSSE:onmessage', 'SSE event will renderPulse', {
-          eventType: data.type,
-          activeElement: agentDebugActiveElement(),
-        });
-        // #endregion
-        renderPulse();
+      if (data.type === 'application_updated' || data.type === 'application_dashboard_updated') {
+        if (activeTabId() === 'pulse') renderPulseFromSse();
+        queueTodayActivityRefresh();
       }
+      if (data.type === 'career_ops_synced') queueVisibleDashboardRefresh();
       if (data.type === 'jobs_to_consider_updated') {
-        renderLiveJobs();
+        if (activeTabId() === 'livejobs') renderLiveJobsFromSse();
+        if (activeTabId() === 'today') queueVisibleDashboardRefresh();
+        queueTodayActivityRefresh();
+      }
+      if (data.type === 'research_prospects_updated') {
+        if (activeTabId() === 'researchprospects') renderResearchProspectsFromSse();
+        queueTodayActivityRefresh();
+      }
+      if (data.type === 'kth_research_prospects_updated') {
+        if (activeTabId() === 'phdradar') renderPhdResearchProspectsFromSse('kth');
+        queueTodayActivityRefresh();
+      }
+      if (data.type === 'phd_research_prospects_updated') {
+        if (activeTabId() === 'phdradar') renderPhdResearchProspectsFromSse(data.source || '');
+        queueTodayActivityRefresh();
       }
       if (data.type === 'application_deleted') {
-        renderPulse();
+        if (activeTabId() === 'pulse') renderPulseFromSse();
+        queueTodayActivityRefresh();
       }
     };
     es.onerror = () => {
@@ -3558,10 +5705,55 @@ function connectSSE() {
 // ── Boot ────────────────────────────────────────────────────────────
 
 document.querySelectorAll('#workauth-filters input').forEach(input => input.addEventListener('change', renderLiveJobs));
+document.getElementById('researchprospects')?.addEventListener('focusin', () => {
+  researchProspectsUserInteractingUntil = Date.now() + RESEARCH_PROSPECTS_INTERACTION_IDLE_MS;
+});
+document.getElementById('researchprospects')?.addEventListener('pointerdown', () => {
+  researchProspectsUserInteractingUntil = Date.now() + RESEARCH_PROSPECTS_INTERACTION_IDLE_MS;
+});
+document.getElementById('researchprospects')?.addEventListener('input', () => {
+  researchProspectsUserInteractingUntil = Date.now() + RESEARCH_PROSPECTS_INTERACTION_IDLE_MS;
+});
+document.getElementById('researchprospects')?.addEventListener('change', () => {
+  researchProspectsUserInteractingUntil = Date.now() + RESEARCH_PROSPECTS_INTERACTION_IDLE_MS;
+});
 document.addEventListener('focusout', (event) => {
   if (event.target?.closest?.('#pulse-add-row, #pulse-apps-table')) flushPulseRenderAfterInteraction();
 });
-renderAllPanels();
+document.addEventListener('click', (event) => {
+  if (event.target?.closest?.('#livejobs a[target="_blank"]')) saveLiveJobsScrollState();
+}, true);
+window.addEventListener('pagehide', () => {
+  if (isLiveJobsActive()) saveLiveJobsScrollState();
+});
+window.addEventListener('pageshow', (event) => {
+  if (isLiveJobsActive()) {
+    restoreLiveJobsScrollState(readLiveJobsScrollState());
+    if (event.persisted || liveJobsRenderQueued) {
+      liveJobsRenderQueued = false;
+      renderLiveJobs();
+    }
+  }
+  if (!STATIC_PUBLISH && !sseConnection) connectSSE();
+});
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    if (isLiveJobsActive()) saveLiveJobsScrollState();
+    return;
+  }
+  if (!STATIC_PUBLISH && !sseConnection) connectSSE();
+  if (isLiveJobsActive()) {
+    restoreLiveJobsScrollState(readLiveJobsScrollState());
+    if (liveJobsRenderQueued) {
+      liveJobsRenderQueued = false;
+      renderLiveJobs();
+    }
+  } else {
+    refreshVisibleDashboard();
+  }
+});
+initStaticPublishMode();
+renderInitialDashboard();
 connectSSE();
 
 setInterval(() => { renderPhdRadar(); }, 60000);

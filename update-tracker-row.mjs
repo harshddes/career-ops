@@ -101,6 +101,11 @@ function normalizeScore(score) {
   if (!clean) throw new Error('score cannot be empty');
   if (/^\d+(\.\d+)?\/5$/.test(clean)) return clean;
   if (clean === 'N/A' || clean === 'DUP') return clean;
+  // jobs-to-consider.json often stores bare decimals (e.g. "4.3") without "/5"
+  if (/^\d+(\.\d+)?$/.test(clean)) {
+    const value = Number(clean);
+    if (value >= 0 && value <= 5) return `${value.toFixed(1)}/5`;
+  }
   throw new Error(`invalid score "${score}". Use X.X/5, N/A, or DUP`);
 }
 

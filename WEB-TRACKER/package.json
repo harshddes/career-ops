@@ -15,11 +15,17 @@
     "gate:status": "node deep-research-gate.mjs --status",
     "budget:reset": "node deep-research-gate.mjs --reset",
     "install:startup": "powershell -ExecutionPolicy Bypass -File scripts/install-user-startup.ps1 -Mode assisted",
-    "install:windows-task": "powershell -ExecutionPolicy Bypass -File scripts/register-windows-task.ps1 -Mode assisted"
+    "install:windows-task": "powershell -ExecutionPolicy Bypass -File scripts/register-windows-task.ps1 -Mode assisted",
+    "publish:dashboard": "node lib/generate-static-snapshot.mjs",
+    "publish:daemon": "node scripts/publish-daemon.mjs",
+    "install:publish-daemon": "powershell -ExecutionPolicy Bypass -File scripts/install-publish-daemon.ps1"
   },
   "dependencies": {
-    "express": "^4.21.0",
     "chokidar": "^4.0.0",
-    "node-cron": "^3.0.3"
+    "exceljs": "^4.4.0",
+    "express": "^4.21.0",
+    "fast-csv": "^5.0.7",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^9.0.1"
   }
 }

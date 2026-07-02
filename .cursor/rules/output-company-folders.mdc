@@ -1,0 +1,31 @@
+---
+description: Company-subfolder organization for all generated application artifacts in output/
+alwaysApply: true
+---
+
+# Output Artifact Organization — Company Subfolders (ALWAYS)
+
+Every artifact generated for a specific job posting (resume `.tex`/`.pdf`, cover letter `.html`/`.pdf`, application email `.md`, or any other `job.resources` file) MUST be saved in a company subfolder under `output/`:
+
+```text
+output/{company-slug}/{artifact-file}
+```
+
+- `{company-slug}` is the kebab-case lowercase company name (e.g. `tesla`, `helion`, `cfs`, `iter`, `vat-group`, `periodic-labs`, `pranos`).
+- Reuse the existing subfolder for any future role at the same company — one folder per company, forever, regardless of role.
+- Create the subfolder if it does not exist yet.
+- Generic, non-company-specific artifacts (e.g. `cv-harsh-desai-ats.pdf`, smoke tests, base templates) stay in the `output/` root.
+
+## Path examples
+
+```text
+✅ output/tesla/cv-harsh-desai-tesla-peak-program-2026-06-11.pdf
+✅ output/helion/cover-letter-harsh-desai-helion-build-engineer-2026-05-17.pdf
+❌ output/cv-harsh-desai-tesla-peak-program-2026-06-11.pdf   (company file in root)
+```
+
+## Tracker consistency (mandatory)
+
+When registering artifacts on the Jobs to Consider tracker (`job.resources` via `upsertConsiderJob()` / `patchConsiderJob()`), the resource paths MUST include the company subfolder. Never register a root `output/...` path for a company-specific artifact.
+
+This rule overrides any flat `output/cv-...` path examples found in `modes/pdf.md`, `modes/application-artifacts.md`, or task-queue prompts.

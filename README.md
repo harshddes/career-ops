@@ -242,12 +242,16 @@ career-ops/
 ├── modes/                       # 14 skill modes
 │   ├── _shared.md               # Shared context (customize this)
 │   ├── oferta.md                # Single evaluation
-│   ├── pdf.md                   # PDF generation
+│   ├── pdf.md                   # LaTeX resume generation
 │   ├── scan.md                  # Portal scanner
 │   ├── batch.md                 # Batch processing
 │   └── ...
+├── harsh/
+│   ├── Harsh_Desai_Resume_OnePage_AlignedFullSkills_A4.tex  # Optional personal LaTeX style reference
+│   └── Harsh_Desai_Resume_OnePage_AlignedFullSkills_A4.pdf  # Optional reference output
 ├── templates/
-│   ├── cv-template.html         # ATS-optimized CV template
+│   ├── cv-template.tex          # Generic LaTeX resume fallback
+│   ├── cv-template.html         # Legacy/fallback HTML CV template
 │   ├── portals.example.yml      # Scanner config template
 │   └── states.yml               # Canonical statuses
 ├── batch/
