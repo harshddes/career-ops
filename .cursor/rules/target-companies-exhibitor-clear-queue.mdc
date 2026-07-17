@@ -1,0 +1,30 @@
+---
+description: Clear Target Companies exhibitor queue with zero questions
+alwaysApply: true
+---
+
+# Target Companies — Exhibitor Clear-Queue (ALWAYS)
+
+When the user says any of these (or close variants), execute immediately:
+
+- **Clear the queue in Target Companies**
+- Clear target companies queue
+- Clear the exhibitor queue
+
+## Hard contract
+
+1. This always means the **exhibitor** lane under Target Companies — never EURAXESS, PhDScanner, or Operations `agent-tasks.ndjson`.
+2. **Do not ask clarifying questions.** Do not ask which companies, which booth batch, or whether to proceed.
+3. First action: read `WEB-TRACKER/data/exhibitor-clear-queue.json`.
+4. If `pending_count === 0`: reply only `Target Companies exhibitor queue is empty.` and stop.
+5. If pending: process **every** item in `pending[]` by following `WEB-TRACKER/lib/exhibitor/CLEAR_QUEUE_SOP.md` mechanically.
+6. Work is incomplete until each company card has `research_report` / artifacts attached and `syncExhibitorCompaniesToDashboard()` + `syncConsiderJobsToDashboard()` have run.
+
+## Entry points
+
+| File | Role |
+|------|------|
+| `WEB-TRACKER/data/exhibitor-clear-queue.json` | Pending work orders |
+| `WEB-TRACKER/lib/exhibitor/CLEAR_QUEUE_SOP.md` | Exact research + attach steps |
+| `WEB-TRACKER/lib/exhibitor/factory.mjs` | `markExhibitorTaskInProgress` / `markExhibitorTaskCompleted` |
+| `WEB-TRACKER/lib/exhibitor/company-store.mjs` | `patchExhibitorCompany` + sync |

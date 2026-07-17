@@ -94,7 +94,7 @@
     },
     "33": {
       "posting_url": "https://skyroot.zohorecruit.in/jobs/Careers/64470000000644090/Electrical-Integration-Test-Engineer?source=CareerSite",
-      "submitted_date": "",
+      "submitted_date": "2026-07-02",
       "way_to_apply": "output/skyroot-aerospace/application-email-skyroot-aerospace-electrical-integration-test-engineer-2026-06-28.md"
     },
     "34": {
@@ -136,6 +136,54 @@
       "posting_url": "https://job-boards.greenhouse.io/oklo/jobs/5544852004",
       "submitted_date": "2026-07-01",
       "way_to_apply": "output/oklo/application-email-oklo-hardware-test-engineer-2026-07-01.md"
+    },
+    "44": {
+      "posting_url": "https://jobs.ornl.gov/job/Knoxville-Applications-Engineer-Advanced-Manufacturing-TN-37932/1379754100/",
+      "submitted_date": "2026-07-02",
+      "way_to_apply": ""
+    },
+    "45": {
+      "posting_url": "https://jobs.ornl.gov/job/Oak-Ridge-Instrument-Design-Engineer-TN-37830/1398654400/",
+      "submitted_date": "2026-07-02",
+      "way_to_apply": ""
+    },
+    "46": {
+      "posting_url": "https://jobs.ornl.gov/job/Oak-Ridge-Beam-Instrumentation-Systems-Lead-TN-37830/1386142900/",
+      "submitted_date": "2026-07-02",
+      "way_to_apply": ""
+    },
+    "47": {
+      "posting_url": "https://jobs.ornl.gov/job/Oak-Ridge-Technical-Professional-Staff-Member-Mechanical-Design-and-Test-Engineer-%28Temporary%29-TN-37830/1403782600/",
+      "submitted_date": "2026-07-02",
+      "way_to_apply": ""
+    },
+    "48": {
+      "posting_url": "https://job-boards.greenhouse.io/oklo",
+      "submitted_date": "2026-07-02",
+      "way_to_apply": ""
+    },
+    "49": {
+      "posting_url": "https://job-boards.greenhouse.io/oklo/jobs/5677684004",
+      "submitted_date": "2026-07-02",
+      "way_to_apply": "output/oklo/application-email-oklo-mechatronics-engineer-2026-07-01.md"
+    },
+    "62": {
+      "posting_url": "https://jobs.apple.com/en-us/details/200642670-0836/display-metrology-engineer?team=HRDWR",
+      "submitted_date": "2026-07-05",
+      "way_to_apply": ""
+    },
+    "63": {
+      "posting_url": "https://jobs.apple.com/en-us/details/200665660-3543/camera-calibration-and-test-engineer?team=HRDWR",
+      "submitted_date": "2026-07-05",
+      "way_to_apply": ""
+    },
+    "64": {
+      "posting_url": "https://euraxess.ec.europa.eu/jobs/446951",
+      "submitted_date": "2026-07-13",
+      "university": "ALBA Synchrotron Light Source",
+      "field": "Cryogenics / facilities",
+      "track_kind": "phd",
+      "way_to_apply": "output/alba-synchrotron/application-email-alba-synchrotron-project-engineer-cryogenic-2026-07-13.md"
     }
   },
   "schedule": {

@@ -1,6 +1,6 @@
 import { buildExportBuffer } from './dashboard-export.mjs';
 import { writeDailyActivityCsv } from './daily-activity-csv.mjs';
-import { getTodayActivity } from './today-activity.mjs';
+import { digestRecipients, getTodayActivity } from './today-activity.mjs';
 import { sendMail, smtpConfigFromEnv } from './mail-sender.mjs';
 
 function escapeHtml(value = '') {
@@ -70,6 +70,7 @@ export async function buildDailyDigest({ date = '', timeZone = process.env.DAILY
     },
   ];
   const subject = `Career-Ops Daily Digest - ${activity.date}`;
+  const recipientsLine = digestRecipients().join(', ');
   const summaryItems = summaryList(activity.summary);
   const summaryHtml = summaryItems
     .map(([label, value]) => `<li><strong>${escapeHtml(label)}:</strong> ${Number(value || 0)}</li>`)
@@ -84,6 +85,7 @@ export async function buildDailyDigest({ date = '', timeZone = process.env.DAILY
     text: [
       `Career-Ops Daily Digest - ${activity.date}`,
       `Timezone: ${activity.timeZone}`,
+      `Automated from Career-Ops dashboard → ${recipientsLine}`,
       '',
       summaryText,
       '',
@@ -92,6 +94,7 @@ export async function buildDailyDigest({ date = '', timeZone = process.env.DAILY
     html: `
       <h2>Career-Ops Daily Digest - ${escapeHtml(activity.date)}</h2>
       <p>Timezone: ${escapeHtml(activity.timeZone)}</p>
+      <p>Automated from the Career-Ops dashboard to: <strong>${escapeHtml(recipientsLine)}</strong></p>
       <ul>${summaryHtml}</ul>
       <h3>Applied Today</h3>
       ${htmlTable(activity.details.applied_today)}

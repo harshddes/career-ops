@@ -1,0 +1,44 @@
+name: EURAXESS Live Feed Mirror
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install WEB-TRACKER dependencies
+        working-directory: WEB-TRACKER
+        run: npm install --no-audit --no-fund
+
+      - name: Run RSS-only EURAXESS scan
+        working-directory: WEB-TRACKER
+        env:
+          EURAXESS_PROVIDERS: official_or_permitted_feed
+        run: node euraxess-scan.mjs --all --refresh-liveness
+
+      - name: Commit mirror updates
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f WEB-TRACKER/data/euraxess-opportunities.json data/euraxess-opportunities.json WEB-TRACKER/data/source-state.json || true
+          if git diff --cached --quiet; then
+            echo "No EURAXESS mirror changes."
+            exit 0
+          fi
+          git commit -m "Update EURAXESS live feed mirror"
+          git push

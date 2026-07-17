@@ -1,0 +1,52 @@
+[
+  {
+    "id": "7177a261-0c47-4903-825a-e908e80453f9",
+    "external_id": "7177a261-0c47-4903-825a-e908e80453f9",
+    "url": "https://www.phdscanner.com/opportunities/phd-vacancies-epfl-switzerland-phd-in-interpretable-ai-for-coupled-multiphysics-of-geomaterials-7177a261-0c47-4903-825a-e908e80453f9",
+    "title": "PhD in Interpretable AI for Coupled Multiphysics of Geomaterials",
+    "university": "EPFL",
+    "country": "Switzerland",
+    "discipline": "Civil Engineering",
+    "department": "Civil Engineering",
+    "supervisor": "Prof. Kostas Karapiperis",
+    "deadline": "July 15, 2026",
+    "summary": "Fully funded PhD at the intersection of computational mechanics, multiphysics of geomaterials, and interpretable machine learning with experimental and micromechanical data.",
+    "fully_funded": true,
+    "minimal_financial_barriers": true,
+    "funding_label": "Fully funded",
+    "published_at": "2026-07-01T00:00:00.000Z"
+  },
+  {
+    "id": "cryo-heat-pipe-seed-001",
+    "external_id": "cryo-heat-pipe-seed-001",
+    "url": "https://www.phdscanner.com/opportunities/phd-vacancies-cranfield-university-united-kingdom-experimental-study-of-a-flat-miniature-oscillating-heat-pipe-for-cryogenic-applications-cryo-heat-pipe-seed-001",
+    "title": "Experimental study of a flat miniature oscillating heat pipe for cryogenic applications",
+    "university": "Cranfield University",
+    "country": "United Kingdom",
+    "discipline": "Mechanical Engineering",
+    "department": "Mechanical Engineering",
+    "deadline": "August 31, 2026",
+    "summary": "Fully funded PhD focusing on testing thermal performance of cryogenic heat pipes. Candidates should have a Master's in fluid mechanics and heat transfer; programming skills and research aptitude are essential.",
+    "fully_funded": true,
+    "minimal_financial_barriers": true,
+    "funding_label": "Fully funded",
+    "published_at": "2026-07-05T00:00:00.000Z"
+  },
+  {
+    "id": "plasma-diag-seed-001",
+    "external_id": "plasma-diag-seed-001",
+    "url": "https://www.phdscanner.com/opportunities/phd-vacancies-demo-institute-germany-phd-in-plasma-diagnostics-and-instrumentation-plasma-diag-seed-001",
+    "title": "PhD in Plasma Diagnostics and Spacecraft Instrumentation",
+    "university": "Demo Plasma Institute",
+    "country": "Germany",
+    "discipline": "Physics",
+    "department": "Plasma Physics",
+    "supervisor": "Prof. Example",
+    "deadline": "September 30, 2026",
+    "summary": "Fully funded doctoral position on plasma diagnostics, Langmuir probes, mass spectrometry, FPGA readout, and vacuum instrumentation for space plasma experiments.",
+    "fully_funded": true,
+    "minimal_financial_barriers": true,
+    "funding_label": "Fully funded",
+    "published_at": "2026-07-08T00:00:00.000Z"
+  }
+]

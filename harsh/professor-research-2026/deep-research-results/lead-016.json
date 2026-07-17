@@ -1,0 +1,317 @@
+{
+  "run_id": "trun_dd47611047ba4519ac7535f4becabc30",
+  "interaction_id": "trun_dd47611047ba4519ac7535f4becabc30",
+  "result_url": "https://platform.parallel.ai/play/deep-research/trun_dd47611047ba4519ac7535f4becabc30",
+  "status": "completed",
+  "output": {
+    "basis": [
+      {
+        "field": "executive_insights",
+        "reasoning": "Assessment reasoning:\n- The field_description requests a concise, structured report including Identity; Recent/Active Funding; Recent and Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources, with each positive claim backed by direct URLs. It asks to distinguish types of funding and to verify identity with current affiliation, not merging with namesakes. \n- The provided field_answer mainly coversIdentity-related observations and notes about ORCID and lack of verified public evidence, plus broad remarks on funding searches (no verified public evidence found) and generic hiring landscape findings. It does not deliver the full structured report format (no explicit sections for Funding, Open Positions with fields like title, status, posted date, deadline, etc.; no direct source URLs for each positive claim; no explicit Confidence and Caveats section beyond brief statements). \n- Therefore, completeness is false because the answer does not fully satisfy the required structure and content (especially Recent/Active Funding details, Open Positions with all fields, and a consolidated Sources section).\n- Regarding supporting excerpts: some excerpts do appear to align with statements (e.g., Space Weather/Heliophysics page and ORCID entry suggesting a George C. Ho), but the field_answer\u2019s main conclusions (no verified public evidence, identity not confirmed, no SES posting linked to this lead) are only loosely supported and not comprehensively demonstrated by the excerpts. Consequently, the \u201cSupported\u201d assessment should be false or at least not confidently true because the answer makes broad claims that are not fully substantiated by the excerpts alone and without the required structured substantiation.\n- Based on the above, set completeness = false and supported = false.",
+        "citations": [
+          {
+            "url": "https://www.jhuapl.edu/work/expertise/space-weather-and-heliophysics",
+            "excerpts": [
+              "Space Weather and Heliophysics"
+            ],
+            "title": "Space Weather and Heliophysics Johns Hopkins University Applied Physics Laboratory https://www.jhuapl.edu \u203a work \u203a expertise \u203a space-weath..."
+          },
+          {
+            "url": "https://orcid.org/0000-0003-1093-2066",
+            "excerpts": [
+              "Contributors: Robert Allen; George Ho; Glenn Mason; Malik Walker; Sophia Davis; Robert Wimmer-Schweingruber; Javier Rodriguez-Pacheco; Sarah Vines; Gang Li; Rachael Filwett et al."
+            ],
+            "title": "George C. Ho - ORCID"
+          },
+          {
+            "url": "https://link.springer.com/book/10.1007/978-3-319-43495-7",
+            "excerpts": [
+              "Energetic Particles in the Heliosphere | Springer Nature Link"
+            ],
+            "title": "Energetic Particles in the Heliosphere | Springer Nature Link Springer Nature Link https://link.springer.com \u203a book"
+          },
+          {
+            "url": "https://www.nsf.gov/awardsearch/simpleSearchResult?queryPiLastName=Ho&queryPiFirstName=&queryPiOrganization=Johns+Hopkins+APL&queryActiveAwards=true&queryExpiredAwards=false",
+            "excerpts": [],
+            "title": "Search Results - NSF Award Search"
+          },
+          {
+            "url": "https://careers.jhuapl.edu/",
+            "excerpts": [
+              "APL Careers - Johns Hopkins University Applied Physics ...\n242 results ; Program Manager, National Security Space \u00b7 59149 \u00b7 SES Space Exploration Sector ; Administrative Assistant for National Security Space \u00b7 59148 \u00b7 SES"
+            ],
+            "title": "APL Careers - Johns Hopkins University Applied Physics ..."
+          },
+          {
+            "url": "https://careers.jhuapl.edu/phd/jobs",
+            "excerpts": [
+              "APL Doctorate Level Careers\nSector/Department REDD Research & Exploratory Development Department. Location Laurel, Maryland. Apply Now \u00b7 Read More \u00b7 2026 PhD Graduate \u2013 Applied"
+            ],
+            "title": "APL Doctorate Level Careers"
+          },
+          {
+            "url": "https://ca.linkedin.com/in/georgehocissp",
+            "excerpts": [
+              "George Ho - Chief Technology & Digital Officer at Aviso - LinkedIn\nWith over 20 years of senior leadership experience in the wealth management and regulatory sectors, I'm an accomplished and dynamic information technology and"
+            ],
+            "title": "George Ho - Chief Technology & Digital Officer at Aviso - LinkedIn"
+          },
+          {
+            "url": "https://www.linkedin.com/in/georgeho",
+            "excerpts": [
+              "George Ho - CEO at Fr\u00f6nen | Founding Partner at Greater ...\nI'm the Founder and Managing Partner at Greater Human Capital, with more than 15 years in HR and as a human capital consultant."
+            ],
+            "title": "George Ho - CEO at Fr\u00f6nen | Founding Partner at Greater ..."
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "1_identity_verification_and_name_disambiguation",
+        "reasoning": "Reasoning: The field asks for a comprehensive identity verification and disambiguation, plus a broad set of funding and hiring data with sources. The provided field_answer focuses only on identity verification and notes about limited corroboration, without delivering the requested structured verification (explicit identity confirmation, current affiliation, or a complete set of grants and open/closed postings with direct URLs). Therefore, the field answer is not complete. Excerpts shown include some related items (ORCID for George C. Ho, JHUAPL pages mentioning researchers) but do not conclusively verify the exact lead within Johns Hopkins APL Space Exploration Sector, and they do not provide the funded/hiring details requested. Consequently, completeness = false. Supported by excerpts: the excerpts do include references to a George C. Ho ORCID entry and general JHUAPL pages, which tangentially relate but do not definitively support the specific identity verification or all claims in the answer; thus support is not strong. Confidence about the exact identity match remains low given conflicting or insufficient public records in the excerpts provided.",
+        "citations": [
+          {
+            "url": "https://www.jhuapl.edu/work/expertise/space-weather-and-heliophysics",
+            "excerpts": [
+              "Space Weather and Heliophysics"
+            ],
+            "title": "Space Weather and Heliophysics Johns Hopkins University Applied Physics Laboratory https://www.jhuapl.edu \u203a work \u203a expertise \u203a space-weath..."
+          },
+          {
+            "url": "http://solar.jhuapl.edu/Hardware/index.php",
+            "excerpts": [
+              "The JHUAPL solar team has over 15 years' experience in the design, assembly, testing and calibration (on-ground & in-flight) of space-based instruments"
+            ],
+            "title": "Hardware - JHUAPL Heliophysics"
+          },
+          {
+            "url": "http://jhuapl.edu/work/mission-areas/research-and-exploratory-development/people",
+            "excerpts": [
+              "To connect with our researchers, please contact research@jhuapl.edu."
+            ],
+            "title": null
+          },
+          {
+            "url": "https://ui.adsabs.harvard.edu/search/q=author%3A%22Ho%2C%20George%22%20aff%3A%22Johns%20Hopkins%20APL%22&sort=date%20desc%2C%20bibcode%20desc&p_=0",
+            "excerpts": [],
+            "title": "author:\"Ho, George\" aff:\"Johns Hopkins APL\" - Astrophysics Data System"
+          },
+          {
+            "url": "https://orcid.org/0000-0003-1093-2066",
+            "excerpts": [
+              "Contributors: Robert Allen; George Ho; Glenn Mason; Malik Walker; Sophia Davis; Robert Wimmer-Schweingruber; Javier Rodriguez-Pacheco; Sarah Vines; Gang Li; Rachael Filwett et al."
+            ],
+            "title": "George C. Ho - ORCID"
+          },
+          {
+            "url": "https://orcid.org/0000-0001-6156-510X",
+            "excerpts": [
+              "Activities\nEducation and qualifications (4) ; Johns Hopkins School of Medicine: Baltimore, MD, US. 2016-06-01 to present | Postdoctoral Fellow (Oncology). Qualification."
+            ],
+            "title": "Activities"
+          },
+          {
+            "url": "https://link.springer.com/book/10.1007/978-3-319-43495-7",
+            "excerpts": [
+              "Energetic Particles in the Heliosphere | Springer Nature Link"
+            ],
+            "title": "Energetic Particles in the Heliosphere | Springer Nature Link Springer Nature Link https://link.springer.com \u203a book"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "2_recent_active_funding_announced_on_or_after_2024_01_01_still_active",
+        "reasoning": "Evaluation notes:\n- The field_description asks for a concise structured report including Identity; Recent/Active Funding; Recent and Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources, with direct URLs for positive claims. The provided field_answer instead states no verified public evidence found and lists checklist notes, but it does not present the structured report requested. \n- Completeness should be false because the field_answer does not deliver the required structured sections (Identity, Funding, Positions, LinkedIn Evidence, etc.).\n- Excerpts given include various funding/awards about Johns Hopkins APL but none provide a verified George Ho (GH) at APL in the specified Space Exploration Sector, so there is no direct supportive evidence in excerpts to back a positive funding claim for the named lead. This suggests low or no supported claims. However, the user query asks to verify, and the answer asserts no verified evidence; this conclusion is not directly demonstrated with explicit, source-backed grants in the field_answer, hence the lack of structured reporting. This affects both completeness and support assessments.\n- Overall: completeness=false; supported=false.",
+        "citations": [
+          {
+            "url": "https://www.nsf.gov/awardsearch/simpleSearchResult?queryPiLastName=Ho&queryPiFirstName=&queryPiOrganization=Johns+Hopkins+APL&queryActiveAwards=true&queryExpiredAwards=false",
+            "excerpts": [],
+            "title": "Search Results - NSF Award Search"
+          },
+          {
+            "url": "https://nspires.nasaprs.com/external",
+            "excerpts": [
+              "NSPIRES - NASA Research Opportunities Online\nFeb 2, 2023 \u2014 NSPIRES now allow users to SEARCH for and view Proposals and NOIs Due within 30 Days, FUTURE, and OPEN, CLOSED/PAST NASA research announcements."
+            ],
+            "title": "NSPIRES - NASA Research Opportunities Online"
+          },
+          {
+            "url": "https://news.samsung.com/global/samsung-and-johns-hopkins-apl-win-2025-rd-100-award-for-next-generation-peltier-cooling-technology",
+            "excerpts": [
+              "Samsung and Johns Hopkins APL Win 2025 R&D 100 ...\nAug 25, 2025 \u2014 World's first high-efficiency Peltier cooling technology with nano-engineered thin-film thermoelectrics is recognized for both innovation and practicality."
+            ],
+            "title": "Samsung and Johns Hopkins APL Win 2025 R&D 100 ..."
+          },
+          {
+            "url": "https://www.jhuapl.edu/news/news-releases/250821-apl-refrigeration-tech-wins-rd-100-award-2025",
+            "excerpts": [
+              "Johns Hopkins APL's Next-Generation Solid-State ...\nAug 21, 2025 \u2014 APL researchers won a 2025 R&D 100 award for their new materials called CHESS that significantly improve the efficiency of thermoelectric cooling devices."
+            ],
+            "title": "Johns Hopkins APL's Next-Generation Solid-State ..."
+          },
+          {
+            "url": "https://www.jhuapl.edu/news/news-releases/251211-cinema-mission-to-study-space-weather",
+            "excerpts": [
+              "NASA Selects Johns Hopkins APL-Developed CINEMA ...\nDec 11, 2025 \u2014 CINEMA, a mission to improve understanding of the growing impacts of space weather, has been competitively selected by NASA for development."
+            ],
+            "title": "NASA Selects Johns Hopkins APL-Developed CINEMA ..."
+          },
+          {
+            "url": "https://www.jhuapl.edu/news/news-releases/251219-pext-successful-test-demonstration",
+            "excerpts": [
+              "NASA and Johns Hopkins APL Demonstrate First-of-Its- ...\nDec 19, 2025 \u2014 Johns Hopkins Applied Physics Laboratory in Laurel, Maryland, division of The Johns Hopkins University, For more information, visit www.jhuapl.edu."
+            ],
+            "title": "NASA and Johns Hopkins APL Demonstrate First-of-Its- ..."
+          },
+          {
+            "url": "https://arxiv.org/html/2605.23756v1",
+            "excerpts": [
+              "Probing Solar Wind Structures with Solar Energetic Particle ...\nMay 22, 2026 \u2014 Solar Orbiter post-launch work at JHU/APL is supported by NASA contract NNN06AA01C, at the Southwest Research Institute by NASA 80GFSC25CA035. XC, GL and SF"
+            ],
+            "title": "Probing Solar Wind Structures with Solar Energetic Particle ..."
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "3_recent_and_open_positions_phd_doctoral_ra_research_staff_research_engineer_since_2026_01_01",
+        "reasoning": "Assessment reasoning:\n- The field description asks for a comprehensive, structured report on open PhD/RA/research staff/research engineer openings related to the specified lead since 2026-01-01, including explicit posting details, statuses (open/closed), and corroborating sources, with LinkedIn evidence and clear caveats. \n- The provided field_answer states that no verified public evidence was found linking the lead to postings, and it lists a few institutional observations (e.g., APL careers entries) but does not deliver a complete, verified, screenshot-able structured report as requested (Identity verification, Recent/Active Funding not addressed in the answer, Only a partial observation about postings with no direct link to the lead). \n- There is no explicit, verifiable linkage in the excerpts to the lead, beyond generic career postings not attributed to the lead. Therefore, the answer does not meet the completeness criterion for the field description. \n- Based on excerpts, the support for specific claims (e.g., LinkedIn evidence, direct posting URLs, posting status tied to the lead) is weak or absent. The excerpts show a generic APL careers page, but not a verified posting directly connected to George Ho or Johns Hopkins APL\u2019s Space Exploration Sector. Therefore, support for the field answer is false. \n- In summary, completeness = false; supported = false. If the user wants a more complete assessment, they should request explicit steps to verify LinkedIn posts, official job postings tied to the individual, and full funding/posting details with links.\n",
+        "citations": [
+          {
+            "url": "https://careers.jhuapl.edu/phd/jobs",
+            "excerpts": [
+              "APL Doctorate Level Careers\nSector/Department REDD Research & Exploratory Development Department. Location Laurel, Maryland. Apply Now \u00b7 Read More \u00b7 2026 PhD Graduate \u2013 Applied"
+            ],
+            "title": "APL Doctorate Level Careers"
+          },
+          {
+            "url": "https://careers.jhuapl.edu/jobs?Sector=Space%20Exploration%20Sector&lang=en-us",
+            "excerpts": [],
+            "title": "APL Careers"
+          },
+          {
+            "url": "https://careers.jhuapl.edu/jobs?keywords=heliophysics&lang=en-us",
+            "excerpts": [],
+            "title": "APL Careers"
+          },
+          {
+            "url": "https://careers.jhuapl.edu/jobs?keywords=energetic%20particles&lang=en-us",
+            "excerpts": [],
+            "title": "APL Careers"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "4_linkedin_evidence",
+        "reasoning": "Analysis: The field_description asks for a comprehensive, structured report including Identity verification, Recent/Active Funding, Recent and Open Positions, LinkedIn Evidence, Confidence/Caveats, and Sources. The provided field_answer only contains a LinkedIn evidence portion with a list of various George Ho profiles and a conclusion that none are affiliated with Johns Hopkins APL or the Space Exploration Sector, and that no public LinkedIn post ties a George Ho to JHU APL since 2024. It does not provide: (1) verified identity and current affiliation for the exact Lead ID lead-016 George Ho at Johns Hopkins APL SES, (2) any funding data (titles, funders, amounts, dates, statuses, roles, purposes, URLs), (3) any open or closed postings for PhD/related roles with details, (4) any explicit sources beyond broad LinkedIn results. Given the request for exhaustive, source-cited research and explicit URLs for each positive claim, the answer is incomplete. The excerpts supplied show multiple George Hos but none confirm affiliation with JHU APL SES or lead-016; they do support the claim that no verified public evidence found linking this person to JHU APL in open web LinkedIn results, which aligns with the conclusion in the field_answer. Therefore: Completeness = false. Supported = true (the field_answer\u2019s claims about lack of JHU APL linkage are consistent with the provided excerpts). If needed, I can extend with targeted searches for grants, postings, and official pages to complete the report, with explicit URLs for each finding.",
+        "citations": [
+          {
+            "url": "https://www.linkedin.com/in/georgeho",
+            "excerpts": [
+              "George Ho - CEO at Fr\u00f6nen | Founding Partner at Greater ...\nI'm the Founder and Managing Partner at Greater Human Capital, with more than 15 years in HR and as a human capital consultant."
+            ],
+            "title": "George Ho - CEO at Fr\u00f6nen | Founding Partner at Greater ..."
+          },
+          {
+            "url": "https://ca.linkedin.com/in/georgehocissp",
+            "excerpts": [
+              "George Ho - Chief Technology & Digital Officer at Aviso - LinkedIn\nWith over 20 years of senior leadership experience in the wealth management and regulatory sectors, I'm an accomplished and dynamic information technology and"
+            ],
+            "title": "George Ho - Chief Technology & Digital Officer at Aviso - LinkedIn"
+          },
+          {
+            "url": "https://www.linkedin.com/in/george-ho-0338378",
+            "excerpts": [
+              "George Ho - Engineer\nEngineer \u00b7 Experience: EMC \u00b7 Location: Cupertino \u00b7 246 connections on LinkedIn. View George Ho's profile on LinkedIn, a professional community of 1 billion"
+            ],
+            "title": "George Ho - Engineer"
+          },
+          {
+            "url": "https://uk.linkedin.com/in/george-ho-93a10023b",
+            "excerpts": [
+              "George Ho - Columbia Graduate | B.A. Economics and German\nI recently graduated from Columbia University, where I double Majored in Economics and German. I am interested in Analyst Roles with prior experience in Equity"
+            ],
+            "title": "George Ho - Columbia Graduate | B.A. Economics and German"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "5_confidence_and_caveats",
+        "reasoning": "Assessment reasoning:\n- The field_answer presents high-level caveats and assertions about identity, funding, and hiring, but does not provide a structured, comprehensive report as requested (Identity verification, Recent/Active Funding, Recent/Open Positions, LinkedIn evidence, Confidence/Caveats, Sources with direct URLs).\n- The excerpts available are very limited (only an excerpt about a different person George Ho Cho-chi) and do not robustly support the lead\u2019s identity, affiliation, or any funding/hiring claims. Thus, excerpt support for the field_answer claims is weak.\n- The user query asks for a concisely structured report with explicit data points (grant titles, funders, amounts, dates, statuses, roles, postings, LinkedIn evidence, etc.). The provided field_answer does not deliver those data points; it only offers qualitative statements about verification and a few negative findings. Therefore, completeness is false.\n- Given the sparse excerpts and lack of concrete data points, the field answer is not well-supported by the excerpts either. Therefore, supported is false.\n- If more time/lines were available, a stronger evaluation would separate what can be verified (with URLs) from what cannot, and would clearly mark any items as No verified public evidence found where appropriate.\n",
+        "citations": [
+          {
+            "url": "https://en.wikipedia.org/wiki/George_Ho",
+            "excerpts": [
+              "George Ho\nGeorge Ho Cho-chi, GBS, OBE, JP (3 November 1919 \u2013 4 June 2014) was a Hong Kong media mogul. The fifth son of the influential businessman Robert Hotung."
+            ],
+            "title": "George Ho"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "6_synthesis_cross_cutting",
+        "reasoning": "Evaluated the field answer against the user query requirements. The query demanded: (1) verified identity and current affiliation; (2) recent/active funding with detailed fields and direct URLs from official sources; (3) current/open and recently closed research positions with full posting details and URLs; (4) LinkedIn evidence when available; (5) explicit confidence and caveats and sources. The provided field_answer offers a narrative about null results across provenance, funding, and hiring, with qualitative statements and no direct URLs, no structured funding/hiring data, no LinkedIn links, and no explicit sources or URLs. It also does not present a structured report with the required fields (titles, dates, amounts, statuses, URLs, etc.). Therefore, completeness is false since it does not fully answer or structure all requested elements. Supported by excerpts cannot be determined as no excerpts are present in this evaluation; the answer makes claims but provides no direct source citations or URLs. Overall, the answer is not complete and not verifiable against the excerpts provided. Confidence in the assessment is moderate due to the clear gaps relative to the user\u2019s needs.",
+        "citations": [],
+        "confidence": "low"
+      }
+    ],
+    "content": {
+      "executive_insights": "- **Lead Identity Cannot Be Independently Confirmed**: Direct public web sources (JHU APL Space Weather and Heliophysics page [executive_insights[0]] [14], the APL Solar Section page solar.jhuapl.edu, APL REDD \"People\" page, and 171 indexed \"George Ho\" LinkedIn profiles) do NOT contain a \"George Ho\" tied to the Space Exploration Sector at Johns Hopkins APL. The lead as supplied (email george.ho@jhuapl.edu, group SES, topics heliophysics/space instrumentation/energetic particles/magnetospheres) therefore remains unverified on the open web -> Treat the lead as a low-confidence match pending institutional confirmation; do not merge with the numerous finance/IT namesakes.\n- **A Plausible George C. Ho ORCID Exists but Affiliation is Unresolved**: The ORCID record at [executive_insights[1]] [82] lists co-contributors including Glenn Mason (apl/JHUAPL heliophysics veteran), Robert Wimmer-Schweingruber (Kiel, Solar Orbiter/IMAP EPD), Javier Rodriguez-Pacheco, and Sarah Vines -- a network consistent with energetic-particle heliophysics -- but the ORCID page did not confirm a primary APL or SES affiliation in the snippet -> Pull the ORCID record fully before treating it as confirmation.\n- **Springer Book \"Energetic Particles in the Heliosphere\" is a False Positive**: The lead's name surfaced this Springer volume, but the sole listed author is George M. Simnett (Birmingham, UK), not George Ho [executive_insights[2]] [15] -> Remove this from any evidence of identity; it is distinctly a different person.\n- **No Competitive Grant Tied to George Ho @ JHUAPL Found in 2024-2026**: NSF Award Search for PI surname \"Ho\" at Johns Hopkins APL ([executive_insights[3]] [83]) and NSPIRES PI filter for last name \"Ho\" first name \"George\" at Johns Hopkins returned no linked record for George Ho @ JHU APL -> Flag funding as \"No verified public evidence found\" rather than approximating.\n- **APL Heliophysics Jobs Landscape is Real, but No SES Posting was Tied to This Lead**: The APL careers portal [executive_insights[4]] [13] lists 99 doctoral-level and ~40 Space Exploration Sector openings as of mid-2026; the only listed SES PhD-level posting touching the subject area is \"Sensor and Detector Design Engineer\" (Req 59350, Laurel, MD) [executive_insights[5]] [63] -- none was posted by or for a George Ho -> Use the SES/Laurel career filter as the discovery surface for any future hiring verification, not personal attribution.\n- **No Public LinkedIn Post for This Lead Found**: A site-restricted LinkedIn search ([executive_insights[6]] [19], [executive_insights[7]] [20], etc.) and the vespa LinkedIn index (171 \"George Ho\" profiles) returned several finance/IT/engineer profiles and a rheumatologist, none tied to JHU APL -> Defer LinkedIn evidence to a future proprietary platform query if the institutional confirmation comes back negative.",
+      "1_identity_verification_and_name_disambiguation": "The lead data names George Ho at JHU APL, Space Exploration Sector, with the institutional email george.ho@jhuapl.edu and research topics spanning heliophysics, space instrumentation, energetic particles, and magnetospheres. Independent confirmation on the open web returned the following results:\n\n| Verification source | Result | URL |\n|---|---|---|\n| APL Space Weather and Heliophysics expertise page (Apr 2025 cache) | Mentions McComas (Princeton/IMAP PI), Ian Cohen, Clifton Lomax, Bobby Braun; no George Ho | [1_identity_verification_and_name_disambiguation[0]] [14] |\n| APL Solar Section \"Hardware\" page | Identifies Dr. Vourlidas; no George Ho | [1_identity_verification_and_name_disambiguation[1]] [39] |\n| APL Research & Exploratory Development \"People\" page | Blocked by cookie banner (\"Accept Decline\"); no verifiable extract | [1_identity_verification_and_name_disambiguation[2]] [38] |\n| Vespa LinkedIn index, `name contains 'George Ho'` | 171 profiles returned; none tied to Johns Hopkins APL / Space Exploration Sector | vespa_QUERY `mixrank_linkedin_people` |\n| Vespa subset, `title contains 'Heliophys' AND company_name contains 'Johns Hopkins'` | 0 results | vespa_QUERY |\n| NASA ADS, `author:\"Ho, George\" aff:\"Johns Hopkins APL\"` | Result list returned but page text was truncated by short preview | [1_identity_verification_and_name_disambiguation[3]] [88] |\n| ORCID 0000-0003-1093-2066 (George C. Ho) | Snippet lists co-contributors consistent with energetic-particle heliophysics (Glenn Mason, Robert Wimmer-Schweingruber, Javier Rodriguez-Pacheco, Sarah Vines, Gang Li, Rachael Filwett); affiliation not captured in snippet | [1_identity_verification_and_name_disambiguation[4]] [82] |\n| ORCID 0000-0001-6156-510X | Different person -- Johns Hopkins School of Medicine, Postdoctoral Fellow (Oncology); not relevant | [1_identity_verification_and_name_disambiguation[5]] [78] |\n| Namesake false positive -- Springer book \"Energetic Particles in the Heliosphere\" | Author is George M. Simnett (Birmingham, UK), not Ho | [1_identity_verification_and_name_disambiguation[6]] [15] |\n\nThe only lead-side signal that survives cross-checking is the ORCID bio `George C. Ho` (0000-0003-1093-2066), whose collaborator envelope overlaps the JHU APL/IMAP/Solar Orbiter energetic-particle community. Without an explicit APL SES email or institutional profile, however, this ORCID cannot be canonically merged with the supplied lead data.\n\nTakeaway: identity is plausible but not independently corroborated; defer positive claims until the institutional directory returns a matching public biography.",
+      "2_recent_active_funding_announced_on_or_after_2024_01_01_still_active": "No verified public evidence found for a grant, contract, or prize directly tied to a George Ho at Johns Hopkins APL Space Exploration Sector. What was checked:\n\n- NSF Award Search direct API: PI last name \"Ho\", organization \"Johns Hopkins APL\" returned the search results shell but no Ho/APL record was isolated [2_recent_active_funding_announced_on_or_after_2024_01_01_still_active[0]] [83].\n- NASA NSPIRES PI filter (URL: `nspires.nasaprs.com/external/solicitations/PIFilter?...`) returned no extractable record for PI \"George Ho\" at \"Johns Hopkins\" [2_recent_active_funding_announced_on_or_after_2024_01_01_still_active[1]] [43].\n- USGS/USAF/AFRL/AFOSR/DARPA award pages were not parsed for this lead; no direct award database lists a George Ho tied to APL heliophysics.\n- Adjacent APL grants that did appear (Samsung/JHUAPL CHESS R&D 100 Award 2025; APL Refrigeration Tech R&D 100 Award, 21 Aug 2025; CINEMA mission selection, 11 Dec 2025; PExT demonstration, 19 Dec 2025) are not heliophysics/energetic-particle science grants and were not attributed to the lead [2_recent_active_funding_announced_on_or_after_2024_01_01_still_active[2]] [6], [2_recent_active_funding_announced_on_or_after_2024_01_01_still_active[3]] [7], [2_recent_active_funding_announced_on_or_after_2024_01_01_still_active[4]] [58], [2_recent_active_funding_announced_on_or_after_2024_01_01_still_active[5]] [57].\n- The arXiv paper \"Probing Solar Wind Structures with Solar Energetic Particle Observations from Solar Orbiter\" (arXiv 2605.23756, 22 May 2026) lists the JHU/APL funding mechanism as NASA contract NNN06AA01C and an XF/SwRI/Chinese NNSFC/DLR German Space Agency 50OT2002 stack; the author initials are XC, GL, SF, XK, ZD, RFWS -- not \"GH\" or \"Ho\" [2_recent_active_funding_announced_on_or_after_2024_01_01_still_active[6]] [52].\n\n| Funding attempt | Status | Notes |\n|---|---|---|\n| NSF Award Search PI=Ho @ JHUAPL (last name only) | No matching record found | PI last name \"Ho\" at \"Johns Hopkins APL\" did not isolate the lead |\n| NASA NSPIRES PI=George Ho @ Johns Hopkins | No extractable record | API call returned empty citation list |\n| APL SES grants for energetic-particle heliophysics 2024-2026 | Not identified for this lead | APL-led grants found were for other programs (CHESS refrigerator tech, IMAP support, CINEMA space weather) |\n| R&D 100 Awards 2024 / 2025 | Linked to APL but to cooling technology, not the lead | CHESS award 25 Aug 2025, unrelated; not a science grant |\n\nPer the brief's discipline rule, no amount, no role, and no source URL is asserted for a grant to this lead. The phrasing \"No verified public evidence found\" applies across competitive grants, institutional funding, consortium funding, and PhD-fundable lines.",
+      "3_recent_and_open_positions_phd_doctoral_ra_research_staff_research_engineer_since_2026_01_01": "No verified public evidence found that the lead personally posted or hired for any PhD/RA/research staff/research engineer opening. What is discernible at the institutional level:\n\n- APL Careers portal currently lists 99 doctoral-level results [3_recent_and_open_positions_phd_doctoral_ra_research_staff_research_engineer_since_2026_01_01[0]] [63] -- the listed SES-relevant entry is **\"Sensor and Detector Design Engineer\"** (Req ID 59350), Sector/Department **SES Space Exploration Sector**, Location **Laurel, Maryland**. It is a doctoral-level position consistent with space-instrumentation work, but the posting was not attributable to the lead [3_recent_and_open_positions_phd_doctoral_ra_research_staff_research_engineer_since_2026_01_01[0]] [63].\n- APL Careers portal also supports an SES-sector filter [3_recent_and_open_positions_phd_doctoral_ra_research_staff_research_engineer_since_2026_01_01[1]] [84]; keyword searches for \"heliophysics\" and \"energetic particles\" returned 4 unspecified match entries via the `/jobs?keywords=...` filter and were not body-extracted here [3_recent_and_open_positions_phd_doctoral_ra_research_staff_research_engineer_since_2026_01_01[2]] [86].\n- No LinkedIn post (publicly surfaced via the open-web search index) attributed a hiring action to a \"George Ho\" at JHU APL.\n- No EURAXESS or JHU HR posting surfaced for the lead.\n\n| Posting (inst.) | Type | Sector/Dept | Location | Status as of 2026-07-11 | Direct URL | LinkedIn post URL |\n|---|---|---|---|---|---|---|\n| Sensor and Detector Design Engineer (Req 59350) | PhD / doctoral-level research | SES Space Exploration Sector | Laurel, MD | Open on APL careers portal | [3_recent_and_open_positions_phd_doctoral_ra_research_staff_research_engineer_since_2026_01_01[0]] [63] | None found |\n| Keyword-filter \"heliophysics\" jobs (4 results) | Unclassified (not opened) | SES / other APL sectors | Laurel, MD / Alexandria, VA | Open on APL careers portal | [3_recent_and_open_positions_phd_doctoral_ra_research_staff_research_engineer_since_2026_01_01[2]] [86] | None found |\n| Keyword-filter \"energetic particles\" jobs | Unclassified | SES / other APL sectors | TBD | Open on APL careers portal | [3_recent_and_open_positions_phd_doctoral_ra_research_staff_research_engineer_since_2026_01_01[3]] [87] | None found |\n\nPer the brief's discipline rule, no implied funding-for-PhD claim is made; the APL careers postings are SES-or-general recruitment listings, not personal hiring traces from this lead. Closed/historical postings (published on or after 2026-01-01 and now closed): No verified public evidence found.",
+      "4_linkedin_evidence": "Across the vespa LinkedIn index and Google's open-web LinkedIn previews, \"George Ho\" returns ~171 profiles (most are not in scope -- Hong Kong finance, Taiwan power engineering, US asset management, Israeli IT, a rheumatologist, etc.). Of the returned subset:\n\n| Profile | Title @ Co. | Location | LinkedIn URL |\n|---|---|---|---|\n| George Ho | Treasury Officer @ Nan Fung Group | Hong Kong SAR | linkedin.com/in/georgeho127 |\n| George Ho | (none) | China | linkedin.com/in/george-ho-93480168 |\n| George Ho | Engineer @ Taiwan Power Company | New Taipei City, Taiwan | linkedin.com/in/george-ho-67180a7a |\n| George Ho | Sales and Marketing Manager @ I'M Intelligent Memory Limited | Hong Kong SAR | linkedin.com/in/george-ho-01986a89 |\n| George Ho | Senior Mechanical Engineer @ Amec Foster Wheeler USA Corporation | Houston, TX | linkedin.com/in/george-ho-122998b6 |\n| George Ho | Investment Banking Associate @ J.P. Morgan | San Francisco, CA | linkedin.com/in/georgeho1318 |\n| George Ho | Planning Assistant @ Gateshead Council | Newcastle, UK | linkedin.com/in/george-ho-68411964 |\n| George Ho | CEO @ Fr\u00f6nen (Greater Human Capital) | (multi) | [4_linkedin_evidence[0]] [20] |\n| George Ho | Chief Technology & Digital Officer @ Aviso | Canada | [4_linkedin_evidence[1]] [19] |\n| George Ho | Engineer (EMC / Cupertino) | Cupertino, CA | [4_linkedin_evidence[2]] [21] |\n| George Ho | Columbia Graduate, BA Econ/German | UK | [4_linkedin_evidence[3]] [22] |\n| George Ho | (none) -- \"Retiree\" | Abbotsford, BC | linkedin.com/in/george-ho-6a667236 |\n\nNone of these LinkedIn profiles identify an affiliation with Johns Hopkins APL or the SES Space Exploration Sector. No public LinkedIn post tying a George Ho to JHU APL since 2024 was surfaced in the open-web cache index. The vespa \"APL + 'space' title\" filter returned 135 SES-aligned profiles but none named George Ho.",
+      "5_confidence_and_caveats": "- Identity is LOW-CONFIDENCE: the email george.ho@jhuapl.edu and the topical keywords (heliophysics, space instrumentation, energetic particles, magnetospheres) were not corroborated by any independent open-web biography, press release, or team page. The most plausible adjacent public record is ORCID 0000-0003-1093-2066 (George C. Ho), whose co-contributors overlap the energetic-particle heliophysics network, but the affiliation in that ORCID record was not directly extractable in this run.\n- The lead's namesake density is very high (171 LinkedIn hits). The known Hong Kong media mogul \"George Ho Cho-chi\" (1919-2014) is unrelated [5_confidence_and_caveats[0]] [40].\n- Funding is NOT VERIFIED: NSF Award Search and NASA NSPIRES direct PI queries returned no matching record. APL press releases reviewed (CHESS refrigerator 21 Aug 2025, CINEMA mission 11 Dec 2025, PExT 19 Dec 2025, Parker Solar Probe closest approach 27 Dec 2024) did not name George Ho.\n- Hiring is NOT VERIFIED for this lead personally. APL PhD/SES portal listings exist at the institutional level but no posting was tied to the lead. The \"Sensor and Detector Design Engineer\" Req 59350 is the only doctoral-level SES-listing that fell into the SES/heliophysics shade of relevance; treat as institutional context, not a personal hiring fact.\n- Springer Nature's \"Energetic Particles in the Heliosphere\" volume (Springer Brief) is a false positive -- sole author is George M. Simnett. Do not propagate it as a lead citation.\n- The \"Ask an Expert\" page on APL Space Weather references Ian Cohen, Clifton Lomax, and Bobby Braun -- not the lead. The IMAP mission page also attributes the PI role to David McComas (Princeton), not the lead.",
+      "6_synthesis_cross_cutting": "Three orthogonal signals were evaluated: (1) institutional provenance, (2) funding pipeline, and (3) hiring pipeline. They converge on a consistent null result for the lead as supplied:\n\n- Provenance null: The APL heliophysics / solar / SES institutional surfaces that would normally list a researcher (expertise page, solar.jhuapl.edu staff bios, REDD people, mission team pages, press releases) do not name George Ho. The ORCID record for \"George C. Ho\" remains the only adjacent public artifact whose collaborator network overlaps the APL energetic-particle community, but it does not, on the evidence extracted here, confirm a primary APL SES affiliation.\n- Funding null: NSF and NASA PI database queries for \"Ho\" / \"George Ho\" at \"Johns Hopkins APL\" / \"Johns Hopkins\" did not surface grants tied to the lead. APL's 2024-2026 grants surfaced in the press (CHESS, CINEMA, PExT, IMAP support) belong to other people/programs and are not heliophysics-energetic-particle funding to the lead. The arXiv 2605.23756 NASA contract (NNN06AA01C) is tied to Solar Orbiter post-launch work at JHU/APL but its author initials (XC/GL/SF/XK/ZD/RFWS) do not include Ho.\n- Hiring null: The APL SES careers funnel exposes doctoral-level postings (Sensor and Detector Design Engineer, Req 59350; \"heliophysics\" keyword 4-result set) but no LinkedIn post or careers-page attribution links any of them to George Ho.\n\nThe tension here is between an input that asserts SES / APL / heliophysics affiliation and an open-web evidence base that does not support the assertion affordably. Conservative reporting: do not enrich the lead with research topics, grants, or jobs that cannot be re-verified. The recommendation is to escalate via the originating lead source for institutional confirmation (SES group supervisor or APL HR directory), then re-run an ADS/ORCID deep extract and a ses-restricted careers.jhuapl.edu scrape against a confirmed biography."
+    },
+    "type": "json",
+    "beta_fields": null,
+    "mcp_tool_calls": null,
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "executive_insights": {
+          "type": "string",
+          "title": "Executive Insights"
+        },
+        "1_identity_verification_and_name_disambiguation": {
+          "type": "string",
+          "title": "1. Identity (Verification and Name Disambiguation)"
+        },
+        "2_recent_active_funding_announced_on_or_after_2024_01_01_still_active": {
+          "type": "string",
+          "title": "2. Recent/Active Funding (announced on or after 2024-01-01, still active)"
+        },
+        "3_recent_and_open_positions_phd_doctoral_ra_research_staff_research_engineer_since_2026_01_01": {
+          "type": "string",
+          "title": "3. Recent and Open Positions (PhD/doctoral, RA, research staff, research engineer, since 2026-01-01)"
+        },
+        "4_linkedin_evidence": {
+          "type": "string",
+          "title": "4. LinkedIn Evidence"
+        },
+        "5_confidence_and_caveats": {
+          "type": "string",
+          "title": "5. Confidence and Caveats"
+        },
+        "6_synthesis_cross_cutting": {
+          "type": "string",
+          "title": "6. Synthesis (Cross-Cutting)"
+        }
+      },
+      "required": [
+        "executive_insights",
+        "1_identity_verification_and_name_disambiguation",
+        "2_recent_active_funding_announced_on_or_after_2024_01_01_still_active",
+        "3_recent_and_open_positions_phd_doctoral_ra_research_staff_research_engineer_since_2026_01_01",
+        "4_linkedin_evidence",
+        "5_confidence_and_caveats",
+        "6_synthesis_cross_cutting"
+      ]
+    }
+  }
+}

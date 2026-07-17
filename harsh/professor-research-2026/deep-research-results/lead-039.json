@@ -1,0 +1,300 @@
+{
+  "run_id": "trun_dd47611047ba4519ad93403ea2a6377c",
+  "interaction_id": "trun_dd47611047ba4519ad93403ea2a6377c",
+  "result_url": "https://platform.parallel.ai/play/deep-research/trun_dd47611047ba4519ad93403ea2a6377c",
+  "status": "completed",
+  "output": {
+    "basis": [
+      {
+        "field": "executive_summary",
+        "reasoning": "Reasoning for completeness and support:\n- The field_answer attempts to cover identity verification, funding (recent/active), positions (open/historical), LinkedIn evidence, and caveats, plus sources. However:\n  - It lacks explicit, structured, sourced URLs for each positive claim, which violates the requirement that every positive claim carry a direct URL.\n  - It provides narrative assertions (e.g., MAVEN PI tenure dates, NSF grant status, mission budgets) without direct citations or source URLs embedded in the answer itself.\n  - The query asks for a concise structured report with sections (Identity; Recent/Active Funding; Recent and Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources). The field_answer is a narrative paragraph without clearly delineated sections or a formal sources list with URLs.\n  - The field_description expects to verify identity vs. namesakes, current affiliation, and to distinguish types of funding (grants vs. mission budgets). While some of these are addressed, the absence of explicit URLs and structured sections reduces completeness.\n- Based on these gaps, I judge completeness as false (not fully complete per the strict requirements of including direct URLs for each positive claim and a clearly structured report).\n- Regarding support by excerpts: There are no excerpts provided in this evaluation input to corroborate the claims. Without excerpts to compare, I cannot establish that the field_answer is supported by excerpts. Therefore, supported should be false.\n- Confidence: Given the lack of explicit sources/URLs and missing structured format, confidence in field_answer as a complete and well-supported report is low. Suitable improvement would be to attach direct source URLs for each claim and reformat into the requested sections.\n",
+        "citations": [],
+        "confidence": "low"
+      },
+      {
+        "field": "identity",
+        "reasoning": "Reasoning: The field answer provides multiple identity elements: current title and affiliation (Associate Professor in APS at CU Boulder and LASP researcher), email alignment with CU/LASP practices, office locations, education history, MAVEN PI role with dates, other mission roles, prior appointment, research focus, and disambiguation of namesakes. This aligns with the field_description expecting a comprehensive identity profile. Excerpts include CU Boulder APS page, LASP profile, and MAVEN-related items, which corroborate the claimed identity elements (title, affiliation, MAVEN PI, collaboration roles). The presence of explicit disambiguation notes enhances accuracy. Therefore, the answer is complete and well-supported by excerpts. Confidence is high but could be reinforced with direct official grant/position-date sources for the date-linked items; however, for identity alone, sources exist in excerpts. ",
+        "citations": [
+          {
+            "url": "https://www.colorado.edu/aps/shannon-curry",
+            "excerpts": [
+              "Shannon Curry | Astrophysical & Planetary Sciences\nShannon Curry is an Associate Professor in the Astrophysics and Planetary Sciences (APS) Department at the University of Colorado, Boulder (303) 492-8915"
+            ],
+            "title": "Shannon Curry | Astrophysical & Planetary Sciences"
+          },
+          {
+            "url": "https://lasp.colorado.edu/people/shannon-curry",
+            "excerpts": [
+              "Shannon Curry - Laboratory for Atmospheric and Space Physics\nDr. Shannon Curry is an Associate Professor in the Astrophysics and Planetary Sciences (APS) Department at the University of Colorado, Boulder."
+            ],
+            "title": "Shannon Curry - Laboratory for Atmospheric and Space Physics"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Shannon_Curry",
+            "excerpts": [
+              "Shannon Curry - Wikipedia\nShannon Curry is a planetary physicist and the Principal Investigator of the NASA Mars Scout mission MAVEN (Mars Atmosphere and Volatile Evolution)."
+            ],
+            "title": "Shannon Curry - Wikipedia"
+          },
+          {
+            "url": "https://www.nasa.gov/news-release/nasa-says-farewell-to-maven-mars-mission-hosts-media-call-today",
+            "excerpts": [
+              "NASA Says Farewell to MAVEN Mars Mission, Hosts Media ...\nJun 3, 2026 \u2014 NASA's MAVEN (Mars Atmosphere and Volatile Evolution), has ended after more than 11 years in orbit at Mars and a decade beyond its primary, one-year mission."
+            ],
+            "title": "NASA Says Farewell to MAVEN Mars Mission, Hosts Media ..."
+          },
+          {
+            "url": "https://science.nasa.gov/mission/maven/",
+            "excerpts": [
+              "MAVEN The Mars Atmosphere and Volatile Evolution (MAVEN) mission was the first mission devoted to understanding the Martian upper atmosphere. The mission ended after more than 11 years in orbit \u2014 a decade beyond its primary, one-year mission \u2014 after it experienced an unexpected loss of signal Dec. 6, 2025, while passing behind the Red Planet."
+            ],
+            "title": "MAVEN - NASA Science"
+          },
+          {
+            "url": "https://lasp.colorado.edu/2023/09/19/lasp-welcomes-planetary-scientist-and-maven-principal-investigator-shannon-curry",
+            "excerpts": [
+              "LASP welcomes planetary scientist and MAVEN Principal ...\nSep 19, 2023 \u2014 Planetary scientist Shannon Curry will join the Laboratory for Atmospheric and Space Physics (LASP) at the University of Colorado Boulder (CU Boulder)."
+            ],
+            "title": "LASP welcomes planetary scientist and MAVEN Principal ..."
+          },
+          {
+            "url": "https://www.linkedin.com/in/shannon-curry-7366a71",
+            "excerpts": [
+              "Shannon Curry - Investigator of NASA's MAVEN mission - LinkedIn\nI am the the Principal Investigator of the NASA Mars Scout MAVEN (Mars Atmospheric and Volatiles EvolutioN) mission. I am also an Associate Professor at the"
+            ],
+            "title": "Shannon Curry - Investigator of NASA's MAVEN mission - LinkedIn"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "recent_active_funding_announced_on_after_2024_01_01_or_active_presently",
+        "reasoning": "Reasoning: The field expects a report on recent funding announced after 2024-01-01 or currently active funding related to the specified person/group. The field_answer lists MAVEN mission budget as mission-level funding (not a personal grant), ESCAPADE mission funding (also not a personal grant), notes about NSF search results (no active PI-funded NSF grant found), and other public funding databases with generic observations. It also cites sources within brackets, but not all claims are directly verifiable from the provided excerpts. Completeness hinges on whether this captures all relevant post-2024 funding or active status; the answer provides several items and explicit caveats but may miss additional active grants or awards not reflected in the supplied excerpts. I deem the answer broadly on-topic but not exhaustively verifiable from the excerpts provided, and some asserted claims (e.g., NSF grant absence) lack corroborating excerpts in the provided list. I therefore assign completeness as true, given that the answer covers multiple aspects of the requested scope, but note that the supporting excerpts for every claim are incomplete in the provided excerpt set. Confidence in the field answer\u2019s completeness: moderate-to-high.\n",
+        "citations": [
+          {
+            "url": "https://science.nasa.gov/mission/maven/",
+            "excerpts": [
+              "MAVEN The Mars Atmosphere and Volatile Evolution (MAVEN) mission was the first mission devoted to understanding the Martian upper atmosphere. The mission ended after more than 11 years in orbit \u2014 a decade beyond its primary, one-year mission \u2014 after it experienced an unexpected loss of signal Dec. 6, 2025, while passing behind the Red Planet."
+            ],
+            "title": "MAVEN - NASA Science"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/MAVEN",
+            "excerpts": [
+              "MAVEN\nOn 3 June 2026, NASA officially declared the spacecraft dead and its mission concluded."
+            ],
+            "title": "MAVEN"
+          },
+          {
+            "url": "https://www.nasa.gov/news-release/nasa-says-farewell-to-maven-mars-mission-hosts-media-call-today",
+            "excerpts": [
+              "NASA Says Farewell to MAVEN Mars Mission, Hosts Media ...\nJun 3, 2026 \u2014 NASA's MAVEN (Mars Atmosphere and Volatile Evolution), has ended after more than 11 years in orbit at Mars and a decade beyond its primary, one-year mission."
+            ],
+            "title": "NASA Says Farewell to MAVEN Mars Mission, Hosts Media ..."
+          },
+          {
+            "url": "https://www.scientificamerican.com/article/nasas-mars-mission-maven-is-lost-forever",
+            "excerpts": [
+              "NASA's Mars mission MAVEN is lost forever\n18 hours ago \u2014 But MAVEN's decade-long tenure has come to an end after NASA lost contact with the spacecraft last December and was unable to reestablish"
+            ],
+            "title": "NASA's Mars mission MAVEN is lost forever"
+          },
+          {
+            "url": "https://escapade.ssl.berkeley.edu/about",
+            "excerpts": [
+              "About \u2013 ESCAPADE\nESCAPADE launched on November 13, 2025 from Cape Canaveral on a Blue Origin New Glenn launch vehicle. ESCAPADE breaks the paradigm of multi-hundred million and billion dollar planetary mission, building on the MAVEN Mars orbiter\u2019s legacy for a fraction of the cost (<$80 million)."
+            ],
+            "title": "About \u2013 ESCAPADE"
+          },
+          {
+            "url": "https://escapade.ssl.berkeley.edu/",
+            "excerpts": [
+              "ESCAPADE \u2013 Twin satellites studying Mars' upper atmosphere\nAn interplanetary mission led by the University of California, Berkeley, to put two satellites \u2014 \u201cBlue\u201d and \u201cGold\u201d \u2014 into orbit around Mars. They launched on Blue Origin's New Glenn rocket in November 2025."
+            ],
+            "title": "ESCAPADE \u2013 Twin satellites studying Mars' upper atmosphere"
+          },
+          {
+            "url": "https://science.nasa.gov/blogs/escapade/2025/11/13/mission-facts-about-escapade",
+            "excerpts": [
+              "Mission Facts About ESCAPADE - NASA Science\nRob Lillis, Associate Director for Planetary Science at the UC Berkeley Space Sciences Laboratory, is the principal investigator of the ESCAPADE mission. Lillis was a founding science team member of NASA\u2019s MAVEN (Mars Atmosphere and Volatile EvolutioN) mission, as deputy lead for the energy particle detector."
+            ],
+            "title": "Mission Facts About ESCAPADE - NASA Science"
+          },
+          {
+            "url": "https://www.nsf.gov/awardsearch/simpleSearchResult?queryText=Shannon+Curry&ActiveAwards=true",
+            "excerpts": [],
+            "title": "Search Results - NSF Award Search"
+          },
+          {
+            "url": "https://www.nsf.gov/awardsearch/simpleSearchResult?queryText=Curry+University+Colorado+planetary",
+            "excerpts": [],
+            "title": "Search Results - NSF Award Search"
+          },
+          {
+            "url": "https://www.usaspending.gov/search",
+            "excerpts": [
+              "Federal Awards | Advanced Search\nProviding publicly accessible and searchable data on what the federal government spends each year."
+            ],
+            "title": "Federal Awards | Advanced Search"
+          },
+          {
+            "url": "https://www.nasa.gov/grants-operations-management",
+            "excerpts": [
+              "Grant Operations Management Team\nMay 2, 2025 \u2014 NASA expends over $1.1 billion a year on grants and cooperative agreements that are funded by seven Mission Directorates and Offices."
+            ],
+            "title": "Grant Operations Management Team"
+          },
+          {
+            "url": "https://www.colorado.edu/aps/shannon-curry",
+            "excerpts": [
+              "Shannon Curry | Astrophysical & Planetary Sciences\nShannon Curry is an Associate Professor in the Astrophysics and Planetary Sciences (APS) Department at the University of Colorado, Boulder (303) 492-8915"
+            ],
+            "title": "Shannon Curry | Astrophysical & Planetary Sciences"
+          }
+        ],
+        "confidence": "medium"
+      },
+      {
+        "field": "recent_and_open_positions",
+        "reasoning": "Assessment steps:\n- Field answer provided is a structured list of LASP-wide positions and Curry-specific openings, focusing only on current and recent postings (2026). It does not address the broader requested elements: identity verification, recent/active funding (grants) with sources, and hiring openings beyond what is shown, nor LinkedIn evidence beyond generic statements. The user query asked for a comprehensive report including identity verification, funding details (with exact grant data and URLs), and open/closed postings with explicit statuses, plus LinkedIn evidence corroborated with official sources. The field answer omits funding information entirely and provides a partial, self-contained postings snapshot without clearly linking to verifiable official postings or source URLs for each item beyond vague references. Therefore, the field answer is not complete relative to the request.\n\nConfidence in completeness: low, due to missing funding data and broader verification components.\n\nEvidence review:\n- Excerpts include: Shannon Curry page, LASP LinkedIn presence, MAVEN involvement, but none provide a complete, sourced funding record or official grant details as required. The field_answer cites postings and statuses but lacks direct URLs and official source citations for each claim.\n- The user-provided excerpts include some potentially relevant items, but do not constitute a complete verification of identity, funding, or allowed postings with official citations.\n\nGiven the gaps, mark completeness as false and supported as false.\n",
+        "citations": [
+          {
+            "url": "https://lasp.colorado.edu/careers",
+            "excerpts": [],
+            "title": "Careers - Laboratory for Atmospheric and Space Physics"
+          },
+          {
+            "url": "https://www.colorado.edu/aps/shannon-curry",
+            "excerpts": [
+              "Shannon Curry | Astrophysical & Planetary Sciences\nShannon Curry is an Associate Professor in the Astrophysics and Planetary Sciences (APS) Department at the University of Colorado, Boulder (303) 492-8915"
+            ],
+            "title": "Shannon Curry | Astrophysical & Planetary Sciences"
+          },
+          {
+            "url": "https://www.linkedin.com/company/laboratory-for-atmospheric-and-space-physics",
+            "excerpts": [
+              "Laboratory for Atmospheric and Space Physics\nLASP is a world-renowned space science research institute at the University of Colorado Boulder. Our lab, which began a decade before NASA was founded."
+            ],
+            "title": "Laboratory for Atmospheric and Space Physics"
+          },
+          {
+            "url": "https://x.com/LASPatCU",
+            "excerpts": [
+              "LASP (@LASPatCU) / Posts / X - Twitter\nThe Laboratory for Atmospheric & Space Physics is a full-cycle space institute at the University of Colorado with expertise in all aspects of space exploration."
+            ],
+            "title": "LASP (@LASPatCU) / Posts / X - Twitter"
+          },
+          {
+            "url": "https://www.linkedin.com/in/shannon-curry-7366a71",
+            "excerpts": [
+              "Shannon Curry - Investigator of NASA's MAVEN mission - LinkedIn\nI am the the Principal Investigator of the NASA Mars Scout MAVEN (Mars Atmospheric and Volatiles EvolutioN) mission. I am also an Associate Professor at the"
+            ],
+            "title": "Shannon Curry - Investigator of NASA's MAVEN mission - LinkedIn"
+          },
+          {
+            "url": "http://linkedin.com/in/ryan-delaney-a30071115",
+            "excerpts": [
+              "Graduate Research Assistant \u00b7 Experience: University of Colorado Boulder \u00b7 Education: University of Michigan \u00b7 Location: Boulder \u00b7 500+ connections on * user id: 480891780 slug: ryan-delaney-a30071115"
+            ],
+            "title": "Ryan Delaney - Graduate Research Assistant"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "linkedin_evidence",
+        "reasoning": "Assessment notes:\n- Completeness: The field_answer provides a concise set of LinkedIn/X/LASP-based evidence items related to the identity and potential postings, which aligns with the field purpose (LinkedIn evidence). While it does not exhaustively enumerate all possible evidence sources, it sufficiently covers LinkedIn-based identity confirmation and signals about postings with caveats. Therefore, completeness = true.\n- Supporting excerpts: The provided excerpts include a LinkedIn profile snippet (excerpt 0), LASP LinkedIn company page (excerpt 1), and LASP/X account context (excerpt 2). These support the claims made in field_answer. Some nuanced claims (e.g., absence of Curry-posted openings on 2025-2026) are framed as interpretations or caveats rather than direct factual statements in the excerpts, but the overall answer remains anchored to the excerpts.\n- Confidence: Moderate to high for the parts that map directly to excerpts; caveats about search limitations are explicit in the field_answer, which is appropriate given the excerpts. No explicit contradictory evidence found in excerpts.\n- Recommendations: If needed, strengthen with explicit source URLs inline (the field_answer already references placeholders like [linkedin_evidence[0]] etc.). Consider adding direct URLs to the specific LinkedIn profile and LASP/X pages if required by downstream systems.",
+        "citations": [
+          {
+            "url": "https://www.linkedin.com/in/shannon-curry-7366a71",
+            "excerpts": [
+              "Shannon Curry - Investigator of NASA's MAVEN mission - LinkedIn\nI am the the Principal Investigator of the NASA Mars Scout MAVEN (Mars Atmospheric and Volatiles EvolutioN) mission. I am also an Associate Professor at the"
+            ],
+            "title": "Shannon Curry - Investigator of NASA's MAVEN mission - LinkedIn"
+          },
+          {
+            "url": "https://www.linkedin.com/company/laboratory-for-atmospheric-and-space-physics",
+            "excerpts": [
+              "Laboratory for Atmospheric and Space Physics\nLASP is a world-renowned space science research institute at the University of Colorado Boulder. Our lab, which began a decade before NASA was founded."
+            ],
+            "title": "Laboratory for Atmospheric and Space Physics"
+          },
+          {
+            "url": "https://x.com/LASPatCU",
+            "excerpts": [
+              "LASP (@LASPatCU) / Posts / X - Twitter\nThe Laboratory for Atmospheric & Space Physics is a full-cycle space institute at the University of Colorado with expertise in all aspects of space exploration."
+            ],
+            "title": "LASP (@LASPatCU) / Posts / X - Twitter"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "confidence_and_caveats",
+        "reasoning": "Assessment reasoning:\n- The field is confidence_and_caveats, but the user query asked for a structured, source-cited report with multiple sections (Identity, Recent/Active Funding, Recent and Open Positions, LinkedIn Evidence, Confidence and Caveats, Sources).\n- The provided field_answer contains a summary of confidence levels and some notes, but it does not deliver the full structured report or the explicit sections required. It lacks concrete, sourced claims for identity verification, current affiliation, funding records with details (titles, funders, amounts, dates, statuses, roles, sources), open/closed postings with postings data and URLs, and a compiled list of sources.\n- Because the field description implies a comprehensive extraction/report, a mere qualitative confidence summary without the requested structured data does not fulfill the expected field content.\n- Therefore, completeness should be false. There are also no excerpts supplied here to verify the factual content, so supporting the answer with excerpts is not possible; thus, supported should be false as well. If excerpts were provided, we would reassess for alignment with the claims.\n- If the user wants a complete, source-backed report, we would need to perform targeted searches (unavailable in this step) and populate each required section with direct URLs. Also, explicitly note if no verified public evidence is found for specific items and indicate where searches were limited.\n",
+        "citations": [],
+        "confidence": "low"
+      },
+      {
+        "field": "synthesis",
+        "reasoning": "Assessment notes:\n- The field_answer provides a high-level narrative about funding regimes, identity ambiguity, and recruitment status, but it does not present a structured, verifiable report with explicit, citable URLs for each factual claim.\n- The user request explicitly requires: identity verification, current affiliation, recent/active funding with exact grant details and URLs, open/more postings with posting dates and statuses, LinkedIn evidence corroborated with official pages, and a concise structured report including Sources. The provided answer does not deliver a structured table of grants with funders, dates, amounts, and direct URLs; nor does it provide a comprehensive list of open postings with dates, deadlines, locations, statuses (open/closed) or LinkedIn URLs backed by official sources. It also conflates mission budgets with PI-grant funding and uses vague statements about roles without verifiable citations.\n- Since there are no excerpts or URLs supplied to verify claims, and the answer does not satisfy the explicit data-capture requirements (grant-by-grant details with URLs, posting details with official sources, and LinkedIn corroboration), completeness should be false and supported should be false.\n- If available, the evaluation would require checking USAspending.gov, NASA/NSF grant databases, LASP/CU Boulder postings, EURAXESS, LinkedIn, and official lab/university announcements; none are provided here as verifiable excerpts.\n- The instruction to return a concise structured report with explicit URLs for every positive claim is not met.\n",
+        "citations": [],
+        "confidence": "low"
+      }
+    ],
+    "content": {
+      "executive_summary": "- **Identity Verified (Distinct From Namesakes)**: The planetology lead is Dr. Shannon Curry (LinkedIn slug `shannon-curry-7366a71`), US planetary physicist - identified as Associate Professor in the Astrophysical and Planetary Sciences (APS) Department at CU Boulder and a researcher at the Laboratory for Atmospheric and Space Physics (LASP). She is a separate individual from the at-least six other LinkedIn \"Shannon Curry\" profiles (nurse, recruiter, talent-acquisition manager, social worker, partnerships strategist, fitness specialist). Confirmation comes from CU APS, LASP, UC Berkeley News, Wikipedia, and MAVEN mission pages. -> Use LinkedIn slug `shannon-curry-7366a71` as the LASP/Curry identifier; reject all other Shannon Currys.\n\n- **MAVEN PI Tenure Concluded With Mission End (June 2026)**: Shannon Curry served as Principal Investigator of NASA's MAVEN mission from 31 August 2021 through NASA's official end-of-mission declaration on 3 June 2026. The spacecraft lost contact on 6 December 2025 and a review board found it unrecoverable (high rotation drained batteries). -> The MAVEN PI funding line is no longer active; treat any MAVEN-related work as data archival/citizen science, not new flight operations.\n\n- **No Verified Active Competitive NSF Grants To Curry As PI**: A live NSF Award Search with `ActiveAwards=true` and PI query \"Shannon Curry\" returned zero results; a second filtered search (\"Curry University Colorado planetary\") did not surface a Curry-specific award. The search is the authoritative funder database, but the negative result is only as good as the cache. -> Treat NSF as \"no confirmed active award\" rather than \"confirmed no award\"; verify with USAspending live search before any assumption that Curry holds an active NSF grant.\n\n- **$582.5M MAVEN and <$80M ESCAPADE Are Mission Budgets, Not Personal Grants**: The $582.5M figure cited for MAVEN is the lifetime mission cost, not a new grant to Curry; ESCAPADE's <$80M is a mission-level figure (UCB-led, Blue/Gold Mars twins launched 13 November 2025 on New Glenn). Both are mission-fleet funding lines, not competitive research grants awarded to Curry individually. -> Do not present MAVEN/ESCAPADE mission budgets as Curry's personal grant funding in any downstream messaging.\n\n- **Four LASP-Wide Group Postings Posted in 2026 (Not Curry-Specific)**: Four LASP roles posted in 2026 appear on the official LASP Careers page: Senior Director for Science (16 Jun 2026, Opus Partners board), Mechanical Engineer IV (6 Jul 2026, CU jobs portal), Electrical Assembler (14 Apr 2026, CU jobs portal), Director of Strategy and Partnerships (17 Jun 2026, Opus Partners board). None of the four are explicitly tied to Curry or to the planetary/atmospheres program. -> Track these as LASP-wide institutional hires; cross-check each description for any MAVEN/Curry mention.\n\n- **No Verified Curry-Specific PhD/Postdoc/RA Posting Publicly Indexed**: Searches across CU Boulder APS, LASP Careers, jobs.colorado.edu LASP filter, X (LASPatCU), and LinkedIn LASP company page did not surface an open PhD/Postdoctoral/Research Assistant posting authored by or under Curry. The CU APS profile lists her email and office (SPSC N232 and Duane 233) but no recruiting statement. -> The verified channel for graduate research opportunities with Curry's group is direct email, not a public posting.\n\n- **LinkedIn Profile Confirmed; Posts/Activity Limited**: Curry's LinkedIn profile (slug `shannon-curry-7366a71`) confirms PI of MAVEN and Associate Professor at CU Boulder. LASP's official X handle `@LASPatCU` has not posted any verified 2026 hiring announcement in the surfaced snapshot. No public LinkedIn post by Curry about a 2026 hiring cycle was retrieved. -> Public LinkedIn activity is a weak signal source; treat direct lab email as authoritative for openings.",
+      "identity": "- **Current Title**: Associate Professor, Astrophysical and Planetary Sciences (APS) Department, University of Colorado Boulder; concurrently researcher at the Laboratory for Atmospheric and Space Physics (LASP). ([identity[0]] [12]; [identity[1]] [3])\n- **Email**: `shannon.curry@colorado.edu` (CU APS profile); supplied lead email `shannon.curry@lasp.colorado.edu` matches LASP practice. ([identity[0]] [12])\n- **Office**: SPSC N232 and Duane 233 (CU Boulder campus). ([identity[0]] [12])\n- **Education**: B.S. Tufts University; M.S. and Ph.D. University of Michigan. ([identity[2]] [1])\n- **MAVEN Role**: Principal Investigator of NASA's MAVEN (Mars Atmosphere and Volatile EvolutioN) Mars Scout mission, assumed 31 August 2021, taking over from Bruce Jakosky. Mission officially declared ended by NASA on 3 June 2026. ([identity[2]] [1]; [identity[3]] [39]; [identity[4]] [40])\n- **Other Mission Roles**: Project Scientist on NASA's ESCAPADE twin-satellite Mars mission (phase D); science team member on NASA's Parker Solar Probe (PSP); collaborator on NASA's Nexus for Exoplanet System Science (NExSS); member of the NASA Planetary Advisory Committee (since 2022). ([identity[1]] [3]; [identity[0]] [12])\n- **Prior Appointment**: Previously Assistant Deputy Director of Planetary Science at the Space Sciences Laboratory (SSL), University of California, Berkeley, before joining LASP in fall 2023. ([identity[1]] [3]; [identity[5]] [9])\n- **Research Focus**: Evolution of planetary atmospheres with respect to solar radiation, solar wind, and solar activity; atmospheric escape from weakly magnetized bodies (Mars, Venus); applied statistics, applied mathematics, modeling and machine learning for spacecraft observations; instrument and mission concept development. ([identity[1]] [3]; [identity[2]] [1])\n- **Namesake Disambiguation**: At least six distinct persons share the name \"Shannon Curry\" on LinkedIn - licensed clinical social worker (slug `31375b55`), nurse/BSN/RN/CRNI (slug `42920793`), fitness/recreation specialist at The Arc of Monroe (slug `729b371b6`), global recruiter at Auctane (slug `859475181`), partnerships strategist (slug `shannoncurry-`), senior talent-acquisition manager at Withers LLP (slug `a48b2218`). Only `shannon-curry-7366a71` matches the planetary physicist - MAVEN PI. None of the other profiles should be merged with the lead. ([identity[6]] [2])",
+      "recent_active_funding_announced_on_after_2024_01_01_or_active_presently": "### MAVEN Mission Budget (Mission Fleet Funding, Not Curry's Personal Grant)\n\n- Project: Mars Atmosphere and Volatile EvolutioN (MAVEN), NASA Mars Scout mission, launched 2013.\n- Role of Curry: Principal Investigator (since 31 Aug 2021), taking over from Bruce Jakosky.\n- Total Mission Cost (lifetime): $582.5 million for build + launch + two-year prime mission.\n- Status: Mission officially ended 3 June 2026 - loss of contact 6 December 2025; review board declared spacecraft unrecoverable.\n- Notes: $582.5M is an aggregate mission-budget figure, not a competitive grant awarded to Curry. No public record of a separate MAVEN-extension competitive grant awarded to Curry in 2024-2026 was retrieved.\n- Sources: [recent_active_funding_announced_on_after_2024_01_01_or_active_presently[0]] [40]; [recent_active_funding_announced_on_after_2024_01_01_or_active_presently[1]] [37]; [recent_active_funding_announced_on_after_2024_01_01_or_active_presently[2]] [39]; [recent_active_funding_announced_on_after_2024_01_01_or_active_presently[3]] [36]\n\n### ESCAPADE (Mission Fleet Funding, Not Curry's Personal Grant)\n\n- Project: Escape and Plasma Acceleration and Dynamics Explorers (ESCAPADE).\n- Role of Curry: Project Scientist (phase D per LASP profile).\n- Cost: <$80M mission-level (UCB-led, twin-satellite \"Blue\" and \"Gold\" Mars orbiters).\n- Launch: 13 November 2025, Blue Origin New Glenn from Cape Canaveral.\n- Notes: <$80M is mission budget, not a competitive grant to Curry - treated as mission-level funding line.\n- Sources: ESCAPADE - NASA Science; [recent_active_funding_announced_on_after_2024_01_01_or_active_presently[4]] [51]; [recent_active_funding_announced_on_after_2024_01_01_or_active_presently[5]] [50]; [recent_active_funding_announced_on_after_2024_01_01_or_active_presently[6]] [53]\n\n### NSF Award Search Results\n\n- Query (`ActiveAwards=true` + \"Shannon Curry\"): **0 results** returned by live NSF Award Search - indicative of no public active competitive NSF grant as PI.\n- Query (\"Curry University Colorado planetary\"): returns the 10,000-cap default list - no Curry-specific award isolated from snapshot loaded.\n- Conclusion: **No verified public evidence found** that Curry holds a currently active competitive NSF grant as PI. The negative result is anchored to NSF's public award search; a live USAspending query is recommended for definitive cross-verification.\n- Sources: [recent_active_funding_announced_on_after_2024_01_01_or_active_presently[7]] [46]; [recent_active_funding_announced_on_after_2024_01_01_or_active_presently[8]] [47]\n\n### Other Public Funding Databases\n\n| Source | Search Result | Evidence |\n|---|---|---|\n| USAspending.gov (federal awards database) | Surface search returned agency landing pages only; **no Curry-specific award ID** surfaced in this research run | [recent_active_funding_announced_on_after_2024_01_01_or_active_presently[9]] [32] |\n| NASA Techport (task orders) | No Curry-specific Techport record surfaced; Techport primarily tracks task-order contracts, not PI grants | [recent_active_funding_announced_on_after_2024_01_01_or_active_presently[10]] [38] |\n| NASA Planetary Advisory Committee, NExSS, PSP | Committee/service roles (not honoraria or personal grants); treated as service work, not competitive research funding | [recent_active_funding_announced_on_after_2024_01_01_or_active_presently[11]] [12] |",
+      "recent_and_open_positions": "### LASP-Wide Positions Visible on LASP Careers Page (Posted on/after 2026-01-01)\n\n| Title | Type | Posted (2026) | Recruiting URL | Status |\n|---|---|---|---|---|\n| Senior Director for Science | Leadership/Science Director (external firm search) | 16 Jun 2026 | Opus Partners - Senior Director for Science; cross-listed at [recent_and_open_positions[0]] [18] | Open as of snapshot; expires per Opus Partners |\n| Mechanical Engineer IV | Engineering staff (CU Boulder) | 6 Jul 2026 | CU jobs portal - Mechanical Engineer IV (JobDetail 73020); cross-listed at [recent_and_open_positions[0]] [18] | Open as of snapshot |\n| Electrical Assembler | Engineering/Technician (CU Boulder) | 14 Apr 2026 | CU jobs portal - Electrical Assembler (JobDetail 71156); cross-listed at [recent_and_open_positions[0]] [18] | Open as of snapshot |\n| Director of Strategy and Partnerships | Leadership (external firm search) | 17 Jun 2026 | Opus Partners - Director of Strategy and Partnerships; cross-listed at [recent_and_open_positions[0]] [18] | Open as of snapshot |\n\nDeadlines and exact location were not stated on the LASP careers landing page (CU Boulder is the implied location for the two CU jobs portal entries). None of the four postings were found to include Curry, the planetary atmospheres program, MAVEN, atmospheric escape, or solar wind language in the surfaced summaries.\n\n### Curry-Specific Openings (PhD / Postdoc / RA / Research Engineer)\n\n| Source Checked | Result | Evidence |\n|---|---|---|\n| CU Boulder's APS profile page for Curry | No recruiting statement, no posted positions | [recent_and_open_positions[1]] [12] |\n| LASP Careers page | Four 2026 postings (above); none tagged as Curry's research group | [recent_and_open_positions[0]] [18] |\n| CU jobs portal (LASP filter) | No Curry-tagged RA/Postdoc/PhD openings surfaced | CU jobs - LASP (search by group) |\n| LinkedIn LASP company page | No Curry-specific 2026 job post surfaced | [recent_and_open_positions[2]] [15] |\n| X (LASPatCU) | No active posts captured in snapshot | [recent_and_open_positions[3]] [41] |\n| LinkedIn profile `shannon-curry-7366a71` | No 2026 job-post URL surfaced | [recent_and_open_positions[4]] [2] |\n\nConclusion: **No verified public evidence found** of an open PhD, postdoctoral, RA, or research-engineer posting authored by Curry. The most authoritative path to a Curry-group research opening is direct email outreach to `shannon.curry@colorado.edu` or `shannon.curry@lasp.colorado.edu`, not a public posting.\n\n### Indirect Discovery (Possible Cousin in Group - Unverified)\n\n| Name | Role | Connection | Verification | Source |\n|---|---|---|---|---|\n| Ryan Delaney | Graduate Research Assistant at University of Colorado Boulder (per LinkedIn; education University of Michigan) | Possible Curry-group graduate student, but not confirmed by any Curry or LASP page | Unverified - LinkedIn profile lists CU Boulder and U-Michigan, but no direct statement links him/her to Curry | [recent_and_open_positions[5]] [54] |\n\nFlagged for follow-up; not claimed as a Curry-group member.",
+      "linkedin_evidence": "- **Curry's Profile (Primary)**: LinkedIn slug `shannon-curry-7366a71` reads \"Investigator of NASA's MAVEN mission.\" Confirms PI of NASA's Mars Scout MAVEN mission and the Associate Professor role. Used here as the authoritative identity disambiguator. ([linkedin_evidence[0]] [2])\n- **LASP Company Page**: Exists on LinkedIn but no Curry-specific 2026 job-post surfaced. ([linkedin_evidence[1]] [15])\n- **X (formerly Twitter) Handle**: @LASPatCU - the LASP institutional account; snapshot shows no current posted hiring announcement relevant to Curry. ([linkedin_evidence[2]] [41])\n- **Posts by Curry**: No public LinkedIn post authored by Curry about openings or grants in 2025-2026 was retrieved in this research run. Treat as \"no verified evidence\" rather than \"Curry has not posted.\"\n- **Discoverability Caveat**: LinkedIn search snippets do not enumerate posts chronologically and our search captures only top results; absence in this report is not equal to absence on LinkedIn.",
+      "confidence_and_caveats": "- **High Confidence**: Identity (CU APS Associate Professor, LASP researcher, MAVEN PI), prior career history (UCB SSL), MAVEN mission timeline, and end-of-mission declaration.\n- **Medium Confidence**: Curry as Project Scientist on ESCAPADE - LASP profile states \"phase D\" but ESCAPADE mission page lists the mission as PI-led by UCB. The Project Scientist role is consistent across sources.\n- **Low Confidence / Negative Findings**: The \"no active NSF grant to Curry as PI\" result is only as definitive as NSF's public search snapshot allows; a USASpending live query was not executed, so a follow-up live database query is recommended. Similarly, \"no Curry-specific PhD/postdoc/RA posting\" is bounded by what is publicly indexed - direct email to Curry is the recommended confirmation path.\n- **Funding Categorization Caveat**: MAVEN's $582.5M and ESCAPADE's <$80M are mission-budget figures, not personal competitive grants to Curry - explicitly flagged to prevent misrepresentation.\n- **Temporal Caveat**: Time-stamped sources (e.g. \"MAVEN declared ended 3 June 2026\"; \"ESCAPADE launched 13 November 2025\") are reported as stated by the cited pages; no fabrication beyond what sources confirm.\n- **Search Limit**: We did not scrape every LinkedIn post or every USAspending transaction; treat negative results as bounded, not absolute.",
+      "synthesis": "The financial and recruitment footprints of Shannon Curry's LASP group sit on a midpoint between two regimes. First is the fleet-scale, mission-budget funding regime - MAVEN $582.5M and ESCAPADE <$80M - where Curry's role is service as PI/Project Scientist rather than as direct awardee. Second is the competitive-grant regime (NSF, NASA ROSES) where the public NSF record does not currently surface Curry as PI. On recruitment, the LASP institute has four posted positions in 2026, but none is Curry-specific; the public pipeline into her planetary atmospheres group therefore appears thinner than the institutional pipeline advertising suggests.\n\nThe most consequential tension is identity and funding disclosure. The lead's name is shared by at least six LinkedIn profiles, and the only one tied to MAVEN/CU Boulder/LASP is `shannon-curry-7366a71`. Funding sources also routinely conflate the \"$582.5M MAVEN mission cost\" with a Curry-PI-grant; this report draws the explicit line between mission-fleet funding and personal competitive awards. The deeper implication is that anyone evaluating Curry's group for collaboration, recruitment, or partnership should not infer active competitive-grant funding from her PI role on a recently concluded mission - her agency channel for incoming PhD candidates is most likely the publicly listed departmental email rather than an open posting.\n\nContrast across the three funding regimes:\n\n| Dimension | MAVEN Mission Budget | ESCAPADE Mission Budget | NSF/RUS Competitive Grants |\n|---|---|---|---|\n| Mechanism | Mission fleet budget, NASA Mars Scout | Mission fleet budget, SIMPLEx | Peer-reviewed PI grant |\n| Curry's Role | Mission PI (Aug 2021 - Jun 2026) | Project Scientist, phase D | No verified active award as PI |\n| Scale | $582.5M (lifetime MAVEN) | <$80M (ESCAPADE) | Typically 100K-1M per award |\n| Currently Active? | No - mission ended 3 Jun 2026 | Yes (orbital ops since Nov 2025) | **No verified public evidence** |\n| Open Hiring Link? | None | None | None in surfaced snapshot |\n\nRecommended action sequence: (a) email Curry directly via `shannon.curry@colorado.edu` for graduate-research availability; (b) corroborate any active NASA ROSES or NSF award with a live USAspending.gov query, ideally keyed to PI last name and awardee \"University of Colorado Boulder\"; (c) treat LinkedIn `shannon-curry-7366a71` as the only confirmed profile for any outreach; and (d) recalibrate expectations post-MAVEN - after mid-2026, the group's flagship flight funding line is archival rather than active flight, so any new announcement should be expected to come via NASA ROSES selections, NSF Science Frontier awards, or internal LASP/CU Boulder communications rather than mission press releases."
+    },
+    "type": "json",
+    "beta_fields": null,
+    "mcp_tool_calls": null,
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "executive_summary": {
+          "type": "string",
+          "title": "Executive Summary"
+        },
+        "identity": {
+          "type": "string",
+          "title": "Identity"
+        },
+        "recent_active_funding_announced_on_after_2024_01_01_or_active_presently": {
+          "type": "string",
+          "title": "Recent/Active Funding (announced on/after 2024-01-01, or active presently)"
+        },
+        "recent_and_open_positions": {
+          "type": "string",
+          "title": "Recent and Open Positions"
+        },
+        "linkedin_evidence": {
+          "type": "string",
+          "title": "LinkedIn Evidence"
+        },
+        "confidence_and_caveats": {
+          "type": "string",
+          "title": "Confidence and Caveats"
+        },
+        "synthesis": {
+          "type": "string",
+          "title": "Synthesis"
+        }
+      },
+      "required": [
+        "executive_summary",
+        "identity",
+        "recent_active_funding_announced_on_after_2024_01_01_or_active_presently",
+        "recent_and_open_positions",
+        "linkedin_evidence",
+        "confidence_and_caveats",
+        "synthesis"
+      ]
+    }
+  }
+}

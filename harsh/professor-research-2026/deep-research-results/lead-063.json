@@ -1,0 +1,192 @@
+{
+  "run_id": "trun_dd47611047ba45198ddedf9584c652eb",
+  "interaction_id": "trun_dd47611047ba45198ddedf9584c652eb",
+  "result_url": "https://platform.parallel.ai/play/deep-research/trun_dd47611047ba45198ddedf9584c652eb",
+  "status": "completed",
+  "output": {
+    "basis": [
+      {
+        "field": "executive_summary",
+        "reasoning": "Reasoning: The field_answer covers identity (including confirmation of single individual, PSI ETH Zurich appointment), current affiliation, research scope, and hiring opportunities (three open positions) within the PSI group headed by Ganter. It also discusses recent/active funding landscape (no personal competitive grants post-2024 found on SNSF portal; CHART consortium/misson funding; institutional PSI funding), and LinkedIn evidence with caveats. It includes a caveat/disclosure section noting what could not be verified and the checks performed. This aligns with the user query asking for identity verification, recent/active funding, recent/open positions, LinkedIn evidence, confidence/caveats, and sources. However, there is no explicit, structured \u201cSources\u201d section or a clearly separated \u201cRecent/Active Funding\u201d table with all requested fields (title, funder, amounts, dates, status, role, description, URLs) and no dedicated \u201cOpen Positions\u201d structured listing (though several postings are described). Since the excerpts (source URLs) are not provided here, I cannot verify each claim against excerpts, which weakens external support. Overall, the answer is largely complete in content but would benefit from explicit sources and structured data fields as requested. I will mark completeness as true since it directly answers the query components, but support from excerpts cannot be confirmed due to missing excerpts data.",
+        "citations": [],
+        "confidence": "medium"
+      },
+      {
+        "field": "identity",
+        "reasoning": "Assessment reasoning:\n- The field in question is \"identity\". The provided field_answer lists identity-related details (full name, title, affiliations, email, phone, research focus, prior tags, publications, INSPIRE-HEP record) and cites multiple sources in the table. This directly addresses identity verification and current affiliation as requested in the query. \n- Although the user query also asked for funding and hiring information, those are scope items for separate fields (Recent/Active Funding, Hiring/Open Positions). This evaluator focuses on the specified field \"identity\"; since the answer directly covers identity attributes and is consistent with the excerpts, it is complete for the identity field.\n- Excerpts include ETH appointment news and PSI profile pages that corroborate the identity details (name, affiliations, and title). Therefore, the field answer is supported by excerpts.\n- No contradictory or missing identity items are evident in the field_answer given the typical expectations for an identity field (name, title, affiliations, contact, and role).\n- Confidence: high that the identity portion is correct and well-supported; caveat: for the broader requested research scope (funding, hiring), separate fields need to be evaluated.\n",
+        "citations": [
+          {
+            "url": "https://ethz.ch/en/news-and-events/eth-news/news/2026/05/eleven-professors-appointed.html",
+            "excerpts": [
+              "Eleven professors appointed | ETH Zurich\nMay 22, 2026 \u2014 Dr Romain Ganter (*1974), currently Head of Vacuum Group and Sub-Project Manager at the Paul Scherrer Institute (PSI), as Full Professor of Accelerator"
+            ],
+            "title": "Eleven professors appointed | ETH Zurich"
+          },
+          {
+            "url": "https://www.eda.admin.ch/en/newnsb/zjyowJECuGkblhupmGZs5",
+            "excerpts": [
+              "19 new professors appointed at ETH Zurich and EPFL\nDr Romain Ganter (*1974), currently Head of Vacuum Group and Sub-Project Manager at the Paul Scherrer Institute (PSI), as Full Professor of Accelerator Physics in the Department of Physics."
+            ],
+            "title": "19 new professors appointed at ETH Zurich and EPFL"
+          },
+          {
+            "url": "https://www.researchgate.net/profile/Romain-Ganter",
+            "excerpts": [
+              "Romain GANTER - Paul Scherrer Institute, Villigen\nPaul Scherrer Institut (PSI) in Villigen, Switzerland, is developing a Low Emittance Electron Gun (LEG) based on field-emitter technology [1]. The goal is"
+            ],
+            "title": "Romain GANTER - Paul Scherrer Institute, Villigen"
+          },
+          {
+            "url": "https://www.psi.ch/de/people/romain-ganter",
+            "excerpts": [
+              "Prof. Dr. Romain Ganter | PSI\nProf. Dr. Romain Ganter E-Mail romain.ganter@psi.ch Telefon +41 56 310 52 79 Paul Scherrer Institut PSI Forschungsstrasse 111 5232 Villigen PSI Schweiz"
+            ],
+            "title": "Prof. Dr. Romain Ganter | PSI"
+          },
+          {
+            "url": "https://ch.linkedin.com/in/romain-ganter-1418635b",
+            "excerpts": [
+              "Romain Ganter \u2013 Professor for Accelerator Physics - ETHZ Head ...\nIt may finally be coming to a resolution. It all started at PSI in 2010, when scientists discovered that the proton was significantly smaller than previously thought. Their measurements used"
+            ],
+            "title": "Romain Ganter \u2013 Professor for Accelerator Physics - ETHZ Head ..."
+          },
+          {
+            "url": "https://inspirehep.net/authors?sort=bestmatch&size=25&page=1&q=romain.ganter",
+            "excerpts": [],
+            "title": "INSPIRE"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "recent_and_active_funding",
+        "reasoning": "Reasoning for completeness and support:\n- The field_description requires a concise structured report including Identity; Recent/Active Funding; Recent/Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources, with direct URLs for positive claims.\n- The provided field_answer includes an explicit summary of funding findings, a table of past grants, and a concluding statement that no verified public evidence exists for post-2024 competitive grants personally awarded to Romain Ganter, along with what was checked. It also includes a narrative Takeaways section and explicit warnings about lack of evidence.\n- Therefore, the field_answer appears to address all requested sections (Identity, Funding, etc.) and provides sources. This supports completeness as it directly answers the user\u2019s query structure.\n- However, the excerpts given do not clearly or directly verify the specific negative claim (no verified public evidence found); the excerpts include related but not conclusive items (SNSF Starting Grants announcements, general PSI/ETH domain items, etc.). Therefore, the claim \u201cNo verified public evidence found\u201d is not directly supported by the excerpts themselves and would require a direct negative evidence source to be fully supported by excerpts.\n- Consequently: completeness should be true (the field answer covers the requested elements), but supported should be false (the field answer\u2019s key negative claim is not directly supported by the provided excerpts).",
+        "citations": [
+          {
+            "url": "https://data.snf.ch/grants?q=Romain+Ganter",
+            "excerpts": [],
+            "title": "Fetched web page"
+          },
+          {
+            "url": "https://www.sciencedirect.com/science/article/pii/S0168583X26002338",
+            "excerpts": [
+              "Accelerator magnet technologies at the Paul Scherrer ...\nThis paper presents an overview of PSI's recent advancements in magnet technology and discusses prospects. These developments serve both PSI's issue"
+            ],
+            "title": "Accelerator magnet technologies at the Paul Scherrer ..."
+          },
+          {
+            "url": "http://en.wikipedia.org/wiki/Paul_Scherrer_Institute",
+            "excerpts": [
+              "The **Paul Scherrer Institute** ( **PSI** ) is a multi-disciplinary research institute for natural and engineering sciences in Switzerland."
+            ],
+            "title": "Paul Scherrer Institute"
+          },
+          {
+            "url": "https://www.snf.ch/en/JX7XSsRgCr63RyaG/page/annual-report-2024",
+            "excerpts": [
+              "Annual report 2024\nTo align with its other career development programmes, the SNSF launched the SNSF Starting Grants 2025 at the end of 2024. This scheme"
+            ],
+            "title": "Annual report 2024"
+          },
+          {
+            "url": "https://www.snf.ch/en/noYHnzN47LR5qt93/news/snsf-starting-grants-2026",
+            "excerpts": [
+              "SNSF Starting Grants 2026\nMay 5, 2026 \u00b7 Applications for an SNSF Starting Grant 2026 will, for the first time, be submitted in full via the SNSF Portal. Applicants whose project"
+            ],
+            "title": "SNSF Starting Grants 2026"
+          }
+        ],
+        "confidence": "medium"
+      },
+      {
+        "field": "recent_and_open_positions",
+        "reasoning": "Reasoning: The provided field answer only lists a table of open/recent positions and a concluding note about lack of verified public evidence for a direct PhD supervision. It does not include the requested Identity section, Recent/Active Funding details, LinkedIn Evidence, Confidence and Caveats, or a complete Sources list. It also lacks direct URLs for each claimed posting within the table (the placeholders [recent_and_open_positions[x]] appear without explicit URLs) and does not clearly separate or verify the identity of the person beyond a single excerpt. Excerpts given partially touch on identity (Romain Ganter at PSI and ETH appointment), but they do not substantiate the full set of claims (recent/active funding, open positions connected to the person, or LinkedIn evidence). Therefore, completeness should be false. Supported: The field answer is not fully supported by the provided excerpts, as the excerpts only minimally touch on identity and do not corroborate all claims (funding, postings, LinkedIn evidence, or official sources for each claim). The absence of explicit sources and URLs for each item reduces trust in the answer\u2019s accuracy.",
+        "citations": [
+          {
+            "url": "https://www.psi.ch/en/hr/job-opportunities/8431-28384",
+            "excerpts": [],
+            "title": "Job Opportunities | Education and Jobs | PSI"
+          },
+          {
+            "url": "https://www.psi.ch/en/hr/job-opportunities/8123-27613",
+            "excerpts": [],
+            "title": "Job Opportunities | Education and Jobs | PSI"
+          },
+          {
+            "url": "https://www.psi.ch/en/hr/job-opportunities/8434-28679-designer-for-superconducting-magnet-development-80-100",
+            "excerpts": [],
+            "title": "Job Opportunities | Education and Jobs | PSI"
+          },
+          {
+            "url": "https://ethz.ch/en/news-and-events/eth-news/news/2026/05/eleven-professors-appointed.html",
+            "excerpts": [
+              "Eleven professors appointed | ETH Zurich\nMay 22, 2026 \u2014 Dr Romain Ganter (*1974), currently Head of Vacuum Group and Sub-Project Manager at the Paul Scherrer Institute (PSI), as Full Professor of Accelerator"
+            ],
+            "title": "Eleven professors appointed | ETH Zurich"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "linkedin_evidence",
+        "reasoning": "Assessment reasoning:\n- Field: linkedin_evidence. The user-provided field_answer includes a public LinkedIn profile URL, a filename-like summary of the profile (headline, location, employer, role), and a note about corroboration via ETH Board announcement but not a direct LinkedIn post confirming the May 2026 ETH Full Professorship. The answer explicitly states lack of verified public evidence for a LinkedIn post announcing the appointment and references an ETH Board announcement as a primary source.\n- Completeness check: The field description (LinkedIn evidence) appears to require capturing LinkedIn-based identity corroboration and any LinkedIn posts or evidence. The answer provides the LinkedIn URL and a brief corroboration note, and acknowledges missing direct LinkedIn confirmation of the professorship. Since the prompt asks for LinkedIn evidence and includes explicit statements about what was checked and the gaps, the response covers the core LinkedIn-related items. Therefore, completeness can be considered true for this field alone (LinkedIn evidence content).\n- Excerpt support check: Excerpts are not provided in this task payload (only the field_answer and no excerpts array). Without excerpts to verify against, we cannot confirm that the answer is supported by provided excerpts. Thus, support should be evaluated as false in this context.\n- Final stance: completeness = true (the field answer addresses LinkedIn evidence requirements), supported = false (no excerpts provided to verify against).",
+        "citations": [],
+        "confidence": "medium"
+      },
+      {
+        "field": "confidence_and_caveats",
+        "reasoning": "Assessment notes:\n- The field_description asks for a concise structured report with sections: Identity; Recent/Active Funding; Recent and Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources, with every positive claim having a direct URL.\n- The provided field_answer contains multiple claims about identity, hiring, and grants, and caveats, but it does not present a clearly structured report with the requested sections, nor does it include direct URLs for each positive claim. The excerpts field is empty, so we cannot assess external support from excerpts.\n- Given the lack of explicit URLs for claims and the absence of a clearly structured format, completeness is likely false. Also, without excerpts to verify claims, supportability is false.\n- Therefore, mark completeness as false and supported as false. If needed, we can request explicit URLs and a structured format. ",
+        "citations": [],
+        "confidence": "low"
+      }
+    ],
+    "content": {
+      "executive_summary": "- **Identity Confirmed, No Namesake Collision**: The \"Romain Ganter\" identified by email romain.ganter@psi.ch and accelerator-magnet/HTS/vacuum/beam-dynamics research focus matches one and only one individual - a PhD accelerator physicist born 1974, currently Head of Vacuum Group and Sub-Project Manager at PSI and, as of 22 May 2026, appointed Full Professor of Accelerator Physics at ETH Zurich (Department of Physics) \u2192 identity is unambiguous and corroborated by PSI's official staff page, ETH Board minutes, the Swiss federal EDA portal, ResearchGate and LinkedIn.\n- **Promotion to ETH Full Professor (20/21 May 2026 Decision, Dated 22.05.2026)**: ETH Board appointed Dr Romain Ganter \"Full Professor of Accelerator Physics in the Department of Physics\" at its meeting of 20 and 21 May 2026, on application of ETH President Jo\u00ebl Mesot \u2192 the same announcement notes his PSI cooperation professorship includes acting as Head of the Department of Accelerator Technology at PSI; this is the single most important fact for routing funding/hiring inquiries to him post-2026.\n- **Research Scope Confirmed Against Lead Profile**: ETH/EDA-verbatim text states his research \"focuses on the technology and dynamics of particle accelerators for generating high-quality beams\" with applications at \"PSI and CERN\", plus \"the development of superconducting accelerator magnets based on high-temperature superconductors\" \u2192 matches the four lead topics (superconducting accelerator magnets / HTS / beam dynamics / vacuum technology) verbatim; his track record at PSI includes work on photocathodes/glow discharge/free-electron lasers (research expertise tags on ResearchGate).\n- **Three Currently-Open Positions in the Group He Heads**: The PSI Job Opportunities portal (under department filter \"Accelerator Science and Engineering\" which he heads per the ETH/EDA appointment text) lists at least three roles posted since 09.06.2026 that map directly to his group's remit: a superconducting-magnet designer (posted 07.07.2026), an HTS-magnet measurement trainee (09.06.2026), and a beam-manipulation/plasma-discharge trainee (24.06.2026) \u2192 these are the cleanest entry points for prospective hires/PhD candidates to attach to his work, even though none are explicitly labelled as his direct supervision.\n- **No Competitive Grant Awarded Personally to Ganter in the Post-2024 Window**: A direct query of the official SNSF Data Portal for \"Romain Ganter\" returns exactly one project - a long-completed 173,255 CHF project (01.09.2009 - 31.12.2012) on a low-emittance electron gun in which he was a \"Weitere Gesuchstellende\" (additional applicant) under PI Christoph Hauri \u2192 this is outside the post-2024 scope; no SNSF Starting Grant, PRIMA, Ambizione, Sinergia or similar competitive award to him was located in the SNSF award database.\n- **CHART (Swiss Accelerator Research and Technology) Supports His Work but is Consortium/Mission Funding, Not a Personal Competitive Grant**: PSI's published ScienceDirect paper explicitly states PSI is \"advancing superconducting magnet technologies within the framework of the ambitious Swiss Accelerator Research and Technology (CHART) program\" - this is multi-institutional (PSI/ETH Zurich/CERN) consortium funding for FCC-ee/FCC-hh-related work, not a personal grant \u2192 correctly classified as consortium/institutional mission budget, not a competitive grant to him.\n- **Institutional Mission Funding at PSI (Strong, Default)**: PSI's ordinary 2024 budget was 328 M CHF within a 2,748 M CHF ETH Domain envelope for Swiss Federal Institutes of Technology / research institutes \u2192 as a senior staff member (Head of Vacuum Group, Sub-Project Manager, future cooperation professor) Ganter's salary, group infrastructure and base magnet-development activity are funded by this institutional mission budget; this is not a \"grant\" and should not be reported as one.\n- **LinkedIn Profile Confirmed, but Activity Since 2024 = Limited Public Evidence**: Public LinkedIn returns a profile (https://ch.linkedin.com/in/romain-ganter-1418635b) with 247 connections / 254 followers / Switzerland / \"Head of Vacuum Group at Paul Scherrer Institut PSI\" headline, but no individual open-post URL (status post, job-post, or commentary) could be confirmed in this run \u2192 profile exists and corroborates identity but does not by itself constitute announcement evidence of the 2026 ETH appointment.\n- **Disclosure of What Could Not Be Verified**: Despite checking the SNSF data portal with his full name, Google Scholar, ORCID-style author lookups, EURAXESS, PSI news/media release archives, ETH Zurich's own job board, and INSPIRE-HEP's author directory, I could not locate (a) a personal competitive grant to Ganter in the 2024-present window, (b) any PhD-position posting directly naming him as supervisor, or (c) a public LinkedIn post about the ETH appointment \u2192 these rows are reported as \"No verified public evidence found\" with the search paths listed.",
+      "identity": "| Field | Value | Sources |\n|---|---|---|\n| Full name | Dr Romain Ganter (born 1974) | [identity[0]] [10]; [identity[1]] [66] |\n| Academic title | PhD (Accelerator Physicist) | [identity[2]] [1] |\n| Current primary affiliation | Paul Scherrer Institut PSI, Forschungsstrasse 111, 5232 Villigen PSI, Switzerland | [identity[3]] [64] |\n| ETH appointment (new, May 2026) | Full Professor of Accelerator Physics, Department of Physics, ETH Zurich | [identity[0]] [10] (announced 22.05.2026; Board decision 20-21 May 2026) |\n| Cooperation role at PSI | Cooperation professorship includes acting as Head of Department of Accelerator Technology at PSI | [identity[0]] [10] |\n| Substantive role at PSI | Head of Vacuum Group; Sub-Project Manager (SLS 2.0 sub-project) | [identity[0]] [10]; [identity[4]] [65] (\"Project Leader SLS 2.0 Storage Ring Upgrade\" / \"Head of Vacuum Group at Paul Scherrer Institut PSI\") |\n| Email | romain.ganter@psi.ch | [identity[3]] [64] |\n| Phone | +41 56 310 52 79 | [identity[3]] [64] |\n| Research focus | Technology and dynamics of particle accelerators for high-quality beams; superconducting accelerator magnets based on high-temperature superconductors; applications at PSI and CERN | [identity[0]] [10] |\n| Prior expertise tags | Free Electron Lasers, Glow Discharge, Plasma Treatment, Photocathodes | [identity[2]] [1] |\n| Publication footprint | 108 publications, 21,678 reads, 2,166 citations on ResearchGate | [identity[2]] [1] |\n| INSPIRE-HEP author record | Profile exists (\"Romain Ganter\" as primary hit) | [identity[5]] [55] |\n\nIdentity is unambiguous: the PSI staff page, the formal ETH Board decision (mirrored verbatim on the Swiss EDA portal) and his ResearchGate/LinkedIn profiles all converge on the same person, born 1974, Swiss-Department-of-Physics/ETH-Zurich appointable as Full Professor.",
+      "recent_and_active_funding": "| Grant/Programme | Funder | Amount | Currency | Announced / Period | Role | Status | What it funds | Distinction | Source |\n|---|---|---|---|---|---|---|---|---|---|\n| Low-emittance electron gun development and non-relativistic laser-assisted electron bunch characterization | Swiss National Science Foundation (SNSF) | 173,255 | CHF | Award 2009; period 01.09.2009 - 31.12.2012 | Additional applicant (Weitere Gesuchstellende) under PI Christoph Hauri (PSI) | Completed (Abgeschlossen) | UV femtosecond laser, UV pulse synthesizer, XFEL, cold electron source, electron-bunch diagnostics | Competitive historical grant, co-applicant role; outside the 2024 scope | [recent_and_active_funding[0]] [72] |\n| CHART - Swiss Accelerator Research and Technology (consortium framework) | Swiss federal ETH Domain / multi-institutional (PSI + ETH Zurich + CERN) | Not published at grant-individual level for Ganter | CHF | Active consortium programme ongoing into 2024-2026 | Participant/PSI-side contributor via Department of Accelerator Technology | Active | PSI's Nb-Ti/Nb3Sn low-temperature and REBCO high-temperature superconducting magnet prototypes; PSI Positron Production experiment contribution to FCC-ee/FCC-hh collider R&D | Consortium/mission programme funding, not a personal competitive grant; cite as institutional consortium funding | [recent_and_active_funding[1]] [4] |\n| PSI 2024 ordinary budget (institutional mission funding) | Swiss Confederation (ETH Domain) | 328 (ETH Domain total 2,748) | M CHF | Fiscal year 2024 | Senior staff (Head of Vacuum Group, Sub-Project Manager) | Active 2024 | Base operations, salaries, group infrastructure of the Department of Accelerator Technology | Institutional/mission budget; not a competitive grant | [recent_and_active_funding[2]] [48] (budget table citing 2024 ordinary budget) |\n| SNSF Starting Grants call 2025/2026 | Swiss National Science Foundation (SNSF) | n/a (programme exists) | CHF | SNSF launched Starting Grants 2025 at end of 2024; Starting Grants 2026 applications due by 5 May 2026 | n/a | No verified public evidence of an award to Ganter | Programme itself | No verified award to him personally | [recent_and_active_funding[3]] [14]; [recent_and_active_funding[4]] [23] |\n\nTakeaways from the funding table: the only SNSF-administered competitive research grant I could attribute to this person is a 2009-2012 completed project (he was co-applicant, not PI). The CHART programme is the substantive framework in which he works post-2024, but it is consortium mission funding, not a personal competitive grant. No competitive grant to him personally in the 2024-2026 window is verified in this run.\n\n**No verified public evidence found** for post-2024-01-01 competitive grants awarded personally to Romain Ganter as PI, co-PI or named collaborator. What was checked: SNSF Data Portal with `q=Romain Ganter` (only the 2009-2012 record returned); SNSF Starting Grants 2025/2026 announcements; Google Scholar search via ResearchGate profile; PSI news/media release search on the psi.ch domain; ETH Domain budget tables; INSPIRE-HEP author search. SNSF data.snf.ch is the canonical record and returned zero new grants.",
+      "recent_and_open_positions": "| Posting title | Type | Segment label | Posted | Deadline | Status | Location | Short description | Direct posting URL |\n|---|---|---|---|---|---|---|---|---|\n| Trainee in Advanced Measurement Techniques for HTS magnets | Trainee | Internship | 09.06.2026 | Not stated on listings page | Open as of 10.07.2026 listings snapshot | Villigen PSI, Switzerland | Trainee role focused on advanced measurement techniques for high-temperature-superconductor (HTS) magnets - directly in his group's HTS-magnet development focus area | [recent_and_open_positions[0]] [57] |\n| Trainee for computational and experimental studies of Plasma Discharge Devices for Advanced Beam Manipulation | Trainee | Internship | 24.06.2026 | Not stated | Open | Villigen PSI, Switzerland | Trainee role covering computational + experimental studies of plasma discharge devices for advanced beam manipulation - directly in beam-dynamics + vacuum / photocathode research focus area | [recent_and_open_positions[1]] [60] |\n| Designer for Superconducting Magnet Development 80-100% | Designer | Engineering / Laboratory segment | 07.07.2026 | Not stated | Open | Villigen PSI, Switzerland | Designer role within superconducting magnet development program - direct match to PSI's Nb-Ti/Nb3Sn and REBCO programs described in the ScienceDirect magnet-program paper | [recent_and_open_positions[2]] [61] |\n\nTakeaways: All three positions were posted in the 09.06.2026 - 07.07.2026 window (within scope) and are filed under PSI's \"Accelerator Science and Engineering\" department, the same department whose headmanship is part of Ganter's cooperation professorship per the [recent_and_open_positions[3]] [10]. Their subject matter (HTS magnets, plasma discharge beam manipulation, superconducting magnet development) maps directly onto Ganter's stated research scope. None of the postings is explicitly labelled as \"supervised by Romain Ganter\", so the connection is by departmental/role alignment rather than direct naming; consider this an \"indirect connection\" rather than a confirmed direct supervision.\n\n**No verified public evidence found** for a \"PhD Student\" / \"Doctoral Researcher\" posting directly under Ganter's supervision in the 2024-2026 window. What was checked: PSI Job Opportunities full list (https://www.psi.ch/en/hr/job-opportunities, the \"Doctoral\" segment); EURAXESS portal (https://euraxess.ec.europa.eu/ and search for PSI/EURAXESS PSI Ganter vacancies); ETH Zurich Department of Physics job board; the three PSI accelerator postings above; ResearchGate search for Romain Ganter + open positions. The PSI \"Doctoral\" segment on the live careers page listed a PhD Student in Radiochemistry (4701-28844, 07.07.2026), PhD Student in Aerosol Chemistry (5503-28805, 02.07.2026), PhD Student in X-ray imaging (6317-28707, 23.06.2026), PhD Student in X-ray scattering and imaging (6317-28708, 23.06.2026), PhD Student in Quantum-Mechanical Simulations of Muons in Materials (7301-07, 18.05.2026), and PhD Student - Electron transfer processes at clay minerals (4402-28173, 03.06.2026) - none in accelerator / vacuum / HTS magnet / beam dynamics remit.",
+      "linkedin_evidence": "- Public LinkedIn profile URL confirmed: https://ch.linkedin.com/in/romain-ganter-1418635b. Headline snapshot: \"Head of Vacuum Group at Paul Scherrer Institut PSI\" with prior title \"Project Leader SLS 2.0 Storage Ring Upgrade\", based in Villigen, Aargau, Switzerland. 247 connections, 254 followers.\n- LinkedIn evidence corroborates identity (location, employer, research role) but does not constitute an independent announcement of the May 2026 ETH Full Professorship - the primary source for that is the ETH Board announcement of 22.05.2026.\n- No public LinkedIn post URL directly quoting the 2026 appointment was located in this research run. **No verified public evidence found** for any LinkedIn activity post by Ganter or PSI announcing the appointment.",
+      "confidence_and_caveats": "- **High confidence on identity and current affiliation**: triangulation across (1) the official PSI staff page listing his email and direct phone, (2) the formal ETH Zurich appointment decision dated 22.05.2026 and mirrored verbatim on the Swiss EDA portal, (3) the ResearchGate profile listing him as \"PhD Accelerator Physicist at Paul Scherrer Institute\" with the same PSI institutional affiliation, and (4) the LinkedIn profile headline using the same \"Head of Vacuum Group at PSI\" role. No namesake with the same affiliation + research focus is in evidence.\n- **Medium confidence on hiring**: the three PSI Accelerator postings map to his stated scientific remit (HTS magnets, plasma/beam manipulation, superconducting magnet development) and his institutional headship of the Accelerator Science and Engineering department, but none explicitly names him as the supervisor, so the connection is inferred from departmental ownership rather than a confirmed supervisor label.\n- **Low / negative confidence on competitive personal grants in the 2024-2026 window**: the canonical SNSF award database returns zero new grants to him personally in that window; the CHART programme is documented as the framework for his magnet work but is consortium/institutional, not a personal competitive award; institutional PSI mission funding exists but is not a grant.\n- **General caveats on the report**:\n  - All dates and figures are limits-of-source: ETH Board decision date (20-21 May 2026), announcement date (22.05.2026) and birth year (1974) come from the official ETH Board news page; PSI budget number (328 M CHF 2024 ordinary, 2,748 M CHF ETH Domain envelope) comes from Wikipedia's tabulation citing public budget documents and may not be the very-most-recent figure.\n  - I did not retrieve the individual three job posting \"detail\" pages (PSI's URL slug redirect returns the listings index rather than a per-job detail page for these IDs); the listing index is the canonical source - if you need deadlines, group names, or supervisor names per posting, those URLs may 404 on per-job details and require the indexed descriptions only.\n  - LinkedIn rate-limits scraping, so the absence of a confirmed 2024-2026 LinkedIn activity post is \"no verified public evidence\" rather than \"definitive no\"."
+    },
+    "type": "json",
+    "beta_fields": null,
+    "mcp_tool_calls": null,
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "executive_summary": {
+          "type": "string",
+          "title": "Executive Summary"
+        },
+        "identity": {
+          "type": "string",
+          "title": "Identity"
+        },
+        "recent_and_active_funding": {
+          "type": "string",
+          "title": "Recent and Active Funding"
+        },
+        "recent_and_open_positions": {
+          "type": "string",
+          "title": "Recent and Open Positions"
+        },
+        "linkedin_evidence": {
+          "type": "string",
+          "title": "LinkedIn Evidence"
+        },
+        "confidence_and_caveats": {
+          "type": "string",
+          "title": "Confidence and Caveats"
+        }
+      },
+      "required": [
+        "executive_summary",
+        "identity",
+        "recent_and_active_funding",
+        "recent_and_open_positions",
+        "linkedin_evidence",
+        "confidence_and_caveats"
+      ]
+    }
+  }
+}

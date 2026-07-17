@@ -1,0 +1,80 @@
+{
+  "scanned": 12,
+  "added": 8,
+  "roles": [
+    {
+      "id": "4316938",
+      "title": "Electrical Test Engineer",
+      "url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/4316938",
+      "location": "Houghton, MI (HQ)",
+      "score": "4.4/5",
+      "fit_summary": "Electrical test for electric propulsion hardware — direct instrumentation/test-rig adjacency.",
+      "notes": "Orbion Paylocity board. Houghton MI electric propulsion OEM. Verify work-auth on JD."
+    },
+    {
+      "id": "3994031",
+      "title": "Electrical Engineer",
+      "url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/3994031",
+      "location": "Houghton, MI (HQ)",
+      "score": "4.2/5",
+      "fit_summary": "Electrical engineering on EP systems — hardware path.",
+      "notes": "Orbion Paylocity board. Houghton MI electric propulsion OEM. Verify work-auth on JD."
+    },
+    {
+      "id": "3994443",
+      "title": "Electric Propulsion Engineer",
+      "url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/3994443",
+      "location": "Houghton, MI (HQ)",
+      "score": "4.5/5",
+      "fit_summary": "Core EP role — plasma/propulsion hardware daily work.",
+      "notes": "Orbion Paylocity board. Houghton MI electric propulsion OEM. Verify work-auth on JD."
+    },
+    {
+      "id": "3873751",
+      "title": "Chief Engineer - Propulsion Systems",
+      "url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/3873751",
+      "location": "Houghton, MI (HQ)",
+      "score": "3.8/5",
+      "fit_summary": "Senior EP leadership — stretch level but strong domain.",
+      "recommendation": "Stretch / senior — review bar before apply",
+      "notes": "Orbion Paylocity board. Houghton MI electric propulsion OEM. Verify work-auth on JD."
+    },
+    {
+      "id": "4281531",
+      "title": "Aerospace Engineer",
+      "url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/4281531",
+      "location": "Houghton, MI (HQ)",
+      "score": "4.0/5",
+      "fit_summary": "Aerospace engineering at EP company — verify hands-on vs analysis mix.",
+      "notes": "Orbion Paylocity board. Houghton MI electric propulsion OEM. Verify work-auth on JD."
+    },
+    {
+      "id": "4276053",
+      "title": "Mechanical Engineer",
+      "url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/4276053",
+      "location": "Houghton, MI (HQ)",
+      "score": "3.9/5",
+      "fit_summary": "Mechanical support for thruster hardware — manufacturing/test adjacency.",
+      "notes": "Orbion Paylocity board. Houghton MI electric propulsion OEM. Verify work-auth on JD."
+    },
+    {
+      "id": "4020842",
+      "title": "Manufacturing Engineer",
+      "url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/4020842",
+      "location": "Houghton, MI (HQ)",
+      "score": "3.8/5",
+      "fit_summary": "Manufacturing for space propulsion hardware.",
+      "notes": "Orbion Paylocity board. Houghton MI electric propulsion OEM. Verify work-auth on JD."
+    },
+    {
+      "id": "4020847",
+      "title": "Associate Manufacturing Engineer",
+      "url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/4020847",
+      "location": "Houghton, MI (HQ)",
+      "score": "3.7/5",
+      "fit_summary": "Junior manufacturing for EP hardware — learning path.",
+      "notes": "Orbion Paylocity board. Houghton MI electric propulsion OEM. Verify work-auth on JD."
+    }
+  ],
+  "careers_url": "https://orbionspace.com/careers/"
+}

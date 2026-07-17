@@ -1,0 +1,371 @@
+{
+  "run_id": "trun_dd47611047ba45198eda1d038b4448e8",
+  "interaction_id": "trun_dd47611047ba45198eda1d038b4448e8",
+  "result_url": "https://platform.parallel.ai/play/deep-research/trun_dd47611047ba45198eda1d038b4448e8",
+  "status": "completed",
+  "output": {
+    "basis": [
+      {
+        "field": "executive_summary",
+        "reasoning": "Assessment reasoning:\n- The field_answer provides a concise executive summary with several claims about identity, status, and funding related to David Miles (lead-013). It mentions TRACERS, a 2024 NASA award, lab composition, and a 2026 open faculty posting, as well as the Iowa Spaceflight Laboratory; it also notes Miles as co-investigator on a 2024 grant and clarifies mission vs grant status. \n- Completeness: The field_description asks for a comprehensive, structured report including Identity; Recent/Active Funding; Recent and Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources, with explicit URLs for positive claims. The field_answer covers some but not all requested sections (e.g., explicit LinkedIn evidence is not provided in the answer, and many required data fields (dates, exact grant details with funder, amounts, currency, project dates, status, Miles\u2019 role, and direct URLs) are only partially covered or implied). It also does not present a fully structured report format with all items enumerated (Recent/Active Funding, Recent and Open Positions, LinkedIn Evidence, Confidence and Caveats, Sources) in a single, clearly separated structure. Therefore, completeness is false.\n- Supported: The excerpts list includes sources that corroborate key claims in the field_answer: identity (faculty page), TRACERS PI status, 2024 funding involving Miles as co-investigator, and the 2026 hiring/posting; these excerpts provide direct URLs. While not every claim in the field_answer is independently verifiable via the excerpts (e.g., explicit LinkedIn URLs are not shown in excerpts), the major factual statements cited in the answer are supported by the provided excerpts. Given that, the field_answer is broadly supported, but with gaps (LinkedIn evidence, full citation links for every claim, and complete structured data). Thus, supported = true, completeness = false.",
+        "citations": [
+          {
+            "url": "https://physics.uiowa.edu/people/david-m-miles",
+            "excerpts": [
+              "David M. Miles, PhD - Physics and Astronomy\nDavid M. Miles is an experimental space physicist specializing in the development of next-generation spaceflight magnetic field instruments and particularly"
+            ],
+            "title": "David M. Miles, PhD - Physics and Astronomy"
+          },
+          {
+            "url": "https://miles.lab.uiowa.edu/",
+            "excerpts": [],
+            "title": "Miles Research Lab | The University of Iowa"
+          },
+          {
+            "url": "https://physics.uiowa.edu/news/2023/09/miles-named-pi-tracers-mission",
+            "excerpts": [
+              "Miles Named PI of TRACERS Mission - Physics and Astronomy"
+            ],
+            "title": "Miles Named PI of TRACERS Mission - Physics and Astronomy The University of Iowa https://physics.uiowa.edu \u203a news \u203a 2023/09 \u203a miles-na..."
+          },
+          {
+            "url": "https://www.eoportal.org/satellite-missions/tracers",
+            "excerpts": [
+              "TRACERS (Tandem Reconnection and Cusp ...\nNov 13, 2025 \u2014 The TRACERS mission is to connect the magnetospheric cusp to the magnetopause - discovering how spatial or temporal variations in magnetic reconnection drive"
+            ],
+            "title": "TRACERS (Tandem Reconnection and Cusp ..."
+          },
+          {
+            "url": "https://miles.lab.uiowa.edu/missions/tracers",
+            "excerpts": [
+              "TRACERS | Miles Research Lab - The University of Iowa\nJul 23, 2025 \u2014 ... 2025, from Vandenberg Space Force Base. This mission will help answer long ... TRACERS mission funded by $115 million grant from NASA takes next step."
+            ],
+            "title": "TRACERS | Miles Research Lab - The University of Iowa"
+          },
+          {
+            "url": "https://physics.uiowa.edu/news/2024/08/iowa-lands-15-million-award-build-advanced-space-equipment",
+            "excerpts": [
+              "Iowa lands $1.5 million award to build advanced space ...\nAug 23, 2024 \u2014 Other co-investigators on the award are Jasper Halekas, principal investigator of the ACES instrument on TRACERS, and David Miles, principal"
+            ],
+            "title": "Iowa lands $1.5 million award to build advanced space ..."
+          },
+          {
+            "url": "https://miles.lab.uiowa.edu/people",
+            "excerpts": [],
+            "title": "People | Miles Research Lab | The University of Iowa"
+          },
+          {
+            "url": "https://jobs.uiowa.edu/faculty/view/75971",
+            "excerpts": [
+              "Faculty Requisition Details - Jobs@UIOWA: Search and Apply ...\nWe seek an outstanding candidate to build a productive, visible, externally funded research program in experimental space physics that leverages these unique resources."
+            ],
+            "title": "Faculty Requisition Details - Jobs@UIOWA: Search and Apply ..."
+          },
+          {
+            "url": "https://physics.uiowa.edu/iowa-spaceflight-laboratory",
+            "excerpts": [],
+            "title": "Iowa Spaceflight Laboratory | Physics and Astronomy - College of Liberal Arts and Sciences | The University of Iowa"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "identity",
+        "reasoning": "Assessment steps:\n- Field answer provides identity details (name, title, institution, department, email, LinkedIn, research focus, PI role). These align with excerpts confirming David M. Miles at University of Iowa, his role, and research focus (Excerpt 0, 1, 3, 4, 5).\n- The user query asks for a comprehensive structured report including funding, openings, LinkedIn evidence, confidence, caveats, and sources. The provided field answer only covers identity aspects and cites some sources; it does not provide Recent/Active Funding, Recent/Open Positions, LinkedIn Evidence in a structured form, or Confidence/Caveats. Therefore, completeness is false.\n- Excerpt coverage assessment:\n  - Excerpt 0 confirms identity and department.\n  - Excerpt 1 confirms title and research focus.\n  - Excerpt 4 confirms Miles PI of TRACERS (relevant to PI role mentioned).\n  - Excerpt 3 provides LinkedIn profile reference.\n  - Excerpt 5 mentions TRACERS funding context (NASA grant) but not any explicit grant details in the field answer.\n  - Overall, excerpts partially support the identity items but do not cover the full required fields.\n- Conclusion: Completeness = false. Supported = true because the field answer contains claims that are supported by the excerpts, even though it is incomplete.\n- Recommendation: If asked to improve, add sections for funding (with explicit grants and URLs), current/open postings, explicit LinkedIn evidence with posting URLs, and a concise confidence/caveats note, all cross-checked against official sources.\n",
+        "citations": [
+          {
+            "url": "https://physics.uiowa.edu/people/david-m-miles",
+            "excerpts": [
+              "David M. Miles, PhD - Physics and Astronomy\nDavid M. Miles is an experimental space physicist specializing in the development of next-generation spaceflight magnetic field instruments and particularly"
+            ],
+            "title": "David M. Miles, PhD - Physics and Astronomy"
+          },
+          {
+            "url": "https://miles.lab.uiowa.edu/about",
+            "excerpts": [
+              "About | Miles Research Lab - The University of Iowa\nAbout David Miles, F. Wendell Miller Associate Professor in the University of Iowa Department of Physics and Astronomy, is an experimental space physicist specializing in the development of next-generation spaceflight magnetic field instruments and particularly miniature instruments for nanosatellites and multi-point measurement constellations."
+            ],
+            "title": "About | Miles Research Lab - The University of Iowa"
+          },
+          {
+            "url": "https://miles.lab.uiowa.edu/people",
+            "excerpts": [],
+            "title": "People | Miles Research Lab | The University of Iowa"
+          },
+          {
+            "url": "https://www.linkedin.com/in/david-miles-0872171b6",
+            "excerpts": [
+              "David Miles - Experimental Space Physicist\nExperimental Space Physicist \u00b7 Experience: University of Iowa \u00b7 Location: Iowa City \u00b7 293 connections on LinkedIn. View David Miles' profile on LinkedIn,"
+            ],
+            "title": "David Miles - Experimental Space Physicist"
+          },
+          {
+            "url": "https://physics.uiowa.edu/news/2023/09/miles-named-pi-tracers-mission",
+            "excerpts": [
+              "Miles Named PI of TRACERS Mission - Physics and Astronomy"
+            ],
+            "title": "Miles Named PI of TRACERS Mission - Physics and Astronomy The University of Iowa https://physics.uiowa.edu \u203a news \u203a 2023/09 \u203a miles-na..."
+          },
+          {
+            "url": "https://miles.lab.uiowa.edu/missions/tracers",
+            "excerpts": [
+              "TRACERS | Miles Research Lab - The University of Iowa\nJul 23, 2025 \u2014 ... 2025, from Vandenberg Space Force Base. This mission will help answer long ... TRACERS mission funded by $115 million grant from NASA takes next step."
+            ],
+            "title": "TRACERS | Miles Research Lab - The University of Iowa"
+          },
+          {
+            "url": "https://www.linkedin.com/in/david-miles-011b8517",
+            "excerpts": [
+              "David Miles\nEducation: Worcester State College \u00b7 Location: Granby \u00b7 2 connections on LinkedIn. View David Miles' profile on LinkedIn, a professional community of 1 billion"
+            ],
+            "title": "David Miles"
+          },
+          {
+            "url": "https://www.linkedin.com/in/davidcmiles",
+            "excerpts": [
+              "David Miles, Ed.D, SPHR, CMF - Northern Arizona University\nDr. David C. Miles has gathered over forty five years of multi-functional experience\u2026 \u00b7 Experience: Northern Arizona University \u00b7 Education: The George"
+            ],
+            "title": "David Miles, Ed.D, SPHR, CMF - Northern Arizona University"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "recent_and_active_funding",
+        "reasoning": "Assessment reasoning:\n- The field_answer provides a multi-section report with funding items, roles, and sources, plus a note about NSF search results. However, the required structured report fields are: Identity; Recent/Active Funding; Recent and Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources.\n- The field_answer includes several funding-related sections (Recent/Active Funding, Post-2024 funding, institutional funding) and references sources, which aligns with Recent/Active Funding. It also includes some lab/institutional context but does not present a clear, explicit Identity block separate from narrative notes. It largely avoids consolidating a definitive Identity verification and explicit current affiliation as a standalone section.\n- The field_answer does include a \u201cNo verified public evidence found\u201d statement for NSF funding, which aligns with Confidence and Caveats in part, but a dedicated, explicit Confidence and Caveats section is not clearly provided.\n- LinkedIn Evidence is requested, but the field_answer only mentions LinkedIn in passing as a search pointer and does not provide a direct LinkedIn Evidence section or specific LinkedIn post URLs. Therefore, LinkedIn Evidence is not satisfied.\n- Overall, the answer is informative and largely supported by excerpts but is not fully complete according to the required structured report format (missing explicit Identity section and explicit LinkedIn Evidence section). Therefore, completeness should be false. Supported by excerpts: yes, the content cites sources and references excerpts; thus, supported = true.",
+        "citations": [
+          {
+            "url": "https://www.eoportal.org/satellite-missions/tracers",
+            "excerpts": [
+              "TRACERS (Tandem Reconnection and Cusp ...\nNov 13, 2025 \u2014 The TRACERS mission is to connect the magnetospheric cusp to the magnetopause - discovering how spatial or temporal variations in magnetic reconnection drive"
+            ],
+            "title": "TRACERS (Tandem Reconnection and Cusp ..."
+          },
+          {
+            "url": "https://physics.uiowa.edu/news/2023/09/miles-named-pi-tracers-mission",
+            "excerpts": [
+              "Miles Named PI of TRACERS Mission - Physics and Astronomy"
+            ],
+            "title": "Miles Named PI of TRACERS Mission - Physics and Astronomy The University of Iowa https://physics.uiowa.edu \u203a news \u203a 2023/09 \u203a miles-na..."
+          },
+          {
+            "url": "https://kletzing.physics.uiowa.edu/grants-and-contracts",
+            "excerpts": [
+              "Grants and Contracts | Craig A. Kletzing - The University of Iowa\nJun 2019 - present, Tandem Reconnection And Cusp Electrodynamics Reconnaissance Satellites (TRACERS) Funded by NASA. Award amount: ($115,000,000.00)."
+            ],
+            "title": "Grants and Contracts | Craig A. Kletzing - The University of Iowa"
+          },
+          {
+            "url": "https://science.nasa.gov/mission/tracers",
+            "excerpts": [
+              "TRACERS\nSep 6, 2024 \u2014 TRACERS helps understand magnetic reconnection and its effects in Earth's atmosphere. Magnetic reconnection occurs when activity from the"
+            ],
+            "title": "TRACERS"
+          },
+          {
+            "url": "https://physics.uiowa.edu/news/2024/08/iowa-lands-15-million-award-build-advanced-space-equipment",
+            "excerpts": [
+              "Iowa lands $1.5 million award to build advanced space ...\nAug 23, 2024 \u2014 Other co-investigators on the award are Jasper Halekas, principal investigator of the ACES instrument on TRACERS, and David Miles, principal"
+            ],
+            "title": "Iowa lands $1.5 million award to build advanced space ..."
+          },
+          {
+            "url": "https://strategicplan.uiowa.edu/strategic-vision-tracers",
+            "excerpts": [
+              "Strategic vision of TRACERS - The University of Iowa\nThe TRACERS (Tandem Reconnection and Cusp Electrodynamics Reconnaissance Satellites) mission is the latest example of this legacy. This NASA-funded project will"
+            ],
+            "title": "Strategic vision of TRACERS - The University of Iowa"
+          },
+          {
+            "url": "https://physics.uiowa.edu/iowa-spaceflight-laboratory",
+            "excerpts": [],
+            "title": "Iowa Spaceflight Laboratory | Physics and Astronomy - College of Liberal Arts and Sciences | The University of Iowa"
+          },
+          {
+            "url": "https://miles.lab.uiowa.edu/",
+            "excerpts": [],
+            "title": "Miles Research Lab | The University of Iowa"
+          },
+          {
+            "url": "https://www.publicnow.com/view/72C53A05E98209EBFE63EE0D7C6B10DC217F91A7",
+            "excerpts": [
+              "The University of Iowa (via Public) / New Iowa Spaceflight ...\nThe UI's new Iowa Spaceflight Laboratory will expand space research on campus and help attract new internal and external research partnerships. Fueled by the success of the recent TRACERS mission, the lab further cements Iowa's role as a national leader in building and testing space instruments."
+            ],
+            "title": "The University of Iowa (via Public) / New Iowa Spaceflight ..."
+          },
+          {
+            "url": "https://miles.lab.uiowa.edu/people",
+            "excerpts": [],
+            "title": "People | Miles Research Lab | The University of Iowa"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "recent_and_open_positions",
+        "reasoning": "Assessment reasoning:\n- Completeness: The field_answer provides a detailed open-position report, identifies an open posting (with title, status, posted date, location, and contact), notes limitations (contact person not Miles and absence of Miles-specific postings), and includes adjacent lab/group context. It also attempts to cover adjacent hiring activity and historical postings. Given the field description\u2019s demand for open positions, status, posting dates, etc., the field_answer largely covers the expected components. There are caveats and claims about funding/connectivity and explicit statements about LinkedIn evidence that are tangential or not strongly evidenced in the excerpts. Overall, the answer addresses the core request, but it introduces assertions (e.g., TRACERS mission, NASA award linkage, explicit LinkedIn post presence) that are not clearly supported by the provided excerpts. Therefore, completeness is judged True, but with caveats noted in the reasoning about evidentiary support for some assertions.\n- Excerpts support: The excerpts include a specific open posting (Faculty Requisition Details - Jobs@UIOWA, 75971) and some general UI Iowa pages, which align with parts of the answer (open posting details and department context). However, many of the more extensive claims (e.g., exact ties to TRACERS, NASA funding, and explicit LinkedIn postings) are not present in the excerpts provided and thus are not fully supported by the excerpts. Therefore, the field_answer is not fully supported by the excerpts as a whole.\n- Conclusion: Completeness = True; Supported = False due to incomplete corroboration of several key claims beyond the excerpted sources.",
+        "citations": [
+          {
+            "url": "https://jobs.uiowa.edu/faculty/view/75971",
+            "excerpts": [
+              "Faculty Requisition Details - Jobs@UIOWA: Search and Apply ...\nWe seek an outstanding candidate to build a productive, visible, externally funded research program in experimental space physics that leverages these unique resources."
+            ],
+            "title": "Faculty Requisition Details - Jobs@UIOWA: Search and Apply ..."
+          },
+          {
+            "url": "https://miles.lab.uiowa.edu/",
+            "excerpts": [],
+            "title": "Miles Research Lab | The University of Iowa"
+          },
+          {
+            "url": "https://miles.lab.uiowa.edu/people",
+            "excerpts": [],
+            "title": "People | Miles Research Lab | The University of Iowa"
+          },
+          {
+            "url": "https://jobs.uiowa.edu/",
+            "excerpts": [
+              "Jobs @ Uiowa"
+            ],
+            "title": "Jobs @ Uiowa"
+          },
+          {
+            "url": "https://physics.uiowa.edu/",
+            "excerpts": [
+              "Physics and Astronomy - The University of Iowa\nHome of James Van Allen, the \u201cFather of Space Science\" and one of the Top Fifth Global Universities in Physics according to U.S. News and World Report."
+            ],
+            "title": "Physics and Astronomy - The University of Iowa"
+          },
+          {
+            "url": "https://physics.uiowa.edu/people",
+            "excerpts": [],
+            "title": "People"
+          },
+          {
+            "url": "https://grad.uiowa.edu/funding",
+            "excerpts": [],
+            "title": "Funding | Graduate College - The University of Iowa"
+          }
+        ],
+        "confidence": "medium"
+      },
+      {
+        "field": "linkedin_evidence",
+        "reasoning": "Assessment reasoning:\n- Field: linkedin_evidence\n- The user query requests a concise, structured report including identity, funding, positions, LinkedIn evidence, confidence, caveats, and sources. The provided field_answer focuses solely on LinkedIn evidence: a slug, a title snippet, and a caveat about prior scraping and corroboration needs. It does not address the full requested report (identity verification, funding, openings, confidence, sources). Therefore, completeness should be false because the field answer does not comprehensively cover all aspects of the field_description/query.\n- Excerpts provided include a LinkedIn profile slug and a fragment mentioning David Miles as Experimental Space Physicist at UIowa, which supports the presence of LinkedIn evidence. The field_answer includes these elements and explicitly notes limitations and checks performed, which is aligned with the excerpts. This partial alignment supports a true value for 'supported' since the answer is grounded in excerpts, but it does not fulfill the entire requested scope.\n- Conclusion: completeness = false (not a complete, comprehensive report per the query); supported = true (the answer is anchored in the provided excerpts).\n- No additional sources were provided beyond excerpts; thus, the support is limited to what is present in the excerpts.\n",
+        "citations": [
+          {
+            "url": "https://www.linkedin.com/in/david-miles-0872171b6",
+            "excerpts": [
+              "David Miles - Experimental Space Physicist\nExperimental Space Physicist \u00b7 Experience: University of Iowa \u00b7 Location: Iowa City \u00b7 293 connections on LinkedIn. View David Miles' profile on LinkedIn,"
+            ],
+            "title": "David Miles - Experimental Space Physicist"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "confidence_and_caveats",
+        "reasoning": "Reasoning for evaluation:\n- The field_answer presents a series of confidence statements and notes but does not provide the structured, field-specific report that the field_description and the query require (Identity verification, Recent/Active Funding, Open/Closed Positions, LinkedIn Evidence, Confidence/Caveats, Sources). Therefore, completeness is false because the answer does not fully address all required aspects in a consolidated format.\n- Regarding excerpts support: Excerpts include items confirming David M. Miles (UIowa) and related TRACERS information and a 2024 $1.5M award news article. However, several specific claims in field_answer (e.g., TRACERS $115M cap sourced from three independent sources; explicit NASA grant details with Miles as co-investigator; precise roles such as PI/co-PI; explicit current/future funding statuses; LinkedIn evidence; and a comprehensive \u201cSources\u201d section with direct URLs for every positive claim) are not fully corroborated by the provided excerpts. As such, the field answer is not consistently supported by the excerpts.\n- Given the lack of a complete, structured report and partial excerpt support, both completeness and supported should be false.",
+        "citations": [
+          {
+            "url": "https://physics.uiowa.edu/people/david-m-miles",
+            "excerpts": [
+              "David M. Miles, PhD - Physics and Astronomy\nDavid M. Miles is an experimental space physicist specializing in the development of next-generation spaceflight magnetic field instruments and particularly"
+            ],
+            "title": "David M. Miles, PhD - Physics and Astronomy"
+          },
+          {
+            "url": "https://www.eoportal.org/satellite-missions/tracers",
+            "excerpts": [
+              "TRACERS (Tandem Reconnection and Cusp ...\nNov 13, 2025 \u2014 The TRACERS mission is to connect the magnetospheric cusp to the magnetopause - discovering how spatial or temporal variations in magnetic reconnection drive"
+            ],
+            "title": "TRACERS (Tandem Reconnection and Cusp ..."
+          },
+          {
+            "url": "https://physics.uiowa.edu/news/2024/08/iowa-lands-15-million-award-build-advanced-space-equipment",
+            "excerpts": [
+              "Iowa lands $1.5 million award to build advanced space ...\nAug 23, 2024 \u2014 Other co-investigators on the award are Jasper Halekas, principal investigator of the ACES instrument on TRACERS, and David Miles, principal"
+            ],
+            "title": "Iowa lands $1.5 million award to build advanced space ..."
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "synthesis_comparative_analysis",
+        "reasoning": "Assessment reasoning:\n- The field_answer provides a three-axis comparative table about Miles and two peers, but it does not deliver the structured report requested in the user query (Identity verification, Recent/Active Funding with exact grant fields and sources, Open/Closed positions with postings, LinkedIn evidence, Confidence/Caveats, and Sources).\n- The field_description implies a comprehensive synthesis/report across multiple dimensions (funding, hiring, evidence, etc.), but the provided answer focuses narrowly on a summary table with some narrative notes and citations placeholders rather than the explicit, source-backed sections the query asks for. \n- Some elements in the field_answer (e.g., references to TRACERS, a 1.495M SSMS award, and the 115M TRACERS award) tangentially align with excerpts, but the answer did not systematically verify identity, provide complete grant details (funder, currency, exact dates, project scope, current status, actor role, URLs), or provide a structured hiring/open postings section with postings dates and URLs. \n- Therefore, completeness is false since the answer does not satisfy the explicit multi-part reporting requirements. \n- Regarding excerpts support: The excerpts mention a TRACERS award of 115M and a 1.5M award with Miles as co-investigator, which loosely corroborate parts of the funding discussion, but the field_answer\u2019s broader claims and structure are not directly supported verbatim by the excerpts. Hence, supported should be false.\n- If the user wants a fully verifiable, source-cited report, a new response aligned to the requested sections with direct URLs and explicit field-by-field entries is needed.",
+        "citations": [
+          {
+            "url": "https://kletzing.physics.uiowa.edu/grants-and-contracts",
+            "excerpts": [
+              "Grants and Contracts | Craig A. Kletzing - The University of Iowa\nJun 2019 - present, Tandem Reconnection And Cusp Electrodynamics Reconnaissance Satellites (TRACERS) Funded by NASA. Award amount: ($115,000,000.00)."
+            ],
+            "title": "Grants and Contracts | Craig A. Kletzing - The University of Iowa"
+          },
+          {
+            "url": "https://physics.uiowa.edu/news/2024/08/iowa-lands-15-million-award-build-advanced-space-equipment",
+            "excerpts": [
+              "Iowa lands $1.5 million award to build advanced space ...\nAug 23, 2024 \u2014 Other co-investigators on the award are Jasper Halekas, principal investigator of the ACES instrument on TRACERS, and David Miles, principal"
+            ],
+            "title": "Iowa lands $1.5 million award to build advanced space ..."
+          }
+        ],
+        "confidence": "low"
+      }
+    ],
+    "content": {
+      "executive_summary": "- **Identity Confirmed**: David M. Miles, PhD is Associate Professor (F. Wendell Miller Associate Professor title) and Deputy Director of Research Operations in the Department of Physics and Astronomy at the University of Iowa. [executive_summary[0]] [1], [executive_summary[1]] [13], [executive_summary[2]] [9]. -> The lead is correctly identified and currently active at Iowa.\n- **TRACERS Mission (Mission Budget, Not Personal Grant)**: As of September 2023 Miles became PI of TRACERS, which is funded by NASA for \"no more than $115 million, excluding rideshare costs.\" [executive_summary[2]] [9], [executive_summary[3]] [17], [executive_summary[4]] [47]. -> This is the largest externally funded research project in UI history; treat as a mission/program budget, not as a competitive personal research grant.\n- **Post-2024 Competitive Grant With Miles Involvement**: A $1.495M NASA Safety, Security, and Mission Services award announced on August 23, 2024 has Casey DeRoo as PI and David Miles as a named co-investigator; the work funds diffraction grating and ring-core fabrication equipment and the Edge of Space Academy, not doctoral hires. [executive_summary[5]] [45]. -> Confirmed personal award evidence beyond TRACERS, but Miles is co-investigator, not PI.\n- **Lab Composition (13 Staff)**: The Miles Research Lab lists 13 members including three postdoctoral scholars (Blandin, Feltman, Henderson/Soni), a principal/associate/project/aerospace engineers, two graduate teaching assistants, and one graduate research assistant. [executive_summary[6]] [44]. -> A larger group than is typical of a single PI's bench, suggesting steady grant-funded scientific staff.\n- **Open Faculty Posting in the Same Group (After Jan 1, 2026)**: Tenure-track Faculty: Experimental Space Physics (Requisition 75971) was posted on June 24, 2026, in the Department of Physics and Astronomy, with informal inquiries directed to Jasper Halekas (not Miles). [executive_summary[7]] [51]. -> This is the strongest active hiring lead; it sits in the same department/lab footprint as Miles but does not name Miles as the supervisor.\n- **Iowa Spaceflight Laboratory Open ($7.2M, 2026)**: The Miles lab home page describes a \"Iowa Spaceflight Laboratory\" open May 6, 2026 with a $7.2 million investment; ISL leadership is identified as Richard T. Dvorsky (Administrator), not Miles. [executive_summary[1]] [13], [executive_summary[8]] [35]. -> Treat as new institutional infrastructure adjacent to Miles' group rather than a Miles-led program.",
+      "identity": "| Field | Value | Source |\n|---|---|---|\n| Name | David M. Miles, PhD | [identity[0]] [1] |\n| Current title | Associate Professor (also holds the F. Wendell Miller Associate Professor title); Deputy Director of Research Operations | [identity[0]] [1], [identity[1]] [40] |\n| Institution | University of Iowa, College of Liberal Arts and Sciences | [identity[0]] [1] |\n| Department | Physics and Astronomy | [identity[0]] [1] |\n| Email | david-miles@uiowa.edu | [identity[0]] [1], [identity[2]] [44] |\n| Phone | (319) 335-3007 | [identity[2]] [44] |\n| LinkedIn | linkedin.com/in/david-miles-0872171b6 (Associate Professor at University of Iowa; location Iowa City, IA; 289 connections) | [identity[3]] [4] |\n| Research focus | Spaceflight instrumentation, magnetometers (incl. MAGIC fluxgate), ionospheric plasma, auroral dynamics | [identity[0]] [1], [identity[2]] [44] |\n| PI role | PI of TRACERS mission since September 2023 (announcement) | [identity[4]] [9], [identity[5]] [47] |\n| Other leadership | Deputy Director of Research Operations (Iowa); Instrument Co-PI of the magnetic field instrument on CASSIOPE/e-POP; Instrument PI of student-led Ex-Alta 1 CubeSat | [identity[0]] [1], [identity[1]] [40] |\n\n**Namesakes explicitly deprioritized (verified distinct)**: David Miles at Worcester State (LinkedIn slug david-miles-011b8517, 2 connections, no Iowa connection); David C. Miles, Ed.D, SPHR, CMF at Northern Arizona University. Both have unrelated profiles in education and human resources. [identity[6]] [10], [identity[7]] [12].",
+      "recent_and_active_funding": "**Classification rule used below**: competitive grant = a peer-reviewed/funded award with a named PI; mission budget = a NASA mission-level program (TRACERS) with partner subcontracts; prize = award for recognition rather than funded research; consortium funding = shared multi-institution program; institutional = internal UI funds. Per instructions, \"Do not claim funds are available for a PhD unless a source explicitly connects the funding to hiring or doctoral support.\"\n\n### Active Mission-Level Program (allocated to Iowa, Miles as Mission PI)\n\n| Title | Funder | Amount (USD) | Selection/Funding Date | Project Dates | Status | Miles Role | Source |\n|---|---|---|---|---|---|---|---|\n| Tandem Reconnection And Cusp Electrodynamics Reconnaissance Satellites (TRACERS) | NASA Heliophysics | $115,000,000 cap (excluding rideshare costs) | Selected June 2019; funding May 2019 | Jun 2019 - present; launched 2025-07-23; commissioning as of Sep 2025 | Active mission, in low Earth orbit | Mission PI since Sept 2023 | [recent_and_active_funding[0]] [17], [recent_and_active_funding[1]] [9], [recent_and_active_funding[2]] [46], [recent_and_active_funding[3]] [16] |\n\n**Classification note**: This is a NASA mission-level budget, assigned to the University of Iowa as the lead institution. The amount is the program cost cap across all partners, not a personal research grant to Miles. Craig Kletzing's UI grants page still lists TRACERS under his name and explicitly tags it as a $115M NASA award ([recent_and_active_funding[2]] [46]), so any downstream whois should treat Kletzing + Iowa as institutional stewards of the budget while Miles is the science PI from Sept 2023 onward.\n\n### Post-2024-01-01 Competitive Grant With Miles Involvement\n\n| Title | Funder | Amount (USD) | Announcement Date | Project Dates | Status | Miles Role | Source |\n|---|---|---|---|---|---|---|---|\n| Iowa lands $1.5 million award to build advanced space equipment (No formal award title in article) | NASA Safety, Security, and Mission Services | $1.495 million | Friday, August 23, 2024 | One-year duration (per article) | Awarded, one-year award | Co-investigator; PI is Casey DeRoo (Iowa Physics & Astronomy) | [recent_and_active_funding[4]] [45] |\n\n**Funded work and what it does NOT fund**: This grant purchases \"state-of-the-art equipment needed to build instruments for future missions\" (diffraction gratings and an \"advanced version of a ring core\"), and expands participants in Iowa's \"Edge of Space Academy\" student program. The article does not state that funds hire PhDs or postdoctoral researchers.\n\n### Other Post-2024 Iowa Project Funding Listed by UI Strategic Plan (Miles not explicitly named)\n\n| Project | Funder | Amount (USD) | Date | Source |\n|---|---|---|---|---|\n| \"Extending Iowa's Success in Space-Based Research Across Campus\" | UI P3 (institutional) | $3.6 million | FY22 (pre-2024) | [recent_and_active_funding[5]] [31] |\n| \"Purchase state-of-the-art equipment to build instruments for future missions / Edge of Space Academy\" (covered in same Aug 2024 news) | NASA Safety, Security, and Mission Services | $1.5 million | Aug 2024 | [recent_and_active_funding[4]] [45] |\n| \"Launching the Next Phase of Iowa Space Missions\" | UI P3 (institutional) | $653,485 (over two years) | April 2025 | [recent_and_active_funding[5]] [31] |\n\nThe $1.5M NASA 2024 award and the $653,485 P3 award are not tied by primary sources to David Miles as PI; the strategic-plan page names the projects but not the named PIs for them. Do not infer Miles' role for the $653,485 UI P3 internal grant.\n\n### NSF Award Search \u2014 Direct Check\n\nA direct query to the NSF advanced award search interface (`https://www.nsf.gov/awardsearch/advancedSearch?...PIFirstName=David&PILastName=Miles&PIOrganization=University+of+Iowa`) returned no extracted result rows in this run, only the search form page itself. **No verified public evidence found** of an NSF competitive grant awarded specifically to David Miles at the University of Iowa in the 2024-2026 window. What was checked: NSF award search UI; the cache-hit response did not surface a result table. Recommended next check: confirm by rerunning NSF search with co-PI keyword filters and by date range.\n\n### Iowa Spaceflight Laboratory \u2014 Institutional Infrastructure\n\n| Item | Detail | Source |\n|---|---|---|\n| Description | \"Multidisciplinary research, engineering, and development laboratory\" supporting \"concept exploration, design, fabrication, integration, testing, and operations\" | [recent_and_active_funding[6]] [35] |\n| Investment | $7.2 million (mentioned on Miles lab home page) | [recent_and_active_funding[7]] [13] |\n| Opening | Mid-2026 (announced Feb 3, 2026; Miles lab page mentions May 6, 2026) | CLAS news 2026/01, [recent_and_active_funding[8]] [41], [recent_and_active_funding[7]] [13] |\n| Miles role | Public source describes Miles as TRACERS PI in connection with ISL; Miles is NOT named as ISL Administrator | [recent_and_active_funding[8]] [41], [recent_and_active_funding[6]] [35] |\n| ISL Administrator | Richard T. Dvorsky (also listed in Miles' lab group as Principal Engineer) | [recent_and_active_funding[6]] [35], [recent_and_active_funding[9]] [44] |\n\n**Classification note**: Treat this as institutional infrastructure investment (likely university/state funds plus TRACERS momentum), not as a personal competitive grant awarded to Miles. Public sources do not name the funder; do not infer \"NASA grant\" for ISL.",
+      "recent_and_open_positions": "### Currently Open Posting Within the Department (Adjacent to Miles' Group)\n\n| Title | Type | Status as of 2026-07-11 | Posted Date | Deadline | Location | Description | Official URL | LinkedIn Post |\n|---|---|---|---|---|---|---|---|---|\n| Tenure-Track Faculty: Experimental Space Physics (Requisition 75971) | Tenure-track faculty (open rank: Assistant/Associate/Full Professor) | Open; \"Extended Until Position is Filled\" | Wednesday, June 24, 2026 | Rolling (until filled) | Iowa City, IA | Build \"a productive, visible, externally funded research program in experimental space physics\" leveraging Iowa's spaceflight facilities; teach/mentor undergrad and grad; provide service. Informal inquiries to Professor Jasper Halekas (not Miles). | [recent_and_open_positions[0]] [51] | No LinkedIn post URL found in this run |\n\n**Important caveat for hiring assessment**: This is the most prominent open posting in Miles' department right now, but the official posting specifies Jasper Halekas as the contact, not Miles. For a Miles-attached postdoc or PhD line, no Iowa-specific posting was found.\n\n### Currently Open PhD/Postdoc/Research Staff Positions Connected to Miles Directly\n\n**No verified public evidence found** for a currently open PhD, postdoctoral, research assistant, or research engineer posting that explicitly lists David Miles as supervisor or is published on miles.lab.uiowa.edu. What was checked:\n- [recent_and_open_positions[1]] [13] \u2014 no \"Hiring\" or \"Open positions\" link surfaced.\n- [recent_and_open_positions[2]] [44] \u2014 listings are for current members; no \"Apply\" or open-position call observed.\n- [recent_and_open_positions[3]] [24] \u2014 search returned portal landing; the dedicated Miles-lab Posting was not surfaced in the cache-hit results.\n- [recent_and_open_positions[4]] [6] and [recent_and_open_positions[5]] [34] \u2014 no job-posting module surfaced.\n- [recent_and_open_positions[6]] [52] \u2014 generic UI funding/fellowships page, not Miles-specific.\n\n### Closed/Historical Postings (On or after 2026-01-01)\n\n**No verified public evidence found** for closed/historical PhD, postdoctoral, RA, or research-engineer postings published on or after 2026-01-01 that explicitly tie to David Miles. The UI Jobs@UIowa portal returned the homepage ([recent_and_open_positions[3]] [24]) but did not surface an indexed list of closed Milton-group openings in the search.\n\n### Adjacent Lab Group Composition (Evidence of Active Funding-Backed Hiring)\n\nThe Miles Research Lab lists 13 active members, suggesting ongoing grant-supported staffing:\n\n| Name | Role | Email |\n|---|---|---|\n| David Miles | Assistant/Associate Professor (PI) | david-miles@uiowa.edu |\n| Matthew Blandin | Postdoctoral Research Fellow/Scholar | matthew-blandin@uiowa.edu |\n| Robert Broadfoot | Graduate Research Assistant | robert-broadfoot@uiowa.edu |\n| Richard Dvorsky | Principal Engineer | richard-dvorsky@uiowa.edu |\n| Connor Feltman | Postdoctoral Research Fellow/Scholar | connor-feltman@uiowa.edu |\n| Matthew Finley | Assistant Research Scientist | matthew-g-finley@uiowa.edu |\n| Christian Hansen | Project Engineer | christian-t-hansen@uiowa.edu |\n| Sarah Henderson, PhD | Postdoctoral Research Fellow/Scholar | sarah-a-henderson@uiowa.edu |\n| Samuel Hisel | Engineering Associate | samuel-hisel@uiowa.edu |\n| Olivia Jones | Graduate Teaching Assistant | oljones@uiowa.edu |\n| Amanda Lasko | Aerospace Project Engineer | amanda-lasko@uiowa.edu |\n| Jessica Mondoskin | Graduate Teaching Assistant | jessica-mondoskin@uiowa.edu |\n| Shirsh Lata Soni | Postdoctoral Research Fellow/Scholar | shirshlata-soni@uiowa.edu |\n| Antonio Washington | Aerospace Project Engineer | antonio-washington@uiowa.edu |\n\nSource: [recent_and_open_positions[2]] [44]. Takeaway: Three postdocs in residence is consistent with the TRACERS mission and the $1.5M NASA 2024 hardware award; 3 graduate teaching assistants and 1 graduate research assistant are present, suggesting the lab absorbs graduate students through Iowa's standard admissions channels rather than through a dedicated Miles-lab funded-line posting.",
+      "linkedin_evidence": "| Claim | Source |\n|---|---|\n| Slug david-miles-0872171b6 \u2014 \"David Miles \u2014 Experimental Space Physicist\" at University of Iowa (Iowa City, IA), 289 connections | [linkedin_evidence[0]] [4] |\n| Position history \u2014 Associate Professor since July 1, 2023 (at Iowa); before that Assistant Professor Sept 1, 2017 to July 1, 2023 | [linkedin_evidence[0]] [4] |\n\n**Important caveat**: A prior scrape of Miles' LinkedIn profile returned a framework/text fragment that mentioned \"Visiting Assistant Professor\" and \"System Engineer\" openings. Direct page rendering on this run returned only the profile identity card (No verified extracts of public posts/recommendations in this run). Public LinkedIn posts about hiring were not directly fetched \u2014 the only artifacts available are the profile slug and the basic position history. Treat those prior mentions as **discovery evidence only**; they have not been corroborated here against Jobs@UIowa, Miles lab page, or any official UI source. Search LinkedIn posts directly (e.g., Google `site:linkedin.com \"David Miles\" \"University of Iowa\"` for newer posts) if a complete LinkedIn-post history is needed.",
+      "confidence_and_caveats": "- **High confidence** in identity (faculty page + lab page + LinkedIn + news announcements cross-reference one consistent David M. Miles at Iowa Physics & Astronomy). [confidence_and_caveats[0]] [1]\n- **High confidence** in TRACERS mission scope and $115M cap (three independent sources: eoPortal, Kletzing grants page, NASA mission page, plus Press-Citizen story). [confidence_and_caveats[1]] [17]\n- **High confidence** in the $1.5M NASA Aug 2024 announcement: primary institutional news article names DeRoo as PI and Miles as co-investigator. [confidence_and_caveats[2]] [45]\n- **Medium confidence** in Miles' role on the $1.5M award:\n  - The article's \"Other co-investigators on the award are Jasper Halekas, principal investigator of the ACES instrument on TRACERS, and David Miles, principal [investigator]\" wording places Miles and Halekas as co-investigators but does not name the second-tier role precisely (Is Miles co-PI for a sub-task? named Senior Personnel?). The snippet trail was truncated; rerun the page directly with detail if a precise title is needed.\n- **Low confidence** on direct NSF awards to Miles at Iowa \u2014 the NSF award search returned only the search form page, noRows. Recommend a date-bounded reroll with `StartDate=01/01/2024&EndDate=06/30/2026` and direct keyword search \"Miles Iowa magnetometer\" to confirm whether an NSF award exists.\n- **Low confidence** on ISL $7.2M funder: the Miles lab home page lists the figure and a May 6, 2026 opening; neither the lab home nor the ISL page nor the CLAS news identify a specific external funder. Treat as institutional capital investment pending confirmation.\n- **Low confidence** that the open tenure-track posting (Jobs@UIowa 75971) reports to Miles \u2014 the official posting directs inquiries to Jasper Halekas. Adjacent but not attributable to Miles.\n- **LinkedIn caveat**: prior extractions referenced Hiring posts on Miles' LinkedIn but no public LinkedIn post text was directly captured in this research run. Treat as discovery evidence only; an official lab or UI page should be the authoritative source for any open position.",
+      "synthesis_comparative_analysis": "**Three-axis comparison of Miles' funding posture vs. adjacent peers at Iowa**:\n\n| Dimension | David Miles (lead-013) | Craig Kletzing (Miles' mentor, formerly TRACERS PI per Kletzing grants page) | Jasper Halekas (TRACERS ACES PI; contact for Req. 75971) |\n|---|---|---|---|\n| Mission-level funding as PI | Yes \u2014 TRACERS PI from Sept 2023 (mission cost cap $115M) | Was TRACERS PI; still listed as PI/award-recipient on [synthesis_comparative_analysis[0]] [46] | TRACERS ACE instrument PI per [synthesis_comparative_analysis[1]] [45] |\n| 2024-2026 NASA competitive grant | Co-investigator on $1.495M NASA SSMS award (DeRoo PI) | (No new 2024-2026 award verified in this run) | Co-investigator on same $1.495M SSMS award |\n| Open departmental faculty hire | None attributed to Miles; Req. 75971 contact is Halekas | None verified | Listed as contact for Req. 75971 |\n| Mechanisms | Mission lead (TRACERS) + equipment co-investigator; hires through internal lab growth | Held TRACERS PI role until Sept 2023 | Magnetic reconnection instrument PI |\n| Trade-off: mission vs. personal grant | TRACERS dominates Miles' funding narrative; competitive personal grants are smaller and as co-I | TRACERS institutional lineage pre-Sept 2023 | TRACERS instrument-level PI; co-I on 2024 hardware award |\n| Time horizon | Mission active through end of 2026+; postdoc cohort size implies continued flow | Long-running mission tenure | Continuing instrument PI role |\n\n**Tensions and divergences**:\n1. **PI transition timing**: Kletzing's grants page still lists TRACERS under his name with $115M; Iowa announced Miles as PI in Sept 2023. Both pages are consistent if Miles is the science PI going forward and Kletzing remains the institutional award owner until contract novation. Researchers verifying funding should note this dual-listing.\n2. **Lab scale vs. personal-grant funding**: Miles' group supports 3 postdocs, 4 engineers and 2 graduate teaching assistants. The publicly documented competitive grant dollar amount attributable to Miles specifically (as PI/co-I in 2024-2026) is $1.495M as co-I, far smaller than what is needed to fund such a group, implying that TRACERS mission subcontracts and ISL internal funds carry the bulk of staff costs. This is consistent with TRACERS being the dominant funding vector.\n3. **Hiring pipeline**: Open departmental faculty hire (Req. 75971) does not name Miles; the Miles lab currently lacks an advertised Miles-line open postdoc or PhD posting. A lead interested in joining Miles' group should contact Miles directly ([david-miles@uiowa.edu](mailto:david-miles@uiowa.edu)) or apply through general Iowa Physics graduate admissions, not through a dedicated lab posting.\n4. **Recommendation**: pursue Miles as a TRACERS-aligned PI rather than as a personal competitive-grant PI. Hard-money TRACERS subcontract coverage and ISL postdoc lines are the channel; an explicit Miles-line NSF or fellowship award is not in evidence from this research."
+    },
+    "type": "json",
+    "beta_fields": null,
+    "mcp_tool_calls": null,
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "executive_summary": {
+          "type": "string",
+          "title": "Executive Summary"
+        },
+        "identity": {
+          "type": "string",
+          "title": "Identity"
+        },
+        "recent_and_active_funding": {
+          "type": "string",
+          "title": "Recent and Active Funding"
+        },
+        "recent_and_open_positions": {
+          "type": "string",
+          "title": "Recent and Open Positions"
+        },
+        "linkedin_evidence": {
+          "type": "string",
+          "title": "LinkedIn Evidence"
+        },
+        "confidence_and_caveats": {
+          "type": "string",
+          "title": "Confidence and Caveats"
+        },
+        "synthesis_comparative_analysis": {
+          "type": "string",
+          "title": "Synthesis (Comparative Analysis)"
+        }
+      },
+      "required": [
+        "executive_summary",
+        "identity",
+        "recent_and_active_funding",
+        "recent_and_open_positions",
+        "linkedin_evidence",
+        "confidence_and_caveats",
+        "synthesis_comparative_analysis"
+      ]
+    }
+  }
+}

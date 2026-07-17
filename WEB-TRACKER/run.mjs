@@ -22,7 +22,6 @@ import { execFile } from 'child_process';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import cron from 'node-cron';
-import { sendDailyDigest } from './lib/daily-digest.mjs';
 
 const BASE = dirname(fileURLToPath(import.meta.url));
 const CAREER_OPS = join(BASE, '..');
@@ -50,11 +49,11 @@ if (!envLoad.loaded) {
 
 // ── Helper: run a script ────────────────────────────────────────────
 
-function runScript(scriptPath, scriptArgs = []) {
+function runScript(scriptPath, scriptArgs = [], { timeoutMs = 120_000 } = {}) {
   return new Promise((resolve) => {
     const proc = execFile('node', [join(BASE, scriptPath), ...scriptArgs], {
       cwd: BASE,
-      timeout: 120_000,
+      timeout: timeoutMs,
     }, (err, stdout, stderr) => {
       if (stdout) process.stdout.write(stdout);
       if (stderr) process.stderr.write(stderr);
@@ -100,6 +99,18 @@ async function checkAutonomyHealth() {
 }
 
 async function runStartupWork() {
+  if (MODE !== 'manual') {
+    console.log('[boot] Running initial EURAXESS opportunity scan in background...');
+    await runScript('euraxess-scan.mjs', ['--all', '--refresh-liveness']);
+    await runScript('euraxess-factory-worker.mjs', ['--max', '3']);
+
+    console.log('[boot] Running initial PhDScanner / PhD-board opportunity scan in background...');
+    await runScript('phdscanner-scan.mjs', ['--all', '--refresh-liveness']);
+    await runScript('phdscanner-factory-worker.mjs', ['--max', '3']);
+    const findaphdCode = await runScript('findaphd-scan.mjs', ['--all', '--refresh-liveness'], { timeoutMs: 600_000 });
+    if (findaphdCode) console.warn('[boot] FindAPhD scan exited non-zero (Cloudflare/playwright may need a later tick).');
+  }
+
   console.log('[boot] Syncing career-ops data in background...');
   await runScript('adapters/sync-all.mjs');
 
@@ -122,8 +133,13 @@ async function runStartupWork() {
 
 // ── Step 1: Start server first ──────────────────────────────────────
 
-const { startServer } = await import('./server.mjs');
-await startServer();
+if (envEnabled(process.env.CAREER_OPS_FULL_SERVER)) {
+  const { startServer } = await import('./server.mjs');
+  await startServer();
+} else {
+  const { startFastServer } = await import('./server-fast.mjs');
+  await startFastServer();
+}
 
 // ── Step 2: Open browser ────────────────────────────────────────────
 
@@ -153,26 +169,49 @@ if (MODE !== 'manual') {
     await runScript('adapters/sync-all.mjs');
   });
 
+  // EURAXESS discovery: every 2 hours, offset away from busy top-of-hour cron.
+  cron.schedule('17 */2 * * *', async () => {
+    console.log(`\n[cron] Running EURAXESS opportunity scan...`);
+    await runScript('euraxess-scan.mjs', ['--refresh-liveness']);
+    await runScript('euraxess-factory-worker.mjs', ['--max', '3']);
+    await runScript('adapters/sync-all.mjs');
+  });
+
+  // PhD board discovery (PhDScanner + FindAPhD): every 2 hours, offset from EURAXESS.
+  cron.schedule('27 */2 * * *', async () => {
+    console.log(`\n[cron] Running PhDScanner opportunity scan...`);
+    await runScript('phdscanner-scan.mjs', ['--refresh-liveness']);
+    await runScript('phdscanner-factory-worker.mjs', ['--max', '3']);
+    console.log(`\n[cron] Running FindAPhD opportunity scan...`);
+    await runScript('findaphd-scan.mjs', ['--refresh-liveness'], { timeoutMs: 600_000 });
+    await runScript('adapters/sync-all.mjs');
+  });
+
+  // EURAXESS factory: every 15 minutes while the dashboard process is alive.
+  cron.schedule('*/15 * * * *', async () => {
+    console.log(`\n[cron] Running EURAXESS factory worker tick...`);
+    await runScript('euraxess-factory-worker.mjs', ['--max', '1']);
+  });
+
+  // PhDScanner factory: every 15 minutes, offset from EURAXESS factory.
+  cron.schedule('7,22,37,52 * * * *', async () => {
+    console.log(`\n[cron] Running PhDScanner factory worker tick...`);
+    await runScript('phdscanner-factory-worker.mjs', ['--max', '1']);
+  });
+
+  if (process.env.APIFY_TOKEN || process.env.EURAXESS_APIFY_TOKEN) {
+    cron.schedule('37 3 * * *', async () => {
+      console.log(`\n[cron] Running EURAXESS provider backfill...`);
+      await runScript('euraxess-backfill.mjs', ['--profile', 'fusion_plasma_diagnostics', '--max', '500']);
+      await runScript('adapters/sync-all.mjs');
+    });
+  }
+
   // Career-ops data sync: every 2 hours
   cron.schedule('0 */2 * * *', async () => {
     console.log(`\n[cron] Syncing career-ops data...`);
     await runScript('adapters/sync-all.mjs');
   });
-
-  const digestTimezone = process.env.DAILY_DIGEST_TIMEZONE || process.env.TZ || 'America/New_York';
-  if (envEnabled(process.env.DAILY_DIGEST_ENABLED)) {
-    cron.schedule('59 23 * * *', async () => {
-      console.log(`\n[cron] Sending daily digest...`);
-      try {
-        await runScript('adapters/sync-all.mjs');
-        await runCareerOpsScript('followup-cadence.mjs');
-        const result = await sendDailyDigest({ timeZone: digestTimezone });
-        console.log(`[cron] Daily digest sent: ${result.messageId || 'sent'}`);
-      } catch (err) {
-        console.error(`[cron] Daily digest failed: ${err.message}`);
-      }
-    }, { timezone: digestTimezone });
-  }
 
   if (MODE === 'autopilot') {
     // Deep research gate: every 4 hours
@@ -182,8 +221,32 @@ if (MODE !== 'manual') {
     });
   }
 
-  console.log(`[cron] Scheduled: jobs (8h), PhD (48h), sync (2h)${MODE === 'autopilot' ? ', gate (4h)' : ''}${envEnabled(process.env.DAILY_DIGEST_ENABLED) ? `, daily digest (23:59 ${digestTimezone})` : ''}`);
-  console.log('[cron] Jobs to Consider liveness is scheduled by the dashboard server.');
+  console.log(`[cron] Scheduled: jobs (8h), PhD (48h), EURAXESS scan (2h), PhD board scan (2h), EURAXESS factory (15m), PhDScanner factory (15m), sync (2h)${process.env.APIFY_TOKEN || process.env.EURAXESS_APIFY_TOKEN ? ', EURAXESS backfill (daily)' : ''}${MODE === 'autopilot' ? ', gate (4h)' : ''}`);
+  if (envEnabled(process.env.JOBS_TO_CONSIDER_LIVENESS)) {
+    console.log('[cron] Jobs to Consider liveness is scheduled by the dashboard server.');
+  } else {
+    console.log('[cron] Jobs to Consider liveness is off; use the control worker for heavy checks.');
+  }
+}
+
+// Daily digest is independent of scan autonomy — still needs the process (or Windows task) awake at 23:59.
+const digestTimezone = process.env.DAILY_DIGEST_TIMEZONE || process.env.TZ || 'America/New_York';
+if (envEnabled(process.env.DAILY_DIGEST_ENABLED)) {
+  cron.schedule('59 23 * * *', async () => {
+    console.log(`\n[cron] Sending daily digest...`);
+    try {
+      await runScript('adapters/sync-all.mjs');
+      await runCareerOpsScript('followup-cadence.mjs');
+      const { sendDailyDigest } = await import('./lib/daily-digest.mjs');
+      const result = await sendDailyDigest({ timeZone: digestTimezone });
+      console.log(`[cron] Daily digest sent: ${result.messageId || 'sent'} → ${(result.accepted || []).join(', ') || 'see SMTP log'}`);
+    } catch (err) {
+      console.error(`[cron] Daily digest failed: ${err.message}`);
+    }
+  }, { timezone: digestTimezone });
+  console.log(`[cron] Daily digest armed for 23:59 ${digestTimezone} → ${(process.env.DAILY_DIGEST_RECIPIENTS || 'default recipients')}`);
+} else {
+  console.log('[cron] Daily digest off (set DAILY_DIGEST_ENABLED=true in WEB-TRACKER/.env)');
 }
 
 console.log(`\n[ready] Dashboard running at http://localhost:3737`);

@@ -33,9 +33,6 @@ import { ollamaJsonSanity } from './lib/local-llm/ollama-client.mjs';
 import { pullOllamaModel, startOllama } from './lib/local-llm/ollama-runtime.mjs';
 import { buildOutreachDraft } from './lib/outreach-drafts.mjs';
 import { summarizeSourceHealth } from './lib/source-health.mjs';
-import { buildExportBuffer, EXPORT_FORMATS, EXPORT_SCOPES } from './lib/dashboard-export.mjs';
-import { buildDailyDigest, sendDailyDigest } from './lib/daily-digest.mjs';
-import { smtpConfigFromEnv, validateSmtpConfig } from './lib/mail-sender.mjs';
 import { writeDailyActivityCsv } from './lib/daily-activity-csv.mjs';
 import {
   DEFAULT_DIGEST_TIMEZONE,
@@ -61,7 +58,53 @@ import {
   syncResearchProspectsToDashboard,
   upsertResearchProspect,
 } from './lib/research-prospect-store.mjs';
-import { runLivenessSweep } from './jobs-to-consider-liveness.mjs';
+import {
+  findEuraxessOpportunity,
+  patchEuraxessOpportunity,
+  readEuraxessOpportunities,
+  syncEuraxessOpportunitiesToDashboard,
+} from './lib/euraxess/opportunity-store.mjs';
+import {
+  EURAXESS_EXECUTION_STAGES,
+  EURAXESS_TOPIC_LABELS,
+  euraxessHasArtifacts,
+  euraxessTopic,
+} from './lib/euraxess/filters.mjs';
+import {
+  euraxessFactoryStatus,
+  processEuraxessFactory,
+  queueEuraxessOpportunityWork,
+} from './lib/euraxess/factory.mjs';
+import {
+  findPhdscannerOpportunity,
+  patchPhdscannerOpportunity,
+  readPhdscannerOpportunities,
+  syncPhdscannerOpportunitiesToDashboard,
+} from './lib/phdscanner/opportunity-store.mjs';
+import { assertCanArchiveOpportunity } from './lib/protected-domain.mjs';
+import {
+  PHDSCANNER_EXECUTION_STAGES,
+  PHDSCANNER_TOPIC_LABELS,
+  phdscannerTopic,
+} from './lib/phdscanner/filters.mjs';
+import {
+  phdscannerFactoryStatus,
+  processPhdscannerFactory,
+  queuePhdscannerOpportunityWork,
+} from './lib/phdscanner/factory.mjs';
+import {
+  findExhibitorCompany,
+  patchExhibitorCompany,
+  readExhibitorCompanies,
+  syncExhibitorCompaniesToDashboard,
+} from './lib/exhibitor/company-store.mjs';
+import {
+  exhibitorFactoryStatus,
+  processExhibitorFactory,
+  queueExhibitorCompanyWork,
+  readExhibitorClearQueue,
+  refreshExhibitorClearQueueStatus,
+} from './lib/exhibitor/factory.mjs';
 import {
   TRACKER_EDITABLE_FIELDS,
   TRACKER_METADATA_FIELDS,
@@ -75,12 +118,14 @@ import {
 
 const BASE = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = join(BASE, 'data');
+const RUNTIME_DIR = join(BASE, 'runtime');
 const DASHBOARD_DIR = join(BASE, 'dashboard');
 const RESEARCH_DIR = join(BASE, 'research');
 const PORT = process.env.PORT || 3737;
 const HOST = process.env.HOST || '127.0.0.1';
 const CAREER_OPS = join(BASE, '..');
 const OUTPUT_DIR = join(CAREER_OPS, 'output');
+const REPORTS_DIR = join(CAREER_OPS, 'reports');
 const SOURCE_REGISTRY_FILE = join(BASE, 'config', 'source-registry.json');
 const DEFAULT_LIVENESS_INTERVAL_MIN = 8 * 60;
 const MIN_LIVENESS_INTERVAL_MIN = 15;
@@ -120,6 +165,14 @@ app.use('/dashboard', express.static(DASHBOARD_DIR, {
   setHeaders: dashboardStaticHeaders,
 }));
 app.use('/research', express.static(RESEARCH_DIR));
+app.use('/reports', express.static(REPORTS_DIR, {
+  index: false,
+  fallthrough: false,
+}));
+app.use('/runtime', express.static(RUNTIME_DIR, {
+  index: false,
+  fallthrough: false,
+}));
 app.use('/output', express.static(OUTPUT_DIR, {
   index: false,
   fallthrough: false,
@@ -469,7 +522,7 @@ function configuredLivenessIntervalMin() {
 }
 
 function livenessDisabled() {
-  return ['0', 'false', 'off', 'disabled'].includes(
+  return !['1', 'true', 'yes', 'on', 'enabled'].includes(
     String(process.env.JOBS_TO_CONSIDER_LIVENESS || '').toLowerCase()
   );
 }
@@ -538,7 +591,22 @@ async function runScheduledLivenessSweep(reason = 'scheduled') {
     try {
       console.log(`[liveness-scheduler] Starting Jobs to Consider sweep (${reason})`);
       broadcast('jobs_to_consider_liveness_started', { reason });
-      const summary = await runLivenessSweep({ now: new Date() });
+      const { execFile } = await import('child_process');
+      const summary = await new Promise((resolve, reject) => {
+        execFile(process.execPath, [join(BASE, 'jobs-to-consider-liveness.mjs')], {
+          cwd: BASE,
+          timeout: 15 * 60_000,
+          windowsHide: true,
+        }, (err, stdout = '', stderr = '') => {
+          if (err) {
+            err.message = `${err.message}${stderr ? `\n${stderr.trim()}` : ''}`;
+            reject(err);
+            return;
+          }
+          const lines = stdout.trim().split('\n').filter(Boolean);
+          resolve({ output: lines.at(-1) || 'liveness sweep completed' });
+        });
+      });
       const dashboard = syncArtifactsToDashboard({ notify: true }).dashboard;
       triggerSync();
       livenessFailureCount = 0;
@@ -649,6 +717,7 @@ app.get('/api/today-activity', (req, res) => {
 });
 
 app.get('/api/export/:scope', async (req, res) => {
+  const { buildExportBuffer, EXPORT_FORMATS, EXPORT_SCOPES } = await import('./lib/dashboard-export.mjs');
   const scope = req.params.scope;
   const format = String(req.query.format || 'xlsx').toLowerCase();
   if (!EXPORT_SCOPES.has(scope)) return res.status(404).json({ error: `unsupported export scope: ${scope}` });
@@ -672,7 +741,8 @@ app.get('/api/export/:scope', async (req, res) => {
   }
 });
 
-app.get('/api/daily-digest/smtp-status', (_req, res) => {
+app.get('/api/daily-digest/smtp-status', async (_req, res) => {
+  const { smtpConfigFromEnv, validateSmtpConfig } = await import('./lib/mail-sender.mjs');
   const config = smtpConfigFromEnv();
   const validation = validateSmtpConfig(config);
   const envPath = join(dirname(fileURLToPath(import.meta.url)), '.env');
@@ -684,8 +754,11 @@ app.get('/api/daily-digest/smtp-status', (_req, res) => {
     from: config.from || '',
     host: config.host || '',
     user: config.user || '',
+    recipients: config.recipients || [],
+    timezone: process.env.DAILY_DIGEST_TIMEZONE || process.env.TZ || 'America/New_York',
+    enabled: ['1', 'true', 'yes', 'y', 'on'].includes(String(process.env.DAILY_DIGEST_ENABLED || '').trim().toLowerCase()),
     setup_hint: validation.ok
-      ? 'SMTP is configured. Use Email Today CSV Now to send.'
+      ? `SMTP is configured. Nightly digest + manual Email Today CSV go to: ${(config.recipients || []).join(', ') || 'no recipients'}.`
       : 'Copy WEB-TRACKER/.env.example to WEB-TRACKER/.env, set SMTP_PASS to a Gmail App Password, then restart the dashboard.',
   });
 });
@@ -699,6 +772,7 @@ app.post('/api/daily-digest/send', async (req, res) => {
       recipients: recipients.length ? recipients : undefined,
     };
     if (req.body?.dry_run !== false) {
+      const { buildDailyDigest } = await import('./lib/daily-digest.mjs');
       const digest = await buildDailyDigest(options);
       return res.json({
         sent: false,
@@ -714,6 +788,7 @@ app.post('/api/daily-digest/send', async (req, res) => {
       });
     }
 
+    const { sendDailyDigest } = await import('./lib/daily-digest.mjs');
     const result = await sendDailyDigest(options);
     return res.json({ ...result, recipients });
   } catch (err) {
@@ -933,6 +1008,941 @@ app.get('/api/phd-research-prospects/:source/:id', (req, res) => {
   }
 });
 
+app.get('/api/euraxess/opportunities', (_req, res) => {
+  try {
+    res.json(readEuraxessOpportunities());
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to read EURAXESS opportunities' });
+  }
+});
+
+app.get('/api/euraxess/health', (_req, res) => {
+  try {
+    const store = readEuraxessOpportunities();
+    res.json({
+      generated_at: new Date().toISOString(),
+      ...store.scan_summary,
+    });
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to read EURAXESS health' });
+  }
+});
+
+app.get('/api/euraxess/factory/status', async (_req, res) => {
+  try {
+    res.json(await euraxessFactoryStatus());
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to read EURAXESS factory status' });
+  }
+});
+
+app.post('/api/euraxess/factory/run', async (req, res) => {
+  const input = req.body || {};
+  const job = jobStore.create('euraxess_factory_run', input, {
+    label: 'Run EURAXESS factory',
+    description: 'Process queued/high-fit EURAXESS opportunities through research and draft artifact gates.',
+  });
+  jobStore.update(job.id, { status: 'running' });
+  try {
+    const result = await processEuraxessFactory({
+      max: Number(input.max || 3),
+      dryRun: Boolean(input.dry_run || input.dryRun),
+      force: Boolean(input.force),
+      retryFailures: Boolean(input.retry_failures || input.retryFailures),
+      pollTimeoutSec: Number(input.poll_timeout_sec || input.poll_timeout || 120),
+    });
+    jobStore.appendLog(job.id, 'stdout', JSON.stringify(result, null, 2));
+    jobStore.finish(job.id, 0);
+    syncEuraxessOpportunitiesToDashboard();
+    broadcast('euraxess_factory_updated', result);
+    broadcast('euraxess_opportunities_updated', { total: readEuraxessOpportunities().opportunities?.length || 0 });
+    return res.json({
+      job: { ...jobStore.get(job.id), status: 'completed' },
+      result,
+      summary: {
+        processed: result.processed ?? result.results?.length ?? 0,
+        results: (result.results || []).map(item => ({
+          id: item.id,
+          title: item.title,
+          status: item.status,
+          stage: item.stage,
+        })),
+      },
+    });
+  } catch (err) {
+    jobStore.appendLog(job.id, 'stderr', err?.stack || err?.message || String(err));
+    jobStore.finish(job.id, 1, err?.message || String(err));
+    broadcast('euraxess_factory_failed', { error: err?.message || String(err) });
+    return res.status(500).json({
+      job: { ...jobStore.get(job.id), status: 'failed' },
+      error: err?.message || String(err),
+    });
+  }
+});
+
+app.get('/api/exhibitor/companies', (_req, res) => {
+  try {
+    res.json(readExhibitorCompanies());
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to read exhibitor companies' });
+  }
+});
+
+app.get('/api/exhibitor/clear-queue', (_req, res) => {
+  try {
+    res.json(readExhibitorClearQueue());
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to read exhibitor clear-queue' });
+  }
+});
+
+app.get('/api/exhibitor/factory/status', (_req, res) => {
+  try {
+    res.json(exhibitorFactoryStatus());
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to read exhibitor factory status' });
+  }
+});
+
+app.post('/api/exhibitor/factory/run', async (req, res) => {
+  const input = req.body || {};
+  const job = jobStore.create('exhibitor_factory_run', input, {
+    label: 'Process Target Companies exhibitor queue',
+    description: 'Promote queued exhibitor research work orders for Cursor clear-queue.',
+  });
+  jobStore.update(job.id, { status: 'running' });
+  try {
+    const result = processExhibitorFactory({
+      max: Number(input.max || 20),
+      force: Boolean(input.force),
+    });
+    jobStore.appendLog(job.id, 'stdout', JSON.stringify(result, null, 2));
+    jobStore.finish(job.id, 0);
+    syncExhibitorCompaniesToDashboard();
+    broadcast('exhibitor_factory_updated', result);
+    broadcast('exhibitor_companies_updated', { total: readExhibitorCompanies().companies?.length || 0 });
+    return res.json({
+      job: { ...jobStore.get(job.id), status: 'completed' },
+      result,
+      summary: {
+        processed: result.processed ?? result.results?.length ?? 0,
+        results: (result.results || []).map(item => ({
+          id: item.id,
+          company: item.company,
+          status: item.status,
+          stage: item.stage,
+        })),
+        message: result.message,
+      },
+    });
+  } catch (err) {
+    jobStore.appendLog(job.id, 'stderr', err?.stack || err?.message || String(err));
+    jobStore.finish(job.id, 1, err?.message || String(err));
+    broadcast('exhibitor_factory_failed', { error: err?.message || String(err) });
+    return res.status(500).json({
+      job: { ...jobStore.get(job.id), status: 'failed' },
+      error: err?.message || String(err),
+    });
+  }
+});
+
+app.get('/api/exhibitor/companies/:id', (req, res) => {
+  try {
+    const company = findExhibitorCompany(req.params.id, readExhibitorCompanies());
+    if (!company) return res.status(404).json({ error: 'exhibitor company not found' });
+    return res.json({ company });
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to read exhibitor company' });
+  }
+});
+
+app.patch('/api/exhibitor/companies/:id', (req, res) => {
+  try {
+    const result = patchExhibitorCompany(req.params.id, req.body || {});
+    syncExhibitorCompaniesToDashboard();
+    refreshExhibitorClearQueueStatus();
+    broadcast('exhibitor_companies_updated', { id: result.company?.id });
+    return res.json(result);
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to patch exhibitor company' });
+  }
+});
+
+app.post('/api/exhibitor/companies/:id/queue-research', (req, res) => {
+  try {
+    const existing = findExhibitorCompany(req.params.id, readExhibitorCompanies());
+    if (!existing) return res.status(404).json({ error: 'exhibitor company not found' });
+    const queued = queueExhibitorCompanyWork(existing);
+    broadcast('exhibitor_companies_updated', { id: queued.company?.id });
+    return res.json({
+      company: queued.company,
+      task: queued.task,
+      clear_queue: queued.clear_queue,
+      message: `Queued research for ${queued.company.name}. Hit Process queue, then tell Cursor: Clear the queue in Target Companies.`,
+    });
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to queue exhibitor research' });
+  }
+});
+
+app.post('/api/euraxess/scan', (req, res) => {
+  const input = req.body || {};
+  const args = [];
+  if (input.all !== false) args.push('--all');
+  if (input.refresh_liveness !== false) args.push('--refresh-liveness');
+  if (input.dry_run || input.dryRun) args.push('--dry-run');
+  const job = jobStore.create('euraxess_scan', input, {
+    label: 'Scan EURAXESS RSS',
+    description: 'Refresh the official EURAXESS RSS feed and update the local opportunity store.',
+  });
+  jobStore.update(job.id, { status: 'running' });
+  queueMicrotask(async () => {
+    try {
+      const { execFile } = await import('child_process');
+      const result = await new Promise(resolve => {
+        execFile(process.execPath, [join(BASE, 'euraxess-scan.mjs'), ...args], {
+          cwd: BASE,
+          timeout: 5 * 60_000,
+          windowsHide: true,
+        }, (err, stdout = '', stderr = '') => {
+          resolve({ err, stdout, stderr });
+        });
+      });
+      if (result.stdout) jobStore.appendLog(job.id, 'stdout', result.stdout);
+      if (result.stderr) jobStore.appendLog(job.id, 'stderr', result.stderr);
+      if (result.err) throw result.err;
+      jobStore.finish(job.id, 0);
+      broadcast('euraxess_opportunities_updated', { total: readEuraxessOpportunities().opportunities?.length || 0 });
+    } catch (err) {
+      jobStore.appendLog(job.id, 'stderr', err?.stack || err?.message || String(err));
+      jobStore.finish(job.id, 1, err?.message || String(err));
+      broadcast('euraxess_factory_failed', { error: err?.message || String(err) });
+    }
+  });
+  res.status(202).json({ job });
+});
+
+app.post('/api/euraxess/backfill', (req, res) => {
+  const input = req.body || {};
+  const profile = String(input.profile || 'fusion_plasma_diagnostics');
+  const max = String(Number(input.max || 500) || 500);
+  const args = ['--profile', profile, '--max', max];
+  if (input.force) args.push('--force');
+  if (input.dry_run || input.dryRun) args.push('--dry-run');
+  const job = jobStore.create('euraxess_backfill', input, {
+    label: 'Backfill EURAXESS provider',
+    description: 'Import EURAXESS opportunities from configured permitted providers or manual seed files.',
+  });
+  jobStore.update(job.id, { status: 'running' });
+  queueMicrotask(async () => {
+    try {
+      const { execFile } = await import('child_process');
+      const result = await new Promise(resolve => {
+        execFile(process.execPath, [join(BASE, 'euraxess-backfill.mjs'), ...args], {
+          cwd: BASE,
+          timeout: 10 * 60_000,
+          windowsHide: true,
+        }, (err, stdout = '', stderr = '') => {
+          resolve({ err, stdout, stderr });
+        });
+      });
+      if (result.stdout) jobStore.appendLog(job.id, 'stdout', result.stdout);
+      if (result.stderr) jobStore.appendLog(job.id, 'stderr', result.stderr);
+      if (result.err) throw result.err;
+      jobStore.finish(job.id, 0);
+      broadcast('euraxess_factory_updated', { backfill: true });
+      broadcast('euraxess_opportunities_updated', { total: readEuraxessOpportunities().opportunities?.length || 0 });
+    } catch (err) {
+      jobStore.appendLog(job.id, 'stderr', err?.stack || err?.message || String(err));
+      jobStore.finish(job.id, 1, err?.message || String(err));
+      broadcast('euraxess_factory_failed', { error: err?.message || String(err) });
+    }
+  });
+  res.status(202).json({ job });
+});
+
+app.get('/api/euraxess/opportunities/:id', (req, res) => {
+  try {
+    const opportunity = findEuraxessOpportunity(req.params.id, readEuraxessOpportunities());
+    if (!opportunity) return res.status(404).json({ error: 'EURAXESS opportunity not found' });
+    return res.json({ opportunity });
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to read EURAXESS opportunity' });
+  }
+});
+
+app.patch('/api/euraxess/opportunities/:id', (req, res) => {
+  try {
+    const result = patchEuraxessOpportunity(req.params.id, req.body || {});
+    const dashboard = syncEuraxessOpportunitiesToDashboard();
+    broadcast('euraxess_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    return res.json(withToday(result));
+  } catch (err) {
+    const status = /not found/i.test(err?.message || '') ? 404 : 400;
+    return res.status(status).json({ error: err?.message || 'failed to update EURAXESS opportunity' });
+  }
+});
+
+app.post('/api/euraxess/opportunities/:id/queue-research', (req, res) => {
+  try {
+    const result = patchEuraxessOpportunity(req.params.id, {
+      worker_status: 'queued_research',
+      needs_research: true,
+      archived: false,
+      visible: true,
+      automation: {
+        worker_status: 'queued_research',
+        current_stage: 'queued_research',
+        last_error: '',
+        next_retry_at: '',
+        runner: 'euraxess-factory',
+      },
+      notes: req.body?.notes,
+    });
+    const queued = queueEuraxessOpportunityWork(result.opportunity, { pack: false });
+    const dashboard = syncEuraxessOpportunitiesToDashboard();
+    broadcast('euraxess_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    return res.json(withToday({
+      ...result,
+      tasks: queued.tasks || [],
+      message: `Queued research for ${result.opportunity.title}. Hit Process queue to run it.`,
+    }));
+  } catch (err) {
+    const status = /not found/i.test(err?.message || '') ? 404 : 400;
+    return res.status(status).json({ error: err?.message || 'failed to queue EURAXESS research' });
+  }
+});
+
+app.post('/api/euraxess/opportunities/:id/queue-application-pack', (req, res) => {
+  try {
+    const result = patchEuraxessOpportunity(req.params.id, {
+      worker_status: 'queued_pack',
+      needs_research: true,
+      needs_application_pack: true,
+      archived: false,
+      visible: true,
+      automation: {
+        worker_status: 'queued_pack',
+        current_stage: 'queued_pack',
+        last_error: '',
+        next_retry_at: '',
+        runner: 'euraxess-factory',
+      },
+      notes: req.body?.notes,
+    });
+    const queued = queueEuraxessOpportunityWork(result.opportunity, { pack: true });
+    const dashboard = syncEuraxessOpportunitiesToDashboard();
+    broadcast('euraxess_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    return res.json(withToday({
+      ...result,
+      tasks: queued.tasks || [],
+      message: `Queued application pack for ${result.opportunity.title}. Hit Process queue or clear the Operations agent-task lane.`,
+    }));
+  } catch (err) {
+    const status = /not found/i.test(err?.message || '') ? 404 : 400;
+    return res.status(status).json({ error: err?.message || 'failed to queue EURAXESS application pack' });
+  }
+});
+
+app.post('/api/euraxess/opportunities/:id/archive', (req, res) => {
+  try {
+    const existing = findEuraxessOpportunity(req.params.id, readEuraxessOpportunities());
+    if (!existing) {
+      return res.status(404).json({ error: `EURAXESS opportunity not found: ${req.params.id}` });
+    }
+    const gate = assertCanArchiveOpportunity(existing, { force: Boolean(req.body?.force) });
+    if (!gate.allowed) {
+      return res.status(409).json({ error: gate.message, ...gate });
+    }
+    const result = patchEuraxessOpportunity(req.params.id, {
+      status: 'archived',
+      archived: true,
+      visible: false,
+      worker_status: 'not_needed',
+      needs_research: false,
+      needs_application_pack: false,
+      automation: {
+        worker_status: 'not_needed',
+        current_stage: 'applied_or_archived',
+        last_error: '',
+      },
+      decision: {
+        archive_reason: req.body?.reason || req.body?.archive_reason || 'Archived from dashboard.',
+      },
+    });
+    const dashboard = syncEuraxessOpportunitiesToDashboard();
+    broadcast('euraxess_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    return res.json(withToday({
+      ...result,
+      message: `Archived: ${result.opportunity.title}`,
+    }));
+  } catch (err) {
+    const status = /not found/i.test(err?.message || '') ? 404 : 400;
+    return res.status(status).json({ error: err?.message || 'failed to archive EURAXESS opportunity' });
+  }
+});
+
+app.post('/api/euraxess/opportunities/:id/retry', (req, res) => {
+  try {
+    const pack = Boolean(req.body?.pack);
+    const result = patchEuraxessOpportunity(req.params.id, {
+      worker_status: pack ? 'queued_pack' : 'queued_research',
+      needs_research: true,
+      needs_application_pack: pack,
+      archived: false,
+      visible: true,
+      automation: {
+        worker_status: pack ? 'queued_pack' : 'queued_research',
+        current_stage: pack ? 'queued_pack' : 'queued_research',
+        next_retry_at: '',
+        last_error: '',
+        runner: 'euraxess-factory',
+      },
+    });
+    const queued = queueEuraxessOpportunityWork(result.opportunity, { pack });
+    const dashboard = syncEuraxessOpportunitiesToDashboard();
+    broadcast('euraxess_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    return res.json(withToday({
+      ...result,
+      tasks: queued.tasks || [],
+      message: pack
+        ? `Queued application pack for ${result.opportunity.title}. Hit Process queue or clear the Operations agent-task lane.`
+        : `Queued research for ${result.opportunity.title}. Hit Process queue to run it.`,
+    }));
+  } catch (err) {
+    const status = /not found/i.test(err?.message || '') ? 404 : 400;
+    return res.status(status).json({ error: err?.message || 'failed to retry EURAXESS opportunity' });
+  }
+});
+
+app.post('/api/euraxess/opportunities/:id/execution', (req, res) => {
+  try {
+    const existing = findEuraxessOpportunity(req.params.id, readEuraxessOpportunities());
+    if (!existing) return res.status(404).json({ error: 'EURAXESS opportunity not found' });
+    const body = req.body || {};
+    const prev = existing.execution || {};
+    let stage = body.stage !== undefined ? body.stage : prev.stage;
+    let readyChecked = body.ready_checked !== undefined ? Boolean(body.ready_checked) : Boolean(prev.ready_checked);
+
+    if (body.ready_checked === true && !stage) stage = 'ready_for_application';
+    if (body.ready_checked === false) {
+      stage = null;
+      readyChecked = false;
+    }
+    if (stage && !EURAXESS_EXECUTION_STAGES.includes(stage)) {
+      return res.status(400).json({ error: `invalid execution stage: ${stage}` });
+    }
+    if (stage === 'artifacts_ready' && !euraxessHasArtifacts(existing) && body.force !== true) {
+      // allow stage even without artifacts — user may mark ready after attaching; warn only
+    }
+    if (stage === 'applied') {
+      return res.status(400).json({ error: 'Use /apply to mark applied (creates PhD Applications tracker row).' });
+    }
+
+    const result = patchEuraxessOpportunity(req.params.id, {
+      execution: {
+        ...prev,
+        stage: stage || null,
+        ready_checked: readyChecked || Boolean(stage),
+        stage_updated_at: new Date().toISOString(),
+        notes: body.notes !== undefined ? String(body.notes || '') : (prev.notes || ''),
+        application_num: prev.application_num ?? null,
+        applied_at: prev.applied_at || '',
+      },
+      archived: false,
+      visible: existing.visible !== false,
+    });
+    const dashboard = syncEuraxessOpportunitiesToDashboard();
+    broadcast('euraxess_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    return res.json(withToday({
+      ...result,
+      message: result.opportunity.execution?.stage
+        ? `Execution → ${result.opportunity.execution.stage}`
+        : 'Removed from application execution rail',
+    }));
+  } catch (err) {
+    const status = /not found/i.test(err?.message || '') ? 404 : 400;
+    return res.status(status).json({ error: err?.message || 'failed to update EURAXESS execution stage' });
+  }
+});
+
+app.post('/api/euraxess/opportunities/:id/apply', (req, res) => {
+  try {
+    const applied = req.body?.applied !== false;
+    const existing = findEuraxessOpportunity(req.params.id, readEuraxessOpportunities());
+    if (!existing) return res.status(404).json({ error: 'EURAXESS opportunity not found' });
+    const prev = existing.execution || {};
+
+    if (!applied) {
+      if (prev.application_num) {
+        try {
+          deleteTrackerRow({ num: Number(prev.application_num) });
+        } catch (err) {
+          if (!/not found/i.test(err?.message || '')) throw err;
+        }
+      }
+      const result = patchEuraxessOpportunity(req.params.id, {
+        execution: {
+          ...prev,
+          stage: 'artifacts_ready',
+          ready_checked: true,
+          applied_at: '',
+          application_num: null,
+          stage_updated_at: new Date().toISOString(),
+        },
+      });
+      const dashboard = syncEuraxessOpportunitiesToDashboard();
+      syncApplications();
+      triggerSync();
+      broadcast('euraxess_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+      broadcast('application_deleted', { num: prev.application_num || null });
+      return res.json(withToday({ opportunity: result.opportunity, application: null }));
+    }
+
+    const topic = euraxessTopic(existing);
+    const reportPath = existing.research_report || existing.artifacts?.research_report || existing.resources?.report_md || '';
+    const report = reportPath
+      ? `[${existing.external_id || existing.id}](${reportPath})`
+      : '-';
+    const trackerResult = createTrackerRow({
+      entry: {
+        date: localDateString(new Date(), DEFAULT_DIGEST_TIMEZONE),
+        company: existing.institution || 'EURAXESS',
+        role: existing.title,
+        score: Number.isFinite(Number(existing.score)) ? `${Number(existing.score).toFixed(1)}/5` : 'N/A',
+        status: 'Applied',
+        pdf: Boolean(existing.resources?.resume_pdf || existing.artifacts?.resume_pdf),
+        report,
+        notes: existing.fit_rationale || 'Applied from EURAXESS Live Feed.',
+      },
+      metadata: {
+        posting_url: existing.url,
+        submitted_date: localDateString(new Date(), DEFAULT_DIGEST_TIMEZONE),
+        university: existing.institution || '',
+        field: EURAXESS_TOPIC_LABELS[topic] || topic || '',
+        division_field: (existing.research_fields || []).join(', '),
+        date_due: existing.deadline_text || '',
+        way_to_apply: existing.resources?.email_draft || existing.url || '',
+        track_kind: 'phd',
+      },
+    });
+
+    const result = patchEuraxessOpportunity(req.params.id, {
+      execution: {
+        ...prev,
+        stage: 'applied',
+        ready_checked: true,
+        applied_at: new Date().toISOString(),
+        application_num: trackerResult.num,
+        stage_updated_at: new Date().toISOString(),
+      },
+      archived: false,
+      visible: true,
+    });
+    const dashboard = syncEuraxessOpportunitiesToDashboard();
+    syncApplications();
+    triggerSync();
+    broadcast('euraxess_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    broadcast('application_updated', {
+      num: trackerResult.num,
+      created: !trackerResult.duplicate,
+      duplicate: trackerResult.duplicate,
+    });
+    return res.json(withToday({ opportunity: result.opportunity, application: trackerResult }));
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to update EURAXESS applied state' });
+  }
+});
+
+app.get('/api/phdscanner/opportunities', (_req, res) => {
+  try {
+    res.json(readPhdscannerOpportunities());
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to read PhDScanner opportunities' });
+  }
+});
+
+app.get('/api/phdscanner/health', (_req, res) => {
+  try {
+    const store = readPhdscannerOpportunities();
+    res.json({ generated_at: new Date().toISOString(), ...store.scan_summary });
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to read PhDScanner health' });
+  }
+});
+
+app.get('/api/phdscanner/factory/status', async (_req, res) => {
+  try {
+    res.json(await phdscannerFactoryStatus());
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to read PhDScanner factory status' });
+  }
+});
+
+app.post('/api/phdscanner/factory/run', async (req, res) => {
+  const input = req.body || {};
+  const job = jobStore.create('phdscanner_factory_run', input, {
+    label: 'Run PhDScanner factory',
+    description: 'Process queued/high-fit PhDScanner opportunities through research and draft artifact gates.',
+  });
+  jobStore.update(job.id, { status: 'running' });
+  try {
+    const result = await processPhdscannerFactory({
+      max: Number(input.max || 3),
+      dryRun: Boolean(input.dry_run || input.dryRun),
+      force: Boolean(input.force),
+      retryFailures: Boolean(input.retry_failures || input.retryFailures),
+      pollTimeoutSec: Number(input.poll_timeout_sec || input.poll_timeout || 120),
+    });
+    jobStore.appendLog(job.id, 'stdout', JSON.stringify(result, null, 2));
+    jobStore.finish(job.id, 0);
+    syncPhdscannerOpportunitiesToDashboard();
+    broadcast('phdscanner_factory_updated', result);
+    broadcast('phdscanner_opportunities_updated', { total: readPhdscannerOpportunities().opportunities?.length || 0 });
+    return res.json({
+      job: { ...jobStore.get(job.id), status: 'completed' },
+      result,
+      summary: {
+        processed: result.processed ?? result.results?.length ?? 0,
+        results: (result.results || []).map(item => ({
+          id: item.id,
+          title: item.title,
+          status: item.status,
+          stage: item.stage,
+        })),
+      },
+    });
+  } catch (err) {
+    jobStore.appendLog(job.id, 'stderr', err?.stack || err?.message || String(err));
+    jobStore.finish(job.id, 1, err?.message || String(err));
+    broadcast('phdscanner_factory_failed', { error: err?.message || String(err) });
+    return res.status(500).json({
+      job: { ...jobStore.get(job.id), status: 'failed' },
+      error: err?.message || String(err),
+    });
+  }
+});
+
+app.post('/api/phdscanner/scan', (req, res) => {
+  const input = req.body || {};
+  const args = [];
+  if (input.all !== false) args.push('--all');
+  if (input.refresh_liveness !== false) args.push('--refresh-liveness');
+  if (input.dry_run || input.dryRun) args.push('--dry-run');
+  if (input.max) args.push('--max', String(Number(input.max) || 200));
+  const job = jobStore.create('phdscanner_scan', input, {
+    label: 'Scan PhDScanner',
+    description: 'Refresh PhDScanner sitemap/listing feed and update the local opportunity store.',
+  });
+  jobStore.update(job.id, { status: 'running' });
+  queueMicrotask(async () => {
+    try {
+      const { execFile } = await import('child_process');
+      const result = await new Promise(resolve => {
+        execFile(process.execPath, [join(BASE, 'phdscanner-scan.mjs'), ...args], {
+          cwd: BASE,
+          timeout: 10 * 60_000,
+          windowsHide: true,
+        }, (err, stdout = '', stderr = '') => {
+          resolve({ err, stdout, stderr });
+        });
+      });
+      if (result.stdout) jobStore.appendLog(job.id, 'stdout', result.stdout);
+      if (result.stderr) jobStore.appendLog(job.id, 'stderr', result.stderr);
+      if (result.err) throw result.err;
+      jobStore.finish(job.id, 0);
+      broadcast('phdscanner_opportunities_updated', { total: readPhdscannerOpportunities().opportunities?.length || 0 });
+    } catch (err) {
+      jobStore.appendLog(job.id, 'stderr', err?.stack || err?.message || String(err));
+      jobStore.finish(job.id, 1, err?.message || String(err));
+      broadcast('phdscanner_factory_failed', { error: err?.message || String(err) });
+    }
+  });
+  res.status(202).json({ job });
+});
+
+app.post('/api/findaphd/scan', (req, res) => {
+  const input = req.body || {};
+  const args = [];
+  if (input.all !== false) args.push('--all');
+  if (input.refresh_liveness !== false) args.push('--refresh-liveness');
+  if (input.dry_run || input.dryRun) args.push('--dry-run');
+  if (input.max) args.push('--max', String(Number(input.max) || 200));
+  const job = jobStore.create('findaphd_scan', input, {
+    label: 'Scan FindAPhD',
+    description: 'Refresh FindAPhD listings into the unified PhD board feed with dedupe.',
+  });
+  jobStore.update(job.id, { status: 'running' });
+  queueMicrotask(async () => {
+    try {
+      const { execFile } = await import('child_process');
+      const result = await new Promise(resolve => {
+        execFile(process.execPath, [join(BASE, 'findaphd-scan.mjs'), ...args], {
+          cwd: BASE,
+          timeout: 15 * 60_000,
+          windowsHide: true,
+        }, (err, stdout = '', stderr = '') => {
+          resolve({ err, stdout, stderr });
+        });
+      });
+      if (result.stdout) jobStore.appendLog(job.id, 'stdout', result.stdout);
+      if (result.stderr) jobStore.appendLog(job.id, 'stderr', result.stderr);
+      if (result.err) throw result.err;
+      jobStore.finish(job.id, 0);
+      broadcast('phdscanner_opportunities_updated', { total: readPhdscannerOpportunities().opportunities?.length || 0 });
+    } catch (err) {
+      jobStore.appendLog(job.id, 'stderr', err?.stack || err?.message || String(err));
+      jobStore.finish(job.id, 1, err?.message || String(err));
+      broadcast('phdscanner_factory_failed', { error: err?.message || String(err) });
+    }
+  });
+  res.status(202).json({ job });
+});
+
+app.get('/api/phdscanner/opportunities/:id', (req, res) => {
+  try {
+    const opportunity = findPhdscannerOpportunity(req.params.id, readPhdscannerOpportunities());
+    if (!opportunity) return res.status(404).json({ error: 'PhDScanner opportunity not found' });
+    return res.json({ opportunity });
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to read PhDScanner opportunity' });
+  }
+});
+
+app.patch('/api/phdscanner/opportunities/:id', (req, res) => {
+  try {
+    const result = patchPhdscannerOpportunity(req.params.id, req.body || {});
+    const dashboard = syncPhdscannerOpportunitiesToDashboard();
+    broadcast('phdscanner_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    return res.json(withToday(result));
+  } catch (err) {
+    const status = /not found/i.test(err?.message || '') ? 404 : 400;
+    return res.status(status).json({ error: err?.message || 'failed to patch PhDScanner opportunity' });
+  }
+});
+
+app.post('/api/phdscanner/opportunities/:id/queue-research', (req, res) => {
+  try {
+    const result = patchPhdscannerOpportunity(req.params.id, {
+      worker_status: 'queued_research',
+      needs_research: true,
+      archived: false,
+      visible: true,
+      automation: { worker_status: 'queued_research', current_stage: 'queued_research', last_error: '', runner: 'phdscanner-factory' },
+    });
+    const queued = queuePhdscannerOpportunityWork(result.opportunity, { pack: false });
+    const dashboard = syncPhdscannerOpportunitiesToDashboard();
+    broadcast('phdscanner_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    return res.json(withToday({ ...result, tasks: queued.tasks || [], message: `Queued research for ${result.opportunity.title}` }));
+  } catch (err) {
+    const status = /not found/i.test(err?.message || '') ? 404 : 400;
+    return res.status(status).json({ error: err?.message || 'failed to queue PhDScanner research' });
+  }
+});
+
+app.post('/api/phdscanner/opportunities/:id/queue-application-pack', (req, res) => {
+  try {
+    const result = patchPhdscannerOpportunity(req.params.id, {
+      worker_status: 'queued_pack',
+      needs_research: true,
+      needs_application_pack: true,
+      archived: false,
+      visible: true,
+      automation: { worker_status: 'queued_pack', current_stage: 'queued_pack', last_error: '', runner: 'phdscanner-factory' },
+    });
+    const queued = queuePhdscannerOpportunityWork(result.opportunity, { pack: true });
+    const dashboard = syncPhdscannerOpportunitiesToDashboard();
+    broadcast('phdscanner_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    return res.json(withToday({ ...result, tasks: queued.tasks || [], message: `Queued application pack for ${result.opportunity.title}` }));
+  } catch (err) {
+    const status = /not found/i.test(err?.message || '') ? 404 : 400;
+    return res.status(status).json({ error: err?.message || 'failed to queue PhDScanner pack' });
+  }
+});
+
+app.post('/api/phdscanner/opportunities/:id/archive', (req, res) => {
+  try {
+    const existing = findPhdscannerOpportunity(req.params.id, readPhdscannerOpportunities());
+    if (!existing) {
+      return res.status(404).json({ error: `PhDScanner opportunity not found: ${req.params.id}` });
+    }
+    const gate = assertCanArchiveOpportunity(existing, { force: Boolean(req.body?.force) });
+    if (!gate.allowed) {
+      return res.status(409).json({ error: gate.message, ...gate });
+    }
+    const result = patchPhdscannerOpportunity(req.params.id, {
+      status: 'archived',
+      archived: true,
+      visible: false,
+      worker_status: 'not_needed',
+      needs_research: false,
+      needs_application_pack: false,
+      automation: { worker_status: 'not_needed', current_stage: 'applied_or_archived', last_error: '' },
+      decision: { archive_reason: req.body?.reason || req.body?.archive_reason || 'Archived from dashboard.' },
+    });
+    const dashboard = syncPhdscannerOpportunitiesToDashboard();
+    broadcast('phdscanner_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    return res.json(withToday({ ...result, message: `Archived: ${result.opportunity.title}` }));
+  } catch (err) {
+    const status = /not found/i.test(err?.message || '') ? 404 : 400;
+    return res.status(status).json({ error: err?.message || 'failed to archive PhDScanner opportunity' });
+  }
+});
+
+app.post('/api/phdscanner/opportunities/:id/retry', (req, res) => {
+  try {
+    const pack = Boolean(req.body?.pack);
+    const result = patchPhdscannerOpportunity(req.params.id, {
+      worker_status: pack ? 'queued_pack' : 'queued_research',
+      needs_research: true,
+      needs_application_pack: pack,
+      archived: false,
+      visible: true,
+      automation: {
+        worker_status: pack ? 'queued_pack' : 'queued_research',
+        current_stage: pack ? 'queued_pack' : 'queued_research',
+        last_error: '',
+        next_retry_at: '',
+        runner: 'phdscanner-factory',
+      },
+    });
+    const queued = queuePhdscannerOpportunityWork(result.opportunity, { pack });
+    const dashboard = syncPhdscannerOpportunitiesToDashboard();
+    broadcast('phdscanner_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    return res.json(withToday({ ...result, tasks: queued.tasks || [] }));
+  } catch (err) {
+    const status = /not found/i.test(err?.message || '') ? 404 : 400;
+    return res.status(status).json({ error: err?.message || 'failed to retry PhDScanner opportunity' });
+  }
+});
+
+app.post('/api/phdscanner/opportunities/:id/execution', (req, res) => {
+  try {
+    const existing = findPhdscannerOpportunity(req.params.id, readPhdscannerOpportunities());
+    if (!existing) return res.status(404).json({ error: 'PhDScanner opportunity not found' });
+    const prev = existing.execution || {};
+    let stage = req.body?.stage !== undefined ? req.body.stage : prev.stage;
+    let readyChecked = req.body?.ready_checked !== undefined ? Boolean(req.body.ready_checked) : Boolean(prev.ready_checked);
+    if (req.body?.ready_checked === true && !stage) stage = 'ready_for_application';
+    if (req.body?.ready_checked === false) { stage = null; readyChecked = false; }
+    if (stage && !PHDSCANNER_EXECUTION_STAGES.includes(stage)) {
+      return res.status(400).json({ error: `invalid execution stage: ${stage}` });
+    }
+    if (stage === 'applied') return res.status(400).json({ error: 'Use /apply to mark applied.' });
+    const result = patchPhdscannerOpportunity(req.params.id, {
+      execution: {
+        ...prev,
+        stage: stage || null,
+        ready_checked: readyChecked || Boolean(stage),
+        stage_updated_at: new Date().toISOString(),
+        notes: req.body?.notes !== undefined ? String(req.body.notes || '') : (prev.notes || ''),
+        application_num: prev.application_num ?? null,
+        applied_at: prev.applied_at || '',
+      },
+      archived: false,
+    });
+    const dashboard = syncPhdscannerOpportunitiesToDashboard();
+    broadcast('phdscanner_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    return res.json(withToday({
+      ...result,
+      message: result.opportunity.execution?.stage
+        ? `Execution → ${result.opportunity.execution.stage}`
+        : 'Removed from application execution rail',
+    }));
+  } catch (err) {
+    const status = /not found/i.test(err?.message || '') ? 404 : 400;
+    return res.status(status).json({ error: err?.message || 'failed to update PhDScanner execution stage' });
+  }
+});
+
+app.post('/api/phdscanner/opportunities/:id/apply', (req, res) => {
+  try {
+    const applied = req.body?.applied !== false;
+    const existing = findPhdscannerOpportunity(req.params.id, readPhdscannerOpportunities());
+    if (!existing) return res.status(404).json({ error: 'PhDScanner opportunity not found' });
+    const prev = existing.execution || {};
+
+    if (!applied) {
+      if (prev.application_num) {
+        try {
+          deleteTrackerRow({ num: Number(prev.application_num) });
+        } catch (err) {
+          if (!/not found/i.test(err?.message || '')) throw err;
+        }
+      }
+      const result = patchPhdscannerOpportunity(req.params.id, {
+        execution: {
+          ...prev,
+          stage: 'artifacts_ready',
+          ready_checked: true,
+          applied_at: '',
+          application_num: null,
+          stage_updated_at: new Date().toISOString(),
+        },
+      });
+      const dashboard = syncPhdscannerOpportunitiesToDashboard();
+      syncApplications();
+      triggerSync();
+      broadcast('phdscanner_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+      broadcast('application_deleted', { num: prev.application_num || null });
+      return res.json(withToday({ opportunity: result.opportunity, application: null }));
+    }
+
+    const topic = phdscannerTopic(existing);
+    const reportPath = existing.research_report || existing.artifacts?.research_report || existing.resources?.report_md || '';
+    const report = reportPath
+      ? `[${existing.external_id || existing.id}](${reportPath})`
+      : '-';
+    const trackerResult = createTrackerRow({
+      entry: {
+        date: localDateString(new Date(), DEFAULT_DIGEST_TIMEZONE),
+        company: existing.university || existing.institution || 'PhDScanner',
+        role: existing.title,
+        score: Number.isFinite(Number(existing.score)) ? `${Number(existing.score).toFixed(1)}/5` : 'N/A',
+        status: 'Applied',
+        pdf: Boolean(existing.resources?.resume_pdf || existing.artifacts?.resume_pdf),
+        report,
+        notes: existing.fit_rationale || 'Applied from PhDScanner Feed.',
+      },
+      metadata: {
+        posting_url: existing.url,
+        submitted_date: localDateString(new Date(), DEFAULT_DIGEST_TIMEZONE),
+        university: existing.university || existing.institution || '',
+        field: PHDSCANNER_TOPIC_LABELS[topic] || topic || existing.discipline || '',
+        division_field: (existing.research_fields || []).join(', '),
+        date_due: existing.deadline_text || '',
+        way_to_apply: existing.resources?.email_draft || existing.url || '',
+        track_kind: 'phd',
+      },
+    });
+
+    const result = patchPhdscannerOpportunity(req.params.id, {
+      execution: {
+        ...prev,
+        stage: 'applied',
+        ready_checked: true,
+        applied_at: new Date().toISOString(),
+        application_num: trackerResult.num,
+        stage_updated_at: new Date().toISOString(),
+      },
+      archived: false,
+      visible: true,
+    });
+    const dashboard = syncPhdscannerOpportunitiesToDashboard();
+    syncApplications();
+    triggerSync();
+    broadcast('phdscanner_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    broadcast('application_updated', {
+      num: trackerResult.num,
+      created: !trackerResult.duplicate,
+      duplicate: trackerResult.duplicate,
+    });
+    return res.json(withToday({ opportunity: result.opportunity, application: trackerResult }));
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to update PhDScanner applied state' });
+  }
+});
+
 app.post('/api/jobs-to-consider/:id/apply', (req, res) => {
   try {
     const applied = req.body?.applied !== false;
@@ -981,6 +1991,7 @@ app.post('/api/jobs-to-consider/:id/apply', (req, res) => {
         posting_url: job.url,
         submitted_date: localDateString(new Date(), DEFAULT_DIGEST_TIMEZONE),
         way_to_apply: job.resources?.email_draft || '',
+        track_kind: 'job',
       },
     });
 
@@ -1231,24 +2242,7 @@ app.post('/api/outreach/draft', (req, res) => {
   res.json({ draft: buildOutreachDraft(req.body || {}) });
 });
 
-// ── File watcher on WEB-TRACKER/data ────────────────────────────────
-
-const watcher = watch(DATA_DIR, {
-  ignoreInitial: true,
-  awaitWriteFinish: { stabilityThreshold: 500 },
-});
-
-watcher.on('change', (filePath) => {
-  const file = basename(filePath);
-  broadcast('data_updated', { file, path: filePath });
-});
-
-watcher.on('add', (filePath) => {
-  const file = basename(filePath);
-  broadcast('data_added', { file, path: filePath });
-});
-
-// ── File watcher on career-ops source files (instant sync) ──────────
+// ── File watchers ───────────────────────────────────────────────────
 
 const careerOpsFiles = [
   join(CAREER_OPS, 'data', 'applications.md'),
@@ -1275,14 +2269,6 @@ async function triggerSync() {
   }, 2000);
 }
 
-const careerOpsWatcher = watch([...careerOpsFiles, reportsGlob], {
-  ignoreInitial: true,
-  awaitWriteFinish: { stabilityThreshold: 1000 },
-});
-
-careerOpsWatcher.on('change', () => triggerSync());
-careerOpsWatcher.on('add', () => triggerSync());
-
 let artifactSyncDebounce = null;
 function triggerArtifactResourceSync() {
   if (artifactSyncDebounce) return;
@@ -1296,19 +2282,52 @@ function triggerArtifactResourceSync() {
   }, 500);
 }
 
-const outputWatcherBase = resolve(OUTPUT_DIR);
-const outputWatcher = watch(OUTPUT_DIR, {
-  ignoreInitial: true,
-  awaitWriteFinish: { stabilityThreshold: 1000 },
-  ignored: (filePath, stats) => {
-    if (resolve(filePath) === outputWatcherBase) return false;
-    if (stats?.isDirectory?.()) return false;
-    return !/\.(pdf|html|md)$/i.test(filePath);
-  },
-});
+let watchersStarted = false;
+function startFileWatchers() {
+  if (watchersStarted) return;
+  watchersStarted = true;
 
-outputWatcher.on('change', () => triggerArtifactResourceSync());
-outputWatcher.on('add', () => triggerArtifactResourceSync());
+  const watcher = watch(DATA_DIR, {
+    ignoreInitial: true,
+    awaitWriteFinish: { stabilityThreshold: 500 },
+  });
+
+  watcher.on('change', (filePath) => {
+    const file = basename(filePath);
+    broadcast('data_updated', { file, path: filePath });
+  });
+
+  watcher.on('add', (filePath) => {
+    const file = basename(filePath);
+    broadcast('data_added', { file, path: filePath });
+  });
+
+  if (['1', 'true', 'yes', 'on', 'enabled'].includes(String(process.env.CAREER_OPS_AUTO_SYNC_WATCHER || '').toLowerCase())) {
+    const careerOpsWatcher = watch([...careerOpsFiles, reportsGlob], {
+      ignoreInitial: true,
+      awaitWriteFinish: { stabilityThreshold: 1000 },
+    });
+
+    careerOpsWatcher.on('change', () => triggerSync());
+    careerOpsWatcher.on('add', () => triggerSync());
+  }
+
+  if (['1', 'true', 'yes'].includes(String(process.env.CAREER_OPS_OUTPUT_WATCHER || '').toLowerCase())) {
+    const outputWatcherBase = resolve(OUTPUT_DIR);
+    const outputWatcher = watch(OUTPUT_DIR, {
+      ignoreInitial: true,
+      awaitWriteFinish: { stabilityThreshold: 1000 },
+      ignored: (filePath, stats) => {
+        if (resolve(filePath) === outputWatcherBase) return false;
+        if (stats?.isDirectory?.()) return false;
+        return !/\.(pdf|html|md)$/i.test(filePath);
+      },
+    });
+
+    outputWatcher.on('change', () => triggerArtifactResourceSync());
+    outputWatcher.on('add', () => triggerArtifactResourceSync());
+  }
+}
 
 // ── Root redirect ───────────────────────────────────────────────────
 
@@ -1319,6 +2338,17 @@ app.get('/healthz', (req, res) => {
     mode: process.env.AUTONOMY_MODE || 'unknown',
     uptime_sec: Math.round(process.uptime()),
     timestamp: new Date().toISOString(),
+    research_prospect_statuses: [
+      'not_contacted',
+      'draft_ready',
+      'contacted',
+      'followed_up',
+      'responded_positive',
+      'responded_negative',
+      'archived',
+    ],
+    outreach_kanban: true,
+    silence_nudge_days: 7,
   });
 });
 
@@ -1336,6 +2366,7 @@ export function startServer(port = PORT, host = HOST) {
       console.log(`  SSE stream: http://${host}:${port}/stream`);
       console.log(`  Data API: http://${host}:${port}/data/<file>.json`);
       console.log(`  Control API: http://${host}:${port}/api/actions\n`);
+      startFileWatchers();
       if (!['1', 'true', 'yes'].includes(String(process.env.PUBLISH_SNAPSHOT || '').toLowerCase())) {
         startLivenessScheduler();
       }

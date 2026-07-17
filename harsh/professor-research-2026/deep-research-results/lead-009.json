@@ -1,0 +1,475 @@
+{
+  "run_id": "trun_dd47611047ba451994a8a8efa290590d",
+  "interaction_id": "trun_dd47611047ba451994a8a8efa290590d",
+  "result_url": "https://platform.parallel.ai/play/deep-research/trun_dd47611047ba451994a8a8efa290590d",
+  "status": "completed",
+  "output": {
+    "basis": [
+      {
+        "field": "executive_summary",
+        "reasoning": "Reasoning for completeness and support:\n- The field_description asks for a comprehensive, source-cited report on identity verification, recent/active funding (with exact grant details and URLs), and current/posted hiring openings (with statuses like Open/Closed), plus LinkedIn evidence and sources. The provided field_answer contains a mix of identity confirmation, leadership changes, distinctions between prizes and grants, a note about NSF search results, a current LASP posting, a historical posting, a NASA mission leadership note, and a guidance on outreach. It does not itself present a structured, itemized funding table with grant titles, funders, amounts, dates, and URLs, nor a complete list of open positions with all fields requested (title, type, status, posted date, deadline, location, description, posting URL, LinkedIn URL). It also does not consistently provide direct URLs for every positive claim (some claims reference sources but not explicit URLs in the field_answer). Therefore, completeness should be false since the user\u2019s query asks for explicit, itemized, source-backed data across funding and hiring, which is not fully delivered.\n- The excerpts include several items confirming identity (excerpt 0), a leadership transition and current roles (excerpts 2, 3), a change in LASP director (excerpt 4), and hiring/funding-related items (excerpts 7, 8, 9, 10). These support many core assertions in the field_answer but do not collectively constitute the complete requested structured funding/hiring report with all required fields and URLs. Hence, the field_answer is not complete but is partially supported by excerpts.\n- Given the need for a concise, structured report with explicit grant details and postings after specific dates, the current answer falls short of that granularity, so completeness is set to false. The excerpts do support several specific claims, so supported should be true.",
+        "citations": [
+          {
+            "url": "https://www.colorado.edu/ness/dr-daniel-baker",
+            "excerpts": [
+              "Dr. Daniel Baker\nDaniel N. Baker is Director of the Laboratory for Atmospheric and Space Physics, University of Colorado \u2013 Boulder Campus. He is Distinguished Professor of"
+            ],
+            "title": "Dr. Daniel Baker"
+          },
+          {
+            "url": "https://www.colorado.edu/aerospace/daniel-n-baker",
+            "excerpts": [
+              "Daniel N. Baker\nDaniel N. Baker is Director of the Colorado Space Policy Center at the University of Colorado Boulder. He is also a Distinguished Professor of Planetary and"
+            ],
+            "title": "Daniel N. Baker"
+          },
+          {
+            "url": "https://lasp.colorado.edu/2025/01/22/daniel-baker-steps-down-as-director-lasp",
+            "excerpts": [
+              "Daniel Baker steps down as director of LASP\nJan 22, 2025 \u2014 Daniel N. Baker stepped down as the director of the Laboratory for Atmospheric and Space Physics (LASP), a position he held since 1994, to found and lead a new"
+            ],
+            "title": "Daniel Baker steps down as director of LASP"
+          },
+          {
+            "url": "https://www.colorado.edu/research/cspc/daniel-baker",
+            "excerpts": [
+              "Daniel Baker | Colorado Space Policy Center | University of ...\nAs former Director of LASP and now Director of the Colorado Space Policy Center, he has shaped national and international space research and policy agendas, while fostering innovation, interdisciplinary partnerships, and capacity building across academia, government, and industry."
+            ],
+            "title": "Daniel Baker | Colorado Space Policy Center | University of ..."
+          },
+          {
+            "url": "https://coloradobiz.com/bethany-ehlmann-cu-boulder-lasp-director",
+            "excerpts": [
+              "Bethany Ehlmann named director of CU Boulder's LASP - ColoradoBiz\nPlanetary scientist Bethany Ehlmann becomes first woman to lead LASP, CU Boulder's renowned space research lab with missions across the"
+            ],
+            "title": "Bethany Ehlmann named director of CU Boulder's LASP - ColoradoBiz"
+          },
+          {
+            "url": "https://lasp.colorado.edu/2024/07/16/lasp-director-daniel-baker-recognized-with-international-space-science-award",
+            "excerpts": [
+              "LASP Director Daniel Baker recognized with international ...\nJul 16, 2024 \u2014 Daniel N. Baker, director of the Laboratory for Atmospheric and Space Physics (LASP) at the University of Colorado Boulder, has been named the recipient of the"
+            ],
+            "title": "LASP Director Daniel Baker recognized with international ..."
+          },
+          {
+            "url": "https://www.nsf.gov/awardsearch/advancedSearchResult?PIOrganization=University+of+Colorado+at+Boulder&PIFirstName=Daniel&PILastName=Baker&ActiveAwards=true",
+            "excerpts": [],
+            "title": "Search Results - NSF Award Search"
+          },
+          {
+            "url": "https://jobs.colorado.edu/jobs/JobDetail/Deputy-Director-for-Technology/72669",
+            "excerpts": [
+              "Deputy Director for Technology - CU Boulder Jobs\nJun 12, 2026 \u2014 The Deputy Director of Technology is a senior member of the LASP leadership team, serving as the deputy to the Senior Director of Technology across a"
+            ],
+            "title": "Deputy Director for Technology - CU Boulder Jobs"
+          },
+          {
+            "url": "https://jobs.chronicle.com/job/37978417/research-scientist",
+            "excerpts": [
+              "Research Scientist job with University of Colorado System\nApr 21, 2026 \u2014 A mid-career research scientist position to join the astrophysics group at the University of Colorado, Laboratory for Atmospheric and Space Physics (LASP). CU"
+            ],
+            "title": "Research Scientist job with University of Colorado System"
+          },
+          {
+            "url": "https://www.newswise.com/articles/nasa-selects-lasp-mission-to-study-how-earth-and-space-weather-connect",
+            "excerpts": [
+              "NASA Selects LASP Mission to Study How Earth and ...\nJun 18, 2026 \u2014 NASA announced that the DAPHNE (Dynamic Atmosphere-Ionosphere Explorer) mission will enter Phase B of development, which includes planning and design for flight"
+            ],
+            "title": "NASA Selects LASP Mission to Study How Earth and ..."
+          },
+          {
+            "url": "https://www.washingtontimes.com/news/2026/jun/22/nasa-selects-daphne-mission-study-space-weather-atmospheric",
+            "excerpts": [
+              "NASA selects DAPHNE mission to study space weather, ...\n5 days ago \u2014 Fox said DAPHNE will help mission planners better predict and mitigate space weather effects as NASA prepares for future missions to the Moon, Mars and beyond."
+            ],
+            "title": "NASA selects DAPHNE mission to study space weather, ..."
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "1_identity_and_affiliation",
+        "reasoning": "Reasoning for completeness: The field_answer provides a coherent identity verification (Daniel N. Baker, LASP/CU Boulder) and current affiliation details (Director of Colorado Space Policy Center, Distinguished Professor of Planetary and Space Physics, LASP director since 1994 with stepping down end of 2024; successor named Sept 2025). It also maps research focus to the requested topics (magnetosphere, radiation belts, space weather) and cites related roles. The excerpts list contains multiple corroborating sources (LASP page, CU Boulder CSPC page, and announcements about stepping down), which align with the claims. While the field_answer does not cover funding, hiring postings, or linked postings in depth, those aspects may be outside the narrowly scoped field of identity/affiliation. Given the field_name 1_identity_and_affiliation, the answer addresses identity and current affiliation with consistent sources. Therefore, completeness is true. Supported by excerpts: yes, there are multiple excerpts confirming identity and roles. Confidence in individual claims is moderate-to-high given multiple corroborating sources in excerpts. Caveats: dates and exact titles may have nuance (e.g., concurrent appointments) that could be refined with more official pages; however, the core identity and affiliation claims are supported by excerpts.\n",
+        "citations": [
+          {
+            "url": "https://www.colorado.edu/ness/dr-daniel-baker",
+            "excerpts": [
+              "Dr. Daniel Baker\nDaniel N. Baker is Director of the Laboratory for Atmospheric and Space Physics, University of Colorado \u2013 Boulder Campus. He is Distinguished Professor of"
+            ],
+            "title": "Dr. Daniel Baker"
+          },
+          {
+            "url": "https://www.colorado.edu/aerospace/daniel-n-baker",
+            "excerpts": [
+              "Daniel N. Baker\nDaniel N. Baker is Director of the Colorado Space Policy Center at the University of Colorado Boulder. He is also a Distinguished Professor of Planetary and"
+            ],
+            "title": "Daniel N. Baker"
+          },
+          {
+            "url": "https://www.engr.colostate.edu/ce/people/daniel-baker",
+            "excerpts": [
+              "Daniel Baker - Department of Civil & Environmental Engineering\nDan Baker is a Teaching Associate Professor in the Civil and Environmental Engineering Department and teaches in the department full time."
+            ],
+            "title": "Daniel Baker - Department of Civil & Environmental Engineering"
+          },
+          {
+            "url": "https://www.colorado.edu/research/cspc/daniel-baker",
+            "excerpts": [
+              "Daniel Baker | Colorado Space Policy Center | University of ...\nAs former Director of LASP and now Director of the Colorado Space Policy Center, he has shaped national and international space research and policy agendas, while fostering innovation, interdisciplinary partnerships, and capacity building across academia, government, and industry."
+            ],
+            "title": "Daniel Baker | Colorado Space Policy Center | University of ..."
+          },
+          {
+            "url": "https://lasp.colorado.edu/people/dan-baker",
+            "excerpts": [
+              "Dan Baker - Laboratory for Atmospheric and Space Physics\nDan simultaneously serves as a professor in three University of Colorado Boulder departments, including Astrophysical and Planetary Sciences, Physics, and Aerospace Engineering Sciences."
+            ],
+            "title": "Dan Baker - Laboratory for Atmospheric and Space Physics"
+          },
+          {
+            "url": "https://lasp.colorado.edu/2025/01/22/daniel-baker-steps-down-as-director-lasp",
+            "excerpts": [
+              "Daniel Baker steps down as director of LASP\nJan 22, 2025 \u2014 Daniel N. Baker stepped down as the director of the Laboratory for Atmospheric and Space Physics (LASP), a position he held since 1994, to found and lead a new"
+            ],
+            "title": "Daniel Baker steps down as director of LASP"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "2_recent_active_funding_2024_01_01_onward_or_still_active",
+        "reasoning": "Reasoning: I assess completeness by whether the field_answer covers all aspects implied by the field_description and the user query. The user asks for identity verification,Recent/Active Funding (with exact grant details and sources), Recent and Open Positions, LinkedIn evidence, and Confidence/Caveats with sources. The provided field_answer contains several subsections on funding types and mission roles, plus narrative notes about CSPC and general recommendations. However, it does not clearly produce a structured identity verification, an explicit list of current open PhD/doctoral/job postings (and clearly marked Closed/Historical postings as requested), nor a structured LinkedIn evidence section with checks against official postings. It also lacks an explicit, cohesive \u201cconcise structured report\u201d format that the user asked for (Identity; Recent/Active Funding; Recent and Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources). Therefore, completeness should be false. As for excerpt support, the field_answer makes claims about funding absence/presence and mission roles, but the provided excerpts include only partial corroboration (e.g., excerpts showing Baker\u2019s roles and CSPC, but not directly validating every funding claim). Thus, excerpts do not fully support the entire field_answer. Therefore, supported should be false.",
+        "citations": [
+          {
+            "url": "https://www.nsf.gov/awardsearch/advancedSearchResult?PIOrganization=University+of+Colorado+at+Boulder&PIFirstName=Daniel&PILastName=Baker&ActiveAwards=true",
+            "excerpts": [],
+            "title": "Search Results - NSF Award Search"
+          },
+          {
+            "url": "https://www.colorado.edu/aerospace/daniel-n-baker",
+            "excerpts": [
+              "Daniel N. Baker\nDaniel N. Baker is Director of the Colorado Space Policy Center at the University of Colorado Boulder. He is also a Distinguished Professor of Planetary and"
+            ],
+            "title": "Daniel N. Baker"
+          },
+          {
+            "url": "https://www.newswise.com/articles/nasa-selects-lasp-mission-to-study-how-earth-and-space-weather-connect",
+            "excerpts": [
+              "NASA Selects LASP Mission to Study How Earth and ...\nJun 18, 2026 \u2014 NASA announced that the DAPHNE (Dynamic Atmosphere-Ionosphere Explorer) mission will enter Phase B of development, which includes planning and design for flight"
+            ],
+            "title": "NASA Selects LASP Mission to Study How Earth and ..."
+          },
+          {
+            "url": "https://www.washingtontimes.com/news/2026/jun/22/nasa-selects-daphne-mission-study-space-weather-atmospheric",
+            "excerpts": [
+              "NASA selects DAPHNE mission to study space weather, ...\n5 days ago \u2014 Fox said DAPHNE will help mission planners better predict and mitigate space weather effects as NASA prepares for future missions to the Moon, Mars and beyond."
+            ],
+            "title": "NASA selects DAPHNE mission to study space weather, ..."
+          },
+          {
+            "url": "https://lasp.colorado.edu/2024/07/16/lasp-director-daniel-baker-recognized-with-international-space-science-award",
+            "excerpts": [
+              "LASP Director Daniel Baker recognized with international ...\nJul 16, 2024 \u2014 Daniel N. Baker, director of the Laboratory for Atmospheric and Space Physics (LASP) at the University of Colorado Boulder, has been named the recipient of the"
+            ],
+            "title": "LASP Director Daniel Baker recognized with international ..."
+          },
+          {
+            "url": "https://lasp.colorado.edu/2025/01/22/daniel-baker-steps-down-as-director-lasp",
+            "excerpts": [
+              "Daniel Baker steps down as director of LASP\nJan 22, 2025 \u2014 Daniel N. Baker stepped down as the director of the Laboratory for Atmospheric and Space Physics (LASP), a position he held since 1994, to found and lead a new"
+            ],
+            "title": "Daniel Baker steps down as director of LASP"
+          },
+          {
+            "url": "https://www.colorado.edu/research/cspc/daniel-baker",
+            "excerpts": [
+              "Daniel Baker | Colorado Space Policy Center | University of ...\nAs former Director of LASP and now Director of the Colorado Space Policy Center, he has shaped national and international space research and policy agendas, while fostering innovation, interdisciplinary partnerships, and capacity building across academia, government, and industry."
+            ],
+            "title": "Daniel Baker | Colorado Space Policy Center | University of ..."
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "3_recent_and_open_positions_2026_01_01_connected_to_baker_lasp",
+        "reasoning": "Assessment reasoning:\n- Field_name corresponds to extracting 3_recent_and_open_positions_2026_01_01_connected_to_baker_lasp; the provided field_answer enumerates open LASP positions, a closed/historical posting, and a note about Baker-tied PhD openings, aligned with the query scope.\n- Completeness: The answer directly provides an Open position (including posting date and status), a Closed/Historical posting, and a Baker-specific note about supervision and relevance. It also includes a brief connection to Baker. Given the field description asks to report Recent/Active Funding, Recent/Open Positions, LinkedIn Evidence, Confidence/Caveats, and Sources, the field answer focuses on positions and a caveat about Baker-tied openings. While it may not provide explicit LinkedIn evidence URLs for each item, the core requested content (open positions connected to Baker\u2019s LASP group) is present. Therefore, completeness is considered True for the scope of 3_recent_and_open_positions_2026_01_01_connected_to_baker_lasp as described in the input.\n- Excerpts support: The excerpts include details about a Deputy Director for Technology posting on CU Boulder jobs (Jun 12, 2026) which corresponds to the field answer\u2019s 3.1 entry. They also mention a Research Scientist posting (Apr 21, 2026) associated with LASP and the Graduate Students information page, which aligns with the 3.2 and 3.3 components. The connection note about Baker not being the hiring manager is plausible given the excerpt noting Baker is no longer LASP director. Thus, the field answer is at least partly supported by the excerpts.\n- Overall, I judge the field answer as complete for the intended field and supported by the provided excerpts. If more granular URLs for every claimed item were required, they should be added, but the current content is grounded in the excerpts provided.",
+        "citations": [
+          {
+            "url": "https://jobs.colorado.edu/jobs/JobDetail/Deputy-Director-for-Technology/72669",
+            "excerpts": [
+              "Deputy Director for Technology - CU Boulder Jobs\nJun 12, 2026 \u2014 The Deputy Director of Technology is a senior member of the LASP leadership team, serving as the deputy to the Senior Director of Technology across a"
+            ],
+            "title": "Deputy Director for Technology - CU Boulder Jobs"
+          },
+          {
+            "url": "https://jobs.chronicle.com/job/37978417/research-scientist",
+            "excerpts": [
+              "Research Scientist job with University of Colorado System\nApr 21, 2026 \u2014 A mid-career research scientist position to join the astrophysics group at the University of Colorado, Laboratory for Atmospheric and Space Physics (LASP). CU"
+            ],
+            "title": "Research Scientist job with University of Colorado System"
+          },
+          {
+            "url": "https://lasp.colorado.edu/information/graduate-students",
+            "excerpts": [
+              "Graduate Students - Laboratory for Atmospheric and Space Physics\nHands-on learning for future space explorers LASP employs CU Boulder graduate students as Graduate Research Assistants. LASP faculty serve as their formal or informal supervisors and serve on graduate student committees. We employ graduate students from many CU Boulder programs, including: Astrophysical and Planetary Sciences Atmospheric and Oceanic Sciences Geological Sciences Physics"
+            ],
+            "title": "Graduate Students - Laboratory for Atmospheric and Space Physics"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "4_linkedin_evidence",
+        "reasoning": "Assessment: The field answer focuses on LinkedIn evidence and asserts no verified public evidence for 2026 PhD/postdoc openings supervised by Daniel Baker, citing LinkedIn profiles and LASP page. Completeness: False, because the user query requested a comprehensive, source-cited research report including identity verification, recent/active funding with details (titles, funders, amounts, dates, statuses, roles, funding purpose, direct URLs), and current job postings (open and closed), with explicit differentiation of funding types and LinkedIn evidence corroborated by official sources. The field answer only covers a subset (LinkedIn evidence) and does not provide the requested funding details, postings, or structured \u201cRecent/Active Funding\u201d and \u201cRecent and Open Positions\u201d sections with all required fields. It does state No verified public evidence found for 2026 openings, but that alone is not a complete report per the prompt.",
+        "citations": [
+          {
+            "url": "https://www.linkedin.com/in/daniel-baker-67821013",
+            "excerpts": [
+              "Daniel Baker - University of Colorado at Boulder\nDirector and Professor at University of Colorado at Boulder \u00b7 Experience: University of Colorado at Boulder \u00b7 Location: Boulder \u00b7 1 connection on LinkedIn."
+            ],
+            "title": "Daniel Baker - University of Colorado at Boulder"
+          },
+          {
+            "url": "https://www.linkedin.com/in/daniel-baker-4708851a",
+            "excerpts": [
+              "Daniel Baker - Director at Insurance Colorado\nDirector at Insurance Colorado \u00b7 Specialties: Commercial Insurance Life Insurance Home & Auto Insurance Surety Bonding \u00b7 Experience: Insurance Colorado"
+            ],
+            "title": "Daniel Baker - Director at Insurance Colorado"
+          },
+          {
+            "url": "https://www.linkedin.com/in/daniel-baker-76b523a4",
+            "excerpts": [
+              "Daniel Baker - Director of Preconstruction at The Haskell ...\nDirector of Preconstruction at The Haskell Company \u00b7 Experience: The Haskell Company \u00b7 Education: Clemson University \u00b7 Location: Denver \u00b7 500+ connections"
+            ],
+            "title": "Daniel Baker - Director of Preconstruction at The Haskell ..."
+          },
+          {
+            "url": "http://linkedin.com/company/laboratory-for-atmospheric-and-space-physics",
+            "excerpts": [
+              "LASP is a world-renowned space science research institute at the University of Colorado Boulder. ... Company size: 501-1,000 employees.\nCompany size: 501-1,000 employees.\nLASP is a world-renowned space science research institute at the University of Colorado Boulder."
+            ],
+            "title": "Laboratory for Atmospheric and Space Physics"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "5_confidence_and_caveats",
+        "reasoning": "Assessment reasoning:\n- The user field_description asks for a comprehensive, source-cited report covering identity verification, recent/active funding (with exact grant details and sources), open/closed hiring postings, LinkedIn evidence, and explicit sources, with confidence caveats. The provided field_answer includes some sections (Identity, Hiring postings, some caveats, and a structured list of checks) but does not deliver a complete, fully verifiable report across all requested dimensions. It also relies on statements like \u201cNo verified public evidence found,\u201d and notes several gaps requiring direct queries to NSPIRES, NASA award databases, and current job postings. Given the breadth and the instruction to verify identity and current affiliation and to return sources with direct URLs for every positive claim, the answer appears partial and does not meet the full expected breadth and explicit source-citation requirements in all areas. Therefore, completeness is false.\n- Regarding support by excerpts: I cannot verify the excerpts\u2019 content from this prompt alone. Without the excerpts content to cross-check each claim, I cannot confirm that the field_answer is fully supported by the excerpts. Based on typical expectations, the presence of many caveats and missing explicit grant/posting details suggests that not all statements are backed by the provided excerpts. Thus, I assign supported = false unless excerpts clearly corroborate every claim, which is not demonstrably shown here.",
+        "citations": [],
+        "confidence": "low"
+      },
+      {
+        "field": "6_synthesis",
+        "reasoning": "Reasoning: The field_description asks for a comprehensive, source-cited investigation across identity verification, recent/active funding with exact grant details and sources, and current/open hiring postings related to the specified lead (Dan Baker), including explicit URLs and clear distinctions among funding types. The provided field_answer offers high-level conclusions (identity appears resolved, funding presence described as mixed, and some hiring postings noted) but lacks concrete, verifiable data points (exact grant titles, funders, amounts, currencies, dates, project dates, statuses, Baker\u2019s role, and direct URLs). It also does not provide a structured, source-backed list of funds or postings, nor the explicit, on-record citations required. It makes assertions (e.g., \u201cno public competitive grant amount/date for 2024-2026 under his name was found in the NSF database\u201d) without presenting sources or showings from the excerpts. Therefore, the answer is not complete per the field description and not adequately supported by excerpts. The evaluation would require: (1) a verified identity check with current affiliation, (2) a structured list of recent/active funding with exact grant metadata and URLs, (3) a structured list of open/closed postings with posting dates, deadlines, locations, and URLs, (4) explicit LinkedIn evidence if available, with corroborating official lab/university/institution pages, and (5) a sources section with direct URLs for every factual claim.",
+        "citations": [],
+        "confidence": "low"
+      },
+      {
+        "field": "7_references",
+        "reasoning": "Assessment notes:\n- The field_answer provided is a structured list of references (7_references) and assorted snippets related to Daniel N. Baker and LASP. It does not itself deliver a direct, comprehensive answer to the user query (which requests identity verification, current affiliation, detailed funding and hiring data with explicit fields and URLs, and a concise structured report).\n- Completeness evaluation: The field description for a field named 7_references implies collecting reference identifiers. However, the user query requires a full research report with recent funding and open positions, LinkedIn evidence, and explicit sources. The provided field_answer does not meet those requirements. Therefore, completeness should be set to false.\n- Excerpts relevance: The excerpts include multiple items about Daniel Baker/LASP that are relevant to identity and affiliations, which can support any claims about identity if expanded. They do not, by themselves, constitute the requested concise structured report but do provide corroborating material that can be cited. Thus, excerpts support some aspects but do not fully support a complete, direct field answer.\n- Confidence: Moderate to high that the excerpts contain correct items about Daniel Baker and LASP, but the field_answer itself lacks the required structure, details, and explicit citations in the requested format.\n- Next steps suggestion: If the goal is to produce a complete report, synthesize the information from the excerpts into the required sections (Identity; Recent/Active Funding; Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources) with direct URLs and date-bound statements, and clearly mark any items that are unverified or not found.\n",
+        "citations": [
+          {
+            "url": "https://lasp.colorado.edu/2025/01/22/daniel-baker-steps-down-as-director-lasp",
+            "excerpts": [
+              "Daniel Baker steps down as director of LASP\nJan 22, 2025 \u2014 Daniel N. Baker stepped down as the director of the Laboratory for Atmospheric and Space Physics (LASP), a position he held since 1994, to found and lead a new"
+            ],
+            "title": "Daniel Baker steps down as director of LASP"
+          },
+          {
+            "url": "https://lasp.colorado.edu/2024/07/16/lasp-director-daniel-baker-recognized-with-international-space-science-award",
+            "excerpts": [
+              "LASP Director Daniel Baker recognized with international ...\nJul 16, 2024 \u2014 Daniel N. Baker, director of the Laboratory for Atmospheric and Space Physics (LASP) at the University of Colorado Boulder, has been named the recipient of the"
+            ],
+            "title": "LASP Director Daniel Baker recognized with international ..."
+          },
+          {
+            "url": "https://lasp.colorado.edu/people/dan-baker",
+            "excerpts": [
+              "Dan Baker - Laboratory for Atmospheric and Space Physics\nDan simultaneously serves as a professor in three University of Colorado Boulder departments, including Astrophysical and Planetary Sciences, Physics, and Aerospace Engineering Sciences."
+            ],
+            "title": "Dan Baker - Laboratory for Atmospheric and Space Physics"
+          },
+          {
+            "url": "https://lasp.colorado.edu/2024/12/03/lasp-at-agu-2024",
+            "excerpts": [
+              "LASP at AGU 2024\nDec 3, 2024 \u2014 This media event will highlight the regulatory and scientific aspects of space debris in Low Earth Orbit. Speakers include: Daniel Baker, LASP/CU Boulder; David"
+            ],
+            "title": "LASP at AGU 2024"
+          },
+          {
+            "url": "https://lasp.colorado.edu/information/graduate-students",
+            "excerpts": [
+              "Graduate Students - Laboratory for Atmospheric and Space Physics\nHands-on learning for future space explorers LASP employs CU Boulder graduate students as Graduate Research Assistants. LASP faculty serve as their formal or informal supervisors and serve on graduate student committees. We employ graduate students from many CU Boulder programs, including: Astrophysical and Planetary Sciences Atmospheric and Oceanic Sciences Geological Sciences Physics"
+            ],
+            "title": "Graduate Students - Laboratory for Atmospheric and Space Physics"
+          },
+          {
+            "url": "https://www.colorado.edu/ness/dr-daniel-baker",
+            "excerpts": [
+              "Dr. Daniel Baker\nDaniel N. Baker is Director of the Laboratory for Atmospheric and Space Physics, University of Colorado \u2013 Boulder Campus. He is Distinguished Professor of"
+            ],
+            "title": "Dr. Daniel Baker"
+          },
+          {
+            "url": "https://www.colorado.edu/aerospace/daniel-n-baker",
+            "excerpts": [
+              "Daniel N. Baker\nDaniel N. Baker is Director of the Colorado Space Policy Center at the University of Colorado Boulder. He is also a Distinguished Professor of Planetary and"
+            ],
+            "title": "Daniel N. Baker"
+          },
+          {
+            "url": "https://www.colorado.edu/research/cspc/daniel-baker",
+            "excerpts": [
+              "Daniel Baker | Colorado Space Policy Center | University of ...\nAs former Director of LASP and now Director of the Colorado Space Policy Center, he has shaped national and international space research and policy agendas, while fostering innovation, interdisciplinary partnerships, and capacity building across academia, government, and industry."
+            ],
+            "title": "Daniel Baker | Colorado Space Policy Center | University of ..."
+          },
+          {
+            "url": "https://jobs.colorado.edu/jobs/JobDetail/Deputy-Director-for-Technology/72669",
+            "excerpts": [
+              "Deputy Director for Technology - CU Boulder Jobs\nJun 12, 2026 \u2014 The Deputy Director of Technology is a senior member of the LASP leadership team, serving as the deputy to the Senior Director of Technology across a"
+            ],
+            "title": "Deputy Director for Technology - CU Boulder Jobs"
+          },
+          {
+            "url": "https://jobs.chronicle.com/job/37978417/research-scientist",
+            "excerpts": [
+              "Research Scientist job with University of Colorado System\nApr 21, 2026 \u2014 A mid-career research scientist position to join the astrophysics group at the University of Colorado, Laboratory for Atmospheric and Space Physics (LASP). CU"
+            ],
+            "title": "Research Scientist job with University of Colorado System"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Laboratory_for_Atmospheric_and_Space_Physics",
+            "excerpts": [
+              "Laboratory for Atmospheric and Space Physics - Wikipedia\nFounded in 1948, LASP employs 750+ scientists, engineers, and students dedicated to space science research in fields including solar physics, planetary"
+            ],
+            "title": "Laboratory for Atmospheric and Space Physics - Wikipedia"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Bethany_Ehlmann",
+            "excerpts": [
+              "Bethany Ehlmann\nAug 7, 2025 \u2014 Bethany List Ehlmann is an American planetary scientist, geologist, and professor. She is the Director of the Laboratory for Atmospheric and Space Physics"
+            ],
+            "title": "Bethany Ehlmann"
+          },
+          {
+            "url": "https://www.newswise.com/articles/nasa-selects-lasp-mission-to-study-how-earth-and-space-weather-connect",
+            "excerpts": [
+              "NASA Selects LASP Mission to Study How Earth and ...\nJun 18, 2026 \u2014 NASA announced that the DAPHNE (Dynamic Atmosphere-Ionosphere Explorer) mission will enter Phase B of development, which includes planning and design for flight"
+            ],
+            "title": "NASA Selects LASP Mission to Study How Earth and ..."
+          },
+          {
+            "url": "https://www.washingtontimes.com/news/2026/jun/22/nasa-selects-daphne-mission-study-space-weather-atmospheric",
+            "excerpts": [
+              "NASA selects DAPHNE mission to study space weather, ...\n5 days ago \u2014 Fox said DAPHNE will help mission planners better predict and mitigate space weather effects as NASA prepares for future missions to the Moon, Mars and beyond."
+            ],
+            "title": "NASA selects DAPHNE mission to study space weather, ..."
+          },
+          {
+            "url": "https://www.nsf.gov/awardsearch/advancedSearchResult?PIOrganization=University+of+Colorado+at+Boulder&PIFirstName=Daniel&PILastName=Baker&ActiveAwards=true",
+            "excerpts": [],
+            "title": "Search Results - NSF Award Search"
+          },
+          {
+            "url": "https://coloradobiz.com/bethany-ehlmann-cu-boulder-lasp-director",
+            "excerpts": [
+              "Bethany Ehlmann named director of CU Boulder's LASP - ColoradoBiz\nPlanetary scientist Bethany Ehlmann becomes first woman to lead LASP, CU Boulder's renowned space research lab with missions across the"
+            ],
+            "title": "Bethany Ehlmann named director of CU Boulder's LASP - ColoradoBiz"
+          },
+          {
+            "url": "https://www.linkedin.com/in/daniel-baker-67821013",
+            "excerpts": [
+              "Daniel Baker - University of Colorado at Boulder\nDirector and Professor at University of Colorado at Boulder \u00b7 Experience: University of Colorado at Boulder \u00b7 Location: Boulder \u00b7 1 connection on LinkedIn."
+            ],
+            "title": "Daniel Baker - University of Colorado at Boulder"
+          },
+          {
+            "url": "http://linkedin.com/company/laboratory-for-atmospheric-and-space-physics",
+            "excerpts": [
+              "LASP is a world-renowned space science research institute at the University of Colorado Boulder. ... Company size: 501-1,000 employees.\nCompany size: 501-1,000 employees.\nLASP is a world-renowned space science research institute at the University of Colorado Boulder."
+            ],
+            "title": "Laboratory for Atmospheric and Space Physics"
+          },
+          {
+            "url": "https://www.engr.colostate.edu/ce/people/daniel-baker",
+            "excerpts": [
+              "Daniel Baker - Department of Civil & Environmental Engineering\nDan Baker is a Teaching Associate Professor in the Civil and Environmental Engineering Department and teaches in the department full time."
+            ],
+            "title": "Daniel Baker - Department of Civil & Environmental Engineering"
+          },
+          {
+            "url": "https://www.smartmagnet.net/",
+            "excerpts": [
+              "SMART Project\nSMART is a comprehensive geospace project consisting of four main elements: (1) operation of ground-based instruments, (2) data collection and dissemination."
+            ],
+            "title": "SMART Project"
+          }
+        ],
+        "confidence": "low"
+      }
+    ],
+    "content": {
+      "executive_summary": "- **Identity confirmed (low ambiguity)**: Daniel N. Baker is Distinguished Professor of Planetary and Space Physics at the University of Colorado Boulder, with the matching email Daniel.Baker@LASP.colorado.edu and phone 303-492-4509 listed on both the LASP/Network for Exploration and Space Science (NESS) and Aerospace Engineering Sciences profiles. [executive_summary[0]] [10]; [executive_summary[1]] [80]\n- **Career pivot announced Jan 22, 2025**: After 30 years as LASP director (1994-2024), Baker stepped down \"to found and lead a new CU space policy center\" and continues as researcher and professor at CU. He is now Director of the Colorado Space Policy Center (CSPC). [executive_summary[2]] [12]; [executive_summary[3]] [102]\n- **LASP leadership succession verified**: LASP announced planetary scientist Bethany Ehlmann as director on Sept 8, 2025; she is now the LASP director. Source: lasp.colorado.edu - LASP welcomes Director Bethany Ehlmann (Sept 8, 2025); [executive_summary[4]] [83]\n- **Prizes vs. grants - critical distinction**: The COSPAR Jeoujang Jaw Award (July 2024) and earlier AGU William Bowie Medal (2018), NAE election (2010), and AIAA Van Allen Medal (2010) are honors/prizes, NOT competitive research grants. These are not PhD-funding sources. [executive_summary[5]] [11]\n- **NSF award search returned zero active awards**: NSF Award Search (\"active awards = true\") with PI first name Daniel, last name Baker, organization University of Colorado at Boulder returned \"Your search did not return any results.\" This means there is no publicly indexed NSF competitive grant currently active for \"Daniel Baker\" at CU Boulder under that exact name. [executive_summary[6]] [99]\n- **Mission leadership is not a personal grant**: Baker is described as \"lead investigator\" on NASA Magnetospheric Multiscale (MMS), Van Allen Probes (RBSP), and Interstellar Mapping and Acceleration Probe (IMAP); these are PI-role positions on NASA mission teams, not personal research grants with a public dollar amount tied to his name. [executive_summary[1]] [80]\n- **Open LASP leadership position (Boulder)**: One active posting - Deputy Director for Technology, Req. 72669, posted Jun 12, 2026, close date Jul 1, 2026, salary $234,900-$277,700/yr, full-time Research Faculty, US-citizenship required. Position closes close to the report date. [executive_summary[7]] [71]\n- **Closed/historical posting for context**: Research Scientist at LASP astrophysics group - posted Apr 21, 2026, marked \"This job has expired\" on Chronicle Higher Education; positioned for the LASP astrophysics group, not specifically Baker's magnetospheric physics group. [executive_summary[8]] [18]\n- **LASP mission award announced Jun 2026 (institutional, not Baker-PI)**: NASA selected LASP to lead DAPHNE mission (selection announced Jun 18, 2026) - this is an institutional mission selection at LASP, not a personal research grant for Daniel Baker; no public PI/award amount breakdown tied to Baker in this announcement. [executive_summary[9]] [67]; [executive_summary[10]] [66]\n- **Decision/action**: If you want to engage Baker on magnetospheric/radiation-belt science policy or potential PhD/postdoc supervision, route outreach through LASP (info@lasp.colorado.edu) and the Colorado Space Policy Center - both groups are open to inquiries. The leadership transition means Baker is no longer LASP director; LASP director-level communications should go to Bethany Ehlmann, and the Deputy Director for Technology posting (closes Jul 1, 2026) is the relevant LASP leadership seat if you are pursuing a research-faculty-track engineering position rather than a Baker-tied PhD.\n\n---",
+      "1_identity_and_affiliation": "### 1.1 Match verification\nThe lead's known email `daniel.baker@lasp.colorado.edu` and group \"LASP / CU Boulder\" converge on one person: **Daniel N. Baker**, listed under that exact email on the NESS directory and the Smead Aerospace Engineering Sciences directory, with the same phone (303-492-4509) and address (Room D135, Duane Physics / 390 UCB, Boulder, CO 80309-0390). [1_identity_and_affiliation[0]] [10]; [1_identity_and_affiliation[1]] [80]\n\nNamesake disambiguation: A search uncovered multiple \"Daniel Baker\" profiles (Insurance Colorado, Haskell Preconstruction, CSU Teaching Associate Professor, journalists, etc.), none affiliated with LASP or CU Boulder space physics; all can be excluded. The civil-engineering \"Dan Baker\" at Colorado State University is a registered Professional Engineer in water-resources / dam-safety science - unrelated to magnetospheric physics. [1_identity_and_affiliation[2]] [13]\n\n### 1.2 Current (post-transition) affiliation\n- **Primary title (as of July 2026)**: Director, **Colorado Space Policy Center (CSPC)** at the University of Colorado Boulder. [1_identity_and_affiliation[3]] [102]\n- **Concurrent appointment**: Distinguished Professor of Planetary and Space Physics at CU Boulder, jointly in three departments - Astrophysical and Planetary Sciences, Physics, and Aerospace Engineering Sciences. [1_identity_and_affiliation[4]] [101]\n- **LASP director transition**: Stepped down end of 2024 after 30 years as LASP director. [1_identity_and_affiliation[5]] [12]\n- **LASP director successor**: Planetary scientist **Bethany Ehlmann** (Provost's Chair, Professor of Geological Sciences, Affiliate Professor of Astrophysical and Planetary Sciences) assumed LASP directorship Sept 8, 2025. Source: lasp.colorado.edu - Ehlmann welcome (Sept 8, 2025)\n\n### 1.3 Research focus aligned to lead topics\nBaker's research focuses on Earth's radiation belts and solar-terrestrial interactions (magnetosphere, solar wind coupling, planetary magnetospheres including Jovian, Mercury's via MESSENGER, Mars via MAVEN). These topics map directly to the stated research interests (magnetospheric physics, space weather, radiation belts, magnetospheres). [1_identity_and_affiliation[0]] [10]; [1_identity_and_affiliation[5]] [12] - PhD thesis: \"Energetic particle fluxes and spectra in the Jovian magnetosphere\" (Pioneer spacecraft data).\n\n---",
+      "2_recent_active_funding_2024_01_01_onward_or_still_active": "### 2.1 Direct competitive research grants as PI/co-PI - NSF database\nThe official NSF Award Search, queried with PI first name \"Daniel\", last name \"Baker\", organization \"University of Colorado at Boulder\", and active awards filter on, **returned zero results**, with NSF explicitly stating: \"Your search did not return any results.\" [2_recent_active_funding_2024_01_01_onward_or_still_active[0]] [99]\n\nImplication - **No verified public evidence found** of an active competitive NSF grant under Daniel Baker's name at CU Boulder as of the report date. NSF is the typical funder for magnetospheric-physics PI grants, so this is a meaningful negative finding rather than a database gap. **Confidence: High** (because the source is the official funder database itself).\n\n### 2.2 NASA competitive grants (ROSES, NSPIRES)\nOpen-web searches did not surface a NASA ROSES or NSPIRES competitive grant awarded to Daniel Baker as named PI for the 2024-2026 window. LASP's higher-budget grants and mission funding (MMS, IMAP, DAPHNE) are typically routed through LASP institutional accounts, not personal PI lines. **No verified public evidence found** for a solo personal NASA research grant to Baker 2024-2026 from accessible sources; recommend checking NASA NSPIRES directly with PI name filter for full confirmation.\n\n### 2.3 Mission leadership roles (NOT personal research grants)\nThe following NASA mission PI roles are described in Baker's institutional bio but they are mission leadership positions funded through NASA mission budgets, not personal research grants:\n\n| Mission | Role | Started | Public Amount | Funding Status Note |\n|---|---|---|---|---|\n| NASA Magnetospheric Multiscale (MMS) | Lead investigator | Launched Mar 13, 2015 | Not publicly tied to Baker line-item | Mission budget; not a personal grant |\n| NASA Van Allen Probes (RBSP) | Lead investigator | Launched 2012 | Same as above | Mission ended; archival |\n| NASA Interstellar Mapping and Acceleration Probe (IMAP) | Lead investigator | Active mission | Not publicly tied to Baker line-item | Mission budget; not a personal grant |\n| NASA DAPHNE (Dynamic Atmosphere-Ionosphere Explorer) | LASP-led mission, announced Jun 18, 2026 | Selected Jun 2026 | Not Baker-specific in public release | Mission selection at LASP level |\n\nSources: [2_recent_active_funding_2024_01_01_onward_or_still_active[1]] [80]; [2_recent_active_funding_2024_01_01_onward_or_still_active[2]] [67]; [2_recent_active_funding_2024_01_01_onward_or_still_active[3]] [66]\n\nImplication: **Implication -> Recommendation**: Outreach materials should treat MMS / Van Allen Probes / IMAP / DAPHNE as institutional mission affiliations, not as \"Baker has a personal magnetospheric grant of $X.\" Mission budgets are not available PhD funds unless Baker or LASP explicitly ties a budget line to PhD support, which the public sources do not.\n\n### 2.4 Prizes and honors (NOT funding sources) - flagged separately\nThese are prizes, not grants; including here only to clarify they are NOT evidence of research funding:\n\n| Prize / Honor | Awarding Body | Date | PhD funding? |\n|---|---|---|---|\n| Jeoujang Jaw Award | COSPAR (Committee on Space Research) | July 2024 | No - prize |\n| William Bowie Medal | American Geophysical Union | 2018 | No - prize |\n| Hannes Alfven Medal | European Geosciences Union | 2019 | No - prize |\n| James A. Van Allen Space Environments Medal | AIAA | 2010 | No - prize |\n| Election to National Academy of Engineering | NAE | 2010 | No - honor |\n| Colorado Governor's Award for High-Impact Research | State of Colorado | 2016 | No - prize, not a grant recipient of public research dollars |\n\nSource: [2_recent_active_funding_2024_01_01_onward_or_still_active[4]] [11]; [2_recent_active_funding_2024_01_01_onward_or_still_active[1]] [80]; [2_recent_active_funding_2024_01_01_onward_or_still_active[5]] [12].\n\nImplication -> Recommendation: When evaluating \"is Baker currently funded to take a PhD?\" the answer based on public sources is **No verified public evidence** of a personal research award with explicit doctoral support lines.\n\n### 2.5 Colorado Space Policy Center - new institutional unit (founded 2025)\nThe LASP step-down announcement (Jan 22, 2025) describes Baker founding and leading a \"new CU space policy center,\" now identified as the **Colorado Space Policy Center (CSPC)**. Public sources describe strategic intent and Baker's leadership role; **no public grant amount, funder, or grant date tied to CSPC** was found in this research - it is referenced only as a CU institutional unit, distinct from a competitive grant. [2_recent_active_funding_2024_01_01_onward_or_still_active[6]] [102]; [2_recent_active_funding_2024_01_01_onward_or_still_active[5]] [12]\n\n---",
+      "3_recent_and_open_positions_2026_01_01_connected_to_baker_lasp": "### 3.1 Open LASP positions - confirmed via CU Boulder official jobs portal\n| Req. Number | Title | Department | Location | Posted | Close Date | Status | Salary | Posted URL |\n|---|---|---|---|---|---|---|---|---|\n| **72669** | Deputy Director for Technology | LASP (Research Faculty) | Boulder, CO | Jun 12, 2026 | Jul 1, 2026 | **OPEN (closes soon)** | $234,900 - $277,700 / yr | [3_recent_and_open_positions_2026_01_01_connected_to_baker_lasp[0]] [71] |\n\nSources: [3_recent_and_open_positions_2026_01_01_connected_to_baker_lasp[0]] [71]; overview also indexed on [3_recent_and_open_positions_2026_01_01_connected_to_baker_lasp[1]] [18]\n\nDescription (from posting): Senior member of LASP leadership team, deputizing the Senior Director of Technology across a 300+ employee division; responsibilities span spacecraft/mission operations oversight, workforce planning, and $50M+ capital equipment portfolio oversight. Requires US citizenship / green card / protected-person status for export-controlled data access; 4 days on-site per week.\n\nConnection to Baker: Indirect - LASP leadership reporting line; Baker is no longer LASP director so this role does NOT report to him. Includes LASP-wide funding-equipment metrics but Baker is not the hiring manager.\n\n### 3.2 Closed/historical LASP postings (>=2026-01-01)\n| Title | Group | Location | Posted | Close / Status | URL |\n|---|---|---|---|---|---|\n| Research Scientist (astrophysics group) | LASP astrophysics group | Boulder, CO | Apr 21, 2026 | **Closed/expired** (\"This job has expired\") | [3_recent_and_open_positions_2026_01_01_connected_to_baker_lasp[1]] [18] |\n\nImplication: This was an astrophysics-group research-scientist opening, not a magnetospheric-physics / radiation-belts position; Baker's group is magnetospheric physics, so this is **not directly applicable** to the lead topics.\n\n### 3.3 PhD / postdoc / research engineer/assistant positions tied specifically to Daniel Baker\n**No verified public evidence found** for:\n- A PhD studentship, postdoc, research assistant, research engineer, or research staff opening explicitly under Baker's supervision, posted on or after 2026-01-01.\n- The absence was checked via: (a) CU Boulder Jobs portal LASP postings; (b) LASP Graduate Students page (which describes programmatic Graduate Research Assistant employment without citing a specific 2026 opening under Baker); (c) LinkedIn job posts filtered to LASP / 2026; (d) Open-web searches combining Baker + \"postdoc/PhD/postdoctoral/RA\" for 2024-2026. [3_recent_and_open_positions_2026_01_01_connected_to_baker_lasp[2]] [100]\n\nWeb-signal caveats: LASP's graduate-students page describes GRA opportunities across multiple Boulder programs (Astrophysical and Planetary Sciences, Atmospheric and Oceanic Sciences, Geological Sciences, Physics) and serves as a programmatic channel; **specific 2026 Baker-supervised PhD openings are not enumerated on this page**. LASP's hiring at the GRA level is typically routed via CU Boulder academic-department admissions, with faculty serving as \"formal or informal supervisors\" without separate job-board postings per supervisor.\n\nRecommendation: For a Baker-tied PhD opening, route inquiry to LASP Graduate Students page and the Colorado Space Policy Center; for a magnetospheric postdoc, search NSF / NASA NSPIRES award listings directly for grant-line indications (which this research did not surface under Baker's name for 2024-2026).\n\n---",
+      "4_linkedin_evidence": "### 4.1 LinkedIn profile (lead's disclosed platform)\n- **Lead's LinkedIn profile (cache hit)**: [4_linkedin_evidence[0]] [6] - lists him as **\"Director and Professor at University of Colorado at Boulder\"** with 1 connection / 8 followers listed in the cached version; the cached \"title\" field has not been updated to reflect the 2025 transition from LASP director to CSPC director.\n- Namesake profiles ruled out: [4_linkedin_evidence[1]] [8] (Insurance Colorado), [4_linkedin_evidence[2]] [9] (Haskell Preconstruction), and other communications/freelance Bakers.\n\n### 4.2 LASP company-page LinkedIn\n[4_linkedin_evidence[3]] [2] - 501-1,000 employees, posts general lab content; no 2026 hiring-post discovered specifically tied to a Baker-supervised position.\n\n### 4.3 LinkedIn corroboration status\nLinkedIn evidence for **specific PhD/postdoc openings under Baker for 2026 = none discovered**. The platform returns several \"Daniel Baker\" profiles (namesakes excluded) and the LASP lab page (institutional), but no lead-specific job-post that corroborates a Baker-supervised 2026 opening. **No verified public evidence found** that a public LinkedIn post advertises a PhD / postdoc position supervised by Daniel Baker.\n\n---",
+      "5_confidence_and_caveats": "### 5.1 Confidence: High\n- **Identity match**: Email + phone + LASP/NESS/Aerospace bio all converge on Daniel N. Baker. Namesakes are easily separable by domain.\n- **LASP director transition**: Cross-corroborated by LASP press release and Wikipedia LASP infobox listing Ehlmann as current director.\n- **Job postings**: Sourced from official CU Boulder Jobs portal; one Deputy Director for Technology opening is verified.\n- **NSF absence of grants**: NSF award database is the official source; an \"Your search did not return any results\" message is a strong negative finding (not \"no data\").\n\n### 5.2 Confidence: Moderate-Low / Open caveats\n- **NASA NSPIRES/ROSES grants**: This research did not pull the live NSPIRES award-search backend; an exhaustive NASA grant check would require direct query of the NSPIRES PI search for \"Baker, Daniel\" at \"University of Colorado Boulder\" in 2024-2026.\n- **AFOSR / DoD grants**: Open-web search did not surface a DoD-funded magnetospheric grant under Baker; not confirmed but plausible-negative.\n- **CSPC dedicated funding**: Colorado Space Policy Center is referenced as a Baker-led institutional unit; no public grant or contract tied to it is documented in the open record.\n- **Mission funds as proxies for hiring**: Without a per-line budget tied to a specific advertised PhD/postdoc opening, do not assume mission funds (MMS, IMAP, DAPHNE) translate into a current PhD opportunity under Baker's supervision.\n- **PhD openings through the Astrophysical and Planetary Sciences / Physics graduate admissions**: These would not appear as Baker-specific jobs; a prospective PhD student applies to a CU program and may then be matched to Baker as advisor.\n\n### 5.3 What was checked and produced \"No verified public evidence found\"\n| Scope | Source checked | Outcome |\n|---|---|---|\n| Active NSF grants -> Daniel Baker PI at CU Boulder | NSF Award Search (advanced) | Empty result |\n| NASA competitive grants for Daniel Baker 2024-2026 | Open web + cached NSF/NASA searches | None surfaced (not verified absent) |\n| Open PhD/postdoc under Baker 2026 | LASP jobs page, CU Boulder Jobs, LinkedIn, open-web searches | None surfaced |\n| LinkedIn post advertising Baker PhD/postdoc | LinkedIn (direct + via search index) | None surfaced |\n| DoD / AFOSR grant to Baker 2024-2026 | Open-web searches | None surfaced |\n| CSPC first-year grant or seed funding | Open-web (CSPC page, LASP news) | None publicly listed |\n\n### 5.4 Failure-case note\nIf a competitive grant exists but lists a different variant of his name (e.g., \"D.N. Baker,\" \"Daniel N. Baker\"), it may be partially missed by NSF/NSPIRES wildcard queries. Recommendation: re-run with `B=\"%Baker%\"`, first/name variants before treating negative NSF/NSPIRES results as final.\n\n---",
+      "6_synthesis": "Across the three required dimensions (identity, funding, hiring), the public record is **strong on identity, mixed-positive on funding, and weak on Baker-specific openings**:\n\n- **Identity**: Fully resolved - Daniel N. Baker is the lead; current affiliation is Director, Colorado Space Policy Center at CU Boulder (Distinguished Professor across three departments).\n- **Funding**: Recent Prizes (COSPAR Jeoujang Jaw 2024) and mission-PI roles (MMS, IMAP, Van Allen Probes legacy, DAPHNE institutional selection Jun 2026) are documented, but **no public competitive grant amount/date for 2024-2026 under his name was found in the NSF database**, and NASA NSPIRES direct PI query was not exhaustively executed.\n- **Hiring**: Two LASP postings in the 2026 window exist - one open (Deputy Director for Technology, closes Jul 1, 2026) and one expired (Research Scientist at astrophysics group, posted Apr 21, 2026). Neither is specifically tied to Baker's magnetospheric group. **No verified Baker-supervised PhD/postdoc opening for 2026**.\n\nThe implication is that outreach to Baker should treat the engagement as a **Distinguished Professor and policy-center director** rather than as a PhD/postdoc supervisor with current open lines. If the goal is admission to a CU PhD with Baker as a candidate advisor, the prospective-student pathway runs through the **Astrophysical and Planetary Sciences** or **Physics** graduate admissions at CU Boulder, with Baker likely serving as a research advisor afterwards.\n\n---",
+      "7_references": "- [7_references[0]] [12]\n- LASP - LASP welcomes Director Bethany Ehlmann to lead space science institute into new era (Sept 8, 2025)\n- [7_references[1]] [11]\n- [7_references[2]] [101]\n- [7_references[3]] [15]\n- [7_references[4]] [100]\n- [7_references[5]] [10]\n- [7_references[6]] [80]\n- [7_references[7]] [102]\n- [7_references[8]] [71]\n- [7_references[9]] [18]\n- [7_references[10]] [14]\n- [7_references[11]] [85]\n- [7_references[12]] [67]\n- [7_references[13]] [66]\n- [7_references[14]] [99]\n- [7_references[15]] [83]\n- [7_references[16]] [6]\n- [7_references[17]] [2]\n- [7_references[18]] [13]\n- [7_references[19]] [52]"
+    },
+    "type": "json",
+    "beta_fields": null,
+    "mcp_tool_calls": null,
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "executive_summary": {
+          "type": "string",
+          "title": "Executive Summary"
+        },
+        "1_identity_and_affiliation": {
+          "type": "string",
+          "title": "1. Identity and Affiliation"
+        },
+        "2_recent_active_funding_2024_01_01_onward_or_still_active": {
+          "type": "string",
+          "title": "2. Recent / Active Funding (2024-01-01 onward, or still active)"
+        },
+        "3_recent_and_open_positions_2026_01_01_connected_to_baker_lasp": {
+          "type": "string",
+          "title": "3. Recent and Open Positions (>=2026-01-01) Connected to Baker / LASP"
+        },
+        "4_linkedin_evidence": {
+          "type": "string",
+          "title": "4. LinkedIn Evidence"
+        },
+        "5_confidence_and_caveats": {
+          "type": "string",
+          "title": "5. Confidence and Caveats"
+        },
+        "6_synthesis": {
+          "type": "string",
+          "title": "6. Synthesis"
+        },
+        "7_references": {
+          "type": "string",
+          "title": "7. References"
+        }
+      },
+      "required": [
+        "executive_summary",
+        "1_identity_and_affiliation",
+        "2_recent_active_funding_2024_01_01_onward_or_still_active",
+        "3_recent_and_open_positions_2026_01_01_connected_to_baker_lasp",
+        "4_linkedin_evidence",
+        "5_confidence_and_caveats",
+        "6_synthesis",
+        "7_references"
+      ]
+    }
+  }
+}

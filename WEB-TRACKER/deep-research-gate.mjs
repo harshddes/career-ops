@@ -23,6 +23,7 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { AgentTaskQueue } from './lib/agent-task-queue.mjs';
 import { slugify } from './lib/jobs-to-consider-store.mjs';
+import { readResearchProspects } from './lib/research-prospect-store.mjs';
 
 const BASE = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = join(BASE, 'data');
@@ -100,6 +101,8 @@ export function scoreEvent(event, sourceImportance = 0.5) {
 
   const typeWeight = {
     new_jobs: 0.9,
+    new_research_opportunities: 0.92,
+    new_euraxess_opportunities: 0.94,
     phd_portal_changed: 0.85,
     deadline_approaching: 0.95,
     company_news: 0.6,
@@ -217,6 +220,52 @@ function queueAgentTasksForEvent(event, score, taskQueue, knownTasks, fusionJobs
   return created;
 }
 
+function loadResearchProspectsForEvent(event) {
+  const source = event.source || event.source_id;
+  if (!source) return [];
+  try {
+    return readResearchProspects({ source }).prospects || [];
+  } catch {
+    return [];
+  }
+}
+
+function queueAgentTasksForResearchEvent(event, score, taskQueue, knownTasks) {
+  if (event.type !== 'new_research_opportunities') return [];
+  const ids = new Set(Array.isArray(event.prospect_ids) ? event.prospect_ids : []);
+  if (!ids.size) return [];
+  const prospects = loadResearchProspectsForEvent(event)
+    .filter(prospect => ids.has(prospect.id))
+    .filter(prospect => prospect.needs_deep_research && prospect.opportunity_status !== 'closed');
+  const created = [];
+
+  for (const prospect of prospects) {
+    const jobLike = {
+      company: prospect.institution || prospect.source || event.source_id,
+      title: prospect.name,
+      url: prospect.application_url || prospect.profile_url,
+    };
+    if (taskAlreadyExists([...knownTasks, ...created], jobLike)) continue;
+    const task = taskQueue.create({
+      type: 'evaluation',
+      company: jobLike.company,
+      title: jobLike.title,
+      url: jobLike.url,
+      source_id: prospect.id,
+      work_auth: {
+        region: prospect.country || prospect.campus || null,
+        h1b_sponsorship: 'n/a_euraxess',
+        green_card_sponsorship: null,
+        export_control_risk: null,
+      },
+      notes: `Queued by deep-research-gate from EURAXESS research opportunity score ${score.toFixed(2)}. Prospect score: ${prospect.score}/5.`,
+    });
+    created.push(task);
+  }
+
+  return created;
+}
+
 // ── Load source importance from registry ────────────────────────────
 
 function loadSourceImportance() {
@@ -278,7 +327,10 @@ for (const event of events) {
   const route = routeEvent(score, budgetOk);
 
   if (route === 'auto_deep_research') {
-    const tasks = queueAgentTasksForEvent(event, score, taskQueue, knownTasks, fusionJobs);
+    const tasks = [
+      ...queueAgentTasksForEvent(event, score, taskQueue, knownTasks, fusionJobs),
+      ...queueAgentTasksForResearchEvent(event, score, taskQueue, knownTasks),
+    ];
     if (tasks.length > 0) {
       knownTasks.push(...tasks);
       agentTaskCount += tasks.length;

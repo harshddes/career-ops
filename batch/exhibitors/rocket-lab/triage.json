@@ -1,0 +1,879 @@
+{
+  "scanned": 365,
+  "keep_count": 66,
+  "blocked_count": 21,
+  "keep": [
+    {
+      "id": "7779900003",
+      "title": "Optical Engineer II",
+      "location": "Toronto, CAN",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7779900003",
+      "band": "keep",
+      "score": 4.4,
+      "reason": "core instrumentation/diagnostics adjacency: /optical/i",
+      "dept": "5002 Sinclair R&D"
+    },
+    {
+      "id": "7793187003",
+      "title": "Principal Optical Engineer",
+      "location": "Tucson, AZ",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7793187003",
+      "band": "keep",
+      "score": 4.4,
+      "reason": "core instrumentation/diagnostics adjacency: /optical/i",
+      "dept": "106 OS - Design Engineering"
+    },
+    {
+      "id": "7784299003",
+      "title": "Senior FPGA Engineer I/II",
+      "location": "Pasadena, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7784299003",
+      "band": "keep",
+      "score": 4.4,
+      "reason": "core instrumentation/diagnostics adjacency: /fpga/i",
+      "dept": "5552 RMC - Manufacturing"
+    },
+    {
+      "id": "7747032003",
+      "title": "Senior FPGA Engineer II",
+      "location": "Littleton, CO",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7747032003",
+      "band": "keep",
+      "score": 4.4,
+      "reason": "core instrumentation/diagnostics adjacency: /fpga/i",
+      "dept": "120 OS - Software Engineering"
+    },
+    {
+      "id": "7767237003",
+      "title": "Sr. FPGA Engineer I/II",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7767237003",
+      "band": "keep",
+      "score": 4.4,
+      "reason": "core instrumentation/diagnostics adjacency: /fpga/i",
+      "dept": "4015 USA Space Systems"
+    },
+    {
+      "id": "7793212003",
+      "title": "Sr. FPGA Engineer II",
+      "location": "Chantilly, VA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7793212003",
+      "band": "keep",
+      "score": 4.4,
+      "reason": "core instrumentation/diagnostics adjacency: /fpga/i",
+      "dept": "120 OS - Software Engineering"
+    },
+    {
+      "id": "7660596003",
+      "title": " Avionics Test and Launch Engineer II / Senior",
+      "location": "Wallops Island, VA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7660596003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /avionics/i",
+      "dept": "2245 Neutron - LC3"
+    },
+    {
+      "id": "7792178003",
+      "title": "Avionics Design Engineer I ",
+      "location": "Auckland, NZ",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7792178003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /avionics/i",
+      "dept": "2241 Neutron - Avionics"
+    },
+    {
+      "id": "7724321003",
+      "title": "Avionics Design Engineer I - Neutron",
+      "location": "Auckland, NZ",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7724321003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /avionics/i",
+      "dept": "2241 Neutron - Avionics"
+    },
+    {
+      "id": "7728066003",
+      "title": "Avionics Engineer I - Design",
+      "location": "Auckland, NZ",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7728066003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /avionics/i",
+      "dept": "4010 NZ-Space Systems"
+    },
+    {
+      "id": "7773614003",
+      "title": "Avionics Engineer I - Electron Avionics Systems",
+      "location": "Auckland, NZ",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7773614003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /avionics/i",
+      "dept": "2412 Electron Avionics Engineering"
+    },
+    {
+      "id": "7799111003",
+      "title": "Avionics Engineer II – Test",
+      "location": "Auckland, NZ",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7799111003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /avionics/i",
+      "dept": "4010 NZ-Space Systems"
+    },
+    {
+      "id": "7776990003",
+      "title": "Avionics Systems Engineer",
+      "location": "Auckland, NZ",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7776990003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /avionics/i",
+      "dept": "2412 Electron Avionics Engineering"
+    },
+    {
+      "id": "7504821003",
+      "title": "Avionics Technician (Evening Shift)",
+      "location": "Auckland, NZ",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7504821003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /avionics/i",
+      "dept": "2350 NZ-Avionics Production"
+    },
+    {
+      "id": "7753763003",
+      "title": "Avionics Test Engineer I/II",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7753763003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /avionics/i",
+      "dept": "4015 USA Space Systems"
+    },
+    {
+      "id": "7786649003",
+      "title": "Business Development Director, Optical Systems - TS/SCI Clearance",
+      "location": "Tucson, AZ",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7786649003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /optical/i",
+      "dept": "102 OS - Business Development"
+    },
+    {
+      "id": "7787010003",
+      "title": "Business Development Director, Optical Systems - TS/SCI Clearance",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7787010003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /optical/i",
+      "dept": "102 OS - Business Development"
+    },
+    {
+      "id": "7787009003",
+      "title": "Business Development Director, Optical Systems - TS/SCI Clearance",
+      "location": "Chantilly, VA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7787009003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /optical/i",
+      "dept": "102 OS - Business Development"
+    },
+    {
+      "id": "7768621003",
+      "title": "Electrical Engineering Manager",
+      "location": "Tucson, AZ",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7768621003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /electrical engineer/i",
+      "dept": "106 OS - Design Engineering"
+    },
+    {
+      "id": "7760576003",
+      "title": "Ground Systems Engineer I - Structures and Mechanisms",
+      "location": "Wallops Island, VA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7760576003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /systems engineer/i",
+      "dept": "2245 Neutron - LC3"
+    },
+    {
+      "id": "7554078003",
+      "title": "Ground Systems Engineer I/II- Mechanical",
+      "location": "Auckland, NZ",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7554078003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /systems engineer/i",
+      "dept": "2242 Neutron - Mechanical"
+    },
+    {
+      "id": "7703264003",
+      "title": "Ground Systems Engineer II, Automation Controls",
+      "location": "Stennis Space Center, MS",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7703264003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /systems engineer/i",
+      "dept": "2246 Neutron - Stennis"
+    },
+    {
+      "id": "7513269003",
+      "title": "Ground Systems Engineer II, Mechanical",
+      "location": "Stennis Space Center, MS",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7513269003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /systems engineer/i",
+      "dept": "2246 Neutron - Stennis"
+    },
+    {
+      "id": "7719762003",
+      "title": "Ground Systems Engineer II/Senior – Fluids",
+      "location": "Wallops Island, VA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7719762003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /systems engineer/i",
+      "dept": "2245 Neutron - LC3"
+    },
+    {
+      "id": "7767776003",
+      "title": "Integration & Test Engineer I/II",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7767776003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /test engineer/i",
+      "dept": "4015 USA Space Systems"
+    },
+    {
+      "id": "7790862003",
+      "title": "IT Systems Engineer II",
+      "location": "Auckland, NZ",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7790862003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /systems engineer/i",
+      "dept": "3520 Infrastructure"
+    },
+    {
+      "id": "7800625003",
+      "title": "Lead Test & Launch Operations Engineer – Avionics",
+      "location": "Wallops Island, VA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7800625003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /avionics/i",
+      "dept": "2245 Neutron - LC3"
+    },
+    {
+      "id": "7524181003",
+      "title": "Lead, Avionics Manufacturing Engineer",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7524181003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /avionics/i",
+      "dept": "2420 USA Manufacturing Engineering"
+    },
+    {
+      "id": "7769066003",
+      "title": "Manufacturing Engineer II - Avionics",
+      "location": "Auckland, NZ",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7769066003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /avionics/i",
+      "dept": "2410 NZ Manufacturing Engineering"
+    },
+    {
+      "id": "7599452003",
+      "title": "Mechanical Engineer II, Neutron Avionics",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7599452003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /avionics/i",
+      "dept": "2241 Neutron - Avionics"
+    },
+    {
+      "id": "7747279003",
+      "title": "Payload Integration Engineer II",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7747279003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /payload/i",
+      "dept": "3550 Mission Management"
+    },
+    {
+      "id": "7793183003",
+      "title": "Principal Electrical Engineer",
+      "location": "Tucson, AZ",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7793183003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /electrical engineer/i",
+      "dept": "106 OS - Design Engineering"
+    },
+    {
+      "id": "7005148003",
+      "title": "Propulsion Engineer I - Engine Systems",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7005148003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /propulsion engineer/i",
+      "dept": "2244 Neutron - Propulsion"
+    },
+    {
+      "id": "7679086003",
+      "title": "Propulsion Engineer I, Engine Systems",
+      "location": "Stennis Space Center, MS",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7679086003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /propulsion engineer/i",
+      "dept": "2244 Neutron - Propulsion"
+    },
+    {
+      "id": "6765878003",
+      "title": "Propulsion Engineer II, Engine Systems",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/6765878003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /propulsion engineer/i",
+      "dept": "2244 Neutron - Propulsion"
+    },
+    {
+      "id": "7679098003",
+      "title": "Propulsion Engineer II, Engine Systems",
+      "location": "Stennis Space Center, MS",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7679098003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /propulsion engineer/i",
+      "dept": "2244 Neutron - Propulsion"
+    },
+    {
+      "id": "7754178003",
+      "title": "Propulsion Systems Engineer I/II ",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7754178003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /systems engineer/i",
+      "dept": "4015 USA Space Systems"
+    },
+    {
+      "id": "6589226003",
+      "title": "RF Systems Engineer I - Operations",
+      "location": "Auckland, NZ",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/6589226003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /systems engineer/i",
+      "dept": "2610 RF & Comms"
+    },
+    {
+      "id": "7746572003",
+      "title": "RF Systems Engineer I/II - TS/SCI Pipeline",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7746572003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /systems engineer/i",
+      "dept": "4015 USA Space Systems"
+    },
+    {
+      "id": "7671545003",
+      "title": "RF Systems Engineer II - Operations",
+      "location": "Auckland, NZ",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7671545003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /systems engineer/i",
+      "dept": "2610 RF & Comms"
+    },
+    {
+      "id": "7773701003",
+      "title": "RF Test Engineer I/II",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7773701003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /test engineer/i",
+      "dept": "4015 USA Space Systems"
+    },
+    {
+      "id": "6765253003",
+      "title": "Senior / Principal Propulsion Engineer",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/6765253003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /propulsion engineer/i",
+      "dept": "2244 Neutron - Propulsion"
+    },
+    {
+      "id": "7679099003",
+      "title": "Senior / Principal Propulsion Engineer (pipeline)",
+      "location": "Stennis Space Center, MS",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7679099003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /propulsion engineer/i",
+      "dept": "2244 Neutron - Propulsion"
+    },
+    {
+      "id": "7699326003",
+      "title": "Senior Avionics Automation Test Engineer I/II",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7699326003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /avionics/i",
+      "dept": "4015 USA Space Systems"
+    },
+    {
+      "id": "7799108003",
+      "title": "Senior Avionics Engineer - Power Electronics",
+      "location": "Auckland, NZ",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7799108003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /avionics/i",
+      "dept": "4010 NZ-Space Systems"
+    },
+    {
+      "id": "7772768003",
+      "title": "Senior Avionics System Engineer - Electron Flight Safety Systems",
+      "location": "Auckland, NZ",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7772768003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /avionics/i",
+      "dept": "2412 Electron Avionics Engineering"
+    },
+    {
+      "id": "7571848003",
+      "title": "Senior Avionics Test Engineer – RF",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7571848003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /avionics/i",
+      "dept": "2420 USA Manufacturing Engineering"
+    },
+    {
+      "id": "7780552003",
+      "title": "Senior Electrical Engineer I/II",
+      "location": "Pasadena, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7780552003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /electrical engineer/i",
+      "dept": "5552 RMC - Manufacturing"
+    },
+    {
+      "id": "7650529003",
+      "title": "Senior Ground Systems Engineer - Mechanical",
+      "location": "Auckland, NZ",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7650529003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /systems engineer/i",
+      "dept": "2260 Ground Systems Engineering"
+    },
+    {
+      "id": "7789326003",
+      "title": "Senior Integration & Test Engineer I/II",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7789326003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /test engineer/i",
+      "dept": "4015 USA Space Systems"
+    },
+    {
+      "id": "7793205003",
+      "title": "Senior Integration & Test Engineer II/Principal",
+      "location": "Tucson, AZ",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7793205003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /test engineer/i",
+      "dept": "112 OS - Integration & Production"
+    },
+    {
+      "id": "7766174003",
+      "title": "Senior IT Systems Engineer I",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7766174003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /systems engineer/i",
+      "dept": "3520 Infrastructure"
+    },
+    {
+      "id": "7595661003",
+      "title": "Senior IT Systems Engineer I",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7595661003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /systems engineer/i",
+      "dept": "3520 Infrastructure"
+    },
+    {
+      "id": "7685764003",
+      "title": "Senior Manufacturing Engineer – Avionics (Night Shift, 4 day week)",
+      "location": "Auckland, NZ",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7685764003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /avionics/i",
+      "dept": "2410 NZ Manufacturing Engineering"
+    },
+    {
+      "id": "7778510003",
+      "title": "Senior Propulsion and Fluids Test Engineer",
+      "location": "Auckland, NZ",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7778510003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /test engineer/i",
+      "dept": "4010 NZ-Space Systems"
+    },
+    {
+      "id": "7735085003",
+      "title": "Senior Propulsion Automation & Test Systems Engineer",
+      "location": "Waikato, NZ",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7735085003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /test systems/i",
+      "dept": "2700 Propulsion Testing"
+    },
+    {
+      "id": "7740916003",
+      "title": "Senior Propulsion Systems Engineer I/II",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7740916003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /systems engineer/i",
+      "dept": "4015 USA Space Systems"
+    },
+    {
+      "id": "7741858003",
+      "title": "Senior Propulsion Test Engineer I/II",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7741858003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /propulsion test/i",
+      "dept": "4015 USA Space Systems"
+    },
+    {
+      "id": "7779047003",
+      "title": "Senior Quality Inspector - Avionics",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7779047003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /avionics/i",
+      "dept": "2647 US Quality Inspection"
+    },
+    {
+      "id": "7779016003",
+      "title": "Senior RF Digital Payload Engineer I/II Pipeline",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7779016003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /payload/i",
+      "dept": "4015 USA Space Systems"
+    },
+    {
+      "id": "7746602003",
+      "title": "Senior RF Systems Engineer I/II",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7746602003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /systems engineer/i",
+      "dept": "4015 USA Space Systems"
+    },
+    {
+      "id": "7695145003",
+      "title": "Senior RF Systems Engineer I/II Pipeline",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7695145003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /systems engineer/i",
+      "dept": "4015 USA Space Systems"
+    },
+    {
+      "id": "7776760003",
+      "title": "Senior Systems Test Engineer I",
+      "location": "Littleton, CO",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7776760003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /test engineer/i",
+      "dept": "5151 Software Systems COS"
+    },
+    {
+      "id": "7789428003",
+      "title": "Systems Engineer - Configuration and Change",
+      "location": "Auckland, NZ",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7789428003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /systems engineer/i",
+      "dept": "2249 Neutron - Integrated Analysis"
+    },
+    {
+      "id": "7610131003",
+      "title": "Test Engineer II/Senior",
+      "location": "Middle River, MD",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7610131003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /test engineer/i",
+      "dept": "2261 SSC Manufacturing Engineering"
+    },
+    {
+      "id": "6650885003",
+      "title": "Vehicle Integration Technician - Avionics",
+      "location": "Auckland, NZ",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/6650885003",
+      "band": "keep",
+      "score": 4.1,
+      "reason": "strong hardware/instrumentation fit: /avionics/i",
+      "dept": "2400 Vehicle Integration"
+    }
+  ],
+  "blocked": [
+    {
+      "id": "7781610003",
+      "title": "Electrical Engineer I/II ",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7781610003",
+      "band": "blocked",
+      "score": 1,
+      "reason": "clearance/citizenship hard gate",
+      "dept": "4015 USA Space Systems"
+    },
+    {
+      "id": "7679150003",
+      "title": "Principal Engineer, Space Payloads - Secret/Top Secret Clearance",
+      "location": "Tucson, AZ",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7679150003",
+      "band": "blocked",
+      "score": 1,
+      "reason": "clearance/citizenship hard gate",
+      "dept": "107 OS - Engineering and Technology"
+    },
+    {
+      "id": "7789008003",
+      "title": "Principal Spacecraft GNC Engineer - Secret Clearance ",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7789008003",
+      "band": "blocked",
+      "score": 1,
+      "reason": "clearance/citizenship hard gate",
+      "dept": "4750 Space Systems SW"
+    },
+    {
+      "id": "7786293003",
+      "title": "Senior Cybersecurity Engineer I - Top Secret Clearance",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7786293003",
+      "band": "blocked",
+      "score": 1,
+      "reason": "clearance/citizenship hard gate",
+      "dept": "4750 Space Systems SW"
+    },
+    {
+      "id": "7694289003",
+      "title": "Senior Electrical Engineer I/II",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7694289003",
+      "band": "blocked",
+      "score": 1,
+      "reason": "clearance/citizenship hard gate",
+      "dept": "4015 USA Space Systems"
+    },
+    {
+      "id": "7792108003",
+      "title": "Senior Electrical Engineer I/II - Secret Clearance",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7792108003",
+      "band": "blocked",
+      "score": 1,
+      "reason": "clearance/citizenship hard gate",
+      "dept": "4015 USA Space Systems"
+    },
+    {
+      "id": "7788006003",
+      "title": "Senior Flight Dynamics Engineer I/II - Secret Clearance",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7788006003",
+      "band": "blocked",
+      "score": 1,
+      "reason": "clearance/citizenship hard gate",
+      "dept": "4750 Space Systems SW"
+    },
+    {
+      "id": "7675358003",
+      "title": "Senior Flight Software Engineer I/II - Secret Clearance",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7675358003",
+      "band": "blocked",
+      "score": 1,
+      "reason": "clearance/citizenship hard gate",
+      "dept": "4750 Space Systems SW"
+    },
+    {
+      "id": "7792134003",
+      "title": "Senior Harness Engineer I/II - Secret Clearance",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7792134003",
+      "band": "blocked",
+      "score": 1,
+      "reason": "clearance/citizenship hard gate",
+      "dept": "4015 USA Space Systems"
+    },
+    {
+      "id": "7773633003",
+      "title": "Senior Program Manager I/II - Special Programs (TS/SCI)",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7773633003",
+      "band": "blocked",
+      "score": 1,
+      "reason": "clearance/citizenship hard gate",
+      "dept": "4015 USA Space Systems"
+    },
+    {
+      "id": "7792038003",
+      "title": "Senior Propulsion Systems Engineer I/II - Secret Clearance",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7792038003",
+      "band": "blocked",
+      "score": 1,
+      "reason": "clearance/citizenship hard gate",
+      "dept": "4015 USA Space Systems"
+    },
+    {
+      "id": "7676194003",
+      "title": "Senior RF Payload Formulation Systems Engineer - Secret Clearance",
+      "location": "Chantilly, VA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7676194003",
+      "band": "blocked",
+      "score": 1,
+      "reason": "clearance/citizenship hard gate",
+      "dept": "1520 Space Systems BD"
+    },
+    {
+      "id": "7676192003",
+      "title": "Senior RF Payload Formulation Systems Engineer - Secret Clearance",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7676192003",
+      "band": "blocked",
+      "score": 1,
+      "reason": "clearance/citizenship hard gate",
+      "dept": "1520 Space Systems BD"
+    },
+    {
+      "id": "7789010003",
+      "title": "Senior Spacecraft GNC Engineer I/II - Secret Clearance",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7789010003",
+      "band": "blocked",
+      "score": 1,
+      "reason": "clearance/citizenship hard gate",
+      "dept": "4750 Space Systems SW"
+    },
+    {
+      "id": "7789719003",
+      "title": "Senior Spacecraft Operations Engineer II/Principal - Secret Clearance",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7789719003",
+      "band": "blocked",
+      "score": 1,
+      "reason": "clearance/citizenship hard gate",
+      "dept": "4750 Space Systems SW"
+    },
+    {
+      "id": "7741022003",
+      "title": "Senior Systems Engineer I/II",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7741022003",
+      "band": "blocked",
+      "score": 1,
+      "reason": "clearance/citizenship hard gate",
+      "dept": "4015 USA Space Systems"
+    },
+    {
+      "id": "7792073003",
+      "title": "Senior Systems Engineer I/II - Secret Clearance",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7792073003",
+      "band": "blocked",
+      "score": 1,
+      "reason": "clearance/citizenship hard gate",
+      "dept": "4015 USA Space Systems"
+    },
+    {
+      "id": "7779004003",
+      "title": "Senior Systems Engineer I/II - Secret Clearance",
+      "location": "Tucson, AZ",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7779004003",
+      "band": "blocked",
+      "score": 1,
+      "reason": "clearance/citizenship hard gate",
+      "dept": "106 OS - Design Engineering"
+    },
+    {
+      "id": "7646793003",
+      "title": "Software Technical Project Manager - Secret Clearance ",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7646793003",
+      "band": "blocked",
+      "score": 1,
+      "reason": "clearance/citizenship hard gate",
+      "dept": "4750 Space Systems SW"
+    },
+    {
+      "id": "7681467003",
+      "title": "Spacecraft Mechanical Engineer II - TS/SCI",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7681467003",
+      "band": "blocked",
+      "score": 1,
+      "reason": "clearance/citizenship hard gate",
+      "dept": "4015 USA Space Systems"
+    },
+    {
+      "id": "7646310003",
+      "title": "Systems Engineer I/II Pipeline",
+      "location": "Long Beach, CA",
+      "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7646310003",
+      "band": "blocked",
+      "score": 1,
+      "reason": "clearance/citizenship hard gate",
+      "dept": "4015 USA Space Systems"
+    }
+  ]
+}

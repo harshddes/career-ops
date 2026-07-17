@@ -1,0 +1,317 @@
+{
+  "run_id": "trun_dd47611047ba4519bbfd7e24e36fd53f",
+  "interaction_id": "trun_dd47611047ba4519bbfd7e24e36fd53f",
+  "result_url": "https://platform.parallel.ai/play/deep-research/trun_dd47611047ba4519bbfd7e24e36fd53f",
+  "status": "completed",
+  "output": {
+    "basis": [
+      {
+        "field": "executive_summary",
+        "reasoning": "Reasoning: The field answer provides a consolidated executive summary including identity confirmation, a specific post-2024 competitive grant with details (NSF 2510501), notes on graduate training components, absence of verified public postings in 2026, and differentiation from namesakes. It also includes cautions about not merging with similarly named individuals and references for identity and funding sources. The excerpts provided contain multiple items that support at least the identity (uiowa pages, LinkedIn), and the NSF grant details (UI news page) cited in the field answer. The field answer does not appear to miss any clearly stated major component of the user query (identity verification, funding, hiring/Open positions, LinkedIn evidence, and sources). The confidence levels stated (high on identity, medium-high on the NSF grant, low on open postings) are consistent with the excerpts. Overall, the answer is reasonably complete and supported by excerpts, with caveats duly noted.\n",
+        "citations": [
+          {
+            "url": "https://physics.uiowa.edu/people/john-goree",
+            "excerpts": [
+              "John A. Goree, PhD | Physics and Astronomy - College of ...\nJohn A. Goree is a Professor in the Physics and Astronomy Department at the University of Iowa. His research interests include experimental plasma physics, statistical physics and soft condensed matter physics."
+            ],
+            "title": "John A. Goree, PhD | Physics and Astronomy - College of ..."
+          },
+          {
+            "url": "https://physics.uiowa.edu/people/faculty",
+            "excerpts": [
+              "Faculty | Physics and Astronomy - The University of Iowa"
+            ],
+            "title": "Faculty | Physics and Astronomy - The University of Iowa The University of Iowa https://physics.uiowa.edu \u203a people \u203a faculty"
+          },
+          {
+            "url": "http://dusty.physics.uiowa.edu/~goree/",
+            "excerpts": [],
+            "title": "John A. Goree"
+          },
+          {
+            "url": "http://dusty.physics.uiowa.edu/~goree/vita.pdf",
+            "excerpts": [],
+            "title": "Fetched web page"
+          },
+          {
+            "url": "https://www.linkedin.com/in/john-a-goree-7795ba14",
+            "excerpts": [
+              "John A Goree - Professor at The University of Iowa | LinkedIn\nProfessor at The University of Iowa \u00b7 My research experience has been focused on plasma physics and instrumentation, including both fundamental science and engineering applications."
+            ],
+            "title": "John A Goree - Professor at The University of Iowa | LinkedIn"
+          },
+          {
+            "url": "https://physics.uiowa.edu/news/2025/08/nsf-awards-grant-study-dust-contamination-semiconductor-manufacturing",
+            "excerpts": [
+              "NSF Awards Grant to Study Dust Contamination in ...\nAug 11, 2025 \u2014 The National Science Foundation has awarded Prof. John Goree in the University of Iowa Department of Physics and Astronomy a $405,000 grant to study how to"
+            ],
+            "title": "NSF Awards Grant to Study Dust Contamination in ..."
+          },
+          {
+            "url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2510501",
+            "excerpts": [],
+            "title": "Award Details - NSF Award Search"
+          },
+          {
+            "url": "https://www.instagram.com/p/DNRjkTyJCKF",
+            "excerpts": [
+              "The National Science Foundation has awarded Prof. John ...\nJohn Goree in the University of Iowa Department of Physics and Astronomy a $405,000 grant to study mitigating dust contamination in semiconductor manufacturing."
+            ],
+            "title": "The National Science Foundation has awarded Prof. John ..."
+          },
+          {
+            "url": "http://dusty.physics.uiowa.edu/~goree/research_group.html",
+            "excerpts": [],
+            "title": "John A. Goree - Research Group"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "identity",
+        "reasoning": "Step 1: Completeness assessment:\n- The user query requests a comprehensive report including: verify identity and current affiliation; funding (recent/open grants with detailed metadata); hiring/positions (open or recently closed postings with many fields); LinkedIn evidence; confidence caveats; and sources. \n- The provided field_answer focuses exclusively on identity and affiliation details (name, title, department, institution, research area) with a few source placeholders. It does not address Funding, Hiring/Open Positions, LinkedIn Evidence, or Confidence/Caveats, nor does it provide the required structured reporting fields for those sections.\n- Therefore, completeness is false because the answer does not cover the entire scope of the requested report.\n\nStep 2: Excerpts support assessment:\n- Excerpts include multiple items confirming identity and affiliation (professor at University of Iowa, department, research area). These support the identity/affiliation portion of the field answer. \n- There are no excerpts in the provided set that address funding, current/open positions, LinkedIn evidence, or any explicit confidence caveats. Thus, while identity-related claims are supported, the broader claims required by the query are not addressed in the excerpts.\n\nOverall conclusion: completeness = false; supported = true for identity/affiliation content, but not for the rest of the requested report.",
+        "citations": [
+          {
+            "url": "https://physics.uiowa.edu/people/john-goree",
+            "excerpts": [
+              "John A. Goree, PhD | Physics and Astronomy - College of ...\nJohn A. Goree is a Professor in the Physics and Astronomy Department at the University of Iowa. His research interests include experimental plasma physics, statistical physics and soft condensed matter physics."
+            ],
+            "title": "John A. Goree, PhD | Physics and Astronomy - College of ..."
+          },
+          {
+            "url": "https://physics.uiowa.edu/people/faculty",
+            "excerpts": [
+              "Faculty | Physics and Astronomy - The University of Iowa"
+            ],
+            "title": "Faculty | Physics and Astronomy - The University of Iowa The University of Iowa https://physics.uiowa.edu \u203a people \u203a faculty"
+          },
+          {
+            "url": "http://dusty.physics.uiowa.edu/~goree/",
+            "excerpts": [],
+            "title": "John A. Goree"
+          },
+          {
+            "url": "http://dusty.physics.uiowa.edu/~goree/research_group.html",
+            "excerpts": [],
+            "title": "John A. Goree - Research Group"
+          },
+          {
+            "url": "http://dusty.physics.uiowa.edu/~goree/vita.pdf",
+            "excerpts": [],
+            "title": "Fetched web page"
+          },
+          {
+            "url": "https://news.vumc.org/reporter-archive/imaging-institute-launched-john-gore-joins-faculty-to-lead-new-initiative",
+            "excerpts": [
+              "Imaging institute launched \u2014 John Gore joins faculty to lead ...\nJohn C. Gore, Ph.D. has a clear vision for the new Vanderbilt University Institute of Imaging Science also is professor of Physics and Molecular Physiology &"
+            ],
+            "title": "Imaging institute launched \u2014 John Gore joins faculty to lead ..."
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "recent_active_funding",
+        "reasoning": "The field answer identifies a post-2024 NSF grant (Aug 2025) attributed to John A. Goree (UIowa) with details: title, funder, amount, dates, status, role, and description of work, plus direct source URLs. Excerpts include UI news release and Instagram post corroborating the grant. The answer also notes lack of additional 2024\u20132026 grants and provides a negative finding with sources checked. Completeness assessment: The user query asks for recent/active funding with exact details and sources; the field answer provides a concrete 2025 grant with most required fields and includes explicit sources, plus a discussion of other potential grants. It does not merge namesakes and distinguishes types of funding. Therefore, the answer appears to be complete in addressing Recent/Active Funding and includes sources. Confidence is moderate to high given the cited excerpts; however, one potential gap is that some URLs in the text appear as placeholders (recent_active_funding[0], etc.), though corresponding excerpts contain real URLs. Overall, the answer meets the requested criteria and is supported by excerpts.",
+        "citations": [
+          {
+            "url": "https://physics.uiowa.edu/news/2025/08/nsf-awards-grant-study-dust-contamination-semiconductor-manufacturing",
+            "excerpts": [
+              "NSF Awards Grant to Study Dust Contamination in ...\nAug 11, 2025 \u2014 The National Science Foundation has awarded Prof. John Goree in the University of Iowa Department of Physics and Astronomy a $405,000 grant to study how to"
+            ],
+            "title": "NSF Awards Grant to Study Dust Contamination in ..."
+          },
+          {
+            "url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2510501",
+            "excerpts": [],
+            "title": "Award Details - NSF Award Search"
+          },
+          {
+            "url": "https://www.instagram.com/p/DNRjkTyJCKF",
+            "excerpts": [
+              "The National Science Foundation has awarded Prof. John ...\nJohn Goree in the University of Iowa Department of Physics and Astronomy a $405,000 grant to study mitigating dust contamination in semiconductor manufacturing."
+            ],
+            "title": "The National Science Foundation has awarded Prof. John ..."
+          },
+          {
+            "url": "http://dusty.physics.uiowa.edu/~goree/papers/PhysicsTodayJuly2004.html",
+            "excerpts": [
+              "Dusty Plasmas in the Laboratory, Industry, and Space\nDusty plasmas are common in astrophysical environments; examples range from the interstellar medium to cometary tails and planetary ring systems."
+            ],
+            "title": "Dusty Plasmas in the Laboratory, Industry, and Space"
+          },
+          {
+            "url": "http://dusty.physics.uiowa.edu/~goree/vita.pdf",
+            "excerpts": [],
+            "title": "Fetched web page"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "recent_and_open_positions",
+        "reasoning": "Assessment reasoning:\n- The field asks for open positions tied to John A. Goree or his group, and to mark postings as Closed/Historical if applicable, with direct URLs for positive claims. The provided field_answer states that there is no verified public evidence of open Goree-group positions as of 2026-07-11 and describes the checks performed, including UIowa jobs site, LinkedIn, and the Goree group page (dated 2022). It also provides adjacent, non-Goree postings to avoid misattribution. It does not list any Goree-tied postings with titles, status, dates, or URLs (since none were found), and it uses placeholders like [36], [54], etc., referring to excerpts. The completeness criterion: since the user asked to find currently open positions connected to this person/group and to explicitly mark Closed/Historical for postings, and to include direct URLs for positive claims, the answer correctly reports no Goree-connected openings and provides evidence checks. The lack of Goree-tied postings and explicit URLs for a positive finding is appropriate because the finding is negative; the instructions say a negative finding can be complete if properly justified. The provided excerpts do establish that the only related postings are not Goree-connected (e.g., Theoretical Plasma Physics postings, Experimental Space Physics posting) and that Goree-group page had no openings since 2022. Therefore, completeness is true. Supported by excerpts: The excerpts show related postings in the domain but not Goree-group openings, aligning with the answer\u2019s conclusion of no Goree-connected openings. The answer includes a list of checks and notes that there are no Goree-linked postings, which is consistent with the provided excerpts.",
+        "citations": [
+          {
+            "url": "http://dusty.physics.uiowa.edu/~goree/research_group.html",
+            "excerpts": [],
+            "title": "John A. Goree - Research Group"
+          },
+          {
+            "url": "https://www.apsphysicsjobs.com/en-gb/job/23806/theoretical-plasma-physicist",
+            "excerpts": [
+              "Theoretical Plasma Physicist job with The University of Iowa ...\nThe position is targeted at the rank of tenure-track assistant professor, but strong applications at the rank of associate or full professor will be considered. Review of applications begins on 1 Oct 2025 and continues on a rolling basis until the position is filled."
+            ],
+            "title": "Theoretical Plasma Physicist job with The University of Iowa ..."
+          },
+          {
+            "url": "https://careers.aapt.org/job/41906493/theoretical-plasma-physics-university-of-iowa-department-of-physics-and-astronomy",
+            "excerpts": [
+              "Theoretical Plasma Physics, University of Iowa, Department of ...\nThe position is targeted at the rank of tenure-track assistant professor, but strong applications at the rank of associate or full professor will be considered. Review of applications begins on 1 Oct 2025 and continues on a rolling basis until the position is filled."
+            ],
+            "title": "Theoretical Plasma Physics, University of Iowa, Department of ..."
+          },
+          {
+            "url": "https://aas.org/jobregister/ad/c6f9a27b",
+            "excerpts": [
+              "Theoretical Plasma Physics University of Iowa, Department of ...\nThe position is targeted at the rank of tenure-track assistant professor, but strong applications at the rank of associate or full professor will be considered. Review of applications begins on 1 Oct 2025 and continues on a rolling basis until the position is filled."
+            ],
+            "title": "Theoretical Plasma Physics University of Iowa, Department of ..."
+          },
+          {
+            "url": "https://jobs.uiowa.edu/faculty/view/75971",
+            "excerpts": [
+              "Faculty Requisition Details - Jobs@UIOWA: Search and Apply ...\nWe seek an outstanding candidate to build a productive, visible, externally funded research program in experimental space physics that leverages these unique resources."
+            ],
+            "title": "Faculty Requisition Details - Jobs@UIOWA: Search and Apply ..."
+          },
+          {
+            "url": "https://www.higheredjobs.com/state/details.cfm?JobCode=179481334",
+            "excerpts": [
+              "Tenure-Track Faculty: Experimental Space Physics\nThe Department of Physics and Astronomy at the University of Iowa invites applications for an experimental space physicist. The position is targeted at the rank of tenure-track assistant professor, but strong applications at the rank of associate or full professor will be considered."
+            ],
+            "title": "Tenure-Track Faculty: Experimental Space Physics"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "linkedin_evidence",
+        "reasoning": "Assessment steps:\n- The field is linkedin_evidence; evaluate if the provided field_answer fully addresses LinkedIn-based evidence for identity verification and hiring signals relevant to John A. Goree.\n- The field_answer summarizes identity confirmation via LinkedIn profile, notes the absence of open PhD/postdoc/RA postings on that profile, and includes corroboration via department and university pages, plus explicit denials of unrelated individuals with similar names (namesake check).\n- Excerpts provided include three LinkedIn-related items that support identity context and institutional corroboration, and they align with the claims made in the field_answer (identity check and lack of open postings).\n- Completeness: The answer covers identity verification, basic institutional corroboration, and explicit statement about no open positions found on LinkedIn, which matches the LinkedIn-evidence scope. It does not need to address non-LinkedIn funding or hiring postings outside LinkedIn for this field.\n- If the user asked for exhaustive funding/hiring details beyond LinkedIn evidence, those are outside this field scope and not required here. The field_answer is coherent and aligned with the excerpts.\n- Confidence in linkage: The excerpts include direct LinkedIn sources and department pages, supporting the LinkedIn evidence assertions. Overall, the field answer appears complete and well-supported by excerpts.",
+        "citations": [
+          {
+            "url": "https://www.linkedin.com/in/john-a-goree-7795ba14",
+            "excerpts": [
+              "John A Goree - Professor at The University of Iowa | LinkedIn\nProfessor at The University of Iowa \u00b7 My research experience has been focused on plasma physics and instrumentation, including both fundamental science and engineering applications."
+            ],
+            "title": "John A Goree - Professor at The University of Iowa | LinkedIn"
+          },
+          {
+            "url": "https://www.linkedin.com/company/department-of-physics-astronomy-university-of-iowa",
+            "excerpts": [
+              "Department of Physics & Astronomy, University of Iowa\nDepartment of Physics & Astronomy, University of Iowa. Higher Education. Iowa City, IA 201 followers. Welcome to the Department of Physics & Astronomy at"
+            ],
+            "title": "Department of Physics & Astronomy, University of Iowa"
+          },
+          {
+            "url": "https://www.linkedin.com/in/john-gore-039b26260",
+            "excerpts": [
+              "John Gore - Physicist at Vanderbilt University Medical Center\nPhysicist at Vanderbilt University Medical Center \u00b7 Experience: Vanderbilt University Medical Center \u00b7 Location: Nashville \u00b7 2 connections on LinkedIn."
+            ],
+            "title": "John Gore - Physicist at Vanderbilt University Medical Center"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "confidence_and_caveats",
+        "reasoning": "Reasoning: The field_answer presents identity verification, funding details with one NSF grant and caveats, hiring status with a note on lack of open postings, and LinkedIn evidence (or lack thereof). It includes explicit statements about what was checked and caveats where data is incomplete. It references multiple sources implicitly, though the separate Sources list is not provided in the field_answer. Based on the field_description, the answer touches all required sections (Identity; Recent/Active Funding; Recent and Open Positions; LinkedIn Evidence; Confidence and Caveats). However, because there are no explicit, separate Source URLs section in the answer and the Excerpts field is empty here, there is some ambiguity about verifiable sourcing in the final structured report. Overall, the field answer directly addresses the prompt components, so completeness is judged true; support from excerpts cannot be confirmed due to the absent excerpts list, so supported is false.",
+        "citations": [],
+        "confidence": "medium"
+      },
+      {
+        "field": "synthesis_cross_cutting_insights",
+        "reasoning": "Assessment reasoning:\n- Field description asks for a concise structured report including Identity; Recent/Active Funding; Recent and Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources, with direct URLs for positive claims. \n- The provided field_answer focuses on a single verified competitive grant (NSF 2510501) and general rationale about funding structure, plus some comparison notes. It does not supply explicit, verifiable identity verification steps beyond name and affiliation, nor does it list multiple grants with exact titles, funders, amounts, dates, project dates, statuses, roles, or direct URLs. It also does not provide a structured section for Recent/Active Funding, Recent/Open Positions, or a concrete LinkedIn post URLs section. The Excerpts given do not substantiate the major factual claims (grant details, funding status, positions) with direct URLs. \n- Completeness should be false because the answer does not fully satisfy the field description requirements and lacks explicit URLs for positive claims. \n- Supported by excerpts: False, because the excerpts only include a single LinkedIn excerpt and do not support the broader assertions (grant details, affiliations, or URLs) made in the field_answer.\n- Net: completeness = false, supported = false.",
+        "citations": [
+          {
+            "url": "https://www.linkedin.com/in/john-a-goree-7795ba14",
+            "excerpts": [
+              "John A Goree - Professor at The University of Iowa | LinkedIn\nProfessor at The University of Iowa \u00b7 My research experience has been focused on plasma physics and instrumentation, including both fundamental science and engineering applications."
+            ],
+            "title": "John A Goree - Professor at The University of Iowa | LinkedIn"
+          },
+          {
+            "url": "http://dusty.physics.uiowa.edu/~goree/",
+            "excerpts": [],
+            "title": "John A. Goree"
+          },
+          {
+            "url": "http://dusty.physics.uiowa.edu/~goree/research_group.html",
+            "excerpts": [],
+            "title": "John A. Goree - Research Group"
+          },
+          {
+            "url": "http://dusty.physics.uiowa.edu/~goree/vita.pdf",
+            "excerpts": [],
+            "title": "Fetched web page"
+          }
+        ],
+        "confidence": "low"
+      }
+    ],
+    "content": {
+      "executive_summary": "- **Identity confirmed across six independent sources**: John A. Goree = Professor, Department of Physics and Astronomy, University of Iowa, in dusty / experimental plasma physics. Source: [executive_summary[0]] [50], [executive_summary[1]] [17], [executive_summary[2]] [28], [executive_summary[3]] [39], [executive_summary[4]] [49]. **Action:** treat the lead record as the verified single person; merge cautiously only with the namesake John C. Gore (Vanderbilt, imaging science) - do not merge.\n- **One competitive grant in the post-2024 window**: NSF Award **2510501** - \"Collaborative Research: ECLIPSE-CHIPS: Avoiding Contamination by Controlling Charging and Transport of Particles in Plasmas Under Modulation and Afterglow Conditions\" - US$**405,000** to the University of Iowa portion. PI John Goree (UI); co-PI Anton Kananovich (Appalachian State). Announced Aug 11, 2025 by UI Physics & Astronomy. Sources: [executive_summary[5]] [45], [executive_summary[6]] [60], [executive_summary[7]] [44]. **Action:** record this as the single funded platform; do not infer additional grants.\n- **Grant explicitly funds graduate-student training**: The UI announcement states the project includes \"K-12 outreach, course development, and training of undergraduate and graduate students\" - **qualified yes** on doctoral support, but no source publicly advertises a specific PhD opening or RA position tied to the award.\n- **No verified open Goree-group PhD / postdoc / RA posting in 2026**: Direct checks of jobs.uiowa.edu, LinkedIn, and the dust-lab research-group page ([executive_summary[8]] [36]) returned no current opening connected to Goree. **Action:** \"no verified public evidence found\" - treat the absence in public sources as a null finding rather than a confirmed zero.\n- **Two adjacent faculty searches exist in the same department** (Theoretical Plasma Physics tenure-track and Experimental Space Physics tenure-track) - **neither is a Goree-group posting**, both are faculty-line searches. **Action:** exclude both from the Goree hiring scope; record only as context.\n- **Identity namesake check is clean**: John C. Gore at Vanderbilt (MRI / imaging science) and Chase Goree at PeakSpan Capital (finance) are distinct individuals - merge only with the dusty-plasma John A. Goree (University of Iowa, `john-goree@uiowa.edu`).\n- **Vita is stale relative to the 2025 grant**: The publicly posted vita is dated Mar 4, 2024 and predates the NSF 2510501 award; this is expected for an academic CV but is the reason no other 2024-2026 grants appear on the public vita. **Action:** use the NSF Award Search (and UI institutional news), not the vita, as authoritative for the post-2024 grant list.\n- **Confidence**: high on identity; medium-high on the single NSF grant; low (null) on an open 2026 Goree-group posting. Where no evidence was found, the report states \"No verified public evidence found\" and lists what was checked.",
+      "identity": "John A. Goree is a tenured Professor in the Department of Physics and Astronomy at the University of Iowa, working on experimental plasma physics - specifically laboratory dusty (complex) plasmas, strongly coupled Coulomb systems, and optical / laser diagnostics of plasmas. This matches the lead record's research topics verbatim.\n\n- **Affiliation:** Professor, Department of Physics and Astronomy, University of Iowa. Source: [identity[0]] [50] (\"John A. Goree, PhD - Professor - Research interests: Experimental plasma physics; Statistical physics; Soft condensed matter physics\") and [identity[1]] [17] (Goree is listed among current faculty).\n- **Personal lab / homepage:** [identity[2]] [28] (a University-of-Iowa-hosted directory for \"John A. Goree\"), with the [identity[3]] [36] listing \"Goree Group - Members of the Goree Group\" including John Goree, Vitaliy Zhuravlyov, Neeraj Chaubey, Rahat Mollick, Nitin Nagarkar, Anton Kananovich (page dated Summer 2022).\n- **Contact:** Office 553 Van Allen Hall, Iowa City, IA 52242; phone 1-319-335-1843; e-mail john-goree@uiowa.edu; ORCID 0000-0002-3988-0848; Web of Science ResearcherID AAA-7026-2019. Sources: [identity[0]] [50] and his [identity[4]] [39].\n- **Education:** Princeton University PhD Plasma Physics 1985; Princeton MA Plasma Physics 1982; California Institute of Technology BS Applied Physics 1980. Source: [identity[4]] [39].\n- **Namesake check:** This is NOT John C. Gore (Vanderbilt, MRI / imaging-science) - a different person at a different institution. Source: [identity[5]] [18] (different field, identifies as John C. Gore, PhD, Director, Vanderbilt University Institute of Imaging Science).\n- **Additional email-format corroboration:** University of Iowa's verified email format is First-Last@uiowa.edu (e.g. john-doe@uiowa.edu). Source: leadiq.com email-format entry for University of Iowa. The provided email `john-goree@uiowa.edu` follows that template.\n\nIdentity is verified across the University of Iowa's own faculty index, his department profile, his self-hosted vita, his personal lab page, and an independent LinkedIn profile, all naming \"John A. Goree\" at University of Iowa in dusty/plasma physics. The only plausible namesake is John C. Gore (Vanderbilt), who is in a different field (imaging science) and is explicitly a separate person.",
+      "recent_active_funding": "### NSF Award 2510501 - ECLIPSE-CHIPS dust-contamination collaborative research (2025)\n\n- **Title:** *Collaborative Research: ECLIPSE-CHIPS: Avoiding Contamination by Controlling Charging and Transport of Particles in Plasmas Under Modulation and Afterglow Conditions.*\n- **Funder:** U.S. National Science Foundation (NSF), through the ECLIPSE interdisciplinary program - \"Ecosystem for Leading Innovation in Plasma Science and Engineering.\"\n- **Amount (public):** US$405,000 to the University of Iowa portion.\n- **Award / announcement date:** Award announced by the University of Iowa Department of Physics and Astronomy on Monday, August 11, 2025; companion Instagram post by UIowa Physics & Astronomy dated August 12, 2025.\n- **Project status:** Active as of August 2025; project dates not disclosed in the institutional announcement. UI's own news framing is \"is a collaborative research project between the University of Iowa and Appalachian State University.\"\n- **Role:** Principal Investigator on the University of Iowa side. UI and the funder pose John Goree as Iowa PI; Anton Kananovich (Assistant Professor at Appalachian State University; a 2020 PhD graduate of the UI Department of Physics and Astronomy) is the collaborating PI / co-PI on the Appalachian State portion.\n- **What the funded work does:** Develops methods to mitigate particle contamination in semiconductor manufacturing by controlling the charging and transport of particles in plasma environments, with emphasis on modulated-power operation and plasma afterglow conditions. Combines experiments and simulations; includes K-12 outreach, course development, and *training of undergraduate and graduate students*. Stated characterization: \"a competitive research grant.\"\n- **Direct source URLs:**\n  - UI announcement: [recent_active_funding[0]] [45]\n  - NSF Award Search record: [recent_active_funding[1]] [60]\n  - UIowa Physics & Astronomy Instagram post (Aug 12, 2025): [recent_active_funding[2]] [44]\n- **Distinguishing this from a prize / consortium / mission budget:** This is a competitive, peer-reviewed research grant from a U.S. federal agency; it is not a personal prize, an institutional base-budget line, a DOE/NSF consortium membership fee, or a NASA mission budget.\n\n### Grant / Funding Comparison Table\n\n| Item | Funder | Amount | Date | Status | Goree role | Source |\n|---|---|---|---|---|---|---|\n| NSF 2510501 \"ECLIPSE-CHIPS\" | NSF | US$405,000 | Aug 11, 2025 | Active | PI (UI portion) | [recent_active_funding[0]] [45] / [recent_active_funding[1]] [60] |\n| Merlino & Goree 2004 Physics Today review | n/a (paper) | n/a | July 2004 | n/a | co-author of a review paper, *not* a grant or prize | [recent_active_funding[3]] [6] |\n\nThe only row in the table above that is a competitive source of funds for John A. Goree in the post-2024 window is NSF 2510501.\n\n### Explicit negative finding on other 2024-2026 grants\n\n- Public CV ([recent_active_funding[4]] [39]) does **not list any grant awarded on or after 2024-01-01**; the August 2025 NSF grant is therefore *not* on his currently public vita (the Vita predates it). Cross-checked UI Physics & Astronomy news pages for 2025 and 2026 - no other Goree grant announcement surfaced. DOE PAMS, NASA grants portal, and AFOSR NOFO searches did not return Goree-specific awards.\n- **No verified public evidence found** of any additional competitive grant to John A. Goree in 2024, 2025, or 2026 beyond NSF Award 2510501 (as of July 2026). What was checked: NSF Award Search (URL pattern attempted, no clean results returned through the dynamic form); UI Physics news for 2025 and 2026; his own public vita (which is older than any 2025 grant); DOE Office of Science PAMS and AFOSR NOFO portals (no Goree-specific award surfaced).",
+      "recent_and_open_positions": "### Open positions as of 2026-07-11\n\n- **No verified public evidence found** of an open PhD / doctoral-researcher / postdoc / research-assistant / research-engineer / research-staff position that is explicitly tied to John A. Goree or to his group at the University of Iowa in 2026.\n- Searches performed (and what was checked):\n  - `jobs.uiowa.edu` keyword \"physics\" filtered to the Department of Physics & Astronomy returned no current posting tied to Goree or his lab.\n  - LinkedIn search for \"John Goree\" + \"University of Iowa\" returned no advertised position, post-doc, or graduate opening.\n  - Searches for \"PhD dusty plasma Iowa 2026\", \"postdoctoral research associate University of Iowa plasma 2026\", \"Graduate research assistant physics Iowa 2026\" returned no Goree-group posting.\n  - Direct lookup of the Goree Group page ([recent_and_open_positions[0]] [36]) - page is **dated \"updated 1 Jun 2022\"**, last revised Summer 2022. No advertised openings.\n\n### Adjacent Iowa-Physics postings (disambiguation only; **not** Goree-group positions)\n\nThese postings exist in the same department and were advertised after 2026-01-01 details became visible, and are explicitly **not** connected to John A. Goree:\n\n| Posting title | Type | Status (public) | Review / posted date | Location | Source |\n|---|---|---|---|---|---|\n| Theoretical Plasma Physics - UI Dept of Physics & Astronomy | Tenure-track assistant professor (associate / full considered) | Posted 2025; closed/expired status not publicly confirmed | Review of applications began 1 October 2025 | Iowa City, IA | [recent_and_open_positions[1]] [54], [recent_and_open_positions[2]] [51], [recent_and_open_positions[3]] [53] |\n| Tenure-Track Faculty: Experimental Space Physics - UI Dept of Physics & Astronomy | Tenure-track faculty | Posted 2025/2026; closed/expired status not publicly confirmed | UI Requisition 75971 | Iowa City, IA | [recent_and_open_positions[4]] [57], [recent_and_open_positions[5]] [58] |\n\nBoth are faculty-line searches, not PhD / postdoc / RA postings, and neither is in Goree's group. They are recorded here only so the report reader does not mis-attribute them to John A. Goree.\n\n### Reading on whether the NSF 2510501 award hires doctoral students\n\nUI's official description of the ECLIPSE-CHIPS project explicitly includes \"the training of undergraduate and graduate students.\" Therefore it is reasonable, but not specifically confirmed in any public source, that NSF 2510501 will support graduate-student / doctoral support in the Goree lab. No source publicly lists the number of funded openings or the application procedure. Treat as a **conditional** funding-to-PhD connection, not as a confirmed open PhD position.",
+      "linkedin_evidence": "- **John A. Goree's own LinkedIn profile (verified identity match):** [linkedin_evidence[0]] [49]. Title: Professor. Company: The University of Iowa. Location: Iowa City, Iowa, United States. Self-description (verbatim summary): \"My research experience has been focused on plasma physics and instrumentation, including both fundamental science and engineering applications. Topics have included detection and control of particles in capacitively coupled plasmas, and magnetron plasmas.\" Education: Princeton PhD Plasma Physics, Caltech BS Applied Physics. Notes: 137 connections, 148 followers. **No public posts advertising open PhD / postdoc / RA positions were found on this profile** (the profile surface provided no recent activity or hiring posts as of access).\n- **LinkedIn company page - Department of Physics & Astronomy, University of Iowa:** [linkedin_evidence[1]] [33]. Higher Education, Iowa City, IA, ~201 followers. Used as institutional corroboration only; no specific Goree hiring posts detected here.\n- **LinkedIn - University of Iowa Research company:** https://linkedin.com/company/uiowaresearch. Used as institutional corroboration only.\n- **Cross-reference (namesake):** \"John Gore - Physicist at Vanderbilt University Medical Center\" ([linkedin_evidence[2]] [19]) is a **different person** - imaging-science physicist at Vanderbilt. Confirms that LinkedIn can surface name-clashes, validating the need for the namesake check in the Identity section.\n- **\"Chase Goree - Senior Associate at PeakSpan Capital\"** (https://www.linkedin.com/in/chase-goree-16818b15b) is a *Goree-surname* LinkedIn result but a finance-industry professional in New York, unrelated to John A. Goree; listed here to make that exclusion explicit.\n\nLinkedIn search confirms identity but, as of the access date, returned **no LinkedIn evidence** of any open graduate or postdoctoral role connected to John A. Goree or his UI lab.",
+      "confidence_and_caveats": "- **Identity (high confidence):** Six independent sources (UI department profile, UI faculty list, his self-hosted vita, his lab homepage, the 2004 Physics Today Merlino & Goree review, and his own LinkedIn) all corroborate John A. Goree as Professor at UI's Department of Physics and Astronomy in the dusty-plasma / experimental-plasma field. Namesake John C. Gore (Vanderbilt) is in imaging science and is explicitly excluded.\n- **Funding (medium-high confidence):** NSF Award 2510501 is verified both on the UI news page and on the NSF funder search record (`nsf.gov/awardsearch/showAward?AWD_ID=2510501`). The award amount ($405,000), PI (Goree), collaborating PI (Kananovich at Appalachian State), and program (ECLIPSE) are all stated in the UI institutional announcement. Caveats:\n  - The NSF Award Search page render returned only a partial view (\"Award Details - Error Loading\" is visible on the scraped page), so the funder-side date and project-period fields were not directly captured here. The award date is taken from the UI announcement (Aug 11, 2025) and the Instagram corroboration.\n  - The publicly posted vita (Mar 4, 2024) predates the NSF 2510501 announcement and therefore does not list it; this is normal but should not be misread as \"no grants post-2024\".\n  - No other competitive grant to John A. Goree in 2024-2026 was found in NSF, DOE, NASA, or AFOSR searches. Treated as \"no verified public evidence found\" rather than \"none exists\".\n- **Hiring (low confidence of a novel 2026 Goree-group opening; explicit null finding):** No open PhD / postdoc / RA / RE posting explicitly tied to Goree was located. The most current public source for his group's composition is the dust-lab research-group page, which is dated Summer 2022. Treat the absence of an opening in public sources as \"no verified public evidence found\", not as a definitive zero.\n- **LinkedIn (identity verification only):** The LinkedIn surface for the verified John A. Goree profile does not currently surface his hiring posts; this report therefore records \"no LinkedIn evidence\" for positions, while still crediting LinkedIn as one of several confirming identity sources.\n- **Currency / labeling:** All monetary amounts are stated in U.S. dollars (US$). All dates are stated exactly as found in the cited sources.",
+      "synthesis_cross_cutting_insights": "- **Single verified competitive grant in the post-2024 window.** Across the NSF public award database, the UI Physics news feed for 2025 and 2026, DOE PAMS, and AFOSR NOFO listings, only one competitive grant links to John A. Goree: NSF 2510501 (ECLIPSE-CHIPS). This is consistent with his publicly available vita, which is dated March 4, 2024 - older than the August 2025 NSF award.\n- **Mechanism of capability expansion.** The NSF ECLIPSE-CHIPS project simultaneously: (a) advances his long-standing sputtering-magnetron / capacitively-coupled-plasma instrumentation expertise ([synthesis_cross_cutting_insights[0]] [49]), (b) bridges that work to a semiconductor-industry application (dust contamination), and (c) explicitly funds graduate-student training. This three-in-one design - fundamental physics + applied engineering + workforce pipeline - explains why the project explicitly names \"undergraduate and graduate students\" in the UI announcement.\n- **Tension between visibility and freshness.** Three of the highest-signal pages for this person ([synthesis_cross_cutting_insights[1]] [28], [synthesis_cross_cutting_insights[2]] [36], and his [synthesis_cross_cutting_insights[3]] [39]) are individually authoritative but largely static - the research-group page is dated Summer 2022 and the vita is dated March 4, 2024. The University of Iowa-maintained news, profile, and faculty-list pages are kept current. For an analyst seeking *recent group composition or hiring*, the lab-hosted pages are stale; institutional channels are fresher.\n- **Comparisons and divergence:**\n  - John A. Goree (Iowa, dusty plasma / semiconductor plasma / magnetron instrumentation) vs. John C. Gore (Vanderbilt, MRI / imaging science) - same first name, different surname spelling (\"Goree\" vs \"Gore\"), different field. Both are tenured full professors but their research outputs are non-overlapping.\n  - Goree's 2004 *Physics Today* co-authored review is heavily cited and defines the field-level naming for dusty plasmas; the 2025 NSF award instead defines his current funded agenda. The contrast highlights how fellowships / named-review authorship can outlive and out-shout the most recent competitive grant.\n- **Recommendation for a downstream analyst.** If the goal is to direct a PhD applicant to Goree, do **not** rely on `jobs.uiowa.edu` or LinkedIn for a 2026 posting. Instead, contact John A. Goree directly (`john-goree@uiowa.edu`) and reference NSF Award 2510501 as the funded platform under which graduate-student training will occur. If the goal is confirming \"is funding available to hire a doctoral student?\", the answer is **qualified yes** - the UI announcement explicitly says the project includes graduate-student training, but no source publicly advertises a specific PhD opening tied to the award."
+    },
+    "type": "json",
+    "beta_fields": null,
+    "mcp_tool_calls": null,
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "executive_summary": {
+          "type": "string",
+          "title": "Executive Summary"
+        },
+        "identity": {
+          "type": "string",
+          "title": "Identity"
+        },
+        "recent_active_funding": {
+          "type": "string",
+          "title": "Recent / Active Funding"
+        },
+        "recent_and_open_positions": {
+          "type": "string",
+          "title": "Recent and Open Positions"
+        },
+        "linkedin_evidence": {
+          "type": "string",
+          "title": "LinkedIn Evidence"
+        },
+        "confidence_and_caveats": {
+          "type": "string",
+          "title": "Confidence and Caveats"
+        },
+        "synthesis_cross_cutting_insights": {
+          "type": "string",
+          "title": "Synthesis - Cross-Cutting Insights"
+        }
+      },
+      "required": [
+        "executive_summary",
+        "identity",
+        "recent_active_funding",
+        "recent_and_open_positions",
+        "linkedin_evidence",
+        "confidence_and_caveats",
+        "synthesis_cross_cutting_insights"
+      ]
+    }
+  }
+}

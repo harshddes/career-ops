@@ -1,44 +1,40 @@
 {
   "version": 1,
-  "updated_at": "2026-07-02T22:41:24.434Z",
+  "updated_at": "2026-07-17T13:01:27.975Z",
   "sources": {
     "umich": {
-      "plasma-lab-contact": {
-        "updated_at": "2026-07-02T22:41:24.420Z",
-        "status": "follow_up",
-        "last_contacted": "2026-07-02",
-        "last_followed_up": "2026-07-02",
-        "follow_up_date": "",
-        "notes": ""
-      },
-      "api-read-prof": {
-        "updated_at": "2026-07-02T22:41:24.434Z",
-        "status": "follow_up",
-        "last_contacted": "",
-        "last_followed_up": "2026-07-02",
-        "follow_up_date": "",
-        "notes": ""
-      },
       "umich-ryan-mcbride-ppml": {
-        "updated_at": "2026-07-01T22:06:30.148Z",
-        "status": "contacted",
-        "last_contacted": "2026-07-01",
+        "updated_at": "2026-07-13T22:40:45.063Z",
+        "status": "responded_positive",
+        "last_contacted": "",
         "last_followed_up": "",
         "follow_up_date": "",
-        "notes": ""
+        "notes": "",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-07-13T22:40:45.063Z",
+          "entered_at": "2026-07-13T15:29:15.424Z",
+          "notes": ""
+        }
       },
       "umich-karl-krushelnick-cuos-zeus": {
-        "updated_at": "2026-07-01T16:37:56.532Z",
+        "updated_at": "2026-07-13T21:49:11.972Z",
         "status": "contacted",
         "last_contacted": "2026-06-30",
         "last_followed_up": "",
-        "follow_up_date": "",
-        "notes": ""
+        "follow_up_date": "2026-07-07",
+        "notes": "",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-07-13T21:49:11.972Z",
+          "entered_at": "",
+          "notes": ""
+        }
       },
       "umich-igor-jovanovic-ansg": {
-        "updated_at": "2026-07-01T22:06:39.364Z",
-        "status": "follow_up",
-        "last_contacted": "2026-07-01",
+        "updated_at": "2026-07-13T15:16:05.038Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-13",
         "last_followed_up": "2026-07-01",
         "follow_up_date": "",
         "notes": ""
@@ -52,36 +48,60 @@
         "notes": ""
       },
       "umich-alec-thomas-cuos": {
-        "updated_at": "2026-07-01T21:27:05.613Z",
-        "status": "not_contacted",
-        "last_contacted": "",
+        "updated_at": "2026-07-13T15:59:18.243Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-13",
         "last_followed_up": "",
-        "follow_up_date": "",
-        "notes": ""
+        "follow_up_date": "2026-07-20",
+        "notes": "",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-07-13T15:59:18.243Z",
+          "entered_at": "",
+          "notes": ""
+        }
       },
       "umich-john-foster-pstl": {
-        "updated_at": "2026-07-01T20:52:44.600Z",
-        "status": "contacted",
+        "updated_at": "2026-07-14T14:13:08.640Z",
+        "status": "responded_negative",
         "last_contacted": "2026-07-01",
-        "last_followed_up": "2026-07-01",
+        "last_followed_up": "2026-07-14",
         "follow_up_date": "",
-        "notes": ""
+        "notes": "",
+        "outreach": {
+          "stage": "finished",
+          "stage_updated_at": "2026-07-14T14:13:08.639Z",
+          "entered_at": "2026-07-13T22:05:11.845Z",
+          "notes": ""
+        }
       },
       "umich-benjamin-jorns-pepl": {
-        "updated_at": "2026-07-01T20:53:14.137Z",
+        "updated_at": "2026-07-13T21:44:16.242Z",
         "status": "contacted",
         "last_contacted": "2026-07-01",
-        "last_followed_up": "",
-        "follow_up_date": "",
-        "notes": ""
+        "last_followed_up": "2026-07-13",
+        "follow_up_date": "2026-07-20",
+        "notes": "",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-07-13T21:44:16.242Z",
+          "entered_at": "",
+          "notes": ""
+        }
       },
       "umich-nicholas-jordan-ppml": {
-        "updated_at": "2026-07-01T20:53:44.842Z",
-        "status": "responded",
-        "last_contacted": "2026-07-01",
-        "last_followed_up": "",
-        "follow_up_date": "",
-        "notes": ""
+        "updated_at": "2026-07-13T15:53:01.933Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-13",
+        "last_followed_up": "2026-07-13",
+        "follow_up_date": "2026-07-20",
+        "notes": "",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-07-13T15:53:01.933Z",
+          "entered_at": "",
+          "notes": ""
+        }
       },
       "umich-amy-brooks-cuos": {
         "updated_at": "2026-07-01T20:54:20.810Z",
@@ -116,12 +136,270 @@
         "notes": ""
       },
       "umich-almantas-galvanauskas-fiber-lasers": {
-        "updated_at": "2026-07-02T00:07:46.589Z",
+        "updated_at": "2026-07-13T21:44:12.626Z",
         "status": "contacted",
         "last_contacted": "2026-07-01",
+        "last_followed_up": "2026-07-13",
+        "follow_up_date": "2026-07-20",
+        "notes": "",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-07-13T21:44:12.626Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "umich-allen-hunter-mc2": {
+        "updated_at": "2026-07-03T00:05:00.613Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-02",
         "last_followed_up": "",
         "follow_up_date": "",
         "notes": ""
+      },
+      "umich-russell-bornschein-chem-ms": {
+        "updated_at": "2026-07-03T00:07:45.848Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-02",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-test-status-1783602506531": {
+        "updated_at": "2026-07-09T13:08:26.837Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-09",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-test-status-1783602549924": {
+        "updated_at": "2026-07-09T13:09:10.257Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-09",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-chinedum-okwudire-nano-positioning": {
+        "updated_at": "2026-07-10T15:48:44.604Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-10",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-name-ganesh-harish-hydrodynamic-cavitation": {
+        "updated_at": "2026-07-09T14:24:20.517Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-09",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-margaret-wooldridge-combustion": {
+        "updated_at": "2026-07-13T15:16:23.949Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-paolo-elvati-nanoparticle-formations": {
+        "updated_at": "2026-07-09T14:28:55.231Z",
+        "status": "archived",
+        "last_contacted": "",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-steve-ceccio-fluid-mechanics": {
+        "updated_at": "2026-07-09T14:29:13.917Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-name-ceccio-steven-l-multiphase-flows": {
+        "updated_at": "2026-07-09T14:58:15.754Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-uduak-inyang-udoh-control-theory": {
+        "updated_at": "2026-07-09T20:49:38.279Z",
+        "status": "archived",
+        "last_contacted": "",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-jing-tang-clay-minerals": {
+        "updated_at": "2026-07-09T21:05:47.733Z",
+        "status": "archived",
+        "last_contacted": "",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-test-status-1783633240020": {
+        "updated_at": "2026-07-09T21:40:40.403Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-09",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-test-status-1783633402531": {
+        "updated_at": "2026-07-09T21:43:22.944Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-09",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-james-weiland-retinal-prosthesis": {
+        "updated_at": "2026-07-09T21:56:20.571Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-09",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "Email sent 2026-07-09 — Subject: Research Assistant Inquiry – Retinal Prosthesis Instrumentation"
+      },
+      "umich-xueding-wang-retinal-imaging": {
+        "updated_at": "2026-07-09T21:56:21.001Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-09",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "Email sent 2026-07-09 — Subject: Research Engineering Inquiry – Retinal Imaging Instrumentation"
+      },
+      "umich-cynthia-chestek-stimote": {
+        "updated_at": "2026-07-09T21:56:21.474Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-09",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "Email sent 2026-07-09 — Subject: Research Inquiry – StiMote System Testing and Acquisition"
+      },
+      "umich-christopher-limbach-aero": {
+        "updated_at": "2026-07-10T14:10:12.106Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-10",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-mirko-gamba-aero": {
+        "updated_at": "2026-07-10T14:36:13.494Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-10",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-shaun-clarke-applied-physics": {
+        "updated_at": "2026-07-10T15:48:09.850Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-10",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-jerard-gordon-metal-additive-manufacturing": {
+        "updated_at": "2026-07-10T15:48:43.027Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-10",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": ""
+      },
+      "umich-chenhui-shao-smart-manufacturing": {
+        "updated_at": "2026-07-13T15:55:09.836Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-07-13T15:55:09.836Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "umich-test-status-1783955458064": {
+        "updated_at": "2026-07-13T15:10:58.518Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-13",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-07-13T15:10:58.518Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "umich-scott-baalrud-ners": {
+        "updated_at": "2026-07-13T15:26:42.786Z",
+        "status": "archived",
+        "last_contacted": "",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-07-13T15:26:42.786Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "umich-louise-willingale-zeus": {
+        "updated_at": "2026-07-14T14:12:34.939Z",
+        "status": "followed_up",
+        "last_contacted": "2026-07-14",
+        "last_followed_up": "2026-07-14",
+        "follow_up_date": "",
+        "notes": "",
+        "outreach": {
+          "stage": "finished",
+          "stage_updated_at": "2026-07-14T14:12:34.939Z",
+          "entered_at": "2026-07-13T16:48:19.379Z",
+          "notes": ""
+        }
+      },
+      "umich-yong-ma-cuos": {
+        "updated_at": "2026-07-13T15:59:25.235Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-13",
+        "last_followed_up": "",
+        "follow_up_date": "2026-07-20",
+        "notes": "",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-07-13T15:59:25.235Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "umich-steve-yalisove-materials-laser": {
+        "updated_at": "2026-07-13T23:10:18.793Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-13",
+        "last_followed_up": "",
+        "follow_up_date": "2026-07-20",
+        "notes": "CUOS Materials PI. Reports: WEB-TRACKER/research/cuos-structure-2026.md; WEB-TRACKER/research/cuos-groups/material-science.md; WEB-TRACKER/research/cuos-people/steve-yalisove.md",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-07-13T23:10:18.793Z",
+          "entered_at": "",
+          "notes": ""
+        }
       }
     },
     "private-co": {

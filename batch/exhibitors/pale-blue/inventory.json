@@ -1,0 +1,71 @@
+{
+  "scanned": 14,
+  "added": 7,
+  "roles": [
+    {
+      "id": "rd-engineer",
+      "title": "Open Position (R&D Engineer)",
+      "url": "https://open.talentio.com/r/1/c/pale-blue/homes/2329",
+      "location": "Japan (Pale Blue)",
+      "score": "4.2/5",
+      "fit_summary": "R&D engineer at water-propulsion startup — EP/hardware R&D.",
+      "notes": "Pale Blue Talentio board (Japan). Water propulsion. Confirm Japan work authorization / language requirements."
+    },
+    {
+      "id": "electrical",
+      "title": "Electrical Engineer",
+      "url": "https://open.talentio.com/r/1/c/pale-blue/homes/2329",
+      "location": "Japan (Pale Blue)",
+      "score": "4.3/5",
+      "fit_summary": "Electrical engineer for water ion / Hall thruster systems.",
+      "notes": "Pale Blue Talentio board (Japan). Water propulsion. Confirm Japan work authorization / language requirements."
+    },
+    {
+      "id": "mechanical",
+      "title": "Mechanical Engineer",
+      "url": "https://open.talentio.com/r/1/c/pale-blue/homes/2329",
+      "location": "Japan (Pale Blue)",
+      "score": "3.9/5",
+      "fit_summary": "Mechanical for propulsion hardware.",
+      "notes": "Pale Blue Talentio board (Japan). Water propulsion. Confirm Japan work authorization / language requirements."
+    },
+    {
+      "id": "ep",
+      "title": "Electric Propulsion Engineer",
+      "url": "https://open.talentio.com/r/1/c/pale-blue/homes/2329",
+      "location": "Japan (Pale Blue)",
+      "score": "4.6/5",
+      "fit_summary": "Core EP role — strongest domain match.",
+      "notes": "Pale Blue Talentio board (Japan). Water propulsion. Confirm Japan work authorization / language requirements."
+    },
+    {
+      "id": "sat-systems",
+      "title": "Lead Satellite Systems Engineer",
+      "url": "https://open.talentio.com/r/1/c/pale-blue/homes/2329",
+      "location": "Japan (Pale Blue)",
+      "score": "4.0/5",
+      "fit_summary": "Satellite systems leadership — stretch but space-systems relevant.",
+      "recommendation": "Stretch / lead level — review bar",
+      "notes": "Pale Blue Talentio board (Japan). Water propulsion. Confirm Japan work authorization / language requirements."
+    },
+    {
+      "id": "assembly-test",
+      "title": "Assembly & Test Engineer",
+      "url": "https://open.talentio.com/r/1/c/pale-blue/homes/2329",
+      "location": "Japan (Pale Blue)",
+      "score": "4.3/5",
+      "fit_summary": "Hands-on assembly/test — instrumentation/test-rig style work.",
+      "notes": "Pale Blue Talentio board (Japan). Water propulsion. Confirm Japan work authorization / language requirements."
+    },
+    {
+      "id": "mfg",
+      "title": "Manufacturing Engineer",
+      "url": "https://open.talentio.com/r/1/c/pale-blue/homes/2329",
+      "location": "Japan (Pale Blue)",
+      "score": "3.8/5",
+      "fit_summary": "Manufacturing for propulsion hardware.",
+      "notes": "Pale Blue Talentio board (Japan). Water propulsion. Confirm Japan work authorization / language requirements."
+    }
+  ],
+  "careers_url": "https://pale-blue.co.jp/career/"
+}

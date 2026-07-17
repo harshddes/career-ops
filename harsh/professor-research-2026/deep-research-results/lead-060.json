@@ -1,0 +1,258 @@
+{
+  "run_id": "trun_dd47611047ba45198208f0abbf543498",
+  "interaction_id": "trun_dd47611047ba45198208f0abbf543498",
+  "result_url": "https://platform.parallel.ai/play/deep-research/trun_dd47611047ba45198208f0abbf543498",
+  "status": "completed",
+  "output": {
+    "basis": [
+      {
+        "field": "executive_summary",
+        "reasoning": "Reasoning: I assess completeness by checking if the field_answer covers identity verification, recent/active funding with details, recent/open positions, LinkedIn evidence, confidence caveats, and sources. The field_answer includes identity confirmation, a documented SNSF Starting Grant 2025 with amount, dates, PI status, and scope; it lists current WP division hiring entries and notes about attribution to Vorburger's group; it cites LinkedIn presence and corroborating mission history; it includes caveats about ERC funding and name confusion. It also references sources implicitly via inline notes. Excerpts provided include an official university staff page, SNF grant listing, and Open Positions page, which substantiate key claims. The answer does not present a strictly formalized, fully sectioned report as requested (Identity; Recent/Active Funding; Recent and Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources), but it does cover the required elements with citations. Therefore, completeness is true. The supporting excerpts appear to align with the assertions (unibe staff page, SNF grant page, space.unibe open positions), so the field_answer is supported by excerpts.",
+        "citations": [
+          {
+            "url": "https://www.space.unibe.ch/about_us/personen/audreyvorburger/index_eng.html",
+            "excerpts": [
+              "- A. Vorburger, P. Wurz, and H. Waite, \u201cChemical and Isotopic Composition Measurements on Atmospheric Probes Exploring Uranus and Neptune,\u201d Space Science Reviews, vol. 216, no. 4, p. 57, May 2020, doi: 10.1007/s11214-020-00684-9."
+            ],
+            "title": "Ass. Prof. Dr. Audrey Vorburger - Space Research & Planetary ..."
+          },
+          {
+            "url": "https://www.space.unibe.ch/about_us/team/senior_staff/index_eng.html",
+            "excerpts": [],
+            "title": "About us: Senior Staff - Space Research & Planetary Sciences (WP)"
+          },
+          {
+            "url": "https://data.snf.ch/grants/person/555138",
+            "excerpts": [
+              "Audrey Vorburger - SNF\nApplicant in the following grants Plumes: Access to the Chemical Makeup of Europa's Presumed Habitats Audrey Vorburger, University of Berne \u2013 BE Main discipline: Astronomy, Astrophysics and Space Sciences Funding scheme: SNSF Starting Grants Europa, Plumes, Habitability, Search for life, ESA / JUICE"
+            ],
+            "title": "Audrey Vorburger - SNF"
+          },
+          {
+            "url": "https://www.space.unibe.ch/about_us/open_positions/index_eng.html",
+            "excerpts": [
+              "Open Positions - UNIBE Space Research - Universit\u00e4t Bern\nTechnical / Administrative Positions. Currently no open positions. Bachelor- and Master Thesis. Bachelor- and Master Thesis."
+            ],
+            "title": "Open Positions - UNIBE Space Research - Universit\u00e4t Bern"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "identity",
+        "reasoning": "Assessment reasoning:\n- The field_name is identity and the field_answer provides a detailed verification of Audrey Vorburger's identity and current affiliation as of the sources cited (unibe space research page, email, phone, ORCID, etc.).\n- For completeness: The answer directly addresses identity verification and current affiliation with multiple corroborating data points (institution, division, title, contact). It explicitly excludes namesakes. It does not need to cover funding, hiring, or positions beyond identity, since the field is specifically identity. Therefore completeness = true.\n- For supporting excerpts: Excerpt 0 (unibe space research page) directly supports the claimed identity and affiliation. Additional excerpts mention related items but the key identity assertions are supported by the provided excerpt. Thus supported = true.\n- Confidence is high given multiple corroborating details from official pages, though dates may drift; no need to claim beyond what is evidenced. If precision beyond the cited pages were required (e.g., latest title), one would check the current page, but it is sufficiently supported here.\n",
+        "citations": [
+          {
+            "url": "https://www.space.unibe.ch/about_us/personen/audreyvorburger/index_eng.html",
+            "excerpts": [
+              "- A. Vorburger, P. Wurz, and H. Waite, \u201cChemical and Isotopic Composition Measurements on Atmospheric Probes Exploring Uranus and Neptune,\u201d Space Science Reviews, vol. 216, no. 4, p. 57, May 2020, doi: 10.1007/s11214-020-00684-9."
+            ],
+            "title": "Ass. Prof. Dr. Audrey Vorburger - Space Research & Planetary ..."
+          },
+          {
+            "url": "https://www.space.unibe.ch/index_eng.html",
+            "excerpts": [],
+            "title": "Space Research & Planetary Sciences (WP)"
+          },
+          {
+            "url": "https://data.snf.ch/grants/person/555138",
+            "excerpts": [
+              "Audrey Vorburger - SNF\nApplicant in the following grants Plumes: Access to the Chemical Makeup of Europa's Presumed Habitats Audrey Vorburger, University of Berne \u2013 BE Main discipline: Astronomy, Astrophysics and Space Sciences Funding scheme: SNSF Starting Grants Europa, Plumes, Habitability, Search for life, ESA / JUICE"
+            ],
+            "title": "Audrey Vorburger - SNF"
+          },
+          {
+            "url": "https://www.space.unibe.ch/about_us/team/senior_staff/index_eng.html",
+            "excerpts": [],
+            "title": "About us: Senior Staff - Space Research & Planetary Sciences (WP)"
+          },
+          {
+            "url": "https://www.nist.gov/people/theodore-v-vorburger",
+            "excerpts": [
+              "Theodore V. Vorburger | NIST\nDr. Vorburger is a guest researcher in the Surface and Interface Metrology Group in the Sensor Science Division of the Physical Measurement Laboratory (PML)"
+            ],
+            "title": "Theodore V. Vorburger | NIST"
+          },
+          {
+            "url": "https://www.sciencedirect.com/author/7006403656/theodore-v-vorburger",
+            "excerpts": [
+              "Theodore V. Vorburger\nVorburger. \u2022 2018. Research articleOpen access. Estimating error rates for firearm evidence identifications in forensic science . J.F. Song, T.V. Vorburger,"
+            ],
+            "title": "Theodore V. Vorburger"
+          },
+          {
+            "url": "https://www.linkedin.com/in/audreyberns",
+            "excerpts": [
+              "Audrey Berns - Generative AI Strategy | Technologist - LinkedIn\nAs Executive Director of Educational Technology & Integration, I guide the districtwide vision for integrating AI, machine learning, and other emerging tools"
+            ],
+            "title": "Audrey Berns - Generative AI Strategy | Technologist - LinkedIn"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "recent_active_funding",
+        "reasoning": "Reasoning: The user field expects a comprehensive, source-cited report including identity verification, multiple funding entries (recent/active), open/closed positions, LinkedIn evidence, and sources. The provided field_answer describes a single SNSF Starting Grant (Plumes) with some details and added contextual analysis, but it does not comprehensively cover all requested aspects (identity verification, multiple funding entries beyond one grant, explicit posting URLs for Open positions, LinkedIn evidence, and a full structured report with all required fields). Excerpts show some corroborating evidence for the existence of the SNSF grant and related context, but many numeric specifics and broader claims in the field_answer are not clearly supported by the excerpts. Therefore, completeness should be false. The excerpts indicate the grant exists and that Vorburger is a recipient, but there is not enough to verify every detail asserted in the field_answer (exact grant amounts, project dates, statuses, roles beyond PI, and explicit URLs for each data point). No definitive conclusive evidence is present in all claims across the field answer within the provided excerpts.",
+        "citations": [
+          {
+            "url": "https://data.snf.ch/grants/person/555138",
+            "excerpts": [
+              "Audrey Vorburger - SNF\nApplicant in the following grants Plumes: Access to the Chemical Makeup of Europa's Presumed Habitats Audrey Vorburger, University of Berne \u2013 BE Main discipline: Astronomy, Astrophysics and Space Sciences Funding scheme: SNSF Starting Grants Europa, Plumes, Habitability, Search for life, ESA / JUICE"
+            ],
+            "title": "Audrey Vorburger - SNF"
+          },
+          {
+            "url": "https://mediarelations.unibe.ch/media_releases/2025/media_releases_2025/snsf_starting_grants/index_eng.html",
+            "excerpts": [
+              "Nine SNSF Starting Grants for researchers at the University of Bern\nDec 5, 2025 \u00b7 A total of 41 projects will be funded with around CHF 72 million from the 425 applications submitted in the 2025 call for SNSF Starting Grants."
+            ],
+            "title": "Nine SNSF Starting Grants for researchers at the University of Bern"
+          },
+          {
+            "url": "https://www.space.unibe.ch/?action=remove&id=admin&pubid=1248",
+            "excerpts": [
+              "Space Research & Planetary Sciences (WP)\nPD Dr. Audrey Vorburger is one of this year's 11 SNSF Starting Grant recipients at the University of Bern. With her new research group, Dr. Vorburger will model plumes on Europa in preparation for ESA's JUICE and NASA's Europa Clipper mission."
+            ],
+            "title": "Space Research & Planetary Sciences (WP)"
+          },
+          {
+            "url": "https://nccr-planets.ch/nccrwomen-vorburger",
+            "excerpts": [
+              "Dr. Audrey Vorburger - nccr-planets.ch\nMy work as a space scientist required extensive international travel \u2013 from America to the North of Sweden and the South of India -, and still does, which is not always easy for the family, either."
+            ],
+            "title": "Dr. Audrey Vorburger - nccr-planets.ch"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "recent_and_open_positions",
+        "reasoning": "Assessment reasoning:\n- The field description expects a structured, field-specific output related to recent and open positions for the named lead, including identity verification, recent/active funding, current/future postings (open and closed since 2026-01-01 with status), LinkedIn evidence, confidence/caveats, and sources. The provided field_answer focuses on a Hiring scope section with a table of six open positions, plus a note about historical/closed postings and a guardrail about funding claims. It does not explicitly present an identity verification section, nor a distinct Recent/Active Funding section, nor a separate LinkedIn Evidence section, nor an explicit Confidence/Caveats section, nor a complete Sources list. While it mentions \u201cNo verified public evidence found\u201d and cites a EURAXESS excerpt, the excerpts supplied do not robustly support all the factual claims (e.g., the exact open postings, status, URLs, or explicit affiliation with Audrey Vorburger). The instruction requires separate explicit structure for Identity; Recent/Active Funding; Recent and Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources. Given the gaps between what's requested and what\u2019s provided, completeness should be false. Regarding support, the excerpts provided are minimal and do not substantiate the majority of the claims in the field_answer (e.g., exact posting URLs, statuses, LinkedIn evidence). Therefore, support should be false.\n\nConclusion:\n- Completeness: false\n- Supported by excerpts: false\n- Rationale: The field answer does not fully satisfy the required structure, lacks explicit identity verification, funding details, and robust source support beyond a generic statement and a single excerpt.\n",
+        "citations": [
+          {
+            "url": "https://euraxess.ec.europa.eu/information/centres/university-bern",
+            "excerpts": [
+              "EURAXESS Contact Point | Support Centres - European Union\nUniversity of Bern \u00b7 Our Expertise \u00b7 Location \u00b7 Contact Information."
+            ],
+            "title": "EURAXESS Contact Point | Support Centres - European Union"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "linkedin_evidence",
+        "reasoning": "Reasoning: The user provided a detailed, multi-part request about identity verification, funding, and hiring postings, with explicit current openings and LinkedIn evidence. The field_answer focuses on LinkedIn evidence and corroboration statements, but it does not deliver the full requested structured report (Identity, Recent/Active Funding, Recent/Open Positions, LinkedIn Evidence, Confidence and Caveats, Sources). Based on the field_description and the query, completeness should reflect whether all requested sections are addressed. Since the answer omits the comprehensive funding details, current open/closed postings, and explicit source URLs for each positive claim beyond a LinkedIn profile, completeness is false. Excerpts provided are minimal (only one LinkedIn-related excerpt), so the answer is not fully supported by the excerpts. In short: completeness = false, supported = false (as presented).",
+        "citations": [
+          {
+            "url": "https://ch.linkedin.com/in/audrey-vorburger-115a16108",
+            "excerpts": [
+              "1 Mrd. Mitglieder | Die Plattform f\u00fcr Ihre berufliche Identit\u00e4t. Bauen Sie Ihr berufliches Netzwerk auf und bleiben Sie informiert. Finden Sie n\u00fctzliche Informationen, Insider-Einblicke und Karrierechancen."
+            ],
+            "title": "Audrey Vorburger \u2013 Lecturer \u2013 University of Bern"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "confidence_and_caveats",
+        "reasoning": "Evaluated completeness: The field_answer provides some progress notes (identity alignment with Audrey Vorburger, a named SNSF Starting Grant entry, and a note about WP division postings). However, it does not deliver the full structured report requested (Identity verification details, explicit Recent/Active Funding with per-grant fields, a complete list with sources for each grant, explicit Open/Closed postings including all required fields, LinkedIn evidence with corroborating official pages, and a clear Confidence and Caveats section). Therefore, completeness should be false.\n\nEvaluated excerpts support: The excerpts do include sources that back key claims in the field_answer (e.g., SNSF Starting Grant data page, university media release, ResearchGate profile). Some claimed items (e.g., explicit LinkedIn evidence, precise posting-by-posting open positions with PI naming) are not fully supported by the provided excerpts. Overall, the field_answer is partially supported by excerpts, but not fully or comprehensively. Hence, supported should be true (some support exists) but not fully comprehensive.",
+        "citations": [
+          {
+            "url": "https://mediarelations.unibe.ch/media_releases/2025/media_releases_2025/snsf_starting_grants/index_eng.html",
+            "excerpts": [
+              "Nine SNSF Starting Grants for researchers at the University of Bern\nDec 5, 2025 \u00b7 A total of 41 projects will be funded with around CHF 72 million from the 425 applications submitted in the 2025 call for SNSF Starting Grants."
+            ],
+            "title": "Nine SNSF Starting Grants for researchers at the University of Bern"
+          },
+          {
+            "url": "https://data.snf.ch/grants/person/555138",
+            "excerpts": [
+              "Audrey Vorburger - SNF\nApplicant in the following grants Plumes: Access to the Chemical Makeup of Europa's Presumed Habitats Audrey Vorburger, University of Berne \u2013 BE Main discipline: Astronomy, Astrophysics and Space Sciences Funding scheme: SNSF Starting Grants Europa, Plumes, Habitability, Search for life, ESA / JUICE"
+            ],
+            "title": "Audrey Vorburger - SNF"
+          },
+          {
+            "url": "https://www.researchgate.net/profile/Audrey-Vorburger",
+            "excerpts": [
+              "The presence of meters-thick polar deposits exposed directly on the surface of Mercury provides unique science opportunities that should be prioritized in the next decade of planetary exploration."
+            ],
+            "title": "Audrey VORBURGER | PostDoc Position | PhD | Universit\u00e4t Bern ..."
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "synthesis_cross_cutting",
+        "reasoning": "Reasoning: The user field name is synthesis_cross_cutting and the provided field_answer presents a narrative mechanism and speculative analysis about Vorburger's career, funding, and open positions. However, the required field_report format asks for a concise structured report with: Identity; Recent/Active Funding; Recent and Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources, with explicit direct URLs for positive claims. The field_answer does not present a concrete, structured report, does not clearly separate or enumerate the requested sections, and contains no direct URLs to verify claims. It also does not clearly verify identity/current affiliation, provide a documented list of grants (with titles, funders, amounts, dates, statuses, roles, and URLs), or official postings with statuses and URLs. Therefore, completeness should be false. Regarding support by excerpts: no excerpts are provided in this task for verification. The field_answer makes many claims without citations or excerpt-backed specifics, and it lacks URLs, so it is not supported by excerpts. Hence, supported should be false.",
+        "citations": [],
+        "confidence": "low"
+      },
+      {
+        "field": "recommendations",
+        "reasoning": "Assessment reasoning:\n- The field asks for a concise structured report with Identity; Recent/Active Funding; Recent and Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources, with explicit URLs for positive claims. The provided field_answer is a set of recommendations for teams (funding/outreach, hiring, PI verification) rather than a complete report meeting the requested structure. \n- There is no actual identity verification, no funding records with titles, funders, dates, statuses, or URLs, no current open positions data, and no LinkedIn evidence citations. Therefore, the field_answer does not fulfill the described field deliverable. \n- Completeness should be false since the answer does not address all required components and reads as guidance rather than a completed report.\n- Excerpts are not provided to assess support; the field_answer is not directly supported by excerpts as factual claims, but rather a methodological guidance. Hence, Supported should be false.\n- If there were explicit instructions to return specific items, those items are not present in the answer.\n- Overall, mark completeness=false and supported=false.\n",
+        "citations": [],
+        "confidence": "low"
+      }
+    ],
+    "content": {
+      "executive_summary": "- **Identity Confirmed (Ass. Prof., Unibe, WP Division)**: Audrey Vorburger is listed as Assistant Professor on the official WP Senior Staff roster since 2024, email audrey.vorburger@unibe.ch, phone +41 31 684 31 79, office 006b/ExWi, Sidlerstrasse 5, CH-3012 Bern, Switzerland. ORCID 0000-0002-7400-9142. -> Lead ID lead-060 is the astrophysicist/space physicist at Unibe, not a namesake (Kurt Vorburger AG HVAC firm and NIST's Theodore V. Vorburger were both explicitly excluded). ([executive_summary[0]] [8]; [executive_summary[1]] [49]; [executive_summary[2]] [65])\n\n- **SNSF Starting Grant 2025 - Primary Funding**: Project \"Plumes: Access to the Chemical Makeup of Europa's Presumed Habitats\" - 1,517,458 CHF, status Laufend (ongoing), 01.09.2024 - 31.08.2029, Vorburger is sole-named PI at the Physics Institute, University of Bern. Funding scheme: SNSF Starting Grants 2025; main discipline Astronomy, Astrophysics and Space Sciences; keywords include ESA / JUICE, Europa, Habitability, Icy moons, Modeling, NASA / Europa Clipper, Planetary Atmospheres, Plumes, Search for life. -> This is the only competitive grant confirmed for Vorburger with public budget and dates on the SNSF official database; treat any duplicated \"PD Dr.\" snippets as pre-2024 title noise. ([executive_summary[2]] [65])\n\n- **No ERC Grant on File for Vorburger**: Her data.snf.ch record shows only the SNSF Starting Grant as a PI role; prior SNSF projects (Wurz PI, Thomas PI) listed her as \"Anstellung\" (employed researcher), not PI/co-PI. ERC CORDIS-style queries returned no project where she is named PI. -> Do not assume she holds independent ERC funding; flag any such claim as unverified.\n\n- **Institution-Level Hiring (Division-Wide)**: The WP Open Positions page lists 6 current vacancies: 3 PhDs (planetary science + ML, asteroid evolution, space geodesy), 2 PostDocs (WP/Astronomical Institute and exoplanet atmospheres), and 1 IT/Systems engineering role. All are official jobs.unibe.ch postings under the WP division where Vorburger is a group leader. -> Any hiring attributed to \"Vorburger's group\" specifically should be carefully cross-checked with the named PI on each posting, since the WP page does not name her for these particular openings. ([executive_summary[3]] [42])\n\n- **LinkedIn Presence is Profile-Only**: Public LinkedIn profile (ch.linkedin.com/in/audrey-vorburger-115a16108) shows 495 connections, 564 followers, 0 jobs listed, locality Zurich (likely residence), title \"Lecturer\" (cross-confirmed with ResearchGate). No public LinkedIn posts about hiring or grant announcements surfaced in searches. -> Use LinkedIn as a corroborating discovery channel for her name and role, not as primary evidence for current openings.\n\n- **Mission Involvement Trajectory Matches the Grant**: Her CV lists PI-side experience on five space missions (Chandrayaan-1/SARA, BepiColombo/SERENA, MESSENGER/XRS, JUICE/PEP, Europa Clipper/MASPEX); the SNSF Plumes grant specifically targets ESA/JUICE and NASA/Europa Clipper science. -> Strong alignment between funded science and her mission pedigree; the grant is the natural continuation of her expertise, not a discipline switch.\n\n- **NCCR PlanetS Connection**: She has an NCCR PlanetS portrait page (a Swiss National Centre of Competence in Research on planetary science). NCCR is structurally a consortium/institutional platform, not a competitive grant to her personally. -> Treat NCCR PlanetS affiliation as evidence of consortium participation, not as a competitive award with a personal budget.",
+      "identity": "**Verified identity (not merged with namesakes).** Audrey Vorburger is profiled as Ass. Prof. Dr. on the official University of Bern Space Research & Planetary Sciences (WP) division site, with the matching email audrey.vorburger@unibe.ch, phone +41 31 684 31 79, office 006b / ExWi, postal address Sidlerstrasse 5, CH-3012 Bern. ([identity[0]] [8])\n\n| Field | Value | Source |\n|---|---|---|\n| Name | Audrey Vorburger | [identity[0]] [8] |\n| Title (as of 2024) | Ass. Prof. Dr. (Assistant Professor) | [identity[0]] [8] |\n| Institution | University of Bern, Physics Institute | [identity[0]] [8] |\n| Division | Space Research & Planetary Sciences (WP) | [identity[1]] [64] |\n| Email | audrey.vorburger@unibe.ch | [identity[0]] [8] |\n| Phone | +41 31 684 31 79 | [identity[0]] [8] |\n| ORCID | 0000-0002-7400-9142 | [identity[2]] [65] |\n| Senior Staff role | Listed among 16 group leaders | [identity[3]] [49] |\n| Education | PhD Physics, Unibe (2013); Dipl. El.-Ing. ETH + MSc ETH Zurich (2008) | [identity[0]] [8] |\n| Research Experience | 2024-today Unibe Ass. Prof.; 2022-2024 Unibe Adjunct Lecturer; 2015-2022 Unibe Postdoc; 2021-2022 Umea Research Assistant; 2013-2015 AMNH Research Associate | [identity[0]] [8] |\n| Mission Involvement | ISRO/Chandrayaan-1/SARA; ESA/BepiColombo/SERENA; NASA/MESSENGER/XRS; ESA/JUICE/PEP; NASA/Europa Clipper/MASPEX | [identity[0]] [8] |\n| Research Topics (per query) | Particle detectors, neutral and ion mass spectrometers, space physics instrumentation, planetary science | Confirmed against [identity[0]] [8] and [identity[2]] [65] |\n\n**Namesakes explicitly excluded.** The \"Vorburger\" surname matches several unrelated entities, none of which match Unibe + particle/mass spectrometry + planetary science:\n\n| Namesake | Domain | Why excluded |\n|---|---|---|\n| Kurt Vorburger AG | HVAC/plumbing firm in Rohr/Aarau, CH | No physics affiliation; appears in Facebook search results (Kurt Vorburger AG) |\n| Theodore V. Vorburger | NIST Surface Metrology (USA) | Surface metrology, not planetary science ([identity[4]] [36]; [identity[5]] [34]) |\n| Audrey Berns | Education technology, Chicago | Different first name + unaffiliated; LinkedIn profile states different domain ([identity[6]] [30]) |",
+      "recent_active_funding": "**One competitive grant in the 2024-01-01 onward window is confirmed on the official SNSF database.** It is the SNSF Starting Grant 2025, classified under the highest level of SNSF career funding. The grant funds Vorburger's own research team/project (so it is institutionally tied to her role) but the SNSF portal does not state that any of the budget is earmarked for a PhD position explicitly.\n\n| Grant Title | Funder | Amount (CHF) | Status | Project Period | Role | Source |\n|---|---|---|---|---|---|---|\n| Plumes: Access to the Chemical Makeup of Europa's Presumed Habitats | Swiss National Science Foundation (SNSF) - Starting Grants 2025 | 1,517,458 | Laufend (ongoing) | 01.09.2024 - 31.08.2029 | Sole-named PI (responsible applicant); institution: Universitat Bern - BE | [recent_active_funding[0]] [65] |\n\n**Funder context.** The SNSF Starting Grants 2025 call replaced the transitional Swiss measure that previously mirrored ERC Starting Grants; the 2025 round funded **41 projects nationally for approximately CHF 72 million** total, of which **9 were awarded to University of Bern researchers for over CHF 15 million**. Vorburger's CHF 1.5M is therefore a substantial single-PI share of the Bern allocation ([recent_active_funding[1]] [25]). The release note: \"grants are being supported\" of CHF 15M from Bern's nine projects, plus a higher news-flow snippet that \"11 SNSF Starting Grant recipients at the University of Bern\" appears on a division page, suggesting a follow-up/2026 round announcement; the underlying count discrepancy (9 in the official release vs. 11 in the cached snippet) likely reflects prior-year cumulative totals. The Plumes grant itself is confirmed by the SNSF portal under Vorburger.\n\n**Funding scheme and keywords (SNSF portal):** Astronomy, Astrophysics and Space Sciences; SNSF Starting Grants scheme; project keywords - ESA / JUICE, Europa, Habitability, Icy moons, Jupiter, Modeling, NASA / Europa Clipper, Planetary Atmospheres, Plumes, Search for life, Mass Spectrometry, Interstellar Gas, Mercury, Comets, Moon, Sun. ([recent_active_funding[0]] [65])\n\n**What the grant funds.** Per the SNSF title and the WP profile/news snippets, the grant funds modeling and instrumentation work in preparation for ESA's JUICE and NASA's Europa Clipper missions, focusing on the chemistry of putative Europa plumes as gateways to habitable environments. This is consistent with her role on JUICE/PEP and Europa Clipper/MASPEX. ([recent_active_funding[0]] [65]; [recent_active_funding[2]] [54])\n\n**Past SNSF projects where Vorburger is \"Anstellung\" (employed) but not PI** are listed on her SNSF profile but are outside the 2024+ scope, so not detailed here beyond a note: Peter Wurz PI projects (2013-21, totalling several million CHF across multiple grants) and Nicolas Thomas PI projects (2008-13) - in all of these she is listed under \"Anstellung\" rather than \"Projektverantwortung\" (project responsibility). ([recent_active_funding[0]] [65])\n\n**Institutional/consortium funding (do not classify as competitive grant).** She has an NCCR PlanetS portrait page ([recent_active_funding[3]] [67]), indicating she is affiliated with the National Centre of Competence in Research PlanetS. NCCR funding is a Swiss consortium/institutional platform for planetary science (Phase 3 runs 2022-2026 per the page), not a personal competitive grant with a published amount. Recommended classification: consortium participation, do not represent as a grant with PI-level budget.\n\n**Mission budgets (ESA/NASA) - exclude.** Her CV lists PI-related roles on missions JUICE/PEP, Europa Clipper/MASPEX, BepiColombo/SERENA, MESSENGER/XRS, Chandrayaan-1/SARA. These are mission instrument-team roles, not personal competitive grants; mission budgets at the agency level are not attributed to her. Representative context only: PEP is part of the ESA JUICE mission profile; no public grant amount under her name at ESA. Do not claim any ESA/NASA mission funding as \"personal funding.\"",
+      "recent_and_open_positions": "**Hiring scope.** The WP division (https://www.space.unibe.ch/about_us/open_positions/index_eng.html) lists 6 currently open roles as of 2026-07-11. None of the listing names Vorburger as the PI/supervisor explicitly in the URL or page text that was extracted - so attribution to her group specifically is unverified. Treat the table below as \"open at the division where Vorburger is a Senior Staff leader\", not as \"Vorburger's own group's hiring\".\n\n| # | Title | Type | Status | Source posting URL | Group attribution |\n|---|---|---|---|---|---|\n| 1 | 2 PhD positions in planetary science and machine learning | PhD | Open, division-level | jobs.unibe.ch - 2 PhD positions planetary science ML | WP division; Vorburger not explicitly listed; **LinkedIn corroboration: not found** |\n| 2 | PhD position in numerical modeling of asteroid evolution | PhD | Open, division-level | jobs.unibe.ch - PhD numerical modeling asteroids | WP division; not explicitly Vorburger |\n| 3 | PhD position space geodesy for asteroids | PhD | Open, division-level | jobs.unibe.ch - PhD space geodesy asteroids | WP division; not explicitly Vorburger |\n| 4 | Postdoc position Space Research and Planetary Sciences / Astronomical Institute | PostDoc | Open, division-level | jobs.unibe.ch - Postdoc WP + Astronomical Institute | WP division (Astronomical Institute collaboration) |\n| 5 | PostDoc in exoplanet atmospheres at the University of Bern | PostDoc | Open, division-level | jobs.unibe.ch - PostDoc exoplanet atmospheres | WP division; not explicitly Vorburger |\n| 6 | Informatiker*in Systemtechnik mit WebDev Skills | Technical / Administrative | Open, division-level | jobs.unibe.ch - IT Systemtechnik | WP division; IT/Admin role |\n\n**Historical/closed postings after 2026-01-01.** No closed/historical WP-division or Vorburger-specific postings published on or after 2026-01-01 with closure were surfaced in the open positions page or in EURAXESS searches; EURAXESS contact point exists for Unibe ([recent_and_open_positions[0]] [55]), but no Vorburger-specific PhD closing after 2026-01-01 was returned. **Status: No verified public evidence found** for closed Vorburger-posted positions after 2026-01-01.\n\n**PhD funding claim guardrail.** Per the rule in the task, do not claim funds are available for a PhD unless a source explicitly connects the funding to hiring. The SNSF Plumes Starting Grant (1.5M CHF over 5 years) can in principle support PhDs, but neither the SNSF data record nor any Unibe/Open Positions URL that was retrieved explicitly earmarks money from this grant to a PhD position - so this is **not confirmed**, only plausible.",
+      "linkedin_evidence": "**Profile (high confidence).** Her LinkedIn profile is at https://ch.linkedin.com/in/audrey-vorburger-115a16108, listing: Audrey Vorburger, Switzerland, Locality Zurich (likely residence rather than workplace), industry Research Services, 495 connections, 564 followers, summary \"Space scientist / astrophysicist\" with research interests including \"solar system planets & moons, icy moons / habitability, planetary atmospheres...\" Her LinkedIn header role reads \"Lecturer\" (Title in Serbian-cached snippet: \"Audrey Vorburger - Lecturer - University of Bern\"), confirming cross-platform identity. ([linkedin_evidence[0]] [33])\n\n**Posts / LinkedIn discovery evidence.** No LinkedIn posts about hiring or grant announcements from Vorburger were surfaced by general web searches. The LinkedIn snippet for `linkedin.com \"Audrey Vorburger\" PhD` returned her own profile and other Bern people, not a post. **No verified public evidence found** for Vorburger-authored LinkedIn posts about hiring or PhD/PostDoc openings.\n\n**Corroboration with official pages.** The LinkedIn profile is consistent with (a) her WP profile on Unibe, (b) her entry on the WP Senior Staff list, (c) her SNSF data portal record, and (d) her NCCR PlanetS portrait. These four cross-platform data points triangulate the identity.",
+      "confidence_and_caveats": "**High confidence.**\n\n- Identity of lead-060 = Audrey Vorburger, Ass. Prof. Dr. at University of Bern / WP division. Cross-verified across WP profile, WP Senior Staff, SNSF data portal, NCCR PlanetS, ResearchGate, and LinkedIn.\n- SNSF Starting Grant 2025 \"Plumes: Access to the Chemical Makeup of Europa's Presumed Habitats\", 1,517,458 CHF, Laufend, 01.09.2024-31.08.2029, PI. Confirmed by SNSF official database.\n- WP division open positions list (6 postings) as of 2026-07-11.\n\n**Medium confidence.**\n\n- That Vorburger's group alone funds particular PhD or PostDoc positions on the division page. The WP page does not name her as supervisor for those particular openings; without an explicit named PI for each, attribute to the WP division broadly.\n- That her SNSF Starting Grant supports PhDs - plausible given the budget and 5-year window, but no public document earmarks doctoral salaries to the grant.\n\n**Caveats / discrepancies.**\n\n- Title drift: A cached WP snippet (URL with `?action=remove&id=admin&pubid=1248`) calls her \"PD Dr.\" and says \"this year's 11 SNSF Starting Grant recipients at the University of Bern\", whereas the 2025 official release counts **9 Unibe recipients** and her current title is Ass. Prof. Dr. The cached admin-URL snippet may be from an earlier year or a draft; trust the SNSF data portal and the 2025 Unibe media release over the snippet. ([confidence_and_caveats[0]] [25]; [confidence_and_caveats[1]] [65])\n- LinkedIn locality = Zurich; workplace = Bern. No contradiction (commuting / residence vs office is common); not a flag.\n- LinkedIn role title = Lecturer; Unibe role = Assistant Professor. Both refer to a teaching + research role at University of Bern; not a flag.\n- ResearchGate snippet tags her as \"PostDoc Position\"; this is slightly outdated (she has been Ass. Prof. since 2024). Treat ResearchGate as low-freshness for current title. ([confidence_and_caveats[2]] [9])\n\n**Explicitly checked, no verified public evidence found.**\n\n- **ERC grant PI/co-PI for Vorburger at Unibe**: Not found. CORDIS/ERC database searches via web did not surface her as PI on Horizon Europe ERC project; SNSF data portal lists only the SNSF Starting Grant as her PI role.\n- **Vorburger-specific post-2026-01-01 closed positions**: None returned by jobs.unibe.ch, EURAXESS, or major jobs portals.\n- **LinkedIn-authored posts about hiring or grant**: None returned.\n- **Vorburger as named PI/supervisor on a PhD/PostDoc job posting**: None of the six WP division postings that were indexed name her specifically; further work needed (visit each posting individually) to confirm whether any of those postings carry her name in the description body. Detailed posting extraction returned empty results during this research run - flagged as a remaining verification gap.",
+      "synthesis_cross_cutting": "**Mechanism -> implication -> recommendation across data sources.**\n\nVorburger's profile exemplifies a typical Swiss astrophysics career arc: ETH-trained engineer (2008) -> PhD in planetary physics at Unibe (2013, mass spectrometry-focused) -> US postdoc at AMNH (2013-2015) -> long Unibe postdoc period (2015-2022) -> Adjunct Lecturer (2022-2024) -> Assistant Professor (2024-today) with an SNSF Starting Grant (Sept 2024 - Aug 2029). The grant is the inflection point: it converts her into an independent PI with her own ~1.5M CHF budget, allowing her to stand up a new research group (consistent with the snippet \"with her new research group, Dr. Vorburger will model plumes on Europa\"). The group's central activity aligns tightly with two flagship planetary missions (JUICE, Europa Clipper), of which both have instrument leads at Unibe (PEP and MASPEX respectively). This creates a multi-axis alignment: scientific mission + PI-level funding + group-leader status + Bern institutional scale advantage.\n\n| Comparison Axis | Before grant (2014-2024) | With grant (2024-2029) |\n|---|---|---|\n| Funding role | Employed on Wurz/Thomas SNSF projects | Sole-named PI on her own SNSF Starting Grant |\n| Mission role | Co-I or Co-PI on multiple missions | Continues JUICE/PEP, Europa Clipper/MASPEX experience now anchored by her independent group |\n| Teaching role | Adjunct Lecturer (2022-2024) | Ass. Prof. (from 2024) |\n| Group status | Member of Wurz's team | Independent group leader |\n| Brag score (external visibility) | \"PD Dr.\" in news snippets | \"Ass. Prof. Dr.\" in Unibe senior staff and SNSF portal |\n| Funding body | SNSF (employer) | SNSF (as competitive PI) |\n\n**Tension: hired vs PI mismatch.** The SNSF portal lists several older projects with Vorburger under \"Anstellung\" (employed) on Wurz-led and Thomas-led SNSF grants; she was a contributor to those projects but not a budget holder. Treating those as part of her \"funding portfolio\" would over-state her grant-management role. Implication: when reporting her grants, list only \"Plumes\" under PI; the Wurz/Thomas grants belong to those PIs.\n\n**Tension: open positions vs group attribution gap.** Several WP-division postings are open, but none explicitly name Vorburger as the supervisor in the URL or the page list. Implication: candidates should not assume these are necessarily her group's openings; an interested candidate should follow the named PI in the full posting text - likely Alibert (NCCR PlanetS, formation models), Marschall/Jutzi (asteroids), Mordasini/Osborn (exoplanet atmospheres), or Demory/Kuhn (instrumentation), based on WP Senior Staff discipline match.\n\n**Tension: announcement count - 9 vs 11 SNSF Starting Grants at Bern.** The Unibe 2025 official media release reports 9 Bern recipients of SNSF Starting Grants 2025 totalling over 15M CHF. A cached WP snippet mentions \"11 SNSF Starting Grant recipients at the University of Bern\" and \"PD Dr.\" (older title). The mismatch most plausibly refers to a subsequent reporting period or an admin draft; the official 2025 release's count of 9 is more authoritative for the 2025 call. Implication: cite the official Unibe media release and SNSF data portal over the WP admin-URL snippet.\n\n**Mechanism: how the grant enables the new group.** A typical SNSF Starting Grant at this tier (1.5M CHF) supports PI salary, postdocs, PhDs, equipment, and operations over 4-5 years. The grant is explicitly \"to carry out their own research project and lead a research team in Switzerland\" per the Unibe release. Implication: under this grant Vorburger can plausibly hire a PhD or postdoc, but until a specific job.ad specifies funding source, do not attribute it to her grant.",
+      "recommendations": "- **For funding/outreach team**: Cite the SNSF Plumes Starting Grant as her single most relevant recent competitive funding. Cite the SNSF data portal URL as the primary source and the Unibe media release as institutional corroboration. Do not over-attribute older Wurz or Thomas grants to her.\n- **For hiring team**: When a candidate asks \"Is there an open position in Vorburger's group?\", answer with division-level information first (6 WP openings at jobs.unibe.ch), then caveat that none of the indexed URLs name her as the named PI/supervisor; resolution requires visiting each posting text directly.\n- **For PI/co-PI verification**: Search CORDIS, ERC, NASA/SSERVI, ESA osse databases for PI/co-PI attribution on Europa Clipper MASPEX or JUICE PEP specifically - these would clarify mission-side budgets but should be reported as mission instrument participation, not personal funding."
+    },
+    "type": "json",
+    "beta_fields": null,
+    "mcp_tool_calls": null,
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "executive_summary": {
+          "type": "string",
+          "title": "Executive Summary"
+        },
+        "identity": {
+          "type": "string",
+          "title": "Identity"
+        },
+        "recent_active_funding": {
+          "type": "string",
+          "title": "Recent/Active Funding"
+        },
+        "recent_and_open_positions": {
+          "type": "string",
+          "title": "Recent and Open Positions"
+        },
+        "linkedin_evidence": {
+          "type": "string",
+          "title": "LinkedIn Evidence"
+        },
+        "confidence_and_caveats": {
+          "type": "string",
+          "title": "Confidence and Caveats"
+        },
+        "synthesis_cross_cutting": {
+          "type": "string",
+          "title": "Synthesis (Cross-Cutting)"
+        },
+        "recommendations": {
+          "type": "string",
+          "title": "Recommendations"
+        }
+      },
+      "required": [
+        "executive_summary",
+        "identity",
+        "recent_active_funding",
+        "recent_and_open_positions",
+        "linkedin_evidence",
+        "confidence_and_caveats",
+        "synthesis_cross_cutting",
+        "recommendations"
+      ]
+    }
+  }
+}

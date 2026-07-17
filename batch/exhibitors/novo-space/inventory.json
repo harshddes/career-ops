@@ -1,0 +1,34 @@
+{
+  "scanned": 7,
+  "added": 3,
+  "roles": [
+    {
+      "id": "38",
+      "title": "Hardware Designer",
+      "url": "https://novospace.bamboohr.com/careers/38",
+      "location": "Buenos Aires, AR",
+      "score": "4.3/5",
+      "fit_summary": "Rad-tolerant computer hardware design — electronics/FPGA adjacency.",
+      "notes": "Novo Space BambooHR. Argentina-based rad-tolerant computers. Confirm relocation/visa."
+    },
+    {
+      "id": "40",
+      "title": "Embedded Systems Developer",
+      "url": "https://novospace.bamboohr.com/careers/40",
+      "location": "Buenos Aires, AR (Hybrid)",
+      "score": "4.0/5",
+      "fit_summary": "Embedded for space computers — hardware-adjacent firmware.",
+      "notes": "Novo Space BambooHR. Argentina-based rad-tolerant computers. Confirm relocation/visa."
+    },
+    {
+      "id": "42",
+      "title": "Mechanical/Aerospace/Aeronautical Engineer",
+      "url": "https://novospace.bamboohr.com/careers/42",
+      "location": "Buenos Aires, AR (Hybrid)",
+      "score": "3.9/5",
+      "fit_summary": "Mech/aero for rad-tolerant computing product packaging/thermal.",
+      "notes": "Novo Space BambooHR. Argentina-based rad-tolerant computers. Confirm relocation/visa."
+    }
+  ],
+  "careers_url": "https://novospace.bamboohr.com/jobs/"
+}

@@ -20,7 +20,13 @@ test('summarizes failing and stale sources', () => {
   writeFileSync(statePath, JSON.stringify({
     sources: {
       good: { last_status: 200, next_poll: '2099-01-01T00:00:00.000Z' },
-      bad: { last_status: 404, next_poll: '2000-01-01T00:00:00.000Z' },
+      bad: {
+        last_status: 404,
+        next_poll: '2000-01-01T00:00:00.000Z',
+        provider: 'direct_html_conservative',
+        access_status: 'blocked',
+        last_error: 'blocked by robots policy',
+      },
     },
   }));
   writeFileSync(jobsPath, JSON.stringify({ generated_at: '2026-01-01T00:00:00.000Z' }));
@@ -31,4 +37,7 @@ test('summarizes failing and stale sources', () => {
   assert.equal(summary.failing_sources.length, 1);
   assert.equal(summary.stale_sources.length, 1);
   assert.equal(summary.status_counts[404], 1);
+  assert.equal(summary.failing_sources[0].provider, 'direct_html_conservative');
+  assert.equal(summary.failing_sources[0].access_status, 'blocked');
+  assert.equal(summary.failing_sources[0].last_error, 'blocked by robots policy');
 });

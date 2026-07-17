@@ -1,0 +1,24 @@
+{
+  "extract_id": "extract_c6150aeea5f44fd29e7adecf5792ec71",
+  "session_id": "session_c6150aeea5f44fd29e7adecf5792ec71",
+  "status": "ok",
+  "results": [
+    {
+      "url": "https://ch.linkedin.com/in/stefano-coda-a9781326",
+      "title": "",
+      "publish_date": null,
+      "excerpts": [
+        "* Slug: stefano-coda-a9781326\n* URL: https://linkedin.com/in/stefano-coda-a9781326\n* Name: Stefano Coda\n* first name: Stefano\n* last name: Coda\n* country iso: CH\n* country name: Switzerland\n* Locality: Lausanne, Vaud, Switzerland\n* headline\n- Senior scientist, head of TCV tokamak group at SPC, Swiss Federal Institute of Technology\n* industry name: Research Services\n* connection count: 477\n* follower count: 489\n* jobs count: 0\n\n...\n\n# Job Posts\n- title\n  + Diagnostic development and studies of turbulence and transport in the JT-60SA tokamak in Japan\n- posted timestamp: 2025-03-19T11:10:57\n- company name: EPFL\n- Location: Lausanne, Vaud, Switzerland\n- Applicants: 0"
+      ],
+      "full_content": "* Slug: stefano-coda-a9781326\n * URL: https://linkedin.com/in/stefano-coda-a9781326\n * Name: Stefano Coda\n * first name: Stefano\n * last name: Coda\n * country iso: CH\n * country name: Switzerland\n * Locality: Lausanne, Vaud, Switzerland\n * headline\n   - Senior scientist, head of TCV tokamak group at SPC, Swiss Federal Institute of Technology\n * industry name: Research Services\n * connection count: 477\n * follower count: 489\n * jobs count: 0\n\n# Inferred Location\n * Latitude: 46.5196\n * Longitude: 6.63213\n * Locationstr: Lausanne, Vaud, Switzerland\n * country iso: CH\n * admin district: VD\n * admin district2: Lausanne\n * country region: Switzerland\n * formatted address: Lausanne, Switzerland\n * Locality: Lausanne\n * Name: Lausanne, Switzerland\n\n# Job Posts\n   - title\n     + Diagnostic development and studies of turbulence and transport in the JT-60SA tokamak in Japan\n   - posted timestamp: 2025-03-19T11:10:57\n   - company name: EPFL\n   - Location: Lausanne, Vaud, Switzerland\n   - Applicants: 0"
+    }
+  ],
+  "errors": [],
+  "usage": [
+    {
+      "name": "sku_extract_excerpts",
+      "count": 1
+    }
+  ],
+  "warnings": []
+}

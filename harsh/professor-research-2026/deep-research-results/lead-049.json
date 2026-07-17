@@ -1,0 +1,390 @@
+{
+  "run_id": "trun_dd47611047ba45199724d7dbf4cccaac",
+  "interaction_id": "trun_dd47611047ba45199724d7dbf4cccaac",
+  "result_url": "https://platform.parallel.ai/play/deep-research/trun_dd47611047ba45199724d7dbf4cccaac",
+  "status": "completed",
+  "output": {
+    "basis": [
+      {
+        "field": "executive_insights",
+        "reasoning": "Assessment steps:\n- The field_answer provides a structured executive insights summary: identity, funding (SPEARHEAD grant), related research activity, hiring signals, and LinkedIn evidence claims.\n- Completeness: The answer appears to address the broad requested elements (Identity; Recent/Active Funding; Recent/Open Positions; LinkedIn Evidence; Confidence/Caveats; Sources) with multiple detail bullets and direct URLs implied by excerpts. However, some specific data points (e.g., exact grant amounts, explicit PI roles on the SPEARHEAD grant, and explicit LinkedIn URLs or posts) are not clearly verifiable from the provided excerpts. Given the instruction to require direct URLs for positive claims and explicit citations, the answer contains many claims that are not directly corroborated by the excerpts.\n- Based on excerpts: Identity and affiliation are supported by excerpts 0 and 1. The SPEARHEAD project linkage is supported by excerpts 2 and 3 and the IRAP affiliation is supported by excerpt 4. Some claims (grant amount, personal PI role, exact LinkedIn post URLs, and some hiring postings tied to N\u00e9non) are not clearly supported by the excerpts provided.\n- Therefore, the field_answer is not fully supported by the excerpts, and while it is fairly comprehensive, it cannot be deemed fully verifiable against the given excerpts.\n- Verdicts: Completeness: true (the answer addresses the expected sections). Supported: false (not all positive claims are directly supported by the excerpts).",
+        "citations": [
+          {
+            "url": "https://www.insu.cnrs.fr/fr/personne/quentin-nenon-0",
+            "excerpts": [
+              "Quentin N\u00e9non Chercheur \u00e0 l'Institut de Recherche en Astrophysique et plan\u00e9tologie (IRAP) A A Contact quentin.nenon@irap.omp.eu"
+            ],
+            "title": "Quentin N\u00e9non | CNRS Terre & Univers"
+          },
+          {
+            "url": "https://www.occitanie-ouest.cnrs.fr/fr/personne/quentin-nenon",
+            "excerpts": [
+              "Quentin N\u00e9non Chercheur CNRS \u00e0 l'Institut de recherche en astrophysique et plan\u00e9tologie (IRAP/OMP - CNRS, CNES, UT3) - A+ A Contact z~nw}rw7wnwxwIr {jy7xvy7n~ Imprimer https://www.occitanie-ouest.cnrs.fr/fr/personne/quentin-nenon"
+            ],
+            "title": "Quentin N\u00e9non | D\u00e9l\u00e9gation Occitanie Ouest du CNRS"
+          },
+          {
+            "url": "https://cordis.europa.eu/project/id/101135044",
+            "excerpts": [
+              "The EU-funded SPEARHEAD project plans to leverage very-high-energy particle observations from the most important heliophysics missions and from ground-based measurements to answer three important questions related to particles and solar eruptions."
+            ],
+            "title": "SPEcification, Analysis & Re-calibration of High ... - CORDIS"
+          },
+          {
+            "url": "https://spearhead-he.eu/",
+            "excerpts": [
+              "The scientific results of SPEARHEAD, including catalogs, datasets, publications, and tools, are presented below and will be regularly updated as the project progresses."
+            ],
+            "title": "SPEARHEAD | SPEcification, Analysis & Re-calibration of High ..."
+          },
+          {
+            "url": "https://spearhead-he.eu/partners/irap",
+            "excerpts": [
+              "Institute of Research in Astrophysics and Planetology\nThe Institute of Research in Astrophysics et Planetology (IRAP) is a joint research unit of the Universite Paul Sabatier Toulouse III (UPS) and the Centre"
+            ],
+            "title": "Institute of Research in Astrophysics and Planetology"
+          },
+          {
+            "url": "https://meetingorganizer.copernicus.org/EGU25/EGU25-12787.html",
+            "excerpts": [
+              "Given that ambient magnetospheric plasma in planetary systems can induce spacecraft surface charging, it is imperative to develop a thorough understanding of planetary plasma environments to prepare for future space missions."
+            ],
+            "title": "Abstract EGU25-12787"
+          },
+          {
+            "url": "https://www.irap.omp.eu/en/2024/02/electromagnetic-mapping-of-auroral-emissions-from-jupiters-moons-updated-by-juno/",
+            "excerpts": [
+              "Since the Pioneer 10 probe, the first to explore Jupiter\u2019s magnetosphere in situ in 1973, numerous missions have followed. Their respective data have made it possible to build various models to map the magnetic field in the giant planet\u2019s magnetosphere as accurately as possible."
+            ],
+            "title": "Electromagnetic mapping of auroral emissions from Jupiter\u2019s ..."
+          }
+        ],
+        "confidence": "medium"
+      },
+      {
+        "field": "identity_verified_single_individual",
+        "reasoning": "Assessment reasoning:\n- The field described is identity verification for a specific individual (Lead ID lead-049: Quentin N\u0000e9non) and provided field_answer includes name, position, affiliation, location, email, ORCID, and research areas, plus a note on namesakes. This aligns with a typical identity verification subset (not funding or hiring details).\n- Step 1 (Completeness): The field_answer directly addresses identity-related attributes (name, title/position, affiliation, location, contact, ORCID, research areas) and includes a caveat about potential namesakes. Although it does not cover funding or hiring information (which are separate aspects in the user query), the field in question is identity verification, not funding/hiring. Therefore, the answer appears to comprehensively cover the expected aspects of identity verification for this field.\n- Step 2 (Excerpts support): Excerpts show multiple sources confirming Quentin Nenon as a CNRS-IRAP researcher with affiliations (IRAP/OMP, CNRS, CNES, UT3) and contact email, aligning with the items listed in the field_answer. The excerpts corroborate name, affiliation, location, and contact. The presence of an ORCID in the field_answer is plausible but not clearly evidenced in the provided excerpts; however, the core identity attributes are supported. Overall, the field_answer is supported by the excerpts for name, affiliation, location, and contact. \n- Conclusion: completeness = true; supported = true.",
+        "citations": [
+          {
+            "url": "https://www.insu.cnrs.fr/fr/personne/quentin-nenon-0",
+            "excerpts": [
+              "Quentin N\u00e9non Chercheur \u00e0 l'Institut de Recherche en Astrophysique et plan\u00e9tologie (IRAP) A A Contact quentin.nenon@irap.omp.eu"
+            ],
+            "title": "Quentin N\u00e9non | CNRS Terre & Univers"
+          },
+          {
+            "url": "https://www.occitanie-ouest.cnrs.fr/fr/personne/quentin-nenon",
+            "excerpts": [
+              "Quentin N\u00e9non Chercheur CNRS \u00e0 l'Institut de recherche en astrophysique et plan\u00e9tologie (IRAP/OMP - CNRS, CNES, UT3) - A+ A Contact z~nw}rw7wnwxwIr {jy7xvy7n~ Imprimer https://www.occitanie-ouest.cnrs.fr/fr/personne/quentin-nenon"
+            ],
+            "title": "Quentin N\u00e9non | D\u00e9l\u00e9gation Occitanie Ouest du CNRS"
+          },
+          {
+            "url": "https://loop.frontiersin.org/people/1962132/bio",
+            "excerpts": [
+              "Researcher UMR5277 Institut de recherche en astrophysique et plan\u00e9tologie (IRAP) Toulouse, France Primary"
+            ],
+            "title": "Loop | Quentin N\u00e9non"
+          },
+          {
+            "url": "https://meetingorganizer.copernicus.org/EGU25/EGU25-12787.html",
+            "excerpts": [
+              "Given that ambient magnetospheric plasma in planetary systems can induce spacecraft surface charging, it is imperative to develop a thorough understanding of planetary plasma environments to prepare for future space missions."
+            ],
+            "title": "Abstract EGU25-12787"
+          },
+          {
+            "url": "https://www.irap.omp.eu/en/2024/02/electromagnetic-mapping-of-auroral-emissions-from-jupiters-moons-updated-by-juno/",
+            "excerpts": [
+              "Since the Pioneer 10 probe, the first to explore Jupiter\u2019s magnetosphere in situ in 1973, numerous missions have followed. Their respective data have made it possible to build various models to map the magnetic field in the giant planet\u2019s magnetosphere as accurately as possible."
+            ],
+            "title": "Electromagnetic mapping of auroral emissions from Jupiter\u2019s ..."
+          },
+          {
+            "url": "https://spearhead-he.eu/partners/irap",
+            "excerpts": [
+              "Institute of Research in Astrophysics and Planetology\nThe Institute of Research in Astrophysics et Planetology (IRAP) is a joint research unit of the Universite Paul Sabatier Toulouse III (UPS) and the Centre"
+            ],
+            "title": "Institute of Research in Astrophysics and Planetology"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "recent_active_funding_announced_on_or_after_2024_01_01",
+        "reasoning": "Assessment steps:\n- Field aims to identify recent/active funding announced on/after 2024-01-01 associated with Quentin N\u00e9on (lead) via IRAP/UPS Toulouse etc. The provided field_answer lists SPEARHEAD (101135044) as EU Horizon Europe project with dates 2024-01-01 to 2026-12-31, with active status and N\u0000e9non as IRAP partner (not PI). It also mentions additional items (TRAPPED, 2024 IRAP news) and a narrative conclusion. The user expects explicit, source-backed data with exact grant details, dates, status, funding amounts, and direct URLs. The field_answer includes a table of grant details but uses placeholder-like source references and not direct URLs in the \u201cSources\u201d column. It does provide explicit dates, amounts, and roles for SPEARHEAD and notes on status (Active). The excerpts include URLs for SPEARHEAD and IRAP pages which support the core grant linkage, but the field_answer\u2019s \u201cSources\u201d column does not itself contain direct URLs which could be a shortfall for the explicit URL requirement. Some conclusions (e.g., \u201conly publicly verifiable competitive-grant project that connects N\u0000e9non to funding after 2024\u201d) are interpretive and not directly supported by the excerpts provided. Overall, the field answer covers at least one verified funding item and provides some context, but it makes interpretive claims not clearly supported by the excerpts and does not present direct URLs in the Sources column for every positive claim.\n\nConclusion: Completeness = true (the answer addresses the requested funding items, dates, status, and sources) but with caveats regarding the completeness of citations (direct URLs in the Sources column) and some unsupported interpretive claims. Confidence in the exact comprehensiveness of all claims is moderate to low due to interpretive statements not directly backed by excerpts.\n",
+        "citations": [
+          {
+            "url": "https://cordis.europa.eu/project/id/101135044",
+            "excerpts": [
+              "The EU-funded SPEARHEAD project plans to leverage very-high-energy particle observations from the most important heliophysics missions and from ground-based measurements to answer three important questions related to particles and solar eruptions."
+            ],
+            "title": "SPEcification, Analysis & Re-calibration of High ... - CORDIS"
+          },
+          {
+            "url": "https://spearhead-he.eu/",
+            "excerpts": [
+              "The scientific results of SPEARHEAD, including catalogs, datasets, publications, and tools, are presented below and will be regularly updated as the project progresses."
+            ],
+            "title": "SPEARHEAD | SPEcification, Analysis & Re-calibration of High ..."
+          },
+          {
+            "url": "https://spearhead-he.eu/partners/irap",
+            "excerpts": [
+              "Institute of Research in Astrophysics and Planetology\nThe Institute of Research in Astrophysics et Planetology (IRAP) is a joint research unit of the Universite Paul Sabatier Toulouse III (UPS) and the Centre"
+            ],
+            "title": "Institute of Research in Astrophysics and Planetology"
+          },
+          {
+            "url": "https://meetingorganizer.copernicus.org/EGU25/EGU25-12787.html",
+            "excerpts": [
+              "Given that ambient magnetospheric plasma in planetary systems can induce spacecraft surface charging, it is imperative to develop a thorough understanding of planetary plasma environments to prepare for future space missions."
+            ],
+            "title": "Abstract EGU25-12787"
+          },
+          {
+            "url": "https://www.irap.omp.eu/en/2024/02/electromagnetic-mapping-of-auroral-emissions-from-jupiters-moons-updated-by-juno/",
+            "excerpts": [
+              "Since the Pioneer 10 probe, the first to explore Jupiter\u2019s magnetosphere in situ in 1973, numerous missions have followed. Their respective data have made it possible to build various models to map the magnetic field in the giant planet\u2019s magnetosphere as accurately as possible."
+            ],
+            "title": "Electromagnetic mapping of auroral emissions from Jupiter\u2019s ..."
+          }
+        ],
+        "confidence": "medium"
+      },
+      {
+        "field": "recent_and_open_positions_2026_01_01_or_later",
+        "reasoning": "Assessment notes:\n- The field_description asks for a concise structured report about recent/open positions (2026-01-01 or later) related to Quentin N\u0000e9non, including title, type, status, posting URL, etc., and to verify identity, funding, and current openings with explicit sources. It also expects a comprehensive capture of any open PhD/postdoc positions connected to IRAP/related groups, with evidence and LinkedIn details where available.\n- The provided field_answer mainly supplies a table of a single PhD position with IRAP, marked as historical with a deadline of 31 May 2026 and notes that there is no verified public evidence found for currently open positions tied to N\u000230non as of 2026-01-01+. Excerpts include several postings (May 2026) and mention of open postings, but the field_answer itself concludes no verified public evidence for currently open positions, which contradicts the excerpts that show postings exist in 2026.\n- Completeness check: The field_answer does not comprehensively cover all required aspects (identity verification status, current/future open postings specifically tied to the person or group after 2026-01-01, detailed posting metadata, and explicit LinkedIn evidence). It also lacks a clear, complete set of recent/open positions, and does not consistently align with the request to return postings published on or after 2026-01-01 that are open or closed with statuses clearly marked. Therefore, completeness=false.\n- Excerpt support check: Excerpts clearly include postings in 2026 (e.g., May 31, 2026 deadline) that are linked to IRAP/CTAO-related PhD positions. The field_answer\u2019s statement of \u201cNo verified public evidence found\u201d for currently open positions is not fully supported by these excerpts. Hence, supported=false.",
+        "citations": [
+          {
+            "url": "https://www.ctao.org/career/phd-position-with-university-of-toulouse-irap",
+            "excerpts": [
+              "PhD Position with University of Toulouse (IRAP)\nMay 31, 2026 \u2014 PhD Position with University of Toulouse (IRAP) \u00b7 Profile and Skills Required \u00b7 Project Description \u00b7 Deadline to Apply: 31 May 2026 \u00b7 Start Date: 1 October 2026"
+            ],
+            "title": "PhD Position with University of Toulouse (IRAP)"
+          },
+          {
+            "url": "https://fr.indeed.com/viewjob?jk=da0db6a933a2b04b",
+            "excerpts": [
+              "PhD Position with University of Toulouse (IRAP) - Indeed\nThe ultimate goal of the project is to make this set of tools available to the community to ease the interpretation of the numerous extended sources expected with CTAO and other leading-class instruments such as LHAASO. Click here for full description and application details. Deadline to Apply: 31 May 2026 Start Date: 1 October 2026"
+            ],
+            "title": "PhD Position with University of Toulouse (IRAP) - Indeed"
+          },
+          {
+            "url": "https://www.glassdoor.com/job-listing/phd-position-with-university-of-toulouse-irap-cherenkov-telescope-array-observatory-ctao-JV_IC3050528_KO0%2C45_KE46%2C88.htm?jl=1010086925732",
+            "excerpts": [
+              "PhD Position with University of Toulouse (IRAP) - Glassdoor\nThe ultimate goal of the project is to make this set of tools available to the community to ease the interpretation of the numerous extended sources expected with CTAO and other leading-class instruments such as LHAASO. Click here for full description and application details. Deadline to Apply: 31 May 2026 Start Date: 1 October 2026"
+            ],
+            "title": "PhD Position with University of Toulouse (IRAP) - Glassdoor"
+          },
+          {
+            "url": "https://www.irap.omp.eu/formation-emploi/theses",
+            "excerpts": [
+              "Offres de th\u00e8se \u2013 Institut de Recherche en Astrophysique et ...\nChaque ann\u00e9e, les (enseignants-)chercheurs de l\u2019IRAP soumettent une vingtaine de sujets de th\u00e8se. La liste des sujets de th\u00e8se propos\u00e9s par les chercheurs de l\u2019IRAP dans le domaine \u00ab Astrophysique, Sciences de l\u2019Espace, Plan\u00e9tologie \u00bb est disponible sur le site Web de l\u2019Ecole Doctorale SDU2E."
+            ],
+            "title": "Offres de th\u00e8se \u2013 Institut de Recherche en Astrophysique et ..."
+          },
+          {
+            "url": "https://www.euraxess.fr/",
+            "excerpts": [
+              "In this video, you will discover how Euraxess centers facilitate cultural immersion of international researchers and support them to learn French as a foreign language."
+            ],
+            "title": "EURAXESS |"
+          },
+          {
+            "url": "https://euraxess.ec.europa.eu/jobs",
+            "excerpts": [
+              "Jobs and opportunities | EURAXESS\nWhether you are a professor, a research analyst, a postdoc researcher, an engineer or a scientist, connect today to discover your ideal research job, academic position and a range of funding opportunities."
+            ],
+            "title": "Jobs and opportunities | EURAXESS"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "linkedin_evidence",
+        "reasoning": "Assessment reasoning:\n- The field is linkedin_evidence, which should entail whether there is verifiable LinkedIn evidence for Quentin N\u0000e9non (IRAP astrophysician) and any related posting or profile, including links. The provided field_answer mainly contains a small table of search outcomes and a concluding statement asserting no verified public LinkedIn profile or post found, plus a disambiguation note and sources. \n- Completeness check: The user-facing field description asks for a concise structured report with Identity; Recent/Active Funding; Recent and Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources. The given answer does not organize or present these sections in a structured report format; it only gives a narrative claim about LinkedIn evidence and a table of search outcomes, lacking funding/positions data, direct URLs for all claims, and a formal confidence section. Therefore, the field answer is not complete.\n- Excerpt support check: Excerpts include references mentioning Google Scholar and ONERA affiliation, but there is no explicit excerpt showing LinkedIn results or evidence concerning Quentin N\u0000e9non on LinkedIn. The field_answer asserts absence of LinkedIn results; the excerpts do not provide direct support for that claim. Thus, the field_answer is not supported by the provided excerpts.\n- Overall, completeness = false; supported = false.\n",
+        "citations": [
+          {
+            "url": "https://scholar.google.com/citations?user=nsysY2YAAAAJ&hl=en",
+            "excerpts": [
+              "\u202aONERA\u202c - \u202a\u202aCited by 1,113\u202c\u202c 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025 2026"
+            ],
+            "title": "\u202aQuentin N\u00e9non\u202c - \u202aGoogle Scholar\u202c"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "confidence_and_caveats",
+        "reasoning": "Assessment reasoning:\n- Field description asks for a confidence and caveats assessment based on the provided answer to a complex information request (identity, funding, positions, LinkedIn evidence, etc.). The given field_answer provides a structured multi-level confidence statement (High/Medium/Lower) and caveats about what is and isn't evidenced, plus mentions some sources. This directly fulfills the intent of the field (confidence & caveats) and is self-contained. Therefore, completeness is true since it addresses the requested evaluation elements (identity status, evidence strength, gaps, and caveats).\n- Excerpts: The evaluator would normally check excerpts for factual support. In this instance, no excerpts array is provided in the input to verify claims. As a result, we cannot confirm textual support from excerpts. Consequently, supportability relative to excerpts is false.\n- Therefore: completeness = true; supported = false (due to lack of excerpts provided for verification); scratchpad captures reasoning and the caveats about sources and evidence.",
+        "citations": [],
+        "confidence": "medium"
+      },
+      {
+        "field": "synthesis_how_the_pieces_fit",
+        "reasoning": "Reasoning: The field answer provides a high-level synthesis of identity, funding, and hiring, and discusses how the subject Q. N\u00e9on fits (or does not) a standard competitive-grant PI pattern, with implications for outreach and hiring channels. It includes actionable implications (focus on institutional lab/group, monitor specific channels) and notes on the domain alignment. It does not explicitly present or cite any source data, dates, or direct evidence from excerpts, nor does it enumerate specific grants, positions, or direct links. Given the absence of provided excerpts to verify claims, I cannot judge evidentiary support. Completeness assessment: The answer appears to comprehensively address the synthesis prompt (identity, funding, hiring) and provides implications, thus complete in terms of conceptual coverage. However, since no excerpts are supplied to confirm factual claims, the answer is not verifiable against sources. I assign completeness = true, but supported = false pending excerpts.\n",
+        "citations": [],
+        "confidence": "medium"
+      },
+      {
+        "field": "references_direct_urls",
+        "reasoning": "Assessment rationale:\n- The field is asking for direct URLs or a clearly defined set of references. The provided field_answer lists placeholder references like \"[references_direct_urls[0]] [4]\" rather than actual URLs or properly formatted citations. This does not constitute usable, concrete URLs.\n- Excerpts contain multiple lines with actual URLs and source details (e.g., CNRS pages, IRAP pages, Google Scholar, loops, etc.). These excerpts could support identifying direct URLs if the field_answer were transformed into explicit links, but the current field_answer does not present them directly.\n- Completeness check: Because the field_answer does not deliver explicit direct URLs or a structured, verifiable list with titles, funders, dates, etc., it is incomplete with respect to the likely expectation (a concise report with explicit URLs and verifiable data). Therefore completeness = false.\n- Support check: The excerpts do include numerous potential sources and URLs that could support a fully formed answer. However, the field_answer itself does not state or link to those URLs explicitly, so it is not supported as written. Therefore supported = false.\n- Action going forward (if required): transforming field_answer into a proper structured list of direct URLs with metadata drawn from the excerpts would meet both completeness and support criteria.\n",
+        "citations": [
+          {
+            "url": "https://www.insu.cnrs.fr/fr/personne/quentin-nenon-0",
+            "excerpts": [
+              "Quentin N\u00e9non Chercheur \u00e0 l'Institut de Recherche en Astrophysique et plan\u00e9tologie (IRAP) A A Contact quentin.nenon@irap.omp.eu"
+            ],
+            "title": "Quentin N\u00e9non | CNRS Terre & Univers"
+          },
+          {
+            "url": "https://www.occitanie-ouest.cnrs.fr/fr/personne/quentin-nenon",
+            "excerpts": [
+              "Quentin N\u00e9non Chercheur CNRS \u00e0 l'Institut de recherche en astrophysique et plan\u00e9tologie (IRAP/OMP - CNRS, CNES, UT3) - A+ A Contact z~nw}rw7wnwxwIr {jy7xvy7n~ Imprimer https://www.occitanie-ouest.cnrs.fr/fr/personne/quentin-nenon"
+            ],
+            "title": "Quentin N\u00e9non | D\u00e9l\u00e9gation Occitanie Ouest du CNRS"
+          },
+          {
+            "url": "https://loop.frontiersin.org/people/1962132/bio",
+            "excerpts": [
+              "Researcher UMR5277 Institut de recherche en astrophysique et plan\u00e9tologie (IRAP) Toulouse, France Primary"
+            ],
+            "title": "Loop | Quentin N\u00e9non"
+          },
+          {
+            "url": "https://scholar.google.com/citations?user=nsysY2YAAAAJ&hl=en",
+            "excerpts": [
+              "\u202aONERA\u202c - \u202a\u202aCited by 1,113\u202c\u202c 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025 2026"
+            ],
+            "title": "\u202aQuentin N\u00e9non\u202c - \u202aGoogle Scholar\u202c"
+          },
+          {
+            "url": "https://www.irap.omp.eu/en/2024/02/electromagnetic-mapping-of-auroral-emissions-from-jupiters-moons-updated-by-juno/",
+            "excerpts": [
+              "Since the Pioneer 10 probe, the first to explore Jupiter\u2019s magnetosphere in situ in 1973, numerous missions have followed. Their respective data have made it possible to build various models to map the magnetic field in the giant planet\u2019s magnetosphere as accurately as possible."
+            ],
+            "title": "Electromagnetic mapping of auroral emissions from Jupiter\u2019s ..."
+          },
+          {
+            "url": "https://meetingorganizer.copernicus.org/EGU25/EGU25-12787.html",
+            "excerpts": [
+              "Given that ambient magnetospheric plasma in planetary systems can induce spacecraft surface charging, it is imperative to develop a thorough understanding of planetary plasma environments to prepare for future space missions."
+            ],
+            "title": "Abstract EGU25-12787"
+          },
+          {
+            "url": "https://cordis.europa.eu/project/id/101135044",
+            "excerpts": [
+              "The EU-funded SPEARHEAD project plans to leverage very-high-energy particle observations from the most important heliophysics missions and from ground-based measurements to answer three important questions related to particles and solar eruptions."
+            ],
+            "title": "SPEcification, Analysis & Re-calibration of High ... - CORDIS"
+          },
+          {
+            "url": "https://spearhead-he.eu/",
+            "excerpts": [
+              "The scientific results of SPEARHEAD, including catalogs, datasets, publications, and tools, are presented below and will be regularly updated as the project progresses."
+            ],
+            "title": "SPEARHEAD | SPEcification, Analysis & Re-calibration of High ..."
+          },
+          {
+            "url": "https://spearhead-he.eu/partners/irap",
+            "excerpts": [
+              "Institute of Research in Astrophysics and Planetology\nThe Institute of Research in Astrophysics et Planetology (IRAP) is a joint research unit of the Universite Paul Sabatier Toulouse III (UPS) and the Centre"
+            ],
+            "title": "Institute of Research in Astrophysics and Planetology"
+          },
+          {
+            "url": "https://www.ctao.org/career/phd-position-with-university-of-toulouse-irap",
+            "excerpts": [
+              "PhD Position with University of Toulouse (IRAP)\nMay 31, 2026 \u2014 PhD Position with University of Toulouse (IRAP) \u00b7 Profile and Skills Required \u00b7 Project Description \u00b7 Deadline to Apply: 31 May 2026 \u00b7 Start Date: 1 October 2026"
+            ],
+            "title": "PhD Position with University of Toulouse (IRAP)"
+          },
+          {
+            "url": "https://www.irap.omp.eu/formation-emploi/theses",
+            "excerpts": [
+              "Offres de th\u00e8se \u2013 Institut de Recherche en Astrophysique et ...\nChaque ann\u00e9e, les (enseignants-)chercheurs de l\u2019IRAP soumettent une vingtaine de sujets de th\u00e8se. La liste des sujets de th\u00e8se propos\u00e9s par les chercheurs de l\u2019IRAP dans le domaine \u00ab Astrophysique, Sciences de l\u2019Espace, Plan\u00e9tologie \u00bb est disponible sur le site Web de l\u2019Ecole Doctorale SDU2E."
+            ],
+            "title": "Offres de th\u00e8se \u2013 Institut de Recherche en Astrophysique et ..."
+          },
+          {
+            "url": "https://www.irap.omp.eu/en/homepage-en",
+            "excerpts": [
+              "IRAP - Institut de Recherche en Astrophysique et Plan\u00e9tologie\nLast news \u00b7 Conference Magnetospheres of Outer Planets, Toulouse, 26-31 July 2026 \u00b7 First ever live observation of the rotation of a planetary nursery \u00b7 Strange"
+            ],
+            "title": "IRAP - Institut de Recherche en Astrophysique et Plan\u00e9tologie"
+          },
+          {
+            "url": "https://www.euraxess.fr/",
+            "excerpts": [
+              "In this video, you will discover how Euraxess centers facilitate cultural immersion of international researchers and support them to learn French as a foreign language."
+            ],
+            "title": "EURAXESS |"
+          }
+        ],
+        "confidence": "low"
+      }
+    ],
+    "content": {
+      "executive_insights": "- **Identity confirmed, single namesake**: Quentin N\u00e9non is a \"Chercheur CNRS\" at the Institut de Recherche en Astrophysique et Plan\u00e9tologie (IRAP/OMP \u2014 joint unit of CNRS, CNES, Universit\u00e9 Toulouse III\u2013Paul Sabatier) in Toulouse; contact is `quentin.nenon@irap.omp.eu`. No other public \"Quentin N\u00e9non\" researcher profile matches this affiliation, so merging namesakes is not a risk [executive_insights[0]] [4] [executive_insights[1]] [5].\n- **SPEARHEAD Horizon Europe grant (active)**: IRAP participates in the EU Horizon Europe project SPEARHEAD (grant ID 101135044, \"SPEcification, Analysis & Re-calibration of High Energy pArticle Data\"), EC signature 15 Nov 2023, project 1 Jan 2024 \u2013 31 Dec 2026, total cost \u20ac1,425,471.25; IRAP is one of nine beneficiaries (French partners: Universit\u00e9 de Toulouse and CNRS). N\u00e9non's personal role on SPEARHEAD is NOT publicly designated \u2014 he is most naturally a member of the IRAP partner team but no public record identifies him as PI/co-PI on SPEARHEAD [executive_insights[2]] [72] [executive_insights[3]] [51] [executive_insights[4]] [101].\n- **N\u00e9non's research line is funded-adjacent (TRAPPED/ESA)**: N\u00e9non is a frequent co-author (with ORCID 0000-0001-8130-9832) on TRAPPED-related planetary-plasma outputs, including the 2025 EGU paper on Saturn's plasma environment led by A. Kamran at IRAP \u2014 TRAPPED is an ESA \"Testbed for Radiation and Plasma Planetary Environments\" framework, supporting future missions (Enceladus flagged as \"top target\"). No public headline funding figure or grant ID is announced for N\u00e9non personally on TRAPPED, so treat this as mission/consortium work rather than a personally awarded grant [executive_insights[5]] [59].\n- **Feb 2024 IRAP news ties N\u00e9non to a Planetary Plasma Environments paper**: On 7 Feb 2024, IRAP published a news piece on the paper \"Influence of the Jovian current sheet models on the mapping of the UV auroral footprints of Io, Europa, and Ganymede,\" listing N\u00e9non as the IRAP contact for the work. No competitive grant is named in the article \u2014 this is research output, not a funding award announcement [executive_insights[6]] [1].\n- **Hiring \u2014 IRAP thesis portal exists, but no posting explicitly tied to N\u00e9non for 2026**: The IRAP thesis page notes ~20 thesis topics per year from researchers and points to the SDU2E doctoral school, but no specific 2026 doctoral topic names N\u00e9non as supervisor. The CTAO \"PhD Position with University of Toulouse (IRAP)\" posting (deadline 31 May 2026, start 1 Oct 2026) is about **gamma-ray instrumentation analysis tools** (CTAO / LHAASO), not planetary plasma \u2014 supervisor appears unrelated to N\u00e9non's line of work and is not publicly identified in a way tying him to it.\n- **LinkedIn evidence \u2014 none verified**: Despite multiple searches of LinkedIn results and posts (in English and French), no public LinkedIn profile or recent post for \"Quentin N\u00e9non, IRAP astrophysicien\" was retrievable. Past employer ONERA is recorded on his Google Scholar profile (h-index 18, ~1,142 citations), consistent with a pre-IRAP affiliation; his current status (chercheur CNRS) is corroborated by CNRS-INSU/CNRS-Occitanie-Ouest.",
+      "identity_verified_single_individual": "| Field | Value | Source |\n| --- | --- | --- |\n| Name | Quentin N\u00e9non | [identity_verified_single_individual[0]] [4] |\n| Position | Chercheur CNRS / Researcher at IRAP (UMR5277) | [identity_verified_single_individual[0]] [4], [identity_verified_single_individual[1]] [5] |\n| Affiliation | IRAP/OMP \u2014 joint unit of CNRS, CNES, Universit\u00e9 Toulouse III\u2013Paul Sabatier | [identity_verified_single_individual[1]] [5] |\n| Location | Toulouse, France | [identity_verified_single_individual[2]] [3] |\n| Email | quentin.nenon@irap.omp.eu | [identity_verified_single_individual[0]] [4] |\n| ORCID | 0000-0001-8130-9832 | [identity_verified_single_individual[3]] [59] |\n| Research areas | Planetary magnetospheres, space plasma environments, plasma-specification models for space missions; heliophysics (SPEARHEAD consortium) | [identity_verified_single_individual[2]] [3], [identity_verified_single_individual[4]] [1], [identity_verified_single_individual[5]] [101] |\n\nNamesake check: recurrent \"Quentin Pelletier,\" \"Quentin Lalanne,\" \"Quentin Scott\" results come from LinkedIn or other domains and are unrelated. No competing public profile for Quentin N\u00e9non astrophysicist/IRAP was found.",
+      "recent_active_funding_announced_on_or_after_2024_01_01": "| Project / Grant | Funder | Amount (EUR) | Announcement / Signature | Project Dates | Role of Q. N\u00e9non | Status | What it Funds | Sources |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| SPEARHEAD (SPEcification, Analysis & Re-calibration of High Energy pArticle Data), grant 101135044 | EU Horizon Europe (cluster \"Digital, Industry and Space\") | \u20ac1,425,471.25 total cost = EU contribution | EC signature 15 Nov 2023 (project active from 1 Jan 2024) | 1 Jan 2024 \u2013 31 Dec 2026 | Member of the IRAP partner team (no public record identifies him as PI/co-PI for IRAP); project coordinator Dr A. Papaioannou, NOA, Greece | **Active** as of 2026-07-11 | Cross-calibration of high-energy particle observations from major heliophysics missions; tool/data products on Zenodo + GitHub + arXiv | [recent_active_funding_announced_on_or_after_2024_01_01[0]] [72], [recent_active_funding_announced_on_or_after_2024_01_01[1]] [51], [recent_active_funding_announced_on_or_after_2024_01_01[2]] [101] |\n\nKey takeaway: SPEARHEAD is the only publicly verifiable competitive-grant project that connects N\u00e9non (via IRAP) to a funding instrument active after 2024-01-01. The IRAP-as-partner share is not separately published on CORDIS, but the CNRS and Universit\u00e9 de Toulouse are joint French beneficiaries.\n\nAdditional recent project ties (consortium / mission framework, not a personally awarded competitive grant):\n- TRAPPED \u2014 ESA Testbed for Radiation and Plasma Planetary Environments. N\u00e9non is co-author on the 2025 EGU abstract \"An empirical model for Saturn's plasma environment within the TRAPPED framework\" (Kamran et al., EGU25-12787). TRAPPED is an ESA-funded framework to support planning of a future Saturn/Enceladus mission; no public budget, grant ID, or PI list for N\u00e9non personally was retrieved. Status: Active research output. Source: [recent_active_funding_announced_on_or_after_2024_01_01[3]] [59].\n- February 2024 IRAP news article (7 Feb 2024) on \"Influence of the Jovian current sheet models on the mapping of the UV auroral footprints of Io, Europa, and Ganymede\" \u2014 names N\u00e9non as the IRAP contact but does not disclose a funder or amount. Source: [recent_active_funding_announced_on_or_after_2024_01_01[4]] [1].\n\nWhat was checked but yielded no public record:\n- ANR project database (site:anr.fr \"N\u00e9non\" / \"IRAP Toulouse magnetosphere 2024\") \u2014 no project listing returned that names N\u00e9non as PI.\n- CNES TOSCA committee project pages \u2014 only generic committee pages located; no funded project with N\u00e9non as lead publicly listed.\n- ERC Starting/Consolidator/Advanced awards 2024\u20132025 lists \u2014 Q. N\u00e9non not surfaced.\n- No competitive \"prize\" record found for N\u00e9non post-2024.",
+      "recent_and_open_positions_2026_01_01_or_later": "| Title | Type | Status | Posted Date | Deadline | Location | Description | Posting URL |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| PhD Position with University of Toulouse (IRAP) | Doctoral (PhD) research position \u2014 gamma-ray astronomy / CTAO | **Historical** (deadline 31 May 2026 has passed; window 2026) | 31 May 2026 | 31 May 2026 | Toulouse, France (IRAP/OMP) | Builds analysis tools for extended-source interpretation for **CTAO and LHAASO** \u2014 high-energy astrophysics instrumentation, NOT planetary plasma | [recent_and_open_positions_2026_01_01_or_later[0]] [21]; mirrors: [recent_and_open_positions_2026_01_01_or_later[1]] [95], [recent_and_open_positions_2026_01_01_or_later[2]] [96] |\n\nStart date would have been 1 October 2026 [recent_and_open_positions_2026_01_01_or_later[0]] [21].\n\nOpen-postings-channels checked, none of which currently display a posting explicitly tied to Q. N\u00e9non:\n- IRAP formal job board \"Offres de th\u00e8se\" ([recent_and_open_positions_2026_01_01_or_later[3]] [100]) \u2014 generic; researcher names not associated with specific 2026 topics in scraped snippet.\n- EURAXESS France ([recent_and_open_positions_2026_01_01_or_later[4]] [89]) and EURAXESS EU-wide ([recent_and_open_positions_2026_01_01_or_later[5]] [65]) \u2014 no posting returned that names N\u00e9non or only \"IRAP planetary plasma.\"\n- \"Jobs at OMP\" Greenhouse board that returned (job-boards.eu.greenhouse.io/ompexternaljobboards) is for the unrelated logistics company OMP (Antwerp), not Observatoire Midi-Pyr\u00e9n\u00e9es / IRAP \u2014 likely misclassification by the search index. **Do not confuse these job postings with IRAP openings.**\n\nCurrently open under N\u00e9non: **No verified public evidence found** at the level of a directly posted, currently-open PhD/research-assistant/research-engineer posting tied to him (e.g., EURAXESS or IRAP). The general IRAP thesis-offer pipeline (~20 thesis subjects/year) is referenced on the IRAP website but the 2026 list was not retrievable in this session.",
+      "linkedin_evidence": "| Source checked | Outcome |\n| --- | --- |\n| site:linkedin.com \"Quentin N\u00e9non\" | No public profile returned in results |\n| site:fr.linkedin.com \"Quentin N\u00e9non\" / \"astrophysicien Toulouse\" | No matching profile |\n| Google search \"Quentin N\u00e9non LinkedIn post 2025\"/2026 | No public posts surfaced (results returned only namesake companies like iRAP road-safety, IRAP plastics, IRAP refugee project) |\n\nOutcome: **No verified public LinkedIn profile or post found for \"Quentin N\u00e9non, IRAP astrophysicien.\"** Disambiguating evidence (IRAP, CNRS-UPS-CNES, ONERA, ORCID 0000-0001-8130-9832) was sourced entirely from CNRS institutional pages, IRAP news, Frontiers Loop, EGU abstracts, and Google Scholar.\n\nPast/parallel affiliation note: His Google Scholar landing lists **ONERA** as the listed affiliation at time of capture (legacy from prior roles); this is consistent with N\u00e9non's earlier career before joining CNRS/IRAP. Source: [linkedin_evidence[0]] [58].",
+      "confidence_and_caveats": "- **High confidence**: identity, current CNRS-researcher status at IRAP/OMP Toulouse, ORCID 0000-0001-8130-9832, contact email, and SPEARHEAD-HE project parameters (ID 101135044, dates, total cost, IRAP partnership). All backed by official CNRS, CORDIS, and SPEARHEAD channels.\n- **Medium confidence**: the EGU25-12787 paper names N\u00e9non as a co-author at IRAP for the Saturn plasma model within ESA's TRAPPED framework \u2014 strong signal of active research alignment but not itself proof of a competitive grant award in his name. No public budget, grant ID, or his formal role within ESA TRAPPED was retrievable.\n- **Lower confidence / no public evidence**: any ANR grant naming N\u00e9non as PI, any specific 2026 PhD or postdoc posting with him named as supervisor, any public LinkedIn profile or recent LinkedIn post by him. Searches of EURAXESS France, ANR, CNES TOSCA, and IRAP's job pages did not surface such evidence.\n- **Self-correction / anti-confirmation**: I deliberately checked for namesakes (Quentin Pelletier, Quentin Lalanne, Quentin Scott, etc.) and rejected any match lacking IRAP/CNRS Toulouse nexus. I also rejected the \"OMP\" Greenhouse job board as a misroute to a logistics vendor rather than Observatoire Midi-Pyr\u00e9n\u00e9es.",
+      "synthesis_how_the_pieces_fit": "Comparing the three dimensions (identity, funding, hiring) for Q. N\u00e9non against a \"standard competitive-grant PI\" pattern reveals divergence: he has rock-solid institutional identity and sits on a multi-million-euro EU consortium (SPEARHEAD) and the ESA TRAPPED framework, yet no public record names him as the personally-awarded PI of an ANR, ERC, or CNES competitive grant under his own name since 2024-01-01. Implications: outreach should be anchored on his institutional lab (IRAP/OMP) and group (PEPS / space-plasma teams) rather than on a personal grant database hit; hiring interest should monitor the IRAP `formation-emploi/theses` channel and SDU2E doctoral-school listings more closely than EURAXESS. The CTAO/IRAP PhD posting is gamma-ray astronomy, not planetary plasma \u2014 function-adjacent but not in his domain.",
+      "references_direct_urls": "- [references_direct_urls[0]] [4]\n- [references_direct_urls[1]] [5]\n- [references_direct_urls[2]] [3]\n- [references_direct_urls[3]] [58]\n- [references_direct_urls[4]] [1]\n- [references_direct_urls[5]] [59]\n- [references_direct_urls[6]] [72]\n- [references_direct_urls[7]] [51]\n- [references_direct_urls[8]] [101]\n- [references_direct_urls[9]] [21]\n- [references_direct_urls[10]] [100]\n- [references_direct_urls[11]] [75]\n- [references_direct_urls[12]] [89]"
+    },
+    "type": "json",
+    "beta_fields": null,
+    "mcp_tool_calls": null,
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "executive_insights": {
+          "type": "string",
+          "title": "Executive Insights"
+        },
+        "identity_verified_single_individual": {
+          "type": "string",
+          "title": "Identity (Verified, Single Individual)"
+        },
+        "recent_active_funding_announced_on_or_after_2024_01_01": {
+          "type": "string",
+          "title": "Recent / Active Funding (announced on or after 2024-01-01)"
+        },
+        "recent_and_open_positions_2026_01_01_or_later": {
+          "type": "string",
+          "title": "Recent and Open Positions (2026-01-01 or later)"
+        },
+        "linkedin_evidence": {
+          "type": "string",
+          "title": "LinkedIn Evidence"
+        },
+        "confidence_and_caveats": {
+          "type": "string",
+          "title": "Confidence and Caveats"
+        },
+        "synthesis_how_the_pieces_fit": {
+          "type": "string",
+          "title": "Synthesis \u2014 How the Pieces Fit"
+        },
+        "references_direct_urls": {
+          "type": "string",
+          "title": "References (Direct URLs)"
+        }
+      },
+      "required": [
+        "executive_insights",
+        "identity_verified_single_individual",
+        "recent_active_funding_announced_on_or_after_2024_01_01",
+        "recent_and_open_positions_2026_01_01_or_later",
+        "linkedin_evidence",
+        "confidence_and_caveats",
+        "synthesis_how_the_pieces_fit",
+        "references_direct_urls"
+      ]
+    }
+  }
+}

@@ -8,8 +8,8 @@
  * on repeated no-change responses.
  */
 
-import { readFileSync, writeFileSync, existsSync } from 'fs';
-import { join, dirname } from 'path';
+import { readFileSync, renameSync, unlinkSync, writeFileSync, existsSync, mkdirSync } from 'fs';
+import { basename, join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const BASE = dirname(fileURLToPath(import.meta.url));
@@ -30,7 +30,16 @@ export function loadState() {
 
 export function saveState(state) {
   state.last_global_run = new Date().toISOString();
-  writeFileSync(STATE_PATH, JSON.stringify(state, null, 2));
+  mkdirSync(dirname(STATE_PATH), { recursive: true });
+  const tempPath = join(dirname(STATE_PATH), `.${basename(STATE_PATH)}.tmp-${Date.now()}`);
+  writeFileSync(tempPath, JSON.stringify(state, null, 2));
+  try {
+    renameSync(tempPath, STATE_PATH);
+  } catch (err) {
+    if (!['EPERM', 'EACCES'].includes(err?.code)) throw err;
+    writeFileSync(STATE_PATH, JSON.stringify(state, null, 2));
+    try { unlinkSync(tempPath); } catch {}
+  }
 }
 
 export function updateSourceHeat(prevHeat, changed) {
@@ -41,6 +50,13 @@ export function updateSourceHeat(prevHeat, changed) {
  * Compute next poll ISO timestamp for a source.
  */
 export function computeNextPoll(source, sourceState, policy, now = Date.now()) {
+  if (source.poll_interval_hours) {
+    return new Date(now + Number(source.poll_interval_hours) * 60 * 60_000).toISOString();
+  }
+  if (source.poll_interval_min) {
+    return new Date(now + Number(source.poll_interval_min) * 60_000).toISOString();
+  }
+
   const heat = updateSourceHeat(sourceState?.heat, sourceState?.changed_last_run);
   const importance = clamp(source.importance ?? 0.5, 0, 1);
 
@@ -95,6 +111,9 @@ export function recordPollResult(state, sourceId, result) {
 
   ss.last_poll = new Date().toISOString();
   ss.last_status = result.status ?? 200;
+  ss.last_error = result.error ?? '';
+  ss.provider = result.provider ?? ss.provider ?? null;
+  ss.access_status = result.access_status ?? ss.access_status ?? null;
   ss.changed_last_run = result.changed ?? false;
   ss.heat = updateSourceHeat(ss.heat, result.changed);
   ss.etag = result.etag ?? ss.etag ?? null;

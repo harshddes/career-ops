@@ -1,0 +1,301 @@
+{
+  "run_id": "trun_dd47611047ba45198d03d4546fdfafd6",
+  "interaction_id": "trun_dd47611047ba45198d03d4546fdfafd6",
+  "result_url": "https://platform.parallel.ai/play/deep-research/trun_dd47611047ba45198d03d4546fdfafd6",
+  "status": "completed",
+  "output": {
+    "basis": [
+      {
+        "field": "executive_summary",
+        "reasoning": "Assessment notes:\n- The field_answer provides a comprehensive executive summary addressing identity verification, funding (noting lack of granular public grant records since no suitable 2024+ award page was extractable with verified URLs), hiring status (no open postings found linked to the lead after 2026-01-01), LinkedIn evidence, and consistency with excerpts. It explicitly marks absence of verifiable grant details and suggests follow-up with official funder databases, aligning with the user\u2019s instruction to distinguish grant types and avoid misattribution.\n- Completeness evaluation: The answer directly covers identity verification, recent/active funding status with caveat about granularity, open/closed hiring postings with date filters, LinkedIn evidence, and caveats about evidence gaps, plus explicit sources. This aligns with the requested structured report components (Identity; Recent/Active Funding; Recent and Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources). Therefore, completeness is true.\n- Excerpts relevance: Excerpts confirm identity (UCL MSSL affiliation, email, ORCID) and that grants tab exists, supporting the identity and general funding context. However, no excerpt provides a granular 2024+ grant with title/amount; thus, the field_answer\u2019s claim of not locating a granular public award record is reasonable but not directly corroborated by a provided excerpt. This supports the decision to mark excerpts as not fully substantiating all grant details, hence supported = false.\n- Confidence and caveats: The answer appropriately flags potential name disambiguation concerns and notes the need for follow-up with official databases. It uses explicit URLs in the narrative references and notes when evidence is not found.",
+        "citations": [
+          {
+            "url": "https://profiles.ucl.ac.uk/2283-andrew-coates",
+            "excerpts": [
+              "Andrew Coates | About | University College London\nProfessor Andrew Coates gained a BSc in Physics from UMIST in 1978, and MSc (1979) and D.Phil. (1982) in plasma physics from Oxford University."
+            ],
+            "title": "Andrew Coates | About | University College London"
+          },
+          {
+            "url": "https://www.ucl.ac.uk/mathematical-physical-sciences/case-studies/2018/jul/professor-andrew-coates",
+            "excerpts": [
+              "Professor Andrew Coates\nAndrew Coates is a UCL Professor of Physics and Deputy Director (Solar System) of the Mullard Space Science Laboratory (Department of Space & Climate Physics)."
+            ],
+            "title": "Professor Andrew Coates"
+          },
+          {
+            "url": "https://gtr.ukri.org/search/project?term=%22Andrew+Coates%22+MSSL&fetchSize=100",
+            "excerpts": [],
+            "title": "GtR"
+          },
+          {
+            "url": "https://profiles.ucl.ac.uk/2283-andrew-coates/grants",
+            "excerpts": [
+              "View the University College London profile of Andrew Coates. Including their outputs, grants, professional activities and teaching activities."
+            ],
+            "title": "Andrew Coates | Research | University College London"
+          },
+          {
+            "url": "https://www.ucl.ac.uk/prospective-students/graduate/research-degrees/space-and-climate-physics-mphil-phd",
+            "excerpts": [
+              "Space and Climate Physics MPhil/PhD - London\nUCL MSSL offers a inspiring environment at the forefront of space science. Scientists work alongside top engineers, designing, building and testing instruments"
+            ],
+            "title": "Space and Climate Physics MPhil/PhD - London"
+          }
+        ],
+        "confidence": "medium"
+      },
+      {
+        "field": "identity_and_current_affiliation",
+        "reasoning": "Assessment reasoning:\n- Field asked for identity and current affiliation for Andrew Coates (lead researcher) as per the provided profile and sources; the field_answer indeed states his role (Professor of Physics at UCL, Deputy Director (Solar System) of MSSL) and corroborating contact details/emails and historical tenure at MSSL. This directly addresses identity and current affiliation. \n- The field description does not request funding or hiring details in this field; the provided answer focuses on identification and affiliation only, which matches the field's scope. Therefore, completeness is satisfied since the core requirement is fully covered.\n- Excerpts provided include multiple sources confirming his position at UCL/MSSL and related roles (UCL profile, 2018 case study, ESA Mars Express page), which align with and support the asserted identity/affiliation details.\n- Conclusion: completeness = true; supported = true, since the answer is directly supported by the excerpts.\n- If there were any doubts, they would be about date precision or minor minor role phrasing, but the core identity/affiliation are clearly supported by the cited excerpts.",
+        "citations": [
+          {
+            "url": "https://profiles.ucl.ac.uk/2283-andrew-coates",
+            "excerpts": [
+              "Andrew Coates | About | University College London\nProfessor Andrew Coates gained a BSc in Physics from UMIST in 1978, and MSc (1979) and D.Phil. (1982) in plasma physics from Oxford University."
+            ],
+            "title": "Andrew Coates | About | University College London"
+          },
+          {
+            "url": "https://www.ucl.ac.uk/mathematical-physical-sciences/case-studies/2018/jul/professor-andrew-coates",
+            "excerpts": [
+              "Professor Andrew Coates\nAndrew Coates is a UCL Professor of Physics and Deputy Director (Solar System) of the Mullard Space Science Laboratory (Department of Space & Climate Physics)."
+            ],
+            "title": "Professor Andrew Coates"
+          },
+          {
+            "url": "https://sci.esa.int/web/mars-express/-/49532-andrew-coates",
+            "excerpts": [
+              "Andrew Coates - Mars Express - ESA Science & Technology\nHe is now Deputy Director of MSSL and Head of Planetary Science. He is currently lead co-investigator for the electron spectrometer on Cassini-Huygens (part of"
+            ],
+            "title": "Andrew Coates - Mars Express - ESA Science & Technology"
+          },
+          {
+            "url": "https://uk.linkedin.com/in/andrew-coates-84965114",
+            "excerpts": [
+              "Andrew Coates - NHS Digital\nRecognised and experienced leader with over 20 years' experience of successful project and programme delivery in both the private and public sectors"
+            ],
+            "title": "Andrew Coates - NHS Digital"
+          },
+          {
+            "url": "https://uk.linkedin.com/in/andrew-coates-22858748",
+            "excerpts": [
+              "Andrew Coates - Commercial Insurance Director\nCommercial Insurance Director with over 20 years experience in the insurance industry. Currently tasked with introducing new commercial insurance product lines."
+            ],
+            "title": "Andrew Coates - Commercial Insurance Director"
+          },
+          {
+            "url": "https://uk.linkedin.com/in/andrew-j-coates",
+            "excerpts": [
+              "Andrew Coates - Versatile digital professional specialising ...\nVersatile digital professional specialising in the Power Platform and Dynamics 365. NHS Business Services Authority Newcastle University"
+            ],
+            "title": "Andrew Coates - Versatile digital professional specialising ..."
+          },
+          {
+            "url": "https://www.linkedin.com/in/andrew-coates-dfw",
+            "excerpts": [
+              "Andrew Coates - Marketing Analyst with a Background in ...\nStrong support professional with a BA - Economics from The University of Texas at Dallas. Will be pursuing a MS - Marketing with a focus in Marketing Analytics"
+            ],
+            "title": "Andrew Coates - Marketing Analyst with a Background in ..."
+          },
+          {
+            "url": "https://www.linkedin.com/in/andrew-coates-53659b58",
+            "excerpts": [
+              "Andrew Coates - Physician\nAttending physician at AMC since 2002; Albany Medical College faculty appointments since 2007; full-time academic hospitalist since the start of 2016."
+            ],
+            "title": "Andrew Coates - Physician"
+          },
+          {
+            "url": "https://www.ivey.uwo.ca/faculty_research/directory/andrew-coates",
+            "excerpts": [
+              "Andrew Coates | Faculty & Research - Ivey Business School\nFaculty & Research. Andrew Coates. Lecturer, Managerial Accounting and Control. Photo of Andrew Coates. Contact Information. Contact By Email."
+            ],
+            "title": "Andrew Coates | Faculty & Research - Ivey Business School"
+          },
+          {
+            "url": "https://pa.linkedin.com/in/andrew-ponterra",
+            "excerpts": [
+              "Andrew Coates - Conservation Infrastructure & Nature Finance ...\nConservation Infrastructure & Nature Finance Executive. Over 25 years I've designed, financed and delivered conservation infrastructure across 13 countries in"
+            ],
+            "title": "Andrew Coates - Conservation Infrastructure & Nature Finance ..."
+          },
+          {
+            "url": "https://au.linkedin.com/in/andrewicoates",
+            "excerpts": [
+              "Andrew Coates | FinTech, SaaS & Financial Services Platforms\nI'm a General Manager, startup operator and venture co-founder who builds and scales digital businesses - from early idea to revenue, growth and exit."
+            ],
+            "title": "Andrew Coates | FinTech, SaaS & Financial Services Platforms"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "recent_active_funding_2024_window",
+        "reasoning": "Assessment reasoning:\n- The field_description asks for a structured report including Identity; Recent/Active Funding; Recent and Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources, with direct URLs for positive claims.\n- The provided field_answer mainly describes what was checked and reports that no verified public 2024+ competitive grant record was extracted. It does not present a concise structured report with the requested sections. It also does not provide explicit identity verification details beyond general statements, nor a separate Recent/Open Positions section, nor a LinkedIn Evidence section with postings or URLs.\n- Because the user\u2019s instruction requires a structured report with explicit sections and positive claims to be supported by URLs, and the field_answer does not deliver that structured report (and instead notes absence of findings), completeness should be false.\n- Regarding excerpt support: Excerpts show some background about Andrew Coates and related funding pages, but the field_answer\u2019s assertions about not finding suitable 2024+ grants are not directly supported by explicit award records in the excerpts. Therefore, the field answer is not supported by the excerpts as explicit grant entries with title, funder, amount, dates, and roles are not provided in the excerpts. The evaluation thus yields supported = false.\n- To improve, a subsequent extraction step should perform a CSV export from UKRI Gateway to Research and compile per-project rows, as suggested in the field_answer, with each grant entry linked to official URLs.\n",
+        "citations": [
+          {
+            "url": "https://profiles.ucl.ac.uk/2283-andrew-coates/grants",
+            "excerpts": [
+              "View the University College London profile of Andrew Coates. Including their outputs, grants, professional activities and teaching activities."
+            ],
+            "title": "Andrew Coates | Research | University College London"
+          },
+          {
+            "url": "https://gtr.ukri.org/search/project?term=%22Andrew+Coates%22+MSSL&fetchSize=100",
+            "excerpts": [],
+            "title": "GtR"
+          },
+          {
+            "url": "https://gtr.ukri.org/search/project?term=%22Andrew+Coates%22+UCL&fetchSize=100",
+            "excerpts": [],
+            "title": "GtR"
+          },
+          {
+            "url": "https://www.ucl.ac.uk/mathematical-physical-sciences/case-studies/2018/jul/professor-andrew-coates",
+            "excerpts": [
+              "Professor Andrew Coates\nAndrew Coates is a UCL Professor of Physics and Deputy Director (Solar System) of the Mullard Space Science Laboratory (Department of Space & Climate Physics)."
+            ],
+            "title": "Professor Andrew Coates"
+          },
+          {
+            "url": "https://www.ukri.org/opportunity/solar-and-planetary-small-awards-2024",
+            "excerpts": [
+              "Solar and planetary small awards 2024\nDec 12, 2023 \u2014 Funding opportunity: Solar and planetary small awards 2024 . Opportunity status: Closed. Funders: Science and Technology Facilities Council (STFC)."
+            ],
+            "title": "Solar and planetary small awards 2024"
+          },
+          {
+            "url": "http://ukri.org/councils/stfc/guidance-for-applicants/types-of-funding-we-offer",
+            "excerpts": [
+              "Consolidated grants are awarded for a maximum of four years\nMay 7, 2026 \u2014 We provide research funding through a range of research awards.\nWe provide research funding through a range of research awards."
+            ],
+            "title": "Types of funding we offer \u2013 STFC"
+          },
+          {
+            "url": "https://www.esa.int/Science_Exploration/Space_Science/Comet_Interceptor",
+            "excerpts": [
+              "ESA - Comet Interceptor\nLaunch period: Late 2028 or early 2029 \u00b7 Launch location: Europe's Spaceport in French Guiana \u00b7 Destination: pristine comet or interstellar object."
+            ],
+            "title": "ESA - Comet Interceptor"
+          },
+          {
+            "url": "https://www.imperial.ac.uk/news/articles/natural-sciences/physics/2026/imperial-instrument-marks-key-milestone-for-esa-comet-interceptor-mission",
+            "excerpts": [
+              "Imperial instrument marks key milestone for ESA Comet Interceptor ...\nThe FGM-B2 activities at Imperial are funded by the UK Space Agency. Imperial-led magnetometer for the Comet Interceptor mission. It includes the flight sensors"
+            ],
+            "title": "Imperial instrument marks key milestone for ESA Comet Interceptor ..."
+          },
+          {
+            "url": "https://profiles.ucl.ac.uk/2283-andrew-coates",
+            "excerpts": [
+              "Andrew Coates | About | University College London\nProfessor Andrew Coates gained a BSc in Physics from UMIST in 1978, and MSc (1979) and D.Phil. (1982) in plasma physics from Oxford University."
+            ],
+            "title": "Andrew Coates | About | University College London"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "open_recent_positions_linked_to_andrew_coates_or_his_mssl_group",
+        "reasoning": "Assessment reasoning:\n- The user field asks for a concise structured report with sections: Identity; Recent/Active Funding; Recent and Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources, with each positive claim backed by direct URLs.\n- The provided field_answer mainly states that no verified public open postings were found and offers recommended next steps. It does not clearly present an explicit Identity section, a distinct Recent/Active Funding section, a clearly delineated Recent/Open Positions section, nor a dedicated LinkedIn Evidence section. It also lacks a formal Confidence and Caveats section, and while it includes some URLs, it does not organize them as explicit sources per the requested structure. Therefore, it does not fully satisfy the required structured report format.\n- Based on the prompt rules, this should be marked incomplete (completeness = false). Also, because the field_answer\u2019s claims about absence of postings are not directly supported by the provided excerpts (which speak generally about MSSL and related pages but do not verify postings), the supported field should be false as well. If the user wanted a strictly about openings, the answer should explicitly cite postings and provide sections with titles and dates, which is missing.\n- The Excerpts provided do not clearly substantiate the specific conclusions about open/closed postings or identity verification, so support is weak. The field answer would need explicit confirmations and URLs for each claimed item to be considered supported.\n",
+        "citations": [
+          {
+            "url": "https://www.ucl.ac.uk/work-at-ucl/search-ucl-jobs?keywords=MSSL",
+            "excerpts": [],
+            "title": "Search UCL Jobs | Work at UCL - UCL \u2013 University College London"
+          },
+          {
+            "url": "https://www.ucl.ac.uk/prospective-students/graduate/research-degrees/space-and-climate-physics-mphil-phd",
+            "excerpts": [
+              "Space and Climate Physics MPhil/PhD - London\nUCL MSSL offers a inspiring environment at the forefront of space science. Scientists work alongside top engineers, designing, building and testing instruments"
+            ],
+            "title": "Space and Climate Physics MPhil/PhD - London"
+          },
+          {
+            "url": "https://www.euraxess.fr/",
+            "excerpts": [
+              "EURAXESS |\nEURAXESS - Researchers in Motion is a unique pan-European initiative delivering information and support services to professional researchers."
+            ],
+            "title": "EURAXESS |"
+          },
+          {
+            "url": "https://www.ucl.ac.uk/mathematical-physical-sciences/mssl",
+            "excerpts": [
+              "Mullard Space Science Laboratory\nMSSL is a world leader in space research, building and utilising instruments on major space missions to advance our understanding of the universe."
+            ],
+            "title": "Mullard Space Science Laboratory"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "linkedin_evidence_discovery_only",
+        "reasoning": "Reasoning: The user query requests a structured report covering multiple aspects (Identity verification, Funding, Open positions, LinkedIn evidence, Confidence, and Sources). The provided field_answer only discusses a LinkedIn profile presence, a single recent activity post, and notes that no hiring announcements were surfaced. It does not include consolidated Identity verification details, any funding information (recent/active or otherwise), open positions (current or historical), a broader LinkedIn evidence section beyond one post, explicit confidence/caveats, or a complete list of sources. Therefore, completeness is False. The excerpts include a LinkedIn-based excerpt that corroborates parts of the LinkedIn evidence claims, so the field_answer is at least partially supported by excerpts. A more complete answer would need to extract and structure all requested sections with direct URLs for every positive claim. ",
+        "citations": [
+          {
+            "url": "https://uk.linkedin.com/in/andrew-coates-091494319",
+            "excerpts": [
+              "Andrew Coates - University Professor at UCL Mullard Space ...\nUniversity Professor at UCL Mullard Space Science Laboratory \u00b7 Experience: UCL \u00b7 Education: UMIST \u00b7 Location: Holmbury St Mary \u00b7 10 connections on LinkedIn."
+            ],
+            "title": "Andrew Coates - University Professor at UCL Mullard Space ..."
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "confidence_and_caveats",
+        "reasoning": "Assessed the provided field answer against the user's requested deliverable. The answer covers the main thematic areas: Identity, Funding, Open Positions (with caveats), Mission Budget vs Grant distinction, and LinkedIn evidence. It provides an evaluative narrative but does not include explicit, citable URLs for every positive claim, which is a stated requirement in the user prompt. Excerpts were not provided in a way I can verify against the claims, so I cannot confirm support from excerpts. Given the answer addresses all required sections but lacks verifiable direct URLs tied to each assertion, I consider completeness true but excerpt support false.",
+        "citations": [],
+        "confidence": "medium"
+      }
+    ],
+    "content": {
+      "executive_summary": "- **Identity Match Confirmed at UCL MSSL**: Andrew Coates, Professor of Physics, UCL Dept of Space & Climate Physics, ORCID 0000-0002-6185-3125, holds the email a.coates@ucl.ac.uk and the title Deputy Director (Solar System) of MSSL; the UCL Discovery profile and 2018 Faculty case study both corroborate this single named individual. -> Use this as the canonical person-of-interest record; do not merge with the unrelated Andrew Coates namesakes surfaced in search (NHS Digital, Insurance, Physician, Ivey Business School, Conservation Infrastructure) [executive_summary[0]] [6]; [executive_summary[1]] [7]\n- **No 2024+ Competitive Public Grant Award Page Located**: Despite targeted queries against UKRI Gateway to Research (which returns 48 records for \"Andrew Coates\"+MSSL), the UCL profile grants tab, the UKRI funding finder, and STFC/UKSA grant portals, no specific publicly-disclosed award record with title, amount, role, and 2024+ announcement date could be extracted as a verified URL during this audit. UKRI Gateway to Research search \"Andrew Coates MSSL\" -> [executive_summary[2]] [75]; UCL profile grants tab -> [executive_summary[3]] [59]. -> Flag this as \"no granular public award record extracted\" rather than asserting a grant; route follow-up to UKRI Gateway's CSV export or direct contact.\n- **Mission-Based Funding Indirectly Visible**: Coates' role profile lists PI of ExoMars PanCam and Co-I on BepiColombo MPPE, Cassini ELS, JUICE PEP, Mars Express ASPERA-3, MMS FPI, Cluster PEACE, Double Star PEACE, Giotto JPA, AMPTE-UKS, Mars 2020 Mastcam-Z, Venus Express ASPERA-4, and Rosetta Plasma Consortium. These are space-agency (ESA / NASA) mission budgets, not personal competitive grants; they should not be conflated with a \"grant to Andrew Coates\" [executive_summary[0]] [6]. -> Use only when describing funded scientific activity; do not record as personal PR TL (project-related) awards.\n- **Open Hiring: No Public Posting Linked to Coates Confirmed**: The UCL Space and Climate Physics site points to the departmental MPhil/PhD programme and the UCL jobs portal, but no publicly-indexed vacancy explicitly names Andrew Coates as line manager or named supervisor on a PhD studentship / PDRA / research engineer position posted on or after 2026-01-01 was retrieved during this audit [executive_summary[4]] [12]; https://www.ucl.ac.uk/work-at-ucl/search-ucl-jobs?department=Space+and+Climate+Physics. -> Mark \"no verified open posting linked to this lead today\"; subscribe to UCL TalentLink for department-filtered alerts as the maintained channel.\n- **LinkedIn Profile Confirmed, Sparse Activity**: Public LinkedIn profile confirmed at 16 followers / 10 connections / Holmbury St Mary / UCL employer / 1 listed position (University Professor); the only surfaced recent activity is a 2025 Mars Week public lecture post re-sharing the ExoMars PanCam story, no hiring posts. -> Reasonable ground-truth for \"active on LinkedIn about outreach, not recruiting\"; not a hiring channel.\n- **Prior Context Recap**: The BepiColombo Project Scientist identity tag and the MSSL institution entry from prior research align with the living person: same UCL MSSL affiliation, same planetary / comet / instrumentation focus, same email a.coates@ucl.ac.uk tying the lead to that uniquely-identifiable UCL Discovery record and ORCID. -> The lead record and the co-located profile data converge; identity is high-confidence.",
+      "identity_and_current_affiliation": "Andrew Coates is a Professor of Physics in the UCL Department of Space & Climate Physics and Deputy Director (Solar System) of the UCL Mullard Space Science Laboratory (MSSL), the UK's largest university-based space research group. His UCL Discovery profile lists office at Holmbury St Mary (RH5 6NT) and direct contact phone 01483 204100; the email a.coates@ucl.ac.uk appears on the same record [identity_and_current_affiliation[0]] [6]. The 2018 UCL Faculty case study still describes him in those terms (Deputy Director, Solar System; MSSL) and records that he has been at MSSL since 1982 [identity_and_current_affiliation[1]] [7]. ESA's Mars Express page corroborates the same role: \"He is now Deputy Director of MSSL and Head of Planetary Science\", and identifies him as lead Co-I on the Cassini electron spectrometer [identity_and_current_affiliation[2]] [17]. His Science and Technology Facilities Council (STFC) Science Board service ran 2019-2022; he served as President (2021-23) of the Society for Popular Astronomy and as a Gresham College lecturer (2020-21) [identity_and_current_affiliation[0]] [6].\n\nHis research interests page lists Planetary magnetospheres, plasma interactions with comets, Mars, Venus, Titan, Enceladus, planetary surface imaging, Mars atmosphere water density, radiation on planetary surfaces, Earth's magnetosphere and bow shock, space weather, and planetary/space plasma instrumentation [identity_and_current_affiliation[0]] [6]. These themes match the \"planetary plasma / space environments / comets / instrumentation\" lead specification exactly. -> Lead record maps cleanly to a single living UCL physicist; no namesake merging needed.\n\n### Namesakes excluded from the lead record\n\n| Namesake headline | Source | Why excluded |\n|---|---|---|\n| Andrew Coates - NHS Digital Programme Delivery Leader | [identity_and_current_affiliation[3]] [9] | Different employment; NHS Digital |\n| Andrew Coates - Commercial Insurance Director | [identity_and_current_affiliation[4]] [24] | Different employment; insurance industry |\n| Andrew Coates - Versatile digital professional, NHS BSA / Newcastle | [identity_and_current_affiliation[5]] [25] | Different employment; NHS Business Services Authority |\n| Andrew Coates - Marketing Analyst (DFW) | [identity_and_current_affiliation[6]] [26] | Different employment; marketing |\n| Andrew Coates - Physician (Albany Medical College) | [identity_and_current_affiliation[7]] [10] | Different employment; physician / hospitalist |\n| Andrew Coates - Lecturer, Managerial Accounting, Ivey Business School | [identity_and_current_affiliation[8]] [16] | Different employment; business school |\n| Andrew Coates - Conservation Infrastructure (Panama) | [identity_and_current_affiliation[9]] [35] | Different employment; conservation finance |\n| Andrew Coates - Commercial Software (FinTech/SaaS) | [identity_and_current_affiliation[10]] [85] | Different employment; AU-based SaaS |\n\nTakeaway: every other \"Andrew Coates\" in the search index is in a different profession and not associated with UCL MSSL; do not pool them with the lead.",
+      "recent_active_funding_2024_window": "What was checked:\n- UCL Discovery grants tab for profile 2283-andrew-coates [recent_active_funding_2024_window[0]] [59] returned only navigation and the profile header; no granular award rows were returned for this audit, suggesting either an empty tab at extraction time or the page renders the grant list via JavaScript that the capture did not capture fully.\n- UKRI Gateway to Research search for `term=\"Andrew Coates\" MSSL` returns 48 projects, 67 people, and 195 outcomes in the index [recent_active_funding_2024_window[1]] [75]. The page exposes project search results but only in HTML list form; individual awards with title, value, dates, role were not extracted from the listing page during this audit (CSV export from GtR would be the next step; the page flags downloading approval as potentially busy-period limited).\n- A broader UKRI Gateway search `term=\"Andrew Coates\" UCL` reports 1,194 hits, dominated by publication / outcome occurrences [recent_active_funding_2024_window[2]] [74].\n- The UCL Faculty of Mathematical & Physical Sciences CASE STUDY page is dated July 2018 and lists mission/instrument history but does not enumerate 2024+ awards [recent_active_funding_2024_window[3]] [7].\n- Targeted queries for STFC consolidated grants, UKRI solar / planetary small awards 2024, Leverhulme, Royal Society, EPSRC, NERC, and UK Space Agency funding calls surfaced funder programme pages but no award announcement attributable to Andrew Coates [recent_active_funding_2024_window[4]] [78]; [recent_active_funding_2024_window[5]] [22].\n- The ESA Comet Interceptor mission page indicates launch period late 2028 or early 2029 [recent_active_funding_2024_window[6]] [65] and Imperial's 2026 instrument milestone story notes UK Space Agency funded FGM-B2 instrument at Imperial, but neither is a Coates-UCL award [recent_active_funding_2024_window[7]] [47].\n\nResult: No verified public 2024+ competitive grant record (title + funder + amount + date + role + status) was successfully extracted from official funder award databases or UCL institutional announcements during this audit. Where the grant leadership of mission instruments is publicly known (PI PanCam ExoMars / Co-I Cassini ELS / Co-I BepiColombo MPPE etc.), those are ESA / NASA mission budgets, not personal research council grants, and the lead specification instructs to separate them [recent_active_funding_2024_window[8]] [6].\n\n-> Recommended next step: issue a direct CSV-export query to UKRI Gateway to Research for \"Andrew Coates\" + MSSL and re-extract per-project rows (title, value, start, end, PI/CoI, funder, status).",
+      "open_recent_positions_linked_to_andrew_coates_or_his_mssl_group": "What was checked:\n- UCL jobs portal filtered to Space and Climate Physics / MSSL https://www.ucl.ac.uk/work-at-ucl/search-ucl-jobs?department=Space+and+Climate+Physics; [open_recent_positions_linked_to_andrew_coates_or_his_mssl_group[0]] [63] - the portal pages returned only navigation scaffolding during this audit; no current vacancy list with title, deadline, status was extracted.\n- UCL Space and Climate Physics MPhil/PhD programme page describes the cohort structure and the MSSL environment but does not list specific Coates-supervised PhD projects [open_recent_positions_linked_to_andrew_coates_or_his_mssl_group[1]] [12].\n- EURAXESS jobs portal returned no MSSL-Andrew Coates vacancy in the targeted query [open_recent_positions_linked_to_andrew_coates_or_his_mssl_group[2]] [89].\n- Targeted Find a PhD query for \"Andrew Coates UCL MSSL\" surfaced the same institutional pages rather than a Coates-led studentship https://www.findaphd.com/.\n- MSSL site main pages describe instrumentation/PhD programmes but not Coates-supervised open vacancies [open_recent_positions_linked_to_andrew_coates_or_his_mssl_group[3]] [11].\n\nResult: No verified public open PhD studentship / PDRA / research assistant / research engineer posting explicitly connected to Andrew Coates or his named group, posted on or after 2026-01-01, was retrieved during this audit. Closed/historical postings from 2026+ also retrieved: no evidence.\n\n-> Recommended next step: re-query UCL TalentLink with department \"Space and Climate Physics\" weekly; cross-check Find a PhD for \"MSSL\" and \"STFC studentship UCL MSSL\" each term; MSSL-hosted PhD projects typically open via STFC quota competition around January each year.",
+      "linkedin_evidence_discovery_only": "The lead has a public LinkedIn profile at [linkedin_evidence_discovery_only[0]] [34], headline \"University Professor at UCL Mullard Space Science Laboratory\", locality Holmbury St Mary, England, United Kingdom, education entry UMIST. Network metrics: 16 followers and 10 connections at retrieval; 1 listed position. The recent-activity page surfaced one post: a re-share of a Mars Week 2025 lecture slot themed \"Looking for life on Mars\" tied to ExoMars Rosalind Franklin / PanCam, with the LinkedIn post URL https://www.linkedin.com/posts/andrew-coates-091494319_mars-week-2025-land-on-a-lecture-looking-activity-7303378179140829184-KN3S. No hiring announcement, no PhD-advertising post, no grant-celebration post was surfaced in the public activity during this audit. -> The profile is real, low-volume, mostly outreach; not a recruiting channel today.",
+      "confidence_and_caveats": "- **Identity**: High confidence. UCL Discovery, UCL Faculty case study, ESA Mars Express page, and prior research context all converge on the same person with the canonical institutional email a.coates@ucl.ac.uk.\n- **Funding**: Low-to-medium confidence. The 48-project Gateway return confirms grant activity is indexed by UKRI under his MSSL affiliation, but the individual project values/roles/dates were not extracted from the search listing page during this audit. Treat as \"activity exists but specifics not retrievable today\" rather than \"no grants exist\".\n- **Open Positions**: Low confidence of completeness; high confidence of absence-of-evidence. UCL TalentLink renders behind JavaScript that the available extractor did not transcribe, so absence-on-page does not equal absence-in-market. Recommend re-querying the live TalentLink search and Find a PhD for the next funding cycle.\n- **Mission Budget vs Grant**: Every mission-listed PI/Co-I line item (PanCam, MPPE, ELS, ASPERA, etc.) reflects ESA / NASA instrument contracts and consortium allocations routed through UCL, not personal STFC / UKRI / Leverhulme grants. The lead specification explicitly excludes these from \"grant\" language. We have respected that exclusion in this audit.\n- **LinkedIn Discovery**: Public profile is verified; content is sparse and outreach-themed, not recruiting-themed."
+    },
+    "type": "json",
+    "beta_fields": null,
+    "mcp_tool_calls": null,
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "executive_summary": {
+          "type": "string",
+          "title": "Executive Summary"
+        },
+        "identity_and_current_affiliation": {
+          "type": "string",
+          "title": "Identity and Current Affiliation"
+        },
+        "recent_active_funding_2024_window": {
+          "type": "string",
+          "title": "Recent / Active Funding (2024+ window)"
+        },
+        "open_recent_positions_linked_to_andrew_coates_or_his_mssl_group": {
+          "type": "string",
+          "title": "Open / Recent Positions Linked to Andrew Coates or His MSSL Group"
+        },
+        "linkedin_evidence_discovery_only": {
+          "type": "string",
+          "title": "LinkedIn Evidence (Discovery-only)"
+        },
+        "confidence_and_caveats": {
+          "type": "string",
+          "title": "Confidence and Caveats"
+        }
+      },
+      "required": [
+        "executive_summary",
+        "identity_and_current_affiliation",
+        "recent_active_funding_2024_window",
+        "open_recent_positions_linked_to_andrew_coates_or_his_mssl_group",
+        "linkedin_evidence_discovery_only",
+        "confidence_and_caveats"
+      ]
+    }
+  }
+}

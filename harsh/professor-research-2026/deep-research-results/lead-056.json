@@ -1,0 +1,295 @@
+{
+  "run_id": "trun_dd47611047ba4519b25d3fece7b02447",
+  "interaction_id": "trun_dd47611047ba4519b25d3fece7b02447",
+  "result_url": "https://platform.parallel.ai/play/deep-research/trun_dd47611047ba4519b25d3fece7b02447",
+  "status": "completed",
+  "output": {
+    "basis": [
+      {
+        "field": "executive_summary",
+        "reasoning": "Assessment notes:\n- Field answer provides a high-level executive_summary with several claims but does not include direct URLs for each positive claim, which is required by the user instruction. The user asked for a structured report with explicit sources (URLs) for identity verification, funding, hiring/open positions, and LinkedIn evidence. Since the field answer lacks direct URLs for most assertions, its evidentiary support from excerpts cannot be confirmed as complete.\n- Completeness evaluation: The answer is not fully complete relative to the user\u2019s requested structured report. It offers some items (identity, some funding notes, some hiring indicators, and LinkedIn remark) but does not consistently present the required fields (e.g., explicit Source URLs, clear open/hiring postings with posting dates and statuses, and a clearly delineated structure for each requested category). Also, some statements (e.g., post-2024 funding absence) should be explicitly tied to verifiable sources, which are not provided.\n- Confidence/caveats: The answer flags gaps (e.g., no verified public evidence for post-2024 funding) but does not provide citations or dates to show what was checked. The LinkedIn evidence is noted as unreliable, which is sensible, but again needs explicit official corroboration per user guidance.\n- Overall: Due to missing URLs for positive claims and missing complete structured sections, the evaluation deems the field answer incomplete and not adequately supported by excerpts.",
+        "citations": [],
+        "confidence": "low"
+      },
+      {
+        "field": "identity",
+        "reasoning": "Step assessed: The field is identity verification for a known academic lead. The user provided a detailed field_answer that enumerates name, title, groups, institution, contact, education, career path, and a namesake check, plus a research focus. The field_description asks to verify identity and current affiliation (without merging namesakes) and to provide a concise, structured report with sources. The field_answer includes a substantial set of claims (e.g., Full name, Current title, Primary/Secondary group, Institution, Email, ORCID, etc.) and explicitly notes a namesake check. However, the excerpts supplied only directly corroborate a subset of those claims (e.g., EPFL page confirming name and email; conference abstract confirming EPFL/SPC/TCV association and email). The current title, exact status, and some details (e.g., explicit confirmation of \u201cAssociate Professor\u201d as current title, and a formal, current affiliation string) are not clearly supported by the provided excerpts. The answer also contains meta-claims about LinkedIn and a definitive \u201cno other matches\u201d claim, which are not directly supported by the excerpts. Given the requirement to verify identity and current affiliation without merging namesakes, the core identity elements are present but not all assertions are verifiably supported by the excerpts. Therefore, the field appears to be partially complete but not fully verifiable from the excerpts alone. I mark completeness as true since the answer addresses the requested identity verification and current affiliation scope, but with caveats; I mark supported as false because several key assertions lack explicit corroboration in the supplied excerpts.",
+        "citations": [
+          {
+            "url": "https://people.epfl.ch/christian.theiler?lang=en",
+            "excerpts": [
+              "Christian Gabriel Theiler\nChristian Theiler obtained his Master's degree in physics from ETH Zurich in 2007 and his PhD from EPFL in 2011. He then joined MIT as a postdoctoral associate."
+            ],
+            "title": "Christian Gabriel Theiler"
+          },
+          {
+            "url": "https://conferences.iaea.org/event/392/contributions/35592/attachments/19690/33738/Theiler-OV.pdf",
+            "excerpts": [
+              "Progress and innovations in the TCV tokamak research ...\nEcole Polytechnique F\u00e9d\u00e9rale de Lausanne (EPFL), Swiss Plasma Center (SPC), Lausanne, Switzerland. Email: christian.theiler@epfl.ch. TCV is a highly flexible"
+            ],
+            "title": "Progress and innovations in the TCV tokamak research ..."
+          }
+        ],
+        "confidence": "medium"
+      },
+      {
+        "field": "recent_active_funding",
+        "reasoning": "Assessment performed on field_answer relative to the field description. The user query asks for: identity verification and current affiliation; recent/active funding post-2024-01-01 with exact grant details and URLs; recent/open position postings since 2026-01-01 with statuses; LinkedIn evidence; confidence caveats; and sources. The provided field_answer focuses on post-2024 competitive grants (finding no verified public evidence), pre-2024 awards (historical context), and implications about current SPC/EUROfusion support. It does not attempt to enumerate a comprehensive set of post-2024 grants beyond stating absence, nor does it provide a structured table of ongoing postings or LinkedIn evidence. It does, however, cite reasoning about sources and notes that no verified public evidence was found for post-2024 competitive grants, while listing several pre-2024 grants. Completeness evaluation will treat the answer as addressing the main post-2024 funding question with a negative finding, and providing context from multiple sources. The excerpts provided include SNSF starting grants and EPFL announcements that are relevant to the topic and could support or contextualize the claim of no post-2024 competitive grant listing for Theiler. No direct contradictions found in excerpts. Overall, the field_answer aligns with the expectation of reporting lack of verified post-2024 competitive funding evidence, while acknowledging data gaps and suggesting re-checks in 2026. Confidence in the negative finding should be cautious due to possible data access limits and the existence of non-public data sources.\n",
+        "citations": [
+          {
+            "url": "https://data.snf.ch/grants?q=Christian+Theiler&type=project",
+            "excerpts": [],
+            "title": "Fetched web page"
+          },
+          {
+            "url": "https://data.snf.ch/grants?q=%22Christian+Theiler%22&type=project&applicant=Christian+Theiler",
+            "excerpts": [],
+            "title": "Fetched web page"
+          },
+          {
+            "url": "https://www.snf.ch/en/BPphErG0SQiD4OHG/news/starting-grants-2024-61-projects-approved",
+            "excerpts": [
+              "SNSF Starting Grants 2024: 61 projects approved\nThe SNSF is awarding 105.4 million Swiss francs for the projects selected under the SNSF Starting Grants 2024 transitional measure."
+            ],
+            "title": "SNSF Starting Grants 2024: 61 projects approved"
+          },
+          {
+            "url": "https://actu.epfl.ch/news/snsf-project-funding-fall-2024-grant-recipients-an",
+            "excerpts": [
+              "SNSF Project Funding: Fall 2024 grant recipients announced - EPFL\nIn particular, researchers can apply for coverage of research costs and staff salaries as well as for the funding of scientific cooperation, networking and communication. The full list of EPFL-led granted proposals is available on the Grant Search Portal of the SNSF. Congratulations to all the grantees!"
+            ],
+            "title": "SNSF Project Funding: Fall 2024 grant recipients announced - EPFL"
+          },
+          {
+            "url": "https://actu.epfl.ch/news/snsf-project-funding-spring-2025-grant-recipients",
+            "excerpts": [
+              "SNSF Project Funding: Spring 2025 grant recipients announced\nOut of 350 granted SNSF Project Funding research projects, EPFL has been listed as the responsible institution in 37 granted proposals. Additionally, EPFL researchers are participating as other applicants in 5 projects and as project partners in 10 others."
+            ],
+            "title": "SNSF Project Funding: Spring 2025 grant recipients announced"
+          },
+          {
+            "url": "https://euro-fusion.org/projects/?s=Theiler",
+            "excerpts": [],
+            "title": "You searched for Theiler - EUROfusion"
+          },
+          {
+            "url": "https://www.researchgate.net/profile/Christian_Theiler/6",
+            "excerpts": [
+              "Christian THEILER | Tenure Track Assistant Professor | Ph.D.\nChristian THEILER, Tenure Track Assistant Professor | Cited by 5807 | of Swiss ... ETH Zurich. Field of study. Physics. September 1994 - January 2001."
+            ],
+            "title": "Christian THEILER | Tenure Track Assistant Professor | Ph.D."
+          },
+          {
+            "url": "https://www.snf.ch/en/noYHnzN47LR5qt93/news/snsf-starting-grants-2026",
+            "excerpts": [
+              "SNSF Starting Grants 2026\nMay 5, 2026 \u00b7 The SNSF Starting Grants 2026 call is aimed at researchers interested in leading their own research project and team in Switzerland."
+            ],
+            "title": "SNSF Starting Grants 2026"
+          },
+          {
+            "url": "https://people.epfl.ch/christian.theiler?lang=en",
+            "excerpts": [
+              "Christian Gabriel Theiler\nChristian Theiler obtained his Master's degree in physics from ETH Zurich in 2007 and his PhD from EPFL in 2011. He then joined MIT as a postdoctoral associate."
+            ],
+            "title": "Christian Gabriel Theiler"
+          },
+          {
+            "url": "https://actu.epfl.ch/news/a-new-shape-to-tame-fusion-s-hottest-challenge",
+            "excerpts": [],
+            "title": "A new shape to tame fusion's hottest challenge - EPFL"
+          },
+          {
+            "url": "https://euro-fusion.org/member-news/2020-nuclear-fusion-journal-award-to-prof-christian-theiler",
+            "excerpts": [
+              "2020 Nuclear Fusion journal award to Prof. Christian Theiler\nChristian Theiler is assistant professor at EPFL SPC since 2016. He previously did a post-doc at MIT, where he worked on the Alcator C-Mod tokamak, after"
+            ],
+            "title": "2020 Nuclear Fusion journal award to Prof. Christian Theiler"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "recent_and_open_positions",
+        "reasoning": "Assessment notes: The field_answer attempts to report on current open positions connected to Christian Theiler and closed/historical postings. However, the user query requires a broader structured report including Identity, Recent/Active Funding, Recent and Open Positions, LinkedIn Evidence, Confidence and Caveats, and Sources. The provided answer only covers Recent and Open Positions (and a closed/historical section) and does not address Identity verification, Funding, LinkedIn evidence, confidence/caveats in detail, or a full list of sources. Therefore, completeness should be false. The excerpts given mention SPC/EPFL job pages and notes that postings do not explicitly name Theiler, which supports some of the claims in the field_answer, so supported should be true. Confidence is moderate given the partial coverage and reliance on public postings; clearly stated limitations and checks are present in the answer. No contradictions found within excerpts provided.",
+        "citations": [
+          {
+            "url": "https://www.epfl.ch/research/domains/swiss-plasma-center/jobs/",
+            "excerpts": [],
+            "title": "Job opportunities \u2012 SPC \u2010 EPFL"
+          },
+          {
+            "url": "https://www.epfl.ch/research/domains/swiss-plasma-center/education/education_doctoralschool/phdpositions",
+            "excerpts": [
+              "Available positions \u2012 SPC \u2010 EPFL\nThe understanding turbulence in the edge of magnetic confinement device is an outstanding open issue in magnetic fusion. The physics of this region determines the boundary conditions of the whole plasma by controlling the plasma refueling, heat losses, and impurity dynamics."
+            ],
+            "title": "Available positions \u2012 SPC \u2010 EPFL"
+          },
+          {
+            "url": "https://www.epfl.ch/research/domains/swiss-plasma-center/education/postdoc-positions/available-post-doctoral-positions",
+            "excerpts": [
+              "Available post-doctoral positions \u2012 SPC\nWe seek candidates with a background in theoretical plasma physics, preferably with experience in plasma simulations, that have recently obtained a Ph.D. or are"
+            ],
+            "title": "Available post-doctoral positions \u2012 SPC"
+          },
+          {
+            "url": "https://www.epfl.ch/research/domains/swiss-plasma-center/jobs/job-vacancies/",
+            "excerpts": [],
+            "title": "Technical job vacancies \u2012 SPC \u2010 EPFL"
+          },
+          {
+            "url": "https://www.epfl.ch/about/working/working-at-epfl/job-openings/",
+            "excerpts": [],
+            "title": "Job opportunities \u2012 Working at EPFL \u2010 EPFL"
+          },
+          {
+            "url": "https://fusenet.eu/sites/default/files/job_position_epfl_spc_phd.pdf",
+            "excerpts": [
+              "PhD student positions in theoretical plasma physics\nPhD student positions in theoretical plasma physics Applications are invited for Ph.D. student positions at the Swiss Plasma Center (SPC) of the Ecole Polytechnique Federale de Lausanne (EPFL)."
+            ],
+            "title": "PhD student positions in theoretical plasma physics"
+          },
+          {
+            "url": "https://actu.epfl.ch/search/en/SPC",
+            "excerpts": [],
+            "title": "News Swiss Plasma Center - EPFL"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "linkedin_evidence",
+        "reasoning": "Reasoning: The fieldAnswer provides a qualitative assessment of LinkedIn evidence (state: stale / discovery-limited) and notes that LinkedIn does not reflect a current EPFL/SPSC affiliation, recommending EPFL channels for corroboration. The excerpts include (a) a LinkedIn profile claiming MIT/postdoc in 2012 era and (b) a Swiss Plasma Center LinkedIn page. The field description asks for identity verification and current affiliation, as well as evidence-based LinkedIn results with corroboration. The fieldAnswer quotes that LinkedIn data is stale and recommends using EPFL/SPS for current status, but it does not provide direct, current URLs proving the EPFL affiliation, nor does it provide explicit grant/position postings data. Therefore, completeness is false because it does not fully verify identity/current affiliation with strong current sources and does not enumerate current open positions or LinkedIn posts with URLs as required. Supported: The excerpts do support the claim that LinkedIn data is stale and that the MIT listing existed, which aligns with the cautions in the fieldAnswer. However, the answer relies on placeholders like linkedin_evidence[0], and it lacks explicit direct URLs for every positive claim, so while some claims are supported, the field answer as a whole is only partially supported by excerpts.\n\nConfidence: Moderate. The provided excerpts do reinforce the idea that LinkedIn data may be unreliable for current affiliation and that EPFL/SPSL channels should be consulted, but they do not definitively verify current identity or provide full funding/position details requested in the query.",
+        "citations": [
+          {
+            "url": "https://www.linkedin.com/in/christian-theiler-a63a4376",
+            "excerpts": [
+              "Christian Theiler - Postdoctoral Associate at Massachusetts ...\nEducation. ETH Z\u00fcrich Graphic \u00b7 Eidgen\u00f6ssische Technische Hochschule Z\u00fcrich. Master of Science (M.Sc.) Physics. 2001 - 2007. Universit\u00e9 Claude Bernard Lyon 1"
+            ],
+            "title": "Christian Theiler - Postdoctoral Associate at Massachusetts ..."
+          },
+          {
+            "url": "https://ch.linkedin.com/company/swiss-plasma-center-at-epfl",
+            "excerpts": [
+              "Swiss Plasma Center at EPFL\nPaolo Ricci, Director of the Swiss Plasma Center, shares the mission that drives his team of researchers, engineers, technicians and PhD students. #epfl"
+            ],
+            "title": "Swiss Plasma Center at EPFL"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "confidence_and_caveats",
+        "reasoning": "Reasoning for evaluation:\n- Completeness: The field_answer provides a multi-part assessment of identity, current affiliation, and notes on funding and hiring with explicit statements and caveats. It covers identity, seniority, some notes on funding post-2024, hiring postings, LinkedIn presence, and research topic alignment. Given the field_description asks for a comprehensive, source-cited structured report including identity, funding, positions, LinkedIn evidence, confidence/caveats, and sources, the answer is broadly complete in structure and scope. It does not strictly require every factual detail to be verified here, but the content aligns with the described sections. Therefore, completeness is set to true.\n- Supported: The excerpts provided include an EPFL profile (identity) and an EPFL email, and a conference/OV/IAEA reference that mentions Theiler. While the field_answer makes many claims (especially about funding post-2024, current status, and LinkedIn evidence) that are not directly corroborated by the given excerpts, the core identity-related claims are supported by the excerpts. Because the field_answer asserts multiple claims beyond what the excerpts explicitly confirm, the overall field answer is not fully supported by the excerpts. Therefore, supported is set to false.\n- Confidence caveats: The field_answer cites internal confidence markers (e.g., High confidence, Low confidence) and references (e.g., [confidence_and_caveats...]) that are not present in the provided excerpts. This reduces verifiability from the excerpts alone. The explicit instruction to mark \u201cNo verified public evidence found\u201d where appropriate is not uniformly demonstrated across all claims, so those parts remain unsupported by excerpts.\n- Overall: The answer is well-structured and addresses many required elements, but due to lack of direct corroborating excerpts for several funded/hiring claims, it is not fully supported by the provided excerpts.\n",
+        "citations": [
+          {
+            "url": "https://people.epfl.ch/christian.theiler?lang=en",
+            "excerpts": [
+              "Christian Gabriel Theiler\nChristian Theiler obtained his Master's degree in physics from ETH Zurich in 2007 and his PhD from EPFL in 2011. He then joined MIT as a postdoctoral associate."
+            ],
+            "title": "Christian Gabriel Theiler"
+          },
+          {
+            "url": "https://euro-fusion.org/member-news/2020-nuclear-fusion-journal-award-to-prof-christian-theiler",
+            "excerpts": [
+              "2020 Nuclear Fusion journal award to Prof. Christian Theiler\nChristian Theiler is assistant professor at EPFL SPC since 2016. He previously did a post-doc at MIT, where he worked on the Alcator C-Mod tokamak, after"
+            ],
+            "title": "2020 Nuclear Fusion journal award to Prof. Christian Theiler"
+          },
+          {
+            "url": "https://conferences.iaea.org/event/392/contributions/35592/attachments/19690/33738/Theiler-OV.pdf",
+            "excerpts": [
+              "Progress and innovations in the TCV tokamak research ...\nEcole Polytechnique F\u00e9d\u00e9rale de Lausanne (EPFL), Swiss Plasma Center (SPC), Lausanne, Switzerland. Email: christian.theiler@epfl.ch. TCV is a highly flexible"
+            ],
+            "title": "Progress and innovations in the TCV tokamak research ..."
+          },
+          {
+            "url": "https://actu.epfl.ch/news/a-new-shape-to-tame-fusion-s-hottest-challenge",
+            "excerpts": [],
+            "title": "A new shape to tame fusion's hottest challenge - EPFL"
+          }
+        ],
+        "confidence": "medium"
+      },
+      {
+        "field": "comparative_analysis_christian_theiler_vs_sister_activities_at_epfl_spc",
+        "reasoning": "Assessment rationale:\n- The field description asks for a comprehensive, source-cited research report on a specific academic lead, including identity verification, recent active funding (with exact grant details and URLs), current open/closed positions, LinkedIn evidence, confidence/caveats, and explicit sources. It requires a structured report with multiple data facets and direct URLs for every positive claim.\n- The provided field_answer is a comparative narrative and table focusing on high-level observations and speculative interpretation about funding and positions, but it does not deliver verified, sourced, and structured funding data (titles, funders, amounts, dates, statuses, roles, URLs) or confirmed identity/current affiliation.\n- It also introduces fictional/uncorroborated contextual claims (e.g., Rubicon grants for others, specific promotions) without citations or explicit sources, and it does not meet the explicit data capture requirements (grant details with URLs, posting URLs, posting dates, statuses, etc.).\n- Therefore, the response does not satisfy the field_description requirements in a complete way.\n- Conclusion: completeness = false. As for excerpts support, no excerpts were provided to validate the field_answer; thus, supportability is also false because there is no verifiable sourcing shown in excerpts to back the claims made in the field_answer.\n- If excerpts were provided, I would assess whether each factual claim (identity verification, current affiliation, grant details, posting details, LinkedIn evidence) is directly supported by those excerpts; in this case, they are not present, so support remains false.",
+        "citations": [],
+        "confidence": "low"
+      },
+      {
+        "field": "synthesis",
+        "reasoning": "Reasoning: The provided field_answer is a speculative synthesis that asserts several claims (identity verification, current affiliation, active funding past 2024, specific positions like research-PI, hiring postings, and 2026 EUROfusion context) but does not present concrete, verifiable items with direct sources. The excerpts only contain a single item about EUROfusion funding with a grant acknowledgment and no direct confirmation of the subject's identity, current affiliation, specific grants post-2024, or concrete postings. Therefore, completeness should be false because the answer does not comprehensively address the requested structured report (Identity; Recent/Active Funding; Recent and Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources) nor provide the required direct URLs for each claim. Supported should be false because the field answer is not clearly supported by the given excerpts; at most, a tangential reference to EUROfusion exists, which does not substantiate the detailed claims in the answer.",
+        "citations": [
+          {
+            "url": "https://euro-fusion.org/",
+            "excerpts": [
+              "EUROfusion - Realising Fusion Energy\nThis work has been carried out within the framework of the EUROfusion Consortium, funded by the European Union via the Euratom Research and Training Programme (Grant Agreement No 101052200 \u2014 EUROfusion)."
+            ],
+            "title": "EUROfusion - Realising Fusion Energy"
+          }
+        ],
+        "confidence": "low"
+      }
+    ],
+    "content": {
+      "executive_summary": "- **Identity Confirmed**: Christian Gabriel Theiler is currently Associate Professor at EPFL, holding two appointments - SPC - Edge Plasma Physics and SPC - TCV Tokamak Physics - with the verified university email `christian.theiler@epfl.ch`. -> Treat identity as confirmed; no namesake merger.\n- **2024 Promotion**: He was promoted from Tenure Track Assistant Professor to Associate Professor at EPFL in 2024. -> Confirms continued, formal affiliation with SPC.\n- **Post-2024 Grants Gap**: No grants announced on or after 2024-01-01 attributable to Christian Theiler were found in official SNSF, EUROfusion, or EPFL award sources that I could access. -> Highest-confidence call is \"No verified public evidence found\" for competitive post-2024 funding.\n- **Pre-2024 Grant Catalog (Expired/Cut-off)**: SNSF Eccellenza 2019-2023, EUROfusion Enabling Research 2019-2020, EUROfusion fellowship 2014-2016, and SNSF advanced postdoctoral mobility grant 2014. -> These are out of scope; included only for completeness.\n- **2025 Prize (Not a Grant)**: EPFL Best Teacher Award - Physics Section 2025. -> Prize/award, not a competitive research grant; explicitly excluded per scope.\n- **2025 Research Milestone**: First-author of the IAEA Fusion Energy Conference 2025 OV talk \"Progress and innovations in the TCV tokamak research programme\" - confirms ongoing TCV leadership. -> Active research role confirmed; no separate grant tied to it.\n- **Open Hiring Tied to Theiler**: No publicly listed PhD, postdoc, staff, or engineer positions have Theiler explicitly named as supervisor/contact on official EPFL/SPC pages I could verify. -> Document as \"No verified public evidence found\".\n- **LinkedIn Profile Stale**: The public LinkedIn profile at `linkedin.com/in/christian-theiler-a63a4376` shows stale MIT Postdoctoral Associate data with no discoverable posts. -> LinkedIn is unreliable evidence here; rely on official channels.\n- **Contextual Funding Reinstatement**: Switzerland rejoined EUROfusion and ITER programs on 1 January 2026 - any newly accessible EUROfusion grant stream for Theiler's group is plausible but not publicly documented as of the search date. -> Watch for 2026 calls.\n- **Recommendation**: Periodically re-query SNSF `data.snf.ch/grants` and EUROfusion project portal - the absence today is not absence forever as 2026 funding rounds open.",
+      "identity": "| Attribute | Verified Value | Source |\n|---|---|---|\n| Full name | Christian Gabriel Theiler | [identity[0]] [7] |\n| Current title | Associate Professor | [identity[0]] [7] |\n| Primary group | SPC - Edge Plasma Physics | [identity[0]] [7] |\n| Secondary group | SPC - TCV Tokamak Physics | [identity[0]] [7] |\n| Hiring/Teaching committee | EDPY-GE (PhD program committee member, Doctoral Program Physics) | [identity[0]] [7] |\n| Institution | EPFL, SB (School of Basic Sciences), Lausanne, Switzerland | [identity[0]] [7] |\n| Email | christian.theiler@epfl.ch | [identity[0]] [7] |\n| ORCID | 0000-0003-3926-1374 | [identity[0]] [7] |\n| Google Scholar | user=KVe1ax8AAAAJ | [identity[0]] [7] |\n| MSc | Physics, ETH Zurich (2007) | [identity[0]] [7] |\n| PhD | EPFL (2011) | [identity[0]] [7] |\n| Postdoc | MIT Alcator C-Mod (2012-2014) | [identity[0]] [7] |\n| Return to EPFL | EUROfusion fellow (2014) | [identity[0]] [7] |\n| Tenure Track Assistant Professor | 2016 | [identity[0]] [7] |\n| Promotion to Associate Professor | 2024 | [identity[0]] [7] |\n\nNamesakes check: A LinkedIn profile `linkedin.com/in/christian-theiler-a63a4376` exists but appears to be a stale/stub record of the same person (still showing MIT Postdoctoral Associate affiliation, location Cambridge, MA, 3 connections). No other \"Christian Theiler\" matches EPFL/SPC/TCV profile. Confirmed not merged with a separate identity.\n\nResearch focus confirmed: tokamak edge/boundary physics, detachment physics, plasma turbulence, alternative divertor geometries including negative triangularity and quasi-continuous exhaust regimes - directly aligned with the lead's stated topics. Source: [identity[0]] [7] and [identity[1]] [12].",
+      "recent_active_funding": "### Competitive Grants (post-2024-01-01): No Verified Public Evidence Found\n\nWhat was checked and returned empty:\n\n- **SNSF data portal (`data.snf.ch`)**: Direct search for \"Christian Theiler\" executed - no project-level hits returned via official portal interface. Sources: [recent_active_funding[0]] [13]; [recent_active_funding[1]] [58].\n- **SNSF Starting Grants 2024 results** (61 projects approved, 105.4M CHF total awarded, [recent_active_funding[2]] [50]): I could not surface Theiler among the approved 61 starting grants from external search snippets/extracts.\n- **EPFL announcement of SNSF Project Funding Fall 2024 recipients**: 28 EPFL-led projects granted CHF 25,757,657 ([recent_active_funding[3]] [48]) - Theiler not visibly identified in the publicly listed announcement.\n- **EPFL announcement of SNSF Project Funding Spring 2025 recipients**: 37 EPFL-led grants, CHF 38,590,143 awarded ([recent_active_funding[4]] [49]) - Theiler not visibly identified in the publicly listed announcement.\n- **EUROfusion public projects portal**: Search returns \"It seems we can't find what you're looking for\" ([recent_active_funding[5]] [17]).\n- **ORCID profile** (0000-0003-3926-1374): No grants section visible via the public ORCID page in the research extract; the page text confirmed \"does not contain information regarding grants, funding, or projects\".\n- **ResearchGate profile** ([recent_active_funding[6]] [10]): No grants/award list publicly disclosed on the cached profile.\n\n**Implication**: It is plausible Theiler continues to draw institutional salary and core SPC funding (mission/consortium/budget) tied to TCV operations and EUROfusion's Medium-term Plan (the EPFL news 19.01.26 confirms Switzerland's full re-association with EU programmes from 1 January 2026). However, the public sources accessible to me do not name Christian Theiler as PI/Co-PI on a competitive research grant awarded on or after 2024-01-01. Recommendation: re-check on 2026-10-01 once SNSF Starting Grants 2026 results ([recent_active_funding[7]] [21]) are announced and EUROfusion publishes the post-2025 project portfolio.\n\n### Embedded Pre-2024 Awards (Out of Scope - Historical Context Only)\n\nBoth of Theiler's prior competitive grants ended before the 2024 cut-off:\n\n| Grant | Period | Funder / Scheme | Role | Status | Source |\n|---|---|---|---|---|---|\n| SNSF Eccellenza Grant | 2019 - 2023 | Swiss National Science Foundation (SNSF) | PI | Closed (ended 2023) | [recent_active_funding[8]] [7] |\n| EUROfusion Enabling Research Grant | 2019 - 2020 | EUROfusion | PI | Closed | [recent_active_funding[8]] [7] |\n| EUROfusion Postdoctoral Fellowship | 2014 - 2016 | EUROfusion | Postdoctoral Fellow | Closed | [recent_active_funding[8]] [7] |\n| SNSF Advanced Postdoctoral Mobility Grant | 2014 | SNSF | Postdoc mobility | Closed | [recent_active_funding[8]] [7] |\n\nTakeaway: His prior funding track record is primarily European/Swiss competitive grants, anchored on tokamak edge physics. The absence of a public successor grant beyond 2023 is a data gap, not a strong negative inference. Implication: his post-2024 research activity (e.g. the 2025 *Physical Review Letters* paper, May 2025 EPFL news [recent_active_funding[9]] [53]) is most plausibly operating under SPC's institutional / mission budget tied to EUROfusion's Medium-term Plan and TCV facility operations.\n\n### Prize, Distinguished Recognition (2025 - Not a Grant)\n\n| Item | Year | Issuer | Type | Source |\n|---|---|---|---|---|\n| EPFL Best Teacher Award - Physics Section | 2025 | EPFL | Prize/Teaching award | [recent_active_funding[8]] [7] |\n| 2020 Nuclear Fusion Journal Award | 2020 | IAEA Fusion Journal | Prize | [recent_active_funding[10]] [43] |\n| IUPAP Young Scientist Award, Plasma Physics | 2015 | IUPAP | Prize | [recent_active_funding[8]] [7] |\n\nTakeaway: The 2025 EPFL Best Teacher Award is a teaching recognition, explicitly excluded from the \"competitive grant\" scope. Implication: do not confuse prizes with research funding in the report consumer's downstream analysis.",
+      "recent_and_open_positions": "### Currently Open Positions Connected to Theiler: No Verified Public Evidence Found\n\nWhat was checked:\n\n- **SPC official jobs index** ([recent_and_open_positions[0]] [26]): Lists generic PhD, postdoc, technical channels; redirects to SPC doctoral school page and the SPC post-doc positions page and the SPC technical vacancies table. None of these published postings explicitly name Christian Theiler or his \"Edge Plasma Physics / TCV\" group.\n- **SPC PhD openings page** ([recent_and_open_positions[1]] [31]): The edge turbulence PhD track contact person is listed as **Prof. Paolo Ricci**, not Theiler. The \"experimental physics on the TCV tokamak\" and \"basic plasma physics\" tracks are listed but no posting links to Theiler.\n- **SPC available postdoc positions** ([recent_and_open_positions[2]] [2]): One listed postdoc is for the JT-60SA tokamak at QST Japan, contact person **Dr. MER Stefano Coda** (not Theiler).\n- **SPC technical vacancies** ([recent_and_open_positions[3]] [36]): Last dated open posting is \"Informatics Engineer / Scientist\" opened 22.12.23 with no published close date and no Theiler reference (Recruiting EPFL 3228).\n- **EPFL central careers / job openings** ([recent_and_open_positions[4]] [30]): No Theiler-specific posting discovered via search.\n- **FuseNet PDF** ([recent_and_open_positions[5]] [32]): Lists contact Prof. Paolo Ricci, not Theiler.\n\nImplication: Either (a) Theiler's group is currently staffing through internal EPFL channels (SPC seed-PhD rotation, Master's thesis pipeline) rather than open external postings; or (b) any open hiring is published only on channels not indexed by the search tools used here. Recommendation: any candidate should email `christian.theiler@epfl.ch` directly, or contact SPC's Doctoral Education office via the link on SPC doctoral school.\n\n### Closed / Historical Postings on or after 2026-01-01: No Verified Public Evidence Found\n\nThe actuator.news list for SPC ([recent_and_open_positions[6]] [52]) does not contain any 2026 dated hiring announcement specific to Theiler at the time of the search. The 2026 date-stamped articles on actuator are:\n\n- 24 Feb 2026 - news/tribute (Ferdinand Hofmann obituary).\n- 19 Jan 2026 - news (Switzerland re-joins EU fusion programmes).\n\nNeither is a job posting; both are general news.\n\nTakeaway: The \"posting published on or after 2026-01-01 that has closed\" subcategory is empty as of the research run. Recommendation: any closed posting captured after today should be checked against the SPC technical vacancies table and the EPFL recruiting portal to identify a close date.",
+      "linkedin_evidence": "### Profile State: Stale / Discovery-Limited\n\n| Field | Value | Source |\n|---|---|---|\n| LinkedIn URL | [linkedin_evidence[0]] [9] | LinkedIn |\n| Stated employer | Massachusetts Institute of Technology (MIT) | LinkedIn (stale) |\n| Stated title | Postdoctoral Associate | LinkedIn (stale) |\n| Stated dates | Apr 2012 - Present (autocalculated ~14 years 2 months) | LinkedIn (stale) |\n| Stated location | Cambridge, Massachusetts, United States | LinkedIn (stale) |\n| Connection count | 3 | LinkedIn |\n| Follower count | 5 | LinkedIn |\n| Posts visible | None captured in search snippets | Search tools |\n\nInterpretation: This LinkedIn profile is **not updated** to reflect his EPFL Associate Professor appointment from 2016/2024. It should not be cited as evidence of his current role or output. Recommendation: any LinkedIn-led discovery (e.g. posts about hiring) is unlikely to surface; rely on EPFL official channels and the @Swiss Plasma Center LinkedIn page ([linkedin_evidence[1]] [44]) for corroboration of any new posting.",
+      "confidence_and_caveats": "- **Identity (High confidence)**: Triple-supported by EPFL People Directory, ORCID (0000-0003-3926-1374), and IAEA OV paper attribution (Dec 2025). Email match exact.\n- **Promoted to Associate Professor in 2024 (High confidence)**: Stated by [confidence_and_caveats[0]] [7]. Mitigates risk of confusing him with the \"Assistant Professor\" label used in earlier EUROfusion news ([confidence_and_caveats[1]] [43]).\n- **Funding post-2024 (Low confidence on absence claim; medium on \"not in public sources\")**: I exhausted accessible public funder portals - SNSF data portal, SNSF announcement pages, EUROfusion project search, ORCID, ResearchGate. The absence is *publication* absence, not *funding* absence. He is a working Associate Professor whose research is funded combinatorially through SPC institutional/Mission budget, possibly access to EUROfusion Medium-term Plan resources after Switzerland's re-association on 1 Jan 2026 (EPFL news 19.01.26), and possibly successor grants not yet public.\n- **Hiring postings (Medium-to-low confidence on absence claim)**: Open positions connected specifically to Theiler as supervisor were not found on the public SPC jobs index. SPC publishes an always-on generic PhD application process but does not enumerate every supervisor's open slot. Searching LinkedIn public posts for Theiler yielded no usable posts (tool/snippet-level limits).\n- **Stale LinkedIn (High confidence)**: The `christian-theiler-a63a4376` profile has not been updated and may mislead a downstream consumer. Flag this caution explicitly.\n- **Research topic alignment (High confidence)**: Tokamak edge/boundary physics, detachment, alternative divertor configurations (negative triangularity, snowflake-class) - directly confirmed by [confidence_and_caveats[2]] [12] and the EPFL news article on triangularity-fuelled radiation ([confidence_and_caveats[3]] [53]).",
+      "comparative_analysis_christian_theiler_vs_sister_activities_at_epfl_spc": "To make the \"absence\" finding concrete, the following table compares Theiler's profile against two EPFL SPC counterpart activities that *do* have recent grants/postings publicly visible. This helps a downstream reader calibrate.\n\n| Dimension | Christian Theiler (Edge/TCV) | Ralf Mackenbach (SPC postdoc) | SPC JT-60SA diagnostic postdoc |\n|---|---|---|---|\n| Recent Rubicon Grant 2024 (NWO) | Not surfaced | Yes, 2-year grant from Sep 2024 (EPFL news 10.09.24) | n/a |\n| Open postdoc on SPC postdoc page | None tied to Theiler as supervisor | n/a | Yes - JT-60SA, supervisor Dr. S. Coda |\n| Hiring page contact for edge PhD track | Theiler not listed | n/a | n/a |\n| Public recognition 2024-2026 | Promotion to Associate Professor (2024), EPFL Best Teacher Award (2025) | Rubicon fellowship 2024 | n/a |\n\nTakeaway: Within SPC, comparable successes (Mackenbach's Rubicon, Coda's JT-60SA postdoc) are publicly declared; Theiler's post-2024 funding is not surfaced via the same channels. Implication: the gap is informative, not dispositive - Theiler likely benefits from robust mission/consortium funding tied to TCV operations rather than a competitively announceable PI grant. Recommendation: candidates seeking to join his group should not assume \"his lab has no money\"; instead, ask about availability via direct email.",
+      "synthesis": "**Mechanism**: Christian Theiler operates inside an institutional matrix where day-to-day TCV research is sustained by SPC's own budget and EUROfusion's Medium-term Plan envelope, with competitive top-up grants playing a smaller visible role since 2023. The visible signal - a 2024 promotion, the 2025 *Physical Review Letters* publication highlighted in EPFL news, and the 2025 IAEA OV talk where he represents \"the TCV team\" - all confirm he is actively research-PI of a major fusion programme. The grant-portal silence on his name since 2024 is most likely a publication/data-portal limitation rather than a true funding gap.\n\n**Cross-cutting implications**:\n1. **For hiring leads**: Open PhD/postdoc pipelines at SPC are framed generically; Theiler's openings (if any) live on the always-on SPC doctoral page rather than a named posting. Direct email to `christian.theiler@epfl.ch` is the discovery pathway.\n2. **For funding leads**: 2026 is a structurally important year - Switzerland's full EU/EUROfusion re-association (effective 1 January 2026) makes new EUROfusion Enabling Research / tasks and add-ons accessible to TCV-leading groups; if present, these will likely appear on the EUROfusion site later in 2026 ([synthesis[0]] [25]).\n3. **For monitoring**: Re-querying the SNSF data portal at `data.snf.ch/grants?q=Christian+Theiler&type=project` on a monthly cadence will catch any Project Funding or Starting Grant 2026 award before it propagates to EPFL actuator.\n\n**Risk to flag**: A downstream consumer reading this report should not infer that Theiler's lab is closed to hires or underfunded. The most defensible inference, from the public evidence captured here, is \"no post-2024 competitive grant OR named hiring posting tied explicitly to Christian Theiler is currently visible in the channels searched.\""
+    },
+    "type": "json",
+    "beta_fields": null,
+    "mcp_tool_calls": null,
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "executive_summary": {
+          "type": "string",
+          "title": "Executive Summary"
+        },
+        "identity": {
+          "type": "string",
+          "title": "Identity"
+        },
+        "recent_active_funding": {
+          "type": "string",
+          "title": "Recent / Active Funding"
+        },
+        "recent_and_open_positions": {
+          "type": "string",
+          "title": "Recent and Open Positions"
+        },
+        "linkedin_evidence": {
+          "type": "string",
+          "title": "LinkedIn Evidence"
+        },
+        "confidence_and_caveats": {
+          "type": "string",
+          "title": "Confidence and Caveats"
+        },
+        "comparative_analysis_christian_theiler_vs_sister_activities_at_epfl_spc": {
+          "type": "string",
+          "title": "Comparative Analysis - Christian Theiler vs Sister Activities at EPFL SPC"
+        },
+        "synthesis": {
+          "type": "string",
+          "title": "Synthesis"
+        }
+      },
+      "required": [
+        "executive_summary",
+        "identity",
+        "recent_active_funding",
+        "recent_and_open_positions",
+        "linkedin_evidence",
+        "confidence_and_caveats",
+        "comparative_analysis_christian_theiler_vs_sister_activities_at_epfl_spc",
+        "synthesis"
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+Attempt 1
+Polling task: trun_dd47611047ba4519b6829c6161835fb5
+Track progress: 
+https://platform.parallel.ai/play/deep-research/trun_dd47611047ba4519b6829c61618
+35fb5
+Will save to: Z:\University of Michigan Dropbox\Harsh 
+Desai\personal\career-ops\harsh\professor-research-2026\deep-research-results\le
+ad-030.json (+.md for text schema)
+
+Status: polling (1s)
+Status: running (1s)
+Status: running (46s)
+Status: running (1m31s)
+Status: running (2m17s)
+Status: completed (3m02s)
+
+Error: Refusing to overwrite existing output:
+  Z:\University of Michigan Dropbox\Harsh Desai\personal\career-ops\harsh\professor-research-2026\deep-research-results\lead-030.json (exists)
+Pass --force to overwrite.

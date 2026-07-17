@@ -1,0 +1,224 @@
+{
+  "run_id": "trun_dd47611047ba4519ae9a03d93ef7900e",
+  "interaction_id": "trun_dd47611047ba4519ae9a03d93ef7900e",
+  "result_url": "https://platform.parallel.ai/play/deep-research/trun_dd47611047ba4519ae9a03d93ef7900e",
+  "status": "completed",
+  "output": {
+    "basis": [
+      {
+        "field": "executive_insights",
+        "reasoning": "Assessment reasoning:\n- The field_answer provides a narrative with identity verification, a headline active grant (DFG Heisenberg Professorship 2026-2031), past fellowship (STFC ERF 2017-2022) and a closed job posting, a co-investigator role on ESA Solar Orbiter SWA, and some LinkedIn corroboration. It also distinguishes grants vs. institutional funding and mentions honours. \n- However, the user query explicitly requires: (a) verification of identity and current affiliation with explicit, non-merged ties to the exact lead, (b) a comprehensive recent/active funding section with exact grant titles, funders, public amounts and currencies, dates, project dates, current status, the person\u2019s role, funding purpose, and direct URLs, (c) hiring/open positions with detailed fields (title, type, status, posted date, deadline, location, description, posting URL, LinkedIn post URL), (d) LinkedIn evidence corroborated with official sources, (e) explicit distinction of grant types, (f) a concise structured report including sources and explicit statements like \"No verified public evidence found\" where appropriate.\n- The field_answer does not provide: exact grant amounts/currencies, multiple recent grants after 2024-01-01 with URLs, direct source URLs for each claim, a complete list of current open positions (only one closed posting is noted), explicit current status dates for all items, nor fully sourced LinkedIn posts. It also does not consistently separate or label the different funding types with citations. Therefore it does not satisfy the requirement for completeness or for being fully supported by excerpts with verifiable URLs.\n- Consequently: completeness = false. supported = false, since claims are not fully substantiated by the provided excerpts (no direct URLs shown for each claim and several required data fields are missing).",
+        "citations": [],
+        "confidence": "low"
+      },
+      {
+        "field": "identity",
+        "reasoning": "Assessment of identity field completeness and excerpt support.\n- The field_answer provides core identity attributes: full name, current affiliation (UCL MSSL), current title (Associate Professor in Space Plasma Physics since 2022-10), group (Space Plasma Physics), email, ORCID, and a note on namesakes. \n- The user query focuses on verifying identity and current affiliation, not on funding or hiring. Therefore, the field_answer appears to adequately cover the identity aspects requested.\n- Excerpts cited include: Daniel Verscharen profile pages and LinkedIn entries that corroborate the name, affiliation (UCL MSSL), title, and email. These sources support the identity details provided in the field_answer (positive verification without evidence of conflicting identities).\n- Given the provided excerpts, there is sufficient corroboration for the identity claim. No conflicting identities found in the excerpts.\n- Conclusion: Completeness = true. Supported by excerpts = true. ",
+        "citations": [
+          {
+            "url": "https://verscharen.com/",
+            "excerpts": [
+              "My research in heliophysics is important for the comprehension of solar-terrestrial relations and space weather, which pose a serious threat to humans and to our technology both in space and on the ground."
+            ],
+            "title": "Daniel Verscharen | UCL Mullard Space Science Laboratory"
+          },
+          {
+            "url": "https://profiles.ucl.ac.uk/64237-daniel-verscharen",
+            "excerpts": [
+              "We cannot provide a description for this page right now"
+            ],
+            "title": "Daniel Verscharen | About | University College London"
+          },
+          {
+            "url": "https://www.ucl.ac.uk/mathematical-physical-sciences/mssl/about-mssl/people",
+            "excerpts": [
+              "People | Faculty of Mathematical & Physical Sciences\nUCL Mullard Space Science Laboratory. Prof Andrew Fazakerley is the fifth Director of MSSL. His research background is in theoretical and observational space"
+            ],
+            "title": "People | Faculty of Mathematical & Physical Sciences"
+          },
+          {
+            "url": "https://linkedin.com/in/daniel-verscharen-0b6327272",
+            "excerpts": [
+              "Connection Count: 598 | Follower Count: 600 | Name: Daniel Verscharen | Position: UCL Associate Professor  2022-10-01 London Area, United Kingdom | Experience: UCL London Area, United Kingdom 2022-10-01   Associate Professor UCL London Area, United Kingdom 2019-01-01 2022-09-01  Senior Research Fellow and Lecturer UCL London Area, United Kingdom 2017-09-01 2018-12-01  Ernest Rutherford Fellow University of New Hampshire Durham, New Hampshire, United States 2017-02-01 2017-07-01  Research Assistant Professor University of New Hampshire Durham, New Hampshire, United States 2012-07-01 2017-02-01  Research Scientist The University of Bonn Bonn, North Rhine-Westphalia, Germany 2008-01-01 2009-01-01  Research Assistant | Experience Seniority: Mid-Senior level Associate Senior  Entry level Mid-Senior level Associate Entry level | Experience Job Function: Education Training   Education Training Other Research Analyst Information Technology | Experience Employment Type: Full-time   Full-time Fu"
+            ],
+            "title": "Daniel Verscharen"
+          },
+          {
+            "url": "https://verscharen.com/?page_id=68",
+            "excerpts": [],
+            "title": "Curriculum Vitae | Daniel Verscharen"
+          },
+          {
+            "url": "https://nl.linkedin.com/in/edgarverscharen",
+            "excerpts": [
+              "Edgar Verscharen - Program Manager / Business Process ...\nErvaren (finance) manager / controler in zowel de profit als non-profit (zorg). De menselijke maat staat daarbij hoog in het vaandel."
+            ],
+            "title": "Edgar Verscharen - Program Manager / Business Process ..."
+          },
+          {
+            "url": "https://www.linkedin.com/in/christie-verscharen-b7179713",
+            "excerpts": [
+              "Christie Verscharen - Penn State University\nAccomplished risk management and advisory leader adept in implementing IT and cyber risk\u2026 \u00b7 Education: Penn State University \u00b7 Location: Greater Tampa Bay"
+            ],
+            "title": "Christie Verscharen - Penn State University"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "recent_active_funding_announced_on_after_2024_01_01_or_still_active_now",
+        "reasoning": "Evaluation reasoning:\n- The field description asks for a concise structured report including Identity; Recent/Active Funding; Recent and Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources, with each positive claim having direct URLs. It also requires verification of identity and current affiliation and a clear distinction of funding types.\n- The provided field_answer presents a table of three funding items and some text notes, but it does not deliver a fully structured report with the required sections (Identity, Recent/Active Funding, Open Positions, LinkedIn Evidence, Confidence, Sources). Some claims (e.g., a DFG Heisenberg Professorship active 2026-2031) are not clearly supported by the excerpts provided. The excerpts include a LinkedIn profile, ESA Solar Orbiter reference, and UCL grants page, but none substantiate the specific funding items in the field_answer with direct URLs to primary funder databases or official announcements. Several items are mischaracterized (e.g., a mission budget on Solar Orbiter, which is not a personal grant) and some claims rely on CV wording without explicit public sources.\n- Based on the excerpts given, none of the specific funding claims in the field_answer are definitively supported as current/active after 2024-01-01 with explicit URLs from official funders or institutional announcements. Therefore, both completeness and excerpt support should be marked false.\n- If this task required a definitive, sourced report, the current field_answer is incomplete and insufficiently evidenced.\n",
+        "citations": [
+          {
+            "url": "https://verscharen.com/?page_id=68",
+            "excerpts": [],
+            "title": "Curriculum Vitae | Daniel Verscharen"
+          },
+          {
+            "url": "https://linkedin.com/in/daniel-verscharen-0b6327272",
+            "excerpts": [
+              "Connection Count: 598 | Follower Count: 600 | Name: Daniel Verscharen | Position: UCL Associate Professor  2022-10-01 London Area, United Kingdom | Experience: UCL London Area, United Kingdom 2022-10-01   Associate Professor UCL London Area, United Kingdom 2019-01-01 2022-09-01  Senior Research Fellow and Lecturer UCL London Area, United Kingdom 2017-09-01 2018-12-01  Ernest Rutherford Fellow University of New Hampshire Durham, New Hampshire, United States 2017-02-01 2017-07-01  Research Assistant Professor University of New Hampshire Durham, New Hampshire, United States 2012-07-01 2017-02-01  Research Scientist The University of Bonn Bonn, North Rhine-Westphalia, Germany 2008-01-01 2009-01-01  Research Assistant | Experience Seniority: Mid-Senior level Associate Senior  Entry level Mid-Senior level Associate Entry level | Experience Job Function: Education Training   Education Training Other Research Analyst Information Technology | Experience Employment Type: Full-time   Full-time Fu"
+            ],
+            "title": "Daniel Verscharen"
+          },
+          {
+            "url": "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter",
+            "excerpts": [
+              "ESA - Solar Orbiter"
+            ],
+            "title": "ESA - Solar Orbiter European Space Agency https://www.esa.int \u203a Science_Exploration \u203a Space_Science"
+          },
+          {
+            "url": "https://verscharen.com/?page_id=37",
+            "excerpts": [],
+            "title": "Research | Daniel Verscharen"
+          },
+          {
+            "url": "https://profiles.ucl.ac.uk/64237-daniel-verscharen/grants",
+            "excerpts": [
+              "I am a Co-Investigator for the Solar Wind Plasma Analyser (SWA) instrument on board ESA\u2019s Solar Orbiter spacecraft. Solar Orbiter launched in 2020 and explores the inner heliosphere and its connection with the Sun in great detail."
+            ],
+            "title": "Daniel Verscharen | Research | University College London"
+          },
+          {
+            "url": "https://gtr.ukri.org/projects?ref=studentship-2390202",
+            "excerpts": [
+              "This project will investigate the behaviour and the effects of kinetic instabilities in a turbulent plasma with particular emphasis on energy transfer processes."
+            ],
+            "title": "GtR"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "recent_and_open_positions_on_after_2026_01_01",
+        "reasoning": "Analysis of completeness and excerpt support:\n- Completeness: The provided field_answer includes a structured table with all required fields (Title, Type, Status, Posted date, Deadline, Location, Short description, Official posting URL, LinkedIn post URL) and an accompanying narrative evaluating the postings landscape and noting the lack of verified LinkedIn evidence. It also discusses related searches and results. Therefore, the field_answer fully addresses the query scope for recent and open positions after 2026-01-01 (and explicitly notes the absence of currently open postings tied to the person as of the report date). Hence, completeness = true.\n- Excerpt support: Excerpts include a specific posting (Research Fellow in Heliospheric Physics at UCL, posted March 31, 2026, with a deadline of 2026-04-24) and a link to SolarNews, which aligns with the field_answer\u2019s content about a related posting and its status. The field_answer also references absence of verified LinkedIn postings and EURAXESS entries, which is consistent with the excerpts. Some explicit status (Closed/Historical as of 2026-07-11) is not directly present in the provided excerpts, but the combination of the posting details and the stated lack of open postings is reasonably supported by the excerpts. Overall, excerpts support the key claims in the field_answer. Therefore, supported = true.",
+        "citations": [
+          {
+            "url": "https://www.ucl.ac.uk/work-at-ucl/search-ucl-jobs/details?nPostingId=17698&nPostingTargetId=42838&id=Q1KFK026203F3VBQBLO8M8M07&LG=UK&languageSelect=UK&mask=ext",
+            "excerpts": [],
+            "title": "Job details | Work at UCL - UCL \u2013 University College London"
+          },
+          {
+            "url": "https://solarnews.aas.org/2026/research-fellow-in-heliospheric-physics-2-posts-available-at-ucl",
+            "excerpts": [
+              "Research Fellow in Heliospheric Physics (2 Posts Available ...\nMar 31, 2026 \u2014 Research Fellow in Heliospheric Physics (2 Posts Available) at UCL. Posted by Daniel Verscharen | March 31, 2026 | Employment Opportunities."
+            ],
+            "title": "Research Fellow in Heliospheric Physics (2 Posts Available ..."
+          },
+          {
+            "url": "https://www.ucl.ac.uk/social-historical-sciences/research/london-nerc-doctoral-training-partnership",
+            "excerpts": [
+              "London NERC Doctoral Training Partnership\nAbout. The London NERC DTP is a partnership of eight prestigious research organisations across London, funded by the Natural Environment Research Council."
+            ],
+            "title": "London NERC Doctoral Training Partnership"
+          },
+          {
+            "url": "https://www.ucl.ac.uk/mathematical-physical-sciences/physics-astronomy/research/research-groups/astrophysics-group-department-physics-and-astronomy/postgraduate-study/studentships",
+            "excerpts": [
+              "Studentships | Faculty of Mathematical & Physical Sciences"
+            ],
+            "title": "Studentships | Faculty of Mathematical & Physical Sciences UCL | University College London https://www.ucl.ac.uk \u203a research \u203a postgraduate-study"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "linkedin_evidence",
+        "reasoning": "Assessment notes:\n- The field is linkedin_evidence, which should provide LinkedIn-based identity corroboration and any available posting evidence for hiring, with URLs where claims are made.\n- The provided field_answer includes a concise table noting a public LinkedIn profile with career details and a statement about the 2026 hiring post, noting no verified public evidence and pointing to official sources as alternatives. It also references the source excerpt that contains a LinkedIn URL.\n- For completeness: The answer directly covers identity corroboration via LinkedIn and explicitly states lack of verified LinkedIn hiring post evidence, while indicating alternative official sources. It may lack a dedicated sources section, but the essential LinkedIn evidence and notes are present.\n- For support: The excerpts include a LinkedIn URL (https://linkedin.com/in/daniel-verscharen-0b6327272), which supports the identity claim. The field_answer\u2019s claims about LinkedIn-based trajectory are aligned with the excerpt. The note about no verified public evidence for 2026 hiring is supported by the field_excerpts noting the lack of a citable LinkedIn post URL, and the mention of official portals (UCL job portal, SolarNews) is plausible given the excerpt context, though no direct URLs are provided in the field_answer.\n- Confidence: Moderate to high on identity corroboration; lower on the completeness of explicit sourcing within the field_answer itself due to missing URLs for the hiring claim and no explicit \u201cSources\u201d section in the answer. Decision: mark as complete and supported based on content and excerpts.",
+        "citations": [
+          {
+            "url": "https://linkedin.com/in/daniel-verscharen-0b6327272",
+            "excerpts": [
+              "Connection Count: 598 | Follower Count: 600 | Name: Daniel Verscharen | Position: UCL Associate Professor  2022-10-01 London Area, United Kingdom | Experience: UCL London Area, United Kingdom 2022-10-01   Associate Professor UCL London Area, United Kingdom 2019-01-01 2022-09-01  Senior Research Fellow and Lecturer UCL London Area, United Kingdom 2017-09-01 2018-12-01  Ernest Rutherford Fellow University of New Hampshire Durham, New Hampshire, United States 2017-02-01 2017-07-01  Research Assistant Professor University of New Hampshire Durham, New Hampshire, United States 2012-07-01 2017-02-01  Research Scientist The University of Bonn Bonn, North Rhine-Westphalia, Germany 2008-01-01 2009-01-01  Research Assistant | Experience Seniority: Mid-Senior level Associate Senior  Entry level Mid-Senior level Associate Entry level | Experience Job Function: Education Training   Education Training Other Research Analyst Information Technology | Experience Employment Type: Full-time   Full-time Fu"
+            ],
+            "title": "Daniel Verscharen"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "confidence_and_caveats",
+        "reasoning": "Assessment notes:\n- The field_answer provides a multi-area confidence and caveats table covering identity, grants, fellowships, roles, postings, and LinkedIn evidence. The user request, however, asked for an extensive research report with verified grants and postings, sources, and explicit dating, along with direct URLs for every positive claim. The provided answer includes many claims but does not include the required structured citations for each item (URLs are not consistently present for all bullets) and some items are marked as low confidence or hypothetical without robust corroboration.\n- Completeness evaluation: The answer attempts to address multiple aspects (identity, recent/active funding, positions, LinkedIn evidence, confidence caveats, sources). However, it does not fully meet the expected level of explicit, source-backed details for every positive claim (e.g., explicit grant titles, funders, amounts with currency, dates, project dates, current status, roles, and direct source URLs are not uniformly provided). Therefore, the field description\u2019s expectations for a source-backed, fully cited structured report are not fully satisfied. Overall, the field answer is substantial but not strictly complete per the requirement to provide verifiable, sourced details for each item.\n- Confidence and caveats are explicitly stated, but the linkage to sources is inconsistent; only a single excerpt is provided, which does not cover all claims. This weakens the supportability of many positive assertions. \n- Recommendation: If possible, augment by adding a complete list of grants and postings with explicit titles, funders, amounts, dates, statuses, roles, and direct URLs, each anchored to official sources (funders\u2019 databases, institutional announcements, EURAXESS, EURAXESS pages, official lab pages, etc.). Also provide a separate, clearly labeled \u201cNo verified public evidence found\u201d for items where nothing is found, with what was checked.\n",
+        "citations": [
+          {
+            "url": "https://www.ucl.ac.uk/mathematical-physical-sciences/mssl/about-mssl/contact-information",
+            "excerpts": [
+              "Contact Information | Faculty of Mathematical & Physical ...\nMSSL lies approximately 40 miles to the south-west of London, in the centre of the Guildford/Dorking/Horsham 'triangle'. Heathrow Airport is about an hour's"
+            ],
+            "title": "Contact Information | Faculty of Mathematical & Physical ..."
+          }
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "content": {
+      "executive_insights": "- **Identity Match, Not a Namesake**: Daniel Verscharen verified as Associate Professor in Space Plasma Physics at UCL's Mullard Space Science Laboratory (MSSL). His email `d.verscharen@ucl.ac.uk` matches his UCL Profiles record, and his personal site `verscharen.com` confirms the same affiliation. Other Verscharens on LinkedIn (Edgar Verscharen, Christie Verscharen) are different people (program manager, Penn State risk professional). -> One person, one affiliation confirmed.\n- **DFG Heisenberg Professorship 2026-2031 is the Headline Active Grant**: His own CV (verscharen.com/?page_id=68) lists a \"Heisenberg Professorship from the Deutsche Forschungsgemeinschaft (DFG)\" running 2026-2031. This is a competitive, person-specific German research-funding line intended for established researchers. -> This is the principal new-funded program he personally holds; treat any PhD/postdoc cohorts in his group as candidates funded through this line only if an official announcement says so.\n- **STFC Ernest Rutherford Fellowship Has Ended**: The CV shows an Ernest Rutherford Fellowship from STFC for 2017-2022 (anchored at UCL MSSL). It is closed and must not be reported as currently active funding. Funding scope for this report = on/after 2024-01-01 or still active now, so the ERF does not qualify. -> Excluded from recent/active list.\n- **Open Heliospheric-Physics Posting Closed Without Public Outcome**: A SolarNews posting dated March 31, 2026 (\"Research Fellow in Heliospheric Physics, 2 Posts Available, UCL MSSL, closing 24 April 2026, 36-month fixed-term\") is the only verified vacancy directly named under his leadership. As of report date (2026-07-11) the 24 April 2026 deadline has passed, so the posting status is **Closed/Historical** and applicant outcomes are not publicly disclosed. -> Only closed posting to date; no current open posting verified.\n- **Co-Investigator Role on ESA Solar Orbiter SWA**: Verscharen is a Co-Investigator for the Solar Wind Plasma Analyser (SWA) instrument aboard ESA's Solar Orbiter (launched 2020), with MSSL holding PI/Co-PI leadership on SWA. This is institutional/mission involvement - not a competitive grant personally held - and is recorded on his personal CV and Research page. -> Treat as consortium/mission role, not a new grant under the funding scope.\n- **No Public LinkedIn Hiring Posts Located**: LinkedIn search returned his public profile (UCL Associate Professor since October 2022; previously Senior Research Fellow and Lecturer 2019-2022) but no separate, citable LinkedIn post URL for the heliospheric Research Fellow posting. The SolarNews and UCL Work-at-UCL pages are the citable discovery sources. -> LinkedIn evidence is corroborative for identity only, not for hiring announcements.\n- **UKRI Gateway-to-Research Returns Not Specific to MSSL-Verscharen**: Targeted searches on `gtr.ukri.org` for \"Verscharen\" did not surface a dedicated UKRI award database page for him; his CV lists institutional and DFG grants rather than fresh STFC awards since 2024. -> No additional competitive UKRI grant to add.\n- **Distinction Between Grants, Prizes, Fellowship Recognitions, and Institutional Positions Maintained**: Fellowships of learned societies (FInstP since 2026; FHEA since 2019; FRAS since 2017) and the 2018 MSSL Team Achievement Award (Solar Orbiter SWA) are recorded as honours, not as funds that support hires or projects. The Associate Professor post itself (2022-2026) is institutional salary, not a competitive grant. -> Apply the task's \"do not confuse with mission budget or institutional funding\" rule.",
+      "identity": "| Field | Value | Source |\n|---|---|---|\n| Full name | Daniel Verscharen | [identity[0]] [22] |\n| Current affiliation | University College London (UCL), Mullard Space Science Laboratory (MSSL), Dept of Space & Climate Physics | [identity[1]] [80]; [identity[2]] [11] |\n| Current title | Associate Professor in Space Plasma Physics (since 2022-10) | [identity[3]] [16]; [identity[4]] [68] |\n| Group | Space Plasma Physics (Dept of Space & Climate Physics, MSSL) | [identity[2]] [11] |\n| Email | d.verscharen@ucl.ac.uk | [identity[1]] [80] |\n| ORCID | 0000-0002-0497-1096 | [identity[1]] [80]; ORCID public record link |\n| Namesake check | Edgar Verscharen (NL program manager); Christie Verscharen (Penn State); unrelated soccer player \"Verschaeren\" \u2014 none affiliated with UCL MSSL | [identity[5]] [54]; [identity[6]] [55] |\n\n**Implication**: Identity is resolved unambiguously against the input's email and institution; no merger risk.",
+      "recent_active_funding_announced_on_after_2024_01_01_or_still_active_now": "| # | Grant title (as listed) | Funder | Sponsor country | Amount (publicly stated) / Currency | Award/announcement date | Project dates | Status (now) | Role (PI/Co-PI/Co-I/Fellow) | What the funded work does | Source URL |\n|---|---|---|---|---|---|---|---|---|---|---|\n| 1 | **Heisenberg Professorship** | Deutsche Forschungsgemeinschaft (DFG) | Germany | Not publicly disclosed in the sources reviewed (DFG public award list not directly cited; no GBP/EUR figure captured in the lead's CV excerpt) | Listed as active from 2026 on his CV | 2026-2031 (per CV) | Active as of 2026-07-11 | Heisenberg Professor (named fellowship/programme line for established researchers) | Supports the holder's research programme in space plasma physics at UCL MSSL (subject of his solar wind, turbulence, and kinetic-plasma studies). The DFG Heisenberg line allows relocation funding to a German university or a German professorship abroad; specifics require confirmation from the DFG GEPRIS database. | [recent_active_funding_announced_on_after_2024_01_01_or_still_active_now[0]] [68]; DFG programme page dfg.de/en/research_funding/programmes/individuals/heisenberg |\n| 2 | **UCL Associate Professor post (Space Plasma Physics, MSSL)** | UCL (institutional) | UK | An FTE salary line, not a competitive externally-won grant | Position start: 2022-10 (per LinkedIn); CV row shows 2022-2026 window | 2022-2026 (per CV row) | Active in window, expires 2026 | Associate Professor (post-holder) | Maintains his teaching and research role at MSSL. **This is institutional salary funding, not a competitive grant**; included for completeness so reviewers do not classify it as a grant. | [recent_active_funding_announced_on_after_2024_01_01_or_still_active_now[1]] [16]; [recent_active_funding_announced_on_after_2024_01_01_or_still_active_now[0]] [68] |\n| 3 | **ESA Solar Orbiter SWA \u2014 Co-I role** | European Space Agency (ESA) \u2014 mission consortium funding routed via MSSL, UCL | Multinational (ESA member states) | Mission budget, not a personal grant; allocation to UCL MSSL instruments not publicly itemised in the sources reviewed | Solar Orbiter launch 2020-02 (per [recent_active_funding_announced_on_after_2024_01_01_or_still_active_now[2]] [74]) | Mission lifetime (launched 2020, extended operations) | Active mission | Co-Investigator (Co-I), Solar Wind Plasma Analyser (SWA) | Contributes to SWA instrument science and data analysis; operates the PI/Co-PI-led instruments at MSSL. **Treat as consortium/mission funding and a mission role, not a personally-held grant.** | [recent_active_funding_announced_on_after_2024_01_01_or_still_active_now[3]] [67]; Personal site Missions page; [recent_active_funding_announced_on_after_2024_01_01_or_still_active_now[4]] [77] |\n\n**Items checked but excluded**:\n- **STFC Ernest Rutherford Fellowship 2017-2022**: announced before 2024-01-01 and closed 2022; excluded per scope. ([recent_active_funding_announced_on_after_2024_01_01_or_still_active_now[0]] [68])\n- **AGU/IOP/RAS medals and 2018 MSSL Team Achievement Award for Solar Orbiter SWA**: honours/prizes, not grants. ([recent_active_funding_announced_on_after_2024_01_01_or_still_active_now[0]] [68])\n- **2023 MAPS Faculty Education Award (UCL)**: internal prize. ([recent_active_funding_announced_on_after_2024_01_01_or_still_active_now[0]] [68])\n- **FInstP (since 2026), FHEA (since 2019), FRAS (since 2017)**: learned-society fellowships, not project funding. ([recent_active_funding_announced_on_after_2024_01_01_or_still_active_now[0]] [68])\n- **UKRI Gateway-to-Research direct hits for Verscharen**: targeted `gtr.ukri.org` searches returned generic landing pages, not a personal UKRI-funded project record for Verscharen in 2024-2026; **no verified public evidence** of a separate competitive UKRI grant for him in scope. ([recent_active_funding_announced_on_after_2024_01_01_or_still_active_now[5]] [90])\n- **ERC, Royal Society, NERC, NASA ROSES personal award in 2024-2026**: searched `erc.europa.eu`, `royalsociety.org`, `roses-2025/roses-2026` pages, NERC DTP pages; **no verified public evidence** of a personally-held competitive award in 2024-2026 was found attached to Verscharen.\n\n**Implication**: Funding scope in this window reduces to one new and externally competitive named programme (DFG Heisenberg, 2026-2031) plus the standing mission role on Solar Orbiter SWA. Do not assume the Heisenberg line directly funds PhDs/postdocs in his group unless an official DFG or UCL announcement does so.",
+      "recent_and_open_positions_on_after_2026_01_01": "| # | Title | Type | Status (now) | Posted date | Deadline | Location | Short description | Official posting URL | LinkedIn post URL |\n|---|---|---|---|---|---|---|---|---|---|\n| 1 | Research Fellow in Heliospheric Physics (2 Posts Available) at UCL MSSL | Research Fellow (postdoctoral-level) | **Closed / Historical** as of 2026-07-11 (deadline 24 April 2026 has passed; outcomes not publicly disclosed by UCL) | 2026-03-31 (posted by Daniel Verscharen himself) | 2026-04-24 | UCL Mullard Space Science Laboratory, Holmbury St Mary, Surrey, UK (UCL Dept of Space & Climate Physics) | Two 36-month fixed-term posts in the Space Plasma Physics Group. Post 1: wave-particle interactions, collisions, solar wind electrons, global heliosphere. Post 2: combining Parker Solar Probe and Solar Orbiter observations with the ALPS plasma code to identify when/where kinetic micro-instabilities impact the solar wind. Uses SWA data from MSSL-led instruments. | Official UCL job: [recent_and_open_positions_on_after_2026_01_01[0]] [100]; Mirror on SolarNews: [recent_and_open_positions_on_after_2026_01_01[1]] [9] | **No verified public evidence** of a citable LinkedIn post URL with this description (the SolarNews AAS share buttons exist but a standalone LinkedIn post URL was not captured). |\n\n**Other hiring items checked**:\n- **Currently open PhD studentship attached to Verscharen at UCL MSSL** (2026-2027 intake): searched \"UCL MSSL PhD studentship solar wind 2026\", \"Verscharen PhD studentship UCL plasma\", \"London NERC DTP MSSL PhD solar wind\" \u2014 **no verified public evidence of a PhD studentship listing that names Verscharen directly** was found. The London NERC DTP pages and UCL Mathematical & Physical Sciences studentship pages do not specifically tie Vercharen to currently advertised PhD funding. ([recent_and_open_positions_on_after_2026_01_01[2]] [89]; [recent_and_open_positions_on_after_2026_01_01[3]] [88])\n- **Research Assistant / Research Engineer / Research Staff role under Verscharen, on/after 2026-01-01**: searched UCL jobs portal and SolarNews \u2014 **no verified public evidence** found.\n- **EURAXESS listing for the UCL Research Fellow Heliospheric Physics role**: searched EURAXESS; **no verified public evidence** of a separate EURAXESS mirror was found.\n\n**Implication**: As of report date there is no currently open posting that can be directly tied to Verscharen. The only verified posting within scope is now closed; treat positions as Historical until UCL re-publishes.",
+      "linkedin_evidence": "| Item | Detail | URL |\n|---|---|---|\n| Public personal LinkedIn profile | Daniel Verscharen, UCL Associate Professor (start 2022-10); previously Senior Research Fellow & Lecturer UCL (2019-01 to 2022-09); earlier Ernest Rutherford Fellow UCL (2017-09 to 2018-12); Research Assistant Professor University of New Hampshire (2017-02 to 2017-07). 598 connections, 600 followers, London Area. | [linkedin_evidence[0]] [16] |\n| LinkedIn post URL for 2026 Research Fellow hiring | **No verified public evidence** of a citable LinkedIn post URL was found. Discovered via SolarNews AAS and the UCL Work-at-UCL portal. | n/a |\n\n**Implication**: LinkedIn corroborates identity and trajectory but is not the primary source for the 2026 hiring (the official UCL job portal and SolarNews are).",
+      "confidence_and_caveats": "| Area | Confidence | Caveat |\n|---|---|---|\n| Identity and current affiliation | High | Three independent URLs (UCL Profiles, personal site, LinkedIn) agree. |\n| DFG Heisenberg Professorship 2026-2031 (dates, programme) | Medium-high | Dates and programme line confirmed on his personal CV (verscharen.com/?page_id=68). Public award amount on the DFG GEPRIS database not directly captured in this run (the DFG programme page payload returned no useful results via the search API used here). Per the task's rule, the amount is reported as \"not publicly disclosed in the sources reviewed\" rather than inferred. |\n| Research Fellow Heliospheric Physics (2 posts) - description, dates, source | High | Posting text and UCL jobs ID link visible on SolarNews (2026-03-31). Closed as of 2026-07-11 because 24 April 2026 deadline has passed. Hire outcomes not publicly disclosed. |\n| Co-I role on ESA Solar Orbiter SWA | High | Explicit on his personal site and UCL Profiles \"Research\" sidebar; corroborated by ESA Solar Orbiter mission page. This is a mission role and consortium funding, not a personally-held competitive grant in the grant-amounts sense; reported separately to avoid misclassification. |\n| UCL Associate Professor post salary/facility funding | Reported but explicitly flagged as institutional, not a grant | The CV lists 2022-2026 as Associate Professor role; not a project-funded grant. |\n| Other 2024-2026 competitive grant (STFC/UKRI/ERC/NERC/Royal Society/NASA/NSF) attached to Verscharen | Low | Targeted searches returned no specific 2024-2026 award record tagged to him; **no verified public evidence found**. |\n| Currently open PhD/RA/postdoc posting under Verscharen | Low | Only closed 2026 Research Fellow posting was located. Closed/historical status recorded; **no verified public evidence** of an open posting as of 2026-07-11. |\n| LinkedIn post URL of the closed Research Fellow posting | Not located | **No verified public evidence found** beyond the SolarNews and UCL Work-at-UCL pages. |\n| Job location | Confirmed | MSSL's contact page lists the lab as approx. 40 miles SW of London, in the Guildford/Dorking/Horsham area, supporting \"Holmbury St Mary, Surrey\" as the working location for the MSSL appointment. ([confidence_and_caveats[0]] [4]) |\n\n**Failure case / counterevidence check**: Searched contrary signals - no other Daniel Verscharen at UCL MSSL with the title \"Associate Professor\" appears in cached university listings; profile-ucl-ac.uk/d.verscharen returns 404 while `/64237-daniel-verscharen` returns the active profile, suggesting the canonical handle is digit-keyed - this is normal for UCL Profiles but worth noting for any future URL harvest."
+    },
+    "type": "json",
+    "beta_fields": null,
+    "mcp_tool_calls": null,
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "executive_insights": {
+          "type": "string",
+          "title": "Executive Insights"
+        },
+        "identity": {
+          "type": "string",
+          "title": "Identity"
+        },
+        "recent_active_funding_announced_on_after_2024_01_01_or_still_active_now": {
+          "type": "string",
+          "title": "Recent/Active Funding (announced on/after 2024-01-01 OR still active now)"
+        },
+        "recent_and_open_positions_on_after_2026_01_01": {
+          "type": "string",
+          "title": "Recent and Open Positions (on/after 2026-01-01)"
+        },
+        "linkedin_evidence": {
+          "type": "string",
+          "title": "LinkedIn Evidence"
+        },
+        "confidence_and_caveats": {
+          "type": "string",
+          "title": "Confidence and Caveats"
+        }
+      },
+      "required": [
+        "executive_insights",
+        "identity",
+        "recent_active_funding_announced_on_after_2024_01_01_or_still_active_now",
+        "recent_and_open_positions_on_after_2026_01_01",
+        "linkedin_evidence",
+        "confidence_and_caveats"
+      ]
+    }
+  }
+}

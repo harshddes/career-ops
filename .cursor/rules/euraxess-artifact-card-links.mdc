@@ -1,0 +1,61 @@
+---
+description: EURAXESS artifacts must land on the same Live Feed card as download links (research + packs)
+alwaysApply: true
+---
+
+# EURAXESS Artifact Attachment (ALWAYS)
+
+When you create **any** artifact for a EURAXESS posting (research report, resume, cover letter, email draft, or other pack file), the work is **incomplete** until that posting’s card on the EURAXESS Live Feed shows download links. Do not leave files only on disk. Do not wait for the user to say “add the links.”
+
+## Where files go
+
+| Artifact | Path |
+|----------|------|
+| Research report | `reports/euraxess-{company-role-slug}-{YYYY-MM-DD}.md` |
+| Resume / cover / email | `output/{company-slug}/...` (company subfolder rule still applies) |
+
+## Wire the same EURAXESS card (mandatory, same turn)
+
+1. Find the opportunity in `data/euraxess-opportunities.json` by EURAXESS id, URL (`/jobs/{id}`), or title + institution.
+2. Patch it with `patchEuraxessOpportunity()` from `WEB-TRACKER/lib/euraxess/opportunity-store.mjs`.
+3. Call `syncEuraxessOpportunitiesToDashboard()`.
+
+```js
+import {
+  patchEuraxessOpportunity,
+  syncEuraxessOpportunitiesToDashboard,
+} from './WEB-TRACKER/lib/euraxess/opportunity-store.mjs';
+
+patchEuraxessOpportunity('euraxess-fusion-{jobId}', {
+  research_report: 'reports/euraxess-....md',           // if research was written
+  worker_status: 'research_ready',                      // or pack_ready / application_pack_ready
+  resources: {
+    report_md: 'reports/euraxess-....md',
+    resume_tex: 'output/{company-slug}/cv-....tex',
+    resume_pdf: 'output/{company-slug}/cv-....pdf',
+    cover_letter_pdf: 'output/{company-slug}/cover-letter-....pdf',
+    email_draft: 'output/{company-slug}/application-email-....md',
+  },
+  artifacts: {
+    research_report: 'reports/euraxess-....md',
+    resume_pdf: 'output/{company-slug}/cv-....pdf',
+    cover_letter_pdf: 'output/{company-slug}/cover-letter-....pdf',
+  },
+});
+
+syncEuraxessOpportunitiesToDashboard();
+```
+
+Only include keys for files that actually exist. Paths are repo-relative (`reports/...`, `output/...`).
+
+## Also attach Jobs to Consider when a pack exists
+
+If you generated resume/cover/email, also upsert/patch Jobs to Consider `job.resources` and `syncConsiderJobsToDashboard()` (see `modes/application-artifacts.md`). EURAXESS card links are still required.
+
+## Done only when
+
+1. Files exist on disk, **and**
+2. The EURAXESS opportunity has `resources` / `research_report` set, **and**
+3. Dashboard sync ran — card **Artifacts:** row (and Ready artifacts strip) show clickable downloads after refresh.
+
+Never tell the user to manually hunt `output/` or `reports/` for EURAXESS work.

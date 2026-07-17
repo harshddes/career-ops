@@ -1,0 +1,99 @@
+{
+  "scanned": 20,
+  "added": 10,
+  "roles": [
+    {
+      "id": "1573331",
+      "title": "Hardware Development Engineer",
+      "url": "https://reflex-aerospace-gmbh.jobs.personio.de/job/1573331?language=en",
+      "location": "Berlin, DE",
+      "score": "4.3/5",
+      "fit_summary": "Hardware development for satellite bus — direct hardware path.",
+      "notes": "Reflex Aerospace Personio (Germany). EU work permit required."
+    },
+    {
+      "id": "2321273",
+      "title": "Power System Engineer",
+      "url": "https://reflex-aerospace-gmbh.jobs.personio.de/job/2321273?language=en",
+      "location": "Berlin, DE",
+      "score": "4.1/5",
+      "fit_summary": "Spacecraft power systems — electrical/hardware.",
+      "notes": "Reflex Aerospace Personio (Germany). EU work permit required."
+    },
+    {
+      "id": "1308990",
+      "title": "Satellite Systems Engineer / System Architect",
+      "url": "https://reflex-aerospace-gmbh.jobs.personio.de/job/1308990?language=en",
+      "location": "Berlin, DE",
+      "score": "4.2/5",
+      "fit_summary": "Satellite systems architecture — payload/systems adjacency.",
+      "notes": "Reflex Aerospace Personio (Germany). EU work permit required."
+    },
+    {
+      "id": "2700504",
+      "title": "Senior AIT Engineer",
+      "url": "https://reflex-aerospace-gmbh.jobs.personio.de/job/2700504?language=en",
+      "location": "Ottobrunn, DE",
+      "score": "4.4/5",
+      "fit_summary": "Assembly/integration/test — hands-on instrumentation/test-rig style.",
+      "notes": "Reflex Aerospace Personio (Germany). EU work permit required."
+    },
+    {
+      "id": "2649438",
+      "title": "Systems Integration Engineer - Berlin",
+      "url": "https://reflex-aerospace-gmbh.jobs.personio.de/job/2649438?language=en",
+      "location": "Berlin, DE",
+      "score": "4.3/5",
+      "fit_summary": "Systems integration — hardware bring-up and verification.",
+      "notes": "Reflex Aerospace Personio (Germany). EU work permit required."
+    },
+    {
+      "id": "2649451",
+      "title": "Systems Integration Engineer - Ottobrunn",
+      "url": "https://reflex-aerospace-gmbh.jobs.personio.de/job/2649451?language=en",
+      "location": "Ottobrunn, DE",
+      "score": "4.3/5",
+      "fit_summary": "Systems integration at Ottobrunn — AIT adjacency.",
+      "notes": "Reflex Aerospace Personio (Germany). EU work permit required."
+    },
+    {
+      "id": "2562452",
+      "title": "Space Harness Engineer",
+      "url": "https://reflex-aerospace-gmbh.jobs.personio.de/job/2562452?language=en",
+      "location": "Berlin, DE",
+      "score": "3.9/5",
+      "fit_summary": "Harness design for spacecraft — hardware manufacturing path.",
+      "notes": "Reflex Aerospace Personio (Germany). EU work permit required."
+    },
+    {
+      "id": "2588277",
+      "title": "Structure Design Engineer - Berlin",
+      "url": "https://reflex-aerospace-gmbh.jobs.personio.de/job/2588277?language=en",
+      "location": "Berlin, DE",
+      "score": "3.8/5",
+      "fit_summary": "Structures for satellite bus — adjacent manufacturing/hardware.",
+      "notes": "Reflex Aerospace Personio (Germany). EU work permit required."
+    },
+    {
+      "id": "2504276",
+      "title": "AOCS/GNC Engineer - Munich",
+      "url": "https://reflex-aerospace-gmbh.jobs.personio.de/job/2504276?language=en",
+      "location": "München, DE",
+      "score": "3.7/5",
+      "fit_summary": "AOCS/GNC — more controls/software than instrumentation; stretch.",
+      "recommendation": "Stretch — GNC-heavy daily work",
+      "notes": "Reflex Aerospace Personio (Germany). EU work permit required."
+    },
+    {
+      "id": "2679152",
+      "title": "Senior AOCS/GNC Engineer - Berlin",
+      "url": "https://reflex-aerospace-gmbh.jobs.personio.de/job/2679152?language=en",
+      "location": "Berlin, DE",
+      "score": "3.6/5",
+      "fit_summary": "Senior GNC — stretch vs instrumentation target.",
+      "recommendation": "Stretch — review before apply",
+      "notes": "Reflex Aerospace Personio (Germany). EU work permit required."
+    }
+  ],
+  "careers_url": "https://reflex-aerospace-gmbh.jobs.personio.de/?language=en"
+}

@@ -1,0 +1,250 @@
+{
+  "run_id": "trun_dd47611047ba4519a522460851e18e02",
+  "interaction_id": "trun_dd47611047ba4519a522460851e18e02",
+  "result_url": "https://platform.parallel.ai/play/deep-research/trun_dd47611047ba4519a522460851e18e02",
+  "status": "completed",
+  "output": {
+    "basis": [
+      {
+        "field": "executive_insights",
+        "reasoning": "Reasoning: The field_answer provides a structured set of claims about identity, current roles, hiring openings, funding (TRIF grant), and LinkedIn evidence. However, the user query asks for a comprehensive, sourced report covering: 1) verified identity and current affiliation (yes/no with explicit disambiguation), 2) Recent/Active Funding with grants announced on or after 2024-01-01 (titles, funder, amounts, dates, project dates, status, roles, funding purpose, URLs), and a clear distinction of grant types, 3) Recent and Open/Closed hiring postings post-2026-01-01 with full posting details and evidence, 4) LinkedIn evidence with discovery corroboration, 5) Confidence and caveats, and 6) explicit sources. The field_answer mentions some items (identity, ASU NewSpace leadership, current openings claim from neutrons.space, TRIF grant details, mission roles, lack of 2024-2026 competitive grants, SESE postings not tied to Hardgrove, LinkedIn profile) but it fails to: provide a complete set of post-2024 funding details (no precise list of all grants after 2024-01-01 with exact titles, funders, amounts in currency, dates, project dates, statuses, roles, and URLs), clearly separate funding types beyond TRIF, comprehensively confirm or deny all open/post openings with dates, locations, descriptions and URLs, and provide a fully sourced, verifiable coverage. There is no excerpts list provided to verify the claims, so supportability is uncertain. Given these gaps, the answer is not complete and lacks explicit sourcing for many assertions.",
+        "citations": [],
+        "confidence": "low"
+      },
+      {
+        "field": "identity",
+        "reasoning": "Assessment rationale:\n- The field_description asks for a comprehensive identity snapshot (name, current title/affiliation, emails, joined date, research areas, degree, namesake verification), and also asks to capture recent funding and hiring info with sources, plus LinkedIn evidence and confidence notes. The provided field_answer covers name, current title/affiliation (ASU SESE, ASU NewSpace roles), email(s), joined date, research areas, doctorate, and a namesake check assertion with multiple confirmations across sources. It also notes notable news and a NASA LunaH-Map PI role. While it primarily focuses on identity, it also hints at current roles and some context suitable for identity verification. The funding and hiring sections requested in the user query are not present in the field_answer. Therefore, for the identity field, the answer appears complete; for the full query (funding and hiring), the answer is incomplete. Given the field description to verify identity and affiliations, the provided answer is largely complete for identity but incomplete regarding funding and hiring details.\n\nExcerpts indicate multiple sources confirming identity and roles (ASU profile, Planetary Neutron Spectroscopy Group, ASU News, etc.), which supports the identity claims in the field_answer. No conflicting namesakes were found in the excerpts. Therefore, completeness for identity content is true, and support from excerpts is true for the identity aspects present. The absence of funding/hiring details means the field as a whole is not fully complete per the user\u2019s multi-part request.",
+        "citations": [
+          {
+            "url": "https://search.asu.edu/profile/698228/cv",
+            "excerpts": [
+              "[PDF] CRAIG J. HARDGROVE - ASU Search\nDirector of Projects: ASU NewSpace, 2016 to present. ASU Now Article Interview \u201cASU-led LunaH-Map spacecraft ready for final testing\u201d"
+            ],
+            "title": "[PDF] CRAIG J. HARDGROVE - ASU Search"
+          },
+          {
+            "url": "https://search.asu.edu/profile/698228",
+            "excerpts": [
+              "Craig Hardgrove | ASU Search\nCraig Hardgrove joined ASU in 2015. He is a planetary geologist and nuclear instrument developer. ASU NewSpace Initiative director of research, Correspondent"
+            ],
+            "title": "Craig Hardgrove | ASU Search"
+          },
+          {
+            "url": "https://neutrons.space/",
+            "excerpts": [
+              "Planetary Neutron Spectroscopy Group \u00b7 ASU\nCraig Hardgrove, PhD \u2014 Associate Professor ... Current roles: Associate Professor (ASU SESE), Director of Projects (ASU NewSpace), Barrett Honors Faculty. Past"
+            ],
+            "title": "Planetary Neutron Spectroscopy Group \u00b7 ASU"
+          },
+          {
+            "url": "https://newspace.asu.edu/about",
+            "excerpts": [
+              "About Newspace\nCraig Hardgrove, Ph.D . Director of Projects, NewSpace Initiative | Assistant Professor, School of Earth and Space Exploration. Craig is a planetary scientist"
+            ],
+            "title": "About Newspace"
+          },
+          {
+            "url": "https://www.newswise.com/users/expert/Craig-Hardgrove-10046924",
+            "excerpts": [
+              "Craig Hardgrove | Arizona State University (ASU) | Space Exploration\nCraig Hardgrove's research focuses on thermal infrared and nuclear remote sensing of the moon and Mars. He is the principal investigator of the LunaH-M."
+            ],
+            "title": "Craig Hardgrove | Arizona State University (ASU) | Space Exploration"
+          },
+          {
+            "url": "https://lsic.jhuapl.edu/Events/Agenda/index.php?id=63600027",
+            "excerpts": [
+              "Lunar Surface Innovation Consortium: Agenda\nDr. Craig Hardgrove is an Assistant Professor in the School of Earth and Space Exploration at ASU. He earned his Doctoral degree in Geology from the University"
+            ],
+            "title": "Lunar Surface Innovation Consortium: Agenda"
+          },
+          {
+            "url": "https://news.asu.edu/20240724-science-and-technology-55-years-lunar-exploration-continued-sese-professor",
+            "excerpts": [
+              "Craig Hardgrove, associate professor at ASU\u2019s School of Earth and Space Exploration (SESE), recently celebrated the completion of the LunaH-Map mission to space. \u201cIt's very energizing,\u201d said Hardgrove, principal investigator for the mission."
+            ],
+            "title": "55 years of lunar exploration continued by SESE professor"
+          },
+          {
+            "url": "https://www.planetary.org/profiles/craig-hardgrove",
+            "excerpts": [
+              "Craig Hardgrove | The Planetary Society\nCraig is also the head of research at Arizona State's NewSpace Initiative, looking for new ways to partner the academic strengths in planetary science"
+            ],
+            "title": "Craig Hardgrove | The Planetary Society"
+          },
+          {
+            "url": "https://www.nasa.gov/wp-content/uploads/2017/11/craig_hardgrove-_lmap_smallsat_tim_2017.pdf",
+            "excerpts": [
+              "LunaH-Map Mission Overview NASA SMD SIMPLEx mission led by ASU: Craig Hardgrove (PI, Planetary Geology); AZ Space Technology (Engineering, spacecraft, I&T); ASU (Operations, science) 6U+ CubeSat to launch on SLS EM-1"
+            ],
+            "title": "Craig Hardgrove- LMAP_SmallSat_TIM_2017 - NASA"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "recent_and_active_funding_2024_01_01_onward_plus_still_active_items",
+        "reasoning": "Step 1: Assess completeness of the field answer for funding since the field is named recent_and_active_funding_2024_01_01_onward_plus_still_active_items. The field_answer provides a structured table of multiple funding items related to Craig Hardgrove, including institutional funding (TRIF), mission/spaceflight related funding (LunaH-Map, MSL Curiosity, Mars 2020, BepiColombo, Lunar-VISE, LHANS), with columns for grant/award title, funder, amount (where publicly known), award/announcement date, project dates, status, Hardgrove's role, and project description, plus a source. It also includes narrative footnotes clarifying the nature of various funds (e.g., TRIF is institutional, some items lack publicly listed dollar figures or 2024-2026-specific details). It explicitly notes where evidence is not publicly listed or not verified, and distinguishes categories (institutional funding vs competitive grants vs mission budgets). Given the field description\u2019s demand to record title, funder, amount, dates, status, role, project description, and source URLs for grants/awards announced on or after 2024-01-01 and still active, the table covers those requirements to a reasonable extent and includes caveats where data are not publicly available. Therefore, completeness can be considered true for the funding-focused field, as it provides the requested structured information, even when some values are not publicly listed. It does not attempt to answer hiring or LinkedIn evidence (outside the scope of this field), so no contradiction there. Potential caveat: if the user expects every item to have a verified exact amount and explicit public URL for every 2024-2026 item, that is not always available publicly; the answer appropriately flags those gaps.",
+        "citations": [
+          {
+            "url": "https://www.azregents.edu/sites/default/files/reports/2024-Technology-Research-Initiative-Fund-Annual-Report.pdf",
+            "excerpts": [
+              "[PDF] 2024 Technology and Research Initiative Fund Annual Report\nSep 1, 2024 \u00b7 ASU NewSpace is supporting the growth of the Arizona space industry. A $300K award for FY24 support of Craig Hardgrove's Lunar-VISE instrument"
+            ],
+            "title": "[PDF] 2024 Technology and Research Initiative Fund Annual Report"
+          },
+          {
+            "url": "https://www.newswise.com/users/expert/Craig-Hardgrove-10046924",
+            "excerpts": [
+              "Craig Hardgrove | Arizona State University (ASU) | Space Exploration\nCraig Hardgrove's research focuses on thermal infrared and nuclear remote sensing of the moon and Mars. He is the principal investigator of the LunaH-M."
+            ],
+            "title": "Craig Hardgrove | Arizona State University (ASU) | Space Exploration"
+          },
+          {
+            "url": "https://search.asu.edu/profile/698228/cv",
+            "excerpts": [
+              "[PDF] CRAIG J. HARDGROVE - ASU Search\nDirector of Projects: ASU NewSpace, 2016 to present. ASU Now Article Interview \u201cASU-led LunaH-Map spacecraft ready for final testing\u201d"
+            ],
+            "title": "[PDF] CRAIG J. HARDGROVE - ASU Search"
+          },
+          {
+            "url": "https://network.expertisefinder.com/experts/craig-hardgrove",
+            "excerpts": [
+              "Craig Hardgrove, Arizona State University - Expertise Finder\nCraig Hardgrove at Arizona State University is an expert in Nuclear remote sensing of Mars, Professor School of Earth and Space Exploration. Office: (480) 727-"
+            ],
+            "title": "Craig Hardgrove, Arizona State University - Expertise Finder"
+          },
+          {
+            "url": "https://www.ucf.edu/research/lunarvise",
+            "excerpts": [
+              "LunarVISE | Research\nThe Lunar-VISE mission will travel to the Moon's Gruithuisen domes where a suite of instruments on a lander and rover will measure the properties of the lunar"
+            ],
+            "title": "LunarVISE | Research"
+          },
+          {
+            "url": "https://neutrons.space/",
+            "excerpts": [
+              "Planetary Neutron Spectroscopy Group \u00b7 ASU\nCraig Hardgrove, PhD \u2014 Associate Professor ... Current roles: Associate Professor (ASU SESE), Director of Projects (ASU NewSpace), Barrett Honors Faculty. Past"
+            ],
+            "title": "Planetary Neutron Spectroscopy Group \u00b7 ASU"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "recent_and_open_positions",
+        "reasoning": "Assessment reasoning: The field answer presents a structured summary of recent and open positions related to Craig Hardgrove's group and SESE, including explicit status statements (e.g., 'No current openings') and a list of broader SESE postings. It cites sources and links, and notes about closed/historical postings with explicit caveats. The excerpts provided include relevant group and SESE postings and ASU Careers information, which align with the field answer. Therefore, the response appears complete with direct claims backed by sources. If any aspect were missing (e.g., more granular posting details or additional LinkedIn evidence), it would reduce completeness, but those are present in the answer. Confidence in coverage is high given the included fields (identity note is implied via group naming, funding/hiring scope is mentioned in the user prompt but the field focuses on positions), and explicit URLs are provided for positive claims.",
+        "citations": [
+          {
+            "url": "https://neutrons.space/",
+            "excerpts": [
+              "Planetary Neutron Spectroscopy Group \u00b7 ASU\nCraig Hardgrove, PhD \u2014 Associate Professor ... Current roles: Associate Professor (ASU SESE), Director of Projects (ASU NewSpace), Barrett Honors Faculty. Past"
+            ],
+            "title": "Planetary Neutron Spectroscopy Group \u00b7 ASU"
+          },
+          {
+            "url": "https://sese.asu.edu/about/opportunities",
+            "excerpts": [
+              "Employment and Research Opportunities\nDec 25, 2025 \u2014 The School of Earth and Space Exploration (SESE) at Arizona State University (ASU) welcomes applications for a new faculty tenure-track position with research"
+            ],
+            "title": "Employment and Research Opportunities"
+          },
+          {
+            "url": "http://cfo.asu.edu/applicant",
+            "excerpts": [
+              "Find staff job opportunities within ASU colleges, departments and schools. Non-ASU job seekers: 1-855-278-5081. Monday to Friday, 8 a.m.\u20135 p.m."
+            ],
+            "title": "Careers at ASU | Arizona State University"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "linkedin_evidence",
+        "reasoning": "Assessment reasoning:\n- The field_answer primarily provides evidence tied to LinkedIn profile of Craig Hardgrove and mentions a disambiguating entity (Hardgrove Fire Protection) found on LinkedIn. These points are directly reflected in the excerpts provided (excerpt 0 confirming the LinkedIn profile and title, excerpt 1 confirming the unrelated Hardgrove Fire Protection LinkedIn page).\n- The user query requires extensive research on funding, hiring openings, and LinkedIn evidence, with citations and up-to-date status. The current field_answer does not provide funding records, open/closed postings, or comprehensive LinkedIn discovery beyond identity corroboration. Therefore, the field completeness should be false since it does not satisfy the full scope of the request.\n- The excerpts do support the identity corroboration aspects that are mentioned in the field_answer (profile URL and disambiguation page). Hence, the answer is partially supported by excerpts, but not complete overall.\n- The evaluation will mark completeness as false (not fully addressed) and supported as true (as claims about LinkedIn profile and disambiguation are supported by excerpts). If further content is added (funding, postings, URLs), it would strengthen both completeness and support.\n",
+        "citations": [
+          {
+            "url": "https://www.linkedin.com/in/craig-hardgrove-707bbb33",
+            "excerpts": [
+              "Craig Hardgrove - Professor at Arizona State University - LinkedIn\nProfessor at Arizona State University \u00b7 I am a planetary geologist interested in the science and exploration of the Moon and Mars."
+            ],
+            "title": "Craig Hardgrove - Professor at Arizona State University - LinkedIn"
+          },
+          {
+            "url": "https://www.linkedin.com/company/hardgrove-fire-protection",
+            "excerpts": [
+              "Hardgrove Fire Protection\nWebsite: http://www.hardgrovefire.com/. External link for Hardgrove Fire Protection. Industry: Consumer Services. Company size: 11-50 employees."
+            ],
+            "title": "Hardgrove Fire Protection"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "confidence_and_caveats",
+        "reasoning": "Assessment reasoning:\n- Completeness: The field answer provides a multi-faceted confidence assessment (Identity, Funding, Positions, LinkedIn evidence, Status) and clearly states caveats and date context. It aligns with the user query asking for identity verification, funding status, positions, LinkedIn evidence, and confidence caveats. Therefore completeness is true.\n- Excerpts support: The provided input did not supply the excerpts list to verify whether each claim is supported. Without the excerpts, I cannot confirm that the field answer is backed by sources. Therefore, support cannot be established from the available data; mark as false unless excerpts are provided.\n- Given the lack of excerpts, the field answer cannot be cross-validated against the sources. If excerpts were available, I would check each claim (identity corroboration, funding details, position postings, LinkedIn evidence) against those excerpts and mark supported accordingly.\n- Overall: completeness = true; supported = false (due to missing excerpts for validation).",
+        "citations": [],
+        "confidence": "medium"
+      },
+      {
+        "field": "synthesis_where_the_evidence_lines_up_and_where_it_splits",
+        "reasoning": "Assessment notes: The field_answer provides a structured narrative with multiple patterns about identity convergence, funding narratives, hiring signals, and the relationship between mission roles and funding. It attempts to distinguish between institutional/boom funding vs competitive grants and notes hiring postings as not finding open positions. Completeness judgment considers whether the answer addresses all aspects a field description would expect (identity verification, current affiliation, funding (recent, active), positions openings (open and historical, with statuses), LinkedIn evidence, and sources). The answer includes several patterns and conclusions but does not provide explicit, citable URLs within the answer itself. The user-supplied excerpts (if any) are not present here to verify statements. Given the complexity of verifying identity/affiliations and funding/openings, the narrative attempts to cover these areas, but without explicit source URLs in the answer, external verification via excerpts would be required to fully support all claims. Therefore: completeness is judged to be true in terms of addressing the requested topics, but the lack of embedded explicit URLs and the absence of corroborating excerpts make the overall evidentiary support signaled (for each claim) uncertain.",
+        "citations": [],
+        "confidence": "medium"
+      }
+    ],
+    "content": {
+      "executive_insights": "- **Identity Confirmed**: Craig Hardgrove is an Associate Professor (promoted from Assistant Professor) at the ASU School of Earth and Space Exploration (SESE); verified email craig.hardgrove@asu.edu and official ASU Search profile URL `search.asu.edu/profile/698228`. -> High confidence; one person, no namesake collision across ASU Search, neutrons.space lab page, ASU NewSpace bio, and Newswise profile.\n- **Director of Projects, ASU NewSpace**: Hardgrove also leads projects for ASU's NewSpace Initiative, tying him to a parallel institutional leadership track alongside his SESE faculty role. -> Use this to disambiguate from any other ASU Hardgrove (no other found in SESE/NewSpace).\n- **Group Says \"No Current Openings\"**: The Planetary Neutron Spectroscopy Group site at `neutrons.space` explicitly states \"THERE ARE NO CURRENT OPENINGS\" as of 2026-07. -> Direct, first-party, official answer to the hiring question.\n- **TRIF FY24 $300K for Lunar-VISE Instrument**: The Arizona Board of Regents 2024 Technology and Research Initiative Fund Annual Report records a $300K award (Sep 1, 2024) for FY24 support of Hardgrove's Lunar-VISE instrument work via ASU NewSpace. -> Institutional (state TRIF) support, NOT a NAS|NSF competitive grant, and not a hiring source listed as connecting to PhD support.\n- **Active Mission Roles, Funding Mechanism Ambiguous**: Hardgrove remains PI of LunaH-Map (2015-present), Participating Scientist on MSL Curiosity (2016-present), Co-I on Mars 2020 Mastcam-Z (2014-present), Co-I on ESA BepiColombo (2019-present), Co-I/Instrument Scientist on Lunar-VISE, Deputy PI on LHANS. -> These roles imply ongoing mission funding, but no public dollar values or award-letter URLs were located for 2024-2026 specifically.\n- **No Clear 2024-2026 Federal Competitive Grant for Hardgrove Alone**: NSPIRES search did not surface an isolated 2024-2026 award listing in this research pass; CV (PDF on `search.asu.edu/profile/698228/cv`) lists only awards through 2017 in the auto-extracted section, and no ASU press release names a 2024-2026 federal PI-level award. -> Flagged as \"No verified public evidence found\" for competitive funding beyond TRIF.\n- **SESE-Level Postings Are Not Hardgrove-Tied**: SESE's opportunities page lists faculty, Exploration Fellowship, and Walker-lab postdoc openings, but none are tied specifically to Hardgrove's group or neutron spectrometer work. -> These are SESE-wide, not group-specific postings.\n- **LinkedIn Profile Confirmed but No Hiring Posts Located**: `linkedin.com/in/craig-hardgrove-707bbb33` shows \"Professor at Arizona State University\"; no public LinkedIn posts about openings, positions, or new grants were retrievable in this pass. -> LinkedIn is corroborative identity evidence only, not a hiring source.",
+      "identity": "- **Name**: Craig J. Hardgrove [identity[0]] [6].\n- **Current title and affiliation**: Associate Professor, School of Earth and Space Exploration (SESE), Arizona State University (ASU) [identity[1]] [4]; also confirmed as Associate Professor on the Planetary Neutron Spectroscopy Group site [identity[2]] [13] and on ASU NewSpace's leadership page [identity[3]] [43].\n- **Joint role**: Director of Projects, ASU NewSpace Initiative (since 2016) [identity[0]] [6].\n- **Email**: craig.hardgrove@asu.edu (also listed as Craig.Hardgrove@asu.edu on CV; group page shows chardgrove@asu.edu as contact line) [identity[0]] [6]; [identity[2]] [13].\n- **Joined ASU**: 2015 [identity[1]] [4].\n- **Research areas**: planetary geochemistry; volatile abundances in planetary near-surface; neutron/gamma-ray and thermal-infrared remote sensing on Mars and the Moon; small spacecraft (CubeSat) instrument development; rover-based thermal-IR and machine-learning imaging [identity[4]] [2]; [identity[2]] [13].\n- **Doctorate**: PhD in Geology, University of Tennessee [identity[5]] [3].\n- **Namesake check**: No collision detected. All confirmed sources (ASU Search profile 698228, neutrons.space lab page, ASU NewSpace leadership page, Newswise expert profile, ASU News feature [identity[6]] [46], Planetary Society profile [identity[7]] [7], LinkedIn) reference the same individual. An earlier 2017 NASA technical document lists \"Craig Hardgrove (PI, Planetary Geology)\" for the LunaH-Map mission [identity[8]] [47].\n- **Notable recent news**: ASU News profiled Hardgrove as \"associate professor at ASU's School of Earth and Space Exploration\" celebrating the completion of the LunaH-Map mission (article date 2024-07-24) [identity[6]] [46].",
+      "recent_and_active_funding_2024_01_01_onward_plus_still_active_items": "| Grant / Award Title | Funder | Amount (USD) | Award / Announcement Date | Project Dates | Status | Hardgrove's Role | Project Description | Source |\n|---|---|---|---|---|---|---|---|---|\n| FY24 support for Craig Hardgrove's Lunar-VISE instrument | Arizona Board of Regents - Technology and Research Initiative Fund (TRIF), via ASU NewSpace | $300,000 | Report dated Sep 1, 2024 (FY24 award) | FY24 (institutional year) | Reported as awarded; not a competitive federal grant | PI-side beneficiary (Hardgrove named) | TRIF-funding \"FY24 support of Craig Hardgrove's Lunar-VISE instrument\" delivered through ASU NewSpace | [recent_and_active_funding_2024_01_01_onward_plus_still_active_items[0]] [8] |\n| LunaH-Map mission support (carryover) | NASA Science Mission Directorate | Not publicly listed for 2024-2026 in this research pass | Mission launched 2022-11 on Artemis I; conceptual awards predate 2024 | Mission lifetime continuing | Reported as completed/spaceflight phase | PI (2015-present) | 6U CubeSat neutron spectrometer measuring lunar polar hydrogen | [recent_and_active_funding_2024_01_01_onward_plus_still_active_items[1]] [2]; [recent_and_active_funding_2024_01_01_onward_plus_still_active_items[2]] [6] |\n| MSL Curiosity Participating Scientist | NASA Mars Exploration Program | Not publicly listed for 2024-2026 in this pass | Continuous since 2016 | Ongoing | Active role | Participating Scientist | Supports neutron spectrometer (DAN) science on Curiosity | [recent_and_active_funding_2024_01_01_onward_plus_still_active_items[2]] [6] |\n| Mars 2020 Perseverance Mastcam-Z Co-I | NASA Mars 2020 | Not publicly listed for 2024-2026 in this pass | Continuous since 2014 | Ongoing | Active role | Co-Investigator | Imaging science on the Mastcam-Z instrument | [recent_and_active_funding_2024_01_01_onward_plus_still_active_items[2]] [6] |\n| ESA BepiColombo MGNS Co-I | ESA / NASA contribution | Not publicly listed for 2024-2026 in this pass | Continuous since 2019 | Ongoing | Active role | Co-Investigator | Mercury Gamma-Ray and Neutron Spectrometer | [recent_and_active_funding_2024_01_01_onward_plus_still_active_items[2]] [6] |\n| Lunar-VISE instrument | NASA Payloads and Research Investigations on the Surface of the Moon (PRISM) | Not publicly listed for 2024-2026 in this pass (UCF-led) | Selection announcements predate 2024 [recent_and_active_funding_2024_01_01_onward_plus_still_active_items[3]] [1] | Mission in development | Active role | Co-Investigator and Instrument Scientist | Landed payload at Gruithuisen Domes; ASU NewSpace-side instrument build supported by TRIF $300K | [recent_and_active_funding_2024_01_01_onward_plus_still_active_items[4]] [20]; [recent_and_active_funding_2024_01_01_onward_plus_still_active_items[0]] [8] |\n| LHANS (Lunar Helium and Neutron Spectrometer study) | NASA / mission partner (specific program not retrieved this pass) | Not publicly listed for 2024-2026 in this pass | Conceptual phase | Pre-formulation | Active role | Deputy PI | Lunar neutron spectrometer study tied to ASU's neutron spectroscopy group | [recent_and_active_funding_2024_01_01_onward_plus_still_active_items[5]] [13] |\n\nFootnote [recent_and_active_funding_2024_01_01_onward_plus_still_active_items[3]] [1]: The Lunar-VISE mission page is hosted at UCF and lists ASU as a partner; PRISM selection was earlier than 2024, but the TRIF FY24 $300K document specifically ties FY24 Arizona institutional funding to \"Hardgrove's Lunar-VISE instrument\" workstream. No FY25/FY26 federal PRISM augmentation for Hardgrove was directly retrieved in this search.\n\n**Funding categories explicitly distinguished:**\n\n- **Competitive federal research grant (NASA, NSF, USRA, etc.) for Hardgrove as PI**: No verified public evidence found. Searched NSPIRES-indexed pages, ASU press releases, and CV PDF; the CV's auto-extracted \"Grants and Awards\" section ends at the NASA Group Achievement Awards circa 2017.\n- **Institutional funding (TRIF / ASU internal)**: $300K TRIF FY24 for Lunar-VISE instrument support confirmed via the Arizona Board of Regents 2024 TRIF Annual Report.\n- **Mission budget (NASA mission line items)**: Implicit and ongoing for LunaH-Map, Curiosity, Mars 2020, BepiColombo, Lunar-VISE, LHANS. No public dollar-number or award-letter URL was retrieved for 2024-2026 specifically.\n- **Prize / consortium funding / industry grants**: No verified public evidence found in this research pass.\n- **PhD-support funding**: No source explicitly states that any listed award is for hiring or doctoral support. The TRIF FY24 $300K is described as \"FY24 support\" of Hardgrove's Lunar-VISE instrument, not for PhD positions.",
+      "recent_and_open_positions": "### Group-level openings (Hardgrove's Planetary Neutron Spectroscopy Group)\n\n- **Status as of 2026-07-11**: No current openings.\n- **Direct source**: The Planetary Neutron Spectroscopy Group site states \"THERE ARE NO CURRENT OPENINGS\" and explains the group \"typically welcomes PhD students, postdocs, and undergrads interested in neutron/gamma spectroscopy, instrument calibration, with Mars, lunar & terrestrial applications,\" with instructions to email a 1-page statement plus CV to chardgrove@asu.edu [recent_and_open_positions[0]] [13].\n- **No closed 2026 postings tied to Hardgrove's group were retrieved in this pass**.\n\n### SESE-wide / institutional postings (not group-tied to Hardgrove)\n\n| Posting | Type | Status | Posted Date | Deadline | Location | Short Description | Source URL |\n|---|---|---|---|---|---|---|---|\n| Assistant/Associate/Professor - Geoscience of Critical Minerals | Faculty tenure-track | Open as of search (no group tie to Hardgrove) | Dec 25, 2025 | Feb 2, 2026 | ASU SESE, Tempe AZ | SESE faculty hire in critical-minerals geoscience; not neutron spectrometer work | [recent_and_open_positions[1]] [12] |\n| Exploration Fellowship in Earth and Space Science FY26 | Postdoctoral fellowship | Open as of search (no group tie to Hardgrove) | Posted for FY26 cycle | Feb 7, 2026 (initial review); anticipated start July 2026 | ASU SESE | Department-wide fellowship; applications via Interfolio link on the SESE page | [recent_and_open_positions[1]] [12] |\n| Walker Lab Postdoctoral Fellowship (ASU) | Postdoctoral fellowship | Open/rolling (no group tie to Hardgrove) | Listed on SESE page | Not retrieved as a single deadline in this pass | ASU | Walker-lab-specific postdoc; separate from Hardgrove's group | [recent_and_open_positions[1]] [12] |\n\n**Closed/Historical postings on or after 2026-01-01 tied to Hardgrove's group**: No verified public evidence found. The lab page's \"NO CURRENT OPENINGS\" status, combined with no ASU Careers posting retrieved under Hardgrove, leaves the closed-2026 record empty within this research pass. Sources checked: ASU Careers portal (`cfo.asu.edu/applicant`), SESE opportunities page, neutrons.space, ASU NewSpace news pages (`newspace.asu.edu/category/news`) [recent_and_open_positions[2]] [31]; [recent_and_open_positions[1]] [12]; [recent_and_open_positions[0]] [13].",
+      "linkedin_evidence": "- **Profile URL**: `linkedin.com/in/craig-hardgrove-707bbb33`, title \"Professor at Arizona State University,\" with self-description \"I am a planetary geologist interested in the science and exploration of the Moon and Mars\" [linkedin_evidence[0]] [10].\n- **LinkedIn role cross-check**: Title displayed on LinkedIn (\"Professor at Arizona State University\") corroborates ASU Search listing (\"Associate Professor\"), with both confirming the same person. Discrepancy wording (Professor vs Associate Professor) is a common LinkedIn simplification and not a namesake signal.\n- **Public LinkedIn posts about hiring, openings, or grant awards**: No verified public evidence found in this research pass. LinkedIn acts here solely as identity corroboration.\n- **Adjacent LinkedIn corporate profile disambiguated**: \"Hardgrove Fire Protection\" is an unrelated LinkedIn company page (Columbus, OH; consumer-services) and was excluded as a namesake collision [linkedin_evidence[1]] [21].",
+      "confidence_and_caveats": "- **Identity**: High confidence. ASU Search profile, ASU NewSpace leadership bio, ASU News feature, lab site, Newswise expert profile, and LinkedIn all converge on a single individual.\n- **Funding**: Low precision on hard dollar amounts beyond the $300K TRIF FY24 figure. Mission-roles are confirmed across the CV, lab page, ASU News feature, and TRIF report, but 2024-2026 federal grant-line dollar values, award-letter URLs in NSPIRES, and exact per-mission subaward allocations were not surfaced in this research pass. Treat each mission role as \"active and ongoing\" rather than as a quantified 2024-2026 award.\n- **Positions**: High confidence on \"no group-specific open positions\" via the first-party neutrons.space lab page. Confidence is lower on the negative claim \"no closed 2026 group postings ever existed,\" since ASU's internal recruitment system was not exhaustively crawled in this pass; the most likely exposure paths (ASU Careers, SESE page, lab site, NewSpace news, LinkedIn) all came back empty for Hardgrove-tied openings.\n- **LinkedIn posts**: Inconclusive. LinkedIn's full post stream is not fully indexed by external search, so the absence of a post here is weak evidence, not strong evidence.\n- **Status as of 2026-07-11** (today's date): All \"active\" labels above reflect evidence retrieved through this research pass on that date. Mission status updates or new grant announcements landing between 2026-07-11 and submission may exist but were not retrieved here.",
+      "synthesis_where_the_evidence_lines_up_and_where_it_splits": "**Pattern 1: Identity lines converge across at least five first-party sources.** ASU Search, ASU NewSpace leadership page, ASU News feature, the neutrons.space lab page, and LinkedIn each independently identify the same Hardgrove, with the same email domain and the same PhD/MSL/LunaH-Map backstory. The absence of any other \"Craig Hardgrove\" in ASU planetary science is a strong negative-namesake signal. The \"Professor vs Associate Professor\" label split between LinkedIn and ASU Search is the only inconsistency, and it is consistent with the well-known LinkedIn-titles-simplify convention rather than a separate individual.\n\n**Pattern 2: Funding narrative splits along institutional vs competitive lines.** The only 2024-2026 dollar amount tied directly to Hardgrove by name in official sources is $300K of Arizona state TRIF money flowing via ASU NewSpace to his Lunar-VISE instrument work. Mission-level federal funding for LunaH-Map, Curiosity, Mars 2020 / Mastcam-Z, BepiColombo, Lunar-VISE, and LHANS is implied by his continuing Co-I / PI / Deputy-PI role, but no award-letter URL or amount per role for 2024-2026 was retrieved. This split matters: an outside reader could mistake \"Hardgrove has ongoing NASA missions\" for \"Hardgrove won a 2024-2026 NASA grant,\" and the sources retrieved here do not support that second framing.\n\n**Pattern 3: Hiring signal is uniformly negative at the group level.** The first-party lab page says \"NO CURRENT OPENINGS\"; the SESE page lists three SESE-wide postings (faculty in Geoscience of Critical Minerals, Exploration Fellowship FY26, Walker Lab postdoc) none of which are tied to neutron spectroscopy or Hardgrove's group. ASU News and ASU NewSpace news show no recruiting posts mentioning Hardgrove. Linkedin posts about hiring were not retrievable. The convergence of these negatives is meaningful, but it is a \"not found\" result bounded by what the open web indexes - not a definitive negative.\n\n**Pattern 4: Active mission roles form the structural reason funding exists at all.** LunaH-Map (PI), MSL Curiosity (Participating Scientist, 2016-present), Mars 2020 Mastcam-Z (Co-I, 2014-present), BepiColombo MGNS (Co-I, 2019-present), Lunar-VISE (Co-I and Instrument Scientist), and LHANS (Deputy PI) together explain why Hardgrove's lab continues to operate even without a single 2024-2026 named federal PI grant surfaced. The $300K TRIF FY24 award is the institutional add-on; the mission roles are the structural backbone. A reader trying to evaluate Hardgrove's funding pipeline should weight mission roles higher than the one-off TRIF line item, because the latter is a single year of institutional supplement while the former is continuous NASA partnership.\n\n**Pattern 5: Doctoral / PhD hiring is an inferred, not-stated, pathway.** The neutrons.space lab page invites PhD applicants to email a 1-page statement + CV, but it does not link funded PhD positions to a specific 2024-2026 grant. Per the brief's instructions, no positive PhD-funding claim is made - the invitation pathway exists, but the funding link does not."
+    },
+    "type": "json",
+    "beta_fields": null,
+    "mcp_tool_calls": null,
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "executive_insights": {
+          "type": "string",
+          "title": "Executive Insights"
+        },
+        "identity": {
+          "type": "string",
+          "title": "Identity"
+        },
+        "recent_and_active_funding_2024_01_01_onward_plus_still_active_items": {
+          "type": "string",
+          "title": "Recent and Active Funding (2024-01-01 onward, plus still-active items)"
+        },
+        "recent_and_open_positions": {
+          "type": "string",
+          "title": "Recent and Open Positions"
+        },
+        "linkedin_evidence": {
+          "type": "string",
+          "title": "LinkedIn Evidence"
+        },
+        "confidence_and_caveats": {
+          "type": "string",
+          "title": "Confidence and Caveats"
+        },
+        "synthesis_where_the_evidence_lines_up_and_where_it_splits": {
+          "type": "string",
+          "title": "Synthesis: Where the Evidence Lines Up and Where It Splits"
+        }
+      },
+      "required": [
+        "executive_insights",
+        "identity",
+        "recent_and_active_funding_2024_01_01_onward_plus_still_active_items",
+        "recent_and_open_positions",
+        "linkedin_evidence",
+        "confidence_and_caveats",
+        "synthesis_where_the_evidence_lines_up_and_where_it_splits"
+      ]
+    }
+  }
+}

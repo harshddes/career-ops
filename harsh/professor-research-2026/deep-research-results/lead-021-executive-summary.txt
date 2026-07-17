@@ -1,0 +1,50 @@
+Attempt 1
+None
+
+Attempt 2
+Polling task: trun_dd47611047ba45198a7517809458cb7b
+Track progress: 
+https://platform.parallel.ai/play/deep-research/trun_dd47611047ba45198a751780945
+8cb7b
+Will save to: Z:\University of Michigan Dropbox\Harsh 
+Desai\personal\career-ops\harsh\professor-research-2026\deep-research-results\le
+ad-021.json (+.md for text schema)
+
+Status: polling (0s)
+Status: completed (0s)
+
+Error: Refusing to overwrite existing output:
+  Z:\University of Michigan Dropbox\Harsh Desai\personal\career-ops\harsh\professor-research-2026\deep-research-results\lead-021.json (exists)
+Pass --force to overwrite.
+
+Attempt 3
+Polling task: trun_dd47611047ba45198a7517809458cb7b
+Track progress: 
+https://platform.parallel.ai/play/deep-research/trun_dd47611047ba45198a751780945
+8cb7b
+Will save to: Z:\University of Michigan Dropbox\Harsh 
+Desai\personal\career-ops\harsh\professor-research-2026\deep-research-results\le
+ad-021.json (+.md for text schema)
+
+Status: polling (0s)
+Status: completed (0s)
+
+Error: Refusing to overwrite existing output:
+  Z:\University of Michigan Dropbox\Harsh Desai\personal\career-ops\harsh\professor-research-2026\deep-research-results\lead-021.json (exists)
+Pass --force to overwrite.
+
+Attempt 4
+Polling task: trun_dd47611047ba45198a7517809458cb7b
+Track progress: 
+https://platform.parallel.ai/play/deep-research/trun_dd47611047ba45198a751780945
+8cb7b
+Will save to: Z:\University of Michigan Dropbox\Harsh 
+Desai\personal\career-ops\harsh\professor-research-2026\deep-research-results\le
+ad-021.json (+.md for text schema)
+
+Status: polling (0s)
+Status: completed (0s)
+
+Error: Refusing to overwrite existing output:
+  Z:\University of Michigan Dropbox\Harsh Desai\personal\career-ops\harsh\professor-research-2026\deep-research-results\lead-021.json (exists)
+Pass --force to overwrite.

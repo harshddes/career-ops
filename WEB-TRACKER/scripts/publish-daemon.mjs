@@ -22,14 +22,11 @@ const PUSH_RETRIES = 3;
 
 const WATCH_PATHS = [
   join(TRACKER, 'data'),
+  join(CAREER_OPS, 'data'),
   join(CAREER_OPS, 'data', 'application-dashboard.json'),
   join(CAREER_OPS, 'data', 'jobs-to-consider.json'),
   join(CAREER_OPS, 'data', 'jobs-to-consider-user-state.json'),
   join(CAREER_OPS, 'data', 'research-prospect-user-state.json'),
-  join(CAREER_OPS, 'data', 'umich-research-prospects.json'),
-  join(CAREER_OPS, 'data', 'ipp-research-prospects.json'),
-  join(CAREER_OPS, 'data', 'kth-research-prospects.json'),
-  join(CAREER_OPS, 'data', 'private-co-phd-paths.json'),
 ];
 
 let debounceTimer = null;

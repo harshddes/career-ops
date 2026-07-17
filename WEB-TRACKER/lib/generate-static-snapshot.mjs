@@ -47,7 +47,7 @@ async function fetchJson(baseUrl, apiPath) {
   return res.json();
 }
 
-function collectApiPaths(phdSources = []) {
+export function collectApiPaths(phdSources = []) {
   const paths = [
     '/api/actions',
     '/api/jobs',
@@ -58,6 +58,13 @@ function collectApiPaths(phdSources = []) {
     '/api/applications',
     '/api/jobs-to-consider',
     '/api/research-prospects',
+    '/api/euraxess/opportunities',
+    '/api/euraxess/health',
+    '/api/phdscanner/opportunities',
+    '/api/phdscanner/health',
+    '/api/exhibitor/companies',
+    '/api/exhibitor/clear-queue',
+    '/api/exhibitor/factory/status',
     '/api/agent-tasks',
     '/api/autonomy/model-health',
     '/api/autonomy/research-budget',
@@ -133,8 +140,8 @@ export async function generateStaticSnapshot(options = {}) {
   const port = options.port || (45000 + Math.floor(Math.random() * 5000));
   const host = '127.0.0.1';
 
-  const { startServer } = await import('../server.mjs');
-  const server = await startServer(port, host);
+  const { startFastServer } = await import('../server-fast.mjs');
+  const server = await startFastServer(port, host);
   const baseUrl = `http://${host}:${port}`;
 
   const manifest = {

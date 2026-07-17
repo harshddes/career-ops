@@ -1,0 +1,526 @@
+{
+  "all": [
+    {
+      "name": "Laura K. Alford",
+      "profile_url": "https://name.engin.umich.edu/people/alford-laura-k/",
+      "title": "LEO Lecturer IV",
+      "slug": "alford-laura-k",
+      "emeritus": false,
+      "lecturer_only": true,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Lesa Begley",
+      "profile_url": "https://name.engin.umich.edu/people/begley-lesa/",
+      "title": "LEO Lecturer III",
+      "slug": "begley-lesa",
+      "emeritus": false,
+      "lecturer_only": true,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Michael Bernitsas",
+      "profile_url": "https://name.engin.umich.edu/people/bernitsas-michael/",
+      "title": "Mortimer E. Cooley Collegiate Professor of Naval Architecture and Marine Engineering",
+      "slug": "bernitsas-michael",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Steven L. Ceccio",
+      "profile_url": "https://name.engin.umich.edu/people/ceccio-steven-l/",
+      "title": "Vincent T. and Gloria M. Gorguze Professor of Engineering",
+      "slug": "ceccio-steven-l",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Matthew D. Collette",
+      "profile_url": "https://name.engin.umich.edu/people/collette-matthew-d/",
+      "title": "Professor and Building Renovation Coordinator",
+      "slug": "collette-matthew-d",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Pingsha Dong",
+      "profile_url": "https://name.engin.umich.edu/people/dong-pingsha/",
+      "title": "Robert F. Beck Collegiate Professor of Engineering",
+      "slug": "dong-pingsha",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "David R. Dowling",
+      "profile_url": "https://name.engin.umich.edu/people/dowling-david-r/",
+      "title": "Chair and ABS Professor of Marine And Offshore Design Performance",
+      "slug": "dowling-david-r",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Harish Ganesh",
+      "profile_url": "https://name.engin.umich.edu/people/ganesh-harish/",
+      "title": "Associate Research Scientist",
+      "slug": "ganesh-harish",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Maani Ghaffari",
+      "profile_url": "https://name.engin.umich.edu/people/ghaffari-maani/",
+      "title": "Assistant Professor",
+      "slug": "ghaffari-maani",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Heath Hofmann",
+      "profile_url": "https://name.engin.umich.edu/people/hofmann-heath/",
+      "title": "Professor, Electrical Engineering and Computer Science",
+      "slug": "hofmann-heath",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Krishnan Mahesh",
+      "profile_url": "https://name.engin.umich.edu/people/mahesh-krishnan/",
+      "title": "Richard B. Couch Professor of Naval Architecture and Marine Engineering",
+      "slug": "mahesh-krishnan",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Kevin J. Maki",
+      "profile_url": "https://name.engin.umich.edu/people/maki-kevin-j/",
+      "title": "Professor and Director, Aaron Friedman Marine Hydrodynamics Lab",
+      "slug": "maki-kevin-j",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Joaquim Martins R. R. A.",
+      "profile_url": "https://name.engin.umich.edu/people/martins-joaquinn-r-r-a/",
+      "title": "Pauline M. Sherman Collegiate Professor, Aerospace Engineering",
+      "slug": "martins-joaquinn-r-r-a",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Timothy McCoy",
+      "profile_url": "https://name.engin.umich.edu/people/mccoy-timothy/",
+      "title": "Adjunct Professor",
+      "slug": "mccoy-timothy",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": true,
+      "admin_only": false
+    },
+    {
+      "name": "Thomas McKenney",
+      "profile_url": "https://name.engin.umich.edu/people/mckenney-thomas/",
+      "title": "Associate Professor of Engineering Practice",
+      "slug": "mckenney-thomas",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Kartik Praful Naik",
+      "profile_url": "https://name.engin.umich.edu/people/kartik-praful-naik/",
+      "title": "Assistant Research Scientist",
+      "slug": "kartik-praful-naik",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Jonathan Page",
+      "profile_url": "https://name.engin.umich.edu/people/jonathan-page/",
+      "title": "Professor of Engineering Practice, NAVSEA Professor of Naval Systems Engineering",
+      "slug": "jonathan-page",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Yulin Pan",
+      "profile_url": "https://name.engin.umich.edu/people/pan-yulin/",
+      "title": "Assistant Professor",
+      "slug": "pan-yulin",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Alan Papalia",
+      "profile_url": "https://name.engin.umich.edu/people/alan-papalia/",
+      "title": "Assistant Professor",
+      "slug": "alan-papalia",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Anchal Sareen",
+      "profile_url": "https://name.engin.umich.edu/people/sareen-anchal/",
+      "title": "Assistant Professor",
+      "slug": "sareen-anchal",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "David J. Singer",
+      "profile_url": "https://name.engin.umich.edu/people/singer-david-j/",
+      "title": "Professor, Undergraduate Program Chair, ABET Coordinator, NAVSEA Professor of Ship Production Science",
+      "slug": "singer-david-j",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Jing Sun",
+      "profile_url": "https://name.engin.umich.edu/people/sun-jing/",
+      "title": "Michael G. Parsons Collegiate Professor, Naval Architecture and Marine Engineering",
+      "slug": "sun-jing",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Nickolas Vlahopoulos",
+      "profile_url": "https://name.engin.umich.edu/people/vlahopoulos-nickolas/",
+      "title": "Professor and Graduate Program Chair",
+      "slug": "vlahopoulos-nickolas",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Donald C. Winter",
+      "profile_url": "https://name.engin.umich.edu/people/adjunct-clinical-professor/",
+      "title": "Adjunct Professor",
+      "slug": "adjunct-clinical-professor",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": true,
+      "admin_only": false
+    },
+    {
+      "name": "Yue (Cynthia) Wu",
+      "profile_url": "https://name.engin.umich.edu/people/wu-yue-cynthia/",
+      "title": "Assistant Research Scientist",
+      "slug": "wu-yue-cynthia",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Lei Zuo",
+      "profile_url": "https://name.engin.umich.edu/people/zuo-lei/",
+      "title": "Herbert C. Sadler Professor of Engineering",
+      "slug": "zuo-lei",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Zhigang Wei",
+      "profile_url": "https://name.engin.umich.edu/people/zhigang-wei/",
+      "title": "Associate Research Scientist",
+      "slug": "zhigang-wei",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    }
+  ],
+  "active": [
+    {
+      "name": "Michael Bernitsas",
+      "profile_url": "https://name.engin.umich.edu/people/bernitsas-michael/",
+      "title": "Mortimer E. Cooley Collegiate Professor of Naval Architecture and Marine Engineering",
+      "slug": "bernitsas-michael",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Steven L. Ceccio",
+      "profile_url": "https://name.engin.umich.edu/people/ceccio-steven-l/",
+      "title": "Vincent T. and Gloria M. Gorguze Professor of Engineering",
+      "slug": "ceccio-steven-l",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Matthew D. Collette",
+      "profile_url": "https://name.engin.umich.edu/people/collette-matthew-d/",
+      "title": "Professor and Building Renovation Coordinator",
+      "slug": "collette-matthew-d",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Pingsha Dong",
+      "profile_url": "https://name.engin.umich.edu/people/dong-pingsha/",
+      "title": "Robert F. Beck Collegiate Professor of Engineering",
+      "slug": "dong-pingsha",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "David R. Dowling",
+      "profile_url": "https://name.engin.umich.edu/people/dowling-david-r/",
+      "title": "Chair and ABS Professor of Marine And Offshore Design Performance",
+      "slug": "dowling-david-r",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Harish Ganesh",
+      "profile_url": "https://name.engin.umich.edu/people/ganesh-harish/",
+      "title": "Associate Research Scientist",
+      "slug": "ganesh-harish",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Maani Ghaffari",
+      "profile_url": "https://name.engin.umich.edu/people/ghaffari-maani/",
+      "title": "Assistant Professor",
+      "slug": "ghaffari-maani",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Heath Hofmann",
+      "profile_url": "https://name.engin.umich.edu/people/hofmann-heath/",
+      "title": "Professor, Electrical Engineering and Computer Science",
+      "slug": "hofmann-heath",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Krishnan Mahesh",
+      "profile_url": "https://name.engin.umich.edu/people/mahesh-krishnan/",
+      "title": "Richard B. Couch Professor of Naval Architecture and Marine Engineering",
+      "slug": "mahesh-krishnan",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Kevin J. Maki",
+      "profile_url": "https://name.engin.umich.edu/people/maki-kevin-j/",
+      "title": "Professor and Director, Aaron Friedman Marine Hydrodynamics Lab",
+      "slug": "maki-kevin-j",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Joaquim Martins R. R. A.",
+      "profile_url": "https://name.engin.umich.edu/people/martins-joaquinn-r-r-a/",
+      "title": "Pauline M. Sherman Collegiate Professor, Aerospace Engineering",
+      "slug": "martins-joaquinn-r-r-a",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Thomas McKenney",
+      "profile_url": "https://name.engin.umich.edu/people/mckenney-thomas/",
+      "title": "Associate Professor of Engineering Practice",
+      "slug": "mckenney-thomas",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Kartik Praful Naik",
+      "profile_url": "https://name.engin.umich.edu/people/kartik-praful-naik/",
+      "title": "Assistant Research Scientist",
+      "slug": "kartik-praful-naik",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Jonathan Page",
+      "profile_url": "https://name.engin.umich.edu/people/jonathan-page/",
+      "title": "Professor of Engineering Practice, NAVSEA Professor of Naval Systems Engineering",
+      "slug": "jonathan-page",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Yulin Pan",
+      "profile_url": "https://name.engin.umich.edu/people/pan-yulin/",
+      "title": "Assistant Professor",
+      "slug": "pan-yulin",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Alan Papalia",
+      "profile_url": "https://name.engin.umich.edu/people/alan-papalia/",
+      "title": "Assistant Professor",
+      "slug": "alan-papalia",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Anchal Sareen",
+      "profile_url": "https://name.engin.umich.edu/people/sareen-anchal/",
+      "title": "Assistant Professor",
+      "slug": "sareen-anchal",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "David J. Singer",
+      "profile_url": "https://name.engin.umich.edu/people/singer-david-j/",
+      "title": "Professor, Undergraduate Program Chair, ABET Coordinator, NAVSEA Professor of Ship Production Science",
+      "slug": "singer-david-j",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Jing Sun",
+      "profile_url": "https://name.engin.umich.edu/people/sun-jing/",
+      "title": "Michael G. Parsons Collegiate Professor, Naval Architecture and Marine Engineering",
+      "slug": "sun-jing",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Nickolas Vlahopoulos",
+      "profile_url": "https://name.engin.umich.edu/people/vlahopoulos-nickolas/",
+      "title": "Professor and Graduate Program Chair",
+      "slug": "vlahopoulos-nickolas",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Yue (Cynthia) Wu",
+      "profile_url": "https://name.engin.umich.edu/people/wu-yue-cynthia/",
+      "title": "Assistant Research Scientist",
+      "slug": "wu-yue-cynthia",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Lei Zuo",
+      "profile_url": "https://name.engin.umich.edu/people/zuo-lei/",
+      "title": "Herbert C. Sadler Professor of Engineering",
+      "slug": "zuo-lei",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    },
+    {
+      "name": "Timothy McCoy",
+      "profile_url": "https://name.engin.umich.edu/people/mccoy-timothy/",
+      "title": "Adjunct Professor; Marine Engineering Laboratory",
+      "slug": "mccoy-timothy",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false,
+      "note": "Included because runs active Marine Engineering Laboratory"
+    },
+    {
+      "name": "Zhigang Wei",
+      "profile_url": "https://name.engin.umich.edu/people/zhigang-wei/",
+      "title": "Associate Research Scientist",
+      "slug": "zhigang-wei",
+      "emeritus": false,
+      "lecturer_only": false,
+      "adjunct": false,
+      "admin_only": false
+    }
+  ],
+  "mhl": {
+    "name": "Aaron Friedman Marine Hydrodynamics Laboratory",
+    "url": "https://mhl.engin.umich.edu/",
+    "facilities": [
+      "Towing Tank",
+      "Wind-Wave Tank"
+    ],
+    "note": "instrumentation, data acquisition systems, experimental processes; calm water resistance, seakeeping, propeller tests"
+  }
+}

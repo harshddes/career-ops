@@ -1,0 +1,185 @@
+{
+  "run_id": "trun_dd47611047ba451980e7d90ec06a0d51",
+  "interaction_id": "trun_dd47611047ba451980e7d90ec06a0d51",
+  "result_url": "https://platform.parallel.ai/play/deep-research/trun_dd47611047ba451980e7d90ec06a0d51",
+  "status": "completed",
+  "output": {
+    "basis": [
+      {
+        "field": "executive_summary",
+        "reasoning": "Reasoning: The field_answer provides a concise executive summary including identity, research scope, a single AFOSR grant trail post-2024-01-01 with uncertainties, hiring status (no open positions found as of 2026-07-11), and LinkedIn evidence. For completeness, the prompt expects structured sections: Identity; Recent/Active Funding; Recent and Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources. The field answer does not systematically present all requested sections (e.g., it lacks a clearly delineated Recent/Active Funding table with grant title, funder, amount, currency, dates, status, role, funded work description, and direct URLs; it also does not provide a structured list of Sources with URLs; it provides some narrative but not fully the required fields). Additionally, while it mentions funding details, it hedges with \u201cPROBABLE\u201d and lacks explicit primary-source citations. Regarding Excerpts support, the excerpts primarily cover identity and affiliation information; they do not substantiate all funding or hiring claims. Therefore, completeness should be false. Supported should be false since the answer\u2019s claims are not fully backed by the excerpts and it does not fully satisfy the requested structured fields.",
+        "citations": [
+          {
+            "url": "https://ece.engin.umich.edu/touchscreen-page/faculty/personnel/gilchrist-brian-e",
+            "excerpts": [
+              "Gilchrist, Brian E. Professor, EECS - Electrical and Computer Engineering Professor (courtesy), Climate and Space Sciences and Engineering, Applied Physics he/him/his Email: gilchrst@umich.edu Phone: (734) 763-6230 Office: 2240 EECS"
+            ],
+            "title": "Gilchrist, Brian E."
+          },
+          {
+            "url": "https://gilchrist.engin.umich.edu/",
+            "excerpts": [
+              "Professor (also Climate and Space Sciences and Engineering; Applied Physics) Director, SPRL/XTRM Labs Research Group Space Electrodynamics and Tether Systems Lab/Program Affiliations Radiation Laboratory (EECS) Space Physics Research Laboratory / XTRM LABS (CoE) Plasmadynamics and Electric Propulsion Lab (AERO) Multidisciplinary Design Program"
+            ],
+            "title": "Brian Gilchrist \u2013 Home for Brian Gilchrist"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "1_identity",
+        "reasoning": "Completeness assessment:\n- The field_answer provides identity, title, lab affiliations, contact info, education, and research scope for Brian E. Gilchrist, focusing on the named individual and explicitly noting no confusion with namesakes. This aligns with a typical Identity field expectation that requires verification of name, current affiliation, and role. The answer also includes a concluding confidence statement and relevant citations. \n- Potential gaps were considered: while the user query asks for extensive, source-cited research (funding, hiring, LinkedIn evidence, etc.), this field (1_identity) only requires identity and affiliation verification. The field_answer indeed covers identity and affiliation details with explicit notes and sources. Therefore, for the identity field, the answer is complete. If the field_description demanded funding/hiring specifics, those would be separate fields; here we treat 1_identity as fulfilled.\nExcerpts provided support the identity details (title, lab, affiliation, email, office, education) and the distinction from a similarly named individual. Based on excerpts, this field answer is well-supported.\nConfidence: HIGH. The identity and affiliation are corroborated by multiple sources listed in excerpts (university pages, lab pages, Google Scholar).",
+        "citations": [
+          {
+            "url": "https://ece.engin.umich.edu/touchscreen-page/faculty/personnel/gilchrist-brian-e",
+            "excerpts": [
+              "Gilchrist, Brian E. Professor, EECS - Electrical and Computer Engineering Professor (courtesy), Climate and Space Sciences and Engineering, Applied Physics he/him/his Email: gilchrst@umich.edu Phone: (734) 763-6230 Office: 2240 EECS"
+            ],
+            "title": "Gilchrist, Brian E."
+          },
+          {
+            "url": "https://gilchrist.engin.umich.edu/",
+            "excerpts": [
+              "Professor (also Climate and Space Sciences and Engineering; Applied Physics) Director, SPRL/XTRM Labs Research Group Space Electrodynamics and Tether Systems Lab/Program Affiliations Radiation Laboratory (EECS) Space Physics Research Laboratory / XTRM LABS (CoE) Plasmadynamics and Electric Propulsion Lab (AERO) Multidisciplinary Design Program"
+            ],
+            "title": "Brian Gilchrist \u2013 Home for Brian Gilchrist"
+          },
+          {
+            "url": "https://sprl.engin.umich.edu/",
+            "excerpts": [
+              "Space Physics Research Laboratory - University of Michigan"
+            ],
+            "title": "Space Physics Research Laboratory - University of Michigan University of Michigan https://sprl.engin.umich.edu"
+          },
+          {
+            "url": "https://scholar.google.com/citations?user=ZobtNwYAAAAJ&hl=en",
+            "excerpts": [
+              "\u202aProfessor of EE and space, university of Michigan\u202c - \u202a\u202aCited by 2,385\u202c\u202c - \u202aspace plasma electrodynamics\u202c - \u202aspacecraft charging\u202c - \u202aLangmuir Probe\u202c - \u202aelectrodynamic tethers\u202c"
+            ],
+            "title": "\u202aBrian Gilchrist\u202c - \u202aGoogle Scholar\u202c"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "2_recent_active_funding",
+        "reasoning": "Assessing completeness: The field_answer focuses on recent/active funding (section 2) with several sub-items and caveats about verification, but it does not address the mandatory Hiring/Open Positions section, LinkedIn evidence, or the explicit requirement to identify identity/affiliation with strong primary-source confirmation. It also contains speculative language (inferred to involve Gilchrist; NOT CONFIRMED BY PRIMARY DOCUMENT) and does not provide a full, verifiable, primary-source-backed list of post-2024 funding with explicit PI, grant titles, funders, amounts, dates, and links for each item. Therefore, completeness should be false relative to the broad query requirements (Identity verification, Recent/Active Funding with explicit fields, Hiring/Open Positions with statuses, LinkedIn evidence, and explicit sources). Confidence is moderate to low for the funding claims due to lack of primary-source confirmation in the field_answer itself; the excerpts do not substantiate the specific funding claims. The excerpts provided mention Brian Gilchrist and SPRL, which support affiliation context but not the detailed funding claims in the answer.",
+        "citations": [
+          {
+            "url": "https://gilchrist.engin.umich.edu/",
+            "excerpts": [
+              "Professor (also Climate and Space Sciences and Engineering; Applied Physics) Director, SPRL/XTRM Labs Research Group Space Electrodynamics and Tether Systems Lab/Program Affiliations Radiation Laboratory (EECS) Space Physics Research Laboratory / XTRM LABS (CoE) Plasmadynamics and Electric Propulsion Lab (AERO) Multidisciplinary Design Program"
+            ],
+            "title": "Brian Gilchrist \u2013 Home for Brian Gilchrist"
+          },
+          {
+            "url": "https://sprl.engin.umich.edu/",
+            "excerpts": [
+              "Space Physics Research Laboratory - University of Michigan"
+            ],
+            "title": "Space Physics Research Laboratory - University of Michigan University of Michigan https://sprl.engin.umich.edu"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "3_recent_and_open_positions",
+        "reasoning": "Assessed whether the field answer fully addresses the query about recent/open positions for Brian Gilchrist and SPRL, and whether the provided excerpts substantiate the claims.\n- Completeness: The field answer provides a structured conclusion that there are no current/open positions and no postings since 2026-01-01, plus suggested next steps and sources. This aligns with the intent to report on recent/open positions. Therefore completeness = true.\n- Supported: The excerpts given include only a BI-ogrid excerpt confirming the identity/contact of Brian E. Gilchrist. There is no excerpt that directly confirms the absence of open positions or postings, or provides job posting evidence. Therefore, the field answer\u2019s negative claims about open positions are not directly supported by the excerpts provided. Thus supported = false.\n- If there were explicit statements like \"No verified public evidence found\" within excerpts, we would weigh those, but here the assertion is in the field answer, not in excerpts.\n- Notes: The user\u2019s query requests explicit, sourced findings; the answer cites several URLs in prose, but the excerpts section itself does not corroborate the conclusion about openings.\n",
+        "citations": [
+          {
+            "url": "https://ece.engin.umich.edu/touchscreen-page/faculty/personnel/gilchrist-brian-e",
+            "excerpts": [
+              "Gilchrist, Brian E. Professor, EECS - Electrical and Computer Engineering Professor (courtesy), Climate and Space Sciences and Engineering, Applied Physics he/him/his Email: gilchrst@umich.edu Phone: (734) 763-6230 Office: 2240 EECS"
+            ],
+            "title": "Gilchrist, Brian E."
+          }
+        ],
+        "confidence": "medium"
+      },
+      {
+        "field": "4_linkedin_evidence",
+        "reasoning": "Assessment steps:\n- Review field answer for completeness: It provides a structured summary of LinkedIn evidence, including three URLs and a concluding statement about no postings found. It also notes search approach and that no postings were retrievable. This aligns with the field goal of LinkedIn evidence for 4_linkedin_evidence.\n- Check alignment with field description: The answer addresses LinkedIn evidence and includes direct URLs with notes. It includes a concluding statement about absence of postings and mentions search methodology. It does not provide explicit posting dates or statuses, but the field name suggests collecting LinkedIn evidence, which the answer covers as far as LinkedIn results go.\n- Determine completeness: Given the query\u2019s demand to report LinkedIn evidence and include citations, the provided answer appears to cover the requested items (evidence URLs and notes) and explicitly states absence of postings. I consider it complete for the LinkedIn evidence field.\n- Determine support by excerpts: There were no excerpts provided in the input to verify against. Therefore, while the field answer includes URLs and notes, I cannot confirm support from excerpts. In absence of excerpts, I mark supported as false. If excerpts were supplied, I would re-evaluate against them.",
+        "citations": [],
+        "confidence": "medium"
+      },
+      {
+        "field": "5_confidence_and_caveats",
+        "reasoning": "Assessment reasoning:\n- Completeness: The provided field_answer presents a structured, multi-item evaluation covering identity, recent/open funding, open positions, LinkedIn evidence, risk of missed data, and explicit negative checks. It aligns with the typical expectations of a comprehensive field response for a complex research verification task. Therefore, completeness is set to true.\n- Excerpts support: There are no excerpts supplied in the input to verify whether the field_answer is supported by external sources. Since excerpts are missing, I cannot confirm support. Therefore, supported is set to false.\n- Confidence caveats: The answer includes explicit caveats about limited or negative results (e.g., none found in certain grant databases, possible namesake confusion, and pages returning no content). Even though the content is thorough, the lack of provided excerpts means external verification cannot be validated here.\n- Conclusion: Completeness = true (the field answer is thorough and addresses the requested elements). Supported = false (no excerpts provided to verify).\n",
+        "citations": [],
+        "confidence": "medium"
+      },
+      {
+        "field": "6_sources",
+        "reasoning": "Reasoning: The field_name is 6_sources and the field_answer provides a list of 10 sources with direct URLs. The user query asked for a concise structured report including Identity, Recent/Active Funding, Recent and Open Positions, LinkedIn Evidence, Confidence and Caveats, and Sources, but the field in question appears to be a list of sources. Since the field_answer directly lists sources (with URLs) and the excerpts include these items, the answer already satisfies providing sources. Therefore, completeness is true because it covers the expected aspect (source listing) as per the field\u2019s apparent intent. Supported is true because the field_answer is directly supported by the excerpts, which contain these URLs. If the field\u2019s intended output were a full structured report, this field would be incomplete, but given the field is specifically 6_sources, it is complete and supported based on the provided excerpts.",
+        "citations": [],
+        "confidence": "high"
+      },
+      {
+        "field": "bottom_line",
+        "reasoning": "Assessment notes:\n- The field_answer provides a narrative summary of funding, open positions, and LinkedIn evidence but does not include direct URLs for each positive claim, which violates the instruction that every positive claim must carry a direct URL. \n- It also does not explicitly verify the identity and current affiliation beyond stating plausibility; it would benefit from explicit identity verification steps and evidence linking to Brian Gilchrist (UMich SPRL) specifically.\n- The user request asks for a structured report with explicit sections and URLs, and to separate into Identity, Recent/Active Funding, Recent/Open Positions, LinkedIn Evidence, Confidence/Caveats, Sources. The field_answer is not structured into those sections and lacks comprehensive source citations and URLs.\n- Because of missing direct URLs and the lack of a clearly structured, source-backed presentation, the answer is not complete according to the field requirements. The absence of explicit URLs for each claim also affects verifiability. \n- If I were to improve, I would extract each factual claim, attach the exact source URL (USAspending, AFOSR award page, UM SPRL/EECS/CLASP postings, LinkedIn postings, etc.), and clearly delineate identity verification steps with caveats.\n- Excerpts were not provided in this evaluation context, so I cannot cross-check claims with excerpts here. If excerpts were available, I would assess alignment accordingly.\n",
+        "citations": [],
+        "confidence": "low"
+      }
+    ],
+    "content": {
+      "executive_summary": "- **Identity confirmed**: Brian E. Gilchrist is Professor of Electrical Engineering and Computer Science (EECS) at the University of Michigan, Ann Arbor, also Professor (courtesy) in Climate and Space Sciences and Engineering and in Applied Physics, and Director of the Space Physics Research Laboratory (SPRL) / XTRM Labs. Email `gilchrst@umich.edu`, phone (734) 763-6230, office 2240 EECS, 1301 Beal Avenue, Ann Arbor, MI 48109-2122 [executive_summary[0]] [4].\n- **Research scope verified**: plasma electrodynamics sensors and space applications; electrodynamic tethers for propellantless propulsion; nanoparticle Field Extraction Thruster (nanoFET) \u2014 NASA NIAC Phase II concept with Gilchrist as Co-PI; SETS on STS-75 (PI); Icarus student satellite (PI lead for >100 students); advanced microwave interferometry for EP plasma diagnostics; neutral gas release for spacecraft charge neutralization [executive_summary[1]] [3].\n- **One AFOSR grant trail visible post-2024-01-01**: An AFOSR grant to University of Michigan (FA9550-26-1-0010) was obligated on 2025-10-23 with $622,368 total funding and a 2025-11-15 to 2029-11-14 project window. PI/role not yet publicly tied to Gilchrist by name on the USAspending.gov record but the award date, recipient, and basic-research scope match his AFOSR-aligned plasma electrodynamics work \u2014 flagged as **PROBABLE** pending primary-source confirmation.\n- **No verified publicly posted open PhD / postdoc / research-staff position attributable to Gilchrist or SPRL as of 2026-07-11**. SPRL's `/careers` page returned no content at scrape time, and PEPL (a separate Gilchrist-adjacent Michigan lab) lists no Gilchrist-led openings. Evidence of any closed posting dated \u2265 2026-01-01 also not found publicly.\n- **LinkedIn evidence limited to a non-confirming namesake and the SPRL company page** (Space Physics Research Laboratory, ~360 followers). No posts or job ads attributed to Gilchrist himself.\n- **Confidence**: HIGH on identity, MEDIUM on the single AFOSR grant attribution, LOW on hiring (likely absent rather than missed), LOW on LinkedIn activity (likely absent rather than missed).\n\n---",
+      "1_identity": "| Field | Verified value | Source |\n|---|---|---|\n| Name | Brian E. Gilchrist | [1_identity[0]] [4] |\n| Title | Professor, EECS; Professor (courtesy), Climate and Space Sciences and Engineering; Professor (courtesy), Applied Physics | [1_identity[0]] [4] |\n| Lab / Center | Director, SPRL / XTRM Labs; Space Electrodynamics and Tether Systems Lab | [1_identity[1]] [3], [1_identity[2]] [28] |\n| Email | gilchrst@umich.edu (also brian.gilchrist@umich.edu) | [1_identity[0]] [4] |\n| Phone / Office | (734) 763-6230; 2240 EECS, 1301 Beal Ave, Ann Arbor, MI 48109-2122 | [1_identity[0]] [4] |\n| Education | PhD EE Stanford 1991; MS/BS EE UIUC 1979/1977 | [1_identity[0]] [4] |\n| Research scope | Plasma electrodynamics; electrodynamic tethers; nanoFET (NIAC Phase II); plasma diagnostics; spacecraft charging | [1_identity[0]] [4], [1_identity[1]] [3] |\n\n**No namesake confusion detected.** The other \"Brian Gilchrist\" found on LinkedIn is a Florida-based attorney (Managing Shareholder at Allen, Dyer, Doppelt + Gilchrist, PA), unrelated to plasma physics or the University of Michigan LinkedIn namesake.\n\n**Confidence: HIGH.** Identity and affiliation are corroborated by the official ECE directory, his personal lab page, and Google Scholar profile [1_identity[3]] [5].\n\n---",
+      "2_recent_active_funding": "### 2.1 Probable AFOSR grant \u2014 University of Michigan, 2025\n\n| Field | Value | Source |\n|---|---|---|\n| Funder | U.S. Air Force Office of Scientific Research (AFOSR), DOD | USAspending record ASST_NON_FA95502610010_097 |\n| Recipient | REGENTS OF THE UNIVERSITY OF MICHIGAN (Ann Arbor, MI-06) | Same |\n| CFDA program | 12.630 \u2014 Basic, Applied, and Advanced Research in Science and Engineering | Same |\n| Award / obligation date | 2025-10-23 (posted by USAspending) | Same |\n| Project start / end | 2025-11-15 \u2192 2029-11-14 (\u2248 3 yr 4 mo remaining) | Same |\n| Total funding | $622,368.00 USD | Same |\n| Status (USAspending) | In progress, unlinked to a federal account | Same |\n| Role / PI | Not stated on the USAspending record itself \u2014 **inferred to involve Gilchrist** given (a) AFOSR has funded his plasma electrodynamics work historically, (b) the obligation falls inside the 2024-01-01 scope, (c) UM-Ann Arbor is the recipient. **NOT CONFIRMED BY PRIMARY DOCUMENT.** |\n| Source URL | https://www.usaspending.gov/award/ASST_NON_FA95502610010_097 | \u2014 |\n\n**Caveat**: USAspending does not display PI names on this particular record. The match is plausible but not primary-source confirmed as Gilchrist's grant. Anyone relying on this should email AFOSR Public Affairs or check the official AFOSR awards page.\n\n### 2.2 nanoFET \u2014 NASA Innovative Advanced Concepts (NIAC) Phase II (legacy, status unclear)\n\n- Program: NASA NIAC Phase II award to University of Michigan for the Nanoparticle Field Extraction Thruster (nanoFET). Gilchrist is named as a Co-PI / Co-Investigator in original NIAC concept material.\n- Announcement: NIAC 2018 / 2019 Phase II selections (multiple NIAC lists cite Michigan nanoFET funding; the program has since ended but Phase II maturation funding continued for several awardees).\n- Source: nanoFET figure / paper, NIAC program page.\n- **No public NIAC 2024 / 2025 / 2026 Phase II continuation award is currently documented for the nanoFET project.** Treat as **historical / ended** unless an updated NASA TechPort or NIAC selection page shows otherwise.\n\n### 2.3 Other grants / programs\n\n| Grant / project | Status | Source |\n|---|---|---|\n| SETS (Shuttle Electrodynamic Tether System), STS-75 (1996) | Completed (historical) | [2_recent_active_funding[0]] [3] |\n| ProSEDS (NASA MSFC, planned 2003) | Cancelled after Columbia accident | [2_recent_active_funding[0]] [3] |\n| Icarus student satellite | Historical (Michigan student satellite project) | [2_recent_active_funding[0]] [3] |\n| TSATT (Tethered SATellite Testbed) | Mentioned as current student project on personal site | [2_recent_active_funding[0]] [3] |\n| \"B-SPICE\" spacecraft-charging mitigation launch (White Sands, Oct 2025 per SPRL news) | Launched / completed flight; SPRL News post exists | [2_recent_active_funding[1]] [28] |\n\n**No verified post-2024-01-01 competitive grant (e.g., NSF, DOE, NASA, ONR) is publicly attributable to Gilchrist with primary-source confirmation beyond the AFOSR record above.**\n\n---",
+      "3_recent_and_open_positions": "### 3.1 What was checked\n- SPRL main site \u2014 https://sprl.engin.umich.edu/ (and /careers, /jobs): no \"Careers\" or \"Open Positions\" content was retrievable at scrape time.\n- PEPL \u2014 https://pepl.engin.umich.edu/ (Plasmadynamics & Electric Propulsion Laboratory): not Gilchrist's lab, but is the most prominent EP hiring lab at UM. No open positions attributed to Gilchrist.\n- EECS faculty page \u2014 no job postings or student recruiting notices listed under Gilchrist's entry [3_recent_and_open_positions[0]] [4].\n- UM COE job listings \u2014 general search did not surface a position tied to Gilchrist or SPRL.\n\n### 3.2 Result\n- **No verified public evidence of an open PhD / postdoc / research engineer / research assistant position currently posted by Gilchrist's group or SPRL.**\n- **No verified public evidence of a posting dated \u2265 2026-01-01 that has since closed.**\n- SPRL's news page (https://sprl.engin.umich.edu/) describes completed work (e.g., B-SPICE sounding-rocket launch, White Sands) but does not advertise vacancies.\n\n### 3.3 Where future openings would plausibly appear\n- UM HR / Careers portal filtered by \"Electrical Engineering and Computer Science\" or \"Climate and Space Sciences\" \u2014 https://careers.umich.edu/.\n- AERO / EECS department pages \u2014 https://aero.engin.umich.edu/ and https://eecs.engin.umich.edu/.\n- SPRL News and About pages \u2014 https://sprl.engin.umich.edu/.\n\n**Action for an applicant**: Email gilchrst@umich.edu with research interests and CV; the personal site does not list active recruiting but it is the standard route for grad-school / postdoc inquiries.\n\n---",
+      "4_linkedin_evidence": "| Item | URL | Notes |\n|---|---|---|\n| Space Physics Research Laboratory (SPRL) company page | https://www.linkedin.com/company/space-physics-research-laboratory | ~360 followers; institutional page only; **no current job postings or recruiting posts attributed to Gilchrist** were retrievable. |\n| ResearchGate profile (Brian Gilchrist, UM) | https://www.researchgate.net/profile/Brian-Gilchrist-2 | Lists publications and reads; **not a primary hiring source** but confirms ongoing research output. |\n| Google Scholar profile | https://scholar.google.com/citations?user=ZobtNwYAAAAJ&hl=en | Citation record; **no recruitment announcements**. |\n\n**No LinkedIn post by Gilchrist (or by SPRL) advertising a PhD / postdoc / research-engineer opening was found.** Searches were run with site:linkedin.com filters combined with his name, his lab, and his known projects (nanoFET, SETS, TSATT, MiTEE).\n\n---",
+      "5_confidence_and_caveats": "| Topic | Confidence | Why |\n|---|---|---|\n| Identity & current affiliation | **High** | Three independent UM sources (ECE directory, personal site, ResearchGate / Scholar) align. |\n| AFOSR grant attribution to Gilchrist | **Medium** | Award record exists for Michigan, AFOSR, 2025 start, and basic-research scope; PI is not named on the USAspending record \u2014 needs primary-source confirmation. |\n| Other 2024+ grants | **Low / none found** | No NSF, NASA, or ONR award for Gilchrist surfaced in this search round. |\n| Open positions | **Low (likely none public)** | SPRL career page returned no content; no Michigan job-board postings tied to him. |\n| LinkedIn hiring evidence | **Low (likely none public)** | Only an unrelated namesake attorney and SPRL's institutional page appear; no recruiting posts. |\n| Risk of missed data | **Moderate** | PI names on federal grants are often only in transaction records; NSPIRES / NIH RePORTER / NASA TechPort queries for \"Gilchrist\" + \"tether / propulsion\" returned no additional hits in this round and may need a direct UM pivot search. |\n\n### Things explicitly checked that came up negative\n- USAspending.gov search by recipient \"REGENTS OF THE UNIVERSITY OF MICHIGAN\" plus award year \u2265 2024, AFOSR/AFRL, did not yield a record naming Gilchrist as PI in the public listing.\n- NSF Award Search (web surface) for \"Gilchrist\" + plasma/tether returned no active awards.\n- NSPIRES / NASA TechPort public searches did not surface a 2024+ award with his name attached.\n- SPRL careers/jobs page returned no content (possibly a 404 or an empty CMS page).\n- LinkedIn searches filtered to \"Brian Gilchrist\" + UMich / SPRL / tether / propulsion did not return a personal profile attributable to him.\n\n---",
+      "6_sources": "1. ECE Faculty Directory \u2014 Brian E. Gilchrist: https://ece.engin.umich.edu/touchscreen-page/faculty/personnel/gilchrist-brian-e\n2. Brian Gilchrist personal homepage: https://gilchrist.engin.umich.edu/\n3. ResearchGate profile \u2014 Brian Gilchrist (UMich): https://www.researchgate.net/profile/Brian-Gilchrist-2\n4. Google Scholar profile \u2014 Brian Gilchrist: https://scholar.google.com/citations?user=ZobtNwYAAAAJ&hl=en\n5. Space Physics Research Laboratory (SPRL) home: https://sprl.engin.umich.edu/\n6. Space Physics Research Laboratory \u2014 LinkedIn: https://www.linkedin.com/company/space-physics-research-laboratory\n7. USAspending.gov award record (AFOSR \u2192 Michigan, FA9550-26-1-0010): https://www.usaspending.gov/award/ASST_NON_FA95502610010_097\n8. nanoFET NASA NIAC concept page (ResearchGate record 251918897): https://www.researchgate.net/figure/nanoFETs-enormous-I-sp-range-at-high-efficiencies-The-accelerating-voltages-are-from_fig2_251918897\n9. PEPL home (Plasmadynamics & Electric Propulsion Laboratory, separate Michigan EP lab): https://pepl.engin.umich.edu/\n10. NSF Award Search (no active Gilchrist awards found at time of search): https://www.nsf.gov/awardsearch/\n\n---",
+      "bottom_line": "**Funding (2024+)**: One USAspending record \u2014 AFOSR grant FA9550-26-1-0010 to the University of Michigan, obligated 2025-10-23, $622,368 over 2025-11-15 to 2029-11-14 \u2014 is plausibly but not certainly Gilchrist's. No other post-2024 federal award with his name surfaced on USAspending, NSF Award Search, or NASA TechPort public search. The nanoFET NIAC Phase II work is historical; no fresh Phase II / Phase III continuation is publicly documented.\n\n**Open positions**: No public posting on SPRL, UM EECS, or PEPL sites as of 2026-07-11 names Gilchrist's group. No 2026-dated posting was found in the closed/historical category either. Direct outreach to gilchrst@umich.edu remains the surest path for PhD/postdoc inquiries.\n\n**LinkedIn**: Only the institutional SPRL company page and an unrelated namesake attorney appear; no individual profile or hiring post attributable to Brian E. Gilchrist (UMich) surfaced.\n\n**Use this report as a starting map**, then (a) email AFOSR Public Affairs to confirm whether FA9550-26-1-0010 names Gilchrist as PI, (b) search NASA NSPIRES by institution (UMich) for new awards to SPRL / EECS / CLASP in 2024-2026, and (c) refresh the SPRL site after the July-August academic hiring cycle begins."
+    },
+    "type": "json",
+    "beta_fields": null,
+    "mcp_tool_calls": null,
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "executive_summary": {
+          "type": "string",
+          "title": "Executive Summary"
+        },
+        "1_identity": {
+          "type": "string",
+          "title": "1. Identity"
+        },
+        "2_recent_active_funding": {
+          "type": "string",
+          "title": "2. Recent / Active Funding"
+        },
+        "3_recent_and_open_positions": {
+          "type": "string",
+          "title": "3. Recent and Open Positions"
+        },
+        "4_linkedin_evidence": {
+          "type": "string",
+          "title": "4. LinkedIn Evidence"
+        },
+        "5_confidence_and_caveats": {
+          "type": "string",
+          "title": "5. Confidence and Caveats"
+        },
+        "6_sources": {
+          "type": "string",
+          "title": "6. Sources"
+        },
+        "bottom_line": {
+          "type": "string",
+          "title": "Bottom Line"
+        }
+      },
+      "required": [
+        "executive_summary",
+        "1_identity",
+        "2_recent_active_funding",
+        "3_recent_and_open_positions",
+        "4_linkedin_evidence",
+        "5_confidence_and_caveats",
+        "6_sources",
+        "bottom_line"
+      ]
+    }
+  }
+}

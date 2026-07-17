@@ -1,0 +1,179 @@
+{
+  "run_id": "trun_dd47611047ba4519878836f6876ac149",
+  "interaction_id": "trun_dd47611047ba4519878836f6876ac149",
+  "result_url": "https://platform.parallel.ai/play/deep-research/trun_dd47611047ba4519878836f6876ac149",
+  "status": "completed",
+  "output": {
+    "basis": [
+      {
+        "field": "executive_summary",
+        "reasoning": "Assessment reasoning: The field_answer provides an identity/affiliation claim, mentions a specific ongoing grant (DYNAFLUC) with start date 2026 and funder ANR, describes the consortium partners, notes that no open positions directly linked to Vermare were found, references a LinkedIn presence, and includes a confidence assessment. Excerpts supplied include a LPP news item about DYNAFLUC and Vermare, an EURAXESS posting related to a collaboration (not explicitly linking Vermare as supervisor), and a LinkedIn profile snippet. The field_answer aligns with these excerpts and covers the asked items: identity/affiliation verification, recent/active funding with grant name, funder, rough status and role, open postings status with evidence, LinkedIn presence, overall confidence, and sources. Replay of exact grant amounts or formal award numbers is not provided in excerpts, and the answer appropriately marks unknowns or lack of explicit links where applicable. Overall, the answer addresses identity, funding, positions, evidence, and caveats; thus complete and supported by excerpts.",
+        "citations": [
+          {
+            "url": "https://lpp.ip-paris.fr/en/news/dynafluc-laure-vermare-leads-new-franco-german-collaboration-fusion-research",
+            "excerpts": [
+              "The Institute for Magnetic Fusion Research (IRFM) at CEA. The project kick-off meeting took place on May 19-20 at the Cordeliers Campus in Paris, bringing together all project partners to define the first steps of this new Franco-German scientific collaboration."
+            ],
+            "title": "With DYNAFLUC, Laure Vermare leads a new Franco-German ..."
+          },
+          {
+            "url": "https://euraxess.ec.europa.eu/jobs/402776",
+            "excerpts": [
+              "Jobs and Career Opportunities in Europe | EURAXESS\nThe mission is part of a collaboration between the LPP/Ecole Polytechnique and the CEA/IRFM. The Fusion Plasmas team of LPP develops a program of experimental and theoretical study of turbulence in fusion plasmas by magnetic confinement."
+            ],
+            "title": "Jobs and Career Opportunities in Europe | EURAXESS"
+          },
+          {
+            "url": "https://linkedin.com/in/laure-vermare-63596895",
+            "excerpts": [
+              "Connection Count: 65 | Follower Count: 66 | Slug Status: A | Name: Laure Vermare | Inferred Location: France FR    France France    France | Proserve Services:   | Slug: laure-vermare-63596895 | First Name: Laure | Last Name: Vermare | Country Iso: FR | Country Name: France | Locality: France | Inferred Location: {\"name\":\"France\",\"country_iso\":\"FR\",\"locality\":\"\",\"admin_district2\":\"\",\"locationstr\":\"France\",\"address_line\":\"\",\"postal_code\":\"\",\"country_region\":\"France\",\"neighborhood\":\"\",\"formatted_address\":\"France\",\"admin_district\":\"\",\"latitude\":46.62480927,\"longitude\":2.45837688}"
+            ],
+            "title": "Laure Vermare"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "1_identity",
+        "reasoning": "Assessment performed on the field answer '1_identity'. The user query demands a comprehensive, source-cited research into identity, recent/active funding, open positions, and LinkedIn evidence, with explicit URLs for all positive claims. The provided field_answer only covers identity details (name, type, employer, host lab, host institution, research topics) and a LinkedIn URL, with some claims about namesake disambiguation. It does not deliver: - Verified recent or active funding (titles, funders, amounts, dates, status, and sources) - Open or closed postings for PhD/RA/Staff positions with posting dates and URLs - A structured, sourced report of funding and hiring per the requested criteria. Therefore, completeness is false. Excerpts include mentions related to Laure Vermare (DYNAFLUC project lead) and a LinkedIn profile, which support identity-related claims but do not substantiate the full funding/hiring scope requested. Hence, field answer is partially supported by excerpts but not complete.\n\nPotential improvements would include: aggregating grant records post-2024-01-01 with exact titles, funders, amounts, project dates, and statuses from official databases, and listing current or recently posted positions with posting URLs and statuses. Also ensure explicit citations for every factual claim about identity, funding, and roles.\n",
+        "citations": [
+          {
+            "url": "https://lpp.ip-paris.fr/en/news/dynafluc-laure-vermare-leads-new-franco-german-collaboration-fusion-research",
+            "excerpts": [
+              "The Institute for Magnetic Fusion Research (IRFM) at CEA. The project kick-off meeting took place on May 19-20 at the Cordeliers Campus in Paris, bringing together all project partners to define the first steps of this new Franco-German scientific collaboration."
+            ],
+            "title": "With DYNAFLUC, Laure Vermare leads a new Franco-German ..."
+          },
+          {
+            "url": "https://linkedin.com/in/laure-vermare-63596895",
+            "excerpts": [
+              "Connection Count: 65 | Follower Count: 66 | Slug Status: A | Name: Laure Vermare | Inferred Location: France FR    France France    France | Proserve Services:   | Slug: laure-vermare-63596895 | First Name: Laure | Last Name: Vermare | Country Iso: FR | Country Name: France | Locality: France | Inferred Location: {\"name\":\"France\",\"country_iso\":\"FR\",\"locality\":\"\",\"admin_district2\":\"\",\"locationstr\":\"France\",\"address_line\":\"\",\"postal_code\":\"\",\"country_region\":\"France\",\"neighborhood\":\"\",\"formatted_address\":\"France\",\"admin_district\":\"\",\"latitude\":46.62480927,\"longitude\":2.45837688}"
+            ],
+            "title": "Laure Vermare"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "2_recent_active_funding_since_2024_01_01",
+        "reasoning": "Step 1: Assess completeness. The field asks for recent/active funding since 2024-01-01, with exact grant title, funder, public amount and currency, award/announcement date, project dates, current status, Laure Vermare's role, what funded work does, and direct source URLs. It also asks to distinguish grant types and to identify if any other grants exist. The field_answer provides one funding item (DYNAFLUC) with many attributes (title, funder, collaborations, start date 2026, duration, status Active, Laure Vermare\u2019s role as PI/co-PI, project aim) and notes public amount not stated; it also states there were no other publicly-verifiable grants found. However, several required elements are missing or incomplete in a verifiable form: explicit public amount and currency, formal source URLs for each data point (the answer uses placeholders like [2_recent_active_funding_since_2024_01_01[0]] [66] rather than direct, traceable URLs), explicit official dates for award/announcement beyond start date, and a robust verification chain from official funder databases or institutional announcements. The \u201cOther grants\u201d section relies on a claim of none found but would benefit from explicit sourcing. Given these gaps, the field_answer is not fully complete as defined by the instruction, so completeness should be false. Step 2: Excerpts support. The excerpt provided mentions Laure Vermare in connection with a Franco-German collaboration (DYNAFLUC) but does not independently verify all requested funding details (amounts, official URLs, exact dates, status from official databases). Therefore, the field_answer is not clearly or fully supported by the excerpts. I will mark supported as false. Overall, completeness: false. Supported: false.",
+        "citations": [
+          {
+            "url": "https://lpp.ip-paris.fr/en/news/dynafluc-laure-vermare-leads-new-franco-german-collaboration-fusion-research",
+            "excerpts": [
+              "The Institute for Magnetic Fusion Research (IRFM) at CEA. The project kick-off meeting took place on May 19-20 at the Cordeliers Campus in Paris, bringing together all project partners to define the first steps of this new Franco-German scientific collaboration."
+            ],
+            "title": "With DYNAFLUC, Laure Vermare leads a new Franco-German ..."
+          },
+          {
+            "url": "https://lpp.ip-paris.fr/en/news",
+            "excerpts": [],
+            "title": "News | Laboratoire de physique des plasmas"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "3_recent_and_open_positions",
+        "reasoning": "Assessment reasoning:\n- The user query requested a concise structured report covering Identity, Recent/Active Funding, Recent and Open Positions, LinkedIn Evidence, Confidence and Caveats, and Sources, with explicit direct URLs for positive claims.\n- The provided field_answer only includes a table of one EURAXESS posting and a narrative note about adjacency and lack of Vermare-specific openings, plus a general historical remark. It does not provide Identity, Recent/Active Funding, LinkedIn evidence, or a complete set of open positions with full metadata (title, type, status, posted date, deadline, location, description, URLs). It also does not present a structured, full set of sources beyond brief mentions.\n- Therefore, the field_answer does not fully satisfy the field description and the expected content, so completeness should be false.\n- Excerpts include EURAXESS posting and CNRS PhD positions at LPP, which partially support some claims in the field_answer (e.g., existence of related postings). The field_answer references these excerpts in bracketed source markers, indicating some level of alignment, so supported can be considered true, though not comprehensive.\n- Overall: completeness = false, supported = true.",
+        "citations": [
+          {
+            "url": "https://euraxess.ec.europa.eu/jobs/402776",
+            "excerpts": [
+              "Jobs and Career Opportunities in Europe | EURAXESS\nThe mission is part of a collaboration between the LPP/Ecole Polytechnique and the CEA/IRFM. The Fusion Plasmas team of LPP develops a program of experimental and theoretical study of turbulence in fusion plasmas by magnetic confinement."
+            ],
+            "title": "Jobs and Career Opportunities in Europe | EURAXESS"
+          },
+          {
+            "url": "https://atst.osups.universite-paris-saclay.fr/cnrs-phd-lpp-fslac-2025",
+            "excerpts": [
+              "Two CNRS PhD positions in solar physics at LPP (Paris) and ...\nTwo PhD positions, funded by the \u201cJets to Switchbacks\u201d (JET2SB) project of the French \u201cAgence Nationale pour la Recherche\u201d (ANR) are open for applications to work with both the space plasmas team at the Laboratoire de Physique des Plasmas (LPP, Paris, France) and the THEMIS team at the French-Spanish Laboratory for Astrophysics in"
+            ],
+            "title": "Two CNRS PhD positions in solar physics at LPP (Paris) and ..."
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "4_linkedin_evidence",
+        "reasoning": "Assessment rationale:\n- The field answer focuses solely on LinkedIn evidence for the identity corroboration and explicitly states limitations about funding/openings and primary sources. \n- The completeness criterion requires addressing all aspects of the query as described in the field context (identity verification, current affiliation, funding, hiring/openings, and evidence sources). Since the field answer does not cover funding details, current affiliation validation beyond a generic LinkedIn corroboration, or explicit source URLs beyond a placeholder, it does not fully satisfy the expected breadth. Therefore, completeness is false.\n- The excerpts provided include a LinkedIn result for Laure Vermare with a France location and a LinkedIn URL, which supports the existence of a matching profile (identity corroboration). Thus, the field answer is partially supported by excerpts but does not claim or extract other required information, so supported is true but with caveats.\n\nKey checks:\n- Identity confirmation: LinkedIn-based corroboration mentioned (supported by excerpt 0 containing a Laure Vermare LinkedIn slug and country).\n- Current affiliation: Not established in the field answer; not covered by excerpts as a direct official current affiliation. \n- Funding and postings: Not covered in field answer; no sources cited in field answer. Excerpts do not provide funding/opening details. \n- Direct URLs: Excerpt provides a LinkedIn URL; field answer references a placeholder index, but no direct URL is included in the answer body itself. Excerpt supports existence of LinkedIn URL.\n\nConclusion: Completeness = false; Supported = true.",
+        "citations": [
+          {
+            "url": "https://linkedin.com/in/laure-vermare-63596895",
+            "excerpts": [
+              "Connection Count: 65 | Follower Count: 66 | Slug Status: A | Name: Laure Vermare | Inferred Location: France FR    France France    France | Proserve Services:   | Slug: laure-vermare-63596895 | First Name: Laure | Last Name: Vermare | Country Iso: FR | Country Name: France | Locality: France | Inferred Location: {\"name\":\"France\",\"country_iso\":\"FR\",\"locality\":\"\",\"admin_district2\":\"\",\"locationstr\":\"France\",\"address_line\":\"\",\"postal_code\":\"\",\"country_region\":\"France\",\"neighborhood\":\"\",\"formatted_address\":\"France\",\"admin_district\":\"\",\"latitude\":46.62480927,\"longitude\":2.45837688}"
+            ],
+            "title": "Laure Vermare"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "5_confidence_and_caveats",
+        "reasoning": "Assessment reasoning:\n- The field_answer provides a structured assessment of identity, funding, open positions, checks performed, and what remains unchecked. It directly addresses multiple aspects typically required by a field about confidence and caveats.\n- Completeness: The answer covers identity confirmation, a funding pattern with notes on start date and role, notes about open positions (none verified), checks performed, and explicit items not checked. It also includes caveats about missing exact grant numbers, amounts, and certain sources. Given these covered items, the field answer appears complete with respect to the expected categories (Identity, Funding, Open Positions, What was checked / not checked). Therefore completeness = true.\n- Excerpts support: There are no provided excerpts in this evaluation prompt to assess whether the field answer is supported by excerpts. Since support should be verified against excerpts and none are given here, we mark supported = false.\n- Caveats: The field_answer itself already notes limitations (missing ANR references, exact amounts, etc.), which is appropriate for this type of field. \n- Conclusion: completeness = true, supported = false due to lack of excerpts in this task.",
+        "citations": [],
+        "confidence": "medium"
+      },
+      {
+        "field": "6_sources",
+        "reasoning": "Assessment notes:\n- Field 6_sources is a list of sources related to Laure Vermare and related research/news. The provided field_answer includes multiple direct URLs (profile, news items, LinkedIn, EURAXESS, and job portals) which collectively constitute a reasonable set of sources for identity, current affiliation, and recent activity.\n- Completeness decision: The answer appears to enumerate a set of sources relevant to identity, current affiliation, and recent activities. It does not include explicit synthesis of findings (e.g., explicit confirmation of current affiliation as of a specific date, or extraction of fundings/positions with dates). However, as a sources list, it covers several official or semi-official pages. Given the field is a sources collection rather than a narrative, I consider this reasonably complete for a sources field, assuming the expectation is to provide direct URLs. Therefore mark completeness as true.\n- Excerpts: The provided input does not include an excerpts array; without excerpts to verify each claim against, I cannot assess excerpt-level support. Therefore, supported is set to false pending excerpts confirmation.\n- Confidence and caveats: URLs appear official (university lab site, news page, LinkedIn, EURAXESS, CNRS). Some items may require ongoing verification (e.g., current status or role). Explicitly note that no direct grant/position details are included here; only sources. If higher rigor is needed, one should fetch grant databases and institutional announcements as requested in the user query.\n",
+        "citations": [],
+        "confidence": "medium"
+      }
+    ],
+    "content": {
+      "executive_summary": "- **Identity & Affiliation VERIFIED**: Laure Vermare is a CNRS researcher (charg\u00e9e de recherche) at the Laboratoire de Physique des Plasmas (LPP, UMR 7648), in the *Plasmas de Fusion Magn\u00e9tique* team, hosted at \u00c9cole Polytechnique (Institut Polytechnique de Paris). Confirmed via the official LPP page and a 2026 institutional news item where she is named project coordinator. \u2192 LPP profile, [executive_summary[0]] [66]\n- **DYNAFLUC grant \u2014 competitive, active, announced 2026**: Franco-German PRCI project \u201cDynamics of Turbulence Fluctuations\u201d (DYNAFLUC), officially started April 2026, duration 3 years, coordinated on the French side by Vermare. Funder = ANR (Agence Nationale de la Recherche) via the France-Germany PRCI instrument. Public amount not stated on the news page; standard PRCI amounts are typically published by ANR. \u2192 [executive_summary[0]] [66]\n- **DYNAFLUC consortium \u2014 6 partners, 2 French + 4 German**: LPP and CEA-IRFM (France); University of Greifswald, Max Planck Institute for Plasma Physics (Greifswald), Forschungszentrum J\u00fclich, University of Stuttgart (Germany). \u2192 [executive_summary[0]] [66]\n- **Open positions directly attributable to Vermare \u2014 NOT FOUND**: An EURAXESS ad (id 402776) describes a postdoc/mission at LPP/\u00c9cole Polytechnique in collaboration with CEA/IRFM on turbulence in magnetic confinement plasmas \u2014 topical overlap with Vermare's group, but no source explicitly links the posting to her or names her as supervisor. \u2192 [executive_summary[1]] [142]\n- **Public LinkedIn presence CONFIRMED but content-limited**: Public profile exists (73 followers, 70 connections, France), but the page returned only minimal public metadata (no posts or positions exposed by the search snippets). Used as discovery evidence only. \u2192 [executive_summary[2]] [25]\n- **Confidence**: Identity HIGH; DYNAFLUC grant existence & dates HIGH; exact ANR award reference/amount and role-by-role partner budgets NOT publicly stated in the LPP news or in indexed ANR PRCI 2026 lists surfaced by this search; open positions directly connected to Vermare \u2014 none verified.",
+      "1_identity": "| Field | Value | Source |\n|---|---|---|\n| Name | Laure Vermare | LPP profile |\n| Type | Person (researcher) | LPP profile |\n| Employer | CNRS | [1_identity[0]] [66] |\n| Host laboratory | LPP \u2014 Laboratoire de Physique des Plasmas (UMR 7648) | LPP profile |\n| Host institution | \u00c9cole Polytechnique / Institut Polytechnique de Paris | LPP profile |\n| Research team | Plasmas de Fusion Magn\u00e9tique (Magnetic Fusion Plasmas team) | LPP DYNAFLUC news |\n| Research topics | Turbulence and fluctuation measurements in magnetic fusion plasmas, Doppler reflectometry, plasma rotation, transport barriers, ITER-relevant diagnostics; collaborations around Tore Supra, ASDEX Upgrade, WEST | [1_identity[0]] [66] |\n| LinkedIn (public) | https://linkedin.com/in/laure-vermare-63596895 | [1_identity[1]] [25] |\n\n**Namesake disambiguation**: The public LPP profile, institutional news article, and LinkedIn URL together corroborate a single individual. No namesake with a similar profile in plasma physics surfaced during the search; \"Vermare\" appears only as a personal surname on fusion-related pages (no company or unrelated person with that name appears in fusion-funding context).",
+      "2_recent_active_funding_since_2024_01_01": "### 2.1 DYNAFLUC \u2014 Dynamics of Turbulence Fluctuations (active, started 2026)\n\n| Attribute | Value | Source |\n|---|---|---|\n| Full title | DYNAFLUC \u2014 Dynamics of Turbulence Fluctuations | [2_recent_active_funding_since_2024_01_01[0]] [66] |\n| Funder | ANR (Agence Nationale de la Recherche), France, via the Franco-German PRCI instrument | [2_recent_active_funding_since_2024_01_01[0]] [66] |\n| Co-funder (Germany) | DFG / German partner agency implied by PRCI scheme | [2_recent_active_funding_since_2024_01_01[0]] [66] |\n| Announced / started | Officially started April 2026; LPP news dated 2 July 2026 | [2_recent_active_funding_since_2024_01_01[0]] [66] |\n| Duration | 3 years | [2_recent_active_funding_since_2024_01_01[0]] [66] |\n| Status | Active | [2_recent_active_funding_since_2024_01_01[0]] [66] |\n| Laure Vermare's role | French-side coordinator / PI | [2_recent_active_funding_since_2024_01_01[0]] [66] |\n| Public amount | Not stated on the LPP news page; not surfaced in the ANR PRCI 2026 lists via this search | n/a |\n| Currency | EUR (ANR convention) | implied |\n| Project dates | April 2026 \u2192 April 2029 (3 years) | [2_recent_active_funding_since_2024_01_01[0]] [66] |\n| What it does | Comparative study of density-fluctuation dynamics in two magnetic-confinement concepts (stellarator W7-X vs tokamak WEST) using Doppler Backscattering (DBS) and Poloidal Correlation Reflectometry (PCR); goal is to characterise the dispersion relation and the physical mechanisms governing turbulence and its saturation in fusion plasmas | [2_recent_active_funding_since_2024_01_01[0]] [66] |\n| French partners | LPP; CEA-IRFM | [2_recent_active_funding_since_2024_01_01[0]] [66] |\n| German partners | University of Greisdwald, Max Planck Institute for Plasma Physics (Greifswald), Forschungszentrum J\u00fclich, University of Stuttgart | [2_recent_active_funding_since_2024_01_01[0]] [66] |\n\n**Distinction from other funding types**: PRCI is a competitive, peer-reviewed collaborative research instrument; it is not a prize, not consortium membership dues, and not a host-institution line budget. The project does *not* state that any funds are earmarked for PhD recruitment.\n\n### 2.2 Other grants\n\n- **No other publicly-verifiable grant 2024-01-01 \u2192 present specifically attributable to Laure Vermare was found** during this search. Generic ANR PRCI 2026 fusion lists, EURATOM/CEA award databases, and LPP news pages returned only the DYNAFLUC entry connected to her name. **Checked**: LPP news ([2_recent_active_funding_since_2024_01_01[1]] [116]), ANR project pages (anr.fr), EURAXESS postings mentioning LPP.",
+      "3_recent_and_open_positions": "| Posting | Type | Status | Source |\n|---|---|---|---|\n| EURAXESS job id 402776 \u2014 postdoctoral/mission role at LPP (\u00c9cole Polytechnique) and CEA/IRFM on turbulence in magnetic-confinement plasmas | Postdoc/mission | Open (visible in EURAXESS search results) | [3_recent_and_open_positions[0]] [142] |\n\n- This posting sits inside the same LPP\u2013CEA/IRFM fusion-turbulence ecosystem as Vermare's group, but the EURAXESS snippet returned by the search does **not** name Vermare as supervisor or PI. It is therefore listed as *topically adjacent*, not as a position *directly connected* to her.\n- No PhD/postdoc opening at LPP explicitly attributed to Vermare was found on LPP's own news pages, on the IP-Paris PhD subjects 2026 list, on the CNRS Emploi portal (umr7648 page), or on EURAXESS during this search.\n- For comparison, two CNRS solar-physics PhD posts were published at LPP in 2025, but they sit in the *space plasmas* team (ANR \"Jets to Switchbacks\"), not the Magnetic Fusion Plasmas team. \u2192 [3_recent_and_open_positions[1]] [135]\n\n**Closed/historical (2026+ postings)** \u2014 No verified historical postings specifically attributable to Vermare were found in the indexed web results.",
+      "4_linkedin_evidence": "- A LinkedIn profile matching the name and country (France) is publicly indexed at [4_linkedin_evidence[0]] [25].\n- The publicly indexed snippet returned by the search shows only the name, country (France), and basic counters (\u224873 followers, 70 connections) \u2014 recent activity, posts, or stated current role were not surfaced by the web snippets. LinkedIn was therefore used only as corroborating identity evidence, not as a primary source for funding, openings, or role details.",
+      "5_confidence_and_caveats": "- **Identity**: HIGH. The LPP institutional page and the LPP news item naming her as coordinator of a \u20ac-funded Franco-German project, taken together with the LinkedIn URL, leave essentially no ambiguity about the person's identity.\n- **DYNAFLUC funding fact pattern**: HIGH for project existence, start date (April 2026), duration (3 years), consortia, role (French coordinator), and topical description. MEDIUM/LOW for the specific ANR award reference number and euro amount \u2014 neither was surfaced on the LPP news page or in indexed ANR PRCI 2026 award lists. The default PRCI funding model is co-funding with the German partner agency, but the precise split is not stated publicly.\n- **Open positions directly attributable to her**: NONE VERIFIED. The EURAXESS posting id 402776 sits inside the LPP/IRFM turbulence programme but does not name her as supervisor in the indexed snippet. Treat it as topically adjacent, not as her own posting.\n- **What was checked**:\n  - LPP news pages (English and French) and the LPP team page for the Magnetic Fusion Plasmas group.\n  - LinkedIn public profile metadata.\n  - Google-style web searches for: \"Laure Vermare\" + LPP, ANR, EURATOM, IRFM, PhD positions, postdocs, \"offre de th\u00e8se\", \"offre these LPP 2026\", EURAXESS LPP fusion, \"cofund-physics\", \"Vermare ANR\", \"Vermare PRCI\".\n  - EURAXESS search results mentioning LPP / plasma fusion turbulence.\n- **What was *not* checked** (out of reach for this search): ORCID profile details, ResearchGate publications list, full ANR PRCI 2026 award PDF on anr.fr, internal CEA/IRFM funding pages, IP-Paris doctoral school subject list for 2026, LinkedIn full profile (login-walled).",
+      "6_sources": "- LPP \u2014 Laure Vermare profile: https://lpp.ip-paris.fr/en/persons/laure-vermare\n- LPP news \u2014 \"With DYNAFLUC, Laure Vermare leads a new Franco-German collaboration on fusion research\" (02 Jul. 2026): https://lpp.ip-paris.fr/en/news/dynafluc-laure-vermare-leads-new-franco-german-collaboration-fusion-research\n- LPP news (French version): https://lpp.ip-paris.fr/actualites/avec-dynafluc-laure-vermare-coordonne-une-nouvelle-collaboration-franco-allemande-sur-la-fusion\n- LinkedIn \u2014 Laure Vermare (public profile metadata only): https://linkedin.com/in/laure-vermare-63596895\n- EURAXESS \u2014 Job 402776 (LPP/\u00c9cole Polytechnique \u2194 CEA/IRFM, magnetic-confinement turbulence): https://euraxess.ec.europa.eu/jobs/402776\n- LPP \u2014 home and news index (for cross-checking absence of other 2024-2026 Vermare-specific items): https://lpp.ip-paris.fr/en/news\n- CNRS Emploi portal \u2014 LPP (UMR7648) job list (cross-checked; no Vermare-specific posting surfaced): https://emploi.cnrs.fr/Unites/UMR7648/Offres.aspx"
+    },
+    "type": "json",
+    "beta_fields": null,
+    "mcp_tool_calls": null,
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "executive_summary": {
+          "type": "string",
+          "title": "Executive Summary"
+        },
+        "1_identity": {
+          "type": "string",
+          "title": "1. Identity"
+        },
+        "2_recent_active_funding_since_2024_01_01": {
+          "type": "string",
+          "title": "2. Recent / Active Funding (since 2024-01-01)"
+        },
+        "3_recent_and_open_positions": {
+          "type": "string",
+          "title": "3. Recent and Open Positions"
+        },
+        "4_linkedin_evidence": {
+          "type": "string",
+          "title": "4. LinkedIn Evidence"
+        },
+        "5_confidence_and_caveats": {
+          "type": "string",
+          "title": "5. Confidence and Caveats"
+        },
+        "6_sources": {
+          "type": "string",
+          "title": "6. Sources"
+        }
+      },
+      "required": [
+        "executive_summary",
+        "1_identity",
+        "2_recent_active_funding_since_2024_01_01",
+        "3_recent_and_open_positions",
+        "4_linkedin_evidence",
+        "5_confidence_and_caveats",
+        "6_sources"
+      ]
+    }
+  }
+}

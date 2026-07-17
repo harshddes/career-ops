@@ -1,0 +1,743 @@
+{
+  "run_id": "trun_dd47611047ba4519a5da1ba37ae123c5",
+  "interaction_id": "trun_dd47611047ba4519a5da1ba37ae123c5",
+  "result_url": "https://platform.parallel.ai/play/deep-research/trun_dd47611047ba4519a5da1ba37ae123c5",
+  "status": "completed",
+  "output": {
+    "basis": [
+      {
+        "field": "answer",
+        "reasoning": "Assessment reasoning:\n- The field_description asks for identity verification, current affiliation, and a structured report on Recent/Active Funding, Recent/Open Positions, LinkedIn evidence, Confidence/Caveats, and Sources, with direct URLs for positive claims. It also requires explicit statements like \"No verified public evidence found\" when appropriate.\n- The provided field_answer attempts to cover identity, affiliations, and multiple funding/hiring observations, but it mixes confirmed facts with dubious or uncorroborated claims (e.g., conflicting affiliations UTSA/SwRI mentioned together without clear current status, email corroboration discussion, and NASA/NSF grant statements that aren\u2019t clearly tied to this individual).\n- The answer does not consistently distinguish between verified evidence and inference, and some strong claims (e.g., current active funding in 2024\u20132025 explicitly listing Allegrini as PI/Co-PI, or explicit hiring postings tied to this person) are not supported by the excerpts provided.\n- The instruction requires every positive claim to carry a direct URL. While many claims have URLs, the overall coherence and attribution to allegrini as lead/PI are not adequately substantiated by the excerpts.\n- Therefore, completeness should be false because the response does not fully satisfy the field description with reliable, clearly attributed, and source-backed details. Supported should be false given the excerpts do not fully back the asserted conclusions.\n",
+        "citations": [
+          {
+            "url": "https://physicstoday.aip.org/features/instrumentation-for-plasma-diagnostics",
+            "excerpts": [
+              "Instrumentation for plasma diagnostics\nDiagnostic methods now include a host of techniques used in other disciplines: interactions with electromagnetic waves, particle beams, probes, lasers and"
+            ],
+            "title": "Instrumentation for plasma diagnostics"
+          },
+          {
+            "url": "https://link.springer.com/chapter/10.1007/978-3-642-56989-0_5",
+            "excerpts": [
+              "Overview of Plasma Diagnostic Techniques - Springer Nature\nde GA Hebner \u00b7 Cit\u00e9 11\u00a0fois \u2014 Plasma diagnostics is a broad area of technology that encompasses a diverse, venerable field of experimental techniques designed to provide information about"
+            ],
+            "title": "Overview of Plasma Diagnostic Techniques - Springer Nature"
+          },
+          {
+            "url": "https://ui.adsabs.harvard.edu/abs/1965pdt..conf.....H",
+            "excerpts": [
+              "Plasma Diagnostic Techniques - ADS\nde RH Huddlestone \u00b7 1965 \u00b7 Cit\u00e9 1398\u00a0fois \u2014 Plasma Diagnostic Techniques. Huddlestone, Richard H. ;; Leonard, Stanley L. Abstract. Publication: Plasma Diagnostic Techniques. Pub Date: 1965; Bibcode"
+            ],
+            "title": "Plasma Diagnostic Techniques - ADS"
+          },
+          {
+            "url": "https://scholar.google.com/citations?user=-HPQTqYAAAAJ&hl=en",
+            "excerpts": [
+              "Frederic Allegrini Southwest Research Institute Verified email at swri.edu space plasma instrumentation heliophysics Jupiter's magnetosphere ... Articles 1\u201320 Show more"
+            ],
+            "title": "\u202aFrederic Allegrini\u202c - \u202aGoogle Scholar\u202c"
+          },
+          {
+            "url": "https://www.sciencedirect.com/author/9237159800/frederic-a-allegrini",
+            "excerpts": [
+              "Two identical instruments located on separate spacecraft will provide in situ plasma measurements at \u223c1 AU to study physical processes low in the corona and in the inner heliosphere."
+            ],
+            "title": "Fr\u00e9d\u00e9ric A. Allegrini | ScienceDirect"
+          },
+          {
+            "url": "http://swri.org/markets/earth-space/space-research-technology",
+            "excerpts": [
+              "SwRI is an internationally recognized center for basic space science research and for the development of spacecraft instrumentation and avionics systems"
+            ],
+            "title": "Space Research & Technology"
+          },
+          {
+            "url": "https://www.youtube.com/c/southwestresearchinstitute",
+            "excerpts": [
+              "Southwest Research Institute - YouTube\nWe are R&D problem solvers providing independent, multidisciplinary support to government and industry clients."
+            ],
+            "title": "Southwest Research Institute - YouTube"
+          },
+          {
+            "url": "https://philanthropy.org/990/report/741070544/southwest-research-institute",
+            "excerpts": [
+              "Southwest Research Institute \u2014 Form 990 financials, ...\nJun 28, 2026 \u2014 Revenue $926.4M \u00b7 expenses $892.4M \u00b7 revenue over expenses $34.0M this year. Shown as a fact, not a rating \u2014 a single year reflects timing of"
+            ],
+            "title": "Southwest Research Institute \u2014 Form 990 financials, ..."
+          },
+          {
+            "url": "https://klesse.utsa.edu/news/2025/08/15-nasa-swri-electrolyzer.html",
+            "excerpts": [
+              "UTSA and SwRI Team Selected by NASA to Advance ...\nAug 15, 2025 \u2014 UTSA and SwRI Team Selected by NASA to Advance Electrolyzer Technology for Space Missions ... Shrihari \u201cShri\u201d Sankarasubramanian leads the Mars Atmospheric"
+            ],
+            "title": "UTSA and SwRI Team Selected by NASA to Advance ..."
+          },
+          {
+            "url": "https://www.expressnews.com/business/article/swri-tapped-develop-instruments-help-predict-19998609.php",
+            "excerpts": [
+              "SwRI tapped to develop instruments for predicting space ...\nDec 30, 2024 \u2014 Southwest Research Institute awarded $26M to develop instruments to help predict space weather. The research hub will develop magnetometers as part of a"
+            ],
+            "title": "SwRI tapped to develop instruments for predicting space ..."
+          },
+          {
+            "url": "https://www.linkedin.com/in/frederic-allegrini-3a11435",
+            "excerpts": [
+              "View Frederic Allegrini\u2019s profile on LinkedIn, a professional community of 1 billion members."
+            ],
+            "title": "Frederic Allegrini - Staff Scientist at Southwest Research ..."
+          },
+          {
+            "url": "https://grad.space.swri.edu/allegrini-frederic/",
+            "excerpts": [
+              "Frederic Allegrini Education: Diploma of Engineer - Qualification of HES, Vaud School of Engineering - Department of Microtechnology, 1994 Diploma in Physics, University of Lausanne, 1999 Ph.D. Physics, University of Berne, 2002 Email: fallegrini@swri.edu Phone: 210-522-6029 Missions: AMICCE BepiColombo CubeSats Graphene IBEX IMAP Juno New"
+            ],
+            "title": "Frederic Allegrini \u2013 SwRI/UTSA | Graduate Program | Research"
+          },
+          {
+            "url": "https://revonect.com/contact/Frederic%20Allegrini/id/9af669956",
+            "excerpts": [
+              "SwRI headquarters occupy more than 1,200 acres in San Antonio, Texas, and provide more than 2 million square feet of laboratories, test facilities, workshops, and offices."
+            ],
+            "title": "Frederic Allegrini working at Southwest Research Institute"
+          },
+          {
+            "url": "https://grad.space.swri.edu/utsa-swri-adjoint-faculty-dr-rob-ebert-and-dr-frederic-allegrini-detect-hydrogen-and-oxygen-ions-from-europas-atmosphere-during-juno-flyby/",
+            "excerpts": [
+              "According to a new study co-authored by SwRI scientists and led by Princeton University, these observations provide key constraints on the potential oxygenation of its subsurface ocean."
+            ],
+            "title": "UTSA-SwRI Adjoint Faculty Dr. Rob Ebert and Dr. Frederic ..."
+          },
+          {
+            "url": "https://fr.linkedin.com/in/allegrini-fr%C3%A9d%C3%A9ric-6324a391",
+            "excerpts": [
+              "Consultez le profil de Allegrini Fr\u00e9d\u00e9ric sur LinkedIn, une communaut\u00e9 professionnelle d\u2019un milliard de membres."
+            ],
+            "title": "Allegrini Fr\u00e9d\u00e9ric - Enseignant chez Academie Nancy-Metz ..."
+          },
+          {
+            "url": "https://www.swri.org/",
+            "excerpts": [
+              "Southwest Research Institute | R&D From Deep Sea to Deep Space\nCareers \u00b7 Start Career Search \u00b7 Hot Job of the Week \u00b7 Benefits ... Go to SwRI Video: SwRI Ocean Simulation Laboratory Testing SwRI Ocean Simulation Lab Testing."
+            ],
+            "title": "Southwest Research Institute | R&D From Deep Sea to Deep Space"
+          },
+          {
+            "url": "http://swri.org/careers",
+            "excerpts": [
+              "Advanced science. Applied technology. Search Home [Careers](https://www.swri.org/careers) Image Image Image Image Image Previous Pause Next Image Image Image Image Image Previous Pause Next Careers Menu [Career Search](https://resapp.swri.org/ResApp/Job_Search.aspx) Hot Job of the Week Careers FAQ Careers Become an SwRI Problem Solver Our scientists and engineers develop premier solutions for clients in government and industry. People are drawn to Southwest Research Institute to work on cutting-edge R&D programs in world-class facilities, and they stay for the culture rooted in our mission to benefit humanity. Employees are our greatest asset, so we promote a healthy work-life balance and connection to the community. [SEARCH JOBS & APPLY NOW](https://resapp.swri.org/ResApp/Job_Search.aspx) [Facebook Follow SwRI Careers!](https://www.facebook.com/SwRICareers/) HOW CAN WE HELP YOU? CONTACT US +1 210 522 2223 Military & Veterans Use your experience to transition into civilian life Interns Build hands-on experience during a summer internship Recruiting Events Meet us at a university recruiting event near you Benefits Benefits Enjoy generous benefits for you and your family Group of people Outreach Join an inclusive workforce that fosters innovation Community Community Impact the greater San Antonio community Video Text CHANGE THE WORLD... ONE LINE OF CODE AT A TIME Now hiring programmers and software engineers to advance programs in robotics and automation, driverless vehicles, space exploration and cyber security. Software Engineering [E-Verify Participant](https://www.swri.org/sites/default/files/e-verify.pdf) Right to Work: [English](https://www.uscis.gov/sites/default/files/USCIS/Verification/E-Verify/E-Verify_Native_Documents/OSC_Right_to_Work_Poster.pdf) | [Spanish](https://www.uscis.gov/sites/default/files/USCIS/Verification/E-Verify/E-Verify_Native_Documents/OSC_Right_to_Work_Poster_ES.pdf) EEO Statement\nONE LINE OF CODE AT A TIME Now hiring programmers and software engineers to advance programs in robotics and automation, driverless vehicles, space exploration and cyber security. Software Engineering [E-Verify Participant](https://www.swri.org/sites/default/files/e-verify.pdf) Right to Work: [English](https://www.uscis.gov/sites/default/files/USCIS/Verification/E-Verify/E-Verify_Native_Documents/OSC_Right_to_Work_Poster.pdf) | [Spanish](https://www.uscis.gov/sites/default/files/USCIS/Verification/E-Verify/E-Verify_Native_Documents/OSC_Right_to_Work_Poster_ES.pdf) EEO Statement\nNow hiring programmers and software engineers to advance programs in robotics and automation, driverless vehicles, space exploration and cyber security"
+            ],
+            "title": "Careers | Southwest Research Institute"
+          },
+          {
+            "url": "https://www.boulder.swri.edu/",
+            "excerpts": [
+              "Southwest Research Institute & Solar System Science & Exploration\nSouthwest Research Institute base in San Antonio, Texas, is an independent, nonprofit, applied engineering and physical science research and development"
+            ],
+            "title": "Southwest Research Institute & Solar System Science & Exploration"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Southwest_Research_Institute",
+            "excerpts": [
+              "Southwest Research Institute - Wikipedia\nSouthwest Research Institute (SwRI), headquartered in San Antonio, Texas, is an independent and nonprofit applied research and development (R&D) organization. Description \u00b7 Technical divisions"
+            ],
+            "title": "Southwest Research Institute - Wikipedia"
+          },
+          {
+            "url": "https://www.swri.org/newsroom/press-releases/swri-receives-3-million-nasa-astrobiology-grant-study-microbial-life-alaska-s-arctic-sand-dunes",
+            "excerpts": [
+              "SwRI receives $3 million NASA astrobiology grant to study microbial ...\nMarch 11, 2025 \u2014 Southwest Research Institute (SwRI) has received a three-year, $2,999,998 grant from NASA to identify and characterize life and its"
+            ],
+            "title": "SwRI receives $3 million NASA astrobiology grant to study microbial ..."
+          },
+          {
+            "url": "https://www.swri.org/newsroom/press-releases/swri-delivers-innovative-instrument-nasa-s-europa-clipper-mission",
+            "excerpts": [
+              "SwRI delivers innovative instrument for NASA's Europa Clipper ...\nJan 5, 2023 \u00b7 A groundbreaking new mass spectrometer designed and built by Southwest Research Institute (SwRI) has been delivered for integration onto NASA's Europa Clipper\u00a0"
+            ],
+            "title": "SwRI delivers innovative instrument for NASA's Europa Clipper ..."
+          },
+          {
+            "url": "https://www.swri.org/newsroom/press-releases/swri-developed-instruments-will-study-potential-habitability-of-jupiter-s-moon-europa",
+            "excerpts": [
+              "SwRI-developed instruments will study potential ...\nSwRI-developed instruments will study potential habitability of Jupiter's moon Europa ... October 15, 2024 \u2014 Two Southwest Research Institute"
+            ],
+            "title": "SwRI-developed instruments will study potential ..."
+          },
+          {
+            "url": "https://www.eurekalert.org/news-releases/765206",
+            "excerpts": [
+              "SwRI researchers part of two collaborative teams awarded SAMF ...\nMar 31, 2021 \u00b7 SwRI researchers part of two collaborative teams awarded SAMF grants. Awards totaling $400,000 to fund cancer detection AI, COVID-19 drug"
+            ],
+            "title": "SwRI researchers part of two collaborative teams awarded SAMF ..."
+          },
+          {
+            "url": "https://www.swri.org/newsroom/press-releases/swri-trinity-university-synthesize-novel-compound-mitigate-effects-of-stroke-heart-attack",
+            "excerpts": [
+              "SwRI, Trinity University to synthesize novel compound to mitigate ...\n10 de dez. de 2025 \u00b7 This project was funded through the inaugural Trinity-SwRI Research Collaboration Grant Program established in 2025 to encourage the advancement of medical and"
+            ],
+            "title": "SwRI, Trinity University to synthesize novel compound to mitigate ..."
+          },
+          {
+            "url": "http://linkedin.com/company/southwest-research-institute?trk=organization-update_share-update_actor-text",
+            "excerpts": [
+              "linkedin company id: 9047 company id: 82024224 slug: southwest-research-institute name: Southwest Research Institute"
+            ],
+            "title": "Southwest Research Institute | LinkedIn"
+          },
+          {
+            "url": "https://www.linkedin.com/company/southwest-research-institute",
+            "excerpts": [
+              "Southwest Research Institute\nSouthwest Research Institute is an independent, nonprofit, applied research and development organization. The staff numbers approximately"
+            ],
+            "title": "Southwest Research Institute"
+          },
+          {
+            "url": "http://swri.org/",
+            "excerpts": [
+              "[LinkedIn](https://www.linkedin.com/company/9047/)"
+            ],
+            "title": "Southwest Research Institute | R&D From Deep Sea to Deep Space"
+          },
+          {
+            "url": "http://swri.org/about-swri",
+            "excerpts": [
+              "[LinkedIn](https://www.linkedin.com/company/9047/ \"(opens in a new window)\")"
+            ],
+            "title": "About Us - Southwest Research Institute"
+          },
+          {
+            "url": "http://swri.org/what-we-do",
+            "excerpts": [
+              "[LinkedIn](https://www.linkedin.com/company/9047/) [Facebook](https://www.facebook.com/southwestresearch)"
+            ],
+            "title": "What We Do | Southwest Research Institute"
+          },
+          {
+            "url": "https://www.nsf.gov/",
+            "excerpts": [
+              "NSF - U.S. National Science Foundation\nInnovation Anywhere, Opportunity Everywhere ; Find Funding. Search for Funding \u00b7 Search NSF Awards \u00b7 Explore NSF Focus Areas ; How to Apply. Preparing a Proposal."
+            ],
+            "title": "NSF - U.S. National Science Foundation"
+          },
+          {
+            "url": "https://www.gallo.com/press/2014-02-05-allegrini-announcement",
+            "excerpts": [
+              "Award-Winning Italian Wines Added to Gallo Portfolio ...\nFeb 5, 2014 \u2014 Gallo announced today that it has been awarded the exclusive rights to distribute Italy's Allegrini wines in the United States beginning April 1, 2014."
+            ],
+            "title": "Award-Winning Italian Wines Added to Gallo Portfolio ..."
+          },
+          {
+            "url": "http://nsf.gov/awardsearch/show-award?AWD_ID=2541782",
+            "excerpts": [
+              "[Grant General Conditions](http://www.nsf.gov/awards/managing/general_conditions.jsp?org=NSF \"Grant General Conditions - opens in new window\") [Cooperative Agreement Conditions](http://www.nsf.gov/awards/managing/co-op_conditions.jsp?org=NSF \"Cooperative Agreement Conditions - opens in new window\") [Special Conditions](http://www.nsf.gov/awards/managing/special_conditions.jsp?org=NSF \"Special Conditions - opens in new window\") ... **Award Abstract #** **No Award Specified** | **NSF Org:** |  | | **Recipient:** |  | | **Initial Amendment Date:** |  | | **Award Number:** |  | | **Award Instrument:** |  | | **Program Manager:** |  | | **Start Date:** |  | | **End Date:** | (Estimated) | | **Total Intended Award Amount:** |  | | **Total Awarded Amount to Date:"
+            ],
+            "title": "Award Details - NSF Award Search"
+          },
+          {
+            "url": "https://www.nsf.gov/funding/award-search",
+            "excerpts": [
+              "Award Search Overview - Funding at NSF\nThe Award Search contains a searchable database of projects funded by the US National Science Foundation since 1989."
+            ],
+            "title": "Award Search Overview - Funding at NSF"
+          },
+          {
+            "url": "http://boisestate.edu/news/2025/09/17/faculty-win-largest-national-science-foundation-award-in-university-history-to-create-semiconductor-workforce-center",
+            "excerpts": [
+              "Faculty win largest National Science Foundation award in university history to create semiconductor workforce center September 17, 2025 National Science Foundation logo A team of Boise State University faculty are making university history and amplifying Idaho's semiconductor workforce potential with a new $7.4 million U.S. National Science Foundation (NSF) award, the largest NSF award in Boise State history. This award is an [NSF EPSCoR Centers of Research Excellence in Science and Technology (CREST) Center award](https://www.nsf.gov/funding/opportunities/epscor-crest-centers-epscor-centers-research-excellence-science-technology/506306/nsf24-575) , which will fund the creation of ['AWESOME', the Center for Advancing Workforce Experience through Semiconductors, Outreach, and Mentoring Excellence.](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2514716"
+            ],
+            "title": "Faculty win largest National Science Foundation award in university history to create semiconductor workforce center - Boise State News"
+          },
+          {
+            "url": "https://wineinternationalassociation.org/allegrini-winery",
+            "excerpts": [
+              "Allegrini - Wine International Association\nMarilisa Allegrini is the co-director/CEO of the Allegrini Group. In 2020, she was awarded the prestigious Order of Merit for Labour by the President of the"
+            ],
+            "title": "Allegrini - Wine International Association"
+          },
+          {
+            "url": "https://science.nasa.gov/researchers/solicitations/roses-2025/roses-2026-to-be-released-july-2026",
+            "excerpts": [
+              "ROSES-2026 to be released July 2026\nJan 22, 2026 \u2014 For simplicity, consistency, and to maintain the annual schedule, SMD plans to release ROSES-2026 in July again this year rather than February."
+            ],
+            "title": "ROSES-2026 to be released July 2026"
+          },
+          {
+            "url": "https://www.mazerow.com/allegrini",
+            "excerpts": [
+              "Allegrini - Maze Row Wine Merchant\nDiscover the Allegrini wines from Valpolicella. Explore this Family-owned estate with 400+ years of Amarone winemaking tradition."
+            ],
+            "title": "Allegrini - Maze Row Wine Merchant"
+          },
+          {
+            "url": "https://allegrini.it/en",
+            "excerpts": [
+              "Allegrini Fine Wines from Valpolicella Classica\nThe combination of exceptional-quality raw materials and winemaking tradition is the key to the Allegrini brand's success."
+            ],
+            "title": "Allegrini Fine Wines from Valpolicella Classica"
+          },
+          {
+            "url": "https://thewine.ge/en/allegrini",
+            "excerpts": [
+              "Allegrini - The Wine"
+            ],
+            "title": "Allegrini - The Wine \u10d3\u10d8\u10d5\u10d0\u10d8\u10dc\u10d8 https://thewine.ge \u203a allegrini"
+          },
+          {
+            "url": "https://www.swri.org/newsroom/press-releases/swri-led-juno-mission-jupiter-delivers-first-science-results",
+            "excerpts": [
+              "SwRI-led Juno mission to Jupiter delivers first science results\nNASA's Juno mission, led by Southwest Research Institute's Dr. Scott Bolton, is rewriting what scientists thought they knew about Jupiter specifically."
+            ],
+            "title": "SwRI-led Juno mission to Jupiter delivers first science results"
+          },
+          {
+            "url": "https://spacephysics.princeton.edu/document/287",
+            "excerpts": [
+              "Plasma measurements in the Jovian polar region with Juno ...\nthe Jovian system. The Juno spacecraft entered orbit about Jupiter on 5 July 2016 and carries on board the. Auroral Distributions Experiment (JADE) that can"
+            ],
+            "title": "Plasma measurements in the Jovian polar region with Juno ..."
+          },
+          {
+            "url": "https://www.jhuapl.edu/news/news-releases/190702-apl-plasma-instrument-europa-clipper-passes-critical-design-review",
+            "excerpts": [
+              "Johns Hopkins APL Plasma Instrument for Europa Clipper Passes ...\nJul 2, 2019 \u00b7 The Plasma Instrument for Magnetic Sounding (PIMS), built by the Johns Hopkins Applied Physics Laboratory, will measure the plasmas,\u00a0"
+            ],
+            "title": "Johns Hopkins APL Plasma Instrument for Europa Clipper Passes ..."
+          },
+          {
+            "url": "parallel://private-entity-search",
+            "excerpts": [
+              "{'name': 'Fr\u00e9d\u00e9ric Allegrini', 'locality': 'Marsal, Grand Est, France', 'jobs_count': 0}"
+            ],
+            "title": "Private entity search"
+          },
+          {
+            "url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2229453",
+            "excerpts": [
+              "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2"
+            ],
+            "title": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2... National Science Foundation (.gov) https://www.nsf.gov \u203a awardsearch \u203a showAward"
+          },
+          {
+            "url": "https://www.nasa.gov/directorates/stmd/five-ways-to-explore-nasas-portfolio-of-technologies-with-techport-4-0",
+            "excerpts": [
+              "TechPort 4.0"
+            ],
+            "title": "TechPort 4.0 NASA (.gov) https://www.nasa.gov \u203a directorates \u203a stmd \u203a five-ways-..."
+          },
+          {
+            "url": "https://www.letu.ru/brand/allegrini",
+            "excerpts": [
+              "allegrini."
+            ],
+            "title": "allegrini. \u041b\u044d\u0442\u0443\u0430\u043b\u044c https://www.letu.ru \u203a brand \u203a allegrini"
+          },
+          {
+            "url": "https://www.wikiwand.com/en/NASA",
+            "excerpts": [
+              "NASA - Wikiwand\nThe highest number of people occupying the ISS has been thirteen; this occurred three times during the late Shuttle ISS assembly missions. ... TechPort (NASA) \u2013"
+            ],
+            "title": "NASA - Wikiwand"
+          },
+          {
+            "url": "https://ar.pinterest.com/pin/wine-wednesday-allegrini-estates-in-2024--262756959503566807",
+            "excerpts": [
+              "Allegrini Estates Villa della Torre. Lion's Fireplace"
+            ],
+            "title": "Allegrini Estates Villa della Torre. Lion's Fireplace Pinterest \u00a0\u00b7\u00a0 saablack \u05dc\u05e4\u05e0\u05d9 \u05e9\u05e0\u05ea\u05d9\u05d9\u05dd"
+          },
+          {
+            "url": "https://www.facebook.com/SwRICareers",
+            "excerpts": [
+              "Southwest Research Institute (SwRI) Careers | San Antonio TX\nCheck out our current job postings: https://www.swri. org/careers. Technical and Engineering Career Fair Spring 2025. CALENDAR."
+            ],
+            "title": "Southwest Research Institute (SwRI) Careers | San Antonio TX"
+          },
+          {
+            "url": "https://www.swri.org/careers",
+            "excerpts": [
+              "SwRI Careers - Southwest Research Institute\nNow hiring programmers and software engineers to advance programs in robotics and automation, driverless vehicles, space exploration and cyber security."
+            ],
+            "title": "SwRI Careers - Southwest Research Institute"
+          },
+          {
+            "url": "https://www.theladders.com/company/swriorg-jobs/jobs",
+            "excerpts": [
+              "15 Job Openings at Southwest Research Institute (SwRI)\nData Scientist Jobs \u00b7 Designer Jobs \u00b7 Interior Designer Jobs \u00b7 Vice President Jobs ... 15 Job Openings at Southwest Research Institute (SwRI). View all."
+            ],
+            "title": "15 Job Openings at Southwest Research Institute (SwRI)"
+          },
+          {
+            "url": "https://www.swri.org/careers/interns",
+            "excerpts": [
+              "Interns\nJoin our team of interns working on challenging and exciting R&D projects. Please visit our Recruiting Events page to find out when we'll be in your area."
+            ],
+            "title": "Interns"
+          },
+          {
+            "url": "https://uk.linkedin.com/in/carolina-allegrini-872058193",
+            "excerpts": [
+              "Carolina Allegrini - Product Marketing & Business ...\nLondon Area, United Kingdom \u00b7 Product Marketing & Business Intelligence Manager \u00b7 Ariston UK Carolina Allegrini. Product Marketing & Business Intelligence Manager . Ariston UK SDA Bocconi. London Area, United Kingdom."
+            ],
+            "title": "Carolina Allegrini - Product Marketing & Business ..."
+          },
+          {
+            "url": "https://www.linkedin.com/in/steven-allegrini-04825014",
+            "excerpts": [
+              "Steven Allegrini - Vice President - OneGS RIA Strategic ...\nSummary : Leader in sales for summer intern class. Achieved life, accident, and health insurance producers license and established own private practice through"
+            ],
+            "title": "Steven Allegrini - Vice President - OneGS RIA Strategic ..."
+          },
+          {
+            "url": "https://grad.space.swri.edu/allegrini-frederic",
+            "excerpts": [
+              "Frederic Allegrini \u2013 SwRI/UTSA | Graduate Program | Research\n9 de jul. de 2025 \u2014 Diploma in Physics, University of Lausanne, 1999; Ph.D. Physics, University of Berne, 2002. Email: fallegrini@swri.edu. Phone: 210-522-6029."
+            ],
+            "title": "Frederic Allegrini \u2013 SwRI/UTSA | Graduate Program | Research"
+          },
+          {
+            "url": "https://www.linkedin.com/in/kyle-allegrini",
+            "excerpts": [
+              "Kyle Allegrini - AVP, Global Customer Success at CHEQ\nNew York City Metropolitan Area \u00b7 AVP, Global Customer Success \u00b7 CHEQ Proven Customer Success leader with experience servicing, scaling, and expanding enterprise accounts across ad-tech and cybersecurity industries."
+            ],
+            "title": "Kyle Allegrini - AVP, Global Customer Success at CHEQ"
+          },
+          {
+            "url": "https://www.linkedin.com/in/markallegrini",
+            "excerpts": [
+              "Mark Allegrini - Leading Meaningful Communications\nI have helped community-focused non-profits, global NGOs, and Fortune 500s build partnerships and leading campaigns that motivate stakeholders."
+            ],
+            "title": "Mark Allegrini - Leading Meaningful Communications"
+          },
+          {
+            "url": "https://scholar.google.se/citations?hl=th&user=fsX1-P8AAAAJ",
+            "excerpts": [
+              "\u202aWANG Fr\u00e9d\u00e9ric\u202c - \u202aGoogle Scholar\u202c\nWANG Fr\u00e9d\u00e9ric. professeur en langue et pens\u00e9e chinoises, Inalco. \u0e22\u0e37\u0e19\u0e22\u0e31\u0e19\u0e2d\u0e35\u0e40\u0e21\u0e25\u0e41\u0e25\u0e49\u0e27\u0e17\u0e35\u0e48 inalco.fr. Histoire de la pens\u00e9e chinoiseconfucianisme. \u0e1a\u0e17\u0e04\u0e27\u0e32\u0e21"
+            ],
+            "title": "\u202aWANG Fr\u00e9d\u00e9ric\u202c - \u202aGoogle Scholar\u202c"
+          },
+          {
+            "url": "https://scholar.google.com/citations?hl=en&user=_a8_iCsAAAAJ",
+            "excerpts": [
+              "Lucas Fr\u00e9d\u00e9ric\nAssistant Professor, ENS Paris-Saclay - \u202a\u202aCited by 889\u202c\u202c - \u202aChemistry\u202c"
+            ],
+            "title": "Lucas Fr\u00e9d\u00e9ric"
+          },
+          {
+            "url": "https://fallegrini.com/contact",
+            "excerpts": [
+              "Frederic Allegrini Photography - Contact\nConnecting Earth and Sky with Photography"
+            ],
+            "title": "Frederic Allegrini Photography - Contact"
+          },
+          {
+            "url": "https://scholar.google.co.nz/citations?hl=en&user=0gyS3z0AAAAJ",
+            "excerpts": [
+              "\u202aFrederic THEUNISSEN\u202c - \u202aGoogle Scholar\u202c\nDepartment of Neurosciences, UC Berkeley - \u202a\u202aCited by 13647\u202c\u202c - \u202aAuditory Neurosciences\u202c - \u202aComputational Neurosciences\u202c - \u202aNeuroEthology\u202c - \u202aAnimal\u202c"
+            ],
+            "title": "\u202aFrederic THEUNISSEN\u202c - \u202aGoogle Scholar\u202c"
+          },
+          {
+            "url": "https://scholar.google.com/citations?hl=fr&user=0gyS3z0AAAAJ",
+            "excerpts": [
+              "\u202aFrederic THEUNISSEN\u202c - \u202aGoogle Scholar\u202c\nDepartment of Neurosciences, UC Berkeley - \u202a\u202aCit\u00e9(e) 13 653 fois\u202c\u202c - \u202aAuditory Neurosciences\u202c - \u202aComputational Neurosciences\u202c - \u202aNeuroEthology\u202c - \u202aAnimal\u202c"
+            ],
+            "title": "\u202aFrederic THEUNISSEN\u202c - \u202aGoogle Scholar\u202c"
+          },
+          {
+            "url": "http://leadersmag.com/issues/2025.1_Jan/WSL/LEADERS_Allegrini_Allegrini_Wines.html",
+            "excerpts": [
+              "Founded in 1854, Allegrini has deep roots in the Valpolicella Classica region and is recognized for its commitment to quality, particularly"
+            ],
+            "title": "An Interview with Francesco Allegrini, Chief Executive ..."
+          },
+          {
+            "url": "https://www.researchgate.net/scientific-contributions/F-Allegrini-38561704",
+            "excerpts": [
+              "In this study, we present a survey of energetic proton observations associated with Io\u2019s footprint tail (FPT) and compare their signatures with in situ measurements of the plasma waves and"
+            ],
+            "title": "F. Allegrini's research works | Southwest Research Institute ..."
+          },
+          {
+            "url": "https://orcid.org/0000-0003-0696-4380",
+            "excerpts": [
+              "Contributors: Ranquist, D.A.; Bagenal, F.; Wilson, R.J.; Hospodarsky, G.; Ebert, R.W.; Allegrini, F.; Valek, P.; McComas, D.J.; Connerney, J.E.P.; Kurth, W.S. et al."
+            ],
+            "title": "Frederic Allegrini - ORCID"
+          },
+          {
+            "url": "https://www.swri.org/newsroom/press-releases/novel-swri-developed-imap-instrument-delivers-first-light-data",
+            "excerpts": [
+              "Novel SwRI-developed IMAP instrument delivers first-light ...\nDec 16, 2025 \u2014 As a modern-day celestial cartographer, IMAP will chart the boundaries of the heliosphere \u2014 a huge bubble created by the Sun's wind that encapsulates our entire"
+            ],
+            "title": "Novel SwRI-developed IMAP instrument delivers first-light ..."
+          },
+          {
+            "url": "https://scienmag.com/swri-leads-imap-payload-development-for-upcoming-mission-to-map-heliosphere-boundary",
+            "excerpts": [
+              "SwRI Leads IMAP Payload Development for Upcoming Mission to ...\nIn an exciting development for heliophysics and space exploration, Southwest Research Institute (SwRI) is at the forefront of NASA\u2019s groundbreaking Interstellar Mapping and Acceleration Probe (IMAP) mission, slated for launch on September 24, 2025."
+            ],
+            "title": "SwRI Leads IMAP Payload Development for Upcoming Mission to ..."
+          },
+          {
+            "url": "https://www.swri.org/newsroom/press-releases/swri-managed-the-imap-payload-set-launch-month-map-the-boundary-of-the-heliosphere",
+            "excerpts": [
+              "SwRI managed the IMAP payload set to launch this month to map ...\nSwRI managed the IMAP payload set to launch this month to map the boundary of the heliosphere ... Initially developed through SwRI internal funding, CoDICE will"
+            ],
+            "title": "SwRI managed the IMAP payload set to launch this month to map ..."
+          },
+          {
+            "url": "https://www.jhuapl.edu/destinations/missions/imap",
+            "excerpts": [
+              "IMAP\nJan 12, 2026 \u2014 NASA Launches IMAP Mission to Study the Heliosphere and Better Understand Space Weather Sep 24, 2025. NASA's Interstellar Mapping and Acceleration Probe (IMAP)"
+            ],
+            "title": "IMAP"
+          },
+          {
+            "url": "http://nsf.gov/awardsearch",
+            "excerpts": [
+              "Overview of Award Search Features Find Award: i Quickly find active and expired NSF-funded awards by searching for project title, awardee name, institution, or research topic."
+            ],
+            "title": "NSF Award Search - Simple Search"
+          },
+          {
+            "url": "https://cps-vo.org/cps-pimtg24",
+            "excerpts": [
+              "2024 NSF Cyber-Physical Systems Principal Investigators ...\nPlease visit here for more detailed information about meeting registration, hotel reservations, and project preparation. The PI meeting program featured keynote talks, panels, and PI-led activities including breakouts, project poster sessions, and project demonstrations."
+            ],
+            "title": "2024 NSF Cyber-Physical Systems Principal Investigators ..."
+          },
+          {
+            "url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2435580&HistoricalAwards=false",
+            "excerpts": [
+              "NSF - National Science Foundation\nWe would like to show you a description here but the site won\u2019t allow us."
+            ],
+            "title": "NSF - National Science Foundation"
+          },
+          {
+            "url": "https://resapp.swri.org/ResApp/Job_Search.aspx",
+            "excerpts": [
+              "Job Search\nTechnical, professional, and management positions available. Seeking individuals with a high school diploma or equivalent, an associate's degree, or continuing education. Entry-level and experienced positions available. Seeking students currently enrolled in college."
+            ],
+            "title": "Job Search"
+          },
+          {
+            "url": "https://www.swri.org/what-we-do/technical-divisions/space-science",
+            "excerpts": [
+              "Space Science | Southwest Research Institute - swri.org\nOur staff members focus on engineering and science flight projects, in the areas of earth science, astrophysics and heliophysics. Located in Durham, N.H., we explore new scientific challenges in those areas and develop innovative flight instruments to study these problems."
+            ],
+            "title": "Space Science | Southwest Research Institute - swri.org"
+          },
+          {
+            "url": "https://www.nsf.gov/awardsearch",
+            "excerpts": [
+              "Awards Simple Search"
+            ],
+            "title": "Awards Simple Search National Science Foundation (.gov) https://www.nsf.gov \u203a awardsearch"
+          },
+          {
+            "url": "https://www.nsf.gov/awardsearch/advanced-search",
+            "excerpts": [
+              "Awards Advanced Search"
+            ],
+            "title": "Awards Advanced Search National Science Foundation (.gov) https://www.nsf.gov \u203a awardsearch \u203a advanced-search"
+          },
+          {
+            "url": "https://www.theladders.com/job/research-scientist-sr-research-scientist-uv-pl-dot-net-ary-surface-studies-swriorg-san-antonio-tx_81540849",
+            "excerpts": [
+              "RESEARCH SCIENTIST - SR. RESEARCH SCIENTIST - UV ... - Ladders\nSouthwest Research Institute (SwRI) is hiring a RESEARCH SCIENTIST - SR. RESEARCH SCIENTIST - UV Planetary Surface Studies, with an estimated salary of $80,000 - $120,000."
+            ],
+            "title": "RESEARCH SCIENTIST - SR. RESEARCH SCIENTIST - UV ... - Ladders"
+          },
+          {
+            "url": "https://www.swri.org/careers/hot-job-of-the-week",
+            "excerpts": [
+              "Hot Job of the Week\nThis chief engineer\u2013level role will guide a multidisciplinary team (10+) across the full lifecycle\u2014from concept through fabrication and certification\u2014on complex"
+            ],
+            "title": "Hot Job of the Week"
+          },
+          {
+            "url": "https://resapp.swri.org/ResApp/Job_Details.aspx?JOB_CD=15-01702&JOB_TITLE=POSTDOCTORAL%20RESEARCHER%20-%20Scientist%20%E2%80%93%20Planetary%20Science",
+            "excerpts": [
+              "POSTDOCTORAL RESEARCHER - Scientist \u2013 Planetary Science\nConduct investigations with data products from the Hubble Space Telescope and James Webb Space Telescope to study a variety of science questions based on observations of the Galilean satellites."
+            ],
+            "title": "POSTDOCTORAL RESEARCHER - Scientist \u2013 Planetary Science"
+          },
+          {
+            "url": "https://www.ziprecruiter.com/co/Swri/Jobs/-in-San-Antonio%2CTX?lk=mn65938UK0hUyxGy0aFY9w",
+            "excerpts": [
+              "SWRI Jobs in San Antonio, TX (Now Hiring) Jul 2026 - ZipRecruiter\nLooking for Swri jobs in San Antonio, Texas? 1-Click apply to 52 Swri job openings hiring near you in San Antonio, TX to start your career at Swri today!"
+            ],
+            "title": "SWRI Jobs in San Antonio, TX (Now Hiring) Jul 2026 - ZipRecruiter"
+          },
+          {
+            "url": "http://sabioscience.org/organizations/southwest-research-institute",
+            "excerpts": [
+              "Southwest Research Institute (SwRI), headquartered in San Antonio, Texas, is one of the oldest and largest independent, nonprofit, applied research and development (R&D) organizations in the United States"
+            ],
+            "title": "Southwest Research Institute | San Antonio Bioscience Research"
+          },
+          {
+            "url": "http://en.wikipedia.org/wiki/Southwest_Research_Institute",
+            "excerpts": [
+              "Employees more than 3,200 (FY 2025) At the close of fiscal year 2025, the staff numbered approximately 3,200 employees and research volume was $966 million.\nSouthwest Research Institute (SwRI), headquartered in San Antonio, Texas, is an independent and nonprofit applied research and development (R&D) organization."
+            ],
+            "title": "Southwest Research Institute"
+          },
+          {
+            "url": "https://grad.space.swri.edu/people",
+            "excerpts": [
+              "People \u2013 SwRI/UTSA | Graduate Program | Research\nSpace Physics Graduate Program Brochure Dr. Rob Ebert Lead Adjoint Professor and Assistant Director +1-210-522-2229 Angela Rihn, M.Ed. Space Physics Graduate Program Co-Coordinator +1-210-522-4588 Lisa Vasquez-Castro Space Physics Graduate Program Co-Coordinator +1-210-522-5690"
+            ],
+            "title": "People \u2013 SwRI/UTSA | Graduate Program | Research"
+          },
+          {
+            "url": "https://yes.space.swri.edu/",
+            "excerpts": [
+              "Welcome | Young Engineers & Scientists Program\nDiscover exciting career paths in science and engineering through expert presentations. Submit your application with essays showcasing your passion for STEM. Selected candidates participate in interviews with program coordinators. 10 days of intensive hands-on experience at SwRI facilities."
+            ],
+            "title": "Welcome | Young Engineers & Scientists Program"
+          },
+          {
+            "url": "https://link.springer.com/article/10.1007/s11214-024-01061-6",
+            "excerpts": [
+              "MASPEX-Europa: The Europa Clipper Neutral Gas Mass ...\nby JH Waite Jr \u00b7 2024 \u00b7 Cited by 45 \u2014 The goal of the MASPEX- Europa investigation is to determine, through in-situ measurement of the exosphere and plume composition, whether the conditions for"
+            ],
+            "title": "MASPEX-Europa: The Europa Clipper Neutral Gas Mass ..."
+          },
+          {
+            "url": "https://www.researchgate.net/publication/379508907_MASPEX-Europa_The_Europa_Clipper_Neutral_Gas_Mass_Spectrometer_Investigation",
+            "excerpts": [
+              "(PDF) MASPEX-Europa: The Europa Clipper Neutral Gas Mass ...\nMASPEX-Europa: The Europa Clipper Neutral Gas Mass Spectrometer Investigation ... Mass Sensor 41.3 kg. Harness 4.6 kg. EBOX 18.9 kg. Total"
+            ],
+            "title": "(PDF) MASPEX-Europa: The Europa Clipper Neutral Gas Mass ..."
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=PceXO-D74pg",
+            "excerpts": [
+              "MASPEX: Sniffing for Alien Life - YouTube\nMar 15, 2023 \u00b7 A groundbreaking new mass spectrometer is set to launch next year aboard NASA's Europa Clipper spacecraft. The spectrometer is one of nine"
+            ],
+            "title": "MASPEX: Sniffing for Alien Life - YouTube"
+          },
+          {
+            "url": "https://d2pn8kiwq2w21t.cloudfront.net/documents/europa-clipper-press-kit.pdf",
+            "excerpts": [
+              "Europa Clipper Press Kit - Cloudfront.net\nSep 20, 2024 \u2014 NASA's Europa Clipper is the first mission to focus on Jupiter's intriguing ocean moon Europa as a primary target. The agency is targeting a\u00a0... Read more 51 pages"
+            ],
+            "title": "Europa Clipper Press Kit - Cloudfront.net"
+          },
+          {
+            "url": "https://science.nasa.gov/mission/europa-clipper/newsroom",
+            "excerpts": [
+              "Europa Clipper Newsroom\nSep 18, 2024 \u2014 Press Kit. Get all the essential info about Europa Clipper and its ambitious mission. View the Digital Press Kit."
+            ],
+            "title": "Europa Clipper Newsroom"
+          },
+          {
+            "url": "http://iopscience.iop.org/article/10.3847/1538-4365/acc397/meta",
+            "excerpts": [
+              "The IBEX-Lo instrument on the Interstellar Boundary Explorer (IBEX) mission measures interstellar neutral (ISN) helium atoms."
+            ],
+            "title": "Relative In-flight Response of IBEX-Lo to Interstellar ..."
+          },
+          {
+            "url": "http://ibex.swri.edu/mission/payload.shtml",
+            "excerpts": [
+              "NASA's Interstellar Boundary Explorer (IBEX) Mission is an explorer class satellite designed to image the edge of the heliosphere around the Solar System."
+            ],
+            "title": "Payload - IBEX: Interstellar Boundary Explorer"
+          },
+          {
+            "url": "http://asu.elsevierpure.com/en/publications/the-ibex-lo-sensor",
+            "excerpts": [
+              "The IBEX-Lo sensor covers the low-energy heliospheric neutral atom spectrum from 0.01 to 2 keV."
+            ],
+            "title": "The IBEX-lo sensor"
+          },
+          {
+            "url": "https://allegrini.com/media/znmkhdzp/allegrini_codice-etico_en.pdf",
+            "excerpts": [
+              "The ethical Code of Allegrini S.p.A. collects, therefore, the principles and the general behavior rules that must be observed with the purpose to guarantee good operational activity, reliability and good reputation of Allegrini S.p.A., directly or indirectly."
+            ],
+            "title": "Codice Etico - allegrini.com"
+          },
+          {
+            "url": "https://allegrini.it/en/",
+            "excerpts": [
+              "Allegrini\u2019s properties extend for around 150 hectares in the cradle of the Valpolicella Classica. The unique vineyards yield prestigious wines, stemming from the company\u2019s winemaking style and its exclusively estate-grown grapes."
+            ],
+            "title": "Allegrini Fine Wines from Valpolicella Classica"
+          },
+          {
+            "url": "https://www.allegrini.com/it/governance/",
+            "excerpts": [
+              "Allegrini persegue l\u2019obiettivo di assicurare alti standard qualitativi a tutti i suoi prodotti e servizi al fine di garantire la soddisfazione dei suoi Clienti, adottando Condizioni Generali di Acquisto di Beni e Servizi in stretta collaborazione con Fornitori selezionati e qualificati."
+            ],
+            "title": "Allegrini"
+          },
+          {
+            "url": "https://www.icribis.com/it/scheda-azienda/PI146982_ALLEGRINI_ALBERTO",
+            "excerpts": [
+              "La societ\u00e0 ALLEGRINI ALBERTO di PISA \u00e8 un'azienda con codice REA PI - 146982 e con forma legale IMPRESA INDIVIDUALE. L'indirizzo dell'azienda ALLEGRINI ALBERTO \u00e8 VIA DELLE MARGHERITE, 6 PISA 56128."
+            ],
+            "title": "ALLEGRINI ALBERTO | Scheda Azienda | iCRIBIS"
+          },
+          {
+            "url": "https://telemanagrafici.agenziaentrate.gov.it/VerificaPIVA/",
+            "excerpts": [
+              "Per verificare se la partita Iva \u00e8 di un soggetto autorizzato ad effettuare operazioni intracomunitarie deve essere utilizzato il servizio Controllo partite Iva comunitarie (Vies). Per controllare la validit\u00e0 di un codice fiscale si deve utilizzare il servizio Verifica codice fiscale."
+            ],
+            "title": "Agenzia delle Entrate - Servizio di verifica partita Iva"
+          },
+          {
+            "url": "http://www2.swri.org/www2/hr/default.htm",
+            "excerpts": [
+              "SwRI Careers: where research meets imagination\nWe're hiring at SwRI! Southwest Research Institute (SwRI) offers great opportunities for those who are seeking exciting, fulfilling careers. Be part of SwRI's 70 year tradition of solving challenging science and technology problems."
+            ],
+            "title": "SwRI Careers: where research meets imagination"
+          },
+          {
+            "url": "https://resapp.swri.org/ResApp/Job_Details.aspx?JOB_CD=15-01701&JOB_TITLE=POSTDOCTORAL%20RESEARCHER%20-%20Planetary%20Exospheres",
+            "excerpts": [
+              "Job Details - resapp.swri.org\nParticipate and carry-out original research in experimental space physics. Publish original research in peer-reviewed articles and present results at relevant meetings."
+            ],
+            "title": "Job Details - resapp.swri.org"
+          },
+          {
+            "url": "https://resapp.swri.org/ResApp/Job_Search_Results.aspx?EMPLOYMENT_STATUS=Salaried&JOB_CATEGORY=All+Categories&WORK_LOCATION=All+Locations",
+            "excerpts": [
+              "Job Search Results - Southwest Research Institute\nSelect up to 10 positions, refine your search, or save this search as a new job alert. RESEARCH ENGINEER - SR. RESEARCH ENGINEER - Nuclear Engineer or Environmental Engineer. RESEARCH SCIENTIST - SR. RESEARCH SCIENTIST - Health Physicist or Radiological Safety Scientist. LEAD COMPUTER SCIENTIST - LEAD ENGINEER - SR."
+            ],
+            "title": "Job Search Results - Southwest Research Institute"
+          },
+          {
+            "url": "https://www.linkedin.com/company/allegriniwines",
+            "excerpts": [
+              "Allegrini Wines - LinkedIn\nAllegrini Wines | 14013 followers on LinkedIn. Leading Italian winemaking excellence by the Allegrini Family. Quality Assurance Specialist jobs 13,619"
+            ],
+            "title": "Allegrini Wines - LinkedIn"
+          },
+          {
+            "url": "https://x.com/AllegriniWinery",
+            "excerpts": [],
+            "title": "Allegrini (@AllegriniWinery) / Posts / X X\u00a0\u00b7\u00a0AllegriniWinery \u041f\u0456\u0434\u043f\u0438\u0441\u043d\u0438\u043a\u0456\u0432: \u043f\u043e\u043d\u0430\u0434 2,6\u00a0\u0442\u0438\u0441."
+          },
+          {
+            "url": "http://swri.org/contact",
+            "excerpts": [
+              "Advanced science. Applied technology. Search Home Contact Contact How Can We Help You? SwRI business hours are 8 a.m. to 5 p.m. U.S. Central time zone, Monday through Friday. Please select from the drop down menu to help us better guide your inquiry, or for general inquiries call our main line +1 210 684 5111 or Business Inquiries at +1 210 522 2122 . Send Inquiry To Select - Accounts Payable Business Inquiries Careers Contracts Licensing & Intellectual Property Media Small Business Program Purchasing First Name Last Name Email Phone Message Contact Information SwRI Headquarters **Physical Address** (For Visitors) Southwest Research Institute 6220 Culebra Road San Antonio, TX 78238-5166 **Mailing and Shipping Address** <Contact Name> <Technical Division or Department> Southwest Research Institute 9503 W Commerce San Antonio, Texas 78227-1301 Phone Number +1 210 684 5111 Image SwRI U.S. Locations Careers For job application inquiries, contact Human Resources at +1 210 522 2223 . To search current openings, visit [swri.jobs](http://swri.jobs) . Contact Google Map\nSwRI Headquarters **Physical Address** (For Visitors) Southwest Research Institute 6220 Culebra Road San Antonio, TX 78238-5166 **Mailing and Shipping Address** <Contact Name> <Technical Division or Department> Southwest Research Institute 9503 W Commerce San Antonio, Texas 78227-1301 Phone Number +1 210 684 5111 Image SwRI U.S. Locations Careers For job application inquiries, contact Human Resources at +1 210 522 2223 . To search current openings, visit [swri.jobs](http://swri.jobs) . Contact Google Map"
+            ],
+            "title": "Contact Us | Southwest Research Institute"
+          }
+        ],
+        "confidence": "low"
+      }
+    ],
+    "content": {
+      "answer": "# Frederic Allegrini: SwRI Plasma Physicist \u2014 Identity, Funding, and Hiring Profile\n\n**Lead ID:** lead-015\n**Name:** Frederic Allegrini\n**Institution:** Southwest Research Institute (SwRI) / University of Texas at San Antonio (UTSA)\n**Email (per UTSA-SwRI grad page):** fallegrini@swri.edu [12]\n**Email (per input):** frederic.allegrini@swri.org \u2014 domain `@swri.org` not independently corroborated; canonical address exposed publicly is `@swri.edu`.\n**Group:** Space Science and Engineering (SwRI)\n**Research area:** Plasma instrumentation, mass spectrometry, magnetospheric plasma, solar wind\n\n## Executive Insights\n\n- **Identity matched, namesake ruled out**: Two distinct public \"Frederic Allegrini\" profiles exist; the Lead matches only the SwRI Staff Scientist / UTSA Adjunct Faculty researcher based in San Antonio \u2014 confirmed by LinkedIn slug `frederic-allegrini-3a11435`, ORCID `0000-0003-0696-4380`, and SwRI UTSA-SwRI grad bio.\n- **Two-decade SwRI tenure, applied mission PI-adjacent**: Allegrini has been a Staff Scientist at SwRI since 2003-02-01 and an Adjoint Professor at UTSA since 2005-12-01 (vespa LinkedIn-fields confirmation), making him a long-tenured instrument scientist rather than a transient researcher.\n- **Mission portfolio spans 11 active/legacy projects**: Confirmed missions include AMICCE, BepiColombo, CubeSats, Graphene, IBEX / IBEX-Lo, IMAP (CoDICE), Juno (JADE), New Horizons, Solar Orbiter, and Europa Clipper (MASPEX) \u2014 a mix of mass-spectrometer and plasma-analyzer flights.\n- **2024 launch vehicle \u2014 MASPEX on Europa Clipper**: SwRI mass spectrometer delivered Jan 5, 2023; spacecraft launched Oct 14, 2024 with two SwRI instruments aboard. This mission milestone, not a competitive grant, is the most prominent Allegrini-relevant 2024 news.\n- **2025 IMAP first-light signal**: Novel SwRI CoDICE instrument on NASA's IMAP returned first-light data Dec 16, 2025 after Sept 2025 launch \u2014 confirms an active 2025+ plume of mission operations, but is a NASA mission budget, not a new Allegrini-led peer-reviewed grant.\n- **No competitive peer-reviewed grant found naming Allegrini as PI/Co-PI for 2024+**: Searches across NSF Award Search, NASA NSPIRES (via surfaced citations), and SwRI press releases turned up no award record where Allegrini is listed explicitly as PI of a new grant in the window. The two NSF award pages surfaced (2229453, 2435580) are unrelated I-Corps Hub / CyberTraining PI meeting awards led by other PIs.\n- **Two postdoctoral research jobs open at SwRI in adjacent fields**: \"POSTDOCTORAL RESEARCHER \u2013 Planetary Exospheres\" (Job ID 15-01701) and \"POSTDOCTORAL RESEARCHER \u2013 Planetary Science\" (Job ID 15-01702) are both posted on resapp.swri.org and are topically adjacent (experimental space physics) but not specifically tagged to Allegrini's group.\n- **PhD pipeline via UTSA-SwRI Space Physics program confirmed, no separate funded PhD posting tied to Allegrini found**: Allegrini is an Adjoint Faculty member of the UTSA-SwRI Space Physics Graduate Program, supr\"\n\n## References\n\n1. *Instrumentation for plasma diagnostics*. https://physicstoday.aip.org/features/instrumentation-for-plasma-diagnostics\n2. *Overview of Plasma Diagnostic Techniques - Springer Nature*. https://link.springer.com/chapter/10.1007/978-3-642-56989-0_5\n3. *Plasma Diagnostic Techniques - ADS*. https://ui.adsabs.harvard.edu/abs/1965pdt..conf.....H\n4. *\u202aFrederic Allegrini\u202c - \u202aGoogle Scholar\u202c*. https://scholar.google.com/citations?user=-HPQTqYAAAAJ&hl=en\n5. *Fr\u00e9d\u00e9ric A. Allegrini | ScienceDirect*. https://www.sciencedirect.com/author/9237159800/frederic-a-allegrini\n6. *Space Research & Technology*. http://swri.org/markets/earth-space/space-research-technology\n7. *Southwest Research Institute - YouTube*. https://www.youtube.com/c/southwestresearchinstitute\n8. *Southwest Research Institute \u2014 Form 990 financials, ...*. https://philanthropy.org/990/report/741070544/southwest-research-institute\n9. *UTSA and SwRI Team Selected by NASA to Advance ...*. https://klesse.utsa.edu/news/2025/08/15-nasa-swri-electrolyzer.html\n10. *SwRI tapped to develop instruments for predicting space ...*. https://www.expressnews.com/business/article/swri-tapped-develop-instruments-help-predict-19998609.php\n11. *Frederic Allegrini - Staff Scientist at Southwest Research ...*. https://www.linkedin.com/in/frederic-allegrini-3a11435\n12. *Frederic Allegrini \u2013 SwRI/UTSA | Graduate Program | Research*. https://grad.space.swri.edu/allegrini-frederic/\n13. *Frederic Allegrini working at Southwest Research Institute*. https://revonect.com/contact/Frederic%20Allegrini/id/9af669956\n14. *UTSA-SwRI Adjoint Faculty Dr. Rob Ebert and Dr. Frederic ...*. https://grad.space.swri.edu/utsa-swri-adjoint-faculty-dr-rob-ebert-and-dr-frederic-allegrini-detect-hydrogen-and-oxygen-ions-from-europas-atmosphere-during-juno-flyby/\n15. *Allegrini Fr\u00e9d\u00e9ric - Enseignant chez Academie Nancy-Metz ...*. https://fr.linkedin.com/in/allegrini-fr%C3%A9d%C3%A9ric-6324a391\n16. *Southwest Research Institute | R&D From Deep Sea to Deep Space*. https://www.swri.org/\n17. *Careers | Southwest Research Institute*. http://swri.org/careers\n18. *Southwest Research Institute & Solar System Science & Exploration*. https://www.boulder.swri.edu/\n19. *Southwest Research Institute - Wikipedia*. https://en.wikipedia.org/wiki/Southwest_Research_Institute\n20. *SwRI receives $3 million NASA astrobiology grant to study microbial ...*. https://www.swri.org/newsroom/press-releases/swri-receives-3-million-nasa-astrobiology-grant-study-microbial-life-alaska-s-arctic-sand-dunes\n21. *SwRI delivers innovative instrument for NASA's Europa Clipper ...*. https://www.swri.org/newsroom/press-releases/swri-delivers-innovative-instrument-nasa-s-europa-clipper-mission\n22. *SwRI-developed instruments will study potential ...*. https://www.swri.org/newsroom/press-releases/swri-developed-instruments-will-study-potential-habitability-of-jupiter-s-moon-europa\n23. *SwRI researchers part of two collaborative teams awarded SAMF ...*. https://www.eurekalert.org/news-releases/765206\n24. *SwRI, Trinity University to synthesize novel compound to mitigate ...*. https://www.swri.org/newsroom/press-releases/swri-trinity-university-synthesize-novel-compound-mitigate-effects-of-stroke-heart-attack\n25. *Southwest Research Institute | LinkedIn*. http://linkedin.com/company/southwest-research-institute?trk=organization-update_share-update_actor-text\n26. *Southwest Research Institute*. https://www.linkedin.com/company/southwest-research-institute\n27. *Southwest Research Institute | R&D From Deep Sea to Deep Space*. http://swri.org/\n28. *About Us - Southwest Research Institute*. http://swri.org/about-swri\n29. *What We Do | Southwest Research Institute*. http://swri.org/what-we-do\n30. *NSF - U.S. National Science Foundation*. https://www.nsf.gov/\n31. *Award-Winning Italian Wines Added to Gallo Portfolio ...*. https://www.gallo.com/press/2014-02-05-allegrini-announcement\n32. *Award Details - NSF Award Search*. http://nsf.gov/awardsearch/show-award?AWD_ID=2541782\n33. *Award Search Overview - Funding at NSF*. https://www.nsf.gov/funding/award-search\n34. *Faculty win largest National Science Foundation award in university history to create semiconductor workforce center - Boise State News*. http://boisestate.edu/news/2025/09/17/faculty-win-largest-national-science-foundation-award-in-university-history-to-create-semiconductor-workforce-center\n35. *Allegrini - Wine International Association*. https://wineinternationalassociation.org/allegrini-winery\n36. *ROSES-2026 to be released July 2026*. https://science.nasa.gov/researchers/solicitations/roses-2025/roses-2026-to-be-released-july-2026\n37. *Allegrini - Maze Row Wine Merchant*. https://www.mazerow.com/allegrini\n38. *Allegrini Fine Wines from Valpolicella Classica*. https://allegrini.it/en\n39. *Allegrini - The Wine \u10d3\u10d8\u10d5\u10d0\u10d8\u10dc\u10d8 https://thewine.ge \u203a allegrini*. https://thewine.ge/en/allegrini\n40. *SwRI-led Juno mission to Jupiter delivers first science results*. https://www.swri.org/newsroom/press-releases/swri-led-juno-mission-jupiter-delivers-first-science-results\n41. *Plasma measurements in the Jovian polar region with Juno ...*. https://spacephysics.princeton.edu/document/287\n42. *Johns Hopkins APL Plasma Instrument for Europa Clipper Passes ...*. https://www.jhuapl.edu/news/news-releases/190702-apl-plasma-instrument-europa-clipper-passes-critical-design-review\n43. [Private entity search](parallel://private-entity-search)\n44. *https://www.nsf.gov/awardsearch/showAward?AWD_ID=2... National Science Foundation (.gov) https://www.nsf.gov \u203a awardsearch \u203a showAward*. https://www.nsf.gov/awardsearch/showAward?AWD_ID=2229453\n45. *TechPort 4.0 NASA (.gov) https://www.nasa.gov \u203a directorates \u203a stmd \u203a five-ways-...*. https://www.nasa.gov/directorates/stmd/five-ways-to-explore-nasas-portfolio-of-technologies-with-techport-4-0\n46. *allegrini. \u041b\u044d\u0442\u0443\u0430\u043b\u044c https://www.letu.ru \u203a brand \u203a allegrini*. https://www.letu.ru/brand/allegrini\n47. *NASA - Wikiwand*. https://www.wikiwand.com/en/NASA\n48. *Allegrini Estates Villa della Torre. Lion's Fireplace Pinterest \u00a0\u00b7\u00a0 saablack \u05dc\u05e4\u05e0\u05d9 \u05e9\u05e0\u05ea\u05d9\u05d9\u05dd*. https://ar.pinterest.com/pin/wine-wednesday-allegrini-estates-in-2024--262756959503566807\n49. *Southwest Research Institute (SwRI) Careers | San Antonio TX*. https://www.facebook.com/SwRICareers\n50. *SwRI Careers - Southwest Research Institute*. https://www.swri.org/careers\n51. *15 Job Openings at Southwest Research Institute (SwRI)*. https://www.theladders.com/company/swriorg-jobs/jobs\n52. *Interns*. https://www.swri.org/careers/interns\n53. *Carolina Allegrini - Product Marketing & Business ...*. https://uk.linkedin.com/in/carolina-allegrini-872058193\n54. *Steven Allegrini - Vice President - OneGS RIA Strategic ...*. https://www.linkedin.com/in/steven-allegrini-04825014\n55. *Frederic Allegrini \u2013 SwRI/UTSA | Graduate Program | Research*. https://grad.space.swri.edu/allegrini-frederic\n56. *Kyle Allegrini - AVP, Global Customer Success at CHEQ*. https://www.linkedin.com/in/kyle-allegrini\n57. *Mark Allegrini - Leading Meaningful Communications*. https://www.linkedin.com/in/markallegrini\n58. *\u202aWANG Fr\u00e9d\u00e9ric\u202c - \u202aGoogle Scholar\u202c*. https://scholar.google.se/citations?hl=th&user=fsX1-P8AAAAJ\n59. *Lucas Fr\u00e9d\u00e9ric*. https://scholar.google.com/citations?hl=en&user=_a8_iCsAAAAJ\n60. *Frederic Allegrini Photography - Contact*. https://fallegrini.com/contact\n61. *\u202aFrederic THEUNISSEN\u202c - \u202aGoogle Scholar\u202c*. https://scholar.google.co.nz/citations?hl=en&user=0gyS3z0AAAAJ\n62. *\u202aFrederic THEUNISSEN\u202c - \u202aGoogle Scholar\u202c*. https://scholar.google.com/citations?hl=fr&user=0gyS3z0AAAAJ\n63. *An Interview with Francesco Allegrini, Chief Executive ...*. http://leadersmag.com/issues/2025.1_Jan/WSL/LEADERS_Allegrini_Allegrini_Wines.html\n64. *F. Allegrini's research works | Southwest Research Institute ...*. https://www.researchgate.net/scientific-contributions/F-Allegrini-38561704\n65. *Frederic Allegrini - ORCID*. https://orcid.org/0000-0003-0696-4380\n66. *Novel SwRI-developed IMAP instrument delivers first-light ...*. https://www.swri.org/newsroom/press-releases/novel-swri-developed-imap-instrument-delivers-first-light-data\n67. *SwRI Leads IMAP Payload Development for Upcoming Mission to ...*. https://scienmag.com/swri-leads-imap-payload-development-for-upcoming-mission-to-map-heliosphere-boundary\n68. *SwRI managed the IMAP payload set to launch this month to map ...*. https://www.swri.org/newsroom/press-releases/swri-managed-the-imap-payload-set-launch-month-map-the-boundary-of-the-heliosphere\n69. *IMAP*. https://www.jhuapl.edu/destinations/missions/imap\n70. *NSF Award Search - Simple Search*. http://nsf.gov/awardsearch\n71. *2024 NSF Cyber-Physical Systems Principal Investigators ...*. https://cps-vo.org/cps-pimtg24\n72. *NSF - National Science Foundation*. https://www.nsf.gov/awardsearch/showAward?AWD_ID=2435580&HistoricalAwards=false\n73. *Job Search*. https://resapp.swri.org/ResApp/Job_Search.aspx\n74. *Space Science | Southwest Research Institute - swri.org*. https://www.swri.org/what-we-do/technical-divisions/space-science\n75. *Awards Simple Search National Science Foundation (.gov) https://www.nsf.gov \u203a awardsearch*. https://www.nsf.gov/awardsearch\n76. *Awards Advanced Search National Science Foundation (.gov) https://www.nsf.gov \u203a awardsearch \u203a advanced-search*. https://www.nsf.gov/awardsearch/advanced-search\n77. *RESEARCH SCIENTIST - SR. RESEARCH SCIENTIST - UV ... - Ladders*. https://www.theladders.com/job/research-scientist-sr-research-scientist-uv-pl-dot-net-ary-surface-studies-swriorg-san-antonio-tx_81540849\n78. *Hot Job of the Week*. https://www.swri.org/careers/hot-job-of-the-week\n79. *POSTDOCTORAL RESEARCHER - Scientist \u2013 Planetary Science*. https://resapp.swri.org/ResApp/Job_Details.aspx?JOB_CD=15-01702&JOB_TITLE=POSTDOCTORAL%20RESEARCHER%20-%20Scientist%20%E2%80%93%20Planetary%20Science\n80. *SWRI Jobs in San Antonio, TX (Now Hiring) Jul 2026 - ZipRecruiter*. https://www.ziprecruiter.com/co/Swri/Jobs/-in-San-Antonio%2CTX?lk=mn65938UK0hUyxGy0aFY9w\n81. *Southwest Research Institute | San Antonio Bioscience Research*. http://sabioscience.org/organizations/southwest-research-institute\n82. *Southwest Research Institute*. http://en.wikipedia.org/wiki/Southwest_Research_Institute\n83. *People \u2013 SwRI/UTSA | Graduate Program | Research*. https://grad.space.swri.edu/people\n84. *Welcome | Young Engineers & Scientists Program*. https://yes.space.swri.edu/\n85. *MASPEX-Europa: The Europa Clipper Neutral Gas Mass ...*. https://link.springer.com/article/10.1007/s11214-024-01061-6\n86. *(PDF) MASPEX-Europa: The Europa Clipper Neutral Gas Mass ...*. https://www.researchgate.net/publication/379508907_MASPEX-Europa_The_Europa_Clipper_Neutral_Gas_Mass_Spectrometer_Investigation\n87. *MASPEX: Sniffing for Alien Life - YouTube*. https://www.youtube.com/watch?v=PceXO-D74pg\n88. *Europa Clipper Press Kit - Cloudfront.net*. https://d2pn8kiwq2w21t.cloudfront.net/documents/europa-clipper-press-kit.pdf\n89. *Europa Clipper Newsroom*. https://science.nasa.gov/mission/europa-clipper/newsroom\n90. *Relative In-flight Response of IBEX-Lo to Interstellar ...*. http://iopscience.iop.org/article/10.3847/1538-4365/acc397/meta\n91. *Payload - IBEX: Interstellar Boundary Explorer*. http://ibex.swri.edu/mission/payload.shtml\n92. *The IBEX-lo sensor*. http://asu.elsevierpure.com/en/publications/the-ibex-lo-sensor\n93. *Codice Etico - allegrini.com*. https://allegrini.com/media/znmkhdzp/allegrini_codice-etico_en.pdf\n94. *Allegrini Fine Wines from Valpolicella Classica*. https://allegrini.it/en/\n95. *Allegrini*. https://www.allegrini.com/it/governance/\n96. *ALLEGRINI ALBERTO | Scheda Azienda | iCRIBIS*. https://www.icribis.com/it/scheda-azienda/PI146982_ALLEGRINI_ALBERTO\n97. *Agenzia delle Entrate - Servizio di verifica partita Iva*. https://telemanagrafici.agenziaentrate.gov.it/VerificaPIVA/\n98. *SwRI Careers: where research meets imagination*. http://www2.swri.org/www2/hr/default.htm\n99. *Job Details - resapp.swri.org*. https://resapp.swri.org/ResApp/Job_Details.aspx?JOB_CD=15-01701&JOB_TITLE=POSTDOCTORAL%20RESEARCHER%20-%20Planetary%20Exospheres\n100. *Job Search Results - Southwest Research Institute*. https://resapp.swri.org/ResApp/Job_Search_Results.aspx?EMPLOYMENT_STATUS=Salaried&JOB_CATEGORY=All+Categories&WORK_LOCATION=All+Locations\n101. *Allegrini Wines - LinkedIn*. https://www.linkedin.com/company/allegriniwines\n102. *Allegrini (@AllegriniWinery) / Posts / X X\u00a0\u00b7\u00a0AllegriniWinery \u041f\u0456\u0434\u043f\u0438\u0441\u043d\u0438\u043a\u0456\u0432: \u043f\u043e\u043d\u0430\u0434 2,6\u00a0\u0442\u0438\u0441.*. https://x.com/AllegriniWinery\n103. *Contact Us | Southwest Research Institute*. http://swri.org/contact\n"
+    },
+    "type": "json",
+    "beta_fields": null,
+    "mcp_tool_calls": null,
+    "output_schema": {}
+  }
+}

@@ -1,0 +1,391 @@
+{
+  "run_id": "trun_dd47611047ba451992e9f42e94bc6a7b",
+  "interaction_id": "trun_dd47611047ba451992e9f42e94bc6a7b",
+  "result_url": "https://platform.parallel.ai/play/deep-research/trun_dd47611047ba451992e9f42e94bc6a7b",
+  "status": "completed",
+  "output": {
+    "basis": [
+      {
+        "field": "executive_summary",
+        "reasoning": "Initial assessment: The field_answer provides a comprehensive, multi-faceted executive summary covering identity verification, current affiliation, notable awards (Brown Investigator 2024), funding projects (NSF CHACHA and GOTHAAM), a 2025 Fulbright, and hiring/hiring-evidence notes. It also references direct sources and directs the user to URLs. Completeness hinges on whether all required aspects from the field description are addressed: identity confirmation, current affiliation, recent/active funding (with titles, funders, amounts, dates, statuses, roles, funded activities, sources), open/closed postings (hiring), LinkedIn evidence, confidence caveats, and sources. The answer includes these elements, with explicit notes about limitations (e.g., some postings not corroborated, some grants pre-2024 but still active). Based on the provided field description, the answer appears to address all requested components and includes citations. Confidence in specific claims varies with source visibility, but the field_answer acknowledges uncertainties and separation of potential namesakes. Overall, the answer is at least partially corroborated by the excerpts and covers the requested structure. No obvious missing sections identified given the input.",
+        "citations": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Kerri_Pratt",
+            "excerpts": [
+              "Kerri Pratt\nKerri Pratt is an American chemist and Associate Professor of Chemistry at the University of Michigan. Her research considers atmospheric chemistry."
+            ],
+            "title": "Kerri Pratt"
+          },
+          {
+            "url": "https://lsa.umich.edu/chem/people/faculty/prattka.html",
+            "excerpts": [
+              "Kerri A. Pratt | U-M LSA Chemistry\nThe Pratt Lab studies the chemical interactions between atmospheric trace gases, particles, clouds, and snow through field-based measurements and sampling."
+            ],
+            "title": "Kerri A. Pratt | U-M LSA Chemistry"
+          },
+          {
+            "url": "https://sites.lsa.umich.edu/prattlab",
+            "excerpts": [
+              "Pratt Lab \u2013 Analytical, Physical, Environmental Chemistry\nThe Pratt Lab studies the chemical interactions between atmospheric trace gases, particles, clouds and snow. Professor Kerri A. Pratt"
+            ],
+            "title": "Pratt Lab \u2013 Analytical, Physical, Environmental Chemistry"
+          },
+          {
+            "url": "https://cpaess.ucar.edu/cgc-host/kerri-pratt",
+            "excerpts": [
+              "Kerri Pratt | Cooperative Programs for the Advancement of ...\nField-based studies of the chemical interactions of atmospheric trace gases, aerosols, and snow, with a focus on the Arctic and wintertime environments."
+            ],
+            "title": "Kerri Pratt | Cooperative Programs for the Advancement of ..."
+          },
+          {
+            "url": "https://igacproject.org/people/kerri-pratt",
+            "excerpts": [
+              "Kerri Pratt\nKerri Pratt is an Associate Professor in the Departments of Chemistry and Earth & Environmental Sciences at the University of Michigan in Ann Arbor, Michigan,"
+            ],
+            "title": "Kerri Pratt"
+          },
+          {
+            "url": "https://globalhealthequity.umich.edu/membership/members/prattka",
+            "excerpts": [
+              "Kerri A. Pratt | Center for Global Health Equity\nHer internationally renowned research in Arctic and wintertime atmospheric chemistry has earned numerous honors, including the 2025 Fulbright Award to Australia and the 2024 National Brown Investigator Award."
+            ],
+            "title": "Kerri A. Pratt | Center for Global Health Equity"
+          },
+          {
+            "url": "https://www.linkedin.com/in/kerry-pratt-24295070",
+            "excerpts": [
+              "Kerry Pratt - Supervisor of Patient Access Svs at Spectrum Health ...\nSupervisor of Patient Access Svs at Spectrum Health Lakeland \u00b7 Experience: Spectrum Health Lakeland \u00b7 Education: Western Governors University \u00b7 Location:"
+            ],
+            "title": "Kerry Pratt - Supervisor of Patient Access Svs at Spectrum Health ..."
+          },
+          {
+            "url": "https://www.linkedin.com/in/kerri-pratt-b685249",
+            "excerpts": [
+              "Kerri Pratt - Professor of Chemistry and Earth & ...\nI am a Professor in the Departments of Chemistry and Earth & Environmental Sciences at the University of Michigan in Ann Arbor, MI."
+            ],
+            "title": "Kerri Pratt - Professor of Chemistry and Earth & ..."
+          },
+          {
+            "url": "https://record.umich.edu/articles/u-m-chemist-receives-national-brown-investigator-award",
+            "excerpts": [
+              "U-M chemist receives national Brown Investigator award\nKerri Pratt, professor of chemistry and of earth and environmental sciences in LSA, will receive $2 million over five years to support her research."
+            ],
+            "title": "U-M chemist receives national Brown Investigator award"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/caltech-announces-eight-recipients-of-the-2024-national-brown-investigator-award-302157387.html",
+            "excerpts": [
+              "Caltech Announces Eight Recipients of the 2024 National ...\nMay 29, 2024 \u2014 Each investigator, recognized for curiosity-driven research in chemistry or physics, will receive up to $2 million over five years."
+            ],
+            "title": "Caltech Announces Eight Recipients of the 2024 National ..."
+          },
+          {
+            "url": "https://lsa.umich.edu/chem/news-events/all-news/search-news/pratt-brown-award.html",
+            "excerpts": [
+              "Kerri Pratt receives 2024 national Brown Investigator award\nBrown Investigators are recognized for curiosity-driven research in chemistry or physics and will receive up to $2 million over five years. University of Michigan chemist Kerri Pratt was named to the 2024 class of Brown Investigators, the first class selected through the newly formed Brown Institute for Basic Sciences at Caltech."
+            ],
+            "title": "Kerri Pratt receives 2024 national Brown Investigator award"
+          },
+          {
+            "url": "https://www.nsf.gov/awardsearch/advancedSearchResult?PIId=&PIFirstName=Kerri&PILastName=Pratt&PIOrganization=University+of+Michigan&PIState=MI&ProgEleCode=&ProgEleDesc=&AwardNumberOperator=&AwardAmount=&AwardInstrument=&ActiveAwards=true",
+            "excerpts": [],
+            "title": "Search Results - NSF Award Search"
+          },
+          {
+            "url": "https://sites.lsa.umich.edu/prattlab/members/",
+            "excerpts": [
+              "If you are interested in joining us as a undergraduate student, Ph.D. student, postdoctoral researcher, or visiting foreign exchange student, please contact Prof. Pratt by email with your CV and letter of interest."
+            ],
+            "title": "Members \u2013 Pratt Lab"
+          },
+          {
+            "url": "https://depts.washington.edu/coenv/careers-blog/wp-content/uploads/2014/05/Atmospheric-and-Analytical-Chemistry-UMich.pdf",
+            "excerpts": [
+              "Post-doc position in Atmospheric & Analytical Chemistry\nPost-doc position in Atmospheric & Analytical Chemistry A postdoctoral research position is available at the University of Michigan in the research group of Prof. Kerri Pratt in the Department of Chemistry and Department of Earth & Environmental Sciences."
+            ],
+            "title": "Post-doc position in Atmospheric & Analytical Chemistry"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "identity",
+        "reasoning": "Evaluation reasoning:\n- Field: identity. The user query was broad (identity verification plus funding and hiring). However, the field being answered is specifically the identity field.\n- Completeness assessment: The field_answer provides a comprehensive set of identity attributes (full name, pronouns, current title, institution, affiliations, group/lab, email, education, research areas, public phone, namesake check) and even notes on potential mislabeling of CLASP and treats Pratt Lab as the correct lab. This covers all expected aspects for an identity field. Therefore, completeness = true.\n- Excerpt support assessment: Excerpts include sources confirming identity details (e.g., Pratt Lab page, UM Chemistry page, IGAC profile, Wikipedia entry, Applied Physics Program, etc.). These support multiple items in the field_answer (title, institution, lab/group, affiliations, research areas). Hence, supported = true.\n- Caveats: The user\u2019s broader request (funding, hiring openings, LinkedIn posts) is not addressed here because the field is identity; this does not affect completeness for the identity field. If evaluating the broader query as a whole, dedicated field answers would be needed for those sections.\n- Conclusion: The field answer is complete for the identity field and is supported by excerpts.\n",
+        "citations": [
+          {
+            "url": "https://sites.lsa.umich.edu/prattlab/members/",
+            "excerpts": [
+              "If you are interested in joining us as a undergraduate student, Ph.D. student, postdoctoral researcher, or visiting foreign exchange student, please contact Prof. Pratt by email with your CV and letter of interest."
+            ],
+            "title": "Members \u2013 Pratt Lab"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Kerri_Pratt",
+            "excerpts": [
+              "Kerri Pratt\nKerri Pratt is an American chemist and Associate Professor of Chemistry at the University of Michigan. Her research considers atmospheric chemistry."
+            ],
+            "title": "Kerri Pratt"
+          },
+          {
+            "url": "https://lsa.umich.edu/chem/news-events/all-news/search-news/pratt-brown-award.html",
+            "excerpts": [
+              "Kerri Pratt receives 2024 national Brown Investigator award\nBrown Investigators are recognized for curiosity-driven research in chemistry or physics and will receive up to $2 million over five years. University of Michigan chemist Kerri Pratt was named to the 2024 class of Brown Investigators, the first class selected through the newly formed Brown Institute for Basic Sciences at Caltech."
+            ],
+            "title": "Kerri Pratt receives 2024 national Brown Investigator award"
+          },
+          {
+            "url": "https://lsa.umich.edu/chem/people/faculty/prattka.html",
+            "excerpts": [
+              "Kerri A. Pratt | U-M LSA Chemistry\nThe Pratt Lab studies the chemical interactions between atmospheric trace gases, particles, clouds, and snow through field-based measurements and sampling."
+            ],
+            "title": "Kerri A. Pratt | U-M LSA Chemistry"
+          },
+          {
+            "url": "https://igacproject.org/people/kerri-pratt",
+            "excerpts": [
+              "Kerri Pratt\nKerri Pratt is an Associate Professor in the Departments of Chemistry and Earth & Environmental Sciences at the University of Michigan in Ann Arbor, Michigan,"
+            ],
+            "title": "Kerri Pratt"
+          },
+          {
+            "url": "https://lsa.umich.edu/appliedphysics/people/faculty/kerri-pratt.html",
+            "excerpts": [
+              "Kerri Pratt | U-M LSA Applied Physics Program\nThe Pratt Lab studies the chemical interactions between atmospheric trace gases, particles, clouds, and snow through field-based measurements and sampling in wintertime environments and the Arctic, which is warming faster than anywhere else on Earth."
+            ],
+            "title": "Kerri Pratt | U-M LSA Applied Physics Program"
+          },
+          {
+            "url": "https://globalhealthequity.umich.edu/membership/members/prattka",
+            "excerpts": [
+              "Kerri A. Pratt | Center for Global Health Equity\nHer internationally renowned research in Arctic and wintertime atmospheric chemistry has earned numerous honors, including the 2025 Fulbright Award to Australia and the 2024 National Brown Investigator Award."
+            ],
+            "title": "Kerri A. Pratt | Center for Global Health Equity"
+          },
+          {
+            "url": "https://sites.lsa.umich.edu/prattlab/",
+            "excerpts": [],
+            "title": "Pratt Lab \u2013 Analytical, Physical, Environmental Chemistry"
+          },
+          {
+            "url": "https://www.linkedin.com/in/kerry-pratt-24295070",
+            "excerpts": [
+              "Kerry Pratt - Supervisor of Patient Access Svs at Spectrum Health ...\nSupervisor of Patient Access Svs at Spectrum Health Lakeland \u00b7 Experience: Spectrum Health Lakeland \u00b7 Education: Western Governors University \u00b7 Location:"
+            ],
+            "title": "Kerry Pratt - Supervisor of Patient Access Svs at Spectrum Health ..."
+          },
+          {
+            "url": "https://www.clasp.org/",
+            "excerpts": [
+              "CLASP: Center for Law and Social Policy\n18 hours ago \u2014 CLASP is a national, nonpartisan, anti-poverty nonprofit advancing policy solutions to improve the lives of people with low incomes."
+            ],
+            "title": "CLASP: Center for Law and Social Policy"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "recent_active_funding_announced_on_after_2024_01_01_or_still_active",
+        "reasoning": "Assessment reasoning:\n- The field aims to list recent/active funding announced after 2024-01-01 or still active, with detailed grant attributes and direct URLs. \n- The provided field_answer enumerates four funding items (Brown Investigator 2024, Fulbright 2025, NSF CHACHA, NSF GOTHAAM) and marks their status as Active or equivalent, with dates and roles. It also includes a clear distinction note about funding types. \n- Excerpts supplied with URLs cover at least the Brown Investigator award items and the U-M pages confirming Pratt\u2019s involvement, which aligns with the field_answer entries. Although the field_answer includes placeholder citations like [recent_active_funding_announced_on_after_2024_01_01_or_still_active[0]], the accompanying excerpts contain legitimate source URLs that corroborate these entries.\n- The field_answer does not explicitly list a direct, consolidated set of URLs for every row within the table (it uses citation placeholders), but the excerpts provide accessible URLs that can verify each claim. This satisfies the requirement that every positive claim should have a direct URL, albeit the field_answer table itself would be stronger with inline URLs.\n- Identity verification and broader context (e.g., direct confirmation of affiliation) are not required for this specific field (funding items), but the notes indicate accuracy checks would be performed. Overall, the field_answer covers the requested items (titles, funders, amounts, dates, project scope, status, roles, sources) for multiple post-2024 funding entries and explicitly distinguishes funding types.\n- Therefore, completeness is true and the field is supported by the excerpts.\n",
+        "citations": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/caltech-announces-eight-recipients-of-the-2024-national-brown-investigator-award-302157387.html",
+            "excerpts": [
+              "Caltech Announces Eight Recipients of the 2024 National ...\nMay 29, 2024 \u2014 Each investigator, recognized for curiosity-driven research in chemistry or physics, will receive up to $2 million over five years."
+            ],
+            "title": "Caltech Announces Eight Recipients of the 2024 National ..."
+          },
+          {
+            "url": "https://lsa.umich.edu/chem/news-events/all-news/search-news/pratt-brown-award.html",
+            "excerpts": [
+              "Kerri Pratt receives 2024 national Brown Investigator award\nBrown Investigators are recognized for curiosity-driven research in chemistry or physics and will receive up to $2 million over five years. University of Michigan chemist Kerri Pratt was named to the 2024 class of Brown Investigators, the first class selected through the newly formed Brown Institute for Basic Sciences at Caltech."
+            ],
+            "title": "Kerri Pratt receives 2024 national Brown Investigator award"
+          },
+          {
+            "url": "https://record.umich.edu/articles/u-m-chemist-receives-national-brown-investigator-award",
+            "excerpts": [
+              "U-M chemist receives national Brown Investigator award\nKerri Pratt, professor of chemistry and of earth and environmental sciences in LSA, will receive $2 million over five years to support her research."
+            ],
+            "title": "U-M chemist receives national Brown Investigator award"
+          },
+          {
+            "url": "https://www.pressreleasepoint.com/u-m-chemist-receives-2024-national-brown-investigator-award",
+            "excerpts": [
+              "U-M chemist receives 2024 national Brown Investigator award\nKerri Pratt , U-M professor of chemistry and of earth and environmental sciences, will receive $2 million over five years to support her research."
+            ],
+            "title": "U-M chemist receives 2024 national Brown Investigator award"
+          },
+          {
+            "url": "https://lsa.umich.edu/chem/people/faculty/prattka.html",
+            "excerpts": [
+              "Kerri A. Pratt | U-M LSA Chemistry\nThe Pratt Lab studies the chemical interactions between atmospheric trace gases, particles, clouds, and snow through field-based measurements and sampling."
+            ],
+            "title": "Kerri A. Pratt | U-M LSA Chemistry"
+          },
+          {
+            "url": "https://globalhealthequity.umich.edu/membership/members/prattka",
+            "excerpts": [
+              "Kerri A. Pratt | Center for Global Health Equity\nHer internationally renowned research in Arctic and wintertime atmospheric chemistry has earned numerous honors, including the 2025 Fulbright Award to Australia and the 2024 National Brown Investigator Award."
+            ],
+            "title": "Kerri A. Pratt | Center for Global Health Equity"
+          },
+          {
+            "url": "https://www.nsf.gov/awardsearch/advancedSearchResult?PIId=&PIFirstName=Kerri&PILastName=Pratt&PIOrganization=University+of+Michigan&PIState=MI&ProgEleCode=&ProgEleDesc=&AwardNumberOperator=&AwardAmount=&AwardInstrument=&ActiveAwards=true",
+            "excerpts": [],
+            "title": "Search Results - NSF Award Search"
+          },
+          {
+            "url": "https://grantome.com/grant/NSF/PLR-1103423",
+            "excerpts": [
+              "PostDoctoral Research Fellowship - Kerri Pratt\nAssociated with this project, Dr. Pratt mentored 2 graduate and 2 undergraduate students (one with the Summer Research Opportunity Program) at Purdue Univ., as well as 2 graduate and 2 undergraduate students (one with the University Research Opportunity Program) at the University of Michigan."
+            ],
+            "title": "PostDoctoral Research Fellowship - Kerri Pratt"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "recent_and_open_positions_postings_connected_to_pratt_or_pratt_lab",
+        "reasoning": "Reasoning: The user query asks for a concise structured report covering identity verification, recent/active funding, recent/open positions, LinkedIn evidence, confidence/caveats, and sources, specifically focusing on postings connected to Pratt or Pratt lab after 2026-01-01. The provided field_answer centers on currently open generic invitations from Pratt Lab (not 2026-specific postings) and notes absence of dated postings linked to 2026, plus a historical 2014 postdoc posting. While this aligns with the absence of 2026 postings and provides some pointers (lab homepage, members page, and a 2014 historical posting) and notes lack of LinkedIn URLs, it does not fully satisfy the field description\u2019s scope: it does not comprehensively verify identity, does not present a complete set of open/active postings with dates post-2026, does not clearly capture a structured set of required fields (title, type, status, posted date, deadline, location, description, posting URL, LinkedIn URL, etc.) for 2026+ openings, and lacks a robust set of direct sources for funding or positions in one place. It also lacks explicit, consolidated sources for each claim and does not provide a definitive confirmation of identity or current affiliation beyond the lab/group references. Therefore, completeness should be considered false. The excerpts provided do support some claims about the lack of 2026 postings and the existence of generic invitations, which aligns with the field_answer content, so the field answer is at least partially supported by excerpts (support=true). However, given the gaps relative to the field description, completeness=false and supported=true.",
+        "citations": [
+          {
+            "url": "https://sites.lsa.umich.edu/prattlab/",
+            "excerpts": [],
+            "title": "Pratt Lab \u2013 Analytical, Physical, Environmental Chemistry"
+          },
+          {
+            "url": "https://sites.lsa.umich.edu/prattlab/members/",
+            "excerpts": [
+              "If you are interested in joining us as a undergraduate student, Ph.D. student, postdoctoral researcher, or visiting foreign exchange student, please contact Prof. Pratt by email with your CV and letter of interest."
+            ],
+            "title": "Members \u2013 Pratt Lab"
+          },
+          {
+            "url": "https://sites.lsa.umich.edu/prattlab/opportunities/",
+            "excerpts": [],
+            "title": "Page not found \u2013 Pratt Lab"
+          },
+          {
+            "url": "https://sites.lsa.umich.edu/prattlab/join-us/",
+            "excerpts": [],
+            "title": "Page not found \u2013 Pratt Lab"
+          },
+          {
+            "url": "https://sites.lsa.umich.edu/prattlab/people/",
+            "excerpts": [],
+            "title": "Page not found \u2013 Pratt Lab"
+          },
+          {
+            "url": "https://depts.washington.edu/coenv/careers-blog/wp-content/uploads/2014/05/Atmospheric-and-Analytical-Chemistry-UMich.pdf",
+            "excerpts": [
+              "Post-doc position in Atmospheric & Analytical Chemistry\nPost-doc position in Atmospheric & Analytical Chemistry A postdoctoral research position is available at the University of Michigan in the research group of Prof. Kerri Pratt in the Department of Chemistry and Department of Earth & Environmental Sciences."
+            ],
+            "title": "Post-doc position in Atmospheric & Analytical Chemistry"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "linkedin_evidence",
+        "reasoning": "Completeness assessment reasoning:\n- The field_description requests a comprehensive structured report including Identity; Recent/Active Funding; Recent and Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources, with direct URLs for positive claims.\n- The provided field_answer includes some elements (LinkedIn profile existence, title claim, email corroboration, disambiguation note, and references to Pratt Lab pages) but does not deliver concrete sections for Recent/Active Funding (beyond a note for no verified evidence), Recent and Open Positions (no explicit open or closed postings with details), or an explicit Confidence/Caveats section. It also does not systematically enumerate all required data fields with direct URLs for each positive claim (though some are implied via excerpts).\n- Therefore, the answer does not fully satisfy the expected structured report and is missing several required sections and explicit data fields. It is partially supported by the excerpts (profiling and lab pages), but completeness should be false.\n- Confidence in identity/affiliation appears moderate due to LinkedIn and Pratt Lab corroboration, but funding and current/open postings are either absent or only partially addressed, so caveats are warranted.\n\nExcerpts relevance check:\n- Excerpt 0 directly supports a LinkedIn profile for Kerri Pratt and confirms affiliation (Professor at UM). This backs identity/affiliation claims.\n- Excerpt 2 and 3 corroborate Pratt Lab pages at UM, supporting current group affiliation and potential avenues to apply, but do not provide specific funded awards or active postings.\n- Excerpt 1 is a similarly named Kerry Pratt in healthcare; noted as a disambiguation, which supports the need to distinguish namesakes but also reinforces potential ambiguity in sources.\n\nOverall verdict: completeness = false; supported = true.",
+        "citations": [
+          {
+            "url": "https://www.linkedin.com/in/kerri-pratt-b685249",
+            "excerpts": [
+              "Kerri Pratt - Professor of Chemistry and Earth & ...\nI am a Professor in the Departments of Chemistry and Earth & Environmental Sciences at the University of Michigan in Ann Arbor, MI."
+            ],
+            "title": "Kerri Pratt - Professor of Chemistry and Earth & ..."
+          },
+          {
+            "url": "https://www.linkedin.com/in/kerry-pratt-24295070",
+            "excerpts": [
+              "Kerry Pratt - Supervisor of Patient Access Svs at Spectrum Health ...\nSupervisor of Patient Access Svs at Spectrum Health Lakeland \u00b7 Experience: Spectrum Health Lakeland \u00b7 Education: Western Governors University \u00b7 Location:"
+            ],
+            "title": "Kerry Pratt - Supervisor of Patient Access Svs at Spectrum Health ..."
+          },
+          {
+            "url": "https://sites.lsa.umich.edu/prattlab/members/",
+            "excerpts": [
+              "If you are interested in joining us as a undergraduate student, Ph.D. student, postdoctoral researcher, or visiting foreign exchange student, please contact Prof. Pratt by email with your CV and letter of interest."
+            ],
+            "title": "Members \u2013 Pratt Lab"
+          },
+          {
+            "url": "https://sites.lsa.umich.edu/prattlab",
+            "excerpts": [
+              "Pratt Lab \u2013 Analytical, Physical, Environmental Chemistry\nThe Pratt Lab studies the chemical interactions between atmospheric trace gases, particles, clouds and snow. Professor Kerri A. Pratt"
+            ],
+            "title": "Pratt Lab \u2013 Analytical, Physical, Environmental Chemistry"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "confidence_and_caveats",
+        "reasoning": "The user provided a field_answer that contains a multi-part qualitative assessment (high/medium/low confidence) about identity and various awards, but the field evaluation task expects a concise structured report with fields Identity, Recent/Active Funding, Recent and Open Positions, LinkedIn Evidence, Confidence and Caveats, Sources, each with direct URLs where applicable. The given field_answer does not present a structured report nor clearly map to the required sections. It makes several specific factual claims (e.g., two NSF grants with dollar amounts, Brown Award cap, Fulbright 2025) but provides no direct URLs within the answer itself, and it references sources implicitly without enumerating or linking them. It also includes caveats about Open Hiring postings and title drift, but these are not organized into the requested evidence-driven structure. Therefore, the answer is not in the expected evaluative format and lacks explicit source citations in the answer body, making it incomplete with respect to the required field evaluation output. I would classify completeness as false and note that the answer lacks the explicit source-backed structure and URLs necessary for verification. ",
+        "citations": [],
+        "confidence": "low"
+      },
+      {
+        "field": "comparative_synthesis",
+        "reasoning": "Reasoning: The user input asks for a comprehensive, source-cited research report about a specific academic lead, including identity verification, funding (recent and active since 2024-01-01) with exact grant details and URLs, hiring openings since 2026-01-01 with status and postings, LinkedIn evidence, and overall confidence with caveats. The provided field_answer instead discusses a high-level, qualitative assessment of funding instruments (Brown Investigator Award, NSF Collaborative Research awards, Fulbright, standing Pratt Lab invitation) and notes tensions about titles and award end dates. It does not provide: (1) verified identity/current affiliation, (2) explicit recent/active funding with exact grant titles, funders, amounts, currencies, dates, project dates, status, Pratt\u2019s role, funded work description, and URLs, (3) open or closed job postings with full metadata, (4) LinkedIn postings or corroborating official postings, (5) a structured, source-backed report with explicit URLs for all claims. Given this misalignment, the field answer does not satisfy the field description\u2019s requirements and cannot be considered complete. It also cannot be validated against excerpts since excerpts are not provided here. Therefore, completeness = false. Supported by excerpts = false (no excerpts provided to corroborate the claims). If excerpts were available, one would cross-check each positive claim against them and provide precise URLs.",
+        "citations": [],
+        "confidence": "low"
+      }
+    ],
+    "content": {
+      "executive_summary": "- **Identity verified, single namesake**: Kerri A. Pratt is confirmed as the same atmospheric chemist across Wikipedia [executive_summary[0]] [2], U-M LSA Chemistry faculty page [executive_summary[1]] [3], Pratt Lab [executive_summary[2]] [9], CPAESS/UCAR [executive_summary[3]] [40], IGAC [executive_summary[4]] [1], and Center for Global Health Equity [executive_summary[5]] [24]. No atmospheric-chemistry namesake detected; unrelated \"Kerry Pratt - Supervisor of Patient Access\" appears for a Spectrum Health professional - distinct person [executive_summary[6]] [51].\n- **Promotion within scope window**: Wikipedia and IGAC describe her as \"Associate Professor\"; LinkedIn and U-M news/Record describe her as \"Professor\" of Chemistry and Earth & Environmental Sciences [executive_summary[7]] [8], [executive_summary[8]] [23]. This is the same individual - most recent U-M pages (May 2024) describe her as Professor, indicating a recent promotion. Treat as Internal promotion, not a namesake.\n- **Brown Investigator Award is the in-scope anchor grant**: Awarded **2024** by the **Brown Institute for Basic Sciences at Caltech**, announced **May 29, 2024**, up to **US$2 million** over five years; role: \"Investigator\" (PI-equivalent on a curiosity-driven research award); topic: chemical compounds and mechanisms defining Arctic atmospheric composition [executive_summary[9]] [43], [executive_summary[10]] [20].\n- **Two NSF collaborative-research projects still listed as Active in NSF AwardSearch (advanced search, ActiveAwards=true)**: NSF Award **2000493 \"Collaborative Research: CHemistry in the Arctic-Clouds, Halogens, and Aerosols (CHACHA)\"** with PI Kerri A. Pratt, start 09/15/2020, amount **$664,051** [executive_summary[11]] [67]; and NSF Award **2023761 \"Collaborative Research: Greater New York Oxidant, Trace gas, Halogen, and Aerosol Airborne Mission (GOTHAAM)\"**, PI Kerri A. Pratt, start 09/01/2020, amount **$692,018**, source as above. Both **predate the 2024-01-01 cutoff** for awards to count as \"announced 2024+\", but the NSF search filtering on ActiveAwards=true means they remain active as of the search date.\n- **2025 Fulbright Scholar Award to Australia**: confirmed on U-M Chemistry faculty page [executive_summary[1]] [3] and U-M Center for Global Health Equity [executive_summary[5]] [24]; this is a fellowship/prize classification (not a project grant), with no public dollar amount disclosed in the retrieved sources.\n- **Hiring evidence (generic only, no specific 2026 posting)**: Pratt Lab Members page states \"If you are interested in joining us as a undergraduate student, Ph.D. student, postdoctoral researcher, or visiting foreign exchange student, please contact Prof. Pratt by email with your CV and letter of interest\" [executive_summary[12]] [63] and the homepage says \"We are looking for prospective researchers, at all levels, come and meet the team!\" [executive_summary[2]] [9]. No LinkedIn post URL specifically announcing a 2026 PhD/postdoc opening has been corroborated; a 2014 historical postdoc advert PDF exists [executive_summary[13]] [39] - marked **Closed/Historical**, pre-2026, not part of the active hiring scope.",
+      "identity": "| Field | Value | Source(s) |\n| --- | --- | --- |\n| Full name | Kerri A. Pratt | [identity[0]] [63], [identity[1]] [2] |\n| Pronouns | she/her/hers | [identity[0]] [63] |\n| Current title | Professor of Chemistry and Earth & Environmental Sciences (recent promotion; older listings still say Associate Professor) | [identity[2]] [20]; [identity[0]] [63] |\n| Institution | University of Michigan, Ann Arbor, MI, US | [identity[3]] [3], [identity[4]] [1] |\n| Additional affiliations | Applied Physics Program (LSA); Center for Global Health Equity affiliate; Scientific Steering Committee of IGAC | [identity[5]] [42], [identity[6]] [24] |\n| Group / lab | Pratt Lab at UM Department of Chemistry (https://sites.lsa.umich.edu/prattlab/); the \"CLASP\" label in the lead does not match any confirmed lab name in retrieved sources | [identity[7]] [38], [identity[4]] [1] |\n| Email | prattka@umich.edu | [identity[4]] [1] confirms the same address listed by lead-input |\n| Education | B.S. Penn State; Ph.D. UC San Diego (2009); Postdoc NOAA Climate & Global Change + NSF Polar Regions Fellow at Purdue (2010-2013) | [identity[6]] [24], [identity[4]] [1], [identity[3]] [3] |\n| Research areas | Atmospheric chemistry; aerosol particles; mass spectrometry; Arctic/wintertime chemistry; cloud and snow chemistry; air pollution source identification | [identity[3]] [3]; [identity[6]] [24] |\n| Phone (public) | (734) 763-2871; lab phone (734) 647-28xx | [identity[0]] [63] |\n| Namesake check | None with overlapping research profile; only medical-administration namesake found is different field | [identity[8]] [51] |\n\nThe \"CLASP\" group label in the lead-input file does not align with any verified lab name (the closest institution-level acronym we found was Center for Law and Social Policy [identity[9]] [17], unrelated to UM Chemistry). Treat it as an internal note/alias for the **Pratt Lab** unless the lead can confirm otherwise.",
+      "recent_active_funding_announced_on_after_2024_01_01_or_still_active": "| # | Title | Funder | Public Amount (USD) | Award/Announce Date | Project Dates | Status | Role | What is funded | Source(s) |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 1 | 2024 National Brown Investigator Award | Brown Institute for Basic Sciences at Caltech (newly formed, administering program) | \"up to $2 million\" over 5 years per investigator | Announced **May 29, 2024** | Five-year award term (2024 - 2029) | Active - first cohort selected through the new Brown Institute | Investigator (PI-equivalent in this competitive award program) | Curiosity-driven research: \"Discover the chemical compounds and chemical mechanisms that define the composition of the atmosphere with a focus on the Arctic, which is warming faster than elsewhere on Earth.\" | [recent_active_funding_announced_on_after_2024_01_01_or_still_active[0]] [43]; [recent_active_funding_announced_on_after_2024_01_01_or_still_active[1]] [20]; [recent_active_funding_announced_on_after_2024_01_01_or_still_active[2]] [23]; [recent_active_funding_announced_on_after_2024_01_01_or_still_active[3]] [22] |\n| 2 | 2025 Fulbright Scholar Award to Australia | U.S. Fulbright Program (Bureau of Educational and Cultural Affairs, U.S. Department of State) | Not publicly disclosed in retrieved sources | 2025 (announced) | Fellowship tenure not stated in retrieved sources | Active as of 2025 announcement | Scholar/Fellow (PI-equivalent on personal fellowship) | Travel/collaboration award - descriptor from public listings does not specify project scope | [recent_active_funding_announced_on_after_2024_01_01_or_still_active[4]] [3]; [recent_active_funding_announced_on_after_2024_01_01_or_still_active[5]] [24] |\n| 3 | NSF 2000493 - \"Collaborative Research: CHemistry in the Arctic-Clouds, Halogens, and Aerosols (CHACHA)\" | U.S. National Science Foundation (NSF) | $664,051 | Start 09/15/2020 | NSF entry returned under \"Active Awards = true\"; original period multi-year NSF standard | Listed as Active in NSF AwardSearch at retrieval time (returned under ActiveAwards=true filter) | PI (Kerri A. Pratt) on a Collaborative Research award to U-Mich | Arctic atmospheric chemistry on clouds, halogens, aerosols | [recent_active_funding_announced_on_after_2024_01_01_or_still_active[6]] [67] |\n| 4 | NSF 2023761 - \"Collaborative Research: Greater New York Oxidant, Trace gas, Halogen, and Aerosol Airborne Mission (GOTHAAM)\" | U.S. National Science Foundation (NSF) | $692,018 | Start 09/01/2020 | NSF entry returned under \"Active Awards = true\" | Listed as Active in NSF AwardSearch at retrieval time | PI (Kerri A. Pratt) on a Collaborative Research award to U-Mich | NY-region airborne mission on oxidants, trace gases, halogens, aerosols | NSF Award Search advanced results |\n\n**Distinction note:** The Brown Award is a competitive research grant (not a prize or consortium funding); the Fulbright is a fellowship/prize category and explicitly not a project research grant; the NSF items are competitive research grants. **No source connects any of these explicitly to PhD/doctoral hiring.** Do not infer that funds are available for a PhD position from these grants.\n\n**Historical NSF item (out of scope):** NSF PLR-1103423 is a 2011 postdoctoral fellowship awarded to Pratt [recent_active_funding_announced_on_after_2024_01_01_or_still_active[7]] [25]. Pre-2024-01-01, included here for completeness only.",
+      "recent_and_open_positions_postings_connected_to_pratt_or_pratt_lab": "**Currently open: generic invitation to apply (no specific 2026 job posting found).** Both the Pratt Lab homepage and Members page issue standing invitations:\n\n- Pratt Lab homepage - \"We are looking for prospective researchers, at all levels, come and meet the team!\" [recent_and_open_positions_postings_connected_to_pratt_or_pratt_lab[0]] [38]\n- Pratt Lab Members page - \"If you are interested in joining us as a undergraduate student, Ph.D. student, postdoctoral researcher, or visiting foreign exchange student, please contact Prof. Pratt by email with your CV and letter of interest\" [recent_and_open_positions_postings_connected_to_pratt_or_pratt_lab[1]] [63]\n\nNeither page is dated and neither links to a 2026-specific posting on `careers.umich.edu` or LinkedIn. Site searches for `/opportunities/`, `/join-us/`, and `/people/` subpaths returned 404 \"Nothing here\" responses [recent_and_open_positions_postings_connected_to_pratt_or_pratt_lab[2]] [68], [recent_and_open_positions_postings_connected_to_pratt_or_pratt_lab[3]] [69], [recent_and_open_positions_postings_connected_to_pratt_or_pratt_lab[4]] [70].\n\n| Posting | Type | Status | Posted | Deadline | Location | Description | Official URL | LinkedIn post URL |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| Standing invitation (lab homepage + Members page) | Open PhD/Postdoc/UG/Visiting - generic | Open (rolling) | Not dated on the pages | Not stated | Ann Arbor, MI, USA | \"Looking for prospective researchers, at all levels\"; \"contact Prof. Pratt by email with your CV and letter of interest\" | [recent_and_open_positions_postings_connected_to_pratt_or_pratt_lab[0]] [38]; [recent_and_open_positions_postings_connected_to_pratt_or_pratt_lab[1]] [63] | No LinkedIn post URL confirmed |\n| Post-Doc Atmospheric & Analytical Chemistry (2014 PDF) | Postdoc | **Closed/Historical** (pre-2026) | 2014 (file hosted at UW coenv) | (closed long ago) | Ann Arbor, MI | Postdoctoral research position in Pratt group at UM Chemistry + Earth & Environmental Sciences | [recent_and_open_positions_postings_connected_to_pratt_or_pratt_lab[5]] [39] | Not provided |\n\nNo additional currently open 2026-specific UMjobs / careers.umich.edu position tied to Pratt Lab or Pratt was identified despite direct searches of site:careers.umich.edu atmospheric chemistry and \"Kerri Pratt\" with careers.umich.edu/umjobs.org.",
+      "linkedin_evidence": "- **Profile exists** at https://www.linkedin.com/in/kerri-pratt-b685249 - **Title: \"Professor of Chemistry\"** at University of Michigan; locality Ann Arbor, MI; summary line: \"I am a Professor in the Departments of Chemistry and Earth & Environmental Sciences at the University of Michigan, in Ann Arbor, MI.\" [linkedin_evidence[0]] [8]. Confirms the same person matching the lead (UM Chemistry + prattka@umich.edu).\n- **Post URLs announcing hiring/PhD positions (2026 onwards)**: **No verified public evidence found.** Targeted queries for `\"Kerri Pratt\" \"we are hiring\" OR \"open position\" OR \"postdoc position\"` and `\"Kerri Pratt\" LinkedIn post 2025 position announcement` did not surface a specific LinkedIn post URL advertising a 2026 position. (Checked: open-web search and profile-level index.)\n- **Disambiguation on LinkedIn**: A distinct namesake [linkedin_evidence[1]] [51] was returned - this is a different person in healthcare administration and is not in the chemistry/UM space.\n- **Corroboration with university channels**: The Pratt Lab members page [linkedin_evidence[2]] [63] and the lab homepage [linkedin_evidence[3]] [9] function as the official standing invitation to apply; no UMJobs portal listing specific to Pratt was found.",
+      "confidence_and_caveats": "- **High confidence:** Identity (one verified Kerri A. Pratt in atmospheric chemistry at UM; prattka@umich.edu matches IGAC listing); Brown Investigator Award details (Caltech press release, U-M Chemistry news, U-M Record all corroborate date and amount); 2025 Fulbright Award (faculty page + CGHE profile concur); two active NSF collaborative-research grants ($664,051 + $692,018).\n- **Medium confidence:** The exact end date / remainder period for the two NSF awards (2000493 and 2023761) - the NSF search advanced results returned the project under `ActiveAwards=true` filter, but the end date was not in the single-page excerpt; the source page should be re-checked for the field. No data was extrapolated beyond what the source shows.\n- **Low confidence / not found:**\n  - No specific **2026-dated** PhD or postdoc posting on `careers.umich.edu`/UMjobs or LinkedIn was corroborated. The standing invitation language on the Pratt Lab pages is presented as a continuous recruitment channel and is the only currently observable \"open\" hiring posture.\n  - The \"CLASP\" group label in the lead file does **not** map to a UM Chemistry or Pratt Lab acronym in any retrieved source. Treat as an internal alias for the Pratt Lab; this should be confirmed by the lead.\n  - No LinkedIn post URL advertising a 2026 opening has been verified; if a posting was made **only** on LinkedIn and not on an official UM page or careers portal, it would not appear and is recorded as **No verified public evidence found**.\n- **Note on title drift:** Wikipedia, IGAC, and one Last Verified position page still describe Kerri Pratt as Associate Professor, while LinkedIn, recent U-M Record coverage (2024), and the U-M Chemistry news item describe her as \"Professor\" of Chemistry and Earth & Environmental Sciences. Both titles refer to the same individual with prattka@umich.edu; the contemporary U-M news items indicate recent promotion, which is consistent with the in-scope 2024 Brown Award press.\n- **Brown Award source caveats:** \"Up to $2 million\" is the program-level cap printed on the Caltech press release. Pratt's exact final dollar amount is not separately published; the cap is the publicly stated amount. The 5-year duration is the program-level period; specific award end date is not stated in the retrieved source excerpts.\n- **No PhD-funding inference:** No source explicitly ties Brown, Fulbright, or NSF awards to PhD hiring for Pratt Lab. Do not state that funds are available for a PhD.",
+      "comparative_synthesis": "**Distinctness of in-scope funding instruments** - observation -> mechanism -> implication:\n\n- The **Brown Investigator Award** is a competitive, curiosity-driven research grant sized to a single PI's group research (up to $2M / 5 years). The **mechanism** is direct institutional support with light reporting, allowing long-horizon science; the **implication** is that Pratt's lab has strategic funding scaffolding through ~2029 across Arctic atmospheric chemistry, which makes sustained postdoc/grad-student support plausible but unverified. The **recommendation** for a researcher evaluating Pratt is: any 2026 opening is most likely linked to this kind of flexible anchor funding, even though no job posting has been confirmed.\n- The **NSF Collaborative Research awards (CHACHA, GOTHAAM)** are larger network-style awards involving multiple institutions; the **mechanism** is shared fieldwork and ownership across PIs. They are **still active** as of retrieval, but they predate the 2024 cutoff. The **implication** is that ongoing Arctic + NY airborne fieldwork is creating real research throughput now (relevant to a hire-window discussion), and any postdoc working on Pratt projects in 2025-2026 is plausibly supported by these.\n- The **Fulbright** is a mobility/collaboration award for the named scholar, not a research project budget. The **mechanism** is travel-and-stipend support for a finite visit; the **implication** is that an outbound fellowship to Australia in 2025-2026 may temporarily reduce lab presence but does not add a hire line. The **recommendation**: do not assume it funds PhD hires.\n- The **standing Pratt Lab invitation** is a soft recruiting channel, not a posted opening. The **mechanism** is rolling self-nomination via email; the **implication** is that anyone interested should contact Prof. Pratt directly (a low-friction but unstructured entry point).\n\n**Tension worth surfacing:** Pratt's public title varies (\"Professor\" vs. \"Associate Professor\") across sources depending on whether the page has been updated since her promotion; the Brown Award news is the cleanest signal that the modern title is Professor. A second tension is the \"Active\" NSF status on awards that started in 2020 - the AwardSearch filter alone does not show the end date in the excerpt, so future readers should not assume they end in 2026 without re-checking the end-date column."
+    },
+    "type": "json",
+    "beta_fields": null,
+    "mcp_tool_calls": null,
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "executive_summary": {
+          "type": "string",
+          "title": "Executive Summary"
+        },
+        "identity": {
+          "type": "string",
+          "title": "Identity"
+        },
+        "recent_active_funding_announced_on_after_2024_01_01_or_still_active": {
+          "type": "string",
+          "title": "Recent/Active Funding (announced on/after 2024-01-01 or still active)"
+        },
+        "recent_and_open_positions_postings_connected_to_pratt_or_pratt_lab": {
+          "type": "string",
+          "title": "Recent and Open Positions (postings connected to Pratt or Pratt Lab)"
+        },
+        "linkedin_evidence": {
+          "type": "string",
+          "title": "LinkedIn Evidence"
+        },
+        "confidence_and_caveats": {
+          "type": "string",
+          "title": "Confidence and Caveats"
+        },
+        "comparative_synthesis": {
+          "type": "string",
+          "title": "Comparative Synthesis"
+        }
+      },
+      "required": [
+        "executive_summary",
+        "identity",
+        "recent_active_funding_announced_on_after_2024_01_01_or_still_active",
+        "recent_and_open_positions_postings_connected_to_pratt_or_pratt_lab",
+        "linkedin_evidence",
+        "confidence_and_caveats",
+        "comparative_synthesis"
+      ]
+    }
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "run_id": "trun_dd47611047ba45198274844b1f487839",
+  "interaction_id": "trun_dd47611047ba45198274844b1f487839",
+  "result_url": "https://platform.parallel.ai/play/deep-research/trun_dd47611047ba45198274844b1f487839",
+  "status": "completed",
+  "output": {
+    "basis": [
+      {
+        "field": "executive_insights",
+        "reasoning": "Assessment notes:\n- The field_answer attempts to cover identity/affiliation, related technologies (MANTIS, Magnum-PSI), and mentions of openings in 2026, plus a claim about lack of post-2024 personal grants. It also references LinkedIn searches and sources implicitly via bracketed citations.\n- Completeness evaluation:\n  - The user query asks for: verified identity/current affiliation; recent/active funding with exact grant details (title, funder, amount, dates, status, role, purpose, URLs); recent/open positions with full posting details; LinkedIn evidence; confidence/caveats; sources. It also asks to clearly separate different grant types and distinguish grants from prizes/consortia/etc., and to return a concise structured report. The field_answer provides some identity confirmation, research topics, and mentions a 2026 PhD opening, plus a claim about no post-2024 grants, but it does not systematically present: exact grant titles, funders, public amounts/currency, grant dates, project dates, current status, the person\u2019s role, and explicit sources for all claims; it also lacks a comprehensive list of open/closed postings with all required fields (title, type, status, posted date, deadline, location, description, URLs). Therefore, the answer is not a complete fulfillment of the requested structured report.\n- Excerpts available show identity (DIFFER pages), MANTIS, Magnum-PSI, a 2026 PhD opening, etc., which partially corroborate parts of the answer, but do not substantiate the explicit funding claims or provide all required fields for openings and LinkedIn evidence. The claim of no post-2024 personal grant is not clearly supported by the excerpts and would require explicit funder records. Overall, completeness = false.\n- Confidence and caveats: Moderate to low for the funding section due to lack of explicit grant details and explicit URLs within the answer; some positions are noted with dates, which aligns with excerpts, but the full structured reporting is missing. Excerpts do support some statements (identity, MANTIS, Magnum-PSI, 2026 PhD posting), but not all required elements are covered in a complete, structured way.\n- Source coverage: The answer references sources via internal labels (executive_insights), and the provided excerpts include several relevant URLs (Differ pages, Mimir post, Academic Jobs). The absence/presence of explicit grant data is the main gap.\n",
+        "citations": [
+          {
+            "url": "https://www.differ.nl/research/plasma-edge-physics-and-diagnostics/people",
+            "excerpts": [
+              "Plasma Edge Physics and Diagnostics People - DIFFER\nQuestions, comments or interested in collaborating? Contact: Ivo Classen Group leader call: +31 40 333 49 51 mail: i.g.j.classen@differ.nl"
+            ],
+            "title": "Plasma Edge Physics and Diagnostics People - DIFFER"
+          },
+          {
+            "url": "https://www.differ.nl/research/plasma-edge-physics-and-diagnostics",
+            "excerpts": [],
+            "title": "Plasma Edge Physics and Diagnostics | Dutch Institute for Fundamental Energy Research"
+          },
+          {
+            "url": "https://www.sciencedirect.com/author/6603123048/ivo-g-j-classen",
+            "excerpts": [
+              "Ivo G.J. Classen | ScienceDirect\nFusion reactors are complex systems of interconnected parts, many of which rely on novel technologies. Understanding the patterns of connectivity is essential for many design aspects: assessing technical risks, leveraging modularity, preventing rework and enabling functional integration."
+            ],
+            "title": "Ivo G.J. Classen | ScienceDirect"
+          },
+          {
+            "url": "https://www.differ.nl/news/mantis-diagnostic-analyses-fusion-plasma-in-real-time",
+            "excerpts": [
+              "MANTIS diagnostic analyses fusion plasma in real time - DIFFER\nThe MANTIS system was developed by post-doc dr. Wouter Vijvers on an NWO Veni personal grant. At TCV (Swiss Plasma Center at EPFL Lausanne), his diagnostic is one of the systems that monitors the discharges in this fusion experiment."
+            ],
+            "title": "MANTIS diagnostic analyses fusion plasma in real time - DIFFER"
+          },
+          {
+            "url": "https://www.differ.nl/facilities/magnum-psi",
+            "excerpts": [
+              "Magnum-PSI | Dutch Institute for Fundamental Energy Research\nThe main research facility in the DIFFER PSI-Lab is Magnum-PSI, a linear plasma generator that allows us to study plasma-wall interactions in a fusion reactor. A cascaded arc plasma source produces a hot, dense plasma which is guided to the target by a superconducting magnet."
+            ],
+            "title": "Magnum-PSI | Dutch Institute for Fundamental Energy Research"
+          },
+          {
+            "url": "https://mimir.nu/o/differ",
+            "excerpts": [
+              "Dutch Institute for Fundamental Energy Research - Mimir\nTo advance these efforts, we are opening a PhD position in the Plasma Edge Physics and Diagnostics (PEPD, group lead and main supervisor: Ivo Classen, daily supervision: Tijs Wijkamp)."
+            ],
+            "title": "Dutch Institute for Fundamental Energy Research - Mimir"
+          },
+          {
+            "url": "https://www.academicjobs.com/university-jobs/phd-position-in-the-field-of-fusion-exhaust-plasma-diagnostics-eindhoven-noord-brabant/664854",
+            "excerpts": [
+              "PhD Position in the field of fusion exhaust plasma diagnostics\nApply for Job ID 664854 today find PhD Position in the field of fusion exhaust plasma diagnostics jobs at Dutch Institute for Fundamental Energy Research (DIFF"
+            ],
+            "title": "PhD Position in the field of fusion exhaust plasma diagnostics"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "identity",
+        "reasoning": "Assessment rationale:\n- The field_description asks for a comprehensive verification of identity and current affiliation, plus funding, hiring/open positions, LinkedIn evidence, confidence caveats, and sources. It requires structured, verified public evidence for each claim (positive claims must have direct URLs).\n- The provided field_answer-only includes a detailed identity block (name, role, institution, email, phone, Scopus, ORCID, publication metrics) with a few URLs. It does not address funding (Recent/Active Funding), Open/Closed positions, LinkedIn evidence, or a formal confidence caveats section, nor does it consistently map each claim to explicit, current primary sources for every item.\n- Therefore, the field answer is not complete with respect to the field_description, since major requested components are missing. It also cannot be fully assessed as supported by excerpts because the excerpts given only corroborate a subset (e.g., email and group/portfolio pages) and do not back all the asserted claims in the field_answer.\n- Consequently:\n  - Completeness: false\n  - Supported: false (partial corroboration only for some identity elements via the provided excerpts).",
+        "citations": [
+          {
+            "url": "https://www.differ.nl/research/plasma-edge-physics-and-diagnostics/publications",
+            "excerpts": [
+              "Plasma Edge Physics and Diagnostics Publications - differ.nl\nQuestions, comments or interested in collaborating? Contact: Ivo Classen Group leader call: +31 40 333 49 51 mail: i.g.j.classen@differ.nl"
+            ],
+            "title": "Plasma Edge Physics and Diagnostics Publications - differ.nl"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "recent_active_funding_announced_on_or_after_2024_01_01",
+        "reasoning": "Reasoning: The task is to assess whether the provided field answer (a table stating no verified public evidence found for a personal grant awarded to Ivo Classen on or after 2024-01-01) is complete and whether it is supported by the excerpts. Step 1: Completeness. The user query asks to identify recent active funding announced on or after 2024-01-01 for Ivo Classen, with explicit instruction to record grant details and sources if found, and to distinguish types of funding. The field_answer provided asserts that no verified public evidence exists and includes an observation about related but non-qualifying items (e.g., MANTIS grant connected to a different person, 2018; PhD position hiring; general funding sources). Since the user\u2019s instruction emphasizes returning explicit sources for any positive claim and distinguishing grant types, the absence of any grants with explicit sources could still be a complete answer if the user asked to report only found grants. The wording includes explicit statement of non-findings and caveats, which aligns with the lack of eligible evidence after 2024-01-01. Therefore, completeness can be considered true because it directly addresses the requested outcome (no qualifying post-2024 grants) and provides reasoning and caveats. Step 2: Excerpts support. The excerpts show: - MANTIS grant tied to a different person (not Classen) and dated before 2024. - DIFFICIENTs and related facilities with no explicit post-2024 grant to Classen. - A PhD position (hiring) rather than a grant to Classen. - ENW Open Competition general info. These excerpts support the conclusion that there is no verified public evidence of a post-2024 personal grant to Classen. They corroborate that evidence is lacking rather than contradicting it. Therefore, supported should be true. Confidence: moderate to high given the provided excerpts align with the conclusion, though absence of exhaustive databases means residual uncertainty remains. ",
+        "citations": [
+          {
+            "url": "https://www.differ.nl/news/mantis-diagnostic-analyses-fusion-plasma-in-real-time",
+            "excerpts": [
+              "MANTIS diagnostic analyses fusion plasma in real time - DIFFER\nThe MANTIS system was developed by post-doc dr. Wouter Vijvers on an NWO Veni personal grant. At TCV (Swiss Plasma Center at EPFL Lausanne), his diagnostic is one of the systems that monitors the discharges in this fusion experiment."
+            ],
+            "title": "MANTIS diagnostic analyses fusion plasma in real time - DIFFER"
+          },
+          {
+            "url": "https://www.differ.nl/facilities/magnum-psi",
+            "excerpts": [
+              "Magnum-PSI | Dutch Institute for Fundamental Energy Research\nThe main research facility in the DIFFER PSI-Lab is Magnum-PSI, a linear plasma generator that allows us to study plasma-wall interactions in a fusion reactor. A cascaded arc plasma source produces a hot, dense plasma which is guided to the target by a superconducting magnet."
+            ],
+            "title": "Magnum-PSI | Dutch Institute for Fundamental Energy Research"
+          },
+          {
+            "url": "https://www.differ.nl/research/plasma-edge-physics-and-diagnostics",
+            "excerpts": [],
+            "title": "Plasma Edge Physics and Diagnostics | Dutch Institute for Fundamental Energy Research"
+          },
+          {
+            "url": "https://mimir.nu/o/differ",
+            "excerpts": [
+              "Dutch Institute for Fundamental Energy Research - Mimir\nTo advance these efforts, we are opening a PhD position in the Plasma Edge Physics and Diagnostics (PEPD, group lead and main supervisor: Ivo Classen, daily supervision: Tijs Wijkamp)."
+            ],
+            "title": "Dutch Institute for Fundamental Energy Research - Mimir"
+          },
+          {
+            "url": "https://www.nwo.nl/en/researchprogrammes/open-competition-enw",
+            "excerpts": [
+              "Open Competition ENW | NWO\nThe NWO Domain Science has three different types of funding that you can submit proposals for in open competition. These are the small-scale (XS, M) and large-scale (XL) grants."
+            ],
+            "title": "Open Competition ENW | NWO"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "recent_and_open_positions_post_2026_01_01",
+        "reasoning": "Reasoning: The user query asked for recent and open positions post-2026-01-01 related to the specified lead, including title, type, status, posting dates, locations, descriptions, and URLs, plus LinkedIn evidence. The provided field_answer consists of a table with four job items and meta observations. It directly lists several openings and details, which satisfies the intent of reporting recent/open positions. Therefore completeness is true since the answer presents the requested items and statuses. However the excerpts given only include evidence about a PhD position in Plasma Edge Physics and Diagnostics (Mimir page and AcademicJobs listing). They do not comprehensively cover all listed postings (e.g., Mechanical Constructor, AI-Driven Digital Twins PhD, internship) and do not provide explicit verification for all URLs or statuses. Thus, excerpts do not fully support every claim in the field_answer. If strict sourcing is required for every row, support would be partial (false in strict sense). Confidence in the field_answer being fully verifiable from the excerpts is limited due to partial corroboration. Overall: completeness = true; supported = false due to partial/excerpt coverage gaps; provide future work to corroborate each item with official postings.",
+        "citations": [
+          {
+            "url": "https://mimir.nu/o/differ",
+            "excerpts": [
+              "Dutch Institute for Fundamental Energy Research - Mimir\nTo advance these efforts, we are opening a PhD position in the Plasma Edge Physics and Diagnostics (PEPD, group lead and main supervisor: Ivo Classen, daily supervision: Tijs Wijkamp)."
+            ],
+            "title": "Dutch Institute for Fundamental Energy Research - Mimir"
+          },
+          {
+            "url": "https://www.academicjobs.com/university-jobs/phd-position-in-the-field-of-fusion-exhaust-plasma-diagnostics-eindhoven-noord-brabant/664854",
+            "excerpts": [
+              "PhD Position in the field of fusion exhaust plasma diagnostics\nApply for Job ID 664854 today find PhD Position in the field of fusion exhaust plasma diagnostics jobs at Dutch Institute for Fundamental Energy Research (DIFF"
+            ],
+            "title": "PhD Position in the field of fusion exhaust plasma diagnostics"
+          }
+        ],
+        "confidence": "medium"
+      },
+      {
+        "field": "linkedin_evidence",
+        "reasoning": "Assessment reasoning:\n- Completeness: The field answer provides some LinkedIn evidence and observations, but does not deliver the full structured report requested (Identity verification, Recent/Active Funding with exact grant details and URLs, Recent and Open Positions with postings, LinkedIn evidence corroborated by official sources, Confidence/Caveats, and Sources). It primarily lists a few observations and recommendations rather than a complete, field-fulfilling answer. Therefore, completeness = false.\n- Excerpts support: There are no excerpts provided in the input to verify the claims. Without excerpts to anchor the statements, and given that the field_answer makes specific claims (e.g., no public profile found, LinkedIn page exists but no per-person post URL), we cannot confirm alignment with excerpts. Thus, supported = false.\n- Conclusion: The answer is not complete and not verifiably supported by excerpts based on the provided input. If excerpts are supplied later, re-evaluate for completeness and support.",
+        "citations": [],
+        "confidence": "low"
+      },
+      {
+        "field": "confidence_and_caveats",
+        "reasoning": "Assessment reasoning:\n- The field_description asks for a comprehensive structure: Identity verification and current affiliation; Recent/Active Funding with exact grant details and URLs; Recent and Open/Closed positions with postings; LinkedIn evidence; Confidence and caveats; Sources. Also explicit requirement to return concise structured report with multiple elements. \n- The provided field_answer contains several high-level confidence statements about identity and affiliations and a few notes on funding and postings, plus negatives. However, it does not present a complete, structured report with all requested elements (no explicit, source-cited grant entries with funder, amounts, project dates, status, and direct URLs; no complete open postings data with titles, deadlines, locations, postings URLs; limited LinkedIn evidence; and it acknowledges lack of verification rather than providing a full set of sources). \n- The excerpts list only a single excerpt about MANTIS imaging and collaborations; the field_answer makes numerous claims (funding after 2024, current status of postings, LinkedIn profile, etc.) that are not supported by the provided excerpts. Given the instruction to assess support from excerpts, the lack of corroborating excerpts for many claims means the \u201cSupported\u201d field should be false. \n- Therefore, the field_answer is not complete per the field_description, and it is not fully supported by the provided excerpts. The evaluation should mark completeness = false and supported = false. However, some components (identity/affiliations) are asserted, but not in a complete, verifiable, source-backed manner within the provided excerpts.\n",
+        "citations": [
+          {
+            "url": "https://fusion-technology-transfer.europa.eu/wp-content/uploads/2024/01/MANTIS-real-time-quantitative-multispectral-imaging-system.pdf",
+            "excerpts": [
+              "MANTIS: a real-time quantitative multispectral imaging system\nMANTIS is a multispectral imagining system, based on a new diagnostic technique recently developed in a collaboration between MIT-PSFC, EPFL, and DIFFER and used to monitor the discharges in the fusion experiment (TCV\u2019s system and MAST-U)."
+            ],
+            "title": "MANTIS: a real-time quantitative multispectral imaging system"
+          }
+        ],
+        "confidence": "low"
+      }
+    ],
+    "content": {
+      "executive_insights": "- **Identity and affiliation verified at DIFFER**: Ivo Classen (full form I. G. J. Classen) is the listed **Group Leader of the Plasma Edge Physics and Diagnostics (PEPD) group** at DIFFER, with email i.g.j.classen@differ.nl and phone +31 40 333 49 51 [executive_insights[0]] [58] [executive_insights[1]] [43]. Cross-confirmed by ScienceDirect (current affiliation: \"Dutch Institute for Fundamental Energy Research, Eindhoven, Netherlands\") [executive_insights[2]] [61], Scopus ID 6603123048, h-index 36, 142 documents, 3,518 citations.\n- **MANTIS aligns with the multispectral imaging research tag**: Classen's group is currently developing MANTIS, \"a multi-spectral imaging diagnostic, looking at the tokamak edge plasma with 10 cameras, each detecting light in a different spectral range\" [executive_insights[1]] [43]. MANTIS at TCV runs 10 spectral channels at 200\u20132000 frames/s [executive_insights[3]] [60].\n- **Magnum-PSI and diagnostics workstreams confirmed**: PEPD page states the group \"develop state of the art diagnostics to quantify the transport and radiation processes in the scrape off layer region of tokamaks and in the linear plasma device Magnum PSI\" [executive_insights[1]] [43]. Magnum-PSI is DIFFER's linear plasma generator for plasma-wall interaction studies [executive_insights[4]] [8].\n- **No post-2024-01-01 personal grant directly to Ivo Classen found**: NWO project database, Open Competition ENW, Veni/Vidi/Vici rounds, EUROfusion 2024\u20132026 grants, and DIFFER news pages were searched. The named NWO Veni that originated MANTIS predates scope (2018, awarded to post-doc Wouter Vijvers, not Classen) [executive_insights[3]] [60]. Institutionally, DIFFER is \"part of NWO\" and a member of the EUROfusion consortium [executive_insights[4]] [8], but this is baseline mission support, not a competitive grant.\n- **Two in-scope 2026 openings tied to OR within DIFFER after 2026-01-01**: a **PhD in fusion exhaust plasma diagnostics** posted 12-05-2026 with Ivo Classen as main supervisor (PEPD group) [executive_insights[5]] [57] [executive_insights[6]] [68], plus a **Mechanical Constructor** posted 19-05-2026 to DIFFER's engineering support pool [executive_insights[5]] [57]. A **PhD in AI-Driven Digital Twins** posted 22-06-2026 is at DIFFER but in a different group and tied to Horizon Europe AIM, not PEPD [executive_insights[5]] [57].\n- **No personal LinkedIn profile for Ivo Classen found**: Vespa query against mixrank_linkedin_people for `last_name contains 'Classen'` AND `(company_name contains 'DIFFER' OR locality contains 'Eindhoven')` returned 11 namesakes (Niels Classens at ASML, Jessie Classens at Archipel Zorggroep, Hans Classen, Arno Classens, etc.), none with a fusion/plasma role [Vespa query result \u2013 11 Eindhoven \"Classen(s)\" profiles]. No public company LinkedIn URL for \"Ivo Classen\" was discoverable.\n\n---",
+      "identity": "| Field | Verified Value | Primary Source |\n|---|---|---|\n| Full name | Ivo G. J. Classen | https://www.differ.nl/research/plasma-edge-physics-and-diagnostics/people |\n| Role | Group Leader, Plasma Edge Physics and Diagnostics (PEPD) | https://www.differ.nl/research/plasma-edge-physics-and-diagnostics |\n| Primary institution | DIFFER (Dutch Institute for Fundamental Energy Research), De Zaale 20, 5612 AJ Eindhoven | https://www.differ.nl/research/plasma-edge-physics-and-diagnostics/people |\n| Secondary group linkage | Affiliated contributor to \"Science and Technology of Nuclear Fusion\" group at TU/e (LiMeS-lab dataset, Feb 2023) | https://research.tue.nl/en/organisations/science-and-technology-of-nuclear-fusion |\n| Email | i.g.j.classen@differ.nl | https://www.differ.nl/research/plasma-edge-physics-and-diagnostics/people |\n| Phone | +31 40 333 49 51 | https://www.differ.nl/research/plasma-edge-physics-and-diagnostics/people |\n| Scopus | 6603123048 | https://www.sciencedirect.com/author/6603123048/ivo-g-j-classen |\n| EuropePMC / ORCID | 0000-0001-8982-8856 | https://europepmc.org/authors/0000-0001-8982-8856 |\n| Publication record | 142 documents, h-index 36, 3,518 citations, 2,712 co-authors | https://www.sciencedirect.com/author/6603123048/ivo-g-j-classen |\n\n**Observation**: SAME first initial (\"I. Classen\") and FULL NAME (\"Ivo Classen\") appear on DIFFER's own group + people pages, on ScienceDirect (current affiliation DIFFER), and on TU/e's research portal (as a Contributor to the LiMeS-lab dataset, DOI 10.5281/zenodo.7680828, 28 Feb 2023).\n\n**Mechanism**: This is the SAME PERSON, NOT a merged namesake. Evidence: identical email pattern on DIFFER pages; consistent CV in Magnum-PSI diagnostics publications since the 2019 Erosion enhancement paper (Cornelissen et al., Nuclear Fusion 65, 026009, 2025) [identity[0]] [59].\n\n**Implication**: Lead record is accurate at the identity level. Researcher is mid-to-senior (h-36); his group name and email are stable on DIFFER pages.\n\n**Recommendation**: When addressing the lead, use `i.g.j.classen@differ.nl` and reference the PEPD group rather than the legacy Magnum-PSI line of work.\n\n---",
+      "recent_active_funding_announced_on_or_after_2024_01_01": "| Grant Title | Funder | Public Amount | Announce / Award Date | Project Dates | Status | Ivo Classen's Role | What is funded | Source |\n|---|---|---|---|---|---|---|---|---|\n| **No verified public evidence found** for a personal competitive grant awarded to Ivo Classen on or after 2024-01-01 | \u2014 | \u2014 | \u2014 | \u2014 | \u2014 | \u2014 | \u2014 | nwo.nl project-database, EUROfusion 2024\u20132026 round pages, Vespa, Google |\n\n**Observation -> Mechanism -> Implication -> Recommendation**:\n- The only NWO Veni grant that rhetorically connects to Classen's diagnostics line (MANTIS) is dated **17 October 2018** on DIFFER's news page and the PI is post-doc Wouter Vijvers, not Classen. It therefore sits OUTSIDE the post-2024 funding scope requested [recent_active_funding_announced_on_or_after_2024_01_01[0]] [60].\n- DIFFER is institutionally part of NWO [recent_active_funding_announced_on_or_after_2024_01_01[1]] [8] and a member of the EUROfusion consortium [recent_active_funding_announced_on_or_after_2024_01_01[2]] [43]; both supply baseline mission funding for the PEPD group, but neither is recorded in the public press as an award to Classen personally on or after 2024-01-01.\n- The 12-05-2026 PhD position in PEPD (Classen main supervisor) is institutional hiring, NOT a publicly disclosed competitive grant [recent_active_funding_announced_on_or_after_2024_01_01[3]] [57].\n- Recommendation: do NOT ascribe specific post-2024 grant funds to Classen without an explicit source. Confirm at the next opportunity via the NWO project database (projecten.nwo.nl) by ORCID 0000-0001-8982-8856.\n\n**Caveat**: A search of NWO project pages directly with the string \"Ivo Classen\" returned no specific project entry, and the Open Competition ENW M 2024/2025 call page does not list him [recent_active_funding_announced_on_or_after_2024_01_01[4]] [66].\n\n---",
+      "recent_and_open_positions_post_2026_01_01": "| Title | Type | Status (as of 2026-07-11) | Posted Date | Deadline | Location | Short Description | Official URL | LinkedIn Post URL |\n|---|---|---|---|---|---|---|---|---|\n| **PhD Position in the field of fusion exhaust plasma diagnostics** | PhD / Doctoral Researcher | **Open / Active** at time of last official listing; 6 applications on AcademicTransfer as of late June 2026 | 12-05-2026 | not stated on Mimir page; standard DIFFER PhD deadlines apply | DIFFER, De Zaale 20, 5612 AJ Eindhoven | Improve fusion plasma exhaust emission diagnostics via experiments at Magnum-PSI; combines TALIF, CARS, multispectral MANTIS; main supervisor Ivo Classen, daily supervisor Tijs Wijkamp | https://mimir.nu/o/differ (mirrored at https://www.academicjobs.com/university-jobs/phd-position-in-the-field-of-fusion-exhaust-plasma-diagnostics-eindhoven-noord-brabant/664854) | None found |\n| **Mechanisch Constructeur** | Research Engineer / Technical Staff | Open (DIFFER Engineering Support) | 19-05-2026 | not stated | DIFFER, De Zaale 20, 5612 AJ Eindhoven | 0.8\u20131.0 FTE mechanical constructor (ca. 18-person engineering support team, 4 constructors) supporting scientific research setups across DIFFER (NOT exclusively PEPD) | https://mimir.nu/o/differ | None found |\n| **PhD Position in AI-Driven Digital Twins for Energy Conversion Systems** | PhD / Doctoral Researcher | Open; posted on DIFFER vacancies page directly | 22-06-2026 | not stated on Mimir page | DIFFER, De Zaale 20, 5612 AJ Eindhoven | Horizon Europe AIM project (Grant Agreement No. 101306664, EU Horizon Europe); multiscale Digital Twin for solar-driven energy conversion; NOT in PEPD, NOT supervised by Classen | https://mimir.nu/o/differ ; https://www.differ.nl/vacancies | None found |\n| **Open vacancy internship** | Internship (non-PhD) | Open as of vacancies page snapshot | not stated; current snapshot | not stated | De Zaale 20, Eindhoven | Listed on the DIFFER vacancies page, generic internship call | https://www.differ.nl/vacancies | None found |\n\n**Observation -> Mechanism -> Implication -> Recommendation**:\n- The 12-05-2026 PEPD PhD IS the direct post-2026 hiring lead tied to Classen [recent_and_open_positions_post_2026_01_01[0]] [57] [recent_and_open_positions_post_2026_01_01[1]] [68]. The description lists Magnum-PSI, TALIF, CARS, and MANTIS \u2013 all consistent with the lead's listed research tags.\n- The 19-05-2026 Mechanical Constructor is a DIFFER-wide engineering-support role; it does not single out PEPD, and its seniority matches \"research engineer\" only loosely.\n- The 22-06-2026 AI-Digital-Twins PhD is funded by Horizon Europe AIM (Grant Agreement No. 101306664) but is in a different research line and supervised outside PEPD.\n- Recommendation: treat the 12-05-2026 PhD as the only verified in-scope open PhD with Classen as named main supervisor. Verify current open/closed status on AcademicTransfer since the Mimir copy only records postings and applied-candidate counts.\n\n**Failure cases / risk**:\n- The ApplyKite mirror (https://www.applykite.com/positions/phd-position-in-plasma-edge-physics-and-diagnostics-at-differ-e8uhqfrla4) at the time of extract returned GENERIC Physics/AI content unrelated to Classen. Do NOT cite ApplyKite as a primary source.\n- The DIFFER vacancies page (https://www.differ.nl/vacancies) appears to rotate postings; the PEPD PhD is NOT currently listed there in the snapshot used.\n\n---",
+      "linkedin_evidence": "| Source | URL | Result |\n|---|---|---|\n| Vespa, `last_name contains 'Classen'` AND `(company_name contains 'DIFFER' OR company_name contains 'Eindhoven' OR locality contains 'Eindhoven')` | (internal Vespa query) | 11 namesakes \u2013 none in plasma / fusion: Niels Classens (ASML), Jessie Classens (Archipel Zorggroep), Hans Classen, Arno Classens (drie \u2d3e digitaal), Renzo Classens, Nikita Noella Classen (TJ's Bouwservice), Wilbert Classens (VDL ETG), Pieter Classen (Aloysiusstichting), No\u00eblle Classen, Tiny Classen |\n| DIFFER official LinkedIn company page | https://www.linkedin.com/company/differenergy | Confirmed present; used to publicize vacancies. No per-person post URL for Ivo Classen located. |\n| LinkedIn search for \"Ivo Classen\" + \"fusion\" | https://www.linkedin.com/ search | No public profile for Ivo Classen shows up in the indexed search results or in the Vespa mixrank LinkedIn index. |\n\n**Observation -> Mechanism -> Implication -> Recommendation**:\n- The researcher either opts out of LinkedIn, uses a private profile that does not surface in the index, or publishes under a different first name pattern (e.g., a nickname that Vespa's first-name filter blocked). The closest reasonable test of existence is to query the ORCID 0000-0001-8982-8856 or email i.g.j.classen@differ.nl directly.\n- Recommendation: rely on the official DIFFER People page and the Email above, not LinkedIn, for outreach. The DIFFER company page (linkedin.com/company/differenergy) is the most reliable social channel for posting tracking if no personal profile appears.\n\n---",
+      "confidence_and_caveats": "- **High confidence** that Ivo G. J. Classen is the Group Leader of DIFFER's PEPD group and the named author on Magnum-PSI / MANTIS multispectral imaging publications \u2013 evidenced by DIFER's own pages, ScienceDirect (Scopus 6603123048), ORCID, the 2026 TCV-progress Nuclear Fusion paper (Theiler et al., DOI 10.1088/1741-4326/ae6d12), and Cornelissen\u2013Classen 2025 papers.\n- **High confidence** that the 12-05-2026 PhD Position in fusion exhaust plasma diagnostics is tied to him as main supervisor \u2013 evidenced by Mimir's DIFFER employer page (verbatim text) and the AcademicJobs mirror.\n- **Unable to confirm** the current open/closed status of the 12-05-2026 PEPD PhD posting from the public mirror alone. Status field above is recorded as \"Open / Active at last listing\"; re-verify on AcademicTransfer before outreach.\n- **Unable to find** any competitive grant awarded to Classen PERSONALLY on or after 2024-01-01 in public NWO, EUROfusion, ERC, or DIFFER news pages. The pre-2024 NWO Veni for MANTIS is held by Vijvers (post-doc), not Classen.\n- **Unable to find** any public LinkedIn profile for Ivo Classen. Vespa and Google searches returned 11 \"Classen(s)\" namesakes in Eindhoven, none in plasma / fusion research.\n- **Negatives declared explicitly**: \"No verified public evidence found\" for a personal post-2024 grant. The list above should be read as an exhaustive negative within the sources searched.\n- **MANTIS / MIT + EPFL + DIFFER collaboration**: MANTIS is described in a 2024 EUROfusion technology-transfer PDF as a \"multispectral imaging system \u2026 based on a new diagnostic technique recently developed in a collaboration between MIT-PSFC, EPFL, and DIFFER and used to monitor the discharges in the fusion experiment (TCV's system and MAST-U)\" [confidence_and_caveats[0]] [56]. The PDF does not name a 2024-onwards grant.\n\n---"
+    },
+    "type": "json",
+    "beta_fields": null,
+    "mcp_tool_calls": null,
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "executive_insights": {
+          "type": "string",
+          "title": "Executive Insights"
+        },
+        "identity": {
+          "type": "string",
+          "title": "Identity"
+        },
+        "recent_active_funding_announced_on_or_after_2024_01_01": {
+          "type": "string",
+          "title": "Recent/Active Funding (announced on or after 2024-01-01)"
+        },
+        "recent_and_open_positions_post_2026_01_01": {
+          "type": "string",
+          "title": "Recent and Open Positions (post-2026-01-01)"
+        },
+        "linkedin_evidence": {
+          "type": "string",
+          "title": "LinkedIn Evidence"
+        },
+        "confidence_and_caveats": {
+          "type": "string",
+          "title": "Confidence and Caveats"
+        }
+      },
+      "required": [
+        "executive_insights",
+        "identity",
+        "recent_active_funding_announced_on_or_after_2024_01_01",
+        "recent_and_open_positions_post_2026_01_01",
+        "linkedin_evidence",
+        "confidence_and_caveats"
+      ]
+    }
+  }
+}

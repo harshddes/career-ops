@@ -2,12 +2,16 @@
 import { mkdirSync, writeFileSync } from 'fs';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
+import { loadEnv } from '../lib/load-env.mjs';
 import { buildDailyDigest, sendDailyDigest } from '../lib/daily-digest.mjs';
+import { digestRecipients } from '../lib/today-activity.mjs';
 
 const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
 const WEB_TRACKER_DIR = join(SCRIPT_DIR, '..');
 const CAREER_OPS_DIR = join(WEB_TRACKER_DIR, '..');
 const DIGEST_OUTPUT_DIR = join(CAREER_OPS_DIR, 'output', 'digests');
+
+loadEnv({ dir: WEB_TRACKER_DIR });
 
 function argValue(name, fallback = '') {
   const index = process.argv.indexOf(name);
@@ -56,6 +60,8 @@ async function main() {
   const recipients = argValue('--to');
   if (recipients) process.env.DAILY_DIGEST_RECIPIENTS = recipients;
 
+  const resolvedRecipients = digestRecipients();
+
   if (hasArg('--send')) {
     const result = await sendDailyDigest({ date, timeZone });
     console.log(JSON.stringify({
@@ -63,6 +69,7 @@ async function main() {
       messageId: result.messageId,
       accepted: result.accepted,
       rejected: result.rejected,
+      recipients: resolvedRecipients,
       summary: result.activity.summary,
     }, null, 2));
     return;
@@ -76,6 +83,7 @@ async function main() {
     subject: digest.subject,
     date: digest.activity.date,
     timezone: digest.activity.timeZone,
+    recipients: resolvedRecipients,
     summary: digest.activity.summary,
     files,
   }, null, 2));

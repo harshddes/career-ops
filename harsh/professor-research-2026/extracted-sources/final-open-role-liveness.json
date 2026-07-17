@@ -1,0 +1,31 @@
+{
+  "extract_id": "extract_d0c74e2ef38d422f926ce360ef6154bd",
+  "session_id": "session_d0c74e2ef38d422f926ce360ef6154bd",
+  "status": "ok",
+  "results": [
+    {
+      "url": "https://sites.lsa.umich.edu/prattlab/members/",
+      "title": "Members \u2013 Pratt Lab",
+      "publish_date": "2020-01-01",
+      "excerpts": [
+        "[Pratt Lab](https://sites.lsa.umich.edu/prattlab/)\nAnalytical, Physical, Environmental Chemistry\nMenu Close\n[](https://lsa.umich.edu)\n\n...\n\n# Members\n## Professor Kerri A. Pratt\n### **_Contact_**\nEmail: [[email protected]](/cdn-cgi/l/email-protection)\nPhone: (734) 763-2871\nLab Phone: (734) 647-2872\nOffice: CHEM 3549\n\n...\n\n## Undergraduate Students\n### For Prospective Members:\nstudent, postdoctoral researcher, or visiting foreign exchange student, please contact Prof. Pratt by email with your CV and letter of interest. Please see below for links with information about fellowship and research opportunities, as well as our graduate programs.**\n\n...\n\n**Interested in joining the Pratt Lab? Contact Prof. Pratt: [[email protected]](https://prattlab.chem.lsa.umich.edu/prattka@umich.edu)**\n[Pratt Lab](https://sites.lsa.umich.edu/prattlab/)\nProudly powered by [WordPress](https://wordpress.org/) ."
+      ]
+    },
+    {
+      "url": "https://www.epfl.ch/research/domains/swiss-plasma-center/education/education_doctoralschool/phdpositions",
+      "title": "Available positions \u2012 SPC \u2010 EPFL",
+      "publish_date": "2025-01-01",
+      "excerpts": [
+        "# Available positions\n**The Swiss Plasma Center seeks PhD students throughout the year and encourages candidates to apply at any time. PhD projects are discussed with the prospective thesis supervisor at SPC during the application phase, and can be tuned to the candidate\u2019s interest.\n\n...\n\n**If you need more information on any proposal, send an e-mail to the corresponding contact person.**\n**If you want to apply , please follow the procedure indicated on this [page](https://www.epfl.ch/research/domains/swiss-plasma-center/education/education_doctoralschool/a-phd-at-spc/how-to-apply/) .**\n**Thank you.**\n\n...\n\n## **Open positions in experimental physics on the TCV tokamak**\n### **Plasma Physics Theory**\n**Simulation of the plasma dynamics at the tokamak edge**\nContact person: Prof P. Ricci\n\n...\n\n### **Open positions in experimental** physics at the BioPlasmas Lab\nAt the **BioPlamas Lab of the SPC** , this interdisciplinary topic where physics, chemistry, and biology are strongly connected is explored on several projects, with a two-fold challenge: on the one hand, CAPs are developed for **industrial applications** to have a"
+      ]
+    }
+  ],
+  "errors": [],
+  "usage": [
+    {
+      "name": "sku_extract_excerpts",
+      "count": 2
+    }
+  ],
+  "warnings": []
+}

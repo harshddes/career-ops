@@ -6,6 +6,8 @@ import { getDefenseSheetEnrichment } from './defense-sheet-enrichment.mjs';
 import {
   applyUserStateToProspect,
   applyUserStateToStore,
+  applyOutreachSemantics,
+  normalizeOutreach,
   patchResearchUserState,
   sourceIdFromCanonicalPath,
 } from './research-user-state.mjs';
@@ -54,11 +56,13 @@ const ALLOWED_STATUSES = new Set([
   'not_contacted',
   'draft_ready',
   'contacted',
-  'follow_up',
-  'responded',
+  'followed_up',
+  'responded_positive',
+  'responded_negative',
   'archived',
 ]);
-const USER_STATE_FIELDS = ['status', 'last_contacted', 'last_followed_up', 'follow_up_date', 'notes'];
+export const SILENCE_NUDGE_DAYS = 7;
+const USER_STATE_FIELDS = ['status', 'last_contacted', 'last_followed_up', 'follow_up_date', 'notes', 'outreach'];
 
 export const DEFENSE_SHEET_QUESTIONS = [
   { id: 'professor_work', question: 'What this professor works on' },
@@ -140,6 +144,27 @@ function easternToday() {
   return localDateString(new Date(), DEFAULT_DIGEST_TIMEZONE);
 }
 
+/** Add calendar days to a YYYY-MM-DD string (UTC date arithmetic). */
+export function addDaysYmd(ymd = '', days = 0) {
+  const raw = cleanText(ymd);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(raw)) return '';
+  const [year, month, day] = raw.split('-').map(Number);
+  const dt = new Date(Date.UTC(year, month - 1, day));
+  dt.setUTCDate(dt.getUTCDate() + Number(days || 0));
+  return dt.toISOString().slice(0, 10);
+}
+
+/** True when Contacted silence window has elapsed (default 7 days). */
+export function isSilenceNudgeDue(prospect = {}, today = easternToday()) {
+  const status = cleanText(prospect?.status || '').toLowerCase();
+  const normalized = status === 'follow_up' || status === 'contacted' ? 'contacted' : status;
+  if (normalized !== 'contacted') return false;
+  const due = cleanText(prospect?.follow_up_date)
+    || addDaysYmd(cleanText(prospect?.last_contacted), SILENCE_NUDGE_DAYS);
+  if (!due || !today) return false;
+  return due <= today;
+}
+
 function cleanMultilineText(value) {
   return String(value ?? '')
     .replace(/\r\n/g, '\n')
@@ -177,6 +202,7 @@ function buildResearchedDefenseAnswers(raw = {}) {
 
   const professorWork = [
     raw.lab ? `${cleanText(raw.name || 'This contact')} works in ${cleanText(raw.lab)}${raw.department ? ` (${cleanText(raw.department)})` : ''}.` : '',
+    cleanMultilineText(raw.current_focus) ? `Current work: ${cleanMultilineText(raw.current_focus)}` : '',
     keywords.length ? `Research focus: ${keywords.join(', ')}.` : '',
     methods.length ? `Methods and tools: ${methods.join(', ')}.` : '',
     cleanMultilineText(raw.fit_rationale),
@@ -198,15 +224,22 @@ function buildResearchedDefenseAnswers(raw = {}) {
       cleanMultilineText(raw.fit_rationale),
     ].filter(Boolean).join('\n');
 
-  const recentPublication = cleanMultilineText(raw.recent_publication)
-    || enrichment?.recent_publication
-    || [
+  const recentRaw = cleanMultilineText(raw.recent_publication);
+  const recentLooksReal = recentRaw
+    && !/^no specific recent publication/i.test(recentRaw)
+    && !/^verify one recent paper/i.test(recentRaw)
+    && (/\b20(2[3-9]|3[0-9])\b/.test(recentRaw) || /https?:\/\//i.test(recentRaw) || / — /.test(recentRaw));
+  const currentFocus = cleanMultilineText(raw.current_focus);
+  const recentPublication = recentLooksReal
+    ? recentRaw
+    : (enrichment?.recent_publication || [
+      currentFocus ? `Current focus (profile/lab): ${currentFocus}` : '',
       'No specific recent publication title was extracted for this contact. Current research lines from lab-page / report research, to verify against one recent paper before emailing:',
       methods.length ? methods.map(method => `- ${method}`).join('\n') : '',
       hiringNotes ? `Active programme notes: ${hiringNotes}` : '',
       facilities.length ? `Facilities/machines: ${facilities.join(', ')}.` : '',
       raw.profile_url ? `\nAction: Open ${cleanText(raw.profile_url)} or Google Scholar -> pick one paper from 2023-2026 -> write title + one-sentence takeaway in column 3.` : '\nAction: Find one recent paper on their profile -> write title + one-sentence takeaway in column 3.',
-    ].filter(Boolean).join('\n');
+    ].filter(Boolean).join('\n'));
 
   const hookPlain = outreach
     ? [
@@ -260,13 +293,12 @@ function normalizeDefenseSheet(raw = {}, prospect = {}) {
   );
   return DEFENSE_SHEET_QUESTIONS.map(({ id, question }) => {
     const existing = incomingById.get(id) || incomingRows.find(row => cleanText(row?.question) === question) || {};
-    const hasStoredAnswer = existing.researched_answer !== undefined && existing.researched_answer !== '';
     return {
       id,
       question,
-      researched_answer: cleanMultilineText(
-        hasStoredAnswer ? existing.researched_answer : researchedDefaults[id] || ''
-      ),
+      // Researched answers are derived data. Always rebuild them from the current
+      // prospect; only the user's typed response is durable state.
+      researched_answer: cleanMultilineText(researchedDefaults[id] || ''),
       user_response: cleanMultilineText(existing.user_response || ''),
     };
   });
@@ -286,6 +318,11 @@ function cleanEvidence(value = []) {
     date: cleanText(item?.date),
     note: cleanText(item?.note),
   })).filter(item => item.url || item.note || item.label);
+}
+
+function cleanObject(value = {}) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return {};
+  return Object.fromEntries(Object.entries(value).filter(([, entry]) => entry !== undefined));
 }
 
 function prospectIdentityKeys(prospect = {}) {
@@ -321,9 +358,17 @@ function scoreTier(score) {
   return 'D';
 }
 
-function normalizeStatus(value) {
-  const status = cleanText(value || 'not_contacted').toLowerCase();
-  return ALLOWED_STATUSES.has(status) ? status : 'not_contacted';
+function normalizeStatus(value, { strict = false } = {}) {
+  let status = cleanText(value || 'not_contacted').toLowerCase();
+  // Legacy single "responded" → positive (kanban entry path).
+  if (status === 'responded') status = 'responded_positive';
+  // Legacy manual "follow_up" → Contacted; new explicit status is followed_up.
+  if (status === 'follow_up') status = 'contacted';
+  if (ALLOWED_STATUSES.has(status)) return status;
+  if (strict && status) {
+    throw new Error(`invalid research prospect status: ${value}`);
+  }
+  return 'not_contacted';
 }
 
 export function normalizeResearchProspect(raw = {}) {
@@ -342,6 +387,7 @@ export function normalizeResearchProspect(raw = {}) {
     title,
     unit: cleanText(raw.unit || department),
     department,
+    departments: cleanArray(raw.departments?.length ? raw.departments : [department]),
     lab,
     institution: cleanText(raw.institution),
     application_route: cleanText(raw.application_route),
@@ -375,10 +421,51 @@ export function normalizeResearchProspect(raw = {}) {
     last_followed_up: cleanText(raw.last_followed_up),
     follow_up_date: cleanText(raw.follow_up_date),
     notes: cleanText(raw.notes),
+    outreach: normalizeOutreach(raw.outreach),
     source_report: cleanText(raw.source_report || defaultSourceReport(raw)),
     first_seen: cleanText(raw.first_seen || raw.created_at || now),
     last_updated: cleanText(raw.last_updated || now),
     defense_sheet: normalizeDefenseSheet(raw, raw),
+    provider: cleanText(raw.provider),
+    external_id: cleanText(raw.external_id),
+    opportunity_status: cleanText(raw.opportunity_status),
+    liveness: cleanText(raw.liveness),
+    liveness_reason: cleanText(raw.liveness_reason),
+    deadline_text: cleanText(raw.deadline_text),
+    deadline_utc: cleanText(raw.deadline_utc),
+    country: cleanText(raw.country),
+    research_fields: cleanArray(raw.research_fields),
+    outreach_tier: cleanText(raw.outreach_tier),
+    design_heavy: Boolean(raw.design_heavy),
+    role_note: cleanText(raw.role_note),
+    plasma_context: cleanText(raw.plasma_context),
+    plasma_context_note: cleanText(raw.plasma_context_note),
+    current_focus: cleanMultilineText(raw.current_focus),
+    manufacturing_fit_primary: cleanText(raw.manufacturing_fit_primary),
+    manufacturing_fit_secondary: cleanText(raw.manufacturing_fit_secondary),
+    laser_or_optical_flag: Boolean(raw.laser_or_optical_flag),
+    lpbf_am_flag: Boolean(raw.lpbf_am_flag),
+    process_sensing_flag: Boolean(raw.process_sensing_flag),
+    sheet_metal_or_forming_flag: Boolean(raw.sheet_metal_or_forming_flag),
+    academic_level: cleanText(raw.academic_level),
+    researcher_profile: cleanText(raw.researcher_profile),
+    sector: cleanText(raw.sector),
+    funding_programme: cleanText(raw.funding_programme),
+    language: cleanText(raw.language),
+    translated_title: cleanText(raw.translated_title),
+    translated_summary: cleanText(raw.translated_summary),
+    translation_cache_key: cleanText(raw.translation_cache_key),
+    score_band: cleanText(raw.score_band),
+    score_breakdown: cleanObject(raw.score_breakdown),
+    score_audit: cleanObject(raw.score_audit),
+    tier_cap: cleanText(raw.tier_cap),
+    cap_reasons: cleanArray(raw.cap_reasons),
+    daily_work_type: cleanText(raw.daily_work_type),
+    verified_overlap: cleanArray(raw.verified_overlap),
+    missing_evidence: cleanArray(raw.missing_evidence),
+    area_assessments: cleanObject(raw.area_assessments),
+    risk_flags: cleanArray(raw.risk_flags),
+    needs_deep_research: Boolean(raw.needs_deep_research),
   };
 }
 
@@ -389,21 +476,32 @@ function resolveSourceId(filePathOrOptions, filePath) {
   return sourceIdFromCanonicalPath(filePath);
 }
 
+/** Temp/test files must not read or write the shared research-prospect-user-state.json. */
+function usesPersistentUserState(filePath = '') {
+  const normalized = String(filePath || '').replace(/\\/g, '/').toLowerCase();
+  const careerData = CAREER_DATA_DIR.replace(/\\/g, '/').toLowerCase();
+  const dashboardData = DASHBOARD_DATA_DIR.replace(/\\/g, '/').toLowerCase();
+  return normalized.startsWith(`${careerData}/`) || normalized.startsWith(`${dashboardData}/`);
+}
+
 export function readResearchProspects(filePathOrOptions = CANONICAL_RESEARCH_PROSPECTS_FILE) {
   const filePath = filePathFromOptions(filePathOrOptions);
   const sourceId = resolveSourceId(filePathOrOptions, filePath);
   const empty = emptyStore(defaultScope(filePathOrOptions));
-  if (!existsSync(filePath)) return applyUserStateToStore(empty, sourceId);
+  const applyState = (store) => (
+    usesPersistentUserState(filePath) ? applyUserStateToStore(store, sourceId) : store
+  );
+  if (!existsSync(filePath)) return applyState(empty);
   const parsed = JSON.parse(readFileSync(filePath, 'utf-8'));
   const prospects = Array.isArray(parsed.prospects)
     ? parsed.prospects.map(normalizeResearchProspect)
     : [];
-  return applyUserStateToStore({
+  return applyState({
     ...empty,
     ...parsed,
     version: 1,
     prospects,
-  }, sourceId);
+  });
 }
 
 export function writeResearchProspects(store, filePathOrOptions = CANONICAL_RESEARCH_PROSPECTS_FILE) {
@@ -418,15 +516,36 @@ export function writeResearchProspects(store, filePathOrOptions = CANONICAL_RESE
       }
     }
   }
+  const persistUserState = usesPersistentUserState(filePath);
   const prospects = Array.isArray(store?.prospects)
     ? store.prospects.map(prospect => {
       const existing = prospectIdentityKeys(prospect)
         .map(key => existingStateByKey.get(key))
         .find(Boolean);
+      if (!persistUserState) {
+        return existing
+          ? {
+            ...prospect,
+            status: existing.status,
+            ...Object.fromEntries(
+              USER_STATE_FIELDS
+                .filter(field => field !== 'status' && existing[field])
+                .map(field => [field, existing[field]]),
+            ),
+            defense_sheet: Array.isArray(prospect.defense_sheet)
+              ? defenseSheetWithUserResponses(prospect.defense_sheet, existing.defense_sheet)
+              : prospect.defense_sheet,
+          }
+          : prospect;
+      }
       if (!existing) return applyUserStateToProspect(prospect, sourceId);
       const preserved = { status: existing.status };
       for (const field of USER_STATE_FIELDS) {
         if (field === 'status') continue;
+        if (field === 'outreach') {
+          if (existing.outreach && typeof existing.outreach === 'object') preserved.outreach = existing.outreach;
+          continue;
+        }
         if (existing[field]) preserved[field] = existing[field];
       }
       return applyUserStateToProspect({
@@ -495,16 +614,58 @@ export function patchResearchProspect(id, updates = {}, filePathOrOptions = CANO
 
   const current = store.prospects[index];
   const semanticUpdates = { ...updates };
-  const nextStatus = updates.status === undefined ? '' : normalizeStatus(updates.status);
-  if (nextStatus === 'contacted' && updates.last_contacted === undefined) {
-    semanticUpdates.last_contacted = easternToday();
+  const nextStatus = updates.status === undefined
+    ? normalizeStatus(current.status)
+    : normalizeStatus(updates.status, { strict: true });
+  if (updates.status !== undefined) semanticUpdates.status = nextStatus;
+  if (nextStatus === 'contacted') {
+    const contactDay = updates.last_contacted !== undefined
+      ? cleanText(updates.last_contacted) || easternToday()
+      : (current.last_contacted || easternToday());
+    if (updates.last_contacted === undefined) {
+      semanticUpdates.last_contacted = contactDay;
+    }
+    // Start / refresh the silence timer (7 days) when entering Contacted.
+    if (updates.follow_up_date === undefined) {
+      const priorStatus = normalizeStatus(current.status);
+      if (priorStatus !== 'contacted' || !current.follow_up_date) {
+        semanticUpdates.follow_up_date = addDaysYmd(contactDay, SILENCE_NUDGE_DAYS);
+      }
+    }
   }
-  if (nextStatus === 'follow_up' && updates.last_followed_up === undefined) {
-    semanticUpdates.last_followed_up = easternToday();
+  if (nextStatus === 'followed_up') {
+    if (updates.last_followed_up === undefined) {
+      semanticUpdates.last_followed_up = easternToday();
+    }
+    // Follow-up mail sent — leave the silence-nudge timer.
+    if (updates.follow_up_date === undefined) {
+      semanticUpdates.follow_up_date = '';
+    }
   }
-  if (['not_contacted', 'draft_ready', 'archived'].includes(nextStatus)) {
-    if (updates.last_contacted === undefined) semanticUpdates.last_contacted = '';
-    if (updates.last_followed_up === undefined) semanticUpdates.last_followed_up = '';
+  if (['not_contacted', 'draft_ready', 'archived', 'responded_negative'].includes(nextStatus)) {
+    if (updates.last_contacted === undefined && ['not_contacted', 'draft_ready', 'archived'].includes(nextStatus)) {
+      semanticUpdates.last_contacted = '';
+    }
+    if (updates.last_followed_up === undefined && ['not_contacted', 'draft_ready', 'archived'].includes(nextStatus)) {
+      semanticUpdates.last_followed_up = '';
+    }
+    if (updates.follow_up_date === undefined && ['not_contacted', 'draft_ready', 'archived'].includes(nextStatus)) {
+      semanticUpdates.follow_up_date = '';
+    }
+  }
+
+  const outreachPatch = applyOutreachSemantics({
+    status: nextStatus,
+    previousStatus: current.status,
+    currentOutreach: current.outreach,
+    currentFollowUpDate: current.follow_up_date,
+    outreachUpdate: updates.outreach,
+    followUpDateUpdate: updates.follow_up_date,
+    today: easternToday(),
+  });
+  semanticUpdates.outreach = outreachPatch.outreach;
+  if (updates.follow_up_date !== undefined) {
+    semanticUpdates.follow_up_date = outreachPatch.follow_up_date;
   }
 
   const nextRaw = {
@@ -520,19 +681,23 @@ export function patchResearchProspect(id, updates = {}, filePathOrOptions = CANO
   };
 
   for (const [key, value] of Object.entries(semanticUpdates)) {
-    if (value === null) delete nextRaw[key];
+    if (value === null && key !== 'outreach') delete nextRaw[key];
   }
 
   store.prospects[index] = normalizeResearchProspect(nextRaw);
-  const sourceId = resolveSourceId(filePathOrOptions, filePathFromOptions(filePathOrOptions));
+  const filePath = filePathFromOptions(filePathOrOptions);
+  const sourceId = resolveSourceId(filePathOrOptions, filePath);
   const prospect = store.prospects[index];
-  patchResearchUserState(sourceId, prospect.id, {
-    status: prospect.status,
-    last_contacted: prospect.last_contacted,
-    last_followed_up: prospect.last_followed_up,
-    follow_up_date: prospect.follow_up_date,
-    notes: prospect.notes,
-  });
+  if (usesPersistentUserState(filePath)) {
+    patchResearchUserState(sourceId, prospect.id, {
+      status: prospect.status,
+      last_contacted: prospect.last_contacted,
+      last_followed_up: prospect.last_followed_up,
+      follow_up_date: prospect.follow_up_date,
+      notes: prospect.notes,
+      outreach: prospect.outreach,
+    });
+  }
   const nextStore = writeResearchProspects(store, filePathOrOptions);
   return { store: nextStore, prospect: nextStore.prospects[index] };
 }

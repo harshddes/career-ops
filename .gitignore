@@ -35,6 +35,7 @@ WEB-TRACKER/data/*.ndjson
 WEB-TRACKER/data/*.tmp
 WEB-TRACKER/data/*.tmp-*
 WEB-TRACKER/data/*.log
+WEB-TRACKER/data/*.lock
 WEB-TRACKER/data/tmp/
 WEB-TRACKER/data/research-runs/
 WEB-TRACKER/runtime/
@@ -56,3 +57,8 @@ package-lock.json
 
 # Local scratch files
 harsh/Untitled spreadsheet.xlsx
+**/__pycache__/
+*.pyc
+*.bak
+
+.firecrawl/

@@ -1,0 +1,296 @@
+{
+  "run_id": "trun_dd47611047ba4519ae198ab38f76827d",
+  "interaction_id": "trun_dd47611047ba4519ae198ab38f76827d",
+  "result_url": "https://platform.parallel.ai/play/deep-research/trun_dd47611047ba4519ae198ab38f76827d",
+  "status": "completed",
+  "output": {
+    "basis": [
+      {
+        "field": "executive_summary",
+        "reasoning": "Reasoning for evaluation:\n- The field description asks for a concise structured report with specific sections: Identity; Recent/Active Funding; Recent and Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources, with every positive claim backed by direct URLs.\n- The provided field_answer includes several narrative points but does not present a clearly structured report with the requested sections and explicit, citable URLs for each claim.\n- Gaps identified:\n  - No explicit, itemized Recent/Active Funding with grant titles, funders, amounts, dates, project dates, status, the person\u2019s role, funding purpose, and direct URLs.\n  - No explicit Recent and Open Positions with title, type, status, posted date, deadline, location, description, posting URL, and LinkedIn post URL (if any).\n  - LinkedIn Evidence is discussed but there is no direct LinkedIn post URL or clear evidence; claim is made that no verified match exists, but no conclusive evidence snippet is provided.\n  - Sources section is mentioned as required but not enumerated with direct URLs for every claim.\n  - Several statements rely on general institutional or mission context rather than verifiable, itemized funding data; the instruction was to return direct URLs for positive claims, which is not consistently done.\n- Given these gaps, the answer is not complete per the field description.\n- On support by excerpts: without seeing the excerpts content here, I cannot confirm full support for all claims; the answer makes claims that would require explicit excerpts/URLs to verify. Therefore, support is likely not fully established.\n- Overall: completeness = false; supported = false (due to lack of structured, verifiable, URL-backed items).",
+        "citations": [],
+        "confidence": "low"
+      },
+      {
+        "field": "identity",
+        "reasoning": "Assessment reasoning:\n- The field is 'identity'. The provided field_answer asserts a precise identity for Christelle Briois, including full name variants, title (Associate Professor / Maitre de Conf\u00e9rences), affiliation (LPC2E, UMR 7328, CNRS/Univ Orl\u00e9ans/CNES), contact email, phone, ORCID, and research group/topics alignment with the lead\u2019s known work (COSIMA, Rosetta). \n- The user query asked to verify identity and current affiliation and to avoid merging namesakes. The field_answer directly addresses identity and affiliation and provides corroborating details. There is no indication of a request to assess funding, hiring, or postings in this field; thus focusing on identity is appropriate. \n- Based on the excerpts, there are multiple sources (IEEE Xplore author details, ORCID, LPC2E annuaire, COSIMA/ESA pages, LPC2E theme pages) that corroborate the identity, affiliation, title, email, and research area. Therefore, the fieldAnswer is complete for the identity field and is well-supported by excerpts.\n- No contradictions found between the field answer and the excerpts. \n- Conclusion: completeness = true; supported = true.",
+        "citations": [
+          {
+            "url": "http://www.lpc2e.cnrs.fr/annuaire",
+            "excerpts": [],
+            "title": "Annuaire - LPC2E"
+          },
+          {
+            "url": "https://www.researchgate.net/profile/Briois-Christelle",
+            "excerpts": [],
+            "title": "Briois CHRISTELLE | Ma\u00eetre de Conf\u00e9rences | PhD | University of Orl\u00e9ans, Orl\u00e9ans | UO | Laboratoire de Physique et Chimie de l'Environnement et de l'Espace LPC2E | Research profile"
+          },
+          {
+            "url": "https://ieeexplore.ieee.org/author/37088883035",
+            "excerpts": [
+              "Christelle Briois | IEEE Xplore Author Details\nChristelle Briois is an Associate Professor of Chemistry at the University of Orl\u00e9ans (France). She received her Ph.D. from University of Lille (France) in 2002 and was a ORISE postdoctoral fellow at US EPA in North Carolina at Durham."
+            ],
+            "title": "Christelle Briois | IEEE Xplore Author Details"
+          },
+          {
+            "url": "https://orcid.org/0000-0002-5616-0180",
+            "excerpts": [
+              "Contributors: Ricardo Arevalo; Laura Selliez; Christelle Briois; Nathalie Carrasco; Laurent Thirkell; Barnab\u00e9 Cherville; Fabrice Colin; Bertrand Gaubicher; Benjamin Farcy; Xiang Li et al."
+            ],
+            "title": "Christelle BRIOIS (0000-0002-5616-0180) - ORCID"
+          },
+          {
+            "url": "https://www.esa.int/Science_Exploration/Space_Science/Rosetta/COSIMA",
+            "excerpts": [
+              "ESA - COSIMA"
+            ],
+            "title": "ESA - COSIMA European Space Agency https://www.esa.int \u203a Space_Science \u203a Rosetta \u203a COSIMA"
+          },
+          {
+            "url": "https://www.lpc2e.cnrs.fr/",
+            "excerpts": [
+              "Le Laboratoire de Physique et de Chimie de l\u2019Environnement et de l\u2019Espace (LPC2E) est une Unit\u00e9 Mixte de Recherche (UMR 7328) dont les tutelles sont le Centre National de la Recherche Scientifique (CNRS), l\u2019Universit\u00e9 d\u2019Orl\u00e9ans et le Centre National d\u2019Etudes Spatiales (CNES)."
+            ],
+            "title": "Laboratoire LPC2E - LPC2E"
+          },
+          {
+            "url": "https://www.lpc2e.cnrs.fr/theme-recherches/planetologie",
+            "excerpts": [
+              "Plan\u00e9tologie et sciences spatiales - Institut de Physique du"
+            ],
+            "title": "Plan\u00e9tologie et sciences spatiales - Institut de Physique du"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "recent_active_funding_announced_on_or_after_2024_01_01_plus_grants_still_active",
+        "reasoning": "Reasoning: The field answer provides a negative finding for direct competitive grants with Briois as PI dated on or after 2024-01-01, and explains what was checked and what was not. It also distinguishes institutional/mission funding and non-PI roles, and provides citations. This directly addresses the query (attempt to identify recent active funding announcements and grants). Therefore, completeness is true. Regarding support from excerpts: the excerpts contain related items (LPC2E projects, COSIMA, OLYMPIA HAL entries, etc.) that show Briois\u2019s involvement and some funding-related content, but they do not directly prove a public, verifiable personal grant with Briois as PI after 2024-01-01 with exact amount and status. The field answer\u2019 s main claims rely on the absence of evidence in specific databases and note blocked HAL pages, which are not directly demonstrable from the provided excerpts alone. Hence, the field answer is not clearly supported by the excerpts as explicit confirmations or refutations; it largely provides a negative result with caveats. I therefore mark supported as false and completeness as true.",
+        "citations": [
+          {
+            "url": "https://data.anr.fr/pages/aapg",
+            "excerpts": [
+              "AAPG projects, 2014-2024 editions\nEasily access data on calls for proposals from the French National Research Agency ( ANR ) and explore them through interactive visualisations."
+            ],
+            "title": "AAPG projects, 2014-2024 editions"
+          },
+          {
+            "url": "https://www.lpc2e.cnrs.fr/projets",
+            "excerpts": [
+              "Projets Archive - LPC2E\nLa Planeterrella du LPC2E Mission Parker Solar Probe de la NASA Pulsar Timing Array Interf\u00e9rom\u00e8tre spatial LISA"
+            ],
+            "title": "Projets Archive - LPC2E"
+          },
+          {
+            "url": "https://www.lpc2e.cnrs.fr/actualites",
+            "excerpts": [
+              "Les \u00e9nergies \u00e9tonnamment \u00e9lev\u00e9es des rayons X obtenues dans les d\u00e9charges de laboratoire enfin expliqu\u00e9es. D\u00e9couvrez les diff\u00e9rentes actualit\u00e9s du Laboratoire LPC2E."
+            ],
+            "title": "Actualit\u00e9s - LPC2E"
+          },
+          {
+            "url": "https://www.lpc2e.cnrs.fr/en/actualites-2",
+            "excerpts": [
+              "D\u00e9couvrez les diff\u00e9rentes actualit\u00e9s du Laboratoire LPC2E."
+            ],
+            "title": "News - LPC2E"
+          },
+          {
+            "url": "https://www.lpc2e.cnrs.fr/theme-recherches/planetologie",
+            "excerpts": [
+              "Plan\u00e9tologie et sciences spatiales - Institut de Physique du"
+            ],
+            "title": "Plan\u00e9tologie et sciences spatiales - Institut de Physique du"
+          },
+          {
+            "url": "https://insu.hal.science/insu-03559373v1",
+            "excerpts": [
+              "Illia Zymak (1) , Arnaud Sanderink (1) , Bertrand Gaubicher (1) , Jan \u017dabka , Jean-Pierre Lebreton (1) , Christelle Briois (1) Show details \u00b7 1 LPC2E - Laboratoire de Physique et Chimie de l&#x27;Environnement et de l&#x27;Espace"
+            ],
+            "title": "OLYMPIA - a compact laboratory Orbitrap-based high-resolution mass spectrometer laboratory set-up: Performance studies for gas composition measurement in analogues of planetary environments - INSU - Institut national des sciences de l'Univers"
+          },
+          {
+            "url": "https://www.esa.int/Science_Exploration/Space_Science/Rosetta/COSIMA",
+            "excerpts": [
+              "ESA - COSIMA"
+            ],
+            "title": "ESA - COSIMA European Space Agency https://www.esa.int \u203a Space_Science \u203a Rosetta \u203a COSIMA"
+          },
+          {
+            "url": "https://insu.hal.science/insu-03751765",
+            "excerpts": [
+              "Christelle Briois (1) , Donia Baklouti (2) , No\u00e9mie Comtesse (1) , C\u00e9cile Engrand (3) , Jean-Pierre Lebreton (1) , Ricardo Arevalo (4) , C\u00e9dric Pilorget (2) , Laurent Thirkell (1) , Fabrice Colin (1) , Oliver Stenzel , Martin Hilchenbach Show details \u00b7 1 LPC2E - Laboratoire de Physique et Chimie de l&#x27;Environnement et de l&#x27;Espace 2 IAS - Institut d&#x27;astrophysique spatiale 3 IJCLab - Laboratoire de Physique des 2 Infinis Ir\u00e8ne Joliot-Curie 4 UMD - University of Maryland [College Park]"
+            ],
+            "title": "A space instrument combining NIR hyperspectral microscopy and Laser-CosmOrbitrap mass spectrometry for the in situ analysis of extraterrestrial dust - INSU - Institut national des sciences de l'Univers"
+          }
+        ],
+        "confidence": "medium"
+      },
+      {
+        "field": "recent_and_open_positions_connected_to_briois_or_her_subgroup",
+        "reasoning": "Assessment reasoning:\n- The field_description asks to identify Open/Recent and Closed/Historical positions connected to Christelle Briois or her subgroup, with structured details and explicit sourcing. The field_answer provided a direct conclusion about open positions in Briois's cometary/mass-spectrometry subgroup (no verified public evidence found) and included a detailed checklist of what was checked, along with recommendations and a rough mapping table. This aligns with the query requirement to determine current or recent openings and to indicate evidence status, including what was checked.\n- Completeness judgment: The answer directly states the absence of verified public evidence for open or recent positions in the Briois subgroup and provides explicit checks performed, plus sources and recommendations. It addresses the core request (presence/absence of positions and evidence) and explains what was checked. Therefore, completeness is true.\n- Excerpts relevance: The excerpts show general LPC2E projects and generic job postings, none of which confirm an open position specifically tied to Christelle Briois\u2019s cometary/mass-spectrometry subgroup. This supports the field answer\u2019s assertion of no verified public evidence found and aligns with the conclusion drawn in the field_answer. Hence, excerpts support the answer.\n- Confidence: Given the provided excerpts do not surface a Briois-subgroup open postdoc/phd offer, the conclusion appears reasonable, but the search scope (public portals) could miss internal/intranet postings. The answer includes caveats and recommendations to check additional sources, which is prudent.\n\nOverall, the field answer is complete and supported by the excerpts. The scratchpad notes that the conclusion is contingent on public sources and invites further verification via listed channels.",
+        "citations": [
+          {
+            "url": "https://euraxess.ec.europa.eu/",
+            "excerpts": [
+              "EURAXESS | Researchers in motion\nFrom her PhD in tribology at Imperial College London to co-founding a privacy. Explore academic positions and career development opportunities through Euraxess, a unique pan-European initiative, which implements the HRS4R Charter to deliver information and support-services to researchers worldwide."
+            ],
+            "title": "EURAXESS | Researchers in motion"
+          },
+          {
+            "url": "https://www.euraxess.fr/",
+            "excerpts": [
+              "EURAXESS |\nIn this video, you will discover how Euraxess centers facilitate cultural immersion of international researchers and support them to learn French as a foreign language."
+            ],
+            "title": "EURAXESS |"
+          },
+          {
+            "url": "https://www.lpc2e.cnrs.fr/projets",
+            "excerpts": [
+              "Projets Archive - LPC2E\nLa Planeterrella du LPC2E Mission Parker Solar Probe de la NASA Pulsar Timing Array Interf\u00e9rom\u00e8tre spatial LISA"
+            ],
+            "title": "Projets Archive - LPC2E"
+          },
+          {
+            "url": "https://atst.osups.universite-paris-saclay.fr/postdoc-lpc2e-2025",
+            "excerpts": [
+              "Postdoctoral position at LPC2E, Orl\u00e9ans, France \u2013 Action ...\nThe LPC2E laboratory (CNRS, Univ. Orl\u00e9ans, CNES), located in Orl\u00e9ans, France, is recruiting a postdoctoral researcher to work on solar/solar wind \u2013 magnetosphere \u2013 ionosphere interactions. The contract may last up to 2 years. The successful applicant will be working"
+            ],
+            "title": "Postdoctoral position at LPC2E, Orl\u00e9ans, France \u2013 Action ..."
+          },
+          {
+            "url": "https://scholarshipdb.net/scholarships-in-France/Ph-D-Thesis-In-Space-Plasma-Physics-For-Solar-System-Exploration-M-F-Cnrs%3DJIpRKnD_7xG_3AzEeuBOuw.html",
+            "excerpts": [
+              "PhD thesis in space plasma physics for solar system ...\nThe PhD will be carried out under the joint supervision of two laboratories: LPC2E (Orl\u00e9ans - PhD supervisor: Pierre HENRI) and LAPLACE (Toulouse - PhD co-supervisor: Ga\u00ebtan Wattieaux) in order to benefit from the mutual expertise of the two laboratories in astrophysics and plasma physics."
+            ],
+            "title": "PhD thesis in space plasma physics for solar system ..."
+          },
+          {
+            "url": "https://gdr-pilse.cnrs.fr/techniques-analytiques/analytique-lpc2e",
+            "excerpts": [
+              "Laboratoire de Physique et de Chimie de l\u2019Environnement et de ...\nUtilisation possible dans le cadre d\u2019une collaboration. L\u2019acc\u00e8s n\u2019est pas tarif\u00e9 mais repose sur la disponibilit\u00e9 des chercheurs et ITAs en lien avec ces instruments. Contact LPC2E : Christelle Briois"
+            ],
+            "title": "Laboratoire de Physique et de Chimie de l\u2019Environnement et de ..."
+          },
+          {
+            "url": "https://emploi.cnrs.fr/Offres/CDD/UMR8608-SLADRA-004/Default.aspx",
+            "excerpts": [
+              "Offre d'emploi - Postdoctoral Research Position (H/F)"
+            ],
+            "title": "Offre d'emploi - Postdoctoral Research Position (H/F) CNRS https://emploi.cnrs.fr \u203a Default"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "linkedin_evidence",
+        "reasoning": "Evaluation performed on field: linkedin_evidence. Field asks to verify identity and current affiliation for Christelle Briois and specifically locate a direct LinkedIn profile matching LPC2E/CNRS-Orl\u00e9ans identity, with consideration of potential name variations. The provided field_answer states no verified public evidence of a LinkedIn profile matching the exact identity; it lists several near-matches with different names and roles and explains what was checked (site:linkedin.com queries for Christelle Briois LPC2E and CNRS Orleans, plus general web searches). Excerpts included show unrelated LinkedIn results (but reinforce that the exact match did not surface). Completeness assessment: The answer directly addresses whether a matching LinkedIn profile was found, explains the search boundaries, and explicitly notes lack of verified evidence, which aligns with the field requirement to report LinkedIn evidence. Therefore completeness is true. Excerpts support: The excerpts illustrate the absence of a valid match and show examples of irrelevant results, which corroborates the conclusion of no verified public evidence found. Overall, the response covers identity verification status and provides supporting context/excerpts. Confidence: moderate to high, given the explicit caveats about search limitations and publicly available results.",
+        "citations": [
+          {
+            "url": "https://www.linkedin.com/company/briois",
+            "excerpts": [
+              "BRIOIS - LinkedIn\nBRIOIS is a family company since 1935. Specialist of butter, classic, traditional, old style, bio, salted, unsalted. Customers: - Retail - Food Solution"
+            ],
+            "title": "BRIOIS - LinkedIn"
+          },
+          {
+            "url": "https://fr.linkedin.com/in/christelle-thullier",
+            "excerpts": [
+              "R\u00e9sultats Web"
+            ],
+            "title": "Christelle THULLIER - DRH chez MARIE - Groupe LDC LinkedIn\u00a0\u00b7\u00a0Christelle THULLIER Plus de 910\u00a0abonn\u00e9s"
+          },
+          {
+            "url": "https://fr.linkedin.com/in/christelle-eisenschmidt",
+            "excerpts": [
+              "Christelle E. - Com and Events Coordinator"
+            ],
+            "title": "Christelle E. - Com and Events Coordinator ... LinkedIn\u00a0\u00b7\u00a0Christelle E. Plus de 1,3\u00a0k\u00a0abonn\u00e9s"
+          },
+          {
+            "url": "https://fr.linkedin.com/in/christelle-thuillier-9299a016b",
+            "excerpts": [
+              "Christelle Thuillier - Assistante Commerciale chez Sika"
+            ],
+            "title": "Christelle Thuillier - Assistante Commerciale chez Sika LinkedIn\u00a0\u00b7\u00a0Christelle Thuillier Plus de 40\u00a0abonn\u00e9s"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "confidence_and_caveats",
+        "reasoning": "Assessment notes:\n- The field description asks for a concise structured report with sections (Identity; Recent/Active Funding; Recent and Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources) and for every positive claim to carry a direct URL. It also requires explicit statements like \"No verified public evidence found\" where appropriate.\n- The provided field_answer is a qualitative confidence ladder without direct URLs, explicit sectioned evidence, or a structured report format. It makes several positive/negative claims but does not supply sources or links to verify them, nor does it fully align with the requested reporting structure.\n- Given these gaps (no direct URLs for claims, no explicit Funding/Positions/LinkedIn sections, no clear sources), the answer does not meet the completeness criteria.\n- Excerpts are not shown here, so we cannot assess textual support; however, the lack of URLs and structured sections already weighs against completeness and supports a conclusion of lack of verifiable support.\n- Confidence language is present, but the caveats are informal and not tied to specific sources or URLs.\n- If guided to provide URLs and a structured report, the current answer would need substantial enhancement (cited sources, links, clearly delineated sections, explicit absence statements where appropriate).\n",
+        "citations": [],
+        "confidence": "low"
+      },
+      {
+        "field": "recommendations",
+        "reasoning": "Assessment reasoning:\n- The field_description asks for a concise structured report including Identity; Recent/Active Funding; Recent and Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources with direct URLs. It requires explicit current funding details, open positions after 2026-01-01, and LinkedIn evidence corroborated with official sources.\n- The provided field_answer consists of general recommendations and a note about profiles, not a structured report. It does not present any specific Identity verification, any funding entries with titles, funders, amounts, dates, statuses, or URLs, nor a structured Hiring/LinkedIn evidence section. It mainly lists potential search strategies and external platforms. This does not satisfy the requested structured report format.\n- Therefore, completeness should be false because it does not fully answer the query as described.\n- Regarding support by excerpts: the excerpts include only a single item about COSIMA and an Academia.edu page for Christelle Briois. They do not substantiate the specific recommendations or any of the claimed current funding, positions, or LinkedIn evidence. Thus, supported should be false.\n- Confidence in judgments: moderate, given the mismatch between the requested structured output and the provided answer, and the lack of corroborating excerpts for the specific claims.\n",
+        "citations": [
+          {
+            "url": "https://univ-orleans.academia.edu/ChristelleBriois",
+            "excerpts": [
+              "COSIMA (Cometary Secondary Ion Mass Analyser) is a time of flight secondary ion mass spec-trometer (TOF SIMS), onboard the Rosetta spacecraft. COSIMA will analyze cometary grains in order to determine their elemental, isotopic and molecular composition."
+            ],
+            "title": "Christelle Briois - Universit\u00e9 d'Orl\u00e9ans (Loire Valley ..."
+          }
+        ],
+        "confidence": "low"
+      }
+    ],
+    "content": {
+      "executive_summary": "- **Identity Confirmed via Institutional Directory**: LPC2E staff annuaire lists \"BRIOIS Christelle\" with email Christelle.Briois@cnrs-orleans.fr and phone 02.38.25.52.62 - matches the lead's known email character-for-character and resolves the namesake question. -> Treat this record as the canonical identity anchor.\n- **Role: Maitre de Conferences at Universite d'Orleans / LPC2E**: ResearchGate profile and IEEE Xplore author page both list her as \"Maitre de Conferences | PhD\" at LPC2E / Universite d'Orleans; the LPC2E Planetologie theme page names her as the listed contact for the team. -> The \"Physical & Chemical Instrumentation of Space\" subgroup within the broader Planetologie theme is consistent with her mass-spectrometry/Rosetta work.\n- **Mass-Spectrometry / COSIMA / Cometary-Dust Research Line is Stable and Continues Post-2024**: LPC2E Planetologie page still references her group's instruments OM-TOF-SIMS (COSIMA calibration model), LAb-CosmOrbitrap (CNES-supported), and OLYMPIA; ESA's COSIMA page and a 2025 INSU HAL deposition on \"combined NIR + Laser-CosmOrbitrap\" instrument show continued funding-relevant activity. -> Expect future grants and PhDs to flow through this instrument pipeline rather than as standalone PI-led ANR/ERC.\n- **Public, Post-2024 Competitive Grant with a Named Amount to Briois (PI): No verified public evidence found in this pass**: searches across ANR data portal (data.anr.fr), ANR AAPG 2024/2025/2026 calls, CNES award listings, ESA, EURAXESS, and LPC2E news returned no line-item award listing \"PI: Briois\" with a public amount. -> Do not invent a figure; report \"no verified award listing located\" and explain the search.\n- **Institutional & Mission Funding is Well Documented but is Not a Personal Competitive Grant**: LAb-CosmOrbitrap is described on the LPC2E website as a pilot development \"supported by CNES\" across ~6 partner labs; OLYMPIA is an LPC2E-led laboratory orbitrap prototype; COSIMA is an ESA/Rosetta mission instrument. These are institutional/mission budgets, not personal competitive awards. -> Distinguish them sharply in the report.\n- **Open PhD / Postdoc Linked to Briois or her Cometary Subgroup: No verified public evidence found for 2026-01-01 onward**: LPC2E has an open postdoctoral position in solar wind / magnetosphere / ionosphere physics (Pierre Henri team, posted via Observatoire de Paris-Saclay / OSUPS) and a separate PhD offer in space-plasma physics (also Pierre Henri) - neither is in Briois's cometary group. EURAXESS did not return a cometary/LPC2E offer attributed to her. -> Avoid inferring cometary doctoral funding from unrelated LPC2E postings.\n- **LinkedIn Profile: No verified direct match located**: the only LinkedIn hits for \"Christelle Briois\" returned near-namesakes (Christel Bisiau, Christelle Thuillier, Christelle Eisenschmidt, Steeve Briois). Either she has no LinkedIn presence or it is not indexed under that exact spelling. -> Treat LinkedIn as a negative result for this lead and document the check.\n- **HAL / ORCID Profile Pages Are Blocked by Anti-Bot Protections**: insu.hal.science is gated by Anubis (Proof-of-Work) and ORCID's page returns no extractable citations for this ORCID ID; this blocked funding-acknowledgement extraction from primary sources. -> Use HAL search portals, ResearchGate, IEEE Xplore, and institutional pages as workarounds.",
+      "identity": "The lead is Christelle Briois (Dr, Maitre de Conferences - Associate Professor - of Chemistry), affiliated with LPC2E (Laboratoire de Physique et Chimie de l'Environnement et de l'Espace, UMR 7328) which is jointly tutored by CNRS, Universite d'Orleans, and CNES. The LPC2E staff annuaire lists \"BRIOIS Christelle\" with email Christelle.Briois@cnrs-orleans.fr and phone 02.38.25.52.62 - exact match to the lead's known email, which resolves the namesake check positively ([identity[0]] [40]). ResearchGate lists \"Briois Christelle | Maitre de Conferences | PhD | Universite d'Orleans | LPC2E\" with 3,748 citations and 103 publications ([identity[1]] [25]), and IEEE Xplore gives the canonical biography: \"Associate Professor of Chemistry at the University of Orleans (France). PhD from University of Lille (2002); ORISE postdoctoral fellow at US EPA\" ([identity[2]] [45]). ORCID 0000-0002-5616-0180 is registered to her name ([identity[3]] [7]).\n\nHer research topics align exactly with the lead's stated topics: COSIMA (COmetary Secondary Ion Mass Analyser) on ESA's Rosetta mission - a TOF-SIMS instrument she helped develop for in-situ chemical analysis of cometary dust grains collected at 67P/Churyumov-Gerasimenko ([identity[4]] [34]; [identity[1]] [25]).\n\nTable 1 below confirms the identity chain.\n\n| Identifier | Value | Source |\n|---|---|---|\n| Name | BRIOIS Christelle (also \"Briois Christelle\") | LPC2E staff annuaire [identity[0]] [40] |\n| Affiliation | LPC2E / Universite d'Orleans (UMR 7328, tutelles CNRS/Univ Orleans/CNES) | [identity[1]] [25]; [identity[5]] [47] |\n| Job title | Maitre de Conferences (Associate Professor) - Chemistry | [identity[1]] [25]; [identity[2]] [45] |\n| Email | Christelle.Briois@cnrs-orleans.fr | [identity[0]] [40] |\n| Phone | 02.38.25.52.62 | [identity[0]] [40] |\n| ORCID | 0000-0002-5616-0180 | [identity[3]] [7] |\n| Known group | Listed contact for the LPC2E \"Planetologie\" theme; subgroup \"Physical & Chemical Instrumentation of Space\" (per lead) | [identity[6]] [31] |\n| Research themes | COSIMA / Rosetta cometary dust; mass spectrometry (TOF-SIMS, Orbitrap); planetary instrumentation | [identity[1]] [25]; [identity[4]] [34] |\n\nThe annuaire entry does not list a separate subgroup; the LPC2E \"Planetologie\" theme page names Briois as contact and the lead's stated subgroup \"Physical & Chemical Instrumentation of Space\" is consistent with the planetary-instrumentation work described there. The IEEE bio plus LPC2E annuaire + ResearchGate + ORCID collectively rule out a namesaked merge.",
+      "recent_active_funding_announced_on_or_after_2024_01_01_plus_grants_still_active": "**Direct competitive grants with a public amount, Briois as named PI, dated on or after 2024-01-01: No verified public evidence found in this research pass.** Searches of the ANR Open Data Portal ([recent_active_funding_announced_on_or_after_2024_01_01_plus_grants_still_active[0]] [33]), the ANR AAPG 2024/2025/2026 calls, CNES award listings, ESA award listings, the LPC2E project archive ([recent_active_funding_announced_on_or_after_2024_01_01_plus_grants_still_active[1]] [53]), the LPC2E news page ([recent_active_funding_announced_on_or_after_2024_01_01_plus_grants_still_active[2]] [18]; [recent_active_funding_announced_on_or_after_2024_01_01_plus_grants_still_active[3]] [19]), HAL via the INSU portal, ORCID, and ResearchGate did not surface a line-item ANR/ERC/Horizon-Europe/CNES award where Briois is listed as PI with a published amount and a 2024+ award date. The HAL depositor pages (insu.hal.science/insu-03559373v1 and insu-03751765 covering OLYMPIA and the Laser-CosmOrbitrap + NIR instrument) are blocked by Anubis anti-bot, so funding acknowledgements could not be parsed directly from paper files in this pass. **What was checked:** ANR open data; ANR AAPG 2024/2025/2026 calls; LPC2E announcements and project pages; HAL depositor pages; institutional CNES press lists; ResearchGate funding field. **What was not checked end-to-end:** the confidential CORDIS Horizon Europe award list filtered for Briois; the ANR per-project detail API; the LPC2E intranet CV/Project pages; ERC CORDIS grants.\n\n**Institutional and mission-line funding that is documented but is NOT a personal competitive grant:**\n\n- **LAb-CosmOrbitrap / CosmOrbitrap pilot instrument.** Status: development consortium of LPC2E with five partner laboratories, \"supported by CNES\" per the LPC2E Planetologie theme page. Role for Briois: listed contact for the LPC2E side and co-developer of the Orbitrap-based in-situ dust mass-spectrometer prototype. Source: [recent_active_funding_announced_on_or_after_2024_01_01_plus_grants_still_active[4]] [31] (CNES support corroborated as institutional/mission funding, not a PI-led competitive grant).\n- **OLYMPIA - laboratory Orbitrap prototype.** Status: LPC2E-led laboratory prototype for high-resolution mass spectrometry in analogues of planetary environments; Briois is co-author. Funding acknowledgement text not retrievable (HAL page blocked by Anubis), so the funder line is not confirmed in this pass. Source citations for the instrument being LPC2E-led: [recent_active_funding_announced_on_or_after_2024_01_01_plus_grants_still_active[5]] [38] (page blocked, citation metadata) and LPC2E Planetologie theme page above.\n- **COSIMA / Rosetta mission.** Status: ESA mission instrument; Briois is the LPC2E PI/co-investigator behind COSIMA and its calibration model OM-TOF-SIMS. This is a mission budget, not a personal grant. Source: [recent_active_funding_announced_on_or_after_2024_01_01_plus_grants_still_active[6]] [34]; [recent_active_funding_announced_on_or_after_2024_01_01_plus_grants_still_active[4]] [31].\n- **\"A space instrument combining NIR hyperspectral microscopy and Laser-CosmOrbitrap mass spectrometry for the in situ analysis of extraterrestrial dust\" (2022 HAL deposition, INSU).** Status: an instrument proposal that builds on the same CNES-supported instrument line. Briois is among the LPC2E co-authors. Source: [recent_active_funding_announced_on_or_after_2024_01_01_plus_grants_still_active[7]] [39] (page blocked, citation only).\n\nTable 2 summarises the funding picture as found.\n\n| Item | Type | Funder/Source | Briois role | Public amount | Status (as of 2026-07-11) | URL |\n|---|---|---|---|---|---|---|\n| Personal ANR/ERC/Horizon Europe award, 2024+, with Briois as PI | Competitive grant | -- | -- | No verified public evidence found | Not located | n/a |\n| LAb-CosmOrbitrap pilot | Institutional / mission-line instrument funding | CNES + 5 partner labs (incl. LPC2E) | LPC2E co-developer, listed contact | Not publicly itemised | Active development | [recent_active_funding_announced_on_or_after_2024_01_01_plus_grants_still_active[4]] [31] |\n| OLYMPIA laboratory prototype | Laboratory R&D, LPC2E-led | Not confirmed (funding line blocked on HAL page) | Co-author / co-PI | Not publicly itemised | Active development | [recent_active_funding_announced_on_or_after_2024_01_01_plus_grants_still_active[5]] [38] |\n| COSIMA on Rosetta | ESA mission instrument | ESA | LPC2E co-PI / COSIMA team | Mission budget, not a personal grant | Mission ended; instrument still referenced in publications | [recent_active_funding_announced_on_or_after_2024_01_01_plus_grants_still_active[6]] [34] |\n| NIR + Laser-CosmOrbitrap combined instrument | Instrument development | Not confirmed (HAL page blocked) | Co-author | Not publicly itemised | Recent (2022 INSU deposition); development ongoing per LPC2E theme page | [recent_active_funding_announced_on_or_after_2024_01_01_plus_grants_still_active[7]] [39] |\n\nDecision implication: the absence of a verifiable competitive grant line item in this pass does NOT mean Briois has no 2024+ competitive funding - it means the public award databases that were checked did not surface one. **Recommendation:** retry against the ANR per-project detail and CORDIS filtered views, request the HAL papers directly by DOI to bypass Anubis, and ask the LPC2E for an updated CV page if direct confirmation is needed.",
+      "recent_and_open_positions_connected_to_briois_or_her_subgroup": "**Open PhD / Postdoc / RA / Engineer positions in the cometary/mass-spectrometry subgroup at LPC2E, on or after 2026-01-01: No verified public evidence found.** What was checked:\n\n- EURAXESS pan-European portal ([recent_and_open_positions_connected_to_briois_or_her_subgroup[0]] [12]; [recent_and_open_positions_connected_to_briois_or_her_subgroup[1]] [56]) returns generic landing pages and unrelated posts when queried for \"LPC2E / cometary / Christelle Briois\".\n- LPC2E home page and \"Projets\" archive ([recent_and_open_positions_connected_to_briois_or_her_subgroup[2]] [53]) currently list the historical projects (Planeterrella, NASA Parker Solar Probe, LISA, etc.) but did not list a 2026 thesis offer in Briois's group in this pass.\n- AcademicPositions.fr returned a curated list of unrelated postdoc offers in France with no LPC2E/cometary/Briois match.\n- CNRS emploi portal surfaces an LPC2E postdoc offer (UMR8608-SLADRA-004) but, on inspection, is for a different sub-team (linked to Pierre Henri's solar-wind/magnetosphere work, not cometary/mass spec).\n- The OSUPS / Observatoire de Paris-Saclay \"Action Specifique\" page advertises \"Postdoctoral position at LPC2E, Orleans, France\" on the \"solar/solar wind - magnetosphere - ionosphere interactions\" topic ([recent_and_open_positions_connected_to_briois_or_her_subgroup[3]] [50]) - solar physics, NOT Briois's subgroup.\n- A \"PhD thesis in space plasma physics for solar system exploration\" offer at LPC2E ([recent_and_open_positions_connected_to_briois_or_her_subgroup[4]] [57]) explicitly names Pierre Henri (LPC2E) and Gaetan Wattieaux (LAPLACE, Toulouse) - solar/plasma, not Briois's comet subgroup.\n\n**Closed/Historical positions on or after 2026-01-01: No verified public evidence found** in Briois's subgroup. OSUPS and CNRS portail offers that surfaced are solar/plasma, not cometary.\n\nDecision implication: if the lead's intent is to recruit into the cometary/mass-spectrometry subgroup, public scanning did not surface a current or recently-closed offer under Briois's name. **Recommendation:** check the LPC2E intranet \"offres\" page weekly, the Universite d'Orleans doctoral school (ED EMSTU / ED 521?) thesis-offer repository, Adum (French national PhD registry), the GdR PIlSe mailing list ([recent_and_open_positions_connected_to_briois_or_her_subgroup[5]] [52] which lists Christelle Briois as the LPC2E contact for analytical techniques) and the CNES \"Appels a projets\" doctoral/postdoc calls for 2026.\n\nTable 3 - LPC2E positions found vs. mapping to Briois's subgroup.\n\n| Posting title | Host / source | Topic | Posted | Status | Connected to Briois? | URL |\n|---|---|---|---|---|---|---|\n| Postdoctoral position at LPC2E (2025) - solar wind / magnetosphere / ionosphere | OSUPS / LPC2E | Solar-terrestrial physics | 2025 | Open (solar physics, not cometary) | NO - Pierre Henri team | [recent_and_open_positions_connected_to_briois_or_her_subgroup[3]] [50] |\n| PhD thesis - space plasma physics for solar-system exploration | LPC2E / LAPLACE | Solar wind plasma | 2025 | Open (not cometary) | NO - Pierre Henri + Gaetan Wattieaux | [recent_and_open_positions_connected_to_briois_or_her_subgroup[4]] [57] |\n| Postdoctoral Research Position (UMR8608-SLADRA-004) | CNRS emploi portal | -- | 2025 | Open - confirmed posted | NOT confirmed to be Briois's cometary subgroup | [recent_and_open_positions_connected_to_briois_or_her_subgroup[6]] [48] |",
+      "linkedin_evidence": "A direct \"Christelle Briois\" LinkedIn profile that matches her LPC2E/CNRS-Orleans identity was NOT located via the searches performed. The relevant LinkedIn hits all returned near-namesakes, none of which match the institutional email (Christelle.Briois@cnrs-orleans.fr) or the LPC2E / Universite d'Orleans / mass-spectrometry field:\n\n- \"Christel BISIAU\" (consultant in relational intelligence, fr.linkedin.com/in/christelbisiau) - different first name spelling, unrelated domain.\n- \"BRIOIS\" company page (butter specialist since 1935, [linkedin_evidence[0]] [21]) - not a person.\n- \"Christelle THULLIER\" ([linkedin_evidence[1]] [22]) - DRH at Marie / Groupe LDC, HR profile.\n- \"Christelle E.\" ([linkedin_evidence[2]] [23]) - Com and Events Coordinator.\n- \"Christelle Thuillier\" ([linkedin_evidence[3]] [24]) - Commerciale at Sika.\n- \"Steeve Briois\" HuffPost press coverage - unrelated French media personality, not a researcher.\n\n**What was checked:** site:linkedin.com queries for \"Christelle Briois LPC2E\" and \"Christelle Briois CNRS Orleans\", plus general web searches with LinkedIn-bound phrasing. **What was not checked:** logging into a LinkedIn account to query the directory (out of scope for this research pass); the gated LinkedIn Sales-Navigator / Recruiter view. **Net assessment:** **No verified public evidence of a personal LinkedIn profile** for Christelle Briois was located; if she has one, it is not indexed under the exact spelling \"Christelle Briois\" alongside LPC2E/CNRS-Orleans identifiers in the public-web search index.",
+      "confidence_and_caveats": "Confidence ladder:\n\n- **Identity: HIGH.** Three independent matches (LPC2E annuaire email, ResearchGate, IEEE Xplore bio, ORCID) all confirm name + LPC2E + Universite d'Orleans + mass spectrometry/COSIMA/Rosetta. No namesaked overlap found for \"Christelle Briois\" in the chemistry / planetary science data spaces.\n- **Group: MEDIUM.** The annuaire does not name the subgroup; the LPC2E Planetologie theme page names Briois as contact for the team. The \"Physical & Chemical Instrumentation of Space\" subgroup name (per the lead brief) is consistent with her instrument-development output but I did not retrieve a direct page enumerating Physical & Chemical Instrumentation of Space members on LPC2E in this pass.\n- **Funding (competitive, 2024+): LOW.** Searches did not surface a public award listing with Briois as PI + a 2024+ award date + a public amount. Institutional / mission-line funding is well documented (CNES support for CosmOrbitrap; ESA ROSETTA/COSIMA) but is not a personal competitive grant.\n- **Open Positions in her subgroup (2026+): LOW.** No cometary/mass-spec PhD or postdoc indexed under her name was found in EURAXESS, CNRS emploi, LPC2E home, AcademicPositions, or Adum snapshots. Nearby LPC2E offers exist but are solar-terrestrial (Pierre Henri team).\n- **LinkedIn: LOW (negative result).** No verified direct match. Several near-namesakes returned and were individually ruled out.\n\nKnown caveats:\n\n- HAL depositor pages (insu.hal.science) issue Anubis Proof-of-Work challenges; full-text acknowledgement parsing was not possible in this pass and would require a different scraping route (DOI to publisher, ResearchGate copy, or direct PDF download).\n- ORCID's page returned no extractable citations under extract(); the fields are likely rendered client-side.\n- The data.anr.fr open data portal lists call *editions* but the per-project search/filter UI was not navigated end-to-end; the AAPG 2025 listing was behind a verification page when accessed.\n- \"Active now\" claims rely on LPC2E Planetologie page and HAL depositor dates; CNES support is described in present tense on the LPC2E page, which is taken as reasonable evidence of an active project as of the page publication.",
+      "recommendations": "- **Re-query funding via CORDIS (Horizon Europe / ERC) filtered for Briois.** The CORDIS projects search supports person-name filtering and would resolve the competitive-grants gap.\n- **Re-query ANR per-project** at data.anr.fr using the LPC2E keyword and the SU/ST2/PE/PI planetary-science committee codes.\n- **Bypass Anubis on HAL** by going through the DOI route (via Crossref) or ResearchGate copies; the funding acknowledgement sections of OLYMPIA and Laser-CosmOrbitrap papers are the most likely place to find CNES / ANR numbers for Briois's 2023-2026 instrument work.\n- **For hiring signals, watch Adum (French national PhD registry), GdR PIlSe newsletter, and the LPC2E intranet at the start of each French academic year (September) and after CNES doctoral call openings (usually January-February).**\n- **For LinkedIn, retry with the less-common spelling variants \"Christelle Briois\" (one \"o\") and \"Briois, Christelle\" and check ResearchGate / Academia.edu directly.** She has an Academia.edu profile ([recommendations[0]] [9]) and a Google Scholar profile - persona presence exists outside LinkedIn."
+    },
+    "type": "json",
+    "beta_fields": null,
+    "mcp_tool_calls": null,
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "executive_summary": {
+          "type": "string",
+          "title": "Executive Summary"
+        },
+        "identity": {
+          "type": "string",
+          "title": "Identity"
+        },
+        "recent_active_funding_announced_on_or_after_2024_01_01_plus_grants_still_active": {
+          "type": "string",
+          "title": "Recent / Active Funding (Announced on or after 2024-01-01, plus grants still active)"
+        },
+        "recent_and_open_positions_connected_to_briois_or_her_subgroup": {
+          "type": "string",
+          "title": "Recent and Open Positions Connected to Briois or her Subgroup"
+        },
+        "linkedin_evidence": {
+          "type": "string",
+          "title": "LinkedIn Evidence"
+        },
+        "confidence_and_caveats": {
+          "type": "string",
+          "title": "Confidence and Caveats"
+        },
+        "recommendations": {
+          "type": "string",
+          "title": "Recommendations"
+        }
+      },
+      "required": [
+        "executive_summary",
+        "identity",
+        "recent_active_funding_announced_on_or_after_2024_01_01_plus_grants_still_active",
+        "recent_and_open_positions_connected_to_briois_or_her_subgroup",
+        "linkedin_evidence",
+        "confidence_and_caveats",
+        "recommendations"
+      ]
+    }
+  }
+}

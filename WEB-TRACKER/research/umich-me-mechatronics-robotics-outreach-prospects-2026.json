@@ -1,0 +1,3010 @@
+{
+  "scope": "U-M ME Mechatronics & Robotics outreach prospects",
+  "research_run": "trun_dd47611047ba4519bc486f709ae0d38c",
+  "research_date": "2026-07-09",
+  "source_report": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-prospects-2026.json",
+  "area_url": "https://me.engin.umich.edu/research/areas/mechatronics-robotics/",
+  "segregation": {
+    "T1": "Strongest experimental-systems / sensing / DAQ fit",
+    "T2": "Conditional transfer; verify lab methods before email",
+    "T3": "Design-heavy or weaker overlap; honest instrumentation framing only",
+    "T4": "Emeritus / lecturer / research-scientist secondary contacts"
+  },
+  "counts": {
+    "total": 24,
+    "by_outreach_tier": {
+      "T3": 6,
+      "T2": 9,
+      "T1": 5,
+      "T4": 4
+    },
+    "by_score_tier": {
+      "A": 2,
+      "B": 10,
+      "C": 4,
+      "D": 8
+    },
+    "with_email": 22
+  },
+  "prospects": [
+    {
+      "id": "umich-albert-shih-mechatronics",
+      "name": "Albert Shih",
+      "title": "Professor, Mechanical Engineering; Professor, Biomedical Engineering",
+      "unit": "Michigan Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "Biomedical Manufacturing and Design Lab",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Ann Arbor",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/albert-shih/",
+      "lab_url": "https://sites.google.com/umich.edu/shihlabs",
+      "contact_email": "shiha@umich.edu",
+      "contact_page": "https://me.engin.umich.edu/people/faculty/albert-shih/",
+      "phone": "",
+      "research_keywords": [
+        "manufacturing",
+        "semiconductor manufacturing",
+        "biomedical device design/manufacturing",
+        "computed tomography for inspection",
+        "additive manufacturing",
+        "cyber-physical manufacturing for assistive technology."
+      ],
+      "methods": [
+        "CT inspection",
+        "manufacturing metrology",
+        "cyber-physical systems"
+      ],
+      "facilities": [
+        "Biomedical Manufacturing and Design Lab"
+      ],
+      "transfer_vectors": [
+        "additive manufacturing/LPBF",
+        "metrology/NDE/process inspection",
+        "lab/facility operations",
+        "calibration/metrology"
+      ],
+      "research_fields": [
+        "Mechatronics & Robotics"
+      ],
+      "outreach_tier": "",
+      "area_assessments": {
+        "Mechatronics & Robotics": {
+          "roster_tier": "T3",
+          "design_heavy": true
+        }
+      },
+      "design_heavy": true,
+      "role_note": "tenure_track_pi",
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "ME Mechatronics & Robotics area",
+          "url": "https://me.engin.umich.edu/research/areas/mechatronics-robotics/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "ME faculty profile",
+          "url": "https://me.engin.umich.edu/people/faculty/albert-shih/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Deep research outreach report",
+          "url": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-2026.json",
+          "date": "2026-07-09",
+          "note": "run trun_dd47611047ba4519bc486f709ae0d38c"
+        },
+        {
+          "type": "source",
+          "label": "Biomedical Manufacturing and Design Lab",
+          "url": "https://sites.google.com/umich.edu/shihlabs",
+          "date": "2026-07-09",
+          "note": ""
+        }
+      ],
+      "fit_rationale": "Direct, desirable hands-on fit: additive manufacturing/LPBF, metrology/NDE/process inspection, lab/facility operations, calibration/metrology. Official evidence supports both daily experimental work and an immediate instrumentation/hardware contribution.",
+      "outreach_angle": "Lead with additive manufacturing/LPBF, metrology/NDE/process inspection, lab/facility operations and ask about the current experimental bottleneck.",
+      "likely_route": "Research staff / RA / PhD conversation with tenure-track PI.",
+      "opt_h1b_notes": "University research roles can be cap-exempt H-1B candidates, but timeline must be raised early.",
+      "uncertainty_notes": "Confirm current openings and one recent paper before outreach.",
+      "research_interests_summary": "Manufacturing; semiconductor manufacturing; biomedical device design/manufacturing; computed tomography for inspection; additive manufacturing; cyber-physical manufacturing for assistive technology.",
+      "recent_publication": "",
+      "status": "not_contacted",
+      "source_report": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-prospects-2026.json",
+      "first_seen": "2026-07-09T00:00:00.000Z",
+      "score": 4,
+      "tier": "A",
+      "priority": "A",
+      "tier_cap": "",
+      "cap_reasons": [],
+      "daily_work_type": "strategic_materials_manufacturing_hardware",
+      "verified_overlap": [
+        "additive manufacturing/LPBF",
+        "metrology/NDE/process inspection",
+        "lab/facility operations",
+        "calibration/metrology"
+      ],
+      "missing_evidence": [
+        "current_focus"
+      ],
+      "score_breakdown": {
+        "daily_work_interest": 4.3,
+        "hands_on_experimental": 3.8,
+        "direct_skill_contribution": 3.5,
+        "strategic_learning_value": 4.8,
+        "active_lab_route": 3.5,
+        "evidence_confidence": 3.5,
+        "core_destination_matches": [],
+        "enabling_hardware_matches": [
+          "additive manufacturing/LPBF",
+          "metrology/NDE/process inspection"
+        ],
+        "hands_on_matches": [
+          "lab/facility operations",
+          "calibration/metrology"
+        ],
+        "computation_theory_matches": [],
+        "inactive_route_matches": [],
+        "confidence_reasons": [
+          "official/profile source",
+          "lab or second source",
+          "methods/facilities described"
+        ],
+        "computation_dominant": false,
+        "substantial_hardware_verified": false,
+        "independent_hardware_evidence": true
+      }
+    },
+    {
+      "id": "umich-chenhui-shao-mechatronics",
+      "name": "Chenhui Shao",
+      "title": "Associate Professor, Mechanical Engineering",
+      "unit": "Michigan Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "Shao Manufacturing Lab",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Ann Arbor",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/chenhui-shao/",
+      "lab_url": "https://shaolab.engin.umich.edu",
+      "contact_email": "",
+      "contact_page": "https://me.engin.umich.edu/people/faculty/chenhui-shao/",
+      "phone": "",
+      "research_keywords": [
+        "smart manufacturing",
+        "in-situ process monitoring",
+        "real-time control",
+        "robotic additive manufacturing",
+        "3d metrology",
+        "human-robot collaboration."
+      ],
+      "methods": [
+        "in-situ process sensing",
+        "manufacturing monitoring",
+        "metrology",
+        "controls"
+      ],
+      "facilities": [
+        "Shao Manufacturing Lab"
+      ],
+      "transfer_vectors": [
+        "additive manufacturing/LPBF",
+        "metrology/NDE/process inspection",
+        "sensors/process monitoring",
+        "in-situ/operando work",
+        "lab/facility operations",
+        "calibration/metrology"
+      ],
+      "research_fields": [
+        "Mechatronics & Robotics"
+      ],
+      "outreach_tier": "",
+      "area_assessments": {
+        "Mechatronics & Robotics": {
+          "roster_tier": "T2",
+          "design_heavy": false
+        }
+      },
+      "design_heavy": false,
+      "role_note": "tenure_track_pi",
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "ME Mechatronics & Robotics area",
+          "url": "https://me.engin.umich.edu/research/areas/mechatronics-robotics/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "ME faculty profile",
+          "url": "https://me.engin.umich.edu/people/faculty/chenhui-shao/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Deep research outreach report",
+          "url": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-2026.json",
+          "date": "2026-07-09",
+          "note": "run trun_dd47611047ba4519bc486f709ae0d38c"
+        },
+        {
+          "type": "source",
+          "label": "Shao Manufacturing Lab",
+          "url": "https://shaolab.engin.umich.edu",
+          "date": "2026-07-09",
+          "note": ""
+        }
+      ],
+      "fit_rationale": "Direct, desirable hands-on fit: additive manufacturing/LPBF, metrology/NDE/process inspection, sensors/process monitoring, in-situ/operando work. Official evidence supports both daily experimental work and an immediate instrumentation/hardware contribution.",
+      "outreach_angle": "Lead with additive manufacturing/LPBF, metrology/NDE/process inspection, sensors/process monitoring and ask about the current experimental bottleneck.",
+      "likely_route": "Research staff / RA / PhD conversation with tenure-track PI.",
+      "opt_h1b_notes": "University research roles can be cap-exempt H-1B candidates, but timeline must be raised early.",
+      "uncertainty_notes": "Email missing or obscured on profile extract; verify on faculty page before outreach.",
+      "research_interests_summary": "Smart manufacturing; in-situ process monitoring and real-time control; robotic additive manufacturing; 3D metrology; human-robot collaboration.",
+      "recent_publication": "",
+      "status": "not_contacted",
+      "source_report": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-prospects-2026.json",
+      "first_seen": "2026-07-09T00:00:00.000Z",
+      "score": 4,
+      "tier": "A",
+      "priority": "A",
+      "tier_cap": "",
+      "cap_reasons": [],
+      "daily_work_type": "strategic_materials_manufacturing_hardware",
+      "verified_overlap": [
+        "additive manufacturing/LPBF",
+        "metrology/NDE/process inspection",
+        "sensors/process monitoring",
+        "in-situ/operando work",
+        "lab/facility operations",
+        "calibration/metrology"
+      ],
+      "missing_evidence": [
+        "current_focus"
+      ],
+      "score_breakdown": {
+        "daily_work_interest": 4.3,
+        "hands_on_experimental": 3.8,
+        "direct_skill_contribution": 3.5,
+        "strategic_learning_value": 4.8,
+        "active_lab_route": 3.5,
+        "evidence_confidence": 3.5,
+        "core_destination_matches": [],
+        "enabling_hardware_matches": [
+          "additive manufacturing/LPBF",
+          "metrology/NDE/process inspection"
+        ],
+        "hands_on_matches": [
+          "sensors/process monitoring",
+          "in-situ/operando work",
+          "lab/facility operations",
+          "calibration/metrology"
+        ],
+        "computation_theory_matches": [],
+        "inactive_route_matches": [],
+        "confidence_reasons": [
+          "official/profile source",
+          "lab or second source",
+          "methods/facilities described"
+        ],
+        "computation_dominant": false,
+        "substantial_hardware_verified": true,
+        "independent_hardware_evidence": true
+      }
+    },
+    {
+      "id": "umich-chinedum-okwudire-mechatronics",
+      "name": "Chinedum Okwudire",
+      "title": "Professor, Mechanical Engineering; Director, UMAMI",
+      "unit": "Michigan Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "Smart and Sustainable Automation Research Lab",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Ann Arbor",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/chinedum-okwudire/",
+      "lab_url": "http://s2a-lab.engin.umich.edu/",
+      "contact_email": "okwudire@umich.edu",
+      "contact_page": "https://me.engin.umich.edu/people/faculty/chinedum-okwudire/",
+      "phone": "",
+      "research_keywords": [
+        "manufacturing automation: additive manufacturing",
+        "nano-positioning",
+        "machining",
+        "distributed manufacturing",
+        "smart manufacturing systems."
+      ],
+      "methods": [
+        "nano-positioning",
+        "machine-tool mechatronics",
+        "manufacturing automation",
+        "controls"
+      ],
+      "facilities": [
+        "Smart and Sustainable Automation Research Lab"
+      ],
+      "transfer_vectors": [
+        "additive manufacturing/LPBF",
+        "fabrication/machining",
+        "lab/facility operations"
+      ],
+      "research_fields": [
+        "Mechatronics & Robotics"
+      ],
+      "outreach_tier": "",
+      "area_assessments": {
+        "Mechatronics & Robotics": {
+          "roster_tier": "T2",
+          "design_heavy": false
+        }
+      },
+      "design_heavy": false,
+      "role_note": "tenure_track_pi",
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "ME Mechatronics & Robotics area",
+          "url": "https://me.engin.umich.edu/research/areas/mechatronics-robotics/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "ME faculty profile",
+          "url": "https://me.engin.umich.edu/people/faculty/chinedum-okwudire/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Deep research outreach report",
+          "url": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-2026.json",
+          "date": "2026-07-09",
+          "note": "run trun_dd47611047ba4519bc486f709ae0d38c"
+        },
+        {
+          "type": "source",
+          "label": "Smart and Sustainable Automation Research Lab",
+          "url": "http://s2a-lab.engin.umich.edu/",
+          "date": "2026-07-09",
+          "note": ""
+        }
+      ],
+      "fit_rationale": "Credible hands-on or strategic hardware path: additive manufacturing/LPBF, fabrication/machining, lab/facility operations. This is relevant to fusion/space/laser systems without pretending the domains are identical.",
+      "outreach_angle": "Ask how additive manufacturing/LPBF, fabrication/machining, lab/facility operations supports current fusion-, space-, laser-, or manufacturing-hardware work.",
+      "likely_route": "Research staff / RA / PhD conversation with tenure-track PI.",
+      "opt_h1b_notes": "University research roles can be cap-exempt H-1B candidates, but timeline must be raised early.",
+      "uncertainty_notes": "Confirm current openings and one recent paper before outreach.",
+      "research_interests_summary": "Manufacturing automation: additive manufacturing, nano-positioning, machining, distributed manufacturing, and smart manufacturing systems.",
+      "recent_publication": "",
+      "status": "not_contacted",
+      "source_report": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-prospects-2026.json",
+      "first_seen": "2026-07-09T00:00:00.000Z",
+      "score": 3.9,
+      "tier": "B",
+      "priority": "B",
+      "tier_cap": "",
+      "cap_reasons": [],
+      "daily_work_type": "strategic_materials_manufacturing_hardware",
+      "verified_overlap": [
+        "additive manufacturing/LPBF",
+        "fabrication/machining",
+        "lab/facility operations"
+      ],
+      "missing_evidence": [
+        "current_focus"
+      ],
+      "score_breakdown": {
+        "daily_work_interest": 4.3,
+        "hands_on_experimental": 3.8,
+        "direct_skill_contribution": 3.3,
+        "strategic_learning_value": 4.8,
+        "active_lab_route": 3.5,
+        "evidence_confidence": 3.5,
+        "core_destination_matches": [],
+        "enabling_hardware_matches": [
+          "additive manufacturing/LPBF"
+        ],
+        "hands_on_matches": [
+          "fabrication/machining",
+          "lab/facility operations"
+        ],
+        "computation_theory_matches": [],
+        "inactive_route_matches": [],
+        "confidence_reasons": [
+          "official/profile source",
+          "lab or second source",
+          "methods/facilities described"
+        ],
+        "computation_dominant": false,
+        "substantial_hardware_verified": false,
+        "independent_hardware_evidence": true
+      }
+    },
+    {
+      "id": "umich-elliott-rouse-mechatronics",
+      "name": "Elliott Rouse",
+      "title": "Associate Professor, Mechanical Engineering; Associate Professor, Robotics",
+      "unit": "Michigan Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "Neurobionics Lab",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Ann Arbor",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/elliott-rouse/",
+      "lab_url": "https://neurobionics.engin.umich.edu/",
+      "contact_email": "ejrouse@umich.edu",
+      "contact_page": "https://me.engin.umich.edu/people/faculty/elliott-rouse/",
+      "phone": "",
+      "research_keywords": [
+        "precision machine design",
+        "exoskeletons / robotic prostheses",
+        "brushless motors",
+        "human locomotion dynamics",
+        "biomechanics."
+      ],
+      "methods": [
+        "wearable robot hardware",
+        "embedded test systems",
+        "precision electromechanics"
+      ],
+      "facilities": [
+        "Neurobionics Lab"
+      ],
+      "transfer_vectors": [
+        "precision machining/forming",
+        "fabrication/machining",
+        "lab/facility operations",
+        "prototype/hardware"
+      ],
+      "research_fields": [
+        "Mechatronics & Robotics"
+      ],
+      "outreach_tier": "",
+      "area_assessments": {
+        "Mechatronics & Robotics": {
+          "roster_tier": "T2",
+          "design_heavy": true
+        }
+      },
+      "design_heavy": true,
+      "role_note": "tenure_track_pi",
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "ME Mechatronics & Robotics area",
+          "url": "https://me.engin.umich.edu/research/areas/mechatronics-robotics/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "ME faculty profile",
+          "url": "https://me.engin.umich.edu/people/faculty/elliott-rouse/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Deep research outreach report",
+          "url": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-2026.json",
+          "date": "2026-07-09",
+          "note": "run trun_dd47611047ba4519bc486f709ae0d38c"
+        },
+        {
+          "type": "source",
+          "label": "Neurobionics Lab",
+          "url": "https://neurobionics.engin.umich.edu/",
+          "date": "2026-07-09",
+          "note": ""
+        }
+      ],
+      "fit_rationale": "Credible hands-on or strategic hardware path: precision machining/forming, fabrication/machining, lab/facility operations, prototype/hardware. This is relevant to fusion/space/laser systems without pretending the domains are identical.",
+      "outreach_angle": "Ask how precision machining/forming, fabrication/machining, lab/facility operations supports current fusion-, space-, laser-, or manufacturing-hardware work.",
+      "likely_route": "Research staff / RA / PhD conversation with tenure-track PI.",
+      "opt_h1b_notes": "University research roles can be cap-exempt H-1B candidates, but timeline must be raised early.",
+      "uncertainty_notes": "Confirm current openings and one recent paper before outreach.",
+      "research_interests_summary": "Precision machine design; exoskeletons / robotic prostheses; brushless motors; human locomotion dynamics; biomechanics.",
+      "recent_publication": "",
+      "status": "not_contacted",
+      "source_report": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-prospects-2026.json",
+      "first_seen": "2026-07-09T00:00:00.000Z",
+      "score": 3.9,
+      "tier": "B",
+      "priority": "B",
+      "tier_cap": "",
+      "cap_reasons": [],
+      "daily_work_type": "strategic_materials_manufacturing_hardware",
+      "verified_overlap": [
+        "precision machining/forming",
+        "fabrication/machining",
+        "lab/facility operations",
+        "prototype/hardware"
+      ],
+      "missing_evidence": [
+        "current_focus"
+      ],
+      "score_breakdown": {
+        "daily_work_interest": 4.3,
+        "hands_on_experimental": 3.8,
+        "direct_skill_contribution": 3.3,
+        "strategic_learning_value": 4.8,
+        "active_lab_route": 3.5,
+        "evidence_confidence": 3.5,
+        "core_destination_matches": [],
+        "enabling_hardware_matches": [
+          "precision machining/forming"
+        ],
+        "hands_on_matches": [
+          "fabrication/machining",
+          "lab/facility operations",
+          "prototype/hardware"
+        ],
+        "computation_theory_matches": [],
+        "inactive_route_matches": [],
+        "confidence_reasons": [
+          "official/profile source",
+          "lab or second source",
+          "methods/facilities described"
+        ],
+        "computation_dominant": false,
+        "substantial_hardware_verified": true,
+        "independent_hardware_evidence": true
+      }
+    },
+    {
+      "id": "umich-kenn-oldham-mechatronics",
+      "name": "Kenn Oldham",
+      "title": "Professor, Mechanical Engineering",
+      "unit": "Michigan Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "Vibration and Acoustics Laboratory: Microsystems",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Ann Arbor",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/kenn-oldham/",
+      "lab_url": "http://microsystems.engin.umich.edu/",
+      "contact_email": "oldham@umich.edu",
+      "contact_page": "https://me.engin.umich.edu/people/faculty/kenn-oldham/",
+      "phone": "",
+      "research_keywords": [
+        "micro-mechatronic systems for endoscopic imaging",
+        "micro-robotic systems for manipulation",
+        "autonomous locomotion",
+        "novel sensing",
+        "mems modeling",
+        "system identification",
+        "state estimation."
+      ],
+      "methods": [
+        "MEMS sensing",
+        "optical imaging instrumentation",
+        "system identification",
+        "micro-mechatronics"
+      ],
+      "facilities": [
+        "Vibration and Acoustics Laboratory: Microsystems"
+      ],
+      "transfer_vectors": [
+        "instrumentation",
+        "sensors/process monitoring",
+        "lab/facility operations"
+      ],
+      "research_fields": [
+        "Mechatronics & Robotics"
+      ],
+      "outreach_tier": "",
+      "area_assessments": {
+        "Mechatronics & Robotics": {
+          "roster_tier": "T1",
+          "design_heavy": false
+        }
+      },
+      "design_heavy": false,
+      "role_note": "tenure_track_pi",
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "ME Mechatronics & Robotics area",
+          "url": "https://me.engin.umich.edu/research/areas/mechatronics-robotics/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "ME faculty profile",
+          "url": "https://me.engin.umich.edu/people/faculty/kenn-oldham/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Deep research outreach report",
+          "url": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-2026.json",
+          "date": "2026-07-09",
+          "note": "run trun_dd47611047ba4519bc486f709ae0d38c"
+        },
+        {
+          "type": "source",
+          "label": "Vibration and Acoustics Laboratory: Microsystems",
+          "url": "http://microsystems.engin.umich.edu/",
+          "date": "2026-07-09",
+          "note": ""
+        }
+      ],
+      "fit_rationale": "Credible hands-on or strategic hardware path: instrumentation, sensors/process monitoring, lab/facility operations. This is relevant to fusion/space/laser systems without pretending the domains are identical.",
+      "outreach_angle": "Ask how instrumentation, sensors/process monitoring, lab/facility operations supports current fusion-, space-, laser-, or manufacturing-hardware work.",
+      "likely_route": "Research staff / RA / PhD conversation with tenure-track PI.",
+      "opt_h1b_notes": "University research roles can be cap-exempt H-1B candidates, but timeline must be raised early.",
+      "uncertainty_notes": "Confirm current openings and one recent paper before outreach.",
+      "research_interests_summary": "Micro-mechatronic systems for endoscopic imaging; micro-robotic systems for manipulation and autonomous locomotion; novel sensing; MEMS modeling, system identification, and state estimation.",
+      "recent_publication": "",
+      "status": "not_contacted",
+      "source_report": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-prospects-2026.json",
+      "first_seen": "2026-07-09T00:00:00.000Z",
+      "score": 3.2,
+      "tier": "B",
+      "priority": "B",
+      "tier_cap": "",
+      "cap_reasons": [],
+      "daily_work_type": "general_experimental_hardware",
+      "verified_overlap": [
+        "instrumentation",
+        "sensors/process monitoring",
+        "lab/facility operations"
+      ],
+      "missing_evidence": [
+        "current_focus"
+      ],
+      "score_breakdown": {
+        "daily_work_interest": 3.4,
+        "hands_on_experimental": 3,
+        "direct_skill_contribution": 2.8,
+        "strategic_learning_value": 3.3,
+        "active_lab_route": 3.5,
+        "evidence_confidence": 3.5,
+        "core_destination_matches": [],
+        "enabling_hardware_matches": [],
+        "hands_on_matches": [
+          "instrumentation",
+          "sensors/process monitoring",
+          "lab/facility operations"
+        ],
+        "computation_theory_matches": [],
+        "inactive_route_matches": [],
+        "confidence_reasons": [
+          "official/profile source",
+          "lab or second source",
+          "methods/facilities described"
+        ],
+        "computation_dominant": false,
+        "substantial_hardware_verified": false,
+        "independent_hardware_evidence": true
+      }
+    },
+    {
+      "id": "umich-nima-fazeli-mechatronics",
+      "name": "Nima Fazeli",
+      "title": "Assistant Professor, Mechanical Engineering; Assistant Professor, Robotics",
+      "unit": "Michigan Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "Manipulation and Machine Intelligence Lab",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Ann Arbor",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/nima-fazeli/",
+      "lab_url": "https://www.mmintlab.com/",
+      "contact_email": "nfz@umich.edu",
+      "contact_page": "https://me.engin.umich.edu/people/faculty/nima-fazeli/",
+      "phone": "",
+      "research_keywords": [
+        "robotic manipulation",
+        "physical interaction",
+        "contact",
+        "robot learning",
+        "control",
+        "state estimation."
+      ],
+      "methods": [
+        "robotic test platforms",
+        "force/contact sensing",
+        "state estimation",
+        "controls"
+      ],
+      "facilities": [
+        "Manipulation and Machine Intelligence Lab"
+      ],
+      "transfer_vectors": [
+        "sensors/process monitoring",
+        "fabrication/machining",
+        "lab/facility operations"
+      ],
+      "research_fields": [
+        "Mechatronics & Robotics"
+      ],
+      "outreach_tier": "",
+      "area_assessments": {
+        "Mechatronics & Robotics": {
+          "roster_tier": "T1",
+          "design_heavy": false
+        }
+      },
+      "design_heavy": false,
+      "role_note": "tenure_track_pi",
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "ME Mechatronics & Robotics area",
+          "url": "https://me.engin.umich.edu/research/areas/mechatronics-robotics/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "ME faculty profile",
+          "url": "https://me.engin.umich.edu/people/faculty/nima-fazeli/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Deep research outreach report",
+          "url": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-2026.json",
+          "date": "2026-07-09",
+          "note": "run trun_dd47611047ba4519bc486f709ae0d38c"
+        },
+        {
+          "type": "source",
+          "label": "Manipulation and Machine Intelligence Lab",
+          "url": "https://www.mmintlab.com/",
+          "date": "2026-07-09",
+          "note": ""
+        }
+      ],
+      "fit_rationale": "Credible hands-on or strategic hardware path: sensors/process monitoring, fabrication/machining, lab/facility operations. This is relevant to fusion/space/laser systems without pretending the domains are identical.",
+      "outreach_angle": "Ask how sensors/process monitoring, fabrication/machining, lab/facility operations supports current fusion-, space-, laser-, or manufacturing-hardware work.",
+      "likely_route": "Research staff / RA / PhD conversation with tenure-track PI.",
+      "opt_h1b_notes": "University research roles can be cap-exempt H-1B candidates, but timeline must be raised early.",
+      "uncertainty_notes": "Confirm current openings and one recent paper before outreach.",
+      "research_interests_summary": "Robotic manipulation, physical interaction and contact, robot learning and control, state estimation.",
+      "recent_publication": "",
+      "status": "not_contacted",
+      "source_report": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-prospects-2026.json",
+      "first_seen": "2026-07-09T00:00:00.000Z",
+      "score": 3.2,
+      "tier": "B",
+      "priority": "B",
+      "tier_cap": "",
+      "cap_reasons": [],
+      "daily_work_type": "general_experimental_hardware",
+      "verified_overlap": [
+        "sensors/process monitoring",
+        "fabrication/machining",
+        "lab/facility operations"
+      ],
+      "missing_evidence": [
+        "current_focus"
+      ],
+      "score_breakdown": {
+        "daily_work_interest": 3.4,
+        "hands_on_experimental": 3,
+        "direct_skill_contribution": 2.8,
+        "strategic_learning_value": 3.3,
+        "active_lab_route": 3.5,
+        "evidence_confidence": 3.5,
+        "core_destination_matches": [],
+        "enabling_hardware_matches": [],
+        "hands_on_matches": [
+          "sensors/process monitoring",
+          "fabrication/machining",
+          "lab/facility operations"
+        ],
+        "computation_theory_matches": [],
+        "inactive_route_matches": [],
+        "confidence_reasons": [
+          "official/profile source",
+          "lab or second source",
+          "methods/facilities described"
+        ],
+        "computation_dominant": false,
+        "substantial_hardware_verified": false,
+        "independent_hardware_evidence": true
+      }
+    },
+    {
+      "id": "umich-christopher-vermillion-mechatronics",
+      "name": "Christopher Vermillion",
+      "title": "Associate Professor, Mechanical Engineering",
+      "unit": "Michigan Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "CORE Lab (Control & Optimization of Renewables & Energy)",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Ann Arbor",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/christopher-vermillion/",
+      "lab_url": "",
+      "contact_email": "cvermill@umich.edu",
+      "contact_page": "https://me.engin.umich.edu/people/faculty/christopher-vermillion/",
+      "phone": "",
+      "research_keywords": [
+        "optimal control",
+        "design optimization for renewable energy",
+        "tethered wind",
+        "marine hydrokinetic systems",
+        "mission planning for renewably powered robotic networks",
+        "connected/autonomous vehicles for fuel economy."
+      ],
+      "methods": [
+        "controls",
+        "instrumented energy test rigs",
+        "mechatronic experiments"
+      ],
+      "facilities": [
+        "CORE Lab (Control & Optimization of Renewables & Energy)"
+      ],
+      "transfer_vectors": [
+        "experimental work",
+        "DAQ/test automation",
+        "lab/facility operations"
+      ],
+      "research_fields": [
+        "Mechatronics & Robotics"
+      ],
+      "outreach_tier": "",
+      "area_assessments": {
+        "Mechatronics & Robotics": {
+          "roster_tier": "T1",
+          "design_heavy": false
+        }
+      },
+      "design_heavy": false,
+      "role_note": "tenure_track_pi",
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "ME Mechatronics & Robotics area",
+          "url": "https://me.engin.umich.edu/research/areas/mechatronics-robotics/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "ME faculty profile",
+          "url": "https://me.engin.umich.edu/people/faculty/christopher-vermillion/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Deep research outreach report",
+          "url": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-2026.json",
+          "date": "2026-07-09",
+          "note": "run trun_dd47611047ba4519bc486f709ae0d38c"
+        }
+      ],
+      "fit_rationale": "Credible hands-on or strategic hardware path: experimental work, DAQ/test automation, lab/facility operations. This is relevant to fusion/space/laser systems without pretending the domains are identical.",
+      "outreach_angle": "Ask how experimental work, DAQ/test automation, lab/facility operations supports current fusion-, space-, laser-, or manufacturing-hardware work.",
+      "likely_route": "Research staff / RA / PhD conversation with tenure-track PI.",
+      "opt_h1b_notes": "University research roles can be cap-exempt H-1B candidates, but timeline must be raised early.",
+      "uncertainty_notes": "Confirm current openings and one recent paper before outreach.",
+      "research_interests_summary": "Optimal control and design optimization for renewable energy; tethered wind and marine hydrokinetic systems; mission planning for renewably powered robotic networks; connected/autonomous vehicles for fuel economy.",
+      "recent_publication": "",
+      "status": "not_contacted",
+      "source_report": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-prospects-2026.json",
+      "first_seen": "2026-07-09T00:00:00.000Z",
+      "score": 3.1,
+      "tier": "B",
+      "priority": "B",
+      "tier_cap": "",
+      "cap_reasons": [],
+      "daily_work_type": "mixed_experimental_computational",
+      "verified_overlap": [
+        "experimental work",
+        "DAQ/test automation",
+        "lab/facility operations"
+      ],
+      "missing_evidence": [
+        "current_focus",
+        "lab_url"
+      ],
+      "score_breakdown": {
+        "daily_work_interest": 3,
+        "hands_on_experimental": 3,
+        "direct_skill_contribution": 2.8,
+        "strategic_learning_value": 3.3,
+        "active_lab_route": 3.5,
+        "evidence_confidence": 3.5,
+        "core_destination_matches": [],
+        "enabling_hardware_matches": [],
+        "hands_on_matches": [
+          "experimental work",
+          "DAQ/test automation",
+          "lab/facility operations"
+        ],
+        "computation_theory_matches": [
+          "optimization/digital twin"
+        ],
+        "inactive_route_matches": [],
+        "confidence_reasons": [
+          "official/profile source",
+          "lab or second source",
+          "methods/facilities described"
+        ],
+        "computation_dominant": false,
+        "substantial_hardware_verified": false,
+        "independent_hardware_evidence": true
+      }
+    },
+    {
+      "id": "umich-bogdan-epureanu-mechatronics",
+      "name": "Bogdan Epureanu",
+      "title": "Professor, Mechanical Engineering",
+      "unit": "Michigan Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "Epureanu Research Group",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Ann Arbor",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/bogdan-epureanu/",
+      "lab_url": "",
+      "contact_email": "epureanu@umich.edu",
+      "contact_page": "https://me.engin.umich.edu/people/faculty/bogdan-epureanu/",
+      "phone": "",
+      "research_keywords": [
+        "biological/epidemiological systems",
+        "aerospace",
+        "automotive structures",
+        "turbomachinery",
+        "system identification",
+        "control for smart structures",
+        "linear/nonlinear dynamics experiments."
+      ],
+      "methods": [
+        "system identification",
+        "dynamics experiments",
+        "smart structures"
+      ],
+      "facilities": [
+        "Epureanu Research Group"
+      ],
+      "transfer_vectors": [
+        "experimental work",
+        "fabrication/machining"
+      ],
+      "research_fields": [
+        "Mechatronics & Robotics"
+      ],
+      "outreach_tier": "",
+      "area_assessments": {
+        "Mechatronics & Robotics": {
+          "roster_tier": "T3",
+          "design_heavy": false
+        }
+      },
+      "design_heavy": false,
+      "role_note": "tenure_track_pi",
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "ME Mechatronics & Robotics area",
+          "url": "https://me.engin.umich.edu/research/areas/mechatronics-robotics/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "ME faculty profile",
+          "url": "https://me.engin.umich.edu/people/faculty/bogdan-epureanu/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Deep research outreach report",
+          "url": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-2026.json",
+          "date": "2026-07-09",
+          "note": "run trun_dd47611047ba4519bc486f709ae0d38c"
+        }
+      ],
+      "fit_rationale": "Credible hands-on or strategic hardware path: experimental work, fabrication/machining. This is relevant to fusion/space/laser systems without pretending the domains are identical.",
+      "outreach_angle": "Ask how experimental work, fabrication/machining supports current fusion-, space-, laser-, or manufacturing-hardware work.",
+      "likely_route": "Research staff / RA / PhD conversation with tenure-track PI.",
+      "opt_h1b_notes": "University research roles can be cap-exempt H-1B candidates, but timeline must be raised early.",
+      "uncertainty_notes": "Confirm current openings and one recent paper before outreach.",
+      "research_interests_summary": "Biological/epidemiological systems, aerospace and automotive structures, turbomachinery; system identification and control for smart structures; linear/nonlinear dynamics experiments.",
+      "recent_publication": "",
+      "status": "not_contacted",
+      "source_report": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-prospects-2026.json",
+      "first_seen": "2026-07-09T00:00:00.000Z",
+      "score": 3,
+      "tier": "B",
+      "priority": "B",
+      "tier_cap": "",
+      "cap_reasons": [],
+      "daily_work_type": "general_experimental_hardware",
+      "verified_overlap": [
+        "experimental work",
+        "fabrication/machining"
+      ],
+      "missing_evidence": [
+        "current_focus",
+        "lab_url"
+      ],
+      "score_breakdown": {
+        "daily_work_interest": 3.4,
+        "hands_on_experimental": 2.3,
+        "direct_skill_contribution": 2.8,
+        "strategic_learning_value": 3.3,
+        "active_lab_route": 3.5,
+        "evidence_confidence": 3.5,
+        "core_destination_matches": [],
+        "enabling_hardware_matches": [],
+        "hands_on_matches": [
+          "experimental work",
+          "fabrication/machining"
+        ],
+        "computation_theory_matches": [],
+        "inactive_route_matches": [],
+        "confidence_reasons": [
+          "official/profile source",
+          "lab or second source",
+          "methods/facilities described"
+        ],
+        "computation_dominant": false,
+        "substantial_hardware_verified": false,
+        "independent_hardware_evidence": true
+      }
+    },
+    {
+      "id": "umich-brent-gillespie-mechatronics",
+      "name": "Brent Gillespie",
+      "title": "Professor, Mechanical Engineering; Professor, Robotics",
+      "unit": "Michigan Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "Haptix Lab",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Ann Arbor",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/brent-gillespie/",
+      "lab_url": "https://haptixlab.engin.umich.edu/",
+      "contact_email": "brentg@umich.edu",
+      "contact_page": "https://me.engin.umich.edu/people/faculty/brent-gillespie/",
+      "phone": "",
+      "research_keywords": [
+        "haptic interface",
+        "robotics."
+      ],
+      "methods": [
+        "haptics",
+        "force sensing",
+        "real-time control"
+      ],
+      "facilities": [
+        "Haptix Lab"
+      ],
+      "transfer_vectors": [
+        "sensors/process monitoring",
+        "lab/facility operations"
+      ],
+      "research_fields": [
+        "Mechatronics & Robotics"
+      ],
+      "outreach_tier": "",
+      "area_assessments": {
+        "Mechatronics & Robotics": {
+          "roster_tier": "T2",
+          "design_heavy": false
+        }
+      },
+      "design_heavy": false,
+      "role_note": "tenure_track_pi",
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "ME Mechatronics & Robotics area",
+          "url": "https://me.engin.umich.edu/research/areas/mechatronics-robotics/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "ME faculty profile",
+          "url": "https://me.engin.umich.edu/people/faculty/brent-gillespie/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Deep research outreach report",
+          "url": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-2026.json",
+          "date": "2026-07-09",
+          "note": "run trun_dd47611047ba4519bc486f709ae0d38c"
+        },
+        {
+          "type": "source",
+          "label": "Haptix Lab",
+          "url": "https://haptixlab.engin.umich.edu/",
+          "date": "2026-07-09",
+          "note": ""
+        }
+      ],
+      "fit_rationale": "Credible hands-on or strategic hardware path: sensors/process monitoring, lab/facility operations. This is relevant to fusion/space/laser systems without pretending the domains are identical.",
+      "outreach_angle": "Ask how sensors/process monitoring, lab/facility operations supports current fusion-, space-, laser-, or manufacturing-hardware work.",
+      "likely_route": "Research staff / RA / PhD conversation with tenure-track PI.",
+      "opt_h1b_notes": "University research roles can be cap-exempt H-1B candidates, but timeline must be raised early.",
+      "uncertainty_notes": "Confirm current openings and one recent paper before outreach.",
+      "research_interests_summary": "Haptic interface and robotics.",
+      "recent_publication": "",
+      "status": "not_contacted",
+      "source_report": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-prospects-2026.json",
+      "first_seen": "2026-07-09T00:00:00.000Z",
+      "score": 3,
+      "tier": "B",
+      "priority": "B",
+      "tier_cap": "",
+      "cap_reasons": [],
+      "daily_work_type": "general_experimental_hardware",
+      "verified_overlap": [
+        "sensors/process monitoring",
+        "lab/facility operations"
+      ],
+      "missing_evidence": [
+        "current_focus"
+      ],
+      "score_breakdown": {
+        "daily_work_interest": 3.4,
+        "hands_on_experimental": 2.3,
+        "direct_skill_contribution": 2.8,
+        "strategic_learning_value": 3.3,
+        "active_lab_route": 3.5,
+        "evidence_confidence": 3.5,
+        "core_destination_matches": [],
+        "enabling_hardware_matches": [],
+        "hands_on_matches": [
+          "sensors/process monitoring",
+          "lab/facility operations"
+        ],
+        "computation_theory_matches": [],
+        "inactive_route_matches": [],
+        "confidence_reasons": [
+          "official/profile source",
+          "lab or second source",
+          "methods/facilities described"
+        ],
+        "computation_dominant": false,
+        "substantial_hardware_verified": false,
+        "independent_hardware_evidence": true
+      }
+    },
+    {
+      "id": "umich-daniel-bruder-mechatronics",
+      "name": "Daniel Bruder",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "unit": "Michigan Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "FREE Lab",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Ann Arbor",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/daniel-bruder/",
+      "lab_url": "http://www.freelaboratory.org/",
+      "contact_email": "bruderd@umich.edu",
+      "contact_page": "https://me.engin.umich.edu/people/faculty/daniel-bruder/",
+      "phone": "",
+      "research_keywords": [
+        "design",
+        "modeling",
+        "control of soft"
+      ],
+      "methods": [
+        "soft robotics",
+        "controls",
+        "experimental platforms"
+      ],
+      "facilities": [
+        "FREE Lab"
+      ],
+      "transfer_vectors": [
+        "experimental work",
+        "lab/facility operations"
+      ],
+      "research_fields": [
+        "Mechatronics & Robotics"
+      ],
+      "outreach_tier": "",
+      "area_assessments": {
+        "Mechatronics & Robotics": {
+          "roster_tier": "T2",
+          "design_heavy": true
+        }
+      },
+      "design_heavy": true,
+      "role_note": "tenure_track_pi",
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "ME Mechatronics & Robotics area",
+          "url": "https://me.engin.umich.edu/research/areas/mechatronics-robotics/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "ME faculty profile",
+          "url": "https://me.engin.umich.edu/people/faculty/daniel-bruder/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Deep research outreach report",
+          "url": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-2026.json",
+          "date": "2026-07-09",
+          "note": "run trun_dd47611047ba4519bc486f709ae0d38c"
+        },
+        {
+          "type": "source",
+          "label": "FREE Lab",
+          "url": "http://www.freelaboratory.org/",
+          "date": "2026-07-09",
+          "note": ""
+        }
+      ],
+      "fit_rationale": "Credible hands-on or strategic hardware path: experimental work, lab/facility operations. This is relevant to fusion/space/laser systems without pretending the domains are identical.",
+      "outreach_angle": "Ask how experimental work, lab/facility operations supports current fusion-, space-, laser-, or manufacturing-hardware work.",
+      "likely_route": "Research staff / RA / PhD conversation with tenure-track PI.",
+      "opt_h1b_notes": "University research roles can be cap-exempt H-1B candidates, but timeline must be raised early.",
+      "uncertainty_notes": "Confirm current openings and one recent paper before outreach.",
+      "research_interests_summary": "Design, modeling, and control of soft and other non-traditional robotic systems for safe assistance in unstructured environments.",
+      "recent_publication": "",
+      "status": "not_contacted",
+      "source_report": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-prospects-2026.json",
+      "first_seen": "2026-07-09T00:00:00.000Z",
+      "score": 3,
+      "tier": "B",
+      "priority": "B",
+      "tier_cap": "",
+      "cap_reasons": [],
+      "daily_work_type": "general_experimental_hardware",
+      "verified_overlap": [
+        "experimental work",
+        "lab/facility operations"
+      ],
+      "missing_evidence": [
+        "current_focus"
+      ],
+      "score_breakdown": {
+        "daily_work_interest": 3.4,
+        "hands_on_experimental": 2.3,
+        "direct_skill_contribution": 2.8,
+        "strategic_learning_value": 3.3,
+        "active_lab_route": 3.5,
+        "evidence_confidence": 3.5,
+        "core_destination_matches": [],
+        "enabling_hardware_matches": [],
+        "hands_on_matches": [
+          "experimental work",
+          "lab/facility operations"
+        ],
+        "computation_theory_matches": [],
+        "inactive_route_matches": [],
+        "confidence_reasons": [
+          "official/profile source",
+          "lab or second source",
+          "methods/facilities described"
+        ],
+        "computation_dominant": false,
+        "substantial_hardware_verified": false,
+        "independent_hardware_evidence": true
+      }
+    },
+    {
+      "id": "umich-shorya-awtar-mechatronics",
+      "name": "Shorya Awtar",
+      "title": "Professor, Mechanical Engineering; Joseph E. Shigley Collegiate Professor of Engineering",
+      "unit": "Michigan Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "Precision Systems Design Laboratory",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Ann Arbor",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/shorya-awtar/",
+      "lab_url": "https://psdl.engin.umich.edu/",
+      "contact_email": "awtar@umich.edu",
+      "contact_page": "https://me.engin.umich.edu/people/faculty/shorya-awtar/",
+      "phone": "",
+      "research_keywords": [
+        "mechanical design",
+        "precision engineering",
+        "human-centric design",
+        "mechatronic systems",
+        "robotics",
+        "flexure mechanisms",
+        "electromagnetic actuators",
+        "medical devices"
+      ],
+      "methods": [
+        "precision mechatronics",
+        "actuators",
+        "experimental systems"
+      ],
+      "facilities": [
+        "Precision Systems Design Laboratory"
+      ],
+      "transfer_vectors": [
+        "experimental work",
+        "lab/facility operations"
+      ],
+      "research_fields": [
+        "Mechatronics & Robotics"
+      ],
+      "outreach_tier": "",
+      "area_assessments": {
+        "Mechatronics & Robotics": {
+          "roster_tier": "T3",
+          "design_heavy": true
+        }
+      },
+      "design_heavy": true,
+      "role_note": "tenure_track_pi",
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "ME Mechatronics & Robotics area",
+          "url": "https://me.engin.umich.edu/research/areas/mechatronics-robotics/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "ME faculty profile",
+          "url": "https://me.engin.umich.edu/people/faculty/shorya-awtar/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Deep research outreach report",
+          "url": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-2026.json",
+          "date": "2026-07-09",
+          "note": "run trun_dd47611047ba4519bc486f709ae0d38c"
+        },
+        {
+          "type": "source",
+          "label": "Precision Systems Design Laboratory",
+          "url": "https://psdl.engin.umich.edu/",
+          "date": "2026-07-09",
+          "note": ""
+        }
+      ],
+      "fit_rationale": "Credible hands-on or strategic hardware path: experimental work, lab/facility operations. This is relevant to fusion/space/laser systems without pretending the domains are identical.",
+      "outreach_angle": "Ask how experimental work, lab/facility operations supports current fusion-, space-, laser-, or manufacturing-hardware work.",
+      "likely_route": "Research staff / RA / PhD conversation with tenure-track PI.",
+      "opt_h1b_notes": "University research roles can be cap-exempt H-1B candidates, but timeline must be raised early.",
+      "uncertainty_notes": "Confirm current openings and one recent paper before outreach.",
+      "research_interests_summary": "Mechanical design, precision engineering, human-centric design, mechatronic systems, and robotics; flexure mechanisms, electromagnetic actuators, medical devices, precision motion stages, MEMS.",
+      "recent_publication": "",
+      "status": "not_contacted",
+      "source_report": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-prospects-2026.json",
+      "first_seen": "2026-07-09T00:00:00.000Z",
+      "score": 3,
+      "tier": "B",
+      "priority": "B",
+      "tier_cap": "",
+      "cap_reasons": [],
+      "daily_work_type": "general_experimental_hardware",
+      "verified_overlap": [
+        "experimental work",
+        "lab/facility operations"
+      ],
+      "missing_evidence": [
+        "current_focus"
+      ],
+      "score_breakdown": {
+        "daily_work_interest": 3.4,
+        "hands_on_experimental": 2.3,
+        "direct_skill_contribution": 2.8,
+        "strategic_learning_value": 3.3,
+        "active_lab_route": 3.5,
+        "evidence_confidence": 3.5,
+        "core_destination_matches": [],
+        "enabling_hardware_matches": [],
+        "hands_on_matches": [
+          "experimental work",
+          "lab/facility operations"
+        ],
+        "computation_theory_matches": [],
+        "inactive_route_matches": [],
+        "confidence_reasons": [
+          "official/profile source",
+          "lab or second source",
+          "methods/facilities described"
+        ],
+        "computation_dominant": false,
+        "substantial_hardware_verified": false,
+        "independent_hardware_evidence": true
+      }
+    },
+    {
+      "id": "umich-yun-chen-mechatronics",
+      "name": "Yun Chen",
+      "title": "Associate Research Scientist, Mechanical Engineering",
+      "unit": "Michigan Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "AI-enabled communication / sensing",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Ann Arbor",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/yun-chen/",
+      "lab_url": "",
+      "contact_email": "cyshi@umich.edu",
+      "contact_page": "https://me.engin.umich.edu/people/faculty/yun-chen/",
+      "phone": "",
+      "research_keywords": [
+        "ai-enabled communication",
+        "sensing",
+        "robotic systems",
+        "hardware-software co-design",
+        "programmable sensing environments for robotics",
+        "cyber-physical systems."
+      ],
+      "methods": [
+        "sensing systems",
+        "hardware-software co-design",
+        "robotics"
+      ],
+      "facilities": [
+        "AI-enabled communication / sensing"
+      ],
+      "transfer_vectors": [
+        "sensors/process monitoring",
+        "prototype/hardware"
+      ],
+      "research_fields": [
+        "Mechatronics & Robotics"
+      ],
+      "outreach_tier": "",
+      "area_assessments": {
+        "Mechatronics & Robotics": {
+          "roster_tier": "T4",
+          "design_heavy": false
+        }
+      },
+      "design_heavy": false,
+      "role_note": "research_scientist",
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "ME Mechatronics & Robotics area",
+          "url": "https://me.engin.umich.edu/research/areas/mechatronics-robotics/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "ME faculty profile",
+          "url": "https://me.engin.umich.edu/people/faculty/yun-chen/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Deep research outreach report",
+          "url": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-2026.json",
+          "date": "2026-07-09",
+          "note": "run trun_dd47611047ba4519bc486f709ae0d38c"
+        }
+      ],
+      "fit_rationale": "Credible hands-on or strategic hardware path: sensors/process monitoring, prototype/hardware. This is relevant to fusion/space/laser systems without pretending the domains are identical.",
+      "outreach_angle": "Ask how sensors/process monitoring, prototype/hardware supports current fusion-, space-, laser-, or manufacturing-hardware work.",
+      "likely_route": "Secondary research-scientist contact; prefer sponsoring PI.",
+      "opt_h1b_notes": "University research roles can be cap-exempt H-1B candidates, but timeline must be raised early.",
+      "uncertainty_notes": "Confirm current openings and one recent paper before outreach.",
+      "research_interests_summary": "AI-enabled communication, sensing, and robotic systems; hardware-software co-design; programmable sensing environments for robotics and cyber-physical systems.",
+      "recent_publication": "",
+      "status": "not_contacted",
+      "source_report": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-prospects-2026.json",
+      "first_seen": "2026-07-09T00:00:00.000Z",
+      "score": 3,
+      "tier": "B",
+      "priority": "B",
+      "tier_cap": "",
+      "cap_reasons": [],
+      "daily_work_type": "general_experimental_hardware",
+      "verified_overlap": [
+        "sensors/process monitoring",
+        "prototype/hardware"
+      ],
+      "missing_evidence": [
+        "current_focus",
+        "lab_url"
+      ],
+      "score_breakdown": {
+        "daily_work_interest": 3.4,
+        "hands_on_experimental": 2.3,
+        "direct_skill_contribution": 2.8,
+        "strategic_learning_value": 3.3,
+        "active_lab_route": 3.5,
+        "evidence_confidence": 3.5,
+        "core_destination_matches": [],
+        "enabling_hardware_matches": [],
+        "hands_on_matches": [
+          "sensors/process monitoring",
+          "prototype/hardware"
+        ],
+        "computation_theory_matches": [],
+        "inactive_route_matches": [],
+        "confidence_reasons": [
+          "official/profile source",
+          "lab or second source",
+          "methods/facilities described"
+        ],
+        "computation_dominant": false,
+        "substantial_hardware_verified": false,
+        "independent_hardware_evidence": true
+      }
+    },
+    {
+      "id": "umich-kira-barton-mechatronics",
+      "name": "Kira Barton",
+      "title": "Professor, Mechanical Engineering; Professor, Robotics; Miller Faculty Scholar",
+      "unit": "Michigan Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "Barton Research Group",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Ann Arbor",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/kira-barton/",
+      "lab_url": "https://brg.engin.umich.edu/",
+      "contact_email": "bartonkl@umich.edu",
+      "contact_page": "https://me.engin.umich.edu/people/faculty/kira-barton/",
+      "phone": "",
+      "research_keywords": [
+        "control theory",
+        "applications",
+        "iterative learning control",
+        "multi-agent systems",
+        "human/robot collaborations",
+        "smart manufacturing",
+        "manufacturing robotics",
+        "micro/nano-scale printing."
+      ],
+      "methods": [
+        "controls",
+        "smart manufacturing",
+        "process sensing",
+        "experimental systems"
+      ],
+      "facilities": [
+        "Barton Research Group"
+      ],
+      "transfer_vectors": [
+        "experimental work",
+        "sensors/process monitoring"
+      ],
+      "research_fields": [
+        "Mechatronics & Robotics"
+      ],
+      "outreach_tier": "",
+      "area_assessments": {
+        "Mechatronics & Robotics": {
+          "roster_tier": "T1",
+          "design_heavy": false
+        }
+      },
+      "design_heavy": false,
+      "role_note": "tenure_track_pi",
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "ME Mechatronics & Robotics area",
+          "url": "https://me.engin.umich.edu/research/areas/mechatronics-robotics/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "ME faculty profile",
+          "url": "https://me.engin.umich.edu/people/faculty/kira-barton/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Deep research outreach report",
+          "url": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-2026.json",
+          "date": "2026-07-09",
+          "note": "run trun_dd47611047ba4519bc486f709ae0d38c"
+        },
+        {
+          "type": "source",
+          "label": "Barton Research Group",
+          "url": "https://brg.engin.umich.edu/",
+          "date": "2026-07-09",
+          "note": ""
+        }
+      ],
+      "fit_rationale": "Conditional learning/network fit via experimental work, sensors/process monitoring. A concrete hands-on hardware role is not sufficiently verified.",
+      "outreach_angle": "Only outreach after verifying a specific physical experiment, machine, instrument, or fabrication bottleneck.",
+      "likely_route": "Research staff / RA / PhD conversation with tenure-track PI.",
+      "opt_h1b_notes": "University research roles can be cap-exempt H-1B candidates, but timeline must be raised early.",
+      "uncertainty_notes": "Confirm current openings and one recent paper before outreach.",
+      "research_interests_summary": "Control theory and applications; iterative learning control; multi-agent systems; human/robot collaborations; smart manufacturing; manufacturing robotics; micro/nano-scale printing.",
+      "recent_publication": "",
+      "status": "not_contacted",
+      "source_report": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-prospects-2026.json",
+      "first_seen": "2026-07-09T00:00:00.000Z",
+      "score": 2.9,
+      "tier": "C",
+      "priority": "C",
+      "tier_cap": "",
+      "cap_reasons": [],
+      "daily_work_type": "mixed_experimental_computational",
+      "verified_overlap": [
+        "experimental work",
+        "sensors/process monitoring"
+      ],
+      "missing_evidence": [
+        "current_focus"
+      ],
+      "score_breakdown": {
+        "daily_work_interest": 3,
+        "hands_on_experimental": 2.3,
+        "direct_skill_contribution": 2.8,
+        "strategic_learning_value": 3.3,
+        "active_lab_route": 3.5,
+        "evidence_confidence": 3.5,
+        "core_destination_matches": [],
+        "enabling_hardware_matches": [],
+        "hands_on_matches": [
+          "experimental work",
+          "sensors/process monitoring"
+        ],
+        "computation_theory_matches": [
+          "theory"
+        ],
+        "inactive_route_matches": [],
+        "confidence_reasons": [
+          "official/profile source",
+          "lab or second source",
+          "methods/facilities described"
+        ],
+        "computation_dominant": false,
+        "substantial_hardware_verified": false,
+        "independent_hardware_evidence": true
+      }
+    },
+    {
+      "id": "umich-ramanarayan-vasudevan-mechatronics",
+      "name": "Ramanarayan Vasudevan",
+      "title": "Associate Professor, Mechanical Engineering; Associate Professor, Robotics",
+      "unit": "Michigan Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "Roahm Lab",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Ann Arbor",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/ramanarayan-vasudevan/",
+      "lab_url": "http://www.roahmlab.com/",
+      "contact_email": "ramv@umich.edu",
+      "contact_page": "https://me.engin.umich.edu/people/faculty/ramanarayan-vasudevan/",
+      "phone": "",
+      "research_keywords": [
+        "optimization",
+        "modeling",
+        "design",
+        "control of robotic systems that interact with humans",
+        "the environment."
+      ],
+      "methods": [
+        "robot control",
+        "optimization",
+        "experimental robotics"
+      ],
+      "facilities": [
+        "Roahm Lab"
+      ],
+      "transfer_vectors": [
+        "experimental work",
+        "lab/facility operations"
+      ],
+      "research_fields": [
+        "Mechatronics & Robotics"
+      ],
+      "outreach_tier": "",
+      "area_assessments": {
+        "Mechatronics & Robotics": {
+          "roster_tier": "T2",
+          "design_heavy": false
+        }
+      },
+      "design_heavy": false,
+      "role_note": "tenure_track_pi",
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "ME Mechatronics & Robotics area",
+          "url": "https://me.engin.umich.edu/research/areas/mechatronics-robotics/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "ME faculty profile",
+          "url": "https://me.engin.umich.edu/people/faculty/ramanarayan-vasudevan/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Deep research outreach report",
+          "url": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-2026.json",
+          "date": "2026-07-09",
+          "note": "run trun_dd47611047ba4519bc486f709ae0d38c"
+        },
+        {
+          "type": "source",
+          "label": "Roahm Lab",
+          "url": "http://www.roahmlab.com/",
+          "date": "2026-07-09",
+          "note": ""
+        }
+      ],
+      "fit_rationale": "Conditional learning/network fit via experimental work, lab/facility operations. A concrete hands-on hardware role is not sufficiently verified.",
+      "outreach_angle": "Only outreach after verifying a specific physical experiment, machine, instrument, or fabrication bottleneck.",
+      "likely_route": "Research staff / RA / PhD conversation with tenure-track PI.",
+      "opt_h1b_notes": "University research roles can be cap-exempt H-1B candidates, but timeline must be raised early.",
+      "uncertainty_notes": "Confirm current openings and one recent paper before outreach.",
+      "research_interests_summary": "Optimization, modeling, design, and control of robotic systems that interact with humans and the environment.",
+      "recent_publication": "",
+      "status": "not_contacted",
+      "source_report": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-prospects-2026.json",
+      "first_seen": "2026-07-09T00:00:00.000Z",
+      "score": 2.9,
+      "tier": "C",
+      "priority": "C",
+      "tier_cap": "",
+      "cap_reasons": [],
+      "daily_work_type": "mixed_experimental_computational",
+      "verified_overlap": [
+        "experimental work",
+        "lab/facility operations"
+      ],
+      "missing_evidence": [
+        "current_focus"
+      ],
+      "score_breakdown": {
+        "daily_work_interest": 3,
+        "hands_on_experimental": 2.3,
+        "direct_skill_contribution": 2.8,
+        "strategic_learning_value": 3.3,
+        "active_lab_route": 3.5,
+        "evidence_confidence": 3.5,
+        "core_destination_matches": [],
+        "enabling_hardware_matches": [],
+        "hands_on_matches": [
+          "experimental work",
+          "lab/facility operations"
+        ],
+        "computation_theory_matches": [
+          "optimization/digital twin"
+        ],
+        "inactive_route_matches": [],
+        "confidence_reasons": [
+          "official/profile source",
+          "lab or second source",
+          "methods/facilities described"
+        ],
+        "computation_dominant": false,
+        "substantial_hardware_verified": false,
+        "independent_hardware_evidence": true
+      }
+    },
+    {
+      "id": "umich-jing-tang-mechatronics",
+      "name": "Jing Tang",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "unit": "Michigan Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "Tang Group",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Ann Arbor",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jing-tang/",
+      "lab_url": "https://tang.engin.umich.edu/",
+      "contact_email": "jingtang@umich.edu",
+      "contact_page": "https://me.engin.umich.edu/people/faculty/jing-tang/",
+      "phone": "",
+      "research_keywords": [
+        "critical minerals/materials",
+        "batteries",
+        "catalysis",
+        "electrochemistry",
+        "autonomous laboratory",
+        "ai-powered materials discovery",
+        "materials synthesis",
+        "manufacturing"
+      ],
+      "methods": [
+        "autonomous lab systems",
+        "materials characterization",
+        "experimental automation"
+      ],
+      "facilities": [
+        "Tang Group"
+      ],
+      "transfer_vectors": [
+        "experimental materials characterization",
+        "experimental work",
+        "lab/facility operations"
+      ],
+      "research_fields": [
+        "Mechatronics & Robotics"
+      ],
+      "outreach_tier": "",
+      "area_assessments": {
+        "Mechatronics & Robotics": {
+          "roster_tier": "T1",
+          "design_heavy": false
+        }
+      },
+      "design_heavy": false,
+      "role_note": "tenure_track_pi",
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "ME Mechatronics & Robotics area",
+          "url": "https://me.engin.umich.edu/research/areas/mechatronics-robotics/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "ME faculty profile",
+          "url": "https://me.engin.umich.edu/people/faculty/jing-tang/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Deep research outreach report",
+          "url": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-2026.json",
+          "date": "2026-07-09",
+          "note": "run trun_dd47611047ba4519bc486f709ae0d38c"
+        },
+        {
+          "type": "source",
+          "label": "Tang Group",
+          "url": "https://tang.engin.umich.edu/",
+          "date": "2026-07-09",
+          "note": ""
+        }
+      ],
+      "fit_rationale": "Conditional learning/network fit via experimental materials characterization, experimental work, lab/facility operations. AI/ML/simulation/theory dominates without substantial verified hardware: AI/ML, autonomous-lab software.",
+      "outreach_angle": "Only outreach after verifying a specific physical experiment, machine, instrument, or fabrication bottleneck.",
+      "likely_route": "Research staff / RA / PhD conversation with tenure-track PI.",
+      "opt_h1b_notes": "University research roles can be cap-exempt H-1B candidates, but timeline must be raised early.",
+      "uncertainty_notes": "Confirm current openings and one recent paper before outreach.",
+      "research_interests_summary": "Critical minerals/materials, batteries, catalysis, electrochemistry; autonomous laboratory and AI-powered materials discovery; materials synthesis, manufacturing, and characterization.",
+      "recent_publication": "",
+      "status": "not_contacted",
+      "source_report": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-prospects-2026.json",
+      "first_seen": "2026-07-09T00:00:00.000Z",
+      "score": 2.1,
+      "tier": "C",
+      "priority": "C",
+      "tier_cap": "C",
+      "cap_reasons": [
+        "AI/ML/simulation/theory dominates without substantial verified hardware: AI/ML, autonomous-lab software."
+      ],
+      "daily_work_type": "strategic_materials_manufacturing_hardware",
+      "verified_overlap": [
+        "experimental materials characterization",
+        "experimental work",
+        "lab/facility operations"
+      ],
+      "missing_evidence": [
+        "current_focus"
+      ],
+      "score_breakdown": {
+        "daily_work_interest": 1.6,
+        "hands_on_experimental": 2,
+        "direct_skill_contribution": 1.8,
+        "strategic_learning_value": 2.1,
+        "active_lab_route": 3.5,
+        "evidence_confidence": 3.5,
+        "core_destination_matches": [],
+        "enabling_hardware_matches": [
+          "experimental materials characterization"
+        ],
+        "hands_on_matches": [
+          "experimental work",
+          "lab/facility operations"
+        ],
+        "computation_theory_matches": [
+          "AI/ML",
+          "autonomous-lab software"
+        ],
+        "inactive_route_matches": [],
+        "confidence_reasons": [
+          "official/profile source",
+          "lab or second source",
+          "methods/facilities described"
+        ],
+        "computation_dominant": true,
+        "substantial_hardware_verified": false,
+        "independent_hardware_evidence": true
+      }
+    },
+    {
+      "id": "umich-uduak-inyang-udoh-mechatronics",
+      "name": "Uduak Inyang-Udoh",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "unit": "Michigan Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "Autonomous & Intelligent Systems (AI-Sys) Lab",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Ann Arbor",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/uduak-inyang-udoh/",
+      "lab_url": "https://aisys.engin.umich.edu/",
+      "contact_email": "uduak@umich.edu",
+      "contact_page": "https://me.engin.umich.edu/people/faculty/uduak-inyang-udoh/",
+      "phone": "",
+      "research_keywords": [
+        "control theory",
+        "graph theory",
+        "physics-guided machine learning for data-rich advanced manufacturing",
+        "thermal",
+        "energy storage systems."
+      ],
+      "methods": [
+        "controls",
+        "data-rich experiments",
+        "manufacturing sensing"
+      ],
+      "facilities": [
+        "Autonomous & Intelligent Systems (AI-Sys) Lab"
+      ],
+      "transfer_vectors": [
+        "experimental work",
+        "sensors/process monitoring",
+        "fabrication/machining",
+        "lab/facility operations"
+      ],
+      "research_fields": [
+        "Mechatronics & Robotics"
+      ],
+      "outreach_tier": "",
+      "area_assessments": {
+        "Mechatronics & Robotics": {
+          "roster_tier": "T2",
+          "design_heavy": false
+        }
+      },
+      "design_heavy": false,
+      "role_note": "tenure_track_pi",
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "ME Mechatronics & Robotics area",
+          "url": "https://me.engin.umich.edu/research/areas/mechatronics-robotics/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "ME faculty profile",
+          "url": "https://me.engin.umich.edu/people/faculty/uduak-inyang-udoh/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Deep research outreach report",
+          "url": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-2026.json",
+          "date": "2026-07-09",
+          "note": "run trun_dd47611047ba4519bc486f709ae0d38c"
+        },
+        {
+          "type": "source",
+          "label": "Autonomous & Intelligent Systems (AI-Sys) Lab",
+          "url": "https://aisys.engin.umich.edu/",
+          "date": "2026-07-09",
+          "note": ""
+        }
+      ],
+      "fit_rationale": "Conditional learning/network fit via experimental work, sensors/process monitoring, fabrication/machining, lab/facility operations. AI/ML/simulation/theory dominates without substantial verified hardware: AI/ML, theory.",
+      "outreach_angle": "Only outreach after verifying a specific physical experiment, machine, instrument, or fabrication bottleneck.",
+      "likely_route": "Research staff / RA / PhD conversation with tenure-track PI.",
+      "opt_h1b_notes": "University research roles can be cap-exempt H-1B candidates, but timeline must be raised early.",
+      "uncertainty_notes": "Confirm current openings and one recent paper before outreach.",
+      "research_interests_summary": "Control theory, graph theory, and physics-guided machine learning for data-rich advanced manufacturing, thermal and energy storage systems.",
+      "recent_publication": "",
+      "status": "not_contacted",
+      "source_report": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-prospects-2026.json",
+      "first_seen": "2026-07-09T00:00:00.000Z",
+      "score": 2.1,
+      "tier": "C",
+      "priority": "C",
+      "tier_cap": "C",
+      "cap_reasons": [
+        "AI/ML/simulation/theory dominates without substantial verified hardware: AI/ML, theory."
+      ],
+      "daily_work_type": "mixed_experimental_computational",
+      "verified_overlap": [
+        "experimental work",
+        "sensors/process monitoring",
+        "fabrication/machining",
+        "lab/facility operations"
+      ],
+      "missing_evidence": [
+        "current_focus"
+      ],
+      "score_breakdown": {
+        "daily_work_interest": 1.6,
+        "hands_on_experimental": 2,
+        "direct_skill_contribution": 1.8,
+        "strategic_learning_value": 2.1,
+        "active_lab_route": 3.5,
+        "evidence_confidence": 3.5,
+        "core_destination_matches": [],
+        "enabling_hardware_matches": [],
+        "hands_on_matches": [
+          "experimental work",
+          "sensors/process monitoring",
+          "fabrication/machining",
+          "lab/facility operations"
+        ],
+        "computation_theory_matches": [
+          "AI/ML",
+          "theory"
+        ],
+        "inactive_route_matches": [],
+        "confidence_reasons": [
+          "official/profile source",
+          "lab or second source",
+          "methods/facilities described"
+        ],
+        "computation_dominant": true,
+        "substantial_hardware_verified": false,
+        "independent_hardware_evidence": true
+      }
+    },
+    {
+      "id": "umich-diann-brei-mechatronics",
+      "name": "Diann Brei",
+      "title": "Professor, Mechanical Engineering",
+      "unit": "Michigan Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "design / smart materials",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Ann Arbor",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/diann-brei/",
+      "lab_url": "",
+      "contact_email": "dibrei@umich.edu",
+      "contact_page": "https://me.engin.umich.edu/people/faculty/diann-brei/",
+      "phone": "",
+      "research_keywords": [
+        "design",
+        "smart materials",
+        "structures",
+        "sensor",
+        "actuator design",
+        "structural dynamics",
+        "vibration",
+        "noise control"
+      ],
+      "methods": [
+        "smart materials",
+        "sensors/actuators",
+        "mechatronics"
+      ],
+      "facilities": [
+        "design / smart materials"
+      ],
+      "transfer_vectors": [
+        "sensors/process monitoring"
+      ],
+      "research_fields": [
+        "Mechatronics & Robotics"
+      ],
+      "outreach_tier": "",
+      "area_assessments": {
+        "Mechatronics & Robotics": {
+          "roster_tier": "T3",
+          "design_heavy": true
+        }
+      },
+      "design_heavy": true,
+      "role_note": "tenure_track_pi",
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "ME Mechatronics & Robotics area",
+          "url": "https://me.engin.umich.edu/research/areas/mechatronics-robotics/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "ME faculty profile",
+          "url": "https://me.engin.umich.edu/people/faculty/diann-brei/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Deep research outreach report",
+          "url": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-2026.json",
+          "date": "2026-07-09",
+          "note": "run trun_dd47611047ba4519bc486f709ae0d38c"
+        }
+      ],
+      "fit_rationale": "Low-priority fit. Verified daily work does not match the desired hands-on instrumentation/manufacturing path.",
+      "outreach_angle": "Do not prioritize for technical outreach; retain only as a network reference if useful.",
+      "likely_route": "Research staff / RA / PhD conversation with tenure-track PI.",
+      "opt_h1b_notes": "University research roles can be cap-exempt H-1B candidates, but timeline must be raised early.",
+      "uncertainty_notes": "Confirm current openings and one recent paper before outreach.",
+      "research_interests_summary": "Design; smart materials and structures; sensor and actuator design; structural dynamics; vibration and noise control; mechatronics, smart mechanisms.",
+      "recent_publication": "",
+      "status": "not_contacted",
+      "source_report": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-prospects-2026.json",
+      "first_seen": "2026-07-09T00:00:00.000Z",
+      "score": 1.9,
+      "tier": "D",
+      "priority": "D",
+      "tier_cap": "",
+      "cap_reasons": [],
+      "daily_work_type": "insufficiently_verified",
+      "verified_overlap": [
+        "sensors/process monitoring"
+      ],
+      "missing_evidence": [
+        "current_focus",
+        "lab_url"
+      ],
+      "score_breakdown": {
+        "daily_work_interest": 1.5,
+        "hands_on_experimental": 1.6,
+        "direct_skill_contribution": 1.4,
+        "strategic_learning_value": 1.8,
+        "active_lab_route": 3.5,
+        "evidence_confidence": 3.5,
+        "core_destination_matches": [],
+        "enabling_hardware_matches": [],
+        "hands_on_matches": [
+          "sensors/process monitoring"
+        ],
+        "computation_theory_matches": [],
+        "inactive_route_matches": [],
+        "confidence_reasons": [
+          "official/profile source",
+          "lab or second source",
+          "methods/facilities described"
+        ],
+        "computation_dominant": false,
+        "substantial_hardware_verified": false,
+        "independent_hardware_evidence": true
+      }
+    },
+    {
+      "id": "umich-kathleen-sienko-mechatronics",
+      "name": "Kathleen Sienko",
+      "title": "Professor, Mechanical Engineering; Arthur F. Thurnau Professor",
+      "unit": "Michigan Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "Sienko Research Group",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Ann Arbor",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/kathleen-sienko/",
+      "lab_url": "http://sienkolab.engin.umich.edu/",
+      "contact_email": "sienko@umich.edu",
+      "contact_page": "https://me.engin.umich.edu/people/faculty/kathleen-sienko/",
+      "phone": "",
+      "research_keywords": [
+        "sensory augmentation",
+        "rehabilitation engineering",
+        "biomechanics",
+        "medical device design",
+        "design science."
+      ],
+      "methods": [
+        "sensors for health",
+        "medical device prototyping",
+        "biomechanics"
+      ],
+      "facilities": [
+        "Sienko Research Group"
+      ],
+      "transfer_vectors": [
+        "sensors/process monitoring"
+      ],
+      "research_fields": [
+        "Mechatronics & Robotics"
+      ],
+      "outreach_tier": "",
+      "area_assessments": {
+        "Mechatronics & Robotics": {
+          "roster_tier": "T3",
+          "design_heavy": true
+        }
+      },
+      "design_heavy": true,
+      "role_note": "tenure_track_pi",
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "ME Mechatronics & Robotics area",
+          "url": "https://me.engin.umich.edu/research/areas/mechatronics-robotics/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "ME faculty profile",
+          "url": "https://me.engin.umich.edu/people/faculty/kathleen-sienko/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Deep research outreach report",
+          "url": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-2026.json",
+          "date": "2026-07-09",
+          "note": "run trun_dd47611047ba4519bc486f709ae0d38c"
+        },
+        {
+          "type": "source",
+          "label": "Sienko Research Group",
+          "url": "http://sienkolab.engin.umich.edu/",
+          "date": "2026-07-09",
+          "note": ""
+        }
+      ],
+      "fit_rationale": "Low-priority fit. Verified daily work does not match the desired hands-on instrumentation/manufacturing path.",
+      "outreach_angle": "Do not prioritize for technical outreach; retain only as a network reference if useful.",
+      "likely_route": "Research staff / RA / PhD conversation with tenure-track PI.",
+      "opt_h1b_notes": "University research roles can be cap-exempt H-1B candidates, but timeline must be raised early.",
+      "uncertainty_notes": "Confirm current openings and one recent paper before outreach.",
+      "research_interests_summary": "Sensory augmentation, rehabilitation engineering, biomechanics, medical device design, design science.",
+      "recent_publication": "",
+      "status": "not_contacted",
+      "source_report": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-prospects-2026.json",
+      "first_seen": "2026-07-09T00:00:00.000Z",
+      "score": 1.9,
+      "tier": "D",
+      "priority": "D",
+      "tier_cap": "",
+      "cap_reasons": [],
+      "daily_work_type": "insufficiently_verified",
+      "verified_overlap": [
+        "sensors/process monitoring"
+      ],
+      "missing_evidence": [
+        "current_focus"
+      ],
+      "score_breakdown": {
+        "daily_work_interest": 1.5,
+        "hands_on_experimental": 1.6,
+        "direct_skill_contribution": 1.4,
+        "strategic_learning_value": 1.8,
+        "active_lab_route": 3.5,
+        "evidence_confidence": 3.5,
+        "core_destination_matches": [],
+        "enabling_hardware_matches": [],
+        "hands_on_matches": [
+          "sensors/process monitoring"
+        ],
+        "computation_theory_matches": [],
+        "inactive_route_matches": [],
+        "confidence_reasons": [
+          "official/profile source",
+          "lab or second source",
+          "methods/facilities described"
+        ],
+        "computation_dominant": false,
+        "substantial_hardware_verified": false,
+        "independent_hardware_evidence": true
+      }
+    },
+    {
+      "id": "umich-lauro-ojeda-mechatronics",
+      "name": "Lauro Ojeda",
+      "title": "Research Scientist, Mechanical Engineering",
+      "unit": "Michigan Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "inertial sensing / sensor data fusion",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Ann Arbor",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/lauro-ojeda/",
+      "lab_url": "",
+      "contact_email": "lojeda@umich.edu",
+      "contact_page": "https://me.engin.umich.edu/people/faculty/lauro-ojeda/",
+      "phone": "",
+      "research_keywords": [
+        "inertial sensing",
+        "sensor data fusion",
+        "kalman filtering",
+        "localization",
+        "biomechanics",
+        "human gait analysis."
+      ],
+      "methods": [
+        "inertial sensing",
+        "sensor fusion",
+        "Kalman filtering"
+      ],
+      "facilities": [
+        "inertial sensing / sensor data fusion"
+      ],
+      "transfer_vectors": [
+        "sensors/process monitoring"
+      ],
+      "research_fields": [
+        "Mechatronics & Robotics"
+      ],
+      "outreach_tier": "",
+      "area_assessments": {
+        "Mechatronics & Robotics": {
+          "roster_tier": "T4",
+          "design_heavy": false
+        }
+      },
+      "design_heavy": false,
+      "role_note": "research_scientist",
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "ME Mechatronics & Robotics area",
+          "url": "https://me.engin.umich.edu/research/areas/mechatronics-robotics/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "ME faculty profile",
+          "url": "https://me.engin.umich.edu/people/faculty/lauro-ojeda/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Deep research outreach report",
+          "url": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-2026.json",
+          "date": "2026-07-09",
+          "note": "run trun_dd47611047ba4519bc486f709ae0d38c"
+        }
+      ],
+      "fit_rationale": "Low-priority fit. Verified daily work does not match the desired hands-on instrumentation/manufacturing path.",
+      "outreach_angle": "Do not prioritize for technical outreach; retain only as a network reference if useful.",
+      "likely_route": "Secondary research-scientist contact; prefer sponsoring PI.",
+      "opt_h1b_notes": "University research roles can be cap-exempt H-1B candidates, but timeline must be raised early.",
+      "uncertainty_notes": "Confirm current openings and one recent paper before outreach.",
+      "research_interests_summary": "Inertial sensing, sensor data fusion, Kalman filtering, localization, biomechanics, and human gait analysis.",
+      "recent_publication": "",
+      "status": "not_contacted",
+      "source_report": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-prospects-2026.json",
+      "first_seen": "2026-07-09T00:00:00.000Z",
+      "score": 1.9,
+      "tier": "D",
+      "priority": "D",
+      "tier_cap": "",
+      "cap_reasons": [],
+      "daily_work_type": "insufficiently_verified",
+      "verified_overlap": [
+        "sensors/process monitoring"
+      ],
+      "missing_evidence": [
+        "current_focus",
+        "lab_url"
+      ],
+      "score_breakdown": {
+        "daily_work_interest": 1.5,
+        "hands_on_experimental": 1.6,
+        "direct_skill_contribution": 1.4,
+        "strategic_learning_value": 1.8,
+        "active_lab_route": 3.5,
+        "evidence_confidence": 3.5,
+        "core_destination_matches": [],
+        "enabling_hardware_matches": [],
+        "hands_on_matches": [
+          "sensors/process monitoring"
+        ],
+        "computation_theory_matches": [],
+        "inactive_route_matches": [],
+        "confidence_reasons": [
+          "official/profile source",
+          "lab or second source",
+          "methods/facilities described"
+        ],
+        "computation_dominant": false,
+        "substantial_hardware_verified": false,
+        "independent_hardware_evidence": true
+      }
+    },
+    {
+      "id": "umich-talia-moore-mechatronics",
+      "name": "Talia Moore",
+      "title": "Assistant Professor, Mechanical Engineering; Assistant Professor, Robotics",
+      "unit": "Michigan Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "EMbirLab",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Ann Arbor",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/talia-moore/",
+      "lab_url": "https://www.embirlab.com/",
+      "contact_email": "taliaym@umich.edu",
+      "contact_page": "https://me.engin.umich.edu/people/faculty/talia-moore/",
+      "phone": "",
+      "research_keywords": [
+        "dynamics of terrestrial locomotion",
+        "bio-inspired design",
+        "robotics",
+        "soft robotics",
+        "animal-robot interaction."
+      ],
+      "methods": [
+        "bio-inspired robotics",
+        "locomotion experiments",
+        "soft robotics"
+      ],
+      "facilities": [
+        "EMbirLab"
+      ],
+      "transfer_vectors": [
+        "experimental work"
+      ],
+      "research_fields": [
+        "Mechatronics & Robotics"
+      ],
+      "outreach_tier": "",
+      "area_assessments": {
+        "Mechatronics & Robotics": {
+          "roster_tier": "T3",
+          "design_heavy": true
+        }
+      },
+      "design_heavy": true,
+      "role_note": "tenure_track_pi",
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "ME Mechatronics & Robotics area",
+          "url": "https://me.engin.umich.edu/research/areas/mechatronics-robotics/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "ME faculty profile",
+          "url": "https://me.engin.umich.edu/people/faculty/talia-moore/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Deep research outreach report",
+          "url": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-2026.json",
+          "date": "2026-07-09",
+          "note": "run trun_dd47611047ba4519bc486f709ae0d38c"
+        },
+        {
+          "type": "source",
+          "label": "EMbirLab",
+          "url": "https://www.embirlab.com/",
+          "date": "2026-07-09",
+          "note": ""
+        }
+      ],
+      "fit_rationale": "Low-priority fit. Verified daily work does not match the desired hands-on instrumentation/manufacturing path.",
+      "outreach_angle": "Do not prioritize for technical outreach; retain only as a network reference if useful.",
+      "likely_route": "Research staff / RA / PhD conversation with tenure-track PI.",
+      "opt_h1b_notes": "University research roles can be cap-exempt H-1B candidates, but timeline must be raised early.",
+      "uncertainty_notes": "Confirm current openings and one recent paper before outreach.",
+      "research_interests_summary": "Dynamics of terrestrial locomotion; bio-inspired design and robotics; soft robotics; animal-robot interaction.",
+      "recent_publication": "",
+      "status": "not_contacted",
+      "source_report": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-prospects-2026.json",
+      "first_seen": "2026-07-09T00:00:00.000Z",
+      "score": 1.9,
+      "tier": "D",
+      "priority": "D",
+      "tier_cap": "",
+      "cap_reasons": [],
+      "daily_work_type": "insufficiently_verified",
+      "verified_overlap": [
+        "experimental work"
+      ],
+      "missing_evidence": [
+        "current_focus"
+      ],
+      "score_breakdown": {
+        "daily_work_interest": 1.5,
+        "hands_on_experimental": 1.6,
+        "direct_skill_contribution": 1.4,
+        "strategic_learning_value": 1.8,
+        "active_lab_route": 3.5,
+        "evidence_confidence": 3.5,
+        "core_destination_matches": [],
+        "enabling_hardware_matches": [],
+        "hands_on_matches": [
+          "experimental work"
+        ],
+        "computation_theory_matches": [],
+        "inactive_route_matches": [],
+        "confidence_reasons": [
+          "official/profile source",
+          "lab or second source",
+          "methods/facilities described"
+        ],
+        "computation_dominant": false,
+        "substantial_hardware_verified": false,
+        "independent_hardware_evidence": true
+      }
+    },
+    {
+      "id": "umich-gabor-orosz-mechatronics",
+      "name": "Gabor Orosz",
+      "title": "Professor, Mechanical Engineering; Professor, Civil and Environmental Engineering",
+      "unit": "Michigan Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "nonlinear dynamics / control",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Ann Arbor",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/gabor-orosz/",
+      "lab_url": "",
+      "contact_email": "",
+      "contact_page": "https://me.engin.umich.edu/people/faculty/gabor-orosz/",
+      "phone": "",
+      "research_keywords": [
+        "nonlinear dynamics",
+        "control",
+        "time delay systems",
+        "connected",
+        "automated vehicles",
+        "traffic flow."
+      ],
+      "methods": [
+        "dynamics",
+        "controls",
+        "modeling"
+      ],
+      "facilities": [
+        "nonlinear dynamics / control"
+      ],
+      "transfer_vectors": [],
+      "research_fields": [
+        "Mechatronics & Robotics"
+      ],
+      "outreach_tier": "",
+      "area_assessments": {
+        "Mechatronics & Robotics": {
+          "roster_tier": "T2",
+          "design_heavy": false
+        }
+      },
+      "design_heavy": false,
+      "role_note": "tenure_track_pi",
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "ME Mechatronics & Robotics area",
+          "url": "https://me.engin.umich.edu/research/areas/mechatronics-robotics/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "ME faculty profile",
+          "url": "https://me.engin.umich.edu/people/faculty/gabor-orosz/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Deep research outreach report",
+          "url": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-2026.json",
+          "date": "2026-07-09",
+          "note": "run trun_dd47611047ba4519bc486f709ae0d38c"
+        }
+      ],
+      "fit_rationale": "Low-priority fit. Verified daily work does not match the desired hands-on instrumentation/manufacturing path.",
+      "outreach_angle": "Do not prioritize for technical outreach; retain only as a network reference if useful.",
+      "likely_route": "Research staff / RA / PhD conversation with tenure-track PI.",
+      "opt_h1b_notes": "University research roles can be cap-exempt H-1B candidates, but timeline must be raised early.",
+      "uncertainty_notes": "Email missing or obscured on profile extract; verify on faculty page before outreach.",
+      "research_interests_summary": "Nonlinear dynamics and control, time delay systems, connected and automated vehicles, traffic flow.",
+      "recent_publication": "",
+      "status": "not_contacted",
+      "source_report": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-prospects-2026.json",
+      "first_seen": "2026-07-09T00:00:00.000Z",
+      "score": 1.7,
+      "tier": "D",
+      "priority": "D",
+      "tier_cap": "",
+      "cap_reasons": [],
+      "daily_work_type": "insufficiently_verified",
+      "verified_overlap": [],
+      "missing_evidence": [
+        "current_focus",
+        "lab_url"
+      ],
+      "score_breakdown": {
+        "daily_work_interest": 1.5,
+        "hands_on_experimental": 1,
+        "direct_skill_contribution": 1.4,
+        "strategic_learning_value": 1.8,
+        "active_lab_route": 3.5,
+        "evidence_confidence": 3.5,
+        "core_destination_matches": [],
+        "enabling_hardware_matches": [],
+        "hands_on_matches": [],
+        "computation_theory_matches": [],
+        "inactive_route_matches": [],
+        "confidence_reasons": [
+          "official/profile source",
+          "lab or second source",
+          "methods/facilities described"
+        ],
+        "computation_dominant": false,
+        "substantial_hardware_verified": false,
+        "independent_hardware_evidence": true
+      }
+    },
+    {
+      "id": "umich-tulga-ersal-mechatronics",
+      "name": "Tulga Ersal",
+      "title": "Associate Professor, Mechanical Engineering",
+      "unit": "Michigan Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "autonomous / semi-autonomous vehicles",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Ann Arbor",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/tulga-ersal/",
+      "lab_url": "",
+      "contact_email": "tersal@umich.edu",
+      "contact_page": "https://me.engin.umich.edu/people/faculty/tulga-ersal/",
+      "phone": "",
+      "research_keywords": [
+        "autonomous",
+        "semi-autonomous vehicles",
+        "human-autonomy interactions."
+      ],
+      "methods": [
+        "controls",
+        "modeling",
+        "vehicle testbeds"
+      ],
+      "facilities": [
+        "autonomous / semi-autonomous vehicles"
+      ],
+      "transfer_vectors": [],
+      "research_fields": [
+        "Mechatronics & Robotics"
+      ],
+      "outreach_tier": "",
+      "area_assessments": {
+        "Mechatronics & Robotics": {
+          "roster_tier": "T2",
+          "design_heavy": false
+        }
+      },
+      "design_heavy": false,
+      "role_note": "tenure_track_pi",
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "ME Mechatronics & Robotics area",
+          "url": "https://me.engin.umich.edu/research/areas/mechatronics-robotics/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "ME faculty profile",
+          "url": "https://me.engin.umich.edu/people/faculty/tulga-ersal/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Deep research outreach report",
+          "url": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-2026.json",
+          "date": "2026-07-09",
+          "note": "run trun_dd47611047ba4519bc486f709ae0d38c"
+        }
+      ],
+      "fit_rationale": "Low-priority fit. Verified daily work does not match the desired hands-on instrumentation/manufacturing path.",
+      "outreach_angle": "Do not prioritize for technical outreach; retain only as a network reference if useful.",
+      "likely_route": "Research staff / RA / PhD conversation with tenure-track PI.",
+      "opt_h1b_notes": "University research roles can be cap-exempt H-1B candidates, but timeline must be raised early.",
+      "uncertainty_notes": "Confirm current openings and one recent paper before outreach.",
+      "research_interests_summary": "Autonomous and semi-autonomous vehicles; human-autonomy interactions.",
+      "recent_publication": "",
+      "status": "not_contacted",
+      "source_report": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-prospects-2026.json",
+      "first_seen": "2026-07-09T00:00:00.000Z",
+      "score": 1.7,
+      "tier": "D",
+      "priority": "D",
+      "tier_cap": "",
+      "cap_reasons": [],
+      "daily_work_type": "insufficiently_verified",
+      "verified_overlap": [],
+      "missing_evidence": [
+        "current_focus",
+        "lab_url"
+      ],
+      "score_breakdown": {
+        "daily_work_interest": 1.5,
+        "hands_on_experimental": 1,
+        "direct_skill_contribution": 1.4,
+        "strategic_learning_value": 1.8,
+        "active_lab_route": 3.5,
+        "evidence_confidence": 3.5,
+        "core_destination_matches": [],
+        "enabling_hardware_matches": [],
+        "hands_on_matches": [],
+        "computation_theory_matches": [],
+        "inactive_route_matches": [],
+        "confidence_reasons": [
+          "official/profile source",
+          "lab or second source",
+          "methods/facilities described"
+        ],
+        "computation_dominant": false,
+        "substantial_hardware_verified": false,
+        "independent_hardware_evidence": true
+      }
+    },
+    {
+      "id": "umich-sridhar-kota-mechatronics",
+      "name": "Sridhar Kota",
+      "title": "Professor Emeritus, Mechanical Engineering",
+      "unit": "Michigan Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "Compliant Systems Design Laboratory",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Ann Arbor",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/sridhar-kota/",
+      "lab_url": "http://csdl.engin.umich.edu/",
+      "contact_email": "kota@umich.edu",
+      "contact_page": "https://me.engin.umich.edu/people/faculty/sridhar-kota/",
+      "phone": "",
+      "research_keywords": [
+        "bio-inspired engineering design",
+        "soft robots",
+        "compliant",
+        "shape-adaptive systems",
+        "topology optimization of compliant mechanisms",
+        "design for manufacturability."
+      ],
+      "methods": [
+        "compliant mechanisms",
+        "soft robots",
+        "design optimization"
+      ],
+      "facilities": [
+        "Compliant Systems Design Laboratory"
+      ],
+      "transfer_vectors": [
+        "lab/facility operations"
+      ],
+      "research_fields": [
+        "Mechatronics & Robotics"
+      ],
+      "outreach_tier": "",
+      "area_assessments": {
+        "Mechatronics & Robotics": {
+          "roster_tier": "T4",
+          "design_heavy": true
+        }
+      },
+      "design_heavy": true,
+      "role_note": "emeritus",
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "ME Mechatronics & Robotics area",
+          "url": "https://me.engin.umich.edu/research/areas/mechatronics-robotics/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "ME faculty profile",
+          "url": "https://me.engin.umich.edu/people/faculty/sridhar-kota/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Deep research outreach report",
+          "url": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-2026.json",
+          "date": "2026-07-09",
+          "note": "run trun_dd47611047ba4519bc486f709ae0d38c"
+        },
+        {
+          "type": "source",
+          "label": "Compliant Systems Design Laboratory",
+          "url": "http://csdl.engin.umich.edu/",
+          "date": "2026-07-09",
+          "note": ""
+        }
+      ],
+      "fit_rationale": "Low-priority fit. Inactive/non-target route: emeritus.",
+      "outreach_angle": "Do not prioritize for technical outreach; retain only as a network reference if useful.",
+      "likely_route": "Informational / network only.",
+      "opt_h1b_notes": "University research roles can be cap-exempt H-1B candidates, but timeline must be raised early.",
+      "uncertainty_notes": "Confirm current openings and one recent paper before outreach.",
+      "research_interests_summary": "Bio-inspired engineering design; soft robots; compliant and shape-adaptive systems; topology optimization of compliant mechanisms; design for manufacturability.",
+      "recent_publication": "",
+      "status": "not_contacted",
+      "source_report": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-prospects-2026.json",
+      "first_seen": "2026-07-09T00:00:00.000Z",
+      "score": 1.6,
+      "tier": "D",
+      "priority": "D",
+      "tier_cap": "D",
+      "cap_reasons": [
+        "Inactive/non-target route: emeritus."
+      ],
+      "daily_work_type": "inactive_or_nonresearch",
+      "verified_overlap": [
+        "lab/facility operations"
+      ],
+      "missing_evidence": [
+        "current_focus"
+      ],
+      "score_breakdown": {
+        "daily_work_interest": 1.5,
+        "hands_on_experimental": 1.6,
+        "direct_skill_contribution": 1.4,
+        "strategic_learning_value": 1.8,
+        "active_lab_route": 1,
+        "evidence_confidence": 3.5,
+        "core_destination_matches": [],
+        "enabling_hardware_matches": [],
+        "hands_on_matches": [
+          "lab/facility operations"
+        ],
+        "computation_theory_matches": [
+          "optimization/digital twin"
+        ],
+        "inactive_route_matches": [
+          "emeritus"
+        ],
+        "confidence_reasons": [
+          "official/profile source",
+          "lab or second source",
+          "methods/facilities described"
+        ],
+        "computation_dominant": false,
+        "substantial_hardware_verified": false,
+        "independent_hardware_evidence": true
+      }
+    },
+    {
+      "id": "umich-kristan-hilby-mechatronics",
+      "name": "Kristan Hilby",
+      "title": "LEO Lecturer III, Mechanical Engineering",
+      "unit": "Michigan Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "teaching / mechatronics instruction",
+      "role_type": "faculty_or_research_staff",
+      "campus": "Ann Arbor",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/kristan-hilby/",
+      "lab_url": "",
+      "contact_email": "khilby@umich.edu",
+      "contact_page": "https://me.engin.umich.edu/people/faculty/kristan-hilby/",
+      "phone": "",
+      "research_keywords": [
+        "teaching-focused mechatronics instruction",
+        "no research group listed on me profile."
+      ],
+      "methods": [
+        "teaching"
+      ],
+      "facilities": [
+        "teaching / mechatronics instruction"
+      ],
+      "transfer_vectors": [],
+      "research_fields": [
+        "Mechatronics & Robotics"
+      ],
+      "outreach_tier": "",
+      "area_assessments": {
+        "Mechatronics & Robotics": {
+          "roster_tier": "T4",
+          "design_heavy": false
+        }
+      },
+      "design_heavy": false,
+      "role_note": "lecturer",
+      "hiring_signals": [],
+      "evidence": [
+        {
+          "type": "source",
+          "label": "ME Mechatronics & Robotics area",
+          "url": "https://me.engin.umich.edu/research/areas/mechatronics-robotics/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "ME faculty profile",
+          "url": "https://me.engin.umich.edu/people/faculty/kristan-hilby/",
+          "date": "2026-07-09",
+          "note": ""
+        },
+        {
+          "type": "source",
+          "label": "Deep research outreach report",
+          "url": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-2026.json",
+          "date": "2026-07-09",
+          "note": "run trun_dd47611047ba4519bc486f709ae0d38c"
+        }
+      ],
+      "fit_rationale": "Low-priority fit. Inactive/non-target route: teaching-only.",
+      "outreach_angle": "Do not prioritize for technical outreach; retain only as a network reference if useful.",
+      "likely_route": "Informational / network only.",
+      "opt_h1b_notes": "University research roles can be cap-exempt H-1B candidates, but timeline must be raised early.",
+      "uncertainty_notes": "Confirm current openings and one recent paper before outreach.",
+      "research_interests_summary": "Teaching-focused mechatronics instruction; no research group listed on ME profile.",
+      "recent_publication": "",
+      "status": "not_contacted",
+      "source_report": "WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-prospects-2026.json",
+      "first_seen": "2026-07-09T00:00:00.000Z",
+      "score": 1.5,
+      "tier": "D",
+      "priority": "D",
+      "tier_cap": "D",
+      "cap_reasons": [
+        "Inactive/non-target route: teaching-only."
+      ],
+      "daily_work_type": "inactive_or_nonresearch",
+      "verified_overlap": [],
+      "missing_evidence": [
+        "current_focus",
+        "lab_url"
+      ],
+      "score_breakdown": {
+        "daily_work_interest": 1.5,
+        "hands_on_experimental": 1,
+        "direct_skill_contribution": 1.4,
+        "strategic_learning_value": 1.8,
+        "active_lab_route": 1,
+        "evidence_confidence": 3.5,
+        "core_destination_matches": [],
+        "enabling_hardware_matches": [],
+        "hands_on_matches": [],
+        "computation_theory_matches": [],
+        "inactive_route_matches": [
+          "teaching-only"
+        ],
+        "confidence_reasons": [
+          "official/profile source",
+          "lab or second source",
+          "methods/facilities described"
+        ],
+        "computation_dominant": false,
+        "substantial_hardware_verified": false,
+        "independent_hardware_evidence": true
+      }
+    }
+  ]
+}

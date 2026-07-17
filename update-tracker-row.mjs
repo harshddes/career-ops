@@ -39,6 +39,7 @@ export const TRACKER_METADATA_FIELDS = [
   'research_interest',
   'missions',
   'linkedin_url',
+  'track_kind',
 ];
 
 const CANONICAL_STATUSES = ['Evaluated', 'Applied', 'Responded', 'Interview', 'Offer', 'Rejected', 'Discarded', 'SKIP'];

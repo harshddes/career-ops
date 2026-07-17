@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "updated_at": "2026-07-02T22:54:53.793Z",
+  "updated_at": "2026-07-13T15:10:41.107Z",
   "jobs": {
     "ornl-mechanical-design-and-test-engineer-temporary-1403782600": {
-      "updated_at": "2026-07-02T22:54:27.123Z",
-      "status": "to_consider",
-      "applied": false,
-      "applied_at": "",
-      "application_num": null,
+      "updated_at": "2026-07-05T15:45:05.151Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-07-02T23:41:09.687Z",
+      "application_num": 47,
       "notes": "Temporary 24-month role. Strongest temporary technical fit, but posting requires access to export-controlled technology without an export-control license. This is a serious F-1/foreign-person risk.",
       "resources": {
         "resume_tex": "output/ornl/cv-harsh-desai-ornl-mechanical-design-and-test-engineer-temporary-2026-06-28.tex",
@@ -17,11 +17,11 @@
       }
     },
     "ornl-beam-instrumentation-systems-lead-16335": {
-      "updated_at": "2026-07-02T22:54:29.318Z",
-      "status": "to_consider",
-      "applied": false,
-      "applied_at": "",
-      "application_num": null,
+      "updated_at": "2026-07-05T15:45:07.619Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-07-02T23:41:07.901Z",
+      "application_num": 46,
       "notes": "Live in official ORNL search on 2026-06-28; posted Jun 25. No visa sponsorship found; no Q/L clearance language captured. Strong domain relevance, weak level fit.",
       "resources": {
         "resume_tex": "output/ornl/cv-harsh-desai-ornl-beam-instrumentation-systems-lead-2026-06-28.tex",
@@ -30,21 +30,8 @@
         "cover_letter_pdf": "output/ornl/cover-letter-harsh-desai-ornl-beam-instrumentation-systems-lead-2026-06-28.pdf"
       }
     },
-    "ornl-experiment-project-engineer-16622": {
-      "updated_at": "2026-07-02T22:54:22.664Z",
-      "status": "to_consider",
-      "applied": false,
-      "applied_at": "",
-      "application_num": null,
-      "notes": "Requires DOE clearance (L/Q preferred), BS+5 years nuclear environment, no visa sponsorship. User-requested cover letter generated 2026-06-28. Apply URL also career_job_req_id=16622 on SuccessFactors portal.",
-      "resources": {
-        "cover_letter_html": "output/ornl/cover-letter-harsh-desai-ornl-experiment-project-engineer-2026-06-28.html",
-        "cover_letter_pdf": "output/ornl/cover-letter-harsh-desai-ornl-experiment-project-engineer-2026-06-28.pdf",
-        "report_md": "WEB-TRACKER/research/ornl-graduate-research-pathways-2026.md"
-      }
-    },
     "bosch-usa-associate-calibration-engineer": {
-      "updated_at": "2026-07-02T22:54:31.412Z",
+      "updated_at": "2026-07-05T15:45:09.841Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-06-25T01:08:18.025Z",
@@ -56,22 +43,8 @@
         "email_draft": "output/bosch-usa/application-message-bosch-associate-calibration-engineer-2026-06-24.md"
       }
     },
-    "ornl-technician-grid-systems-hardware-temporary-1399116900": {
-      "updated_at": "2026-07-02T22:54:24.863Z",
-      "status": "to_consider",
-      "applied": false,
-      "applied_at": "",
-      "application_num": null,
-      "notes": "Temporary 24-month role; no visa sponsorship; relocation unavailable. Technically adjacent but below target level and technician-track.",
-      "resources": {
-        "resume_tex": "output/ornl/cv-harsh-desai-ornl-technician-grid-systems-hardware-temporary-2026-06-28.tex",
-        "resume_pdf": "output/ornl/cv-harsh-desai-ornl-technician-grid-systems-hardware-temporary-2026-06-28.pdf",
-        "cover_letter_html": "output/ornl/cover-letter-harsh-desai-ornl-technician-grid-systems-hardware-temporary-2026-06-28.html",
-        "cover_letter_pdf": "output/ornl/cover-letter-harsh-desai-ornl-technician-grid-systems-hardware-temporary-2026-06-28.pdf"
-      }
-    },
     "isar-aerospace-mission-analysis-engineer": {
-      "updated_at": "2026-07-02T22:54:33.748Z",
+      "updated_at": "2026-07-05T15:45:12.681Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-06-27T15:41:02.557Z",
@@ -84,7 +57,7 @@
       }
     },
     "isar-aerospace-propulsion-design-engineer": {
-      "updated_at": "2026-07-02T22:54:36.063Z",
+      "updated_at": "2026-07-05T15:45:15.298Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-06-25T01:14:16.827Z",
@@ -95,7 +68,7 @@
       }
     },
     "isar-aerospace-ait-operations-engineer-launch-vehicle": {
-      "updated_at": "2026-07-02T22:54:38.333Z",
+      "updated_at": "2026-07-05T15:45:17.764Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-06-24T23:44:30.595Z",
@@ -112,7 +85,7 @@
       }
     },
     "isar-aerospace-propulsion-test-engineer": {
-      "updated_at": "2026-07-02T22:54:40.625Z",
+      "updated_at": "2026-07-05T15:45:20.400Z",
       "status": "to_consider",
       "applied": true,
       "applied_at": "2026-06-24T23:47:26.132Z",
@@ -128,11 +101,11 @@
       }
     },
     "ornl-instrument-design-engineer-16596": {
-      "updated_at": "2026-07-02T22:54:42.987Z",
+      "updated_at": "2026-07-05T15:45:23.226Z",
       "status": "to_consider",
-      "applied": false,
-      "applied_at": "",
-      "application_num": null,
+      "applied": true,
+      "applied_at": "2026-07-02T23:36:24.468Z",
+      "application_num": 45,
       "notes": "Score 3.6/5. HFIR/SNS neutron instrument design: vacuum/pressure vessels, CAD, validation testing. BS+5yrs gate is the big stretch (MS preferred). No visa sponsorship; Tier 1 only.",
       "resources": {
         "resume_tex": "output/ornl/cv-harsh-desai-ornl-instrument-design-engineer-2026-06-12.tex",
@@ -143,11 +116,11 @@
       }
     },
     "ornl-applications-engineer-advanced-manufacturing-16196": {
-      "updated_at": "2026-07-02T22:54:45.191Z",
+      "updated_at": "2026-07-05T15:45:25.642Z",
       "status": "to_consider",
-      "applied": false,
-      "applied_at": "",
-      "application_num": null,
+      "applied": true,
+      "applied_at": "2026-07-02T23:22:49.342Z",
+      "application_num": 44,
       "notes": "Score 3.8/5. Sensor Application Engineer, Manufacturing Science Division. BS+4yrs (meets 3-of-6 skill gate: CAD, sensor instrumentation, real-time DAQ software). No visa sponsorship; Tier 1 only. Experience years are the stretch.",
       "resources": {
         "resume_tex": "output/ornl/cv-harsh-desai-ornl-applications-engineer-advanced-manufacturing-2026-06-12.tex",
@@ -157,23 +130,8 @@
         "cover_letter_pdf": "output/ornl/cover-letter-harsh-desai-ornl-applications-engineer-advanced-manufacturing-2026-06-12.pdf"
       }
     },
-    "ornl-control-system-software-engineer-16433": {
-      "updated_at": "2026-07-02T22:54:47.435Z",
-      "status": "to_consider",
-      "applied": false,
-      "applied_at": "",
-      "application_num": null,
-      "notes": "Score 3.9/5. SNS Controls Integration Group, EPICS/embedded/FPGA. MS+1yr accepted. No visa sponsorship; Tier 1 background check only (no Q clearance); foreign-national LSSO pathway applies. C++ is the main gap.",
-      "resources": {
-        "resume_tex": "output/ornl/cv-harsh-desai-ornl-control-system-software-engineer-2026-06-12.tex",
-        "resume_pdf": "output/ornl/cv-harsh-desai-ornl-control-system-software-engineer-2026-06-12.pdf",
-        "report_md": "reports/012-ornl-control-system-software-engineer-2026-06-12.md",
-        "cover_letter_html": "output/ornl/cover-letter-harsh-desai-ornl-control-system-software-engineer-2026-06-12.html",
-        "cover_letter_pdf": "output/ornl/cover-letter-harsh-desai-ornl-control-system-software-engineer-2026-06-12.pdf"
-      }
-    },
     "iter-instrumentation-technician-io0214": {
-      "updated_at": "2026-07-02T22:54:51.191Z",
+      "updated_at": "2026-07-05T15:45:30.422Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-06-09T00:33:57.275Z",
@@ -186,7 +144,7 @@
       }
     },
     "helion-r-and-d-engineer-fusion-generator-operations": {
-      "updated_at": "2026-07-02T22:54:53.793Z",
+      "updated_at": "2026-07-05T15:45:33.282Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-05-18T23:51:58.567Z",
@@ -199,7 +157,7 @@
       }
     },
     "pranos-fusion-instrumentation-engineer": {
-      "updated_at": "2026-07-02T22:54:26.454Z",
+      "updated_at": "2026-07-05T15:45:35.810Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-05-16T21:11:02.418Z",
@@ -213,7 +171,7 @@
       }
     },
     "commonwealth-fusion-systems-diagnostician": {
-      "updated_at": "2026-07-02T22:54:28.814Z",
+      "updated_at": "2026-07-05T15:45:38.506Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-05-13T17:15:26.079Z",
@@ -226,7 +184,7 @@
       }
     },
     "helion-nuclear-engineer-diagnostics": {
-      "updated_at": "2026-07-02T22:54:30.902Z",
+      "updated_at": "2026-07-05T15:45:40.759Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-05-17T15:53:19.830Z",
@@ -238,7 +196,7 @@
       }
     },
     "helion-integration-and-test-engineer": {
-      "updated_at": "2026-07-02T22:54:33.025Z",
+      "updated_at": "2026-07-05T15:45:43.142Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-05-19T02:01:33.785Z",
@@ -251,11 +209,11 @@
       }
     },
     "oklo-portfolio-2026-07-01": {
-      "updated_at": "2026-07-02T22:54:38.362Z",
+      "updated_at": "2026-07-05T15:46:35.786Z",
       "status": "to_consider",
-      "applied": false,
-      "applied_at": "",
-      "application_num": null,
+      "applied": true,
+      "applied_at": "2026-07-02T23:50:04.588Z",
+      "application_num": 48,
       "notes": "60-role Oklo Greenhouse scan; 4 artifact packs generated; ITAR/Part 810 risk flagged",
       "resources": {
         "report_md": "reports/030-oklo-portfolio-master-2026-07-01.md",
@@ -277,7 +235,7 @@
       }
     },
     "oklo-thermal-hydraulic-test-engineer": {
-      "updated_at": "2026-07-02T22:54:40.545Z",
+      "updated_at": "2026-07-05T15:46:38.069Z",
       "status": "to_consider",
       "applied": true,
       "applied_at": "2026-07-01T23:33:16.071Z",
@@ -290,11 +248,11 @@
       }
     },
     "oklo-mechatronics-engineer": {
-      "updated_at": "2026-07-02T22:54:42.723Z",
-      "status": "to_consider",
-      "applied": false,
-      "applied_at": "",
-      "application_num": null,
+      "updated_at": "2026-07-05T15:46:40.484Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-07-02T23:50:14.411Z",
+      "application_num": 49,
       "notes": "Fuel recycling automation; hot-cell stretch; confirm export scope",
       "resources": {
         "report_md": "reports/033-oklo-mechatronics-engineer-2026-07-01.md",
@@ -307,7 +265,7 @@
       }
     },
     "oklo-systems-engineer-requirements-integration": {
-      "updated_at": "2026-07-02T22:54:44.903Z",
+      "updated_at": "2026-07-05T15:46:42.770Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-07-01T23:34:00.724Z",
@@ -324,7 +282,7 @@
       }
     },
     "oklo-hardware-test-engineer": {
-      "updated_at": "2026-07-02T22:54:47.098Z",
+      "updated_at": "2026-07-05T15:46:45.116Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-07-01T23:34:03.145Z",
@@ -341,7 +299,7 @@
       }
     },
     "oklo-open-call-for-engineers": {
-      "updated_at": "2026-07-02T22:54:49.272Z",
+      "updated_at": "2026-07-05T15:46:47.441Z",
       "status": "to_consider",
       "applied": true,
       "applied_at": "2026-07-01T23:33:31.518Z",
@@ -358,7 +316,7 @@
       }
     },
     "zephyr-fusion-intern-outreach": {
-      "updated_at": "2026-07-02T22:54:49.327Z",
+      "updated_at": "2026-07-05T15:46:47.485Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-07-01T22:56:23.330Z",
@@ -373,7 +331,7 @@
       }
     },
     "southern-california-edison-energy-marketing-trading-financial-analyst-associate-specialist": {
-      "updated_at": "2026-07-02T22:54:51.755Z",
+      "updated_at": "2026-07-05T15:46:50.740Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-06-30T21:50:54.613Z",
@@ -385,7 +343,7 @@
       }
     },
     "skyroot-aerospace-hardware-design-engineer-avionics": {
-      "updated_at": "2026-07-02T22:54:02.681Z",
+      "updated_at": "2026-07-05T15:46:57.069Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-07-01T21:06:44.534Z",
@@ -401,11 +359,11 @@
       }
     },
     "skyroot-aerospace-electrical-integration-test-engineer": {
-      "updated_at": "2026-07-02T22:54:07.204Z",
-      "status": "to_consider",
-      "applied": false,
-      "applied_at": "",
-      "application_num": null,
+      "updated_at": "2026-07-05T15:44:42.773Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-07-02T23:50:23.175Z",
+      "application_num": 33,
       "notes": "",
       "resources": {
         "resume_tex": "output/skyroot-aerospace/cv-harsh-desai-skyroot-aerospace-electrical-integration-test-engineer-2026-06-28.tex",
@@ -417,7 +375,7 @@
       }
     },
     "skyroot-aerospace-hardware-quality-engineer": {
-      "updated_at": "2026-07-02T22:54:11.931Z",
+      "updated_at": "2026-07-05T15:44:49.472Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-07-01T23:27:59.039Z",
@@ -433,7 +391,7 @@
       }
     },
     "skyroot-aerospace-mechanical-cad-engineer": {
-      "updated_at": "2026-07-02T22:54:16.469Z",
+      "updated_at": "2026-07-05T15:44:55.859Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-06-29T04:12:35.070Z",
@@ -449,7 +407,7 @@
       }
     },
     "kyoto-fusioneering-project-manager-karlsruhe": {
-      "updated_at": "2026-07-02T22:54:16.779Z",
+      "updated_at": "2026-07-05T15:44:56.636Z",
       "status": "applied",
       "applied": true,
       "applied_at": "",
@@ -460,7 +418,7 @@
       }
     },
     "kyoto-fusioneering-engineer-fuel-cycle-karlsruhe": {
-      "updated_at": "2026-07-02T22:54:17.026Z",
+      "updated_at": "2026-07-05T15:44:57.247Z",
       "status": "to_consider",
       "applied": true,
       "applied_at": "2026-07-01T23:24:32.460Z",
@@ -476,7 +434,7 @@
       }
     },
     "tokamak-energy-mechanical-design-engineer": {
-      "updated_at": "2026-07-02T22:54:19.504Z",
+      "updated_at": "2026-07-05T15:45:00.511Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-06-28T18:34:58.872Z",
@@ -485,6 +443,65 @@
       "resources": {
         "cover_letter_pdf": "output/tokamak-energy/cover-letter-harsh-desai-tokamak-energy-mechanical-design-engineer-2026-06-28.pdf",
         "email_draft": "output/tokamak-energy/application-email-tokamak-energy-mechanical-design-engineer-2026-06-28.md"
+      }
+    },
+    "ornl-gem-fellowship": {
+      "updated_at": "2026-07-09T13:36:15.705Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Listed on ORNL graduate opportunities page. Confirm F-1/international eligibility for current cycle.",
+      "resources": {
+        "report_md": "WEB-TRACKER/research/ornl-graduate-research-pathways-2026.md"
+      }
+    },
+    "alba-synchrotron-project-engineer-cryogenic": {
+      "updated_at": "2026-07-13T15:10:41.107Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-07-13T15:10:41.080Z",
+      "application_num": 64,
+      "notes": "",
+      "resources": {
+        "report_md": "reports/euraxess-alba-synchrotron-project-engineer-cryogenic-2026-07-13.md",
+        "research_report": "reports/euraxess-alba-synchrotron-project-engineer-cryogenic-2026-07-13.md",
+        "resume_tex": "output/alba-synchrotron/cv-harsh-desai-alba-synchrotron-project-engineer-cryogenic-2026-07-13.tex",
+        "resume_pdf": "output/alba-synchrotron/cv-harsh-desai-alba-synchrotron-project-engineer-cryogenic-2026-07-13.pdf",
+        "cover_letter_pdf": "output/alba-synchrotron/cover-letter-harsh-desai-alba-synchrotron-project-engineer-cryogenic-2026-07-13.pdf",
+        "email_draft": "output/alba-synchrotron/application-email-alba-synchrotron-project-engineer-cryogenic-2026-07-13.md"
+      }
+    },
+    "fondazione-bruno-kessler-phd-candidate-development-of-3d-integrated-trench-isolated-lgads-for-de": {
+      "updated_at": "2026-07-13T04:47:16.916Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "",
+      "resources": {
+        "report_md": "reports/euraxess-fbk-phd-ti-lgad-soft-xray-space-2026-07-13.md",
+        "research_report": "reports/euraxess-fbk-phd-ti-lgad-soft-xray-space-2026-07-13.md",
+        "resume_tex": "output/fondazione-bruno-kessler/cv-harsh-desai-fondazione-bruno-kessler-phd-ti-lgad-soft-xray-space-2026-07-13.tex",
+        "resume_pdf": "output/fondazione-bruno-kessler/cv-harsh-desai-fondazione-bruno-kessler-phd-ti-lgad-soft-xray-space-2026-07-13.pdf",
+        "cover_letter_pdf": "output/fondazione-bruno-kessler/cover-letter-harsh-desai-fondazione-bruno-kessler-phd-ti-lgad-soft-xray-space-2026-07-13.pdf",
+        "email_draft": "output/fondazione-bruno-kessler/application-email-fondazione-bruno-kessler-phd-ti-lgad-soft-xray-space-2026-07-13.md"
+      }
+    },
+    "ku-leuven-marie-curie-phd-vacancy-dc2-on-cobot-assisted-and-digitally-monitored-electrolyte-jet-": {
+      "updated_at": "2026-07-13T04:47:22.430Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "",
+      "resources": {
+        "report_md": "reports/euraxess-ku-leuven-msca-dc2-ejm-cobot-micromachining-2026-07-13.md",
+        "research_report": "reports/euraxess-ku-leuven-msca-dc2-ejm-cobot-micromachining-2026-07-13.md",
+        "resume_tex": "output/ku-leuven/cv-harsh-desai-ku-leuven-msca-dc2-ejm-cobot-micromachining-2026-07-13.tex",
+        "resume_pdf": "output/ku-leuven/cv-harsh-desai-ku-leuven-msca-dc2-ejm-cobot-micromachining-2026-07-13.pdf",
+        "cover_letter_pdf": "output/ku-leuven/cover-letter-harsh-desai-ku-leuven-msca-dc2-ejm-cobot-micromachining-2026-07-13.pdf",
+        "email_draft": "output/ku-leuven/application-email-ku-leuven-msca-dc2-ejm-cobot-micromachining-2026-07-13.md"
       }
     }
   }

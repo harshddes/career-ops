@@ -3,6 +3,7 @@ import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { parseApplications } from '../adapters/applications-adapter.mjs';
 import { readActivityEvents } from './activity-log.mjs';
+import { allResearchSources } from './phd-research-sources.mjs';
 import { readResearchProspects } from './research-prospect-store.mjs';
 import { readDashboardData } from '../../update-tracker-row.mjs';
 
@@ -11,15 +12,8 @@ const WEB_TRACKER_DIR = join(LIB_DIR, '..');
 const CAREER_OPS_DIR = join(WEB_TRACKER_DIR, '..');
 const FOLLOWUPS_FILE = join(WEB_TRACKER_DIR, 'data', 'followups.json');
 const PROFILE_FILE = join(CAREER_OPS_DIR, 'config', 'profile.yml');
-const DEFAULT_DIGEST_RECIPIENT = 'harshddes@gmail.com';
+const DEFAULT_DIGEST_RECIPIENTS = ['harshddes@gmail.com', 'desaienggworks@gmail.com'];
 export const DEFAULT_DIGEST_TIMEZONE = 'America/New_York';
-
-const RESEARCH_SOURCES = [
-  { id: 'umich', label: 'U-M Research', options: undefined },
-  { id: 'kth', label: 'KTH / FP3', options: { source: 'kth' } },
-  { id: 'ipp', label: 'Max Planck IPP', options: { source: 'ipp' } },
-  { id: 'private-co', label: 'Private Company PhD Paths', options: { source: 'private-co' } },
-];
 
 function cleanText(value) {
   return String(value ?? '').replace(/\r?\n/g, ' ').replace(/\s+/g, ' ').trim();
@@ -93,7 +87,7 @@ export function digestRecipients(env = process.env) {
   }
 
   return uniqueBy(
-    [profileEmail(), DEFAULT_DIGEST_RECIPIENT].filter(Boolean),
+    [profileEmail(), ...DEFAULT_DIGEST_RECIPIENTS].filter(Boolean),
     value => value.toLowerCase()
   );
 }
@@ -120,7 +114,7 @@ export function mergeApplicationMetadata(applications = parseApplications(), das
 }
 
 export function collectResearchProspects() {
-  return RESEARCH_SOURCES.flatMap(source => {
+  return allResearchSources().flatMap(source => {
     const store = source.options ? readResearchProspects(source.options) : readResearchProspects();
     return (store.prospects || []).map(prospect => ({
       ...prospect,

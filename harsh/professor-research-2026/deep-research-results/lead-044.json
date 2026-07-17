@@ -1,0 +1,321 @@
+{
+  "run_id": "trun_dd47611047ba45198ece11e250ba829a",
+  "interaction_id": "trun_dd47611047ba45198ece11e250ba829a",
+  "result_url": "https://platform.parallel.ai/play/deep-research/trun_dd47611047ba45198ece11e250ba829a",
+  "status": "completed",
+  "output": {
+    "basis": [
+      {
+        "field": "executive_summary_identity_funding_and_hiring_at_bern_s_wp_division",
+        "reasoning": "Assessment reasoning:\n- The field_answer makes multiple claims (identity confirmation, specific grants with PI names and project titles, funding mechanisms, hiring postings, and LinkedIn evidence) and cites various bracketed references. However, several claims are either not fully verifiable from the provided excerpts (e.g., exact grant amounts, precise grant start dates, and the explicit current status for all grants and postings) or conflate multiple items (e.g., \u201cWP Group\u201d versus a likely unrelated UK entity).\n- Completeness: The field_description asks for a structured report including Identity; Recent/Active Funding; Recent and Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources. The field_answer provides many items but does not consistently deliver a clean, verifiable set for each required section (e.g., it lacks a precise, sourced list of all recent active funding with exact amounts, dates, statuses, and roles; it provides some postings but not a complete, verifiable table; confidence caveats are present but not clearly structured). Therefore, the answer does not fully meet the described expectations in a consistently complete and source-grounded way.\n- Excerpts support: Several excerpts touch on related topics (contact info, SNSF Starting Grants, RAMSES postdoc, PRODEX/IMAP involvement, a 2026 professor posting). The field_answer asserts items that are broadly aligned with these excerpts but includes stronger or more specific claims than what the excerpts individually confirm (and some claims appear not directly supported by the provided excerpts). Overall, the field_answer is not fully supported by the excerpts as a rigorous, line-by-line corroboration.\n- Confidence and caveats: The answer acknowledges missing public evidence in several places but still presents definitive statements. A clearer evaluation would flag which items are confirmed by excerpts versus which are assumptions or require further corroboration.",
+        "citations": [
+          {
+            "url": "https://www.space.unibe.ch/about_us/contact/index_eng.html",
+            "excerpts": [
+              "About us: Contact - Space Research & Planetary Sciences (WP)\nContact General contact University of Bern Physics Institute Space Research and Planetary Sciences Sidlerstrasse 5 CH-3012 Bern Switzerland +41 31 684 44 11 info.space@unibe.ch"
+            ],
+            "title": "About us: Contact - Space Research & Planetary Sciences (WP)"
+          },
+          {
+            "url": "https://mediarelations.unibe.ch/media_releases/2025/media_releases_2025/snsf_starting_grants/index_eng.html",
+            "excerpts": [
+              "Nine SNSF Starting Grants for researchers at the University of Bern\nDec 5, 2025 \u00b7 A total of 41 projects will be funded with around CHF 72 million from the 425 applications submitted in the 2025 call for SNSF Starting Grants."
+            ],
+            "title": "Nine SNSF Starting Grants for researchers at the University of Bern"
+          },
+          {
+            "url": "https://www.hughosborn.co.uk/2025/11",
+            "excerpts": [
+              "November | 2025 | Lost in Transits - by Hugh Osborn\nNov 6, 2025 \u2014 In November 2025, I was awarded a 5-year SNSF Starting Grant to lead a large project on understanding Neptune-like planets."
+            ],
+            "title": "November | 2025 | Lost in Transits - by Hugh Osborn"
+          },
+          {
+            "url": "https://jobs.unibe.ch/job-vacancies/postdoc-position-space-research-and-planetary-sciences-astronomical-institute/4b1cf432-2b32-475d-a8f5-77360b278f2e",
+            "excerpts": [
+              "Postdoc position Space Research and Planetary Sciences ...\nThe postdoc will join a dynamic, interdisciplinary team including three PhD students, a postdoctoral researcher, and a software engineer, collaborating on the project at the Division of Space Research and Planetary Sciences and the Astronomical Institute at the University of Bern."
+            ],
+            "title": "Postdoc position Space Research and Planetary Sciences ..."
+          },
+          {
+            "url": "https://www.myscience.ch/en/news/wire/university_of_bern_involved_in_nasa_mission_to_explore_the_heliosphere-2025-unibe",
+            "excerpts": [
+              "University of Bern involved in NASA mission to explore the ...\nThe University of Bern is one of the few European institutions contributing hardware to the IMAP mission. The funding for the contribution of the University of Bern was awarded by the European Space Agency (ESA) in the frame of the PRODEX programme (see infobox below)."
+            ],
+            "title": "University of Bern involved in NASA mission to explore the ..."
+          },
+          {
+            "url": "https://www.jhuapl.edu/news/news-releases/260112-imap-arrives-l1",
+            "excerpts": [
+              "NASA's IMAP Reaches Orbit to Start Study of Heliosphere ...\nJan 12, 2026 \u2014 \u201cWith IMAP now in position, we're ready to begin the exciting work of mapping our heliosphere and learning more about how space weather impacts our planet"
+            ],
+            "title": "NASA's IMAP Reaches Orbit to Start Study of Heliosphere ..."
+          },
+          {
+            "url": "https://www.earthworks-jobs.com/jobpost/bern25111?id=11364",
+            "excerpts": [
+              "University of Bern - Professor in Planetary Sciences\nJan 2, 2026 \u2014 The Division is a leading institute in space research and is looking for a Professor of Experimental Physics in the field of planetary science"
+            ],
+            "title": "University of Bern - Professor in Planetary Sciences"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "1_identity_university_of_bern_space_research_and_planetary_sciences_wp",
+        "reasoning": "Reasoning: The field_answer primarily provides identity and affiliation details for the Space Research & Planetary Sciences (WP) at the University of Bern, including contact information and a senior PI (Peter Wurz). It does not address the comprehensive funding (recent/active grants with details) or hiring/Open_positions beyond a general mention of the division and PI options. Therefore, completeness is false since the field_description requests identity verification plus extensive funding and hiring/open-position details, while the answer focuses on identity/affiliation. Excerpts provided contain corroborating information about the division, contact details, and a PI (Wurz), which supports the factual basis of the identity portion but do not supply grant or open-position data. Confidence in identity portion is moderate; lack of funding/hiring details is a notable gap. \n\nWhat was checked: cross-referenced given excerpts for key identity elements (division name, contact email, institution, PI) and the explicit warning about not merging WP with similarly named groups. Also checked that no explicit grant/hiring data is present in the field_answer; the excerpts do not provide explicit grant records or current open postings beyond general division information.\n",
+        "citations": [
+          {
+            "url": "https://ch.linkedin.com/company/space-research-%26-planetary-sciences-university-of-bern",
+            "excerpts": [
+              "Space Research & Planetary Sciences, University of Bern\nOur research programme concentrates on topics related to the history, origin and early evolution of planetary systems."
+            ],
+            "title": "Space Research & Planetary Sciences, University of Bern"
+          },
+          {
+            "url": "https://www.space.unibe.ch/",
+            "excerpts": [
+              "Space Research & Planetary Sciences (WP) - Universit\u00e4t Bern\ninfo.space(a)unibe.ch. Map. Marker. Sidlerstrasse 5 3012 Bern, Schweiz ... University of Bern, Hochschulstrasse 6, CH 3012 Bern. Legal Notice \u00b7 Imprint"
+            ],
+            "title": "Space Research & Planetary Sciences (WP) - Universit\u00e4t Bern"
+          },
+          {
+            "url": "https://www.space.unibe.ch/about_us/personen/prof_dr_wurz_peter/index_eng.html",
+            "excerpts": [
+              "About us: Prof. Dr. Peter Wurz - Space Research & Planetary ...\nLMS Laboratory: for the development of laser mass spectrometers for in situ chemical composition measurements on planetary surfaces, including mineralogy, petrology, dating, and astrobiology."
+            ],
+            "title": "About us: Prof. Dr. Peter Wurz - Space Research & Planetary ..."
+          },
+          {
+            "url": "https://www.space.unibe.ch/about_us/contact/index_eng.html",
+            "excerpts": [
+              "About us: Contact - Space Research & Planetary Sciences (WP)\nContact General contact University of Bern Physics Institute Space Research and Planetary Sciences Sidlerstrasse 5 CH-3012 Bern Switzerland +41 31 684 44 11 info.space@unibe.ch"
+            ],
+            "title": "About us: Contact - Space Research & Planetary Sciences (WP)"
+          },
+          {
+            "url": "https://www.space.unibe.ch/research/research_groups/index_eng.html",
+            "excerpts": [
+              "Research: Research Groups - Space Research & Planetary ...\nOur research is based on detailed numerical calculations as well as end-to-end simulations which allow comparisons with observations. TAPS is a member of the University of Bern Center for Space and Habitability (CSH) and of the Swiss National Centre of Competence in Research (NCCR) PlanetS."
+            ],
+            "title": "Research: Research Groups - Space Research & Planetary ..."
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "2_recent_active_funding_announced_2024_01_01",
+        "reasoning": "Reasoning: The user query asks for a comprehensive, source-cited report on a specific academic lead within WP Group (Bern) with two main pillars: Recent/Active Funding (announced on or after 2024-01-01) and Hiring/Open Positions (published on or after 2026-01-01, plus any open postings, with closed/historical clearly marked). The provided field_answer covers multiple funding items (SNSF Starting Grants 2025, a postdoc under SNSF related to Apophis RAMSES, ESA PRODEX for IMAP, MARVIS context) and includes some posts related to hiring (postdoc posting excerpt). It also distinguishes mission vs. grant funding and includes caveats about amounts and public evidence, and it cites multiple sources. However, it does not present a clean, dedicated Identity field, a standalone LinkedIn Evidence section, or a tightly structured list of open positions with status, posted date, deadline, location, and direct posting URLs in a single concise block. Despite these gaps, the content largely satisfies the requested components: it identifies recent active funding with dates and funders, describes the nature of each funding, and provides direct URLs in the excerpts. It also includes a caveat about evidence gaps. Therefore, I consider the field answer to be largely complete in covering the required topics, with minor organizational gaps that do not undermine the core requirements. Confidence in the answer is moderately high, given the cross-referenced sources, though exact grant IDs and some amounts are acknowledged as not publicly disclosed. Excerpts provided largely support the claims made in the field_answer (e.g., SNSF Starting Grants for Bern, Apophis RAMSES, IMAP PRODEX, Bern posting about postdoc). No verified public evidence found for certain specifics is acknowledged in the answer, which aligns with the provided caveats.",
+        "citations": [
+          {
+            "url": "http://orcid.org/0000-0002-8253-6436",
+            "excerpts": [
+              "Nora H\u00e4nni\nNora H\u00e4nni is a chemist by training and specialized in condensed matter research and instrumental analytics during her PhD studies at the University of Bern."
+            ],
+            "title": "Nora H\u00e4nni"
+          },
+          {
+            "url": "https://mediarelations.unibe.ch/media_releases/2025/media_releases_2025/snsf_starting_grants/index_eng.html",
+            "excerpts": [
+              "Nine SNSF Starting Grants for researchers at the University of Bern\nDec 5, 2025 \u00b7 A total of 41 projects will be funded with around CHF 72 million from the 425 applications submitted in the 2025 call for SNSF Starting Grants."
+            ],
+            "title": "Nine SNSF Starting Grants for researchers at the University of Bern"
+          },
+          {
+            "url": "https://www.hughosborn.co.uk/2025/11",
+            "excerpts": [
+              "November | 2025 | Lost in Transits - by Hugh Osborn\nNov 6, 2025 \u2014 In November 2025, I was awarded a 5-year SNSF Starting Grant to lead a large project on understanding Neptune-like planets."
+            ],
+            "title": "November | 2025 | Lost in Transits - by Hugh Osborn"
+          },
+          {
+            "url": "https://www.snf.ch/en/w728UqT1Yw256Mz2/funding/snsf-starting-grants",
+            "excerpts": [
+              "SNSF Starting Grants\nSNSF Starting Grants are open to all disciplines and topics. Applicants can request a budget of up to 1 million francs for project funding over a five-year period. In addition, applicants can apply for funds to cover their own salaries (see article 3.2 of the call document (PDF) for conditions)."
+            ],
+            "title": "SNSF Starting Grants"
+          },
+          {
+            "url": "https://jobs.unibe.ch/job-vacancies/postdoc-position-space-research-and-planetary-sciences-astronomical-institute/4b1cf432-2b32-475d-a8f5-77360b278f2e",
+            "excerpts": [
+              "Postdoc position Space Research and Planetary Sciences ...\nThe postdoc will join a dynamic, interdisciplinary team including three PhD students, a postdoctoral researcher, and a software engineer, collaborating on the project at the Division of Space Research and Planetary Sciences and the Astronomical Institute at the University of Bern."
+            ],
+            "title": "Postdoc position Space Research and Planetary Sciences ..."
+          },
+          {
+            "url": "https://www.esa.int/Space_Safety/Planetary_Defence/Apophis",
+            "excerpts": [
+              "ESA - Apophis\nOn 13 April 2029, asteroid Apophis will briefly come within 32 000 km of Earth's surface. It will be the closest approach of an asteroid of this size that"
+            ],
+            "title": "ESA - Apophis"
+          },
+          {
+            "url": "https://elib.dlr.de/218167/1/EPSC-DPS2025-806-print.pdf",
+            "excerpts": [
+              "RAMSES: A European rendezvous mission to study tidal effects ...\nIts primary objectives are to determine the dynamical and physical state of Apophis prior, during and after Earth encounter. These include determining the asteroid\u2019s orbit, spin state, shape, surface and internal properties."
+            ],
+            "title": "RAMSES: A European rendezvous mission to study tidal effects ..."
+          },
+          {
+            "url": "https://www.esa.int/Space_Safety/Planetary_Defence/ESA_moves_forward_with_Apophis_mission_preparations",
+            "excerpts": [
+              "ESA moves forward with Apophis mission preparations\nESA has signed a contract with OHB Italia SpA worth \u20ac63 million to begin preparatory work on the Agency's proposed Ramses mission to the infamous asteroid"
+            ],
+            "title": "ESA moves forward with Apophis mission preparations"
+          },
+          {
+            "url": "https://www.jhuapl.edu/destinations/missions/imap",
+            "excerpts": [
+              "IMAP\nJan 12, 2026 \u2014 NASA Launches IMAP Mission to Study the Heliosphere and Better Understand Space Weather Sep 24, 2025. NASA's Interstellar Mapping and Acceleration Probe (IMAP)"
+            ],
+            "title": "IMAP"
+          },
+          {
+            "url": "https://www.jhuapl.edu/news/news-releases/260112-imap-arrives-l1",
+            "excerpts": [
+              "NASA's IMAP Reaches Orbit to Start Study of Heliosphere ...\nJan 12, 2026 \u2014 \u201cWith IMAP now in position, we're ready to begin the exciting work of mapping our heliosphere and learning more about how space weather impacts our planet"
+            ],
+            "title": "NASA's IMAP Reaches Orbit to Start Study of Heliosphere ..."
+          },
+          {
+            "url": "https://www.myscience.ch/en/news/wire/university_of_bern_involved_in_nasa_mission_to_explore_the_heliosphere-2025-unibe",
+            "excerpts": [
+              "University of Bern involved in NASA mission to explore the ...\nThe University of Bern is one of the few European institutions contributing hardware to the IMAP mission. The funding for the contribution of the University of Bern was awarded by the European Space Agency (ESA) in the frame of the PRODEX programme (see infobox below)."
+            ],
+            "title": "University of Bern involved in NASA mission to explore the ..."
+          },
+          {
+            "url": "https://www.sbfi.admin.ch/en/space-instrumentation-development-prodex",
+            "excerpts": [
+              "Space instrumentation development (PRODEX)\nResearchers at Swiss higher education research centres can apply for funding to develop scientific space instrumentation. Approved projects are guided by a lead researcher and carried out in collaboration with Swiss industry."
+            ],
+            "title": "Space instrumentation development (PRODEX)"
+          },
+          {
+            "url": "https://sci.esa.int/web/prodex",
+            "excerpts": [
+              "ESA Science & Technology - PRODEX\nPRODEX was created in June 1986 when several ESA Member States were limited in the funding of experiments and instruments for ESA missions that their universities and other scientific institutions wanted to be involved in."
+            ],
+            "title": "ESA Science & Technology - PRODEX"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "3_recent_postings_open_positions_and_closed_historical_postings",
+        "reasoning": "Assessment reasoning:\n- Completeness: The field_answer presents a comprehensive structured overview of multiple postings (A-F) and links, plus analysis of their relevance to the lead's topics. It appears to address the query requirements (identity verification, funding/open positions, posting statuses, URLs, and LinkedIn evidence). Therefore completeness is true.\n- Support by excerpts: The excerpts provided include limited items (about the lead's lab and two postings). They do not cover all postings (A-F) or all claimed details (e.g., exact statuses, dates, and direct URLs for every item). Thus, the field answer cannot be fully corroborated by the excerpts alone. Therefore, support is false.\n- Confidence caveats: There are caveats noted in the field answer (some postings expired, no verified LinkedIn posts found). These align with the excerpts, but since not all claims can be cross-verified with the excerpts, overall support remains false.\n- Recommendation: If strict evidence alignment is required, mark as not fully supported and consider expanding excerpts or providing direct sources for each item.\n",
+        "citations": [
+          {
+            "url": "https://www.space.unibe.ch/about_us/personen/prof_dr_wurz_peter/index_eng.html",
+            "excerpts": [
+              "About us: Prof. Dr. Peter Wurz - Space Research & Planetary ...\nLMS Laboratory: for the development of laser mass spectrometers for in situ chemical composition measurements on planetary surfaces, including mineralogy, petrology, dating, and astrobiology."
+            ],
+            "title": "About us: Prof. Dr. Peter Wurz - Space Research & Planetary ..."
+          },
+          {
+            "url": "https://www.jobs.ch/en/vacancies/detail/778f71b6-19d9-4aea-a8df-5a8761893340",
+            "excerpts": [
+              "PhD student position in space research and astrobiology 100%\nThe Space Research and Planetary Sciences Division of the University of Bern's Physics Institute is seeking candidates for a PhD in physics to work on Rosetta legacy mass spectrometer data obtained at comet 67P/Churyumov-Gerasimenko (67P)."
+            ],
+            "title": "PhD student position in space research and astrobiology 100%"
+          },
+          {
+            "url": "https://jobs.unibe.ch/job-vacancies/postdoc-position-space-research-and-planetary-sciences-astronomical-institute/4b1cf432-2b32-475d-a8f5-77360b278f2e",
+            "excerpts": [
+              "Postdoc position Space Research and Planetary Sciences ...\nThe postdoc will join a dynamic, interdisciplinary team including three PhD students, a postdoctoral researcher, and a software engineer, collaborating on the project at the Division of Space Research and Planetary Sciences and the Astronomical Institute at the University of Bern."
+            ],
+            "title": "Postdoc position Space Research and Planetary Sciences ..."
+          }
+        ],
+        "confidence": "medium"
+      },
+      {
+        "field": "4_linkedin_evidence_official_page_exists_individual_post_urls_not_located",
+        "reasoning": "Assessment rationale: The field_answer provides a compact evidence table focusing on LinkedIn-related presence and postings for the WP Group / Space Research & Planetary Sciences at the University of Bern, aligning with parts of the user query (LinkedIn evidence, official division page, cautious about URLs). However, the fieldDescription asks for a comprehensive, structured report including Identity verification, Recent/Active Funding with exact grant details and URLs, Recent and Open Positions with full postings (title, type, status, dates, location, descriptions, posting URLs), LinkedIn evidence, Confidence/Caveats, and explicit sourcing. The provided field_answer largely covers only LinkedIn-related evidence and a caveat about crawlability, and does not deliver the full requested content (funding details, open postings metadata with dates and URLs, etc.). Therefore completeness = false. Excerpts appear to be relevant to the LinkedIn-related claims and the division page, and they somewhat support the existence of the division and postings, but do not fully corroborate all claims in the field_answer (e.g., there is no explicit grant details or full position postings data linked). Thus, supported = true for elements that are actually supported by excerpts (e.g., the division affiliation and presence of job postings), but overall support is partial due to missing comprehensive funding and hiring data.",
+        "citations": [
+          {
+            "url": "https://ch.linkedin.com/company/space-research-%26-planetary-sciences-university-of-bern",
+            "excerpts": [
+              "Space Research & Planetary Sciences, University of Bern\nOur research programme concentrates on topics related to the history, origin and early evolution of planetary systems."
+            ],
+            "title": "Space Research & Planetary Sciences, University of Bern"
+          },
+          {
+            "url": "https://jobs.unibe.ch/job-vacancies/postdoc-position-space-research-and-planetary-sciences-astronomical-institute/4b1cf432-2b32-475d-a8f5-77360b278f2e",
+            "excerpts": [
+              "Postdoc position Space Research and Planetary Sciences ...\nThe postdoc will join a dynamic, interdisciplinary team including three PhD students, a postdoctoral researcher, and a software engineer, collaborating on the project at the Division of Space Research and Planetary Sciences and the Astronomical Institute at the University of Bern."
+            ],
+            "title": "Postdoc position Space Research and Planetary Sciences ..."
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "5_confidence_and_caveats",
+        "reasoning": "Assessment notes:\n- The field_answer provides a comprehensive structured report with items, confidence levels, and justifications, which aligns with the user request for a concise structured report including Identity, Funding, Hiring, LinkedIn evidence, Confidence/Caveats, and Sources.\n- However, there are no excerpts provided to cross-check specific claims. In absence of excerpts, we cannot verify whether each claim is explicitly supported by supplied sources. Therefore, we cannot mark the answer as supported by excerpts.\n- Completeness: The answer appears to cover the requested topics in depth and includes explicit caveats and \u201cNo verified public evidence found\u201d statements where appropriate. It also includes explicit notes about what was checked. Overall, it is complete with respect to the user\u2019s reporting format, even though it cannot be corroborated against excerpts here.\n- Confidence/caveats: The answer itself includes confidence judgments per item, with rationale, which is helpful for assessing reliability.\n- If excerpts were provided, a more definitive determination of support could be made. The current status should likely be: completeness = true; supported = false (due to missing excerpts for verification).",
+        "citations": [],
+        "confidence": "medium"
+      },
+      {
+        "field": "6_references",
+        "reasoning": "The field_answer does not provide the requested structured report (Identity; Recent/Active Funding; Recent and Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources). It only lists a set of URLs and a generic statement. Excerpts are not provided to verify support. Therefore, completeness is false. Since there is no explicit alignment between the field_answer and the excerpts (excerpts array is missing), and the answer does not clearly state or summarize findings, support from excerpts cannot be established. Overall, both completeness and support are false under the given criteria.",
+        "citations": [],
+        "confidence": "low"
+      }
+    ],
+    "content": {
+      "executive_summary_identity_funding_and_hiring_at_bern_s_wp_division": "- **Identity confirmed, namesake rejected**: The shared inbox `info.space@unibe.ch` and the host URL `https://www.space.unibe.ch/` both belong to the **Division of Space Research & Planetary Sciences (WP)** of the **University of Bern Physics Institute**, Sidlerstrasse 5, 3012 Bern [executive_summary_identity_funding_and_hiring_at_bern_s_wp_division[0]] [68]. The label \"WP Group\" is consistent with the whole Division; the **\"WP Group\" UK lubricants supplier** LinkedIn page (`https://uk.linkedin.com/company/wpgroup`) is a namesake and is rejected.\n- **Two SNSF Starting Grants awarded to the Division in Dec 2025**: (1) **Nora H\u00e4nni (PI)** \u2014 \"Formation of molecules of life in space\", hosted by \"Physics Institute, Space Research & Planetary Sciences (WP)\"; (2) **Hugh Osborn (PI)** \u2014 \"The Exo-Neptune Census\", \"awarded a 5-year SNSF Starting Grant to lead a large project on understanding Neptune-like planets\" \u2014 both inside the user's scope themes of cometary / planetary sciences [executive_summary_identity_funding_and_hiring_at_bern_s_wp_division[1]] [11]; [executive_summary_identity_funding_and_hiring_at_bern_s_wp_division[2]] [27].\n- **A third SNSF grant funds an open WP postdoc**: SNSF project \"Characterisation of Near Earth Asteroid Apophis by exploitation of RAMSES mission data\" (PI Pommerol, co-PI Arnold, co-PI Jutzi) is funding a 2+1-year fully funded postdoc at the Division **with a fixed deadline of 31 July 2026** and an annual gross salary of **CHF 91,215** [executive_summary_identity_funding_and_hiring_at_bern_s_wp_division[3]] [52].\n- **ESA PRODEX funds Bern's hardware contribution to the NASA IMAP mission**: University of Bern is \"one of the few European institutions contributing hardware\" to NASA's IMAP (launched to L1 in 2025, \"reached orbit\" 12 Jan 2026), with **the funding for the contribution of the University of Bern awarded by the European Space Agency (ESA) in the frame of the PRODEX programme** [executive_summary_identity_funding_and_hiring_at_bern_s_wp_division[4]] [36]; [executive_summary_identity_funding_and_hiring_at_bern_s_wp_division[5]] [60].\n- **Four open junior researcher postings in 2026 directly tied to the Division** (PhDs on Rosetta 67P mass-spec + chemometrics; postdocs on Apophis/RAMSES and Exo-Neptune Census atmospheres), plus **one additional bundle of 2 PhDs + 1 postdoc advertised via applykite**: a topic-cluster (planetary science, planetary geodesy, asteroid evolution, small-body research).\n- **One historical/closed position is documented under the threshold date**: *Professor in Planetary Sciences* \u2014 posted **2 January 2026**, deadline **31 January 2026**, Division of SR&PS (WP), Bern [executive_summary_identity_funding_and_hiring_at_bern_s_wp_division[6]] [6].\n- **LinkedIn presence is an official Division page, not the namesake group**: `https://ch.linkedin.com/company/space-research-%26-planetary-sciences-university-of-bern` (NAICS 336414/927110, ~10 listed employees, 249 followers) is the correct surface for discovery evidence; the UK-based `wpgroup` LinkedIn page is unrelated.\n- **Verified public evidence missing on**: exact CHF figures for the H\u00e4nni/Osborn Starting Grants, exact CHF figures for the IMAP/PRODEX instrument contribution, the full Divisional group-leader roster, ESA/JAXA mission-budget breakdowns, and most LinkedIn user-post URLs \u2014 these are explicitly flagged as \"No verified public evidence found\" below.\n\n---",
+      "1_identity_university_of_bern_space_research_and_planetary_sciences_wp": "The connected key `info.space@unibe.ch` resolves to the **Division of Space Research & Planetary Sciences (WP)** at the University of Bern Physics Institute. The Division's public-facing details are:\n\n| Field | Value |\n|---|---|\n| Abbreviation / name | **WP \u2014 Space Research & Planetary Sciences** |\n| Host institution | University of Bern, Physics Institute |\n| Postal address | Sidlerstrasse 5, CH-3012 Bern, Switzerland |\n| Phone | +41 31 684 44 11 |\n| General email (lead's known contact) | **info.space@unibe.ch** |\n| Website | https://www.space.unibe.ch/index_eng.html |\n| Official LinkedIn page | https://ch.linkedin.com/company/space-research-%26-planetary-sciences-university-of-bern |\n| Senior PI surfaced | **Prof. Dr. Peter Wurz** \u2014 heads the LMS Laboratory for laser mass spectrometers for in situ chemical composition measurements on planetary surfaces (mineralogy, petrology, dating, astrobiology) |\n| Topics explicitly mentioned at WP | planetary exploration, cometary-mass spectrometry (Rosetta/67P heritage via active PhD listings), space simulation, planetary defence (Apophis/RAMSES), exoplanet atmospheres |\n| Direction of merger risk | The label \"WP Group\" collides with an **unrelated UK lubricants company** of the same name (`https://uk.linkedin.com/company/wpgroup`). **Do NOT merge.** The University of Bern Division states: \"Our research programme concentrates on topics related to the history, origin and early evolution of planetary systems.\" [1_identity_university_of_bern_space_research_and_planetary_sciences_wp[0]] [46]; [1_identity_university_of_bern_space_research_and_planetary_sciences_wp[1]] [1]; [1_identity_university_of_bern_space_research_and_planetary_sciences_wp[2]] [69]; [1_identity_university_of_bern_space_research_and_planetary_sciences_wp[3]] [68] |\n\n**Implication.** The user's lead entry appears to point at the whole Division rather than a single PI. Funding therefore should be tracked at the Divisional level (research group or PI inside the Division) rather than via a single investigator. **Action.** When a downstream follower is wanted, shortlist the active PIs that the open postings name: Pommerol, Arnold, Jutzi (Apophis/RAMSES); Osborn (exoplanets); H\u00e4nni (molecules of life in space / comets); Wurz (mass-spectrometry lab).\n\n**Caveat.** A complete list of all WP-internal research groups (TAPS, Mass Spectrometry, etc.) is partially surfaced \u2014 the snippet for the research-groups index page references TAPS being \"a member of the University of Bern Center for Space and Habitability (CSH) and of the Swiss National Centre of Competence in Research (NCCR) PlanetS\" [1_identity_university_of_bern_space_research_and_planetary_sciences_wp[4]] [67], but the full group inventory with leaders was not retrievable in detail.\n\n---",
+      "2_recent_active_funding_announced_2024_01_01": "### 2.1 SNSF Starting Grants 2025 cohort awarded to WP Division PIs\n\nThe **Swiss National Science Foundation (SNSF)** announced on **5 December 2025** that nine Bern researchers received SNSF Starting Grants in the 2025 call (41 projects funded nationally out of 425 applications; ~CHF 72 million total). Two of the nine are **hosted by Physics Institute, Space Research & Planetary Sciences (WP)**:\n\n| Grant PI (role) | Project title | Host at Bern | Funder | Scheme & period | Announced date | Project does | Source |\n|---|---|---|---|---|---|---|---|\n| **Nora H\u00e4nni \u2014 PI** | Formation of molecules of life in space | Physics Institute, Space Research & Planetary Sciences (WP) | SNSF | SNSF Starting Grant (5-year scheme ceiling \"up to 1 million francs for project funding over a five-year period\") | 5 Dec 2025 (Bern media release) | Astrochemistry of cometary / interstellar organics \u2014 direct match to the lead's \"cometary sciences\" topic and the lead's email covers H\u00e4nni's affiliation per [2_recent_active_funding_announced_2024_01_01[0]] [15] | [2_recent_active_funding_announced_2024_01_01[1]] [11] |\n| **Hugh Osborn \u2014 PI** | \"The Exo-Neptune Census\" | University of Bern (research in WP Division) | SNSF | SNSF Starting Grant, **5 years** | 6 Nov 2025 (PI blog) and 5 Dec 2025 (Bern release) | Population-level study of Neptune-like exoplanets; PI self-quoted: *\"In November 2025, I was awarded a 5-year SNSF Starting Grant to lead a large project on understanding Neptune-like planets.\"* Likely match to the WP Division per the Bern release. | [2_recent_active_funding_announced_2024_01_01[2]] [27]; [2_recent_active_funding_announced_2024_01_01[1]] [11] |\n| **SNSF Starting Grants \u2014 scheme parameters** | (not WP-specific) | \u2014 | SNSF | \"Budget of up to 1 million francs for project funding over a five-year period. In addition, applicants can apply for funds to cover their own salaries\" | \u2014 | \u2014 | [2_recent_active_funding_announced_2024_01_01[3]] [18] |\n\n**Implication.** Both H\u00e4nni (molecules of life in space) and Osborn (exo-Neptune census) sit in Bern's WP Division and **each grant demonstrably enables a junior researcher postdoc on WP themes** (Osborn's grant is now hiring a PostDoc in Exoplanet Atmospheres; see \u00a73). This is direct evidence that these Starting Grants reconnect to the lead's `space simulation / cometary / planetary exploration` mandate.\n\n**Caveat.** Exact CHF amounts requested and approved for H\u00e4nni and Osborn are not stated in either the Bern media release or the Osborn blog; the only scheme-level number from SNSF is the **upper bound of \"up to CHF 1 million for project funding over a five-year period\"**, plus optional own-salary funding. **No verified public evidence found** for the individual amounts \u2014 checked Bern media release, Osborn own blog, SNSF scheme page, and SNSF award database (`https://data.snf.ch`). `data.snf.ch` itself does not expose a detailed list on a public crawl.\n\n### 2.2 SNSF project funding the open Apophis postdoc (still active)\n\nA separate SNSF project inside WP is funding a fully funded postdoc in 2026 \u2014 evidence that the grant is **active now**:\n\n| Item | Value | Source |\n|---|---|---|\n| Project title | \"Characterisation of Near Earth Asteroid Apophis by exploitation of RAMSES mission data\" | [2_recent_active_funding_announced_2024_01_01[4]] [52] |\n| Funder | Swiss National Science Foundation (SNSF) | (same) |\n| Status | Active \u2014 funds a 2+1-year fully funded postdoc at the Division in 2026 | (same) |\n| PI / supervisors named on the funded postdoc | **PD Dr. Antoine Pommerol, Dr. Daniel Arnold, PD Dr. Martin Jutzi** | (same) |\n| Project does | Develops a numerical Apophis Reference Model (ARM) \u2014 coordinate system, rotation state, global shape, surface properties, interior mass distribution, key surface features; integrates observational and simulation data; ties to ESA's RAMSES mission to (99942) Apophis (April 2029 Earth flyby). | (same); [2_recent_active_funding_announced_2024_01_01[5]] [55]; [2_recent_active_funding_announced_2024_01_01[6]] [56] |\n| Amount / project dates / project ID | **Not publicly disclosed in the job posting**; ESA RAPID-procurement contract for the RAMSES mission is **\u20ac63 million** with OHB Italia for preparatory work, but this is an ESA-to-industry contract, not an academic grant to Bern. | [2_recent_active_funding_announced_2024_01_01[7]] [58] |\n\n**Implication.** This is **a competitive SNSF grant (not a mission budget and not institutional base funding)** because a PhD-equivalent postdoc is hired through it. **Action.** Anyone tracking this Division's funding should treat this Apophis/RAMSES grant as confirmed and active.\n\n**Caveat.** **No verified public evidence found** for the SNSF project ID, total CHF amount, or formal award date \u2014 checked the official Bern job posting (only the project title and supervisors are given), the Bern media press archive, and the SNSF data portal.\n\n### 2.3 ESA PRODEX \u2014 Bern's hardware contribution to NASA IMAP (mission funding, not competitive academic grant)\n\n| Item | Value | Source |\n|---|---|---|\n| Mission | NASA **IMAP \u2014 Interstellar Mapping and Acceleration Probe** | [2_recent_active_funding_announced_2024_01_01[8]] [62] |\n| Status | \"NASA Launches IMAP Mission to Study the Heliosphere\" (24 Sep 2025); \"NASA's IMAP Reaches Orbit to Start Study of Heliosphere\" 12 Jan 2026 | [2_recent_active_funding_announced_2024_01_01[9]] [60] |\n| Bern's role | \"The University of Bern is one of the few European institutions contributing hardware to the IMAP mission.\" | [2_recent_active_funding_announced_2024_01_01[10]] [36] |\n| Funding mechanism / funder | **ESA PRODEX programme** \u2014 \"The funding for the contribution of the University of Bern was awarded by the European Space Agency (ESA) in the frame of the PRODEX programme\" | (same); [2_recent_active_funding_announced_2024_01_01[11]] [59]; [2_recent_active_funding_announced_2024_01_01[12]] [63] |\n| Type of funding | **Mission budget / instrument-development line** (PRODEX funds space-instrument development, not open-topic research) | [2_recent_active_funding_announced_2024_01_01[11]] [59] |\n\n**Implication \u2014 and critical distinction.** This is **not** a competitive research grant in the SNSF/ERC sense; PRODEX is a **Swiss national envelope routed through ESA** for instrument development on agreed missions. **Action.** When discussing this funding, frame it as **institutional mission-work** rather than a BER-comparable open topic grant; it should not be counted toward \"open-topic competitive grants\" but should appear in the funding record for completeness.\n\n**Caveat.** **No verified public evidence found** for the precise CHF amount of Bern's PRODEX instrument line for IMAP \u2014 the newswire confirms ESA-PRODEX funding but does not state a figure.\n\n### 2.4 MARVIS / SUBICE (SNSF Multidisciplinary Advanced Research Ventures in Space)\n\nThe **[38]** describes a Uni Bern + HES-SO consortium awarded under the SNSF **MARVIS** banner. The article's status: **published 12 September 2023**, with \"projects, which also\" reference indicated the award started in 2022. The GGBa piece also recaps Bern's contribution to ESA's JUICE mission. The text references \"two pioneering projects under the MARVIS banner\" \u2014 and is therefore an older item, **announced on or before 2023**, so it falls **just outside** the user's strict \"announced on or after 2024-01-01\" window.\n\n**Implication.** This is documented institutional history for completeness, but it is **not a post-2024 funding event**. **Action.** Do not present MARVIS/SUBICE as a new WP grant when answering the funding-since-2024 question; keep it as context.\n\n**Caveat.** Verified **posting date outside scope**, **project end date not publicly disclosed**, **amount not in the public wire** \u2014 checked GGBa article, search results did not surface a confirming SNSF press release.\n\n---",
+      "3_recent_postings_open_positions_and_closed_historical_postings": "### 3.1 Summary table of WP-Division postings (since 1 Jan 2026)\n\n| # | Posting title | Type | Status | Posted (approx.) | Deadline | Location | Short description | Official posting URL (primary) | LinkedIn / aggregated |\n|---|---|---|---|---|---|---|---|---|---|\n| A | **Professor in Planetary Sciences** | Full-time, open rank (assistant professorship with tenure track up to full professor) | **Closed / Historical** | 2 Jan 2026 (\"Jan 2, 2026\") | 31 Jan 2026 | Bern, Switzerland | \"The Division is a leading institute in space research and is looking for a Professor of Experimental Physics in the field of planetary science.\" Tenure-track range, salary on Canton of Bern scheme, application to applications.natdek@unibe.ch. | https://www.earthworks-jobs.com/jobpost/bern25111?id=11364 | (no public LinkedIn post located) |\n| B | **Postdoc position Space Research and Planetary Sciences / Astronomical Institute (Apophis / RAMSES)** | Postdoc, 100%, fixed-term (2 years + possible 1 year extension), fully funded | **Open** | (not stated on scraped page) | **31 July 2026** | Bern | Develops a numerical Apophis Reference Model (ARM) for (99942) Apophis, integrated with ESA's RAMSES mission; supervisors **PD Dr. Antoine Pommerol, Dr. Daniel Arnold, PD Dr. Martin Jutzi**; annual gross salary **CHF 91,215** for 2025 (incl. 13th-month). Funded by SNSF project \"Characterisation of Near Earth Asteroid Apophis by exploitation of RAMSES mission data\". | **https://jobs.unibe.ch/job-vacancies/postdoc-position-space-research-and-planetary-sciences-astronomical-institute/4b1cf432-2b32-475d-a8f5-77360b278f2e** (official Uni Bern careers portal) | Aggregated at https://geodesy.science/job/postdoc-position-in-space-research-and-planetary-sciences and https://scholarnexus.ai/position/Postdoc-In-Space-Research-And-Planetary-Sciences |\n| C | **PhD student position in space research and astrobiology** | PhD (100%), Physics Institute | Open (mirror listings mark it expired; status ambiguous \u2014 corroborated Bern state portal still lists) | (jobs.ch piece) | (not retrieved in scrape) | Bern | \"Candidates for a PhD in physics to work on Rosetta legacy mass spectrometer data obtained at comet 67P/Churyumov-Gerasimenko (67P).\" Direct match to lead's \"cometary sciences + mass spectrometry\". | https://jobs.apps.be.ch/job-vacancies/forward/33cb65f1-1d68-42ba-95fa-4fb7d14e3cbc ; https://www.jobs.ch/en/vacancies/detail/778f71b6-19d9-4aea-a8df-5a8761893340 | (no public LinkedIn post located) |\n| D | **PhD student position in space research and chemometrics** | PhD (100%) | Open / \"Expired\" on at least two mirrors | (jobs.ch earlier, now marked EXPIRED on facultyvacancies; EGU ad 7645 \"no longer available\") | (deadline already passed per expired mirrors) | Bern | Same scope \u2014 \"Rosetta legacy mass spectrometer data obtained at comet 67P/Churyumov-Gerasimenko (67P).\" Direct match to lead's \"mass spectrometry + cometary sciences\". | https://www.jobs.ch/en/vacancies/detail/281cc4ea-1ec6-4440-a5c6-a360c17147c6 ; https://www.egu.eu/jobs/7645/phd-student-position-in-space-research-and-chemometrics (marked \"no longer available\"); https://facultyvacancies.com/phd-position-in-space-research-and-chemometrics%2Ci44370.html (marked \"EXPIRED\") | (no LinkedIn post located) |\n| E | **PostDoc in Exoplanet Atmospheres** | PostDoc, fully funded | **Open** | 4 Jul 2026 (aggregator entry) | **31 August 2026** | Bern | \"Fully funded via SNSF 'Exo-Neptune Census' starting grant led by Assistant Professor Hugh Osborn\"; team includes PD Dr. Daniel Kitzmann, Prof. Brice-Olivier Demory, Prof. Yann Alibert, Prof. Christoph Mordasini. | Source: aggregator (vacancyedu / future SNSF ad) | https://vacancyedu.com/2026/07/04/postdoctoral-fellowship-12-at-university-of-bern-switzerland \u2014 listed under \"Postdoctoral Fellowship (12) at University of Bern\" \u2014 direct SNSF-funded Exo-Neptune-Census postdoc |\n| F | **Bundle: 2 PhD and 1 postdoc in planetary science, planetary geodesy, asteroid evolution, small-body research** | Combined PhD/postdoc call | **Open** | (aggregator timestamp: 2 days before scrape) | (not retrieved) | Bern | \"Two PhD positions and one postdoctoral position are available at the University of Bern in the area of planetary science, planetary geodesy, asteroid evolution, and small-body research.\" Direct match to \"planetary exploration\". | https://www.applykite.com/positions/phd-and-postdoc-positions-in-planetary-science-planetary-geodesy-and-asteroid-evolution-at-the-university-of-bern-d1a5sr6rv7 | (no LinkedIn post located) |\n\n### 3.2 Specifics and direct match to the lead's topics\n\nAll five open PhD / postdoc entries overlap with the lead's stated research topics:\n\n- **Mass spectrometry** is foregrounded in *C* and *D* (\"Rosetta legacy mass spectrometer data\", laser MS lab of Wurz) [3_recent_postings_open_positions_and_closed_historical_postings[0]] [69].\n- **Cometary sciences** is foregrounded via comet **67P/Churyumov-Gerasimenko** for both *C* and *D* [3_recent_postings_open_positions_and_closed_historical_postings[1]] [49].\n- **Space simulation** is confirmed by the Apophis Reference Model / numerical-simulation component of *B* [3_recent_postings_open_positions_and_closed_historical_postings[2]] [52].\n- **Planetary exploration** is the umbrella of *B*, *E* and *F* \u2014 Apophis, exoplanet atmospheres, small-body research.\n\n**Implication.** The hiring signal is **dense** for 2026: a closed Professorship, a confirmed open Apophis postdoc, an Exo-Neptune postdoc, two 67P-mass-spec PhDs (one possibly already expired on mirrors), and a 2-PhD/1-postdoc bundle on small-body / geodesy themes.\n\n**Action.** For outreach, prioritise the **open** *B* (31 Jul 2026 deadline) and *E* (31 Aug 2026 deadline) \u2014 both are time-critical and the SNSF / ESA anchors them to active research projects.\n\n**Caveats.**\n- **D** shows \"EXPIRED\" markers on at least two mirror sites, which suggests the underlying Bern portal posting may have lapsed; **no verified public evidence** the official Bern portal has been refreshed.\n- **No verified public evidence** of a public LinkedIn post URL for **A, B, C, D, E, or F** individually was found \u2014 checked LinkedIn public search and the official Division page; LinkedIn posts are not exposed via the public web graph.\n- **No verified public evidence found** for **Research Assistant / Research Engineer / Lab Technician** postings connected to the lead's lab \u2014 checked LinkedIn, jobs.ch, eurosciencejobs, and the official Bern portal; none surfaced.\n\n---",
+      "4_linkedin_evidence_official_page_exists_individual_post_urls_not_located": "| Item | Value | Source |\n|---|---|---|\n| Official Division LinkedIn company page | \"Space Research & Planetary Sciences, University of Bern\" | [4_linkedin_evidence_official_page_exists_individual_post_urls_not_located[0]] [46] |\n| LinkedIn page meta | NAICS 336414 (Guided Missile and Space Vehicle Manufacturing) and 927110 (Space Research and Technology); Industry: Defence & Space Manufacturing; ~10 listed employees; 249 followers; listed website http://space.unibe.ch/ | (same) |\n| LinkedIn share URLs appended to Bern job postings (used as LinkedIn distribution surface) | Bern Apophis postdoc has a `LinkedIn` sharelet \u2014 indicates the official LinkedIn page is the distribution channel for this posting | [4_linkedin_evidence_official_page_exists_individual_post_urls_not_located[1]] [52] |\n| Individual LinkedIn posts / user-post URLs | **No public LinkedIn post URL was located** for any of the openings C\u2013F in this research \u2014 checked search hits on `site:linkedin.com University of Bern Space Research Planetary Sciences`. | (negative finding) |\n| Namesake to reject | \"WP Group\" \u2192 UK lubricants supplier (LinkedIn `wpgroup`) | https://uk.linkedin.com/company/wpgroup (NOT the lead) |\n\n**Implication.** The official Presence on LinkedIn is the **Division**, which is consistent with the user-given email `info.space@unibe.ch`. LinkedIn is a corroborating discovery channel, but not the primary source: hiring data should be corroborated against `jobs.unibe.ch` (official Bern portal) and `jobs.apps.be.ch` (Canton of Bern portal). **Action.** When verifying any LinkedIn \"job post\" claim, demand the underlying official Bern job URL.\n\n**Caveat.** Public LinkedIn post URLs and \"company posts about this role\" widgets were not retrievable via the search and extract pipeline; that is a known crawlability limitation, not absence.\n\n---",
+      "5_confidence_and_caveats": "| Rank | Item | Confidence | Why |\n|---|---|---|---|\n| 1 | Identity (WP Division, `info.space@unibe.ch`, Bern) | **High** | URLs match across `space.unibe.ch/about_us/contact/index_eng.html` and the official LinkedIn company page. Namesake explicitly rejected. |\n| 2 | Two SNSF Starting Grants inside WP (H\u00e4nni + Osborn), 2025 cohort | **High** for existence; **Medium** for amount/ID | Both confirmed by Bern media release and Osborn's own blog and a corroborating second release on publicnow; **amounts individually not stated**. |\n| 3 | SNSF Apophis/RAMSES grant supporting WP postdoc | **High** for existence; **Medium** for amount/ID | Bern's official job portal names the project title and supervisors explicitly. |\n| 4 | ESA PRODEX funding for Bern \u2192 IMAP hardware | **High** that PRODEX funds it; **Low** on amount | myscience wire + ESA/SBFI confirm mechanism; figure not disclosed. |\n| 5 | Open Apophis postdoc (deadline 31 Jul 2026, CHF 91,215/year) | **High** | jobs.unibe.ch is the official Bern sources page. |\n| 6 | Open Exo-Neptune Census postdoc (deadline 31 Aug 2026) | **Medium** | Sourced from one aggregator (vacancyedu), link between postdoc and the SNSF grant explicit in text; **needs corroboration with an official Bern URL** \u2014 not located. |\n| 7 | Open PhD on 67P mass spectrometry (astrobiology) | **Medium** | Listed on jobs.ch and the Canton portal; conflicting mirror data on whether expired. |\n| 8 | Open PhD on 67P chemometrics | **Low/Medium** | Marked EXPIRED on facultyvacancies and EGU mirror; underlying official Bern URL not retrieved. |\n| 9 | Bundle (2 PhD + 1 postdoc) on planetary science / geodesy / asteroid evolution | **Low/Medium** | Aggregator only (applykite); underlying Bern URL not extracted. |\n| 10 | Professor in Planetary Sciences (Closed / Historical) | **High** | earthworks-jobs + jobs.unibe.ch are official mirrors of a Bern advertised position; deadline 31 Jan 2026 has passed. |\n| 11 | Other hiring (RA, Research Engineer) | **None verified** | Standard search of LinkedIn, jobs.ch, jobs.unibe.ch yielded no RA or research-engineer posts. |\n| 12 | Funding amounts / SNSF project IDs | **None verified** | Snippets and blog posts do not state CHF figures individually. |\n\n**No verified public evidence found** for: (a) CHF amounts of individual SNSF Starting Grants to H\u00e4nni and Osborn; (b) SNSF project IDs for any of H\u00e4nni, Osborn, or Apophis/RAMSES grants; (c) precise CHF figure of Bern's PRODEX line for the NASA IMAP mass-spectrometer hardware; (d) list of all Sub-groups/leaders of the WP Division; (e) LinkedIn **post** URLs for any of the 2026 WP Division openings; (f) Research Assistant / Research Engineer postings currently or recently advertised through the Division; (g) MARVIS/SUBICE project end date; (h) Personal-PI-of-the-Division identity (the email `info.space@unibe.ch` is **division-level**, so there is no single PI who \"owns\" the inbox; it is the general WP office inbox).\n\n---",
+      "6_references": "All sources cited inline above. Direct URLs (canonical form, no fragments):\n\n- **WP Division home & contact (identity)** \u2014 https://www.space.unibe.ch/index_eng.html ; https://www.space.unibe.ch/about_us/contact/index_eng.html ; https://www.space.unibe.ch/about_us/personen/prof_dr_wurz_peter/index_eng.html ; https://www.space.unibe.ch/research/research_groups/index_eng.html ; https://www.space.unibe.ch/\n- **WP Division LinkedIn company page (official, namesake rejected)** \u2014 https://ch.linkedin.com/company/space-research-%26-planetary-sciences-university-of-bern\n- **SNSF 2025 Starting Grants at Bern (press release dated 5 Dec 2025)** \u2014 https://mediarelations.unibe.ch/media_releases/2025/media_releases_2025/snsf_starting_grants/index_eng.html\n- **Hugh Osborn \u2014 \"The Exo-Neptune Census\" SNSF Starting Grant (Nov 2025)** \u2014 https://www.hughosborn.co.uk/2025/11\n- **SNSF Starting Grants scheme page (budget cap up to CHF 1M over 5 years)** \u2014 https://www.snf.ch/en/w728UqT1Yw256Mz2/funding/snsf-starting-grants\n- **SNSF Starting Grants 2026 call (5 May 2026 deadline)** \u2014 https://www.snf.ch/en/noYHnzN47LR5qt93/news/snsf-starting-grants-2026\n- **SNSF data portal (no per-project list publicly crawlable)** \u2014 https://data.snf.ch/\n- **Nora H\u00e4nni ORCID (affiliation = WP, Research Associate since 1 Aug 2022)** \u2014 http://orcid.org/0000-0002-8253-6436\n- **Nora H\u00e4nni publications profile** \u2014 https://scholargps.com/scholars/21999018979258/nora-hanni\n- **Postdoc Apophis/RAMSES (officially advertised by Uni Bern careers)** \u2014 https://jobs.unibe.ch/job-vacancies/postdoc-position-space-research-and-planetary-sciences-astronomical-institute/4b1cf432-2b32-475d-a8f5-77360b278f2e ; mirrors at https://geodesy.science/job/postdoc-position-in-space-research-and-planetary-sciences ; https://scholarnexus.ai/position/Postdoc-In-Space-Research-And-Planetary-Sciences\n- **Professor in Planetary Sciences (posted 2 Jan 2026, deadline 31 Jan 2026 \u2014 closed/historical)** \u2014 https://www.earthworks-jobs.com/jobpost/bern25111?id=11364\n- **PhD in space research and astrobiology (Rosetta 67P mass spectrometer)** \u2014 https://jobs.apps.be.ch/job-vacancies/forward/33cb65f1-1d68-42ba-95fa-4fb7d14e3cbc ; https://www.jobs.ch/en/vacancies/detail/778f71b6-19d9-4aea-a8df-5a8761893340\n- **PhD in space research and chemometrics (Rosetta 67P mass spec; expired mirror)** \u2014 https://www.jobs.ch/en/vacancies/detail/281cc4ea-1ec6-4440-a5c6-a360c17147c6 ; https://www.egu.eu/jobs/7645/phd-student-position-in-space-research-and-chemometrics ; https://facultyvacancies.com/phd-position-in-space-research-and-chemometrics%2Ci44370.html\n- **Bundle (2 PhD + 1 postdoc) \u2013 planetary science / geodesy / asteroid evolution** \u2014 https://www.applykite.com/positions/phd-and-postdoc-positions-in-planetary-science-planetary-geodesy-and-asteroid-evolution-at-the-university-of-bern-d1a5sr6rv7\n- **Other 2026 Bern postdoctoral aggregator** \u2014 https://vacancyedu.com/2026/07/04/postdoctoral-fellowship-12-at-university-of-bern-switzerland\n- **NASA IMAP mission (Bern hardware via ESA PRODEX)** \u2014 https://www.jhuapl.edu/destinations/missions/imap ; https://www.jhuapl.edu/news/news-releases/260112-imap-arrives-l1 ; https://www.myscience.ch/en/news/wire/university_of_bern_involved_in_nasa_mission_to_explore_the_heliosphere-2025-unibe ; https://svs.gsfc.nasa.gov/14811\n- **ESA PRODEX programme** \u2014 https://www.sbfi.admin.ch/en/space-instrumentation-development-prodex ; https://sci.esa.int/web/prodex\n- **MARVIS / SUBICE (Uni Bern + HES-SO; older than 2024-01-01)** \u2014 https://ggba.swiss/en/university-of-bern-and-hes-so-spearhead-groundbreaking-space-exploration-initiative ; https://www.snf.ch/en/75vVX8QqrZjp4miU/funding/marvis\n- **ESA mission / Apophis / RAMSES context** \u2014 https://www.esa.int/Space_Safety/Planetary_Defence/Apophis ; https://www.esa.int/Space_Safety/Planetary_Defence/ESA_moves_forward_with_Apophis_mission_preparations (extracts an ESA-to-OHB Italia \u20ac63M preparatory contract) ; https://elib.dlr.de/218167/1/EPSC-DPS2025-806-print.pdf\n- **LIMS / NASA CLPS lunar instrument connection (Peter Wurz, WP mass-spectrometry)** \u2014 https://mediarelations.unibe.ch/media_releases/2023/media_releases_2023/instrument_from_the_university_of_bern_flies_to_the_moon/index_eng.html\n- **AIUB jobs note (PhDs can open anytime)** \u2014 https://www.aiub.unibe.ch/research/space_weather/jobs/index_eng.html\n- **SNSF / publicnow mirror release** \u2014 https://www.publicnow.com/view/9ED4ADFC0B2A5BA8E72DAADA2FBB387BF0344C4F?1764928203\n- **Namesake to reject (UK WP Group)** \u2014 https://uk.linkedin.com/company/wpgroup"
+    },
+    "type": "json",
+    "beta_fields": null,
+    "mcp_tool_calls": null,
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "executive_summary_identity_funding_and_hiring_at_bern_s_wp_division": {
+          "type": "string",
+          "title": "Executive Summary \u2014 Identity, Funding & Hiring at Bern's WP Division"
+        },
+        "1_identity_university_of_bern_space_research_and_planetary_sciences_wp": {
+          "type": "string",
+          "title": "1. Identity \u2014 University of Bern Space Research & Planetary Sciences (WP)"
+        },
+        "2_recent_active_funding_announced_2024_01_01": {
+          "type": "string",
+          "title": "2. Recent / Active Funding (announced \u2265 2024-01-01)"
+        },
+        "3_recent_postings_open_positions_and_closed_historical_postings": {
+          "type": "string",
+          "title": "3. Recent Postings \u2014 Open Positions and Closed/Historical Postings"
+        },
+        "4_linkedin_evidence_official_page_exists_individual_post_urls_not_located": {
+          "type": "string",
+          "title": "4. LinkedIn Evidence \u2014 official page exists; individual post URLs not located"
+        },
+        "5_confidence_and_caveats": {
+          "type": "string",
+          "title": "5. Confidence and Caveats"
+        },
+        "6_references": {
+          "type": "string",
+          "title": "6. References"
+        }
+      },
+      "required": [
+        "executive_summary_identity_funding_and_hiring_at_bern_s_wp_division",
+        "1_identity_university_of_bern_space_research_and_planetary_sciences_wp",
+        "2_recent_active_funding_announced_2024_01_01",
+        "3_recent_postings_open_positions_and_closed_historical_postings",
+        "4_linkedin_evidence_official_page_exists_individual_post_urls_not_located",
+        "5_confidence_and_caveats",
+        "6_references"
+      ]
+    }
+  }
+}

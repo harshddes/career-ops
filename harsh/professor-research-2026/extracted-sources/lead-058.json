@@ -1,0 +1,24 @@
+{
+  "extract_id": "extract_37203ddb62ef447e9c8d9cdf5e39251d",
+  "session_id": "session_37203ddb62ef447e9c8d9cdf5e39251d",
+  "status": "ok",
+  "results": [
+    {
+      "url": "https://ch.linkedin.com/in/duccio-testa-8a9131127",
+      "title": "",
+      "publish_date": null,
+      "excerpts": [
+        "* Slug: duccio-testa-8a9131127\n* URL: https://linkedin.com/in/duccio-testa-8a9131127\n* Name: Duccio Testa\n* first name: Duccio\n* last name: Testa\n* company name: EPFL (\u00c9cole polytechnique f\u00e9d\u00e9rale de Lausanne)\n* Title: Senior Research Scientist\n* country iso: CH\n* country name: Switzerland\n* Locality: Lausanne, Vaud, Switzerland\n\n...\n\n# Position\n* linkedin company id: -1927419\n* company name: EPFL (\u00c9cole polytechnique f\u00e9d\u00e9rale de Lausanne)\n* Title: Senior Research Scientist\n\n...\n\n# Experience\n- linkedin company id: -1927419\n- is current: true\n- company name: EPFL (\u00c9cole polytechnique f\u00e9d\u00e9rale de Lausanne)\n- Title: Senior Research Scientist"
+      ],
+      "full_content": "* Slug: duccio-testa-8a9131127\n * URL: https://linkedin.com/in/duccio-testa-8a9131127\n * Name: Duccio Testa\n * first name: Duccio\n * last name: Testa\n * company name: EPFL (\u00c9cole polytechnique f\u00e9d\u00e9rale de Lausanne)\n * Title: Senior Research Scientist\n * country iso: CH\n * country name: Switzerland\n * Locality: Lausanne, Vaud, Switzerland\n * industry name: Higher Education\n * connection count: 167\n * follower count: 171\n * jobs count: 1\n * linkedin company id: -1927419\n\n# Position\n * linkedin company id: -1927419\n * company name: EPFL (\u00c9cole polytechnique f\u00e9d\u00e9rale de Lausanne)\n * Title: Senior Research Scientist\n\n# Inferred Location\n * Latitude: 46.5196\n * Longitude: 6.63213\n * Locationstr: Lausanne, Vaud, Switzerland\n * country iso: CH\n * admin district: VD\n * admin district2: Lausanne\n * country region: Switzerland\n * formatted address: Lausanne, Switzerland\n * Locality: Lausanne\n * Name: Lausanne, Switzerland\n\n# Experience\n   - linkedin company id: -1927419\n   - is current: true\n   - company name: EPFL (\u00c9cole polytechnique f\u00e9d\u00e9rale de Lausanne)\n   - Title: Senior Research Scientist\n\n## Seniority\n     + seniority: Senior\n\n## Seniority\n     + seniority: Mid-Senior level\n\n## Seniority\n     + seniority: Not Applicable\n\n## Seniority\n     + seniority: Associate\n\n## Job Function\n     + job function: Other\n\n## Employment Type\n     + job employment type: Full-time\n\n## Academic Qualification\n     + academic qualification: Bachelor Degree\n\n# Seniority\n   - Seniority: Senior\n\n# Seniority\n   - Seniority: Mid-Senior level\n\n# Seniority\n   - Seniority: Not Applicable\n\n# Seniority\n   - Seniority: Associate\n\n# Job Function\n   - job function: Other\n\n# Employment Type\n   - job employment type: Full-time\n\n# Academic Qualification\n   - academic qualification: Bachelor Degree"
+    }
+  ],
+  "errors": [],
+  "usage": [
+    {
+      "name": "sku_extract_excerpts",
+      "count": 1
+    }
+  ],
+  "warnings": []
+}

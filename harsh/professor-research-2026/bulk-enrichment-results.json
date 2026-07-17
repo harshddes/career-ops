@@ -1,0 +1,1736 @@
+[
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "Institut Polytechnique de Paris",
+      "professor_name": "Alessandro Retin\u00f2",
+      "research_group": "Space Plasma Physics Group",
+      "research_interests": "Reconnection, turbulence, magnetospheres, space instrumentation",
+      "\ufefflead_id": "lead-001",
+      "research_theme": "Space Plasma & Magnetospheres",
+      "source_row": "8",
+      "existing_status": "",
+      "email": "alessandro.retino@lpp.polytechnique.fr",
+      "lead_type": "person",
+      "location": "France"
+    },
+    "output": {
+      "official_profile_url": "https://researchportal.ip-paris.fr/en/persons/alessandro-retino/",
+      "grants": [
+        "NASA HelioSwarm MidEx mission \u2014 Search Coil Magnetometer (SCM) instrument; Alessandro Retin\u00f2 is the French Lead Investigator ('responsable scientifique de SCM') at LPP/CNRS/Institut Polytechnique de Paris. Mission selected, active in 2024-2026, launch planned 2028/2029.",
+        "ESA JUICE mission \u2014 Radio & Plasma Wave Investigation (RPWI), Search Coil Magnetometer (SCM) co-investigator; documented in the open-access Space Science Reviews article published 16 December 2024 (doi: 10.1007/s11214-024-01110-0).",
+        "Heliophysics Decadal Survey 2024-2033 \u2014 co-author on Whitepaper #135 'MAKOS' (Multi-point Assessment of the Kinematics of Shocks) mission concept study."
+      ],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "University of Iowa",
+      "professor_name": "Allison Jaynes",
+      "research_group": "Van Allen Probes Team",
+      "research_interests": "Magnetosphere, radiation belts, aurora, particle acceleration",
+      "\ufefflead_id": "lead-002",
+      "research_theme": "Space Plasma & Magnetospheres",
+      "source_row": "9",
+      "existing_status": "",
+      "email": "allison-jaynes@uiowa.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://physics.uiowa.edu/people/allison-n-jaynes",
+      "grants": [
+        "NSF GEM Award (PI): 'Magnetospheric Wave Properties as Drivers of Auroral Structure and Substructure' (2026\u20132029)",
+        "AFRL Regional Network Midwest Award (PI): 'Testing Radiation Belt Electron Acceleration Mechanisms' (2026\u20132027)",
+        "NSF GEM (Co-I): 'Plasmapause control of outer radiation belt electron enhancements' (2025\u20132028)",
+        "NASA FINESST Award (PI): 'The Effect of Substorm Injections on Pulsating Aurora Energy Spectra' (2024\u20132027)",
+        "NASA Space Weather Center of Excellence (Co-I): 'Space Weather Operational Readiness Development (SWORD) Center' (2023\u20132028)",
+        "NASA LCAS (PI): 'OCHRE (TRACERS Student Rocket) sounding rocket mission' (2023\u20132026)",
+        "Mid-Career Faculty Scholar, University of Iowa (PI) (2023\u20132026)",
+        "NSF GEM Award (PI): 'Quantifying radiation belt losses and their effects on the atmosphere' (2022\u20132025)",
+        "NSF CAREER Award (PI): 'Revealing the connection between pulsating aurora and the dynamics of the inner magnetosphere' (2021\u20132025)",
+        "NASA COUSIN Sounding Rocket Mission (Co-I) (2021\u20132026)",
+        "NASA Voyager mission PWS team (Co-I) (2019\u2013present)",
+        "NASA Magnetospheric Multiscale (MMS) mission EPD Instrument Team (Co-I) (2017\u2013present)"
+      ],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "University College London (MSSL)",
+      "professor_name": "Andrew Coates",
+      "research_group": "Planetary Science Group",
+      "research_interests": "Planetary plasma, space environments, comets, instrumentation",
+      "\ufefflead_id": "lead-003",
+      "research_theme": "Planetary Science & Exploration",
+      "source_row": "10",
+      "existing_status": "",
+      "email": "a.coates@ucl.ac.uk",
+      "lead_type": "person",
+      "location": "UK"
+    },
+    "output": {
+      "official_profile_url": "https://profiles.ucl.ac.uk/2283-andrew-coates",
+      "grants": [
+        "Solar System Consolidated Grant 2022-25 \u2014 STFC, \u00a31,780,579, 2022-2026, Active (Source: UKRI Gateway to Research, https://gtr.ukri.org/person/56D10635-9997-486D-B171-F98C7092C345)",
+        "Eyes On Mars \u2014 STFC, \u00a314,092, 2022-2024, Active (Source: UKRI Gateway to Research, https://gtr.ukri.org/person/56D10635-9997-486D-B171-F98C7092C345)"
+      ],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "University of New Hampshire",
+      "professor_name": "Antoinette Galvin",
+      "research_group": "Space Science Center",
+      "research_interests": "Solar wind, heliosphere, energetic particles, instrumentation",
+      "\ufefflead_id": "lead-004",
+      "research_theme": "Solar Wind & Heliophysics",
+      "source_row": "11",
+      "existing_status": "",
+      "email": "toni.galvin@unh.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://findscholars.unh.edu/display/agalvin",
+      "grants": [
+        "Lagrange 1 (L1) Series Solar Wind Plasma Sensor contract: $24.3M awarded to UNH by NASA on behalf of NOAA, announced October 29, 2024; Antoinette (Toni) Galvin serves as Deputy Project Director alongside PI Lynn Kistler.",
+        "STEREO PLASTIC \u2013 NASA, 2024\u20132027",
+        "The Plasma Observatory \u2013 NASA, 2024\u20132026",
+        "NH Space Grant Consortium (NHSG) Opportunities in NASA STEM FY 2024\u20132028 \u2013 NASA, 2025\u20132029",
+        "Heavy Ion Sensor (HIS) for the European Space Agency Solar Orbiter mission \u2013 Southwest Research Institute (SwRI) subaward, 2009\u20132028 (active through 2024+)",
+        "HIS \u2013 SOLO (Solar Orbiter) \u2013 Southwest Research Institute (SwRI), 2009\u20132026",
+        "New Hampshire NASA EPSCoR Research Infrastructure Development Program \u2013 NASA, 2022\u20132027 (active through 2024+)",
+        "Melting ice shelf (NASA EPSCoR) \u2013 NASA, 2025\u20132028",
+        "Low-Temperature Comparative Planetology \u2013 NASA, 2021\u20132025 (active through 2024+)",
+        "Increasing the dynamic range of spaceflight charged particle instruments \u2013 NASA, 2021\u20132025 (active through 2024+)"
+      ],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "University of Colorado Boulder",
+      "professor_name": "Bob Ergun",
+      "research_group": "Laboratory for Atmospheric and Space Physics (LASP)",
+      "research_interests": "Plasma physics, magnetospheric fields, auroral physics, instrumentation",
+      "\ufefflead_id": "lead-005",
+      "research_theme": "Space Plasma & Magnetospheres",
+      "source_row": "12",
+      "existing_status": "",
+      "email": "bob.ergun@lasp.colorado.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://lasp.colorado.edu/people/ree/",
+      "grants": [],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "University of Michigan",
+      "professor_name": "Brian Gilchrist",
+      "research_group": "Space Physics Research Laboratory (SPRL)",
+      "research_interests": "Plasma electrodynamics, space tethers, propulsion, ionosphere",
+      "\ufefflead_id": "lead-006",
+      "research_theme": "Space Plasma & Magnetospheres",
+      "source_row": "13",
+      "existing_status": "",
+      "email": "gilchrst@umich.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://gilchrist.engin.umich.edu/",
+      "grants": [],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "LPC2E / Universit\u00e9 d'Orl\u00e9ans",
+      "professor_name": "Christelle Briois",
+      "research_group": "Physical & Chemical Instrumentation of Space",
+      "research_interests": "Mass spectrometry, cometary dust, planetary exploration, Rosetta",
+      "\ufefflead_id": "lead-007",
+      "research_theme": "Planetary Science & Exploration",
+      "source_row": "14",
+      "existing_status": "",
+      "email": "christelle.briois@cnrs-orleans.fr",
+      "lead_type": "person",
+      "location": "France"
+    },
+    "output": {
+      "official_profile_url": "https://orcid.org/0000-0002-5616-0180",
+      "grants": [],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "Arizona State University",
+      "professor_name": "Craig Hardgrove",
+      "research_group": "School of Earth and Space Exploration (SESE)",
+      "research_interests": "Planetary exploration, neutron spectroscopy, lunar geology, Mars",
+      "\ufefflead_id": "lead-008",
+      "research_theme": "Planetary Science & Exploration",
+      "source_row": "15",
+      "existing_status": "",
+      "email": "craig.hardgrove@asu.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://search.asu.edu/profile/698228",
+      "grants": [
+        "Arizona Board of Regents Technology and Research Initiative Fund (TRIF) FY2024 NewSpace Initiative award of $300,000 to support Craig Hardgrove's Lunar-VISE Gamma-Ray and Neutron Spectrometer (GRNS) instrument, as published in the Arizona Board of Regents 2024 TRIF Annual Report (dated September 1, 2024)."
+      ],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "No indication of opportunities or openings. Too senior?",
+      "existing_url": "https://lasp.colorado.edu/people/dan-baker/",
+      "accepting_applications_notes": "",
+      "university": "University of Colorado Boulder",
+      "professor_name": "Dan Baker",
+      "research_group": "Laboratory for Atmospheric and Space Physics (LASP)",
+      "research_interests": "Magnetospheric physics, space weather, radiation belts, magnetospheres",
+      "\ufefflead_id": "lead-009",
+      "research_theme": "Space Plasma & Magnetospheres",
+      "source_row": "16",
+      "existing_status": "",
+      "email": "daniel.baker@lasp.colorado.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://lasp.colorado.edu/people/dan-baker/",
+      "grants": [],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "University College London (MSSL)",
+      "professor_name": "Daniel Verscharen",
+      "research_group": "Space Plasma Physics",
+      "research_interests": "Solar wind, plasma turbulence, kinetic physics, heliosphere",
+      "\ufefflead_id": "lead-010",
+      "research_theme": "Solar Wind & Heliophysics",
+      "source_row": "17",
+      "existing_status": "",
+      "email": "d.verscharen@ucl.ac.uk",
+      "lead_type": "person",
+      "location": "UK"
+    },
+    "output": {
+      "official_profile_url": "https://profiles.ucl.ac.uk/64237-daniel-verscharen",
+      "grants": [
+        "DFG Heisenberg Professorship \u2014 \"St\u00f6\u00dfe in sto\u00dffreien Plasmen: die kinetische Physik des Transports und Transfers von Energie\" (since 2026; PI/Antragsteller). Source: DFG GEPRIS (https://gepris.dfg.de/gepris/person/418150556?language=en).",
+        "DFG Project \u2014 \"Untersuchung der Rolle ausgew\u00e4hlter kollisionsfreier Prozesse bei der W\u00e4rmestromregulierung im Sonnenwind\" (running since 2022, currently active; Verscharen listed as project participant). Source: DFG GEPRIS (https://gepris.dfg.de/gepris/person/418150556?language=en).",
+        "STFC Solar System Consolidated Grant 2022-25 (ST/W001004/1), March 2022 \u2013 October 2026, \u00a31,780,579 \u2014 awarded to UCL, PI Andrew Coates, with Daniel Verscharen named on the grant. Source: UKRI Gateway to Research (https://gtr.ukri.org/person/F9411CB1-2751-4D23-8B8E-AE3633256F3A)."
+      ],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "https://malaspinaspacephysics.com/",
+      "accepting_applications_notes": "Has a contact form",
+      "university": "University of Colorado Boulder",
+      "professor_name": "David Malaspina",
+      "research_group": "Astrophysical & Planetary Sciences / LASP",
+      "research_interests": "Plasma waves, solar wind, dust-plasma interactions, magnetospheres",
+      "\ufefflead_id": "lead-011",
+      "research_theme": "Space Plasma & Magnetospheres",
+      "source_row": "18",
+      "existing_status": "",
+      "email": "david.malaspina@colorado.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://www.colorado.edu/aps/david-malaspina",
+      "grants": [
+        "NSF Award 2350236 \u2014 \"Collaborative Research: GEM--Whistler-mode Wave Properties in Plasmasphere-Plasmatrough Transition Regions\" \u2014 PI: David Malaspina (University of Colorado Boulder) \u2014 $77,362 \u2014 06/15/2024 to 05/31/2027 (NSF AGS / Magnetospheric Physics)",
+        "NSF Award 2625514 \u2014 \"RAPID: Operations and Data Analysis for a CubeSat Mission to Study the Upper Atmosphere\" (CANVAS CubeSat) \u2014 PI: Robert A. Marshall; Co-PI: David Malaspina (University of Colorado Boulder) \u2014 $140,000 \u2014 07/01/2026 to 06/30/2027 (NSF Space Weather)"
+      ],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "Princeton University",
+      "professor_name": "David McComas",
+      "research_group": "Department of Astrophysical Sciences",
+      "research_interests": "Heliospheric physics, solar wind, interstellar boundary, instrumentation",
+      "\ufefflead_id": "lead-012",
+      "research_theme": "Solar Wind & Heliophysics",
+      "source_row": "19",
+      "existing_status": "",
+      "email": "dmccomas@princeton.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://web.astro.princeton.edu/people/david-j-mccomas",
+      "grants": [
+        "NASA Interstellar Mapping and Acceleration Probe (IMAP) mission \u2014 NASA PI (David McComas, Princeton), funded through NASA's Solar Terrestrial Probes (STP) Program / Heliophysics Division, Science Mission Directorate; observatory launched September 24, 2025.",
+        "Continued NASA funding for analysis of IBEX (Interstellar Boundary Explorer) energetic neutral atom data and Parker Solar Probe energetic particle observations \u2014 active research program under McComas's Space Physics group at Princeton (2024\u20132026)."
+      ],
+      "research_openings": [
+        "Postdoctoral Research Associate and/or Senior Research Positions in Space Physics, Princeton University Department of Astrophysical Sciences (McComas's Space Physics group) \u2014 experimental/observational space plasma physics working on IBEX ENA, ISIS energetic particles, and IMAP solar wind / pickup ion data; rolling review until positions are filled. (https://puwebp.princeton.edu/AcadHire/position/39222)",
+        "Space Physics Visiting Fellows, Princeton University Department of Astrophysical Sciences (McComas's Space Physics group) \u2014 1-month to 1-year in-residence research collaboration on Parker Solar Probe energetic particles, IBEX energetic/interstellar neutral atoms, and IMAP science preparations; open to sabbatical faculty and senior researchers. (https://puwebp.princeton.edu/AcadHire/position/39221)",
+        "Department of Astrophysical Sciences Postdoctoral Research Associate (Princeton University) \u2014 including Henry Norris Russell Fellowship, Lyman Spitzer Jr. Fellowship, Rubin Observatory Data Management team, and positions in plasma astrophysics / interstellar medium / theoretical astrophysics; full consideration deadline November 1, 2025; expected start September 1, 2026. (https://puwebp.princeton.edu/AcadHire/position/40061)"
+      ],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "No past PhD students listed. I presume he cannot advise PhD students directly.",
+      "existing_url": "https://miles.lab.uiowa.edu/about",
+      "accepting_applications_notes": "",
+      "university": "University of Iowa",
+      "professor_name": "David Miles",
+      "research_group": "Department of Physics and Astronomy",
+      "research_interests": "Space instrumentation, magnetometers, ionospheric physics, auroras",
+      "\ufefflead_id": "lead-013",
+      "research_theme": "Space Plasma & Magnetospheres",
+      "source_row": "20",
+      "existing_status": "",
+      "email": "david-miles@uiowa.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://physics.uiowa.edu/people/david-m-miles",
+      "grants": [
+        "TRACERS (Tandem Reconnection and Cusp Electrodynamics Reconnaissance Satellites) \u2014 NASA SMEX mission, ~$115M, PI: David Miles; twin satellites launched July 23, 2025 from Vandenberg Space Force Base, currently active",
+        "Iowa Spaceflight Laboratory \u2014 $7.2 million University of Iowa investment to expand space flight instrumentation (announced 2026, under construction on the 7th floor of Van Allen Hall)",
+        "NASA Heliophysics Strategic Technology Office (HESTO) sponsorship \u2014 for the Miles Lab to restore and advance U.S. capability for high-fidelity fluxgate cores for space science and space weather missions (announced September 2025)"
+      ],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "UC Berkeley",
+      "professor_name": "Frances Hellman",
+      "research_group": "Department of Physics",
+      "research_interests": "Condensed matter, magnetic thin films, amorphous materials, gravitation",
+      "\ufefflead_id": "lead-014",
+      "research_theme": "Condensed Matter Physics",
+      "source_row": "21",
+      "existing_status": "",
+      "email": "fhellman@berkeley.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://physics.berkeley.edu/people/faculty/frances-hellman",
+      "grants": [],
+      "research_openings": [
+        "The Frances Hellman Group at UC Berkeley Department of Physics is open to graduate students and postdoctoral researchers interested in amorphous materials, magnetic thin films, and interfacial magnetism in non-centrosymmetric metals. Interested candidates should contact Prof. Hellman directly (fhellman@berkeley.edu) or apply through the UC Berkeley Physics graduate program."
+      ],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "UTSA / Southwest Research Institute",
+      "professor_name": "Frederic Allegrini",
+      "research_group": "Space Science and Engineering",
+      "research_interests": "Plasma instrumentation, mass spectrometry, magnetospheric plasma, solar wind",
+      "\ufefflead_id": "lead-015",
+      "research_theme": "Space Plasma & Magnetospheres",
+      "source_row": "22",
+      "existing_status": "",
+      "email": "frederic.allegrini@swri.org",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://grad.space.swri.edu/allegrini-frederic/",
+      "grants": [],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "Johns Hopkins APL (Associated Cluster)",
+      "professor_name": "George Ho",
+      "research_group": "Space Exploration Sector",
+      "research_interests": "Heliophysics, space instrumentation, energetic particles, magnetospheres",
+      "\ufefflead_id": "lead-016",
+      "research_theme": "Solar Wind & Heliophysics",
+      "source_row": "23",
+      "existing_status": "",
+      "email": "george.ho@jhuapl.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://grad.space.swri.edu/ho-george/",
+      "grants": [
+        "NASA/Goddard Space Flight Center (GSFC) \u2014 Solar Orbiter Suprathermal Ion Spectrograph (SIS) Phase E/F Operations and Data Analysis Support contract (sole-source award to Southwest Research Institute, where George C. Ho serves as SIS Principal Investigator). Notice ID: Solar-Orbiter-Suprathermal-Ion-Spectrograph. Originally published on SAM.gov February 16, 2024, with a 4-year period of performance expected to begin approximately April 2024. Per the NASA/GSFC sole-source justification: 'The Principal Investigator (PI) for this mission has transitioned his expertise to SwRI,' confirming George Ho's PI role at SwRI for this active contract."
+      ],
+      "research_openings": [
+        "Johns Hopkins Applied Physics Laboratory (JHUAPL) \u2014 Radiation Belt Theory & Modeling Researcher (Req ID 58574), Space Exploration Sector, Laurel, Maryland. Conducts fundamental and applied research on radiation and energetic particle dynamics in geospace, employing test-particle and magnetohydrodynamic simulations of planetary radiation belts. (Heliophysics / energetic particles adjacent to Ho's research area.)",
+        "Southwest Research Institute (SwRI) \u2014 Postdoctoral Researcher, Solar Energetic Particle Data Analysis (Job Code 15-01676). Leads and supports investigation of solar energetic particle research related to understanding the physical drivers that lead to variability in shock-accelerated particles between the Sun and 1 AU. (Direct alignment with Ho's SEP research at SwRI.)"
+      ],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "Princeton University",
+      "professor_name": "Hantao Ji",
+      "research_group": "Department of Astrophysical Sciences / PPPL",
+      "research_interests": "Laboratory astrophysics, magnetic reconnection, plasma turbulence, fusion",
+      "\ufefflead_id": "lead-017",
+      "research_theme": "Plasma Physics & Fusion",
+      "source_row": "24",
+      "existing_status": "",
+      "email": "hji@pppl.gov",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://www.pppl.gov/people/hantao-ji",
+      "grants": [
+        "FLARE (Facility for Laboratory Reconnection Experiments) \u2014 Principal Investigator: Hantao Ji. Active facility funded by the U.S. Department of Energy (via PPPL prime contract DE-AC02-09CH11466), the National Science Foundation Major Research Instrument award PHY-1337831, Princeton University, the University of Wisconsin-Madison, and the University of Maryland. The device was officially unveiled on June 12, 2025 at PPPL and began operations in 2025."
+      ],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "University of New Hampshire",
+      "professor_name": "James Connell",
+      "research_group": "Space Science Center",
+      "research_interests": "Cosmic rays, solar energetic particles, radiation belts, detectors",
+      "\ufefflead_id": "lead-018",
+      "research_theme": "High-Energy Astrophysics & Cosmology",
+      "source_row": "25",
+      "existing_status": "",
+      "email": "james.connell@unh.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://eos.unh.edu/person/james-connell",
+      "grants": [
+        "Data Products for SEISS/EHIS \u2014 NASA, 2024\u20132027, PI: James Connell, UNH Space Science Center"
+      ],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "University of Iowa",
+      "professor_name": "Jasper Halekas",
+      "research_group": "Department of Physics and Astronomy",
+      "research_interests": "Solar wind, lunar plasma, planetary magnetospheres, instrumentation",
+      "\ufefflead_id": "lead-019",
+      "research_theme": "Planetary Science & Exploration",
+      "source_row": "26",
+      "existing_status": "",
+      "email": "jasper-halekas@uiowa.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "http://homepage.physics.uiowa.edu/~jhalekas/",
+      "grants": [],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "Arizona State University",
+      "professor_name": "Jim Bell",
+      "research_group": "School of Earth and Space Exploration (SESE)",
+      "research_interests": "Planetary remote sensing, Mars imaging, multispectral geology, asteroids",
+      "\ufefflead_id": "lead-020",
+      "research_theme": "Planetary Science & Exploration",
+      "source_row": "27",
+      "existing_status": "",
+      "email": "james.bell.iii@asu.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://jimbell.sese.asu.edu/",
+      "grants": [],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "University of New Hampshire",
+      "professor_name": "Jim Clemmons",
+      "research_group": "Space Science Center",
+      "research_interests": "Auroral physics, ionospheric dynamics, sounding rockets, instrumentation",
+      "\ufefflead_id": "lead-021",
+      "research_theme": "Space Plasma & Magnetospheres",
+      "source_row": "28",
+      "existing_status": "",
+      "email": "james.clemmons@unh.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://eos.unh.edu/person/james-clemmons",
+      "grants": [
+        "Magnetospheric Physics (NSF, 2024-2027) \u2014 active NSF grant to James H. Clemmons at UNH Space Science Center, announced 2024",
+        "Dynamo 3 Lite (NASA Goddard Space Flight Center, 2025-2028) \u2014 active NASA grant as PI",
+        "Rockets for Heavy Ion Upwelling (NASA, 2025-2027) \u2014 active NASA grant as PI",
+        "TOMEXplus (NASA, 2020-2027) \u2014 currently active sounding-rocket mission grant (PI)",
+        "Rocket Experiment for Neutral Upwelling (RENU) (NASA, 2021-2027) \u2014 currently active sounding-rocket grant",
+        "Pathfinder (NASA, 2022-2026) \u2014 active NASA mission/instrumentation grant",
+        "EVEX2 (University of Illinois subaward, 2023-2026) \u2014 active subaward",
+        "Developing a New Wind Instrument (NASA, 2023-2026) \u2014 active instrumentation grant",
+        "Low-resource Winds Instrumentation for Scientific Measurements in Planetary Thermospheres (NASA, 2022-2025) \u2014 recently active instrument-development grant"
+      ],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "University of Iowa",
+      "professor_name": "John A. Goree",
+      "research_group": "Department of Physics and Astronomy",
+      "research_interests": "Dusty plasmas, experimental physics, strongly coupled systems, diagnostics",
+      "\ufefflead_id": "lead-022",
+      "research_theme": "Plasma Physics & Fusion",
+      "source_row": "29",
+      "existing_status": "",
+      "email": "john-goree@uiowa.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://physics.uiowa.edu/people/john-goree",
+      "grants": [
+        "NSF $405,000 grant announced August 11, 2025 \u2014 'Collaborative Research: ECLIPSE-CHIPS: Avoiding contamination by controlling charging and transport of particles in plasmas under modulation and afterglow conditions' (PI: Prof. John Goree, University of Iowa Department of Physics and Astronomy; collaborator: Anton Kananovich, Appalachian State University). Subject: controlling dust contamination in semiconductor manufacturing plasmas."
+      ],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "UTSA / Southwest Research Institute",
+      "professor_name": "Keiichi Ogasawara",
+      "research_group": "Space Science Department",
+      "research_interests": "Space instrumentation, neutral atom imaging, mass spectrometry, solar wind",
+      "\ufefflead_id": "lead-023",
+      "research_theme": "Solar Wind & Heliophysics",
+      "source_row": "30",
+      "existing_status": "",
+      "email": "kogasawara@swri.org",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://grad.space.swri.edu/ogasawara-keiichi/",
+      "grants": [
+        "NASA Solar Terrestrial Probes Program - IMAP (Interstellar Mapping and Acceleration Probe) mission funding the Compact Dual Ion Composition Experiment (CoDICE); Ogasawara serves as CoDICE Deputy Lead / Deputy Instrument Manager / Co-Investigator at Southwest Research Institute; IMAP launched September 2025 and CoDICE returned first-light data December 2025."
+      ],
+      "research_openings": [
+        "UTSA-SwRI Graduate Program in Space Physics and Instrumentation (M.S./Ph.D.) - currently recruiting graduate students; Dr. Keiichi Ogasawara is listed as a Space Physics faculty mentor/advisor. Applications via https://grad.space.swri.edu/apply (UTSA Admissions)."
+      ],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "University of Michigan",
+      "professor_name": "Kerri Pratt",
+      "research_group": "Department of Chemistry / CLASP",
+      "research_interests": "Atmospheric chemistry, aerosol particles, mass spectrometry, Arctic climate",
+      "\ufefflead_id": "lead-024",
+      "research_theme": "Atmospheric Science",
+      "source_row": "31",
+      "existing_status": "",
+      "email": "prattka@umich.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://lsa.umich.edu/chem/people/faculty/prattka.html",
+      "grants": [
+        "National Brown Investigator Award (2024) \u2014 Brown Institute for Basic Sciences at Caltech, supporting research on the chemical compounds and mechanisms defining Arctic atmosphere composition",
+        "Fulbright Scholar Award to Australia (2025)"
+      ],
+      "research_openings": [
+        "Open to prospective Ph.D. students (contact Prof. Pratt by email with CV and letter of interest, per Pratt Lab Members page)",
+        "Open to prospective postdoctoral researchers (contact Prof. Pratt by email with CV and letter of interest)",
+        "Open to prospective undergraduate student researchers",
+        "Open to visiting foreign exchange student researchers"
+      ],
+      "identity_verification": "Verified \u2014 Kerri A. Pratt is Professor of Chemistry, Earth & Environmental Sciences, and the Program in Applied Physics at the University of Michigan. Email prattka@umich.edu confirmed via the official U-M LSA Chemistry faculty page. Note: the input's research_group field listed 'Department of Chemistry / CLASP'; her primary UMich affiliations are Chemistry, Earth & Environmental Sciences, and Applied Physics, not CLASP (Climate and Space Sciences)."
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "University of New Hampshire",
+      "professor_name": "Lynn Kistler",
+      "research_group": "Space Science Center",
+      "research_interests": "Magnetospheric physics, ion composition, aurora, space instrumentation",
+      "\ufefflead_id": "lead-025",
+      "research_theme": "Space Plasma & Magnetospheres",
+      "source_row": "32",
+      "existing_status": "",
+      "email": "lynn.kistler@unh.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://eos.unh.edu/person/lynn-kistler",
+      "grants": [
+        "SWiPS (2024\u20132034), NASA",
+        "Plasma During Geomagnetic Storms (2024\u20132028), NASA",
+        "Solar Wind Contribution (2025\u20132028), NASA",
+        "Rockets for Heavy Ion Upwelling (2025\u20132027), NASA",
+        "STEREO PLASTIC (2024\u20132027), NASA",
+        "The Plasma Observatory (2024\u20132026), NASA"
+      ],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "University of New Hampshire",
+      "professor_name": "Mark McConnell",
+      "research_group": "Space Science Center",
+      "research_interests": "High-energy astrophysics, gamma-ray bursts, solar flares, cosmic rays",
+      "\ufefflead_id": "lead-026",
+      "research_theme": "High-Energy Astrophysics & Cosmology",
+      "source_row": "33",
+      "existing_status": "",
+      "email": "mark.mcconnell@unh.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://astrophysics.sr.unh.edu/people/mcconnell/",
+      "grants": [],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "LPC2E / University of Bern Affiliate",
+      "professor_name": "Matthieu Berthon",
+      "research_group": "Space Instrumentation",
+      "research_interests": "Space mass spectrometry, planetary exploration, instrumentation, cometary physics",
+      "\ufefflead_id": "lead-027",
+      "research_theme": "Planetary Science & Exploration",
+      "source_row": "34",
+      "existing_status": "",
+      "email": "matthieu.berthon@cnrs-orleans.fr",
+      "lead_type": "person",
+      "location": "France / CH"
+    },
+    "output": {
+      "official_profile_url": "Official profile URL unavailable.",
+      "grants": [],
+      "research_openings": [],
+      "identity_verification": "No verified public evidence"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "UTSA / Southwest Research Institute",
+      "professor_name": "Mihir Desai",
+      "research_group": "Space Science and Engineering",
+      "research_interests": "Solar energetic particles, heliospheric physics, space weather, instrumentation",
+      "\ufefflead_id": "lead-028",
+      "research_theme": "Solar Wind & Heliophysics",
+      "source_row": "35",
+      "existing_status": "",
+      "email": "mihir.desai@swri.org",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://grad.space.swri.edu/desai-mihir",
+      "grants": [],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "University of New Hampshire",
+      "professor_name": "Nathan Schwadron",
+      "research_group": "Space Science Center / Heliophysics",
+      "research_interests": "Solar wind, heliospheric boundary, cosmic rays, radiation hazards",
+      "\ufefflead_id": "lead-029",
+      "research_theme": "Solar Wind & Heliophysics",
+      "source_row": "36",
+      "existing_status": "",
+      "email": "n.schwadron@unh.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://eos.unh.edu/person/nathan-schwadron",
+      "grants": [
+        "NASA Interstellar Mapping and Acceleration Probe (IMAP) mission - Deputy Principal Investigator and lead for the IMAP-Lo instrument; mission launched September 24, 2025; primary science mission commenced February 1, 2026",
+        "NSF Sun-2-Ice project - Co-Principal Investigator on NSF-funded research connecting solar activity to polar ice",
+        "Heliospheric radiation-environment modeling: EMMREM (Earth-Moon-Mars Radiation Environment Modules), PREDICCS, and C-SWEPA (Corona-Solar Wind Energetic Particle Acceleration) - lead investigator"
+      ],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "Princeton University",
+      "professor_name": "Nathaniel Fisch",
+      "research_group": "Department of Astrophysical Sciences / PPPL",
+      "research_interests": "Plasma heating, current drive, laser-plasma interactions, fusion",
+      "\ufefflead_id": "lead-030",
+      "research_theme": "Plasma Physics & Fusion",
+      "source_row": "37",
+      "existing_status": "",
+      "email": "fisch@princeton.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://web.astro.princeton.edu/people/nathaniel-fisch",
+      "grants": [
+        "ARPA-E OPEN 2021 grant to Nathaniel J. Fisch (Princeton) for 'Economical Proton-Boron 11 Fusion' / CHARM (CHambered Aneutronic Rotating Mirror) project. Award announced March 10, 2022; still active as of July 9, 2025, demonstrated by project presentation at the 2025 ARPA-E Fusion Programs Annual Meeting (https://arpa-e.energy.gov/sites/default/files/2025-08/Day2_08_Fisch.pdf).",
+        "PPPL-wide DOE 'fusion innovation research teams' funding (announced 2024) supporting Princeton/PPPL fusion research including Fisch's plasma physics program.",
+        "PPPL DOE $5 million Energy Earthshot Research Center focused on clean hydrogen (PPPL-led; supports Fisch laboratory ecosystem).",
+        "PPPL DOE $6.1 million award to accelerate fusion energy through private-public partnerships (2024; supports Fisch laboratory ecosystem)."
+      ],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "Institut Polytechnique de Paris",
+      "professor_name": "Olivier Le Contel",
+      "research_group": "Laboratoire de Physique des Plasmas (LPP)",
+      "research_interests": "Magnetospheric physics, substorms, plasma waves, space instrumentation",
+      "\ufefflead_id": "lead-031",
+      "research_theme": "Space Plasma & Magnetospheres",
+      "source_row": "38",
+      "existing_status": "",
+      "email": "olivier.lecontel@lpp.polytechnique.fr",
+      "lead_type": "person",
+      "location": "France"
+    },
+    "output": {
+      "official_profile_url": "https://lpp.ip-paris.fr/olivier-lecontel",
+      "grants": [],
+      "research_openings": [
+        "PhD offer (Sorbonne Universit\u00e9, ED127 doctoral school, plas@par program, November 2025 \u2013 November 2028): 'Magnetic reconnection at the magnetopause: effects of cold ions and guide field' \u2014 supervised by Olivier Le Contel (Directeur de recherche CNRS, HDR) and Alessandro Retin\u00f2 (CRCN CNRS) at Laboratoire de Physique des Plasmas (UMR7648)."
+      ],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "Arizona State University",
+      "professor_name": "Philip Christensen",
+      "research_group": "School of Earth and Space Exploration (SESE)",
+      "research_interests": "Infrared spectroscopy, planetary geology, Mars exploration, thermal emission",
+      "\ufefflead_id": "lead-032",
+      "research_theme": "Planetary Science & Exploration",
+      "source_row": "39",
+      "existing_status": "",
+      "email": "phil.christensen@asu.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://search.asu.edu/profile/75976",
+      "grants": [
+        "Reprocessing Copper Mine Tailings: Critical Minerals Recovery from Past, Current and Future Copper Mine Tailings \u2014 Arizona State Mine Inspector (Co-I); 1/2/2024 \u2013 1/2/2027",
+        "Lucy LTES Phase E - Revision - 3 \u2014 NASA (PI); 11/16/2021 \u2013 2/28/2034",
+        "OSIRIS-REx Science WBS 40 \u2014 NASA (PI); 6/1/2013 \u2013 3/31/2027"
+      ],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "Arizona State University",
+      "professor_name": "Philip Mauskopf",
+      "research_group": "School of Earth and Space Exploration / Physics",
+      "research_interests": "Cosmology instrumentation, submillimeter detectors, cosmic microwave background, terahertz",
+      "\ufefflead_id": "lead-033",
+      "research_theme": "High-Energy Astrophysics & Cosmology",
+      "source_row": "40",
+      "existing_status": "",
+      "email": "philip.mauskopf@asu.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://search.asu.edu/profile/1863516",
+      "grants": [],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "UC Berkeley / Princeton Context",
+      "professor_name": "Prof. Leone",
+      "research_group": "Physics / Astrophysics Divisions",
+      "research_interests": "High-energy astrophysics, stellar systems, observational astronomy, plasma",
+      "\ufefflead_id": "lead-034",
+      "research_theme": "High-Energy Astrophysics & Cosmology",
+      "source_row": "41",
+      "existing_status": "",
+      "email": "physics@berkeley.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "Official profile URL unavailable.",
+      "grants": [],
+      "research_openings": [],
+      "identity_verification": "No verified public evidence"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "UC Berkeley",
+      "professor_name": "Rob Lillis",
+      "research_group": "Space Sciences Laboratory (SSL)",
+      "research_interests": "Planetary aeronomy, Mars magnetosphere, space instrumentation, ionospheric loss",
+      "\ufefflead_id": "lead-035",
+      "research_theme": "Planetary Science & Exploration",
+      "source_row": "42",
+      "existing_status": "",
+      "email": "rlillis@ssl.berkeley.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://www.ssl.berkeley.edu/people/robert-lillis/",
+      "grants": [
+        "ESCAPADE SIMPLEX twin-spacecraft Mars mission \u2014 NASA PI, ~$61M, 2019\u2013present (launched from Cape Canaveral on Blue Origin New Glenn on 13 Nov 2025)",
+        "MAVEN Mars Scout Mission \u2014 NASA Co-I, ~$35M, 2009\u2013present",
+        "Emirates Mars Mission (Hope) Science / UV detector / systems engineering \u2014 UAESA Co-I, ~$11M, 2015\u2013present",
+        "Electron Impact Effects in the Martian Nightside Ionosphere \u2014 NASA PI, ~$400k, 2020\u20132025",
+        "Reassessing Martian Dynamo History \u2014 NASA Co-I, ~$80k, 2022\u20132025"
+      ],
+      "research_openings": [
+        "Assistant/Associate Researcher, Planetary Science \u2014 Space Sciences Laboratory, UC Berkeley (Planetary & Exobiology Group; focus on giant-planet atmospheric composition & dynamics). Posted 20 May 2025 on AAS DPS job board; open date 9 May 2025; next review 24 May 2025; final deadline 9 June 2025; anticipated start 1 September 2025. Apply via aprecruit.berkeley.edu (JPF04888)."
+      ],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "UTSA / Southwest Research Institute",
+      "professor_name": "Robert Ebert",
+      "research_group": "Space Science Department",
+      "research_interests": "Solar wind, magnetospheric interactions, plasma mass spectrometry, heliosphere",
+      "\ufefflead_id": "lead-036",
+      "research_theme": "Solar Wind & Heliophysics",
+      "source_row": "43",
+      "existing_status": "",
+      "email": "rebert@swri.org",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://grad.space.swri.edu/ebert-robert",
+      "grants": [
+        "NOAA Space Weather Follow-On (SWFO-L1) Solar Wind Plasma Sensor (SWiPS) instrument program \u2014 Dr. Robert Ebert serves as Principal Investigator. The SWiPS instrument was delivered and integrated into the NOAA satellite on October 2, 2024; the SWFO-L1 satellite launched in September 2025 as a rideshare on NASA's IMAP mission aboard SpaceX Falcon 9; commissioning began September 29, 2025, with operational data delivery to NOAA/SWPC starting in 2026. (Source: SwRI press releases Oct 2, 2024 and Sep 17, 2025; NOAA NESDIS SWiPS science document Nov 2025)",
+        "NOAA Space Weather Follow-On Magnetometer (SWFO-MAG) instrument program \u2014 Companion magnetometer built by SwRI's Department of Space Research for the same SWFO-L1 mission; active through the Sep 2025 launch and subsequent commissioning. (Source: SwRI press release Sep 17, 2025)"
+      ],
+      "research_openings": [
+        "UTSA-SwRI Space Physics Graduate Program (PhD and MS in Space Physics, Planetary Science, and Astrophysics) \u2014 currently accepting graduate research applications. Dr. Robert Ebert serves as Assistant Director of this program. The program, established in 2005, offers research opportunities in solar wind, magnetospheric physics, planetary science, and heliophysics. Apply via https://grad.space.swri.edu/about-us"
+      ],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "UC Berkeley",
+      "professor_name": "Robert Livi",
+      "research_group": "Space Sciences Laboratory (SSL)",
+      "research_interests": "Electrostatic analyzers, plasma instrumentation, solar wind, magnetospheric physics",
+      "\ufefflead_id": "lead-037",
+      "research_theme": "Space Plasma & Magnetospheres",
+      "source_row": "44",
+      "existing_status": "",
+      "email": "rlivi@ssl.berkeley.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://www.ssl.berkeley.edu/people/roberto-livi/",
+      "grants": [],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "Princeton University",
+      "professor_name": "Samuel Cohen",
+      "research_group": "Princeton Plasma Physics Laboratory (PPPL)",
+      "research_interests": "Magnetic confinement fusion, field-reversed configurations, plasma processing, clean energy",
+      "\ufefflead_id": "lead-038",
+      "research_theme": "Plasma Physics & Fusion",
+      "source_row": "45",
+      "existing_status": "",
+      "email": "scohen@pppl.gov",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://www.pppl.gov/people/sam-cohen",
+      "grants": [],
+      "research_openings": [
+        "Associate Research Scientist (Strategic Science Initiative Fellowship) at PPPL \u2014 three-year postdoctoral fellowship open to applicants in fusion science and technology, AI/ML, discovery plasma science, and applied materials/electromanufacturing (including plasma processing), with cover letter/CV deadline of January 31, 2026, two-year minimum commitment starting no later than September 2026 (https://www.pppl.gov/SSI-associate-research-scientist)",
+        "Staff Research Scientist at PPPL \u2014 Princeton Plasma Physics Laboratory research staff scientist opening (recently posted via ZipRecruiter, https://www.ziprecruiter.com/Jobs/Princeton-University-Pppl)",
+        "Staff Research Scientist \u2014 Tokamak Experimental Science at PPPL \u2014 recently posted opening (https://www.ziprecruiter.com/Jobs/Princeton-Plasma-Physics)",
+        "Staff Research Scientist \u2014 Boundary Physics at PPPL \u2014 onsite research staff scientist position in Princeton, NJ, recently posted (https://main.hercjobs.org/jobs/22312813/staff-research-scientist-boundary-physics)",
+        "Dr. Robert A. Ellis Fellowship at PPPL \u2014 doctoral fellowship in plasma physics for graduate students (https://www.pppl.gov/graduate)",
+        "PPPL Undergraduate Internship Program \u2014 10-week summer research internship for undergraduates (https://www.pppl.gov/graduate)"
+      ],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "University of Colorado Boulder",
+      "professor_name": "Shannon Curry",
+      "research_group": "Laboratory for Atmospheric and Space Physics (LASP)",
+      "research_interests": "Planetary magnetospheres, atmospheric escape, MAVEN mission, solar wind",
+      "\ufefflead_id": "lead-039",
+      "research_theme": "Planetary Science & Exploration",
+      "source_row": "46",
+      "existing_status": "",
+      "email": "shannon.curry@lasp.colorado.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://lasp.colorado.edu/people/shannon-curry",
+      "grants": [
+        "NASA MAVEN (Mars Atmosphere and Volatile EvolutioN) mission - Principal Investigator; active through 2024-2025 (mission operations concluded December 2025, formally ended June 3, 2026)",
+        "NASA ESCAPADE (Escape and Plasma Acceleration and Dynamics Explorers) mission - Project Scientist; launched November 13, 2025, currently in cruise phase",
+        "NASA Parker Solar Probe (PSP) mission - Science Team member; mission ongoing",
+        "NASA Nexus for Exoplanet System Science (NExSS) program - Collaborator"
+      ],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "UTSA / Southwest Research Institute",
+      "professor_name": "Stefano Livi",
+      "research_group": "Space Science and Engineering",
+      "research_interests": "Solar wind instruments, heavy ion composition, space plasma sensors, planetary exploration",
+      "\ufefflead_id": "lead-040",
+      "research_theme": "Planetary Science & Exploration",
+      "source_row": "47",
+      "existing_status": "",
+      "email": "stefano.livi@swri.org",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://grad.space.swri.edu/livi-stefano",
+      "grants": [
+        "NASA IMAP mission / CoDICE (Compact Dual Ion Composition Experiment) \u2014 SwRI-led instrument delivered June 24, 2025, captured first-light data Dec 16, 2025; Livi is the SwRI instrument lead under NASA's Solar Terrestrial Probes program [https://www.swri.org/newsroom/press-releases/novel-swri-developed-imap-instrument-delivers-first-light-data; https://www.swri.org/newsroom/press-releases/novel-swri-developed-instrument-delivered-nasa-s-imap-mission; https://imap.princeton.edu/southwest-research-institute-swri]",
+        "ESA/NASA Solar Orbiter HIS (Heavy Ion Sensor) \u2014 Livi is PI; mission nominal through end-2026 with possible extension to 2030 [https://grad.space.swri.edu/livi-stefano; https://en.wikipedia.org/wiki/Solar_Orbiter]",
+        "ESA/JAXA BepiColombo Strofio instrument \u2014 Livi is PI; mission ongoing through 2026 Mercury orbital insertion [https://grad.space.swri.edu/livi-stefano; https://50.explorors.org/community/stefano-a-livi]"
+      ],
+      "research_openings": [
+        "UTSA\u2013SwRI Space Physics Graduate Program Research Assistantship \u2014 funded M.S./Ph.D. positions (stipend, tuition, benefits) for students interested in space physics research with SwRI faculty including Stefano Livi; rolling admissions for upcoming terms [https://grad.space.swri.edu/degree-and-application-information/research-assistantship-description/; https://grad.space.swri.edu/degree-and-application-information/how-to-apply/]"
+      ],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "UTSA / Southwest Research Institute",
+      "professor_name": "Stephen Fuselier",
+      "research_group": "Space Science and Engineering",
+      "research_interests": "Space plasma physics, magnetic reconnection, bow shock, interstellar boundary",
+      "\ufefflead_id": "lead-041",
+      "research_theme": "Space Plasma & Magnetospheres",
+      "source_row": "48",
+      "existing_status": "",
+      "email": "sfuselier@swri.org",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://grad.space.swri.edu/fuselier-stephen/",
+      "grants": [],
+      "research_openings": [
+        "SwRI/UTSA Graduate Program in Space Physics (MS/PhD) - applications accepted via https://grad.space.swri.edu/apply",
+        "General SwRI career opportunities available at https://www.swri.org/careers and https://resapp.swri.org/ResApp/Job_Search.aspx"
+      ],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "UC Berkeley / UC San Diego",
+      "professor_name": "Steven Boggs",
+      "research_group": "Space Sciences Laboratory (SSL)",
+      "research_interests": "High-energy astrophysics, gamma-ray spectrometers, nuclear astrophysics, balloon instruments",
+      "\ufefflead_id": "lead-042",
+      "research_theme": "High-Energy Astrophysics & Cosmology",
+      "source_row": "49",
+      "existing_status": "",
+      "email": "sboggs@ucsd.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://stevenboggs.github.io/",
+      "grants": [
+        "NASA Small Explorer (SMEX) mission funding for COSI (Compton Spectrometer and Imager) - Boggs serves as Deputy PI and Calibration Lead. KDP-C Decision Memo signed April 16-17, 2024, advancing mission to Phase C implementation. NASA awarded ~$69M SpaceX launch contract for August 2027."
+      ],
+      "research_openings": [
+        "Postdoctoral Scholar \u2013 High-Energy Astrophysics: COSI (University of California, Berkeley, Space Sciences Laboratory) \u2013 posted 2024-10-09 with application deadline 2024-11-27. Boggs serves as Deputy PI/Calibration Lead. Expected start in 2025; 2-year term; salary $70,902\u2013$79,014 USD. (Deadline has passed; position likely closed/filled.)"
+      ],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "UC Berkeley",
+      "professor_name": "Stuart Bale",
+      "research_group": "Space Sciences Laboratory (SSL) / Physics",
+      "research_interests": "Solar wind, plasma turbulence, Parker Solar Probe, radio astronomy",
+      "\ufefflead_id": "lead-043",
+      "research_theme": "Solar Wind & Heliophysics",
+      "source_row": "50",
+      "existing_status": "",
+      "email": "bale@berkeley.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://physics.berkeley.edu/people/faculty/stuart-bale",
+      "grants": [
+        "2025 Arctowski Medal (National Academy of Sciences) \u2013 awarded to Stuart D. Bale; includes a $100,000 prize and an additional $100,000 in research funding for solar physics, announced February 10, 2025 [1][2]"
+      ],
+      "research_openings": [
+        "Assistant/Associate Researcher \u2013 Planetary Science \u2013 Space Sciences Lab (Berkeley AP Recruit JPF04888) \u2013 Posted May 20, 2025; PI: Thomas Miao; https://aprecruit.berkeley.edu/JPF04888 [1][2]",
+        "Postdoctoral Scholar \u2013 Space Sciences Laboratory (Berkeley AP Recruit JPF05361) \u2013 Posted May 9, 2026; PIs: Drs. Andrew Poppe and Lucas Liuzzo; focus on Europa/Jovian plasma simulation, anticipated start Summer/Fall 2026; https://aprecruit.berkeley.edu/JPF05361 [3][4]"
+      ],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "University of Bern",
+      "professor_name": "WP Group (Bern)",
+      "research_group": "Space Research & Planetary Sciences (WP)",
+      "research_interests": "Planetary exploration, mass spectrometry, cometary sciences, space simulation",
+      "\ufefflead_id": "lead-044",
+      "research_theme": "Planetary Science & Exploration",
+      "source_row": "51",
+      "existing_status": "",
+      "email": "info.space@unibe.ch",
+      "lead_type": "group",
+      "location": "Switzerland"
+    },
+    "output": {
+      "official_profile_url": "https://www.space.unibe.ch/",
+      "grants": [
+        "SNSF project \"Characterisation of Near Earth Asteroid Apophis by exploitation of RAMSES mission data\" (University of Bern, Division of Space Research and Planetary Sciences / Astronomical Institute; funds the Apophis/RAMSES postdoc position, start Sep\u2013Dec 2026)",
+        "SNSF Starting Grant \"Exo-Neptune Census\" led by Assistant Professor Hugh Osborn (Space Research and Planetary Sciences, University of Bern; 5-year duration; funds the Exo-Neptune PostDoc position starting 01.12.2026)",
+        "SNSF Starting Grant awarded December 2025 to PD Dr. Audrey Vorburger (Space Research & Planetary Sciences, University of Bern) to model plumes on Europa in preparation for ESA's JUICE and NASA's Europa Clipper missions",
+        "CHEOPS space mission (led by the University of Bern, joint ESA-Switzerland mission) extended through 2029 \u2014 national contribution via Swiss Space Office/ESA PRODEX supporting ongoing Bern-led exoplanet observations"
+      ],
+      "research_openings": [
+        "Postdoc position Space Research and Planetary Sciences / Astronomical Institute (University of Bern, Physics Institute) \u2014 100%, fixed-term, start September\u2013December 2026, 2 years + possible 1-year extension; SNSF-funded \"Characterisation of Near Earth Asteroid Apophis by exploitation of RAMSES mission data\"; interdisciplinary team with 3 PhD students, a postdoctoral researcher, and a software engineer \u2014 https://jobs.unibe.ch/job-vacancies/postdoc-position-space-research-and-planetary-sciences-astronomical-institute/4b1cf432-2b32-475d-a8f5-77360b278f2e",
+        "PostDoc in exoplanet atmospheres at the University of Bern (Space Research and Planetary Sciences, Physics Institute) \u2014 100%, fixed-term, start 01.12.2026 (or by arrangement); SNSF-funded \"Exo-Neptune Census\" starting grant led by Asst. Prof. Hugh Osborn; focus on extracting JWST atmospheric spectra of sub-Neptunes and bulk volatile compositions \u2014 https://jobs.unibe.ch/job-vacancies/postdoc-in-exoplanet-atmospheres-at-the-university-of-bern/b9c5af41-7e6f-42b1-8834-6df2ad738813",
+        "PhD position in numerical modeling of asteroid evolution (University of Bern, Space Research) \u2014 listed on the Bern open positions portal under the Space Research group \u2014 https://unibe.prospective.ch/?lang=en&q=space"
+      ],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "",
+      "accepting_applications_notes": "",
+      "university": "University of Colorado Boulder",
+      "professor_name": "Zoltan Sternovsky",
+      "research_group": "Smead Aerospace Engineering Sciences / LASP",
+      "research_interests": "Cosmic dust, dust instruments, laboratory plasma, impact ionization",
+      "\ufefflead_id": "lead-045",
+      "research_theme": "Planetary Science & Exploration",
+      "source_row": "52",
+      "existing_status": "",
+      "email": "zoltan.sternovsky@colorado.edu",
+      "lead_type": "person",
+      "location": "USA"
+    },
+    "output": {
+      "official_profile_url": "https://www.colorado.edu/aerospace/zoltan-sternovsky",
+      "grants": [],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "Direct ITER-related plasma diagnostics. ITER itself highlighted LPP\u2019s Doppler-reflectometry work as relevant to predicting turbulence and transport in ITER plasmas, and Pascale Hennequin is identified as head of LPP\u2019s Magnetic Fusion team iter+2",
+      "existing_url": "LPP overview cofund-physics.universite-paris-saclay, ITER article on LPP work iter",
+      "accepting_applications_notes": "",
+      "university": "Sorbonne Universit\u00e9 / \u00c9cole Polytechnique / CNRS / Universit\u00e9 Paris-Saclay / Observatoire de Paris cofund-physics.universite-paris-saclay",
+      "professor_name": "Pascale Hennequin",
+      "research_group": "LPP \u2014 Laboratoire de Physique des Plasmas; Magnetic Fusion Plasmas team; fusion turbulence / reflectometry activity around Tore Supra, ASDEX Upgrade, and CEA/IRFM collaborations cofund-physics.universite-paris-saclay+2",
+      "research_interests": "Space plasmas + magnetic fusion plasmas in the same lab; fusion side focuses on turbulence, fluctuation measurements, Doppler reflectometry, plasma rotation, transport barriers, and ITER-relevant diagnostics research cofund-physics.universite-paris-saclay+2",
+      "\ufefflead_id": "lead-046",
+      "research_theme": "Plasma Physics & Fusion",
+      "source_row": "53",
+      "existing_status": "Sent",
+      "email": "",
+      "lead_type": "person",
+      "location": ""
+    },
+    "output": {
+      "official_profile_url": "https://lpp.ip-paris.fr/recherche/equire-plasmas-de-fusion-magnetique",
+      "grants": [],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "Direct ITER-related plasma diagnostics. ITER itself highlighted LPP\u2019s Doppler-reflectometry work as relevant to predicting turbulence and transport in ITER plasmas, and Pascale Hennequin is identified as head of LPP\u2019s Magnetic Fusion team iter+2",
+      "existing_url": "LPP overview cofund-physics.universite-paris-saclay, ITER article on LPP work iter",
+      "accepting_applications_notes": "",
+      "university": "Sorbonne Universit\u00e9 / \u00c9cole Polytechnique / CNRS / Universit\u00e9 Paris-Saclay / Observatoire de Paris cofund-physics.universite-paris-saclay",
+      "professor_name": "Laure Vermare",
+      "research_group": "LPP \u2014 Laboratoire de Physique des Plasmas; Magnetic Fusion Plasmas team; fusion turbulence / reflectometry activity around Tore Supra, ASDEX Upgrade, and CEA/IRFM collaborations cofund-physics.universite-paris-saclay+2",
+      "research_interests": "Space plasmas + magnetic fusion plasmas in the same lab; fusion side focuses on turbulence, fluctuation measurements, Doppler reflectometry, plasma rotation, transport barriers, and ITER-relevant diagnostics research cofund-physics.universite-paris-saclay+2",
+      "\ufefflead_id": "lead-047",
+      "research_theme": "Plasma Physics & Fusion",
+      "source_row": "53",
+      "existing_status": "Sent",
+      "email": "",
+      "lead_type": "person",
+      "location": ""
+    },
+    "output": {
+      "official_profile_url": "https://lpp.ip-paris.fr/laure-vermare",
+      "grants": [
+        "DYNAFLUC (PRCI, ANR): France\u2013Germany bilateral collaboration on dynamics of turbulence fluctuations in magnetic fusion plasmas; coordinated by Laure Vermare; started April 2026, 3-year duration."
+      ],
+      "research_openings": [
+        "Plasapar 2026 summer school on plasmas (open to Master's and PhD students), promoted on the LPP website."
+      ],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "Very strong direct ITER involvement. IPP states that its ITER T&D division hosts technological contributions to ITER, including NBI and \u201cvarious diagnostics,\u201d while researchers also support ITER plasma control software and operation preparation ipp.mpg+2",
+      "existing_url": "IPP ITER participation ipp.mpg, IPP ITER Technology & Diagnostics ipp.mpg",
+      "accepting_applications_notes": "",
+      "university": "Max Planck Institute for Plasma Physics (IPP), Garching/Greifswald ipp.mpg+1",
+      "professor_name": "Max Planck Institute for Plasma Physics \u2014 ITER Technology & Diagnostics",
+      "research_group": "ITER Technology & Diagnostics division (ITED); Neutral Beam Injection group; ITER Diagnostics group; ASDEX Upgrade and Wendelstein 7-X also support ITER preparation ipp.mpg+2",
+      "research_interests": "ITER technology development, neutral beam heating/current drive, diagnostics development, plasma control support, and broader ITER operations preparation through ASDEX Upgrade research ipp.mpg+2",
+      "\ufefflead_id": "lead-048",
+      "research_theme": "Plasma Physics & Fusion",
+      "source_row": "54",
+      "existing_status": "",
+      "email": "",
+      "lead_type": "group",
+      "location": ""
+    },
+    "output": {
+      "official_profile_url": "https://www.ipp.mpg.de/technologie",
+      "grants": [
+        "BMBF 'Fusion 2040 - Research on the way to a fusion power plant' programme (announced March 13, 2024; IPP article published April 22, 2024): IPP receives 4 million EUR as part of a ~20 million EUR / 3-year BMBF project supporting the first approved German magnetic fusion project, including fusion-power-plant technology development. IPP coordinates with start-up Proxima Fusion (stellarator power-plant concept: magnetic-cage optimisation, controlled heat dissipation, remote maintenance) and is a partner in the KIT/Gauss Fusion block on dismantlable superconducting coils."
+      ],
+      "research_openings": [
+        "Bachelor thesis in Physics at Garching (unsolicited application) \u2014 open via IPP careers portal: https://careers.plasmaphysics.de/jobs/bachelor-thesis-physics-garching-unsolicited-application/f3167f07-5108-433f-9ced-435119b62a05",
+        "Master thesis in Physics at Garching (unsolicited application) \u2014 open via IPP careers portal: https://careers.plasmaphysics.de/jobs/master-thesis-physics-garching-unsolicited-application/1c28524d-aa71-4ef9-9b3d-f8f9aed53fa2",
+        "Doctoral positions via the HEPP International Helmholtz Graduate School for Plasma Physics at IPP Garching (continuous intake): https://careers.plasmaphysics.de/phd-program",
+        "Postdoctoral positions at IPP Garching/Greifswald (fixed-term, typically 2 years, extendable to 4; salary TV\u00f6D Bund up to grade 13) \u2014 continuous intake: https://careers.plasmaphysics.de/postdoc"
+      ],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "Not direct ITER/fusion from the sources reviewed. IRAP is a strong space-plasma lab, but the evidence found points to planetary/space plasma modeling and instrumentation rather than ITER or fusion plasma diagnostics irap.omp+2",
+      "existing_url": "IRAP homepage irap.omp",
+      "accepting_applications_notes": "",
+      "university": "Universit\u00e9 Toulouse III\u2013Paul Sabatier / CNRS / CNES spearhead-he",
+      "professor_name": "Quentin N\u00e9non",
+      "research_group": "IRAP \u2014 Institut de Recherche en Astrophysique et Plan\u00e9tologie; PEPS (Planets, Environments, and Space Plasmas) and related space-plasma teams irap.omp+1",
+      "research_interests": "Astrophysics, planetology, heliophysics, magnetospheres, planetary plasma environments, thermal plasma specification models for space missions irap.omp+2",
+      "\ufefflead_id": "lead-049",
+      "research_theme": "Planetary Science & Exploration",
+      "source_row": "55",
+      "existing_status": "",
+      "email": "",
+      "lead_type": "person",
+      "location": ""
+    },
+    "output": {
+      "official_profile_url": "https://www.occitanie-ouest.cnrs.fr/fr/personne/quentin-nenon",
+      "grants": [],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "Not direct ITER/fusion from the sources reviewed. IRAP is a strong space-plasma lab, but the evidence found points to planetary/space plasma modeling and instrumentation rather than ITER or fusion plasma diagnostics irap.omp+2",
+      "existing_url": "IRAP homepage irap.omp",
+      "accepting_applications_notes": "",
+      "university": "Universit\u00e9 Toulouse III\u2013Paul Sabatier / CNRS / CNES spearhead-he",
+      "professor_name": "Nicolas Andr\u00e9",
+      "research_group": "IRAP \u2014 Institut de Recherche en Astrophysique et Plan\u00e9tologie; PEPS (Planets, Environments, and Space Plasmas) and related space-plasma teams irap.omp+1",
+      "research_interests": "Astrophysics, planetology, heliophysics, magnetospheres, planetary plasma environments, thermal plasma specification models for space missions irap.omp+2",
+      "\ufefflead_id": "lead-050",
+      "research_theme": "Planetary Science & Exploration",
+      "source_row": "55",
+      "existing_status": "",
+      "email": "",
+      "lead_type": "person",
+      "location": ""
+    },
+    "output": {
+      "official_profile_url": "https://pagespro.isae-supaero.fr/nicolas-andre/",
+      "grants": [],
+      "research_openings": [
+        "PhD thesis opportunities at IRAP in Astrophysics, Space Sciences, and Planetology via the \u00c9cole Doctorale SDU2E \u2014 approximately 20 topics per year listed on https://www.irap.omp.eu/formation-emploi/theses/. The PEPS team (including Nicolas Andr\u00e9's group) regularly proposes topics on planetary magnetospheres, heliophysics, and space plasma instrumentation. Interested candidates should contact nicolas.andre@irap.omp.eu for current opportunities."
+      ],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "Not direct ITER/fusion from the sources reviewed. IRAP is a strong space-plasma lab, but the evidence found points to planetary/space plasma modeling and instrumentation rather than ITER or fusion plasma diagnostics irap.omp+2",
+      "existing_url": "IRAP homepage irap.omp",
+      "accepting_applications_notes": "",
+      "university": "Universit\u00e9 Toulouse III\u2013Paul Sabatier / CNRS / CNES spearhead-he",
+      "professor_name": "IRAP \u2014 PEPS space-plasma teams",
+      "research_group": "IRAP \u2014 Institut de Recherche en Astrophysique et Plan\u00e9tologie; PEPS (Planets, Environments, and Space Plasmas) and related space-plasma teams irap.omp+1",
+      "research_interests": "Astrophysics, planetology, heliophysics, magnetospheres, planetary plasma environments, thermal plasma specification models for space missions irap.omp+2",
+      "\ufefflead_id": "lead-051",
+      "research_theme": "Planetary Science & Exploration",
+      "source_row": "55",
+      "existing_status": "",
+      "email": "",
+      "lead_type": "group",
+      "location": ""
+    },
+    "output": {
+      "official_profile_url": "https://www.irap.omp.eu/en/les-equipes/peps",
+      "grants": [
+        "SPEARHEAD (Horizon Europe, Grant Agreement 101135044) \u2014 2024-01-01 to 2026-12-31 \u2014 IRAP (Toulouse) is a partner; topic: scientific exploitation of high-energy particle data from heliophysics missions (HORIZON-CL4-2023-SPACE-01-71)."
+      ],
+      "research_openings": [
+        "PhD Position with University of Toulouse (IRAP), Cherenkov Telescope Array Observatory (CTAO) \u2014 Deadline: 31 May 2026; Start Date: 1 October 2026; project develops tools for analysis of extended sources expected with CTAO and LHAASO (high-energy/gamma-ray astrophysics).",
+        "2-year postdoctoral position in heliophysics at IRAP (PEPS group) \u2014 Planetary, Environment and Space Plasma group at IRAP/University of Toulouse offers a two-year postdoctoral position in heliophysics."
+      ],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "Strong ITER-related diagnostics and control. TU/e is identified through FuseNet and TU/e pages as active in nuclear fusion science, while DIFFER\u2019s Plasma Edge Physics and Diagnostics group has a live PhD in fusion exhaust plasma diagnostics and TU/e/DIFFER work includes CXRS, MSE, and multispectral diagnostics relevant to reactor operation fusenet+3",
+      "existing_url": "TU/e nuclear fusion tue, DIFFER PEPD differ",
+      "accepting_applications_notes": "",
+      "university": "Eindhoven University of Technology (TU/e) + DIFFER (Dutch Institute for Fundamental Energy Research) fusenet+1",
+      "professor_name": "Ivo Classen",
+      "research_group": "Science and Technology of Nuclear Fusion at TU/e; Plasma Edge Physics and Diagnostics at DIFFER; Magnum-PSI-related diagnostics work tue+2",
+      "research_interests": "Fusion plasma control, plasma edge physics, plasma-wall interaction, multispectral imaging, CXRS, Motional Stark Effect, exhaust/divertor diagnostics, model-based control fusenet+3",
+      "\ufefflead_id": "lead-052",
+      "research_theme": "Plasma Physics & Fusion",
+      "source_row": "56",
+      "existing_status": "",
+      "email": "",
+      "lead_type": "person",
+      "location": ""
+    },
+    "output": {
+      "official_profile_url": "https://www.differ.nl/research/plasma-edge-physics-and-diagnostics",
+      "grants": [],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "Strong ITER-related diagnostics and control. TU/e is identified through FuseNet and TU/e pages as active in nuclear fusion science, while DIFFER\u2019s Plasma Edge Physics and Diagnostics group has a live PhD in fusion exhaust plasma diagnostics and TU/e/DIFFER work includes CXRS, MSE, and multispectral diagnostics relevant to reactor operation fusenet+3",
+      "existing_url": "TU/e nuclear fusion tue, DIFFER PEPD differ",
+      "accepting_applications_notes": "",
+      "university": "Eindhoven University of Technology (TU/e) + DIFFER (Dutch Institute for Fundamental Energy Research) fusenet+1",
+      "professor_name": "Marco de Baar",
+      "research_group": "Science and Technology of Nuclear Fusion at TU/e; Plasma Edge Physics and Diagnostics at DIFFER; Magnum-PSI-related diagnostics work tue+2",
+      "research_interests": "Fusion plasma control, plasma edge physics, plasma-wall interaction, multispectral imaging, CXRS, Motional Stark Effect, exhaust/divertor diagnostics, model-based control fusenet+3",
+      "\ufefflead_id": "lead-053",
+      "research_theme": "Plasma Physics & Fusion",
+      "source_row": "56",
+      "existing_status": "",
+      "email": "",
+      "lead_type": "person",
+      "location": ""
+    },
+    "output": {
+      "official_profile_url": "https://www.tue.nl/en/research/researchers/marco-de-baar/",
+      "grants": [],
+      "research_openings": [
+        "PhD Position in AI-Driven Digital Twins for Energy Conversion Systems (DIFFER, deadline 12 Jul) \u2014 listed on DIFFER vacancies page"
+      ],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "Direct ITER-related, especially on plasma-wall interaction and diagnostics. KTH states its fusion-materials/PWI work is fully integrated with ITER-relevant topics and includes development of in-vessel diagnostics and surface analysis methods for plasma-facing components kth",
+      "existing_url": "KTH fusion groups kth, KTH PWI group kth",
+      "accepting_applications_notes": "",
+      "university": "KTH Royal Institute of Technology, Department of Electromagnetics and Plasma Physics kth",
+      "professor_name": "KTH Plasma-Wall Interaction / Fusion Research Groups",
+      "research_group": "Fusion research groups; especially Plasma-Wall Interaction (PWI); also Pedestal Physics, Plasma Control, Heating and Current Drive, Fusion Plasma Device, Time-Spectral Modelling kth+1",
+      "research_interests": "Plasma-wall interaction, lifetime of plasma-facing materials, tritium inventory, dust formation, in-vessel diagnostics, surface analysis, ITER-relevant material migration studies kth",
+      "\ufefflead_id": "lead-054",
+      "research_theme": "Plasma Physics & Fusion",
+      "source_row": "57",
+      "existing_status": "",
+      "email": "",
+      "lead_type": "group",
+      "location": ""
+    },
+    "output": {
+      "official_profile_url": "https://www.kth.se/emp/research/fusion/plasma-wall-interaction-pwi-1.37584",
+      "grants": [
+        "Collaborative Platform for the Realisation of Fusion Energy Reactors \u2014 ~SEK 11 million granted for 2024\u20132027 under KTH's 'Electricity Systems of the Future' programme. Covers the fusion-materials / plasma-facing-component / PWI scope at KTH; multi-PI platform spanning the Department of Electromagnetics and Plasma Physics. Source: KTH Annual Report 2024 [1].",
+        "Ongoing participation in the EURATOM/EUROfusion General Research Programme (Horizon Europe grant agreement No. 101052200) via the Vetenskapsr\u00e5det (Swedish Research Council) Sweden node. KTH hosts Sweden's plasma-wall interaction activity; stated EUROfusion contributions are 'plasma wall interaction and materials studies' and 'Plasma-wall interaction and the new ITER-like wall (ILW)'. Source: EUROfusion consortium page for Sweden [2]."
+      ],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "https://www.epfl.ch/research/domains/swiss-plasma-center/education/education_doctoralschool/",
+      "existing_url": "https://people.epfl.ch/paolo.ricci",
+      "accepting_applications_notes": "Probably. Website has a list of PhD students",
+      "university": "EPFL",
+      "professor_name": "Paolo Ricci",
+      "research_group": "Swiss Plasma Center (SPC) \u2014 Theory Group",
+      "research_interests": "Plasma turbulence modeling, fluid and kinetic simulations, tokamak scrape-off layer, high-performance computing",
+      "\ufefflead_id": "lead-055",
+      "research_theme": "Plasma Physics & Fusion",
+      "source_row": "58",
+      "existing_status": "",
+      "email": "paolo.ricci@epfl.ch",
+      "lead_type": "person",
+      "location": "Switzerland"
+    },
+    "output": {
+      "official_profile_url": "https://people.epfl.ch/paolo.ricci",
+      "grants": [
+        "SNSF Project Grant: 'Plasma detachment in tokamaks: from the physics fundamentals to real-time control in reactor-relevant scenarios' \u2014 Applicant: Paolo Ricci; Duration: 01.04.2024 \u2013 31.03.2028; Amount: 810,378 CHF; Status: Ongoing/Active; Funding scheme: SNSF Projektf\u00f6rderung. Source: https://data.snf.ch"
+      ],
+      "research_openings": [
+        "PhD position \u2014 Plasma Physics Theory: 'Simulation of the plasma dynamics at the tokamak edge' (Supervisor: Prof. P. Ricci). Source: https://www.epfl.ch/research/domains/swiss-plasma-center/education/education_doctoralschool/phdpositions",
+        "Postdoctoral position \u2014 'Simulation of plasma turbulence in the tokamak boundary' (Supervisor: Prof. P. Ricci; earliest possible start date). Source: https://www.epfl.ch/research/domains/swiss-plasma-center/education/postdoc-positions/available-post-doctoral-positions"
+      ],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "https://www.epfl.ch/research/domains/swiss-plasma-center/education/education_doctoralschool/",
+      "existing_url": "https://people.epfl.ch/christian.theiler",
+      "accepting_applications_notes": "Probably. Website has a list of PhD students",
+      "university": "EPFL",
+      "professor_name": "Christian Theiler",
+      "research_group": "Swiss Plasma Center (SPC) \u2014 TCV Tokamak Physics",
+      "research_interests": "Tokamak edge physics, plasma-wall exhaust, alternative divertor configurations (snowflake divertors, negative triangularity)",
+      "\ufefflead_id": "lead-056",
+      "research_theme": "Plasma Physics & Fusion",
+      "source_row": "59",
+      "existing_status": "",
+      "email": "christian.theiler@epfl.ch",
+      "lead_type": "person",
+      "location": "Switzerland"
+    },
+    "output": {
+      "official_profile_url": "https://people.epfl.ch/christian.theiler",
+      "grants": [
+        "SNSF project \"Scientific exploitation of the Swiss Fusion Hub divertor upgrade of TCV\" \u2014 CHF 1,084,600, 01.04.2025 \u2013 31.03.2029, status: active/ongoing, applicant: Christian Theiler (Swiss Plasma Center, EPFL)."
+      ],
+      "research_openings": [
+        "PhD positions are open at the Swiss Plasma Center (SPC) including \"Experimental physics on the TCV tokamak\" and \"Simulation of the plasma dynamics at the tokamak edge\" (supervisor: Prof. P. Ricci) \u2014 both adjacent to/overlapping with Theiler's group research areas on edge plasma physics, alternative divertor configurations, snowflake divertors, and negative triangularity. The SPC doctoral school page states PhD students are sought year-round. Specific dedicated openings in Theiler's group are not listed on the public website at this time."
+      ],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "https://www.epfl.ch/research/domains/swiss-plasma-center/education/education_doctoralschool/",
+      "existing_url": "https://people.epfl.ch/holger.reimerdes",
+      "accepting_applications_notes": "Probably. Website has a list of PhD students",
+      "university": "EPFL",
+      "professor_name": "Holger Reimerdes",
+      "research_group": "Swiss Plasma Center (SPC) \u2014 TCV Tokamak Physics",
+      "research_interests": "Tokamak operations, divertor closure optimization, power exhaust handling, magneto-hydrodynamic (MHD) stability",
+      "\ufefflead_id": "lead-057",
+      "research_theme": "Plasma Physics & Fusion",
+      "source_row": "60",
+      "existing_status": "",
+      "email": "holger.reimerdes@epfl.ch",
+      "lead_type": "person",
+      "location": "Switzerland"
+    },
+    "output": {
+      "official_profile_url": "https://people.epfl.ch/holreg.reimerdes",
+      "grants": [],
+      "research_openings": [
+        "SPC doctoral programme with PhD projects on tokamak operations, divertor physics, power exhaust, MHD stability, and related topics \u2014 Holger Reimerdes is a supervisor in the TCV Tokamak Physics group (https://www.epfl.ch/research/domains/swiss-plasma-center/education/education_doctoralschool/phdpositions)",
+        "FuseNet 'PhD at SPC-EPFL' listing advertising general PhD openings at the Swiss Plasma Center across TCV-relevant topics including plasma heating, diagnostics, edge physics, high-performance computing for fusion simulations, and fusion theory (https://fusenet.eu/position/phd-spc-epfl)"
+      ],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "https://www.epfl.ch/research/domains/swiss-plasma-center/education/education_doctoralschool/",
+      "existing_url": "https://people.epfl.ch/duccio.testa",
+      "accepting_applications_notes": "I doubt it. Seems very senior, but n harm in reaching out (even if you contact a current student)",
+      "university": "EPFL",
+      "professor_name": "Duccio Testa",
+      "research_group": "Swiss Plasma Center (SPC) \u2014 International Installations",
+      "research_interests": "High-frequency magnetic diagnostic design, microtechnique instrumentation, statistical fluctuation analysis models",
+      "\ufefflead_id": "lead-058",
+      "research_theme": "Plasma Physics & Fusion",
+      "source_row": "61",
+      "existing_status": "",
+      "email": "duccio.testa@epfl.ch",
+      "lead_type": "person",
+      "location": "Switzerland"
+    },
+    "output": {
+      "official_profile_url": "https://people.epfl.ch/duccio.testa",
+      "grants": [
+        "Inductive magnetic sensors for DTT and DEMO (2022\u2013present) \u2014 EUROfusion-funded project to develop flat-coil photolithographic magnetic sensors for the Divertor Tokamak Test (DTT) facility and the DEMO demonstration reactor; listed as an ongoing project on Duccio Testa's EPFL People Directory profile. Underlying umbrella grant: EUROfusion Horizon Europe Grant Agreement No. 101052200 'Implementation of activities described in the Roadmap to Fusion during Horizon Europe through a joint programme of the members of the EUROfusion consortium' (1 Jan 2021 \u2013 31 Dec 2025)."
+      ],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "https://www.space.unibe.ch/research/research_groups/index_eng.html",
+      "accepting_applications_notes": "Lists open positions",
+      "university": "University of Bern",
+      "professor_name": "Peter Wurz",
+      "research_group": "Space Research & Planetary Sciences (WP)",
+      "research_interests": "Space mass spectrometry, solar wind composition instrumentation, planetary atmospheres, particle calibration",
+      "\ufefflead_id": "lead-059",
+      "research_theme": "Planetary Science & Exploration",
+      "source_row": "62",
+      "existing_status": "",
+      "email": "peter.wurz@unibe.ch",
+      "lead_type": "person",
+      "location": "Switzerland"
+    },
+    "output": {
+      "official_profile_url": "https://www.space.unibe.ch/about_us/personen/prof_dr_wurz_peter/index_eng.html",
+      "grants": [
+        "SNSF Project Funding \u2014 \"Investigation of the Solar System with in situ Mass Spectrometry\" \u2014 821,657 CHF \u2014 Applicant: Peter Wurz, Universit\u00e4t Bern \u2014 01.04.2022 to 31.03.2024",
+        "NCCR PlanetS \u2014 \"Origin, evolution and characterisation of planets (phase III)\" \u2014 11,810,521 CHF \u2014 University of Bern (Space Research & Planetary Sciences is a participating institution) \u2014 01.06.2022 to 31.05.2026"
+      ],
+      "research_openings": [
+        "Postdoc position \u2014 Space Research and Planetary Sciences / Astronomical Institute \u2014 University of Bern \u2014 Deadline: 31 July 2026 \u2014 Start: September\u2013December 2026 \u2014 100%, 2 years (+ possible 1 year extension) \u2014 SNSF-funded (Apophis Reference Model for ESA RAMSES mission) \u2014 PIs: PD Dr. Antoine Pommerol, Dr. Daniel Arnold, PD Dr. Martin Jutzi \u2014 https://jobs.unibe.ch/job-vacancies/postdoc-position-space-research-and-planetary-sciences-astronomical-institute/4b1cf432-2b32-475d-a8f5-77360b278f2e",
+        "PhD position \u2014 Space Geodesy for Asteroids \u2014 Astronomical Institute / Space Research and Planetary Sciences, University of Bern \u2014 https://jobs.unibe.ch/job-vacancies/phd-position-space-geodesy-for-asteroids/50af17ed-0f1f-46e9-9709-a0594183ff33",
+        "Professor in Experimental Physics / Planetary Sciences \u2014 Physics Institute, University of Bern (Space Research and Planetary Sciences Division) \u2014 posted January 2026 \u2014 https://www.earthworks-jobs.com/jobpost/bern25111"
+      ],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "https://www.space.unibe.ch/research/research_groups/index_eng.html",
+      "accepting_applications_notes": "Lists open positions",
+      "university": "University of Bern",
+      "professor_name": "Audrey Vorburger",
+      "research_group": "Space Research & Planetary Sciences (WP)",
+      "research_interests": "Particle detectors, neutral and ion mass spectrometers, space physics instrumentation, planetary science",
+      "\ufefflead_id": "lead-060",
+      "research_theme": "Planetary Science & Exploration",
+      "source_row": "63",
+      "existing_status": "",
+      "email": "audrey.vorburger@unibe.ch",
+      "lead_type": "person",
+      "location": "Switzerland"
+    },
+    "output": {
+      "official_profile_url": "https://www.space.unibe.ch/about_us/personen/audreyvorburger/index_eng.html",
+      "grants": [
+        "SNSF Starting Grant - 'Plumes: Access to the Chemical Makeup of Europa's Presumed Habitats' (Audrey Vorburger, University of Bern; Main discipline: Astronomy, Astrophysics and Space Sciences; Keywords: Europa, Plumes, Habitability, Search for life, ESA / JUICE, NASA / Europa Clipper)"
+      ],
+      "research_openings": [],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "https://www.epfl.ch/research/domains/swiss-plasma-center/education/education_doctoralschool/",
+      "existing_url": "https://people.epfl.ch/jean-philippe.hogge",
+      "accepting_applications_notes": "Probably. Website has a list of PhD students",
+      "university": "EPFL",
+      "professor_name": "Jean-Philippe Hogge",
+      "research_group": "Swiss Plasma Center (SPC) \u2014 Gyrotron Development",
+      "research_interests": "High-power microwave sources, advanced gyrotron engineering, Electron Cyclotron Resonance Heating (ECRH) hardware",
+      "\ufefflead_id": "lead-061",
+      "research_theme": "Plasma Physics & Fusion",
+      "source_row": "64",
+      "existing_status": "",
+      "email": "jean-philippe.hogge@epfl.ch",
+      "lead_type": "person",
+      "location": "Switzerland"
+    },
+    "output": {
+      "official_profile_url": "https://people.epfl.ch/jean-philippe.hogge",
+      "grants": [
+        "SNSF project 'Investigation of the formation and dynamics of trapped electron clouds in Penning-like configurations relevant to gyrotron guns' \u2014 Responsible Applicant Jean-Philippe Hogge, EPFL, 01.10.2021 \u2013 30.09.2024, ~469,996 CHF (active through 2024).",
+        "EUROfusion advanced gyrotron technology programme (Thales TH1509U testing and TH1510 dual-frequency gyrotron operation at TCV) \u2014 EPFL/SPC named European test site (2024).",
+        "ITER/F4E European Gyrotron Consortium (EGYC) \u2014 EPFL/SPC partner for high-power microwave/ECRH source development supporting ITER-class gyrotrons."
+      ],
+      "research_openings": [
+        "Swiss Plasma Center (SPC) Doctoral Program \u2013 open PhD applications: https://www.epfl.ch/research/domains/swiss-plasma-center/education/education_doctoralschool/ (currently lists 'Simulation of the plasma dynamics at the tokamak edge' under Prof. P. Ricci; gyrotron/ECRH topics under J.-P. Hogge can be requested by contacting the group).",
+        "SPC Available PhD Positions portal: https://www.epfl.ch/research/domains/swiss-plasma-center/education/education_doctoralschool/phdpositions",
+        "SPC Post-doctoral Positions portal: https://www.epfl.ch/research/domains/swiss-plasma-center/education/postdoc-positions/ (currently lists a position focused on theoretical plasma physics / plasma simulations).",
+        "SPC Technical Job Vacancies portal: https://www.epfl.ch/research/domains/swiss-plasma-center/jobs/job-vacancies/"
+      ],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "",
+      "existing_url": "https://people.epfl.ch/stefano.coda",
+      "accepting_applications_notes": "Probably. Website has a list of PhD students",
+      "university": "EPFL",
+      "professor_name": "Stefano Coda",
+      "research_group": "Swiss Plasma Center (SPC) \u2014 TCV Tokamak Physics",
+      "research_interests": "Magnetic confinement fusion, core plasma transport, electron cyclotron resonance heating (ECRH), core fluctuation diagnostics",
+      "\ufefflead_id": "lead-062",
+      "research_theme": "Plasma Physics & Fusion",
+      "source_row": "65",
+      "existing_status": "",
+      "email": "stefano.coda@epfl.ch",
+      "lead_type": "person",
+      "location": "Switzerland"
+    },
+    "output": {
+      "official_profile_url": "https://people.epfl.ch/stefano.coda",
+      "grants": [],
+      "research_openings": [
+        "PhD position in 'Diagnostic development and studies of turbulence and transport in the JT-60SA tokamak in Japan' \u2014 posted by Stefano Coda on LinkedIn on 2025-03-19, located in Lausanne, Switzerland; aligns with his research in magnetic confinement fusion, core plasma transport, and fluctuation diagnostics (https://ch.linkedin.com/in/stefano-coda-a9781326).",
+        "PhD and Postdoctoral positions at the Swiss Plasma Center (SPC), EPFL \u2014 accepted year-round; Stefano Coda currently supervises approximately 10 PhD students and lists 'Experimental physics on the TCV tokamak' among open PhD topics on the SPC PhD positions page (https://www.epfl.ch/research/domains/swiss-plasma-center/education/education_doctoralschool/phdpositions/) with application procedures at https://www.epfl.ch/research/domains/swiss-plasma-center/education/education_doctoralschool/a-phd-at-spc/how-to-apply/."
+      ],
+      "identity_verification": "Verified"
+    }
+  },
+  {
+    "input": {
+      "existing_notes": "https://www.psi.ch/en/hr/phd-students-and-postdocs",
+      "existing_url": "https://www.psi.ch/en/people/romain-ganter",
+      "accepting_applications_notes": "NA",
+      "university": "ETH Zurich / Paul Scherrer Institute (PSI)",
+      "professor_name": "Romain Ganter",
+      "research_group": "Department of Physics / PSI Accelerator Technology",
+      "research_interests": "Superconducting accelerator magnets, high-temperature superconductors (HTS), beam dynamics, vacuum technology",
+      "\ufefflead_id": "lead-063",
+      "research_theme": "Plasma Physics & Fusion",
+      "source_row": "66",
+      "existing_status": "",
+      "email": "romain.ganter@psi.ch",
+      "lead_type": "person",
+      "location": "Switzerland"
+    },
+    "output": {
+      "official_profile_url": "https://www.psi.ch/en/people/romain-ganter",
+      "grants": [],
+      "research_openings": [
+        "Designer for Superconducting Magnet Development (80-100%), PSI Accelerator Science and Engineering division \u2014 https://www.psi.ch/en/hr/job-opportunities/8434-28679-designer-for-superconducting-magnet-development-80-100",
+        "Trainee in Advanced Measurement Techniques for HTS magnets, PSI Accelerator Science and Engineering division \u2014 https://www.psi.ch/en/hr/job-opportunities/8431-28384-trainee-in-advanced-measurement-techniques-for-hts-magnets",
+        "Trainee for computational and experimental studies of Plasma Discharge Devices for Advanced Beam Manipulation, PSI Accelerator Science and Engineering division \u2014 https://www.psi.ch/en/hr/job-opportunities/8123-27613-trainee-for-computational-and-experimental-studies-of-plasma-discharge-devices-for-advanced-beam-manipulation"
+      ],
+      "identity_verification": "Verified"
+    }
+  }
+]

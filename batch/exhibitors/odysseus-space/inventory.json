@@ -1,0 +1,35 @@
+{
+  "scanned": 4,
+  "added": 3,
+  "roles": [
+    {
+      "id": "mech-thermal",
+      "title": "Senior Mechanical & Thermal Engineer",
+      "url": "https://www.odysseus.space/careers/mechanical-thermal-engineer",
+      "location": "Luxembourg",
+      "score": "4.1/5",
+      "fit_summary": "Mech/thermal for laser-comm terminals — space hardware.",
+      "notes": "Odysseus Space (Luxembourg) laser optical comms. EU work authorization."
+    },
+    {
+      "id": "systems",
+      "title": "Systems Engineer",
+      "url": "https://www.odysseus.space/careers/systems-engineer",
+      "location": "Luxembourg",
+      "score": "4.2/5",
+      "fit_summary": "Systems engineer for optical laser communication payloads.",
+      "notes": "Odysseus Space (Luxembourg) laser optical comms. EU work authorization."
+    },
+    {
+      "id": "control",
+      "title": "Control Systems Engineer",
+      "url": "https://www.odysseus.space/careers/control-engineer",
+      "location": "Luxembourg",
+      "score": "3.8/5",
+      "fit_summary": "GNC/control for laser pointing — stretch vs instrumentation.",
+      "recommendation": "Stretch — GNC-heavy",
+      "notes": "Odysseus Space (Luxembourg) laser optical comms. EU work authorization."
+    }
+  ],
+  "careers_url": "https://www.odysseus.space/careers"
+}

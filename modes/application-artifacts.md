@@ -12,6 +12,16 @@ Use this mode when a Jobs to Consider dashboard task asks for one or more applic
 
 Treat artifact generation as **incomplete** until the tracker step is done.
 
+## MANDATORY: EURAXESS Live Feed card links (never skip)
+
+If the posting is from EURAXESS (URL contains `euraxess.ec.europa.eu`, id like `euraxess-fusion-*`, or the user said “drain the EURAXESS queue”), you must also attach every artifact to **that same opportunity** so the EURAXESS Live Feed card shows download buttons.
+
+1. Write files (`reports/euraxess-...md` and/or `output/{company-slug}/...`).
+2. `patchEuraxessOpportunity(id, { research_report, resources, artifacts, worker_status })`.
+3. `syncEuraxessOpportunitiesToDashboard()`.
+
+Do this in the **same turn**. Do not leave the user to re-explain “put the links on the card.” See `.cursor/rules/euraxess-artifact-card-links.mdc`.
+
 ### When to run
 
 Run tracker attachment **in the same turn**, immediately after the file(s) are written and compiled. Do not end the task with files only in `output/`.

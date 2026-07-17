@@ -218,8 +218,15 @@ Sends a nightly summary of today's dashboard activity (applied, contacted, follo
 3. Copy `WEB-TRACKER/.env.example` to `WEB-TRACKER/.env` and set:
    - `SMTP_USER` / `SMTP_FROM` — your Gmail address (default: `harshddes@gmail.com`)
    - `SMTP_PASS` — the 16-character app password (not your regular Gmail password)
-   - `DAILY_DIGEST_RECIPIENTS` — comma-separated recipients (default: `harshddes@gmail.com`)
+   - `DAILY_DIGEST_RECIPIENTS` — comma-separated recipients (default: `harshddes@gmail.com,desaienggworks@gmail.com`)
 4. All "today" bucketing uses `DAILY_DIGEST_TIMEZONE=America/New_York`.
+5. Reliability: register the Windows task so sleep does not skip nights:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File WEB-TRACKER/scripts/register-windows-task.ps1
+```
+
+That creates `CareerOpsDailyDigest` at 11:59 PM local with `StartWhenAvailable` (runs after the PC wakes if it missed 23:59). The in-process `run.mjs` cron is a backup only while that Node process is alive.
 
 ```bash
 # Dry run (no email sent)
@@ -229,7 +236,7 @@ node WEB-TRACKER/scripts/send-daily-digest.mjs
 node WEB-TRACKER/scripts/send-daily-digest.mjs --send
 
 # Send to a specific address
-node WEB-TRACKER/scripts/send-daily-digest.mjs --send --to harshddes@gmail.com
+node WEB-TRACKER/scripts/send-daily-digest.mjs --send --to harshddes@gmail.com,desaienggworks@gmail.com
 ```
 
-**Blockers:** Email will not send until `SMTP_PASS` is set in `WEB-TRACKER/.env`. Without SMTP env vars, dry-run still builds attachments locally.
+**Blockers:** Email will not send until `SMTP_PASS` is set in `WEB-TRACKER/.env`. Without SMTP env vars, dry-run still builds attachments locally. Missed days usually mean the PC was asleep/off at 23:59 and no Windows digest task was registered — not a Gmail recipient bug.

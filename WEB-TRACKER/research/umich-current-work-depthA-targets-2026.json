@@ -1,0 +1,827 @@
+{
+  "count": 42,
+  "targets": [
+    {
+      "id": "umich-name-ganesh-harish-hydrodynamic-cavitation",
+      "name": "Harish Ganesh",
+      "title": "Associate Research Scientist",
+      "department": "Naval Architecture and Marine Engineering",
+      "lab": "Experimental cavitation / hydrodynamics",
+      "lab_url": "",
+      "profile_url": "https://name.engin.umich.edu/people/ganesh-harish/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "hydrodynamic cavitation",
+        "experimental fluid dynamics",
+        "multiphase flows"
+      ],
+      "interests": "Harish Ganesh is an Associate Research Scientist whose research centers on fluid dynamics with emphasis on hydrodynamic cavitation and experimental methods. This is a hands-on experimental hydrodynamics role tightly adjacent to instrumentation, optical diagnostics, and multiphase"
+    },
+    {
+      "id": "umich-ryan-mcbride-ppml",
+      "name": "Ryan McBride",
+      "title": "Professor; Director, Plasma, Pulsed Power, and Microwave Laboratory",
+      "department": "Nuclear Engineering and Radiological Sciences",
+      "lab": "Plasma, Pulsed Power, and Microwave Laboratory",
+      "lab_url": "https://plasmabay.engin.umich.edu/",
+      "profile_url": "https://ners.engin.umich.edu/people/mcbride-ryan/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "plasma physics",
+        "nuclear fusion",
+        "pulsed power",
+        "plasma diagnostics",
+        "HEDP",
+        "MagLIF"
+      ],
+      "interests": ""
+    },
+    {
+      "id": "umich-name-ceccio-steven-l-multiphase-flows",
+      "name": "Steven L. Ceccio",
+      "title": "Vincent T. and Gloria M. Gorguze Professor of Engineering",
+      "department": "Naval Architecture and Marine Engineering",
+      "lab": "Ceccio multiphase / high-Re fluids research",
+      "lab_url": "https://ceccio.engin.umich.edu/",
+      "profile_url": "https://name.engin.umich.edu/people/ceccio-steven-l/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "multiphase flows",
+        "cavitation",
+        "high Reynolds number flows",
+        "flow diagnostics",
+        "propulsors",
+        "drag reduction"
+      ],
+      "interests": "Steven Ceccio works on fluid mechanics of multiphase and high-Reynolds-number flows, including cavitation, propulsors/turbomachinery, friction drag reduction, and development of flow diagnostics. His experimental diagnostics focus is one of the strongest NAME bridges to plasma/op"
+    },
+    {
+      "id": "umich-karl-krushelnick-cuos-zeus",
+      "name": "Karl Krushelnick",
+      "title": "Professor; Director, CUOS; Director, NSF ZEUS Laser Facility",
+      "department": "Nuclear Engineering and Radiological Sciences",
+      "lab": "CUOS High Field Science; ZEUS",
+      "lab_url": "https://cuos.engin.umich.edu/researchgroups/hfs/",
+      "profile_url": "https://ners.engin.umich.edu/people/krushelnick-karl/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "laser-plasma interactions",
+        "ultra-high intensity lasers",
+        "ZEUS",
+        "relativistic plasma"
+      ],
+      "interests": ""
+    },
+    {
+      "id": "umich-igor-jovanovic-ansg",
+      "name": "Igor Jovanovic",
+      "title": "Professor",
+      "department": "Nuclear Engineering and Radiological Sciences",
+      "lab": "Applied Nuclear Science Group; CUOS High Field Science",
+      "lab_url": "https://ansg.engin.umich.edu/",
+      "profile_url": "https://ners.engin.umich.edu/people/jovanovic-igor/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "nuclear instrumentation",
+        "laser-driven neutron sources",
+        "radiation detection",
+        "ultrafast optics"
+      ],
+      "interests": ""
+    },
+    {
+      "id": "umich-margaret-wooldridge-combustion",
+      "name": "Margaret Wooldridge",
+      "title": "Professor, Mechanical Engineering Arthur F. Thurnau Professor, Mechanical Engineering Walter J. Weber, Jr. Professor of Sustainable Energy, Environmental and Earth Systems Engineer",
+      "department": "Mechanical Engineering",
+      "lab": "sustainable / renewable energy",
+      "lab_url": "",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/margaret-wooldridge/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "sustainable",
+        "renewable energy",
+        "power",
+        "propulsion systems",
+        "combustion",
+        "fluid mechanics"
+      ],
+      "interests": "Sustainable and renewable energy, power and propulsion systems; combustion, fluid mechanics and thermodynamics; pollution mitigation; high-efficiency, low-resource consumption energy systems; reaction kinetics; aerosol formation, transport and impact; optical diagnostics; gas dyn"
+    },
+    {
+      "id": "umich-paolo-elvati-nanoparticle-formations",
+      "name": "Paolo Elvati",
+      "title": "Associate Research Scientist, Mechanical Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "nanoparticle formations / biological systems",
+      "lab_url": "",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/paolo-elvati/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "nanoparticle formations",
+        "biological systems",
+        "non-thermal plasma",
+        "reactive gas-phase conditions",
+        "drug transport",
+        "bacterial biofilms control"
+      ],
+      "interests": "Nanoparticle formations and interactions using computational tools (Molecular Dynamics, Machine Learning, Stochastic Solvers), with particular emphasis on biological systems, non-thermal plasma and reactive gas-phase conditions. Applications include drug transport, bacterial biof"
+    },
+    {
+      "id": "umich-steve-ceccio-fluid-mechanics",
+      "name": "Steve Ceccio",
+      "title": "Professor, Mechanical Engineering Professor, Naval Architecture & Marine Engineering Vincent T and Gloria M Gorguze Professor of Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "fluid mechanics / experimental methods",
+      "lab_url": "",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/steve-ceccio/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "fluid mechanics",
+        "experimental methods",
+        "multiphase flows",
+        "high Reynolds number flows",
+        "cavitation",
+        "bubbly flows"
+      ],
+      "interests": "Fluid mechanics with emphasis on experimental methods, multiphase flows, high Reynolds number flows, cavitation and bubbly flows, optical flow measurement methods, electrical and radiation based tomography."
+    },
+    {
+      "id": "umich-volker-sick-optical-diagnostics",
+      "name": "Volker Sick",
+      "title": "Professor, Mechanical Engineering Arthur F. Thurnau Professor, Mechanical Engineering DTE Energy Professor of Advanced Energy Research Director, Global CO2 Initiative",
+      "department": "Mechanical Engineering",
+      "lab": "Global CO2 Initiative (per title)",
+      "lab_url": "",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/volker-sick/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "energy",
+        "combustion-related (laser-based diagnostics expertise)"
+      ],
+      "interests": "Accelerating deployments of CO2-utilization technologies that will innovate existing infrastructure and manufacturing processes, thereby finding sustainable solutions to help address the climate crisis. Developing and applying optical measurement techniques to diagnose diseases o"
+    },
+    {
+      "id": "umich-gennady-fiksel-cuos",
+      "name": "Gennady Fiksel",
+      "title": "Research Scientist",
+      "department": "Nuclear Engineering and Radiological Sciences",
+      "lab": "CUOS High Field Science",
+      "lab_url": "https://cuos.engin.umich.edu/researchgroups/hfs/",
+      "profile_url": "https://ners.engin.umich.edu/people/fiksel-gennady/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "high-field science",
+        "laser-plasma experiments",
+        "HEDP diagnostics"
+      ],
+      "interests": ""
+    },
+    {
+      "id": "umich-name-maki-kevin-j-marine-computational-mechani",
+      "name": "Kevin J. Maki",
+      "title": "Professor and Director, Aaron Friedman Marine Hydrodynamics Lab",
+      "department": "Naval Architecture and Marine Engineering",
+      "lab": "Aaron Friedman Marine Hydrodynamics Laboratory",
+      "lab_url": "https://mhl.engin.umich.edu/",
+      "profile_url": "https://name.engin.umich.edu/people/maki-kevin-j/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "marine computational mechanics",
+        "ship hydroelasticity",
+        "CFD for naval design",
+        "extreme loading",
+        "MHL"
+      ],
+      "interests": "Kevin Maki is Director of the Aaron Friedman Marine Hydrodynamics Laboratory and works in marine computational mechanics for performance evaluation of marine vehicles. He couples full ship finite-element models with nonlinear fluid models (breaking waves, turbulence) for extreme "
+    },
+    {
+      "id": "umich-name-bernitsas-michael-marine-renewable-energy",
+      "name": "Michael Bernitsas",
+      "title": "Mortimer E. Cooley Collegiate Professor of Naval Architecture and Marine Engineering",
+      "department": "Naval Architecture and Marine Engineering",
+      "lab": "Marine Renewable Energy Laboratory",
+      "lab_url": "https://websites.umich.edu/~mrel/",
+      "profile_url": "https://name.engin.umich.edu/people/bernitsas-michael/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "marine renewable energy",
+        "vortex-induced vibrations",
+        "VIVACE",
+        "hydrokinetic energy",
+        "offshore engineering"
+      ],
+      "interests": "Michael Bernitsas directs the Marine Renewable Energy Laboratory and pioneered VIVACE (Vortex Induced Vibrations for Aquatic Clean Energy), converting underwater vortex-induced cylinder oscillations into mechanical/electrical power. His group bridges offshore structural hydrodyna"
+    },
+    {
+      "id": "umich-alec-thomas-cuos",
+      "name": "Alec Thomas",
+      "title": "Associate Professor",
+      "department": "Nuclear Engineering and Radiological Sciences",
+      "lab": "CUOS High Field Science",
+      "lab_url": "https://cuos.engin.umich.edu/researchgroups/hfs/",
+      "profile_url": "https://ners.engin.umich.edu/people/alec-thomas/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "laser wakefield acceleration",
+        "relativistic plasma",
+        "laser-plasma diagnostics"
+      ],
+      "interests": ""
+    },
+    {
+      "id": "umich-john-foster-pstl",
+      "name": "John Foster",
+      "title": "Professor",
+      "department": "Nuclear Engineering and Radiological Sciences",
+      "lab": "Plasma Science and Technology Laboratory",
+      "lab_url": "https://pstlab.engin.umich.edu/",
+      "profile_url": "https://ners.engin.umich.edu/people/foster-john/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "low-temperature plasmas",
+        "advanced space propulsion",
+        "plasma diagnostics",
+        "processing plasmas"
+      ],
+      "interests": ""
+    },
+    {
+      "id": "umich-kenn-oldham-micro-mechatronic-systems-fo",
+      "name": "Kenn Oldham",
+      "title": "Professor, Mechanical Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "Vibration and Acoustics Laboratory: Microsystems",
+      "lab_url": "http://microsystems.engin.umich.edu/",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/kenn-oldham/",
+      "tier": "A",
+      "outreach_tier": "T1",
+      "research_fields": [
+        "Mechatronics & Robotics"
+      ],
+      "keywords": [
+        "micro-mechatronic systems for endoscopic imaging",
+        "micro-robotic systems for manipulation",
+        "autonomous locomotion",
+        "novel sensing",
+        "mems modeling",
+        "system identification"
+      ],
+      "interests": "Micro-mechatronic systems for endoscopic imaging; micro-robotic systems for manipulation and autonomous locomotion; identification of physiological feedback systems using novel sensing technologies; modeling, system identification, and state estimation for microelectromechanical "
+    },
+    {
+      "id": "umich-louise-willingale-zeus",
+      "name": "Louise Willingale",
+      "title": "Associate Professor; Associate Director, ZEUS Laser Facility",
+      "department": "Electrical Engineering and Computer Science",
+      "lab": "ZEUS; CUOS High Field Science",
+      "lab_url": "https://cuos.engin.umich.edu/researchgroups/hfs/",
+      "profile_url": "https://willingale.engin.umich.edu/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "ZEUS",
+        "high-intensity laser plasma",
+        "plasma acceleration",
+        "optical diagnostics"
+      ],
+      "interests": ""
+    },
+    {
+      "id": "umich-name-sareen-anchal-experimental-hydrodynamics",
+      "name": "Anchal Sareen",
+      "title": "Assistant Professor",
+      "department": "Naval Architecture and Marine Engineering",
+      "lab": "Experimental Fluid Dynamics Laboratory",
+      "lab_url": "https://sareengroup.engin.umich.edu/",
+      "profile_url": "https://name.engin.umich.edu/people/sareen-anchal/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "experimental hydrodynamics",
+        "fluid-structure interaction",
+        "bio-inspired flow control",
+        "renewable energy harvesting",
+        "UUV/UAV efficiency"
+      ],
+      "interests": "Anchal Sareen leads the Experimental Fluid Dynamics Laboratory, developing flow-control strategies for unmanned underwater/aerial vehicles, bio-inspired propulsion, and renewable-energy harvesting. Research interests include experimental hydrodynamics, fluid-structure interaction"
+    },
+    {
+      "id": "umich-andre-boehman-automotive-engineering",
+      "name": "Andre Boehman",
+      "title": "Professor, Mechanical Engineering Vennema Professor of Engineering Director, W.E. Lay Automotive Laboratory",
+      "department": "Mechanical Engineering",
+      "lab": "automotive engineering / energy",
+      "lab_url": "",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/andre-boehman/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "automotive engineering",
+        "energy",
+        "thermal sciences including: fuel production",
+        "formulation",
+        "alternative fuels",
+        "diesel combustion"
+      ],
+      "interests": "Automotive engineering, energy and thermal sciences including: fuel production and formulation, alternative fuels, diesel combustion, spark ignition combustion, autoignition, spray behavior, particulate emissions, NOx emissions, emissions control, thermodynamics of energy convers"
+    },
+    {
+      "id": "umich-anna-stefanopoulou-estimation",
+      "name": "Anna Stefanopoulou",
+      "title": "Professor, Mechanical Engineering Huei Peng Distinguished University Professor of Mechanical Engineering William Clay Ford Professor of Technology",
+      "department": "Mechanical Engineering",
+      "lab": "estimation / control of internal combustion engines",
+      "lab_url": "",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/anna-stefanopoulou/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "estimation",
+        "control of internal combustion engines",
+        "electrochemical processes such as fuel cells",
+        "batteries"
+      ],
+      "interests": "Estimation and control of internal combustion engines and electrochemical processes such as fuel cells and batteries"
+    },
+    {
+      "id": "umich-benjamin-jorns-pepl",
+      "name": "Benjamin Jorns",
+      "title": "Associate Professor; Director, PEPL",
+      "department": "Aerospace Engineering",
+      "lab": "Plasmadynamics and Electric Propulsion Laboratory",
+      "lab_url": "https://pepl.engin.umich.edu/",
+      "profile_url": "https://aero.engin.umich.edu/people/jorns-benjamin/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "electric propulsion",
+        "low-temperature plasmas",
+        "Hall thrusters",
+        "plasma diagnostics"
+      ],
+      "interests": ""
+    },
+    {
+      "id": "umich-eric-johnsen-me",
+      "name": "Eric Johnsen",
+      "title": "Professor, Mechanical Engineering Director, PhD Program in Scientific Computing",
+      "department": "Mechanical Engineering",
+      "lab": "fluid mechanics / with an emphasis on multiphase flow",
+      "lab_url": "",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/eric-johnsen/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "fluid mechanics",
+        "with an emphasis on multiphase flow",
+        "cavitation",
+        "bubble dynamics",
+        "computational fluid dynamics",
+        "high-speed flow"
+      ],
+      "interests": "Fluid mechanics, with an emphasis on multiphase flow, cavitation and bubble dynamics, computational fluid dynamics, high-speed flow and shock waves, turbulence and mixing, interfacial instabilities, plasmas, and high-performance computing. Applications include biomedical engineer"
+    },
+    {
+      "id": "umich-name-sun-jing-adaptive-control",
+      "name": "Jing Sun",
+      "title": "Michael G. Parsons Collegiate Professor, Naval Architecture and Marine Engineering",
+      "department": "Naval Architecture and Marine Engineering",
+      "lab": "Real-time Adaptive Control Engineering Laboratory (RACELab)",
+      "lab_url": "https://websites.umich.edu/~racelab/",
+      "profile_url": "https://name.engin.umich.edu/people/sun-jing/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "adaptive control",
+        "marine propulsion control",
+        "electrified vehicles",
+        "model predictive control",
+        "experimental validation"
+      ],
+      "interests": "Jing Sun leads RACELab, applying control theory and optimization to marine and automotive propulsion systems. Work includes modeling/identification, control algorithm development, rapid prototyping, and experimental validation for marine surface vessels, fuel-cell/turbocharger sy"
+    },
+    {
+      "id": "umich-jon-estrada-experimental-mechanics-of-so",
+      "name": "Jon Estrada",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "experimental mechanics of soft / bio-materials",
+      "lab_url": "",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jon-estrada/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "experimental mechanics of soft",
+        "bio-materials",
+        "material characterization including high speed rheometry",
+        "magnetic resonance",
+        "inverse techniques",
+        "inertial cavitation dynamics"
+      ],
+      "interests": "Experimental mechanics of soft and bio-materials, material characterization including high speed rheometry, magnetic resonance, and inverse techniques, inertial cavitation dynamics, photoacoustic and laser microscopy, cell mechanics, image processing techniques, digital image and"
+    },
+    {
+      "id": "umich-name-kartik-praful-naik-marine-renewable-energy",
+      "name": "Kartik Praful Naik",
+      "title": "Assistant Research Scientist",
+      "department": "Naval Architecture and Marine Engineering",
+      "lab": "Real-time Adaptive Control Engineering Laboratory (RACELab)",
+      "lab_url": "https://websites.umich.edu/~racelab/",
+      "profile_url": "https://name.engin.umich.edu/people/kartik-praful-naik/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "marine renewable energy",
+        "underwater kites",
+        "co-design",
+        "real-time control",
+        "reconfigurable turbine arrays"
+      ],
+      "interests": "Kartik Naik is an Assistant Research Scientist working on experimental renewable-energy harvesting concepts (underwater kites), co-design, and real-time control implementation on hardware. He continues research in RACELab on reconfigurable turbine arrays and ARPA-E SHARKS project"
+    },
+    {
+      "id": "umich-martin-erinin-experimental-fluid-mechanics",
+      "name": "Martin Erinin",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "Erinin Research Group",
+      "lab_url": "https://erinin.engin.umich.edu/",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/martin-erinin/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "experimental fluid mechanics",
+        "multiphase flows",
+        "free-surface flows",
+        "surfactant-dominated flows",
+        "optical measurement techniques",
+        "ocean waves"
+      ],
+      "interests": "Experimental fluid mechanics with broad interests in multiphase flows, free-surface flows, surfactant dominated flows, and development of optical measurement techniques for thermos-fluids. Specific problems of interests include ocean waves, air-sea interaction, transport of parti"
+    },
+    {
+      "id": "umich-robert-middleton-combustion",
+      "name": "Robert Middleton",
+      "title": "Associate Research Scientist, Mechanical Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "combustion / automotive engines",
+      "lab_url": "",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/robert-middleton/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "combustion",
+        "automotive engines",
+        "spark ignited combustion",
+        "autoignition combustion",
+        "engine efficiency",
+        "emissions"
+      ],
+      "interests": "Combustion, focusing primarily on automotive engines. Simulations of spark ignited and advanced autoignition combustion modes using 1D models and 3D CFD including large scale parallel simulations. Impact of fuel properties and kinetics on engine efficiency and emissions."
+    },
+    {
+      "id": "umich-name-mccoy-timothy-marine-power-and-propulsion",
+      "name": "Timothy McCoy",
+      "title": "Adjunct Professor; Marine Engineering Laboratory",
+      "department": "Naval Architecture and Marine Engineering",
+      "lab": "Marine Engineering Laboratory",
+      "lab_url": "https://mel.engin.umich.edu/",
+      "profile_url": "https://name.engin.umich.edu/people/mccoy-timothy/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "marine power and propulsion",
+        "shipboard electric systems",
+        "machinery reliability",
+        "autonomous vessels",
+        "data acquisition and control"
+      ],
+      "interests": "Timothy McCoy (Adjunct / Engineering Practice) established the Marine Engineering Laboratory with ONR funding — a multi-physics hardware lab with scaled shipboard electric power/propulsion, seawater cooling, and fuel systems. MEL uses a data acquisition and control system managin"
+    },
+    {
+      "id": "umich-venkat-raman-scramjet-engines",
+      "name": "Venkat Raman",
+      "title": "Professor, Mechanical Engineering Professor, Aerospace Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "scramjet engines / stationary power generation",
+      "lab_url": "",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/venkat-raman/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "scramjet engines",
+        "stationary power generation",
+        "synthesis of novel materials. high-performance supercomputers",
+        "uncertainty quantification",
+        "hypersonic design",
+        "optimization"
+      ],
+      "interests": "Development of computational models for turbulent reacting flows with application to aircraft and scramjet engines, stationary power generation, and synthesis of novel materials. High-performance supercomputers and detailed numerical simulations to study the performance of combus"
+    },
+    {
+      "id": "umich-young-geun-park-optofluidics",
+      "name": "Young Geun Park",
+      "title": "Associate Research Scientist, Mechanical Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "optofluidics / functional nanomaterials",
+      "lab_url": "",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/young-geun-park/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "optofluidics",
+        "functional nanomaterials",
+        "bioinspired active optical system",
+        "solar optics based active panel for energy harvesting",
+        "storage: integrated molecular detection system"
+      ],
+      "interests": "Optofluidics; Functional Nanomaterials; Bioinspired Active Optical System; Solar Optics Based Active Panel for Energy Harvesting and Storage: Integrated Molecular Detection System"
+    },
+    {
+      "id": "umich-carolyn-kuranz-chedar",
+      "name": "Carolyn Kuranz",
+      "title": "Professor; Director, CHEDAR",
+      "department": "Nuclear Engineering and Radiological Sciences",
+      "lab": "Center for High Energy Density Laboratory Astrophysics Research",
+      "lab_url": "",
+      "profile_url": "https://ners.engin.umich.edu/people/kuranz-carolyn/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "high-energy-density plasma physics",
+        "laboratory astrophysics",
+        "radiation hydrodynamics"
+      ],
+      "interests": ""
+    },
+    {
+      "id": "umich-nicholas-jordan-ppml",
+      "name": "Nicholas Jordan",
+      "title": "Associate Research Professor",
+      "department": "Nuclear Engineering and Radiological Sciences",
+      "lab": "PPML",
+      "lab_url": "https://plasmabay.engin.umich.edu/",
+      "profile_url": "https://ners.engin.umich.edu/people/jordan-nicholas/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "pulsed power",
+        "plasma diagnostics",
+        "HEDP"
+      ],
+      "interests": ""
+    },
+    {
+      "id": "umich-nima-fazeli-robotic-manipulation",
+      "name": "Nima Fazeli",
+      "title": "Assistant Professor, Mechanical Engineering; Assistant Professor, Robotics",
+      "department": "Mechanical Engineering",
+      "lab": "Manipulation and Machine Intelligence Lab",
+      "lab_url": "https://www.mmintlab.com/",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/nima-fazeli/",
+      "tier": "A",
+      "outreach_tier": "T1",
+      "research_fields": [
+        "Mechatronics & Robotics"
+      ],
+      "keywords": [
+        "robotic manipulation",
+        "physical interaction",
+        "contact",
+        "robot learning",
+        "control",
+        "state estimation."
+      ],
+      "interests": "Robotic manipulation, physical interaction and contact, robot learning and control, state estimation."
+    },
+    {
+      "id": "umich-christopher-vermillion-marine-hydrokinetic-energy",
+      "name": "Christopher Vermillion",
+      "title": "Associate Professor, Mechanical Engineering",
+      "department": "Mechanical Engineering",
+      "lab": "CORE Lab (Control & Optimization of Renewables & Energy)",
+      "lab_url": "",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/christopher-vermillion/",
+      "tier": "A",
+      "outreach_tier": "T1",
+      "research_fields": [
+        "Mechatronics & Robotics"
+      ],
+      "keywords": [
+        "optimal control",
+        "design optimization for renewable energy",
+        "tethered wind",
+        "marine hydrokinetic systems",
+        "mission planning for renewably powered robotic networks",
+        "connected/autonomous vehicles for fuel economy."
+      ],
+      "interests": "Dr. Vermillion’s interests lie in the application of optimal control and design optimization tools to cutting-edge problems in renewable energy and energy efficiency. He is particularly interested in the development of tethered systems for harnessing wind and marine hydrokinetic "
+    },
+    {
+      "id": "umich-yogesh-gianchandani-mechanical-engineering-resea",
+      "name": "Yogesh Gianchandani",
+      "title": "Professor, Mechanical Engineering Professor, Electrical Engineering and Computer Science",
+      "department": "Mechanical Engineering",
+      "lab": "Center for Wireless Integrated MicroSensing and Systems (WIMS2) / Gianchandani microsystems",
+      "lab_url": "",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/yogesh-gianchandani/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "mems and microsystems",
+        "microfabricated sensors and actuators",
+        "microplasma and microdischarge devices",
+        "harsh-environment sensing",
+        "biomedical and industrial microsystem instrumentation."
+      ],
+      "interests": "MEMS and microsystems; microfabricated sensors and actuators; microplasma and microdischarge devices; harsh-environment sensing; biomedical and industrial microsystem instrumentation."
+    },
+    {
+      "id": "umich-milos-burger-cuos",
+      "name": "Milos Burger",
+      "title": "Associate Research Scientist",
+      "department": "Nuclear Engineering and Radiological Sciences",
+      "lab": "CUOS High Field Science",
+      "lab_url": "https://cuos.engin.umich.edu/researchgroups/hfs/",
+      "profile_url": "https://ners.engin.umich.edu/people/burger-milos/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "high-field science",
+        "laser-plasma research"
+      ],
+      "interests": ""
+    },
+    {
+      "id": "umich-paul-campbell-cuos",
+      "name": "Paul Campbell",
+      "title": "Assistant Research Scientist",
+      "department": "CUOS",
+      "lab": "CUOS High Field Science",
+      "lab_url": "https://cuos.engin.umich.edu/researchgroups/hfs/",
+      "profile_url": "https://cuos.engin.umich.edu/researchgroups/hfs/profiles/paul-campbell/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "high-field science",
+        "laser-plasma experiments"
+      ],
+      "interests": ""
+    },
+    {
+      "id": "umich-timothy-smith-pepl",
+      "name": "Timothy Smith",
+      "title": "Lecturer",
+      "department": "Aerospace Engineering",
+      "lab": "PEPL",
+      "lab_url": "https://pepl.engin.umich.edu/",
+      "profile_url": "https://aero.engin.umich.edu/people/smith-timothy-b/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "electric propulsion",
+        "plasma physics",
+        "optical diagnostics"
+      ],
+      "interests": ""
+    },
+    {
+      "id": "umich-amy-brooks-cuos",
+      "name": "Amy Brooks",
+      "title": "Research Manager",
+      "department": "CUOS",
+      "lab": "CUOS Staff",
+      "lab_url": "https://cuos.engin.umich.edu/",
+      "profile_url": "https://cuos.engin.umich.edu/faculty",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "research operations",
+        "CUOS staff",
+        "high-power laser facility"
+      ],
+      "interests": ""
+    },
+    {
+      "id": "umich-anatoly-maksimchuk-cuos",
+      "name": "Anatoly Maksimchuk",
+      "title": "Research Scientist",
+      "department": "Electrical Engineering and Computer Science",
+      "lab": "CUOS High Field Science",
+      "lab_url": "https://cuos.engin.umich.edu/researchgroups/hfs/",
+      "profile_url": "https://cuos.engin.umich.edu/researchgroups/hfs/profiles/anatoly-maksimchuk/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "laser-matter interaction",
+        "relativistic laser intensities",
+        "table-top accelerators"
+      ],
+      "interests": ""
+    },
+    {
+      "id": "umich-yong-ma-cuos",
+      "name": "Yong Ma",
+      "title": "Assistant Research Scientist",
+      "department": "Nuclear Engineering and Radiological Sciences",
+      "lab": "CUOS High Field Science",
+      "lab_url": "https://cuos.engin.umich.edu/researchgroups/hfs/",
+      "profile_url": "https://ners.engin.umich.edu/people/ma-yong/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "laser-plasma acceleration",
+        "high-field science"
+      ],
+      "interests": ""
+    },
+    {
+      "id": "umich-john-nees-cuos",
+      "name": "John Nees",
+      "title": "Research Scientist",
+      "department": "CUOS",
+      "lab": "CUOS High Field Science",
+      "lab_url": "https://cuos.engin.umich.edu/researchgroups/hfs/",
+      "profile_url": "https://cuos.engin.umich.edu/researchgroups/hfs/profiles/john-nees/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "high-power lasers",
+        "laser systems",
+        "CUOS operations"
+      ],
+      "interests": ""
+    },
+    {
+      "id": "umich-scott-baalrud-ners",
+      "name": "Scott Baalrud",
+      "title": "Professor",
+      "department": "Nuclear Engineering and Radiological Sciences",
+      "lab": "Plasma theory and computation",
+      "lab_url": "",
+      "profile_url": "https://ners.engin.umich.edu/people/baalrud-scott/",
+      "tier": "A",
+      "outreach_tier": "",
+      "research_fields": [],
+      "keywords": [
+        "plasma physics",
+        "plasma theory",
+        "computational plasma"
+      ],
+      "interests": ""
+    }
+  ]
+}

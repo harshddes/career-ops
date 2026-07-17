@@ -1,0 +1,52 @@
+{
+  "scanned": 585,
+  "added": 5,
+  "roles": [
+    {
+      "id": "15101",
+      "title": "System Architect (m/w/d) Space Systems",
+      "url": "https://jobs.rohde-schwarz.com/en_US/careers/JobDetail/System-Architect/15101",
+      "location": "Dresden, DE",
+      "score": "4.5/5",
+      "fit_summary": "Space systems architect at T&M giant — RF/space measurement systems.",
+      "notes": "Rohde & Schwarz global jobboard (~560–600 openings). Prefer space/RF/FPGA/measurement; verify location + sponsorship."
+    },
+    {
+      "id": "1606530",
+      "title": "RF Systems Engineer (m/f/d) Space and Satellite Communications",
+      "url": "https://www.rohde-schwarz.com/ch/karriere/stellenangebote/rf-systems-engineer-m-f-d-space-and-satellite-communications_251563-1606530.html",
+      "location": "Europe (R&S space/satcom)",
+      "score": "4.6/5",
+      "fit_summary": "RF systems for space/satcom — core instrumentation/RF measurement adjacency.",
+      "notes": "Rohde & Schwarz global jobboard (~560–600 openings). Prefer space/RF/FPGA/measurement; verify location + sponsorship."
+    },
+    {
+      "id": "13644",
+      "title": "FPGA & DSP Engineer",
+      "url": "https://jobs.rohde-schwarz.com/careers/ApplicationMethods?jobId=13644",
+      "location": "Singapore",
+      "score": "4.4/5",
+      "fit_summary": "FPGA/DSP for RF measurement instruments — direct FPGA + RF instrument path.",
+      "notes": "Rohde & Schwarz global jobboard (~560–600 openings). Prefer space/RF/FPGA/measurement; verify location + sponsorship."
+    },
+    {
+      "id": "1636929",
+      "title": "Signal Processing Engineer Signal Analysis (m/w/d)",
+      "url": "https://www.rohde-schwarz.com/us/career/jobs/signal-processing-engineer-signal-analysis-m-w-d_251563-1636929.html",
+      "location": "Germany (R&S board)",
+      "score": "4.0/5",
+      "fit_summary": "Signal analysis for T&M — measurement/signal-chain adjacency.",
+      "notes": "Rohde & Schwarz global jobboard (~560–600 openings). Prefer space/RF/FPGA/measurement; verify location + sponsorship."
+    },
+    {
+      "id": "app-denver",
+      "title": "Application Engineer - Denver",
+      "url": "https://jobs.rohde-schwarz.com/",
+      "location": "Denver, CO (US)",
+      "score": "4.2/5",
+      "fit_summary": "US application engineer for T&M instruments — customer measurement systems.",
+      "notes": "Confirm exact JD URL on jobs.rohde-schwarz.com jobboard filter US/Denver before apply. From Target Companies exhibitor clear-queue."
+    }
+  ],
+  "careers_url": "https://jobs.rohde-schwarz.com/"
+}

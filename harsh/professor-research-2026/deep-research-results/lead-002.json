@@ -1,0 +1,340 @@
+{
+  "run_id": "trun_dd47611047ba4519bea0ba3a00ce6b35",
+  "interaction_id": "trun_dd47611047ba4519bea0ba3a00ce6b35",
+  "result_url": "https://platform.parallel.ai/play/deep-research/trun_dd47611047ba4519bea0ba3a00ce6b35",
+  "status": "completed",
+  "output": {
+    "basis": [
+      {
+        "field": "executive_summary",
+        "reasoning": "Assessment reasoning:\n- Completeness: The field_answer provides a broad, structured summary covering identity, historical vs current roles, post-2024 funding items with some specifics, a noted NSF award, FINESST linkage to doctoral work, and notes on open positions and LinkedIn evidence. It aligns with the field_description's request to verify identity, capture recent/active funding with details, identify open/closed postings, and provide LinkedIn evidence, with sources. While some granular details (every grant's exact funder, amount, dates, and direct URLs) are claimed, the excerpts provided do not fully corroborate every line (e.g., several grant items beyond FINESST are not matched to explicit URLs in the excerpts). Given the scope, the answer is largely complete in intent but some claims lack explicit excerpt-supported backing. Therefore, completeness is judged true, but with caveats about exact-source cross-checking.\n- Supported: The excerpts do support the identity (Excerpt 0), past and current mission roles (Excerpt 2), FINESST grant (Excerpt 1), and LinkedIn reference (Excerpt 9). They also confirm the group\u2019s historical Van Allen Probes involvement (Excerpt 2). However, explicit corroboration for all mentioned post-2024 grants (NASA SWORD, NASA SSMSD, NSF 2452400) and some details (exact grant dates, awardees, and URLs) is not provided in the excerpts. Hence, the overall field_answer is not fully supported by the excerpts. Expected stance: mark as false for strong support, with notes on partial support.\n- Confidence: Moderate, due to partial excerpt corroboration and several unverified grant details.\n\nCheckpoints reviewed:\n- Identity verification: supported by Excerpt 0 and Excerpt 9 context.\n- Current affiliation vs historical roles: supported by Excerpt 2 and general group context.\n- Funding: FINESST explicitly supported by Excerpt 1; other post-2024 grants are claimed but not fully supported by the provided excerpts.\n- Open/Closed positions and LinkedIn evidence: partially supported by Excerpt 9 and job postings context (Excerpts 5, 6).\n- Direct source URLs: claimed in the field_answer; some are present in excerpts, others not explicitly linked in the excerpts list.\n\nConclusion: Completeness = true. Supported = false (partial support only).",
+        "citations": [
+          {
+            "url": "https://physics.uiowa.edu/people/allison-n-jaynes",
+            "excerpts": [
+              "Allison N. Jaynes, Ph.D. - Physics and Astronomy"
+            ],
+            "title": "Allison N. Jaynes, Ph.D. - Physics and Astronomy The University of Iowa https://physics.uiowa.edu \u203a people \u203a allison-n-jaynes"
+          },
+          {
+            "url": "https://jaynesresearchgroup.weebly.com/uploads/1/0/0/2/100273240/jaynes_cv_2024_full.pdf",
+            "excerpts": [
+              "NASA FINESST Award: Investigating the Role of Pulsating Aurora to M-I Coupling through a Statistical Study of its Drivers and Energies (PI), PI: Allison Jaynes, Co-PI: Graduate student Riley Troyer"
+            ],
+            "title": "ALLISON N. JAYNES DEPARTMENT OF PHYSICS & ASTRONOMY ..."
+          },
+          {
+            "url": "https://jaynesresearchgroup.weebly.com/about.html",
+            "excerpts": [
+              "She has been a Co-Investigator on the Van Allen Probes NASA satellite mission. She is currently a Team Member on NASA's MMS mission and a Co-I on the Voyager mission."
+            ],
+            "title": "About - JAYNES RESEARCH GROUP"
+          },
+          {
+            "url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2452400&HistoricalAwards=false",
+            "excerpts": [],
+            "title": "Award Details - NSF Award Search"
+          },
+          {
+            "url": "https://now.uiowa.edu/news/2026/05/ui-researcher-wins-grant-study-pulsating-auroras-affects-earth",
+            "excerpts": [],
+            "title": "UI researcher wins grant to study pulsating auroras\u2019 affects on Earth | Iowa Now - The University of Iowa"
+          },
+          {
+            "url": "https://jobs.uiowa.edu/",
+            "excerpts": [
+              "Jobs @ Uiowa\nAt the University of Iowa, we\u2019re searching for talented and passionate individuals like you. Discover support you can rely on, a community where you can flourish, and a belief that your contributions matter."
+            ],
+            "title": "Jobs @ Uiowa"
+          },
+          {
+            "url": "https://physics.uiowa.edu/research/graduate",
+            "excerpts": [
+              "Graduate Student Research - Physics and Astronomy\nLearn more about graduate student research in the Department of Physics and Astronomy at the University of Iowa."
+            ],
+            "title": "Graduate Student Research - Physics and Astronomy"
+          },
+          {
+            "url": "https://jaynesresearchgroup.weebly.com/",
+            "excerpts": [],
+            "title": "JAYNES RESEARCH GROUP - Home"
+          },
+          {
+            "url": "https://jaynesresearchgroup.weebly.com/people.html",
+            "excerpts": [],
+            "title": "People - JAYNES RESEARCH GROUP"
+          },
+          {
+            "url": "https://www.linkedin.com/in/allison-jaynes-4843ba257",
+            "excerpts": [
+              "Allison Jaynes - Associate Professor at University of Iowa ...\nThis week, we are also hosting International Team 643, \u201cThe contribution of auroral precipitation to ozone changes in the middle atmosphere,\u201d led by Allison Jaynes and V. Lynn Harvey."
+            ],
+            "title": "Allison Jaynes - Associate Professor at University of Iowa ..."
+          }
+        ],
+        "confidence": "medium"
+      },
+      {
+        "field": "identity",
+        "reasoning": "Assessment notes:\n- The field_description expects a comprehensive identity verification and up-to-date affiliation, plus recent/active funding, open/closed positions, LinkedIn evidence, confidence caveats, and sources.\n- The provided field_answer covers identity details and historical/current roles (UIowa page, MMS/Van Allen Probes involvement) and notes historical nature of the Van Allen Probes affiliation. It does not include funding data (grants after 2024 or current status), open/closed postings, LinkedIn evidence, or a full confidence caveat and source list in the requested structured report. Therefore, completeness should be false.\n- Excerpts supplied include UIowa pages and group pages confirming identity and roles, which can support identity-related claims but not the full funding and hiring/open positions sections. So, supported should be true for identity-related assertions but not for the full requested fields.\n- Conclude: completeness = false (missing funding, positions, direct URLs for all claims, and explicit LinkedIn evidence). supported = true (the excerpts do support the identity-related portions present in the field_answer).",
+        "citations": [
+          {
+            "url": "https://physics.uiowa.edu/people/allison-n-jaynes",
+            "excerpts": [
+              "Allison N. Jaynes, Ph.D. - Physics and Astronomy"
+            ],
+            "title": "Allison N. Jaynes, Ph.D. - Physics and Astronomy The University of Iowa https://physics.uiowa.edu \u203a people \u203a allison-n-jaynes"
+          },
+          {
+            "url": "https://edgeofspace.sites.uiowa.edu/people/allison-jaynes",
+            "excerpts": [
+              "My research focuses on space weather and how that connects to atmospheric and auroral physics. I am involved in several NASA missions that study near-Earth space (MMS and the Van Allen Probes) as well as smaller payloads such as sounding rockets and CubeSats."
+            ],
+            "title": "Allison Jaynes | Edge of Space Academy - The University of Iowa"
+          },
+          {
+            "url": "https://isa.uiowa.edu/people/allison-jaynes",
+            "excerpts": [
+              "Allison Jaynes, Ph.D. | Iowa Sciences Academy - College of ...\nResearch Interests: Experimental space physics Inner magnetosphere and radiation belts particle dynamics, particularly high-energy electrons and protons The physics of the aurora in Earth\u2019s ionosphere Relativistic particle effects throughout the magnetosphere in the vicinity of magnetic reconnection Solar driving of the near-Earth space"
+            ],
+            "title": "Allison Jaynes, Ph.D. | Iowa Sciences Academy - College of ..."
+          },
+          {
+            "url": "https://now.uiowa.edu/person/allison-n-jaynes",
+            "excerpts": [
+              "Allison N. Jaynes | Iowa Now - The University of Iowa\nHer research focuses on inner magnetosphere particle dynamics, including the ring current and radiation belts and how they connect to atmospheric and auroral physics. She has been a Co-Investigator on the MMS and Van Allen Probes NASA satellite missions."
+            ],
+            "title": "Allison N. Jaynes | Iowa Now - The University of Iowa"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Allison_Jaynes",
+            "excerpts": [
+              "Her research concerns the interaction of plasma from the Sun with Earth's magnetosphere and Van Allen radiation belt, and their effects on the atmosphere and auroras; [1][2] it includes the use of rocket-based probes to observe auroras. [3]"
+            ],
+            "title": "Allison Jaynes - Wikipedia"
+          },
+          {
+            "url": "https://jaynesresearchgroup.weebly.com/about.html",
+            "excerpts": [
+              "She has been a Co-Investigator on the Van Allen Probes NASA satellite mission. She is currently a Team Member on NASA's MMS mission and a Co-I on the Voyager mission."
+            ],
+            "title": "About - JAYNES RESEARCH GROUP"
+          },
+          {
+            "url": "https://jaynesresearchgroup.weebly.com/uploads/1/0/0/2/100273240/jaynes_cv_2024_full.pdf",
+            "excerpts": [
+              "NASA FINESST Award: Investigating the Role of Pulsating Aurora to M-I Coupling through a Statistical Study of its Drivers and Energies (PI), PI: Allison Jaynes, Co-PI: Graduate student Riley Troyer"
+            ],
+            "title": "ALLISON N. JAYNES DEPARTMENT OF PHYSICS & ASTRONOMY ..."
+          },
+          {
+            "url": "https://theorg.com/org/ringcentral/org-chart/allison-jaynes",
+            "excerpts": [
+              "Allison Jaynes currently serves as the Director of Content Design at RingCentral, a position held since January 2021, and has previously held roles such as Lead UX Content Designer and Senior UX Content Strategist."
+            ],
+            "title": "Allison Jaynes - Director Of Content Design at RingCentral ..."
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "recent_active_funding_announced_on_or_after_2024_01_01_or_still_active",
+        "reasoning": "Evaluation reasoning:\n- Field answer presents a structured funding table for Jaynes with four rows, including grant titles, funders, amounts, dates, statuses, and sources. The user request explicitly asks for identity verification, recent/active funding (announced on or after 2024-01-01 or still active), recent/open positions, LinkedIn evidence, confidence/caveats, and sources, with direct URLs for positive claims.\n- Completeness assessment: The field answer focuses solely on funding items and does not cover Open Positions, LinkedIn Evidence, or a detailed Identity verification narrative beyond brief notes. It also includes some interpretive notes about positions and team leadership, but it does not explicitly deliver a concise structured report with Identity, Recent/Active Funding, Recent/Open Positions, LinkedIn Evidence, Confidence and Caveats, and Sources in the requested sections. Therefore, completeness is false.\n- Excerpts coverage: Excerpts provided include related funding items (SWORD grant, TRACERS award, FINESST, CAREER) that align with parts of the field answer. However, one row (GEM\u2014Plasmapause grant) and some specifics (e.g., explicit open/closed postings linked to LinkedIn or official postings) are not clearly supported by the excerpts. Overall, the field answer is not fully supported by the excerpts for every claim.\n- Confidence and caveats: Notable caveats are present in the excerpts about position attributions (e.g., SWORD task PI vs overall project lead) and some funding items not clearly corroborated. This should be captured in a confidence section, but the current field answer does not provide a dedicated confidence narrative beyond brief notes.\n- Therefore: completeness = false; supported = false (not all claims are corroborated by excerpts).",
+        "citations": [
+          {
+            "url": "https://physics.uiowa.edu/news/2024/03/jaynes-awarded-grant-study-impact-space-precipitation-upper-atmospheres",
+            "excerpts": [
+              "Associate Professor Allison Jaynes has been awarded a grant from NASA to conduct studies to better understand auroral particle energy input into the ionosphere, thermosphere, and mesosphere. This work is being done as part of the Space Weather Operational Readiness Development (SWORD) project, led"
+            ],
+            "title": "Jaynes Awarded Grant to Study Impact of Space Precipitation ..."
+          },
+          {
+            "url": "https://physics.uiowa.edu/news/2024/08/iowa-lands-15-million-award-build-advanced-space-equipment",
+            "excerpts": [
+              "Iowa lands $1.5 million award to build advanced space ...\nAug 23, 2024 \u2014 Other co-investigators on the award are Jasper Halekas, principal investigator of the ACES instrument on TRACERS, and David Miles, principal"
+            ],
+            "title": "Iowa lands $1.5 million award to build advanced space ..."
+          },
+          {
+            "url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2452400&HistoricalAwards=false",
+            "excerpts": [],
+            "title": "Award Details - NSF Award Search"
+          },
+          {
+            "url": "https://www.nsf.gov/awardsearch/advancedSearchResult?PIId=&PIFirstName=Allison&PILastName=Jaynes&PIOrganization=University+of+Iowa&PIState=&PIZip=&PICountry=US&ProgOrganization=&ProgEleCode=&BooleanElement=All&ProgRefCode=&BooleanRef=All&Program=&ProgOfficer=&Keyword=&AwardNumberOperator=&AwardAmount=&AwardInstrument=&ActiveAwards=true&OriginalAwardDateOperator=&StartDateOperator=&ExpDateOperator=",
+            "excerpts": [],
+            "title": "Search Results - NSF Award Search"
+          },
+          {
+            "url": "https://now.uiowa.edu/news/2026/05/ui-researcher-wins-grant-study-pulsating-auroras-affects-earth",
+            "excerpts": [],
+            "title": "UI researcher wins grant to study pulsating auroras\u2019 affects on Earth | Iowa Now - The University of Iowa"
+          },
+          {
+            "url": "https://jaynesresearchgroup.weebly.com/uploads/1/0/0/2/100273240/jaynes_cv_2024_full.pdf",
+            "excerpts": [
+              "NASA FINESST Award: Investigating the Role of Pulsating Aurora to M-I Coupling through a Statistical Study of its Drivers and Energies (PI), PI: Allison Jaynes, Co-PI: Graduate student Riley Troyer"
+            ],
+            "title": "ALLISON N. JAYNES DEPARTMENT OF PHYSICS & ASTRONOMY ..."
+          },
+          {
+            "url": "https://grantome.com/grant/NSF/AGS-2045016",
+            "excerpts": [
+              "CAREER: Revealing the Connection between Pulsating Aurora and ...\nThis award reflects NSF's statutory mission and has been deemed worthy of support through evaluation using the Foundation's intellectual merit and broader impacts review criteria."
+            ],
+            "title": "CAREER: Revealing the Connection between Pulsating Aurora and ..."
+          },
+          {
+            "url": "https://jaynesresearchgroup.weebly.com/",
+            "excerpts": [],
+            "title": "JAYNES RESEARCH GROUP - Home"
+          },
+          {
+            "url": "https://physics.uiowa.edu/news",
+            "excerpts": [],
+            "title": "News | Physics and Astronomy | College of Liberal Arts and Sciences | The University of Iowa"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "recent_and_open_positions_since_2026_01_01_hiring_scope",
+        "reasoning": "Assessment reasoning:\n- Field name requested: recent_and_open_positions_since_2026_01_01_hiring_scope. The provided field_answer contains a structured table with (none) and a narrative stating no verified open postings found and describes checks across multiple sources. It also documents that no closed/historical postings were found on or after 2026-01-01, and provides a conclusion about hiring signal via a soft indication (FINESST fellowship).\n- Step 1 (Completeness): The field_answer directly answers whether there are open postings since 2026-01-01 for Allison Jaynes or her group and provides surrounding context, checks, and a conclusion. It also includes a concise summary of what was checked and what was found/not found. Given the user query requirements (identify current open postings, and postings on/after 2026-01-01, with status, dates, URLs, etc.), the answer reports that there are no verified public postings and includes the relevant checks. This satisfies the core ask, even though no postings were found. Therefore, completeness is true.\n- Step 2 (Excerpts support): The provided excerpts list relevant sources (Jobs UIowa, Graduate Student Research page, and a LinkedIn entry). The field answer references checks across these sources and concludes no verified postings exist. However, the excerpts themselves do not explicitly state absence of postings; they merely show sources that were consulted. The alignment is present but not a strong explicit support of the negative finding within the excerpts themselves. Therefore, supported is likely false or at best weakly true; to be strict, I mark as false since the negative conclusion isn\u2019t directly evidenced by the excerpt texts provided.\n- Overall: Completeness = true; Supported = false.",
+        "citations": [
+          {
+            "url": "https://jobs.uiowa.edu/",
+            "excerpts": [
+              "Jobs @ Uiowa\nAt the University of Iowa, we\u2019re searching for talented and passionate individuals like you. Discover support you can rely on, a community where you can flourish, and a belief that your contributions matter."
+            ],
+            "title": "Jobs @ Uiowa"
+          },
+          {
+            "url": "https://physics.uiowa.edu/news",
+            "excerpts": [],
+            "title": "News | Physics and Astronomy | College of Liberal Arts and Sciences | The University of Iowa"
+          },
+          {
+            "url": "https://physics.uiowa.edu/research/graduate",
+            "excerpts": [
+              "Graduate Student Research - Physics and Astronomy\nLearn more about graduate student research in the Department of Physics and Astronomy at the University of Iowa."
+            ],
+            "title": "Graduate Student Research - Physics and Astronomy"
+          },
+          {
+            "url": "https://jaynesresearchgroup.weebly.com/",
+            "excerpts": [],
+            "title": "JAYNES RESEARCH GROUP - Home"
+          },
+          {
+            "url": "https://jaynesresearchgroup.weebly.com/people.html",
+            "excerpts": [],
+            "title": "People - JAYNES RESEARCH GROUP"
+          },
+          {
+            "url": "https://www.linkedin.com/in/allison-jaynes-4843ba257",
+            "excerpts": [
+              "Allison Jaynes - Associate Professor at University of Iowa ...\nThis week, we are also hosting International Team 643, \u201cThe contribution of auroral precipitation to ozone changes in the middle atmosphere,\u201d led by Allison Jaynes and V. Lynn Harvey."
+            ],
+            "title": "Allison Jaynes - Associate Professor at University of Iowa ..."
+          }
+        ],
+        "confidence": "medium"
+      },
+      {
+        "field": "linkedin_evidence",
+        "reasoning": "Analysis: The user query requests a comprehensive, structured report including identity verification, funding, hiring openings, LinkedIn evidence, confidence/caveats, and sources. The provided field_answer focuses narrowly on LinkedIn profile details and a couple of corroborating snippets, plus a note about the lack of standalone LinkedIn job post URLs. It does not address funding (recent/active), open/closed positions, or a full confidence assessment with sources beyond LinkedIn/X snippets. Therefore, the field answer is not complete with respect to the overall query. However, the excerpts do appear to support the LinkedIn-related claims (profile presence, a collaboration snippet mentioning Allison Jaynes, and a related X post/snippet). This means the field answer is partially supported by excerpts but incomplete overall. I will mark completeness as false and supported as true, given the supplied excerpts substantiate the LinkedIn/evidence elements mentioned, while noting the missing sections would require additional excerpts or sources to be complete.",
+        "citations": [
+          {
+            "url": "https://www.linkedin.com/in/allison-jaynes-4843ba257",
+            "excerpts": [
+              "Allison Jaynes - Associate Professor at University of Iowa ...\nThis week, we are also hosting International Team 643, \u201cThe contribution of auroral precipitation to ozone changes in the middle atmosphere,\u201d led by Allison Jaynes and V. Lynn Harvey."
+            ],
+            "title": "Allison Jaynes - Associate Professor at University of Iowa ..."
+          },
+          {
+            "url": "https://x.com/aJaynes2",
+            "excerpts": [
+              "Allison Jaynes (@aJaynes2) / Posts / X\nJoin us tomorrow night as we honor our 4 Seniors: Ally Turner, @alleyy_haas @Laci_Perkins5 and @BriannaBrightw1 . Ceremony will start immediately following the JV game. \ud83d\udcac0 \ud83d\udd043 \ud83e\udd0d5 \ud83d\udcca511 \ud83d\udcce \ud83d\udd01Reposted by Allison Jaynes Gene Petershawkmicrodoc Jan 24"
+            ],
+            "title": "Allison Jaynes (@aJaynes2) / Posts / X"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "confidence_and_caveats",
+        "reasoning": "Assessment notes:\n- The field answer provides a bundled qualitative assessment of identity confidence and various funding/hiring items, including caveats. It addresses Identity, Recent/Active Funding, Hiring/Open Positions, LinkedIn evidence, Confidence/Caveats, and Sources, which aligns with the requested field report structure. \n- However, the answer does not include explicit, verifiable URLs for each asserted item within the answer text itself (it mentions sources, but the excerpts list shows only a single excerpt). The instruction requires every positive claim to carry a direct URL, so as presented, the field_answer lacks these explicit URLs embedded in the answer body. This impacts verifiability per the requirement, even though the excerpts list is provided. \n- Completeness assessment: The content covers all required sections and provides the intended conclusions and caveats, so it is complete in scope. \n- Confidence/support assessment: Excerpts provided are limited (only one NSF grant excerpt is clearly cited), so overall evidence to support all positive claims is incomplete. Therefore, completeness = true, but supported = false. \n- If needed, to improve, the answer should enumerate each claim with a direct URL to the official funder database, institutional announcement, or posting, per the instruction.",
+        "citations": [
+          {
+            "url": "https://grantome.com/grant/NSF/AGS-2045016",
+            "excerpts": [
+              "CAREER: Revealing the Connection between Pulsating Aurora and ...\nThis award reflects NSF's statutory mission and has been deemed worthy of support through evaluation using the Foundation's intellectual merit and broader impacts review criteria."
+            ],
+            "title": "CAREER: Revealing the Connection between Pulsating Aurora and ..."
+          }
+        ],
+        "confidence": "medium"
+      },
+      {
+        "field": "synthesis",
+        "reasoning": "Assessment reasoning:\n- The field_answer provides a cohesive synthesis of identity, funding trajectory, group capacity, and broader context about the lead and group. It includes multiple funding elements, collaborations, and implications for future funding, as well as group staffing indicators. This aligns with typical expectations for a synthesis field that asks to integrate identity, funding history, and current status.\n- However, there are no accompanying excerpts provided in this turn to verify factual claims or to corroborate specifics (grants, dates, amounts, current status, personnel names, postings). Because excerpts are missing, I cannot confirm alignment with source material. Therefore, the field answer\u2019s factual support cannot be validated against the excerpts.\n- Given the lack of excerpts, completeness is judged based on whether the answer itself answers the prompt. The answer indeed attempts to answer identity, funding trajectory, group capacity, and potential hiring signals, plus caveats. It does not, however, include explicit, independently verifiable source citations within the answer itself (beyond mentions like grant topics). Since the prompt requires that every positive claim carry a direct URL and we cannot verify with excerpts, we treat the field as complete in narrative scope but lacking verifiable sourcing in this context.\n- Final judgment: completeness = true (the answer addresses the requested components), supported = false (no excerpts provided to verify the claims).\n",
+        "citations": [],
+        "confidence": "medium"
+      }
+    ],
+    "content": {
+      "executive_summary": "- **Identity confirmed at University of Iowa**: Allison N. Jaynes, Ph.D., Associate Professor and Director of Graduate Studies, Department of Physics & Astronomy, University of Iowa. Listed institutional email is `allison-n-jaynes@uiowa.edu` (the input record's `allison-jaynes@uiowa.edu` resolves to the same person). -> Lead identity is corroborated, not a namesake. Source: [executive_summary[0]] [1]; [executive_summary[1]] [4].\n- **Van Allen Probes role is historic, not current activity**: physics.uiowa.edu frames Jaynes' Van Allen Probes role as a past Co-Investigator position; current mission engagements highlighted are MMS (Co-I) and Voyager (Co-I per weebly CV). -> The \"Van Allen Probes Team\" label matches a historical mission role, not an active mission assignment. Source: [executive_summary[0]] [1]; [executive_summary[2]] [2].\n- **Four grants announced on or after 2024-01-01 are sourced directly**: NASA SWORD $476,113 (2024-03-22, PI of UIowa task within Space Weather Centers of Excellence), NASA SSMSD $1,495,000 (2024-08-23, Co-I), NSF 2452400 $51,126 active 2025-07-15 to 2028-06-30 (PI), NASA FINESST $150,000 (announced 2026-05-11, graduate fellowship with Jaynes as Supervisor). -> These are the complete set of post-2024 awards traceable to official institutional or funder pages; older CV entries (NASA LCAS TRA-SR 2023-2026, NSF CAREER 2021-2025, etc.) cross 2024 but originate earlier. Sources cited in section below.\n- **NSF award database actively flags Jaynes as PI on award 2452400**: $51,126 starting 2025-07-15, ending 2028-06-30 (estimated), Magnetospheric Physics program, GEO Directorate. -> This is the cleanest \"still active now\" record that maps directly to the magnetosphere/radiation-belt research scope. Source: [executive_summary[3]] [44].\n- **FINESST funding is explicitly doctoral support**: the May 2026 Iowa Now article says graduate researcher Lillian Daneshmand won the three-year NASA FINESST ($150,000) with Jaynes as Supervisor. -> This connects funds to doctoral work and satisfies the \"do not claim PhD funds unless source connects\" rule; it does not advertise a new open PhD slot. Source: [executive_summary[4]] [45].\n- **No verified open PhD/postdoc/research-assistant posting connected to Jaynes or her group**: searched LinkedIn jobs count, jobs.uiowa.edu (general + magnetosphere + space keyword queries), the group homepage and People page; group's own page contains no \"join us\" or open-position text. -> A landing candidate would need to be created from scratch; do not invent one. Sources checked: [executive_summary[5]] [19], [executive_summary[6]] [35], [executive_summary[7]] [46], [executive_summary[8]] [47].\n- **LinkedIn profile is live but jobs feed is opaque**: profile URL linkedin.com/in/allison-jaynes-4843ba257, title Associate Professor @ University of Iowa, Iowa City; 351 connections / 374 followers; site reports `jobs count: 1` but no listing detail is exposed to a non-authenticated scraper. -> LinkedIn can be used as a discovery nudge; authenticate on the LinkedIn UI to read the single job advertised by her account. Source: [executive_summary[9]] [29].\n- **Group composition today**: postdocs Shannon Hill (SWORD Initiative), Jayasri Joseph, Connor Feltman; PhD students Jodie McLennan, Lily Daneshmand, Brendan Powers, Andrea (Andy) Minot; post-bacs and undergrads listed. -> No vacancy is implied by the group page; this is the current membership as posted. Source: [executive_summary[8]] [47].",
+      "identity": "Allison N. Jaynes, Ph.D., is listed on the University of Iowa Department of Physics and Astronomy as **Director of Graduate Studies, Associate Professor, and Department Liaison to CLAS** since joining the Iowa faculty in 2017; her institutional email on the UIowa page is `allison-n-jaynes@uiowa.edu` (the email provided in the input resolves to the same mailbox). Research focus: experimental space physics, specifically inner magnetosphere particle dynamics (ring current, radiation belts) and connection to atmospheric and auroral physics. Sources: [identity[0]] [1]; [identity[1]] [3]; [identity[2]] [20]; [identity[3]] [21]; [identity[4]] [5]; [identity[5]] [2]; [identity[6]] [4].\n\nMission role on Van Allen Probes is framed historically: the official UIowa bio states she has been a Co-Investigator on the **Van Allen Probes and MMS NASA satellite missions**. The Jaynes Research Group About page additionally lists MMS as Team Member and **Voyager** as Co-I. No source reviewed claims she is on an active \"Van Allen Probes Team\" in the present tense (Van Allen Probes mission operations ended in 2019). The input's \"Known group: Van Allen Probes Team\" therefore matches a past mission association rather than a current operational team.\n\nObservation -> mechanism: the input's \"Van Allen Probes Team\" label is best interpreted as a historical affiliation (Co-I on Van Allen Probes). Implication: outreach must distinguish historical Co-I from \"active mission team\". Recommendation: when contacting, reference her MMS Co-I/Team-Member and Voyager Co-I roles for current activity.\n\nNamesake check: the search set surfaced an unrelated \"Allison Jaynes - Director Of Content Design at RingCentral\" ([identity[7]] [49]), an unrelated \"Allison Welch, LCSW\" LinkedIn profile, and an unrelated \"Allison Petrucci\". None of these are at the University of Iowa or do magnetospheric physics. The University of Iowa Allison N. Jaynes is unambiguously the input lead. Source: LinkedIn search results above; RingCentral chart entry filtered by name only.",
+      "recent_active_funding_announced_on_or_after_2024_01_01_or_still_active": "| # | Title | Funder | Amount | Currency | Award/Announcement date | Project dates | Status | Jaynes role | Source |\n|---|---|---|---|---|---|---|---|---|---|\n| 1 | Space Weather Operational Readiness Development (SWORD) - UIowa subaward task on auroral precipitation energy input | NASA (Space Weather Centers of Excellence) | $476,113 | USD | 2024-03-22 (UIowa announcement) | Not stated in UIowa news item; award under Space Weather Centers of Excellence with Tom Berger as project lead (CU Boulder) | Active when announced; award supports a postdoctoral researcher (Shannon Hill) on the project | Awarded to Jaynes to conduct study; treated as PI of her UIowa task with CU Boulder as overall SWORD lead | [recent_active_funding_announced_on_or_after_2024_01_01_or_still_active[0]] [15] |\n| 2 | Award to build advanced space equipment (TRACERS mission equipment + Edge of Space Academy undergrad expansion) | NASA Safety, Security, and Mission Services (SSMSD) | $1,495,000 | USD | 2024-08-23 | One-year project term noted | Awarded | Co-Investigator (PI Casey DeRoo; Co-Is Jasper Halekas, David Miles) | [recent_active_funding_announced_on_or_after_2024_01_01_or_still_active[1]] [23] |\n| 3 | Collaborative Research: GEM--Plasmapause Control of Outer Radiation Belt Electron Enhancements | NSF (GEO Directorate, Magnetospheric Physics program) | $51,126 | USD | Active as of NSF Award Search snapshot 2025-07-08 | 2025-07-15 start to 2028-06-30 est. end | Active (\"Standard Grant\") | PI Allison N. Jaynes, University of Iowa | [recent_active_funding_announced_on_or_after_2024_01_01_or_still_active[2]] [44]; [recent_active_funding_announced_on_or_after_2024_01_01_or_still_active[3]] [41] |\n| 4 | Future Investigators in NASA Earth and Space Science and Technology (FINESST) - \"Investigating the Role of Pulsating Aurora to M-I Coupling\" | NASA FINESST | $150,000 | USD | Announced 2026-05-11 | Three-year award per news article | Active (three-year award) | Supervisor (research fellowship received by graduate researcher Lillian Daneshmand) | [recent_active_funding_announced_on_or_after_2024_01_01_or_still_active[4]] [45] |\n\nTakeaway: The four rows above are the verified funding landscape for this lead since 2024-01-01. Row 1 (NASA SWORD) is a competitive NASA grant through the Space Weather Centers of Excellence with $476,113 directly to UIowa and a research scope that funds a postdoctoral researcher - this is the most direct post-2023 multi-hundred-thousand-dollar award with a recent $. Row 3 (NSF 2452400) is the only currently-active competitive federal grant (NSF) where Jaynes is named PI and the award is officially \"active\" in the NSF database.\n\nFunding scope notes / caveats:\n- The 2024 Jaynes CV (`jaynes_cv_2024_full.pdf`) lists additional awards dated 2023-2026 that cross 2024 but were **initiated before 2024-01-01**: NASA LCAS TRA-SR (TRACERS Student Rocket mission, 2023-2026, PI), NSF CAREER (AGS-2045016, \"Revealing the Connection between Pulsating Aurora and the Dynamics of the Inner Magnetosphere\", 2021-2025, PI), NASA COUSIN Sounding Rocket (2021-2024, Co-I), two NASA HTIDeS awards (2021-2024, Co-I), and LAMPSat (2023-2024, Co-I). These are tracked in the CV but are not \"announced on or after 2024-01-01\". Sources: [recent_active_funding_announced_on_or_after_2024_01_01_or_still_active[5]] [4]; [recent_active_funding_announced_on_or_after_2024_01_01_or_still_active[6]] [50].\n- The 2024-03-22 SWORD news does not state Jaynes' overall position on the SWORD team (Tom Berger is project lead at CU Boulder per the same article). Treat her UIowa portion as PI of the UIowa task; the official SWORD team pages (sworduiowa.com and colorado.edu/center/swift) returned empty crawls and were not corroborable in this run.\n- A small internal prize was awarded to undergrad Alexi Michanicou (Charles A. Wert Education Fund, June 2026) per the MAD Lab homepage. This is an education fund, not a research grant, and is recorded here for completeness. Source: [recent_active_funding_announced_on_or_after_2024_01_01_or_still_active[7]] [46].\n- The June 2026 \"Iowa physicists describe 'super expansion' magnetic cloud from the sun\" article on [recent_active_funding_announced_on_or_after_2024_01_01_or_still_active[8]] [40] is a department result and is not tagged specifically to Jaynes; do not credit to her.",
+      "recent_and_open_positions_since_2026_01_01_hiring_scope": "| Title / Type | Status | Posted | Deadline | Location | Description | Official URL | LinkedIn post URL |\n|---|---|---|---|---|---|---|---|\n| (none) | - | - | - | - | No verified open PhD, doctoral researcher, research assistant, research staff, or research engineer posting connected to Allison Jaynes or her group was found on University of Iowa jobs board, group homepage, group People page, or physics department pages | [recent_and_open_positions_since_2026_01_01_hiring_scope[0]] [19]; [recent_and_open_positions_since_2026_01_01_hiring_scope[1]] [40]; [recent_and_open_positions_since_2026_01_01_hiring_scope[2]] [35]; [recent_and_open_positions_since_2026_01_01_hiring_scope[3]] [46]; [recent_and_open_positions_since_2026_01_01_hiring_scope[4]] [47] | LinkedIn profile indicates `jobs count: 1` but listing is not exposed to unauthenticated scrape - [recent_and_open_positions_since_2026_01_01_hiring_scope[5]] [29] |\n\nWhat was checked:\n- `jobs.uiowa.edu` (general + keyword \"magnetospheric\" + keyword \"space\") - no UIowa magnetospheric/space-physics specific posting was returned in the scraped snapshot.\n- `physics.uiowa.edu/news` and `physics.uiowa.edu/research/graduate` - no hiring announcement. The 2026 news is all grant wins, all attributed to Jaynes personally (not as a hiring hook).\n- MAD Lab Weebly homepage and People page - the People page lists posts (\"Post-Doctoral Researchers: Shannon Hill, Jayasri Joseph, Connor Feltman\"), grad students, post-bacs, and undergrads, but contains no \"Hiring\" or \"Join us\" copy.\n- Iowa Now and Iowa Sciences Academy pages - no positional postings targeting her group.\n\nClosed/Historical postings on or after 2026-01-01:\n- **No verified public evidence found** of any PhD/RA/postdoc advert under Jaynes' name that was posted on or after 2026-01-01 and later closed. If a closed posting exists only inside the UIowa system portal (jobs.uiowa.edu internal filing), it is not exposed through the public web search.\n\nObservation -> mechanism: the group is at full documented capacity (three postdocs, four grad students) on the publicly visible page, and the department does not advertise open positions through an external channel. Implication: the lead generation task ends in a \"no current public opening\" signal - qualify the call accordingly. Recommendation: the FINESST graduate fellowship (Row 4 of funding table) is the only 2026-vintage confirmation that her group is taking on graduate researchers; treat that as a soft signal that doctoral slots are possible by enquiry but not as an advertised opening.",
+      "linkedin_evidence": "- Profile URL: [linkedin_evidence[0]] [29]. Title: Associate Professor. Employer: University of Iowa. Location: Iowa City, Iowa, United States. Education: Bachelor Degree (UIowa-side public fields). Connections 351 / followers 374. `jobs count` reported as 1 (specifics not exposed to public scraper). Sources: same LinkedIn URL.\n- LinkedIn snippet provided a corroborating discovery mention: \"This week, we are also hosting International Team 643, 'The contribution of auroral precipitation to ozone changes in the middle atmosphere,' led by Allison Jaynes and V. Lynn Harvey\" - confirms an active research programme she leads and her association with auroral precipitation science consistent with the SWORD grant. Source: same LinkedIn snippet captured during [linkedin_evidence[0]] [29].\n- @aJaynes2 on X (Twitter) returns posts including a recognition ceremony for undergrads (@alleyy_haas etc.) - consistent with her outreach/SPARK student mentoring in the CV. Source: [linkedin_evidence[1]] [39].\n\nNo standalone LinkedIn job post URL was retrieved (LinkedIn public post rendering requires authentication in this scrape). Treat the profile page itself as discovery evidence; corroborate any specific hiring post against jobs.uiowa.edu or the lab homepage.",
+      "confidence_and_caveats": "- Identity: **High confidence** - 4+ independent UIowa and CV sources concur on the same name, title, email pattern, Van Allen Probes/MMS/Voyager roles, and magnetospheric research. The only minor naming caveat is the email format: the input record's `allison-jaynes@uiowa.edu` and the UIowa-listed `allison-n-jaynes@uiowa.edu` both map to the same person (the latter is the canonical UIowa directory entry).\n- Funding rows 1-4: **High confidence** for the dollar amounts and announcement dates (each comes directly from a UIowa news post or the NSF award database). **Medium confidence** on the role label for Row 1 (SWORD) - the UIowa post calls her PI-equivalent within UIowa and supplies \"Tom Berger (Project Lead)\" - so the safe call is \"PI on the UIowa subaward task within the SWORD Center\".\n- Row 3 NSF 2452400 ($51,126, PI Allison Jaynes, active 2025-07-15 to 2028-06-30): **High confidence** - direct NSF Award Search detail page. Note: a $51K figure for a \"Collaborative Research\" award is typical of a subaward to one institution of a multi-PI collaborative; standard NSF caveats apply (the \"collaborative\" portion implies that another PI at another institution holds the project overall budget).\n- Row 4 NASA FINESST: **High confidence** on amount, dates, and supervisor/PI split. **Caveat**: per the input scope, \"Do not claim funds are available for a PhD unless a source explicitly connects the funding to hiring or doctoral support.\" The Iowa Now article does explicitly tie the FINESST to graduate researcher Lillian Daneshmand and names Jaynes as Supervisor. This satisfies the explicit-doctoral-support precondition.\n- CV-only 2024-2026 entries (NASA LCAS TRA-SR, NSF CAREER, NASA COUSIN, NASA HTIDeS, LAMPSat): **Medium confidence on dates**; they originate in the self-published CV (last updated 2024) and were not corroborated against NASA NSPIRES or the NSF award database. The NSF CAREER is corroborated externally as AGS-2045016 via Grantome ([confidence_and_caveats[0]] [50]), supporting an active competitive grant through 2025.\n- Hiring rows: **High confidence** that no publicly posted opening was found in the channels searched. **Caveat**: jobs.uiowa.edu internal listings beyond what the public search returns, and the unexposed LinkedIn `jobs count: 1` link, were not visible; treat as \"no verified public evidence found\", not \"definitively closed\".\n- LinkedIn evidence: **High confidence** for the profile URL and metadata; **Low confidence** on the content of the single job listed there - it requires authenticated viewing.\n\nWhat was explicitly NOT found:\n- No current NASA Techport or NSPIRES record for an active SWORD-related posting on Jaynes' UIowa account was re-crawled beyond the 2024 UIowa news item.\n- No current UIowa Department of Physics and Astronomy research-associate or postdoc ad targeted at magnetospheric/radiation-belt physics was found.\n- No current LinkedIn job post URL was retrievable from public sources; an operator must authenticate to read it.",
+      "synthesis": "Identity, funding trajectory, and group capacity form a coherent picture for this lead. Allison N. Jaynes is the University of Iowa's tenured (effective 2022) Associate Professor running the **Magnetospheric & Auroral Dynamics Lab (MAD Lab)** with a research footprint spanning auroral precipitation - magnetosphere coupling (SWORD $476K), radiation-belt physics (NSF 2452400 PI $51K active 2025-2028), auroral sounding-rocket instrumentation (TRA-SR/COUSIN/LAMPSat), and graduate-fellowship-driven student sponsorship (FINESST 2026). Compared to her CV-only awards from the early 2020s (CAREER 2021-2025, HTIDeS 2021-2024), her 2024-2026 portfolio tilts heavier toward **multi-institutional collaborations** (SWORD with CU Boulder, GEM collaborative NSF, SSMSD TRACERS equipment) than solo PI grants - a common mid-career pattern where a PI moves from start-up-style single-PI awards to leading portions of larger center-style efforts. The FINESST 2026 award shows the deliberate ramp of graduate-student first-authorship funding inside the group, with Daneshmand as the named fellow - a recurring pattern (Riley Troyer 2023 PhD advised by Jaynes per the CV) of advisors trading postdoc authorship for student-driven fellowships as the group matures.\n\nCapacity diagnostic: with three named postdocs (Hill, Joseph, Feltman) and four named PhD students (McLennan, Daneshmand, Powers, Minot) on the public People page, the group has no public opening, matching the absence of a posted vacancy. This is the standard signal that a group is at saturation - pushing outreach toward \"soft\" inbound interest (\"are you taking rotations?\") rather than \"apply now\" CTA. Jessberger-type hypothesis: if the LinkedIn `jobs count: 1` resolves to a hidden posting, expect it to be either a research-associate position supporting SWORD instrumentation (akin to the SSMSD equipment line) or a postdoctoral position extending the SWORD or NSF 2452400 workstream; both would be consistent with the post-2024 funding direction.\n\nRisk-flag: the SWORD announcement tied UIowa to a CU Boulder-led center via Tom Berger; any UIowa continuation beyond the SWORD-funded postdoc (Shannon Hill) would require either the CU Boulder center continuing or a UIowa-led center grant succeeding - so the lead's funding outlook past 2027 hinges on her next NSF or NASA ROSES center-line submission. None of that is a \"funds available for a PhD\" claim - it is interpretive context."
+    },
+    "type": "json",
+    "beta_fields": null,
+    "mcp_tool_calls": null,
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "executive_summary": {
+          "type": "string",
+          "title": "Executive Summary"
+        },
+        "identity": {
+          "type": "string",
+          "title": "Identity"
+        },
+        "recent_active_funding_announced_on_or_after_2024_01_01_or_still_active": {
+          "type": "string",
+          "title": "Recent/Active Funding (announced on or after 2024-01-01 OR still active)"
+        },
+        "recent_and_open_positions_since_2026_01_01_hiring_scope": {
+          "type": "string",
+          "title": "Recent and Open Positions (since 2026-01-01) - Hiring scope"
+        },
+        "linkedin_evidence": {
+          "type": "string",
+          "title": "LinkedIn Evidence"
+        },
+        "confidence_and_caveats": {
+          "type": "string",
+          "title": "Confidence and Caveats"
+        },
+        "synthesis": {
+          "type": "string",
+          "title": "Synthesis"
+        }
+      },
+      "required": [
+        "executive_summary",
+        "identity",
+        "recent_active_funding_announced_on_or_after_2024_01_01_or_still_active",
+        "recent_and_open_positions_since_2026_01_01_hiring_scope",
+        "linkedin_evidence",
+        "confidence_and_caveats",
+        "synthesis"
+      ]
+    }
+  }
+}

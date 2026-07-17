@@ -24,8 +24,10 @@ test('deduplicates digest recipients from environment', () => {
   );
 });
 
-test('falls back to harshddes@gmail.com when env and profile are unset', () => {
-  assert.ok(digestRecipients({}).includes('harshddes@gmail.com'));
+test('falls back to both default digest inboxes when env and profile are unset', () => {
+  const recipients = digestRecipients({});
+  assert.ok(recipients.includes('harshddes@gmail.com'));
+  assert.ok(recipients.includes('desaienggworks@gmail.com'));
 });
 
 test('validates generic SMTP configuration without sending mail', () => {
@@ -81,11 +83,11 @@ test('stamps contacted and followed-up dates on status changes using Eastern tim
   let prospect = readResearchProspects(filePath).prospects[0];
   assert.equal(prospect.last_contacted, today);
 
-  patchResearchProspect('plasma-lab-contact', { status: 'follow_up' }, filePath);
+  patchResearchProspect('plasma-lab-contact', { status: 'followed_up' }, filePath);
   prospect = readResearchProspects(filePath).prospects[0];
   assert.equal(prospect.last_followed_up, today);
 
-  patchResearchProspect('plasma-lab-contact', { status: 'follow_up' }, filePath);
+  patchResearchProspect('plasma-lab-contact', { status: 'followed_up' }, filePath);
   prospect = readResearchProspects(filePath).prospects[0];
   assert.equal(prospect.last_followed_up, today);
 });
@@ -104,9 +106,9 @@ test('research status patch survives API-style read after write', () => {
     }],
   }, filePath);
 
-  patchResearchProspect('api-read-prof', { status: 'follow_up' }, filePath);
+  patchResearchProspect('api-read-prof', { status: 'followed_up' }, filePath);
   const refreshed = readResearchProspects(filePath).prospects[0];
-  assert.equal(refreshed.status, 'follow_up');
+  assert.equal(refreshed.status, 'followed_up');
   assert.ok(refreshed.last_followed_up);
 });
 
@@ -385,4 +387,24 @@ test('Windows launcher detaches dashboard and health-checks startup', () => {
   assert.match(source, /dashboard\.err\.log/);
   assert.match(source, /\/healthz/);
   assert.match(source, /--no-open/);
+  assert.match(source, /DASHBOARD_URL=http:\/\/127\.0\.0\.1:3737\/dashboard\/fusion-pivot-dashboard\.html/);
+  assert.match(source, /HOST='%DASHBOARD_HOST%'/);
+  assert.match(source, /PORT='%DASHBOARD_PORT%'/);
+  assert.match(source, /:replace_stale_dashboard_process/);
+  assert.match(source, /Stop-Process -Id \$ownerPid -Force/);
+  assert.match(source, /:write_port_owner_pid/);
+  assert.match(source, /I will not stop unrelated processes automatically/);
+});
+
+test('Windows autostart paths use the fixed-port launcher', () => {
+  const startup = readFileSync(new URL('../scripts/install-user-startup.ps1', import.meta.url), 'utf-8');
+  const task = readFileSync(new URL('../scripts/register-windows-task.ps1', import.meta.url), 'utf-8');
+  assert.match(startup, /Launch-CareerOps-Dashboard\.cmd/);
+  assert.match(startup, /--no-open/);
+  assert.match(startup, /CAREER_OPS_ROOT/);
+  assert.doesNotMatch(startup, /node run\.mjs/);
+  assert.match(task, /Launch-CareerOps-Dashboard\.cmd/);
+  assert.match(task, /--no-open/);
+  assert.match(task, /New-ScheduledTaskAction -Execute \$cmd/);
+  assert.doesNotMatch(task, /Get-Command node/);
 });

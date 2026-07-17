@@ -249,9 +249,28 @@
       "source_type": "phd_board",
       "platform": "euraxess",
       "careers_url": "https://euraxess.ec.europa.eu/jobs/search?keywords=fusion+plasma+diagnostics",
+      "permitted_feed_url": "https://euraxess.ec.europa.eu/job-feed",
       "api_url": null,
-      "scrape_strategy": "periodic_check",
+      "scrape_strategy": "access_gated_provider",
+      "providers": [
+        "official_or_permitted_feed",
+        "third_party_provider",
+        "direct_html_conservative",
+        "manual_seed"
+      ],
+      "poll_interval_hours": 2,
+      "dashboard_min_score": 3.2,
+      "archive_below_score": 2.6,
+      "backfill_profiles": [
+        "fusion_plasma_diagnostics",
+        "instrumentation",
+        "space_plasma",
+        "controls_robotics",
+        "mass_spectrometry"
+      ],
+      "manual_seed_file": "euraxess-seed-postings.json",
       "importance": 0.85,
+      "notes": "Official RSS is the no-token live source. Backfill beyond the RSS window requires APIFY_TOKEN/EURAXESS_APIFY_TOKEN or imported seed data. Direct query crawling may be blocked by EURAXESS robots policy and is not a default backfill path.",
       "enabled": true
     },
     {
@@ -278,13 +297,57 @@
     },
     {
       "id": "findaphd-fusion",
-      "name": "FindAPhD — Plasma/Fusion",
+      "name": "FindAPhD — Engineering + Plasma/Fusion keywords",
       "source_type": "phd_board",
       "platform": "findaphd",
-      "careers_url": "https://www.findaphd.com/phds/?Keywords=plasma+fusion+diagnostics",
+      "careers_url": "https://www.findaphd.com/phds/engineering/?10M7o0&Sort=A",
       "api_url": null,
-      "scrape_strategy": "periodic_check",
-      "importance": 0.70,
+      "scrape_strategy": "access_gated_provider",
+      "providers": [
+        "playwright_listing",
+        "keyword_listing",
+        "engineering_listing"
+      ],
+      "keywords": [
+        "plasma",
+        "fusion",
+        "diagnostics",
+        "instrumentation",
+        "cryogenic",
+        "detector"
+      ],
+      "engineering_pages": 3,
+      "poll_interval_hours": 2,
+      "dashboard_min_score": 3.2,
+      "archive_below_score": 2.4,
+      "max_items": 200,
+      "max_details": 80,
+      "importance": 0.86,
+      "notes": "Cloudflare-gated HTML. Playwright listing scrape. Funding badges are filter flags only; scoring uses EURAXESS-style fit lexicon. Merges into PhDScanner Feed with cross-source dedupe.",
+      "enabled": true
+    },
+    {
+      "id": "phdscanner-fusion",
+      "name": "PhDScanner — Funded PhD Live Feed",
+      "source_type": "phd_board",
+      "platform": "phdscanner",
+      "careers_url": "https://www.phdscanner.com/phd-vacancies/standard?funded=true",
+      "sitemap_url": "https://www.phdscanner.com/sitemap-phdpositions-details-new.xml",
+      "api_url": null,
+      "scrape_strategy": "access_gated_provider",
+      "providers": [
+        "sitemap_details",
+        "funded_listing",
+        "manual_seed"
+      ],
+      "poll_interval_hours": 2,
+      "dashboard_min_score": 3.2,
+      "archive_below_score": 2.4,
+      "max_items": 200,
+      "max_details": 80,
+      "manual_seed_file": "phdscanner-seed-postings.json",
+      "importance": 0.88,
+      "notes": "Robots allow / but disallow ?page= pagination. Prefer sitemap detail URLs + funded listing cards. Funding is a filter flag only; scoring uses EURAXESS-style fit lexicon.",
       "enabled": true
     },
     {

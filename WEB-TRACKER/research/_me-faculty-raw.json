@@ -1,0 +1,2786 @@
+{
+  "all": [
+    {
+      "name": "Jeffrey Abell",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jeffrey-abell/",
+      "title": "Professor of Practice, Mechanical Engineering",
+      "contact_email": "jaabell@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "jeffrey-abell"
+    },
+    {
+      "name": "Solomon Adera",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/solomon-adera/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "sadera@umich.edu",
+      "research_interests_raw": "Adera earned his Ph. D. in Mechanical Engineering from MIT. He was a postdoctoral associate at the Harvard University before moving to the University of Michigan. His research interests include heat and mass transfer, phase-change (evaporation, condensation, freezing), water/fog harvesting, micro/nanoengineering, and fluid-structure interactions. Alauddin Ahmed",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "solomon-adera"
+    },
+    {
+      "name": "Alauddin Ahmed",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/alauddin-ahmed/",
+      "title": "Associate Research Scientist, Mechanical Engineering",
+      "contact_email": "alauddin@umich.edu",
+      "research_interests_raw": "Applications: Energy storage (e.g., hydrogen, thermal, natural gas), battery (e.g., electrolytes, manufacturing); Materials: Nanoporous materials (e.g., metal organic frameworks, covalent organic frameworks), metal oxides, metal hydrides, energetic materials, small molecules, nanoporous composites; Methods: Applied machine learning & AI, Ab initio & density functional theory (DFT), Monte Carlo & molecular dynamics, high-throughput computing, materials by design; Developments: Methods for interpretable machine learning, algorithm for predicting thermophysical properties of chemical compounds. Rayhaneh Akhavan",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "alauddin-ahmed"
+    },
+    {
+      "name": "Rayhaneh Akhavan",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/rayhaneh-akhavan/",
+      "title": "Associate Professor, Mechanical Engineering",
+      "contact_email": "raa@umich.edu",
+      "research_interests_raw": "Fluid mechanics with emphasis on turbulence physics, turbulence modeling and turbulence control; high fidelity computations and reduced-order modeling of complex turbulent flows involving multi phases, fluid-structure interactions and viscoelastic effects; biomimetic and bio-inspired concepts for flow control and drag reduction; lattice Boltzmann, pseudo-spectral and stochastic methods; high performance computing. Applications in energy, environment, aerospace and naval disciplines. Mitra Aliabouzar",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "rayhaneh-akhavan"
+    },
+    {
+      "name": "Mitra Aliabouzar",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/mitra-aliabouzar/",
+      "title": "Assistant Research Scientist, Mechanical Engineering Research Assistant Professor, Radiology",
+      "contact_email": "aliabouz@med.umich.edu",
+      "research_interests_raw": "Cavitation enabled therapy, Mechanics of soft and bio-materials, High speed rheometry, 3D bioprinting",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "mitra-aliabouzar"
+    },
+    {
+      "name": "John Allison",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/john-allison/",
+      "title": "Professor, Mechanical Engineering Professor, Materials Science and Engineering William F. Hosford Professor of Materials Science and Engineering",
+      "contact_email": "johnea@umich.edu",
+      "research_interests_raw": "Understanding the inter-relationships between processing, alloying, microstructure and properties in metallic materials \u2013 and in incorporating this knowledge into computational tools for use in research, education and engineering. Ellen Arruda",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "john-allison"
+    },
+    {
+      "name": "Ellen Arruda",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/ellen-arruda/",
+      "title": "Tim Manganello/BorgWarner Department Chair, Mechanical Engineering Professor, Mechanical Engineering Professor, Biomedical Engineering Professor, Program in Macromolecular Science and Engineering Maria Comninou Collegiate Professor of Mechanical Engineering",
+      "contact_email": "arruda@umich.edu",
+      "research_interests_raw": "Mechanical behavior of materials including polymers, elastomers and soft tissue; tissue engineering of tendon and muscle constructs; constitutive modeling of growth, remodeling and functional adaptation in soft tissue; deformation mechanisms in polymers; crystal transformation mechanisms in semi-crystalline polymers; split Hopkinson pressure bar testing of polymers and elastomers for high strain rate applications including crashworthiness in automotive applications. James Ashton-Miller",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "ellen-arruda"
+    },
+    {
+      "name": "James Ashton-Miller",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/james-ashton-miller/",
+      "title": "Albert Schultz Collegiate Research Professor Emeritus Research Professor Emeritus, Mechanical Engineering Research Professor Emeritus, Biomedical Engineering Research Professor Emeritus, School of Kinesiology Research Professor Emeritus, Institute of Gerontology",
+      "contact_email": "jaam@umich.edu",
+      "research_interests_raw": "Biomechanics including mobility impairments in the elderly; trips, slips, and falls; elderly decision-making and risk-taking in physical tasks; birth related injury; female stress urinary incontinence; spine biomechanics; athletic injuries; occupant vehicular safety. Shorya Awtar",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "james-ashton-miller"
+    },
+    {
+      "name": "Shorya Awtar",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/shorya-awtar/",
+      "title": "Professor, Mechanical Engineering Joseph E. Shigley Collegiate Professor of Engineering",
+      "contact_email": "awtar@umich.edu",
+      "research_interests_raw": "Mechanical design, precision engineering, human-centric design, mechatronic systems, and robotics. Specific research and development topics include constraint-based design, parallel kinematics, flexure mechanisms, dynamics of flexible systems, electromagnetic actuators, medical devices for minimally invasive surgery, precision motion stages for semiconductor metrology, motion sickness mitigation in autonomous vehicles, rehab robotics, modular prostheses, and micro-electromechanical systems (MEMS). Rohini Bala Chandran",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "shorya-awtar"
+    },
+    {
+      "name": "Rohini Bala Chandran",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/rohini-bala-chandran/",
+      "title": "Associate Professor, Mechanical Engineering",
+      "contact_email": "rbchan@umich.edu",
+      "research_interests_raw": "Thermal and fluid sciences, multiscale computational model development, radiative heat transfer, optics, chemical kinetics of heterogeneous reactions, electrochemical engineering, semiconductor physics Mihaela Banu",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "rohini-bala-chandran"
+    },
+    {
+      "name": "Mihaela Banu",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/mihaela-banu/",
+      "title": "Professor, Mechanical Engineering OVPR Collegiate Research Professor Associate Chair of Master and Doctoral Engineering",
+      "contact_email": "mbanu@umich.edu",
+      "research_interests_raw": "The research focuses on lightweight materials, with emphasis on developing micro- and nanocellulose composites, natural fiber composites and associated manufacturing processes for automotive and aerospace applications, multi-scale modeling of materials and simulation of forming processes, manufacturing of personalized dental ligaplants. James Barber",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "mihaela-banu"
+    },
+    {
+      "name": "James Barber",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/james-barber/",
+      "title": "Professor, Mechanical Engineering Arthur F. Thurnau Professor, Mechanical Engineering Jon R. & Beverly S. Holt Professor, College of Engineering",
+      "contact_email": "jbarber@umich.edu",
+      "research_interests_raw": "Solid mechanics including thermoelasticity; elasticity; solidification; contact mechanics; tribology; elastodynamics, fracture; stability of thermoelastic contact; friction, contact of rough surfaces. Kira Barton",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "james-barber"
+    },
+    {
+      "name": "Kira Barton",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/kira-barton/",
+      "title": "Professor, Mechanical Engineering Professor, Robotics Miller Faculty Scholar",
+      "contact_email": "bartonkl@umich.edu",
+      "research_interests_raw": "Control theory and applications; iterative learning control; multi-agent systems; human/robot collaborations; smart manufacturing; manufacturing robotics; high-performance micro/nano-scale printing for electrical and biomedical applications Michael Bernitsas",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "kira-barton"
+    },
+    {
+      "name": "Michael Bernitsas",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/michael-bernitsas/",
+      "title": "Professor, Mechanical Engineering Mortimer E Cooley Collegiate Professor, Naval Architecture & Marine Engineering",
+      "contact_email": "michaelb@umich.edu",
+      "research_interests_raw": "Current Energy Conversion; Enhancement of High-Damping, High-Reynolds Vortex Induced Vibration; Suppression of Vortex Induced Vibration; Mooring System Dynamics; Structural Redesign and Topology/Material Evolution; Riser and Pipeline Mechanics Andre Boehman",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "michael-bernitsas"
+    },
+    {
+      "name": "Andre Boehman",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/andre-boehman/",
+      "title": "Professor, Mechanical Engineering Vennema Professor of Engineering Director, W.E. Lay Automotive Laboratory",
+      "contact_email": "boehman@umich.edu",
+      "research_interests_raw": "Automotive engineering, energy and thermal sciences including: fuel production and formulation, alternative fuels, diesel combustion, spark ignition combustion, autoignition, spray behavior, particulate emissions, NOx emissions, emissions control, thermodynamics of energy conversion systems. Claus Borgnakke",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "andre-boehman"
+    },
+    {
+      "name": "Claus Borgnakke",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/claus-borgnakke/",
+      "title": "Associate Professor Emeritus, Mechanical Engineering",
+      "contact_email": "claus@umich.edu",
+      "research_interests_raw": "Combustion and turbulence modeling; engine combustion; pollutant formation; thermodynamic properties; diesel engine combustion; natural gas operation of diesels; compressible turbulence models; metal hydride heat pumps and hydrogen storage; refrigerant properties. Diann Brei",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "claus-borgnakke"
+    },
+    {
+      "name": "Diann Brei",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/diann-brei/",
+      "title": "Professor, Mechanical Engineering",
+      "contact_email": "dibrei@umich.edu",
+      "research_interests_raw": "Design; smart materials and structures; sensor and actuator design; structural dynamics; vibration and noise control; mechatronics, smart mechanisms Daniel Bruder",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "diann-brei"
+    },
+    {
+      "name": "Daniel Bruder",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/daniel-bruder/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "bruderd@umich.edu",
+      "research_interests_raw": "Design, modeling, and control of soft and other non-traditional robotic systems with the goal of actualizing robots that are capable of safely assisting humans in real-world unstructured environments. Ashley Bucsek",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "daniel-bruder"
+    },
+    {
+      "name": "Ashley Bucsek",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/ashley-bucsek/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "abucsek@umich.edu",
+      "research_interests_raw": "Mechanical behavior of materials; micromechanical modeling; in situ/in operando characterization including X-ray imaging and diffraction; functional materials; lightweight structural metals; shape memory alloys; phase transformations; energy conversion Jesse Capecelatro",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "ashley-bucsek"
+    },
+    {
+      "name": "Jesse Capecelatro",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jesse-capecelatro/",
+      "title": "Associate Professor, Mechanical Engineering Associate Professor, Aerospace Engineering",
+      "contact_email": "jcaps@umich.edu",
+      "research_interests_raw": "Fluid mechanics, with an emphasis on multiphase flow, turbulence, reacting flows, and high-performance computing. Applications include renewable energy, disease transmission, and space exploration. Steve Ceccio",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "jesse-capecelatro"
+    },
+    {
+      "name": "Steve Ceccio",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/steve-ceccio/",
+      "title": "Professor, Mechanical Engineering Professor, Naval Architecture & Marine Engineering Vincent T and Gloria M Gorguze Professor of Engineering",
+      "contact_email": "ceccio@umich.edu",
+      "research_interests_raw": "Fluid mechanics with emphasis on experimental methods, multiphase flows, high Reynolds number flows, cavitation and bubbly flows, optical flow measurement methods, electrical and radiation based tomography. Erin Cech",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "steve-ceccio"
+    },
+    {
+      "name": "Erin Cech",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/erin-cech/",
+      "title": "Associate Professor, Mechanical Engineering Associate Professor, Sociology",
+      "contact_email": "ecech@umich.edu",
+      "research_interests_raw": "Gender and Sexuality; Inequalities and Stratification; Sociology of Culture; Theory, Knowledge, and Science; Work, Economy, and Organizations; Mixed Methods; Sociology; Administration",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "erin-cech"
+    },
+    {
+      "name": "Michael Chen",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/michael-chen/",
+      "title": "Professor Emeritus, Mechanical Engineering",
+      "contact_email": "mmchen@umich.edu",
+      "research_interests_raw": "Heat transfer and fluid mechanics, including fundamentals and manufacturing applications; buoyant and thermocapillary convection; multiphase flows; asymptotic, computational, and experimental methods; alloy solidification theory; laser processing; welding; spray forming; spray coating. Yun Chen",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "michael-chen"
+    },
+    {
+      "name": "Yun Chen",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/yun-chen/",
+      "title": "Associate Research Scientist, Mechanical Engineering",
+      "contact_email": "cyshi@umich.edu",
+      "research_interests_raw": "Yun Chen\u2019s research focuses on AI-enabled communication, sensing, and robotic systems. Her work bridges communication chips, 6G wireless systems, reconfigurable intelligent surfaces, hardware-software co-design, and programmable sensing environments for robotics and cyber-physical systems. Before joining the University of Michigan, she was a full professor at Fudan University, where she led research on high-efficiency communication baseband chips and AI-driven wireless systems.",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "yun-chen"
+    },
+    {
+      "name": "David Cole",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/david-cole/",
+      "title": "Associate Professor Emeritus, Mechanical Engineering",
+      "contact_email": "",
+      "research_interests_raw": "Strategic issues related to the restructuring of the North American industry and trends in globalization, technology, market factors, and human resource requirements. Maria Comninou",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "david-cole"
+    },
+    {
+      "name": "Maria Comninou",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/maria-comninou/",
+      "title": "Professor Emerita, Theoretical and Applied Mechanics Professor Emerita, Mechanical Engineering",
+      "contact_email": "comninou@umich.edu",
+      "research_interests_raw": "Elasticity; elastodynamics; fracture mechanics; dislocations; fatigue. Daniel Cooper",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "maria-comninou"
+    },
+    {
+      "name": "Daniel Cooper",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/daniel-cooper/",
+      "title": "Associate Professor, Mechanical Engineering Associate Professor, Integrative Systems and Design Director of the Global CO\u2082 Initiative",
+      "contact_email": "drcooper@umich.edu",
+      "research_interests_raw": "My research, which focuses on making impactful contributions to the areas of manufacturing and sustainability, considers multiple scales: identifying significant opportunities to cut emissions and/or costs by conducting large scale analyses on processes, factories and material supply chains, and pursuing a rigorous technical analysis in order to capitalize on the opportunities. Shanna Daly",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "daniel-cooper"
+    },
+    {
+      "name": "Shanna Daly",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/shanna-daly/",
+      "title": "Associate Professor, Mechanical Engineering Miller Faculty Scholar Arthur F. Thurnau Professor, Mechanical Engineering",
+      "contact_email": "srdaly@umich.edu",
+      "research_interests_raw": "Front-end design processes; idea generation; engineering creativity and divergent thinking; design cognition; socially-engaged design; socio-technical engineering skillsets; design ethnography; design problem finding and framing; design prototyping; design education",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "shanna-daly"
+    },
+    {
+      "name": "Sambit Das",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/sambit-das/",
+      "title": "Assistant Research Scientist, Mechanical Engineering",
+      "contact_email": "dsambit@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "sambit-das"
+    },
+    {
+      "name": "Neil Dasgupta",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/neil-dasgupta/",
+      "title": "Professor, Mechanical Engineering Professor, Materials Science and Engineering Miller Faculty Scholar",
+      "contact_email": "ndasgupt@umich.edu",
+      "research_interests_raw": "Renewable energy and energy storage; Batteries; Solar Energy; Catalysis; Nanomanufacturing; Atomic layer deposition; Bio-inspired materials; High-resolution microscopy and spectroscopy of nanomaterials; In situ/operando electrochemistry; Energy policy and economics Pingsha Dong",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "neil-dasgupta"
+    },
+    {
+      "name": "Pingsha Dong",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/pingsha-dong/",
+      "title": "Professor, Mechanical Engineering Professor, Naval Architecture and Marine Engineering Director, Welded Structures Laboratory",
+      "contact_email": "dongp@umich.edu",
+      "research_interests_raw": "(1) High-speed method for directly joining plastics directly to metals for manufacture of multi-materials lightweight structures; (2) solid-state rapid deposition technique for additive manufacture of bimetal components without introducing detrimental intermetallic compounds; (3) Fracture mechanics modeling of randomly distributed defects in additively-manufactured metal components; (4) smart modular design for manufacturing and assembly methods for advanced lightweight marine structures. Karthik Duraisamy",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "pingsha-dong"
+    },
+    {
+      "name": "Karthik Duraisamy",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/karthik-duraisamy/",
+      "title": "Professor, Mechanical Engineering Professor, Aerospace Engineering Associate Director of Michigan Institute for Computational Discovery and Engineering (MICDE)",
+      "contact_email": "kdur@umich.edu",
+      "research_interests_raw": "Computational Science and Engineering, Aerodynamics, High-Speed Flows, Turbulence modeling and simulation, Vortical Flows, Uncertainty Quantification, High-Performance Computing, Rotorcraft Aeromechanics, Adjoint-based methods, Optimization Paolo Elvati",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "karthik-duraisamy"
+    },
+    {
+      "name": "Paolo Elvati",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/paolo-elvati/",
+      "title": "Associate Research Scientist, Mechanical Engineering",
+      "contact_email": "elvati@umich.edu",
+      "research_interests_raw": "Nanoparticle formations and interactions using computational tools (Molecular Dynamics, Machine Learning, Stochastic Solvers), with particular emphasis on biological systems, non-thermal plasma and reactive gas-phase conditions. Applications include drug transport, bacterial biofilms control, combustion, ultra-soft materials, and low temperature plasma. Bogdan Epureanu",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "paolo-elvati"
+    },
+    {
+      "name": "Bogdan Epureanu",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/bogdan-epureanu/",
+      "title": "Professor, Mechanical Engineering Roger L. McCarthy Professor of Mechanical Engineering Arthur F. Thurnau Professor, Mechanical Engineering Director, Automotive Research Center",
+      "contact_email": "epureanu@umich.edu",
+      "research_interests_raw": "Research focuses on biological and epidemiological systems, aerospace and automotive structures, and turbomachinery. Examples include creating novel mechano-chemical dynamic models of nanoscale intracellular transport processes, developing the next generation of highly-sensitive diagnosis and monitoring techniques, discovering novel methods for forecasting tipping points in complex systems such as disease epidemics and ecological systems, developing innovative reduced order models of multi-physics systems such as Li-ion batteries and complex structures, creating advanced system identification and control methodologies for smart structures and fluid-structural systems. These blend novel methods and theory with fundamental experiments in linear and nonlinear dynamics from macro to nano-scale. Martin Erinin",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "bogdan-epureanu"
+    },
+    {
+      "name": "Martin Erinin",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/martin-erinin/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "merinin@umich.edu",
+      "research_interests_raw": "Experimental fluid mechanics with broad interests in multiphase flows, free-surface flows, surfactant dominated flows, and development of optical measurement techniques for thermos-fluids. Specific problems of interests include ocean waves, air-sea interaction, transport of particles by ocean waves, wave-wave interaction, accretion of ice on marine structures, interaction of waves with ice sheets. This research typically has environmental, naval, and/or industrial applications. Tulga Ersal",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "martin-erinin"
+    },
+    {
+      "name": "Tulga Ersal",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/tulga-ersal/",
+      "title": "Associate Professor, Mechanical Engineering",
+      "contact_email": "tersal@umich.edu",
+      "research_interests_raw": "Autonomous and semi-autonomous vehicles; human-autonomy interactions Jon Estrada",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "tulga-ersal"
+    },
+    {
+      "name": "Jon Estrada",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jon-estrada/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "jbestrad@umich.edu",
+      "research_interests_raw": "Experimental mechanics of soft and bio-materials, material characterization including high speed rheometry, magnetic resonance, and inverse techniques, inertial cavitation dynamics, photoacoustic and laser microscopy, cell mechanics, image processing techniques, digital image and volume correlation Yue Fan",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "jon-estrada"
+    },
+    {
+      "name": "Yue Fan",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/yue-fan/",
+      "title": "Associate Professor, Mechanical Engineering",
+      "contact_email": "fanyue@umich.edu",
+      "research_interests_raw": "Defects behaviors and microstructural evolution in structure materials, deformation mechanisms and mechanical properties of amorphous solids, long time scale atomistic simulation Nima Fazeli",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "yue-fan"
+    },
+    {
+      "name": "Nima Fazeli",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/nima-fazeli/",
+      "title": "Assistant Professor, Mechanical Engineering Assistant Professor, Robotics",
+      "contact_email": "nfz@umich.edu",
+      "research_interests_raw": "Robotic Manipulation, Physical Interaction and Contact, Robot Learning and Control, State-Estimation Evgueni Filipov",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "nima-fazeli"
+    },
+    {
+      "name": "Evgueni Filipov",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/evgueni-filipov/",
+      "title": "Associate Professor, Mechanical Engineering Associate Professor, Civil and Environmental Engineering",
+      "contact_email": "filipov@umich.edu",
+      "research_interests_raw": "My research interests lie in the field of deployable and reconfigurable structural systems. Folding and adaptable structures based on the principles of origami can have practical applications ranging in scale and discipline from biomedical robotics to deployable architecture. David Fleming",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "evgueni-filipov"
+    },
+    {
+      "name": "David Fleming",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/david-fleming/",
+      "title": "LEO Lecturer III, Mechanical Engineering",
+      "contact_email": "dcflem@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": false,
+      "lecturer_only": true,
+      "slug": "david-fleming"
+    },
+    {
+      "name": "Evan Fleming",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/evan-fleming/",
+      "title": "Assistant Research Scientist, Mechanical Engineering",
+      "contact_email": "eflem@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "evan-fleming"
+    },
+    {
+      "name": "Theodor Freiheit",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/theodor-freiheit/",
+      "title": "Research Associate Professor, Mechanical Engineering",
+      "contact_email": "tfreihei@umich.edu",
+      "research_interests_raw": "Manufacturing systems engineering. Design of manufacturing and service systems. Reliability and productivity. Markov chain models, including the application of predictive control. Interaction between manufacturing process parameters and failure modes. Product quality. The influence of production system approaches across industries. Applications of controls to manufacturing systems. Design theory and methodology. Product development. New product design. Design of machine components and systems. The influence of designer personality and environment on design outcomes. Engineering Management - with a particular interest in product development. Lean product design. Interaction of business, product, and process in engineering systems. Products design for flexible manufacturing systems. Nicole Friedberg",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "theodor-freiheit"
+    },
+    {
+      "name": "Nicole Friedberg",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/nicole-friedberg/",
+      "title": "LEO Lecturer III, Mechanical Engineering",
+      "contact_email": "nmtucker@umich.edu",
+      "research_interests_raw": "Lecturer on Statistical Analysis, Six Sigma Process Improvement, Project Management, Leadership, Supply Chain, System Safety Engineering and Quality Engineering leveraging experience in the defense, aerospace, automotive, and financial industries. Jianping Fu",
+      "emeritus": false,
+      "lecturer_only": true,
+      "slug": "nicole-friedberg"
+    },
+    {
+      "name": "Jianping Fu",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jianping-fu/",
+      "title": "Professor, Mechanical Engineering Professor, Biomedical Engineering Professor, Cell and Developmental Biology",
+      "contact_email": "jpfu@umich.edu",
+      "research_interests_raw": "Stem Cell Bioengineering, Developmental Bioengineering, Mechanobiology, and BioMEMS Vikram Gavini",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "jianping-fu"
+    },
+    {
+      "name": "Vikram Gavini",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/vikram-gavini/",
+      "title": "Professor, Mechanical Engineering Professor, Materials Science and Engineering",
+      "contact_email": "vikramg@umich.edu",
+      "research_interests_raw": "Developing algorithms and computational frameworks for large-scale ab-initio calculations to understand materials properties; HPC aspects of electronic structure calculations; Electronic structure studies on defects in solids; Multi-scale modeling; Analysis of approximation theories Yogesh Gianchandani",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "vikram-gavini"
+    },
+    {
+      "name": "Yogesh Gianchandani",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/yogesh-gianchandani/",
+      "title": "Professor, Mechanical Engineering Professor, Electrical Engineering and Computer Science",
+      "contact_email": "yogesh@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "yogesh-gianchandani"
+    },
+    {
+      "name": "Brent Gillespie",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/brent-gillespie/",
+      "title": "Professor, Mechanical Engineering Professor, Robotics",
+      "contact_email": "brentg@umich.edu",
+      "research_interests_raw": "Haptic interface and robotics Steven Goldstein",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "brent-gillespie"
+    },
+    {
+      "name": "Steven Goldstein",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/steven-goldstein/",
+      "title": "Professor Emeritus, Mechanical Engineering Professor Emeritus, Biomedical Engineering Henry Ruppenthal Family Professor Emeritus, Orthopaedic Surgery and Bioengineering",
+      "contact_email": "stevegld@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "steven-goldstein"
+    },
+    {
+      "name": "Hugo Gonzalez Villasanti",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/hugo-g-villasanti/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "hugov@umich.edu",
+      "research_interests_raw": "Control theory and engineering strategies in social systems to empower people and improve their well-being. Jerard Gordon",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "hugo-g-villasanti"
+    },
+    {
+      "name": "Jerard Gordon",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jerard-gordon/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "jerardvg@umich.edu",
+      "research_interests_raw": "Process-structure-property relationships of advanced materials; metal additive manufacturing; in-situ property evaluation; experimental and computational mechanics; materials discovery; design and manufacturing. Nakhiah Goulbourne",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "jerard-gordon"
+    },
+    {
+      "name": "Nakhiah Goulbourne",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/nakhiah-goulbourne/",
+      "title": "Associate Professor, Mechanical Engineering Associate Professor, Aerospace Engineering",
+      "contact_email": "ngbourne@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "nakhiah-goulbourne"
+    },
+    {
+      "name": "William Graebel",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/william-graebel/",
+      "title": "Professor Emeritus, Mechanical Engineering",
+      "contact_email": "graebel@umich.edu",
+      "research_interests_raw": "Fluid mechanics, including computational fluid dynamics, heat pumps, thermoelectrics, computer modeling. Robert Gregg",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "william-graebel"
+    },
+    {
+      "name": "Robert Gregg",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/robert-gregg/",
+      "title": "Professor, Mechanical Engineering Professor, Robotics Professor, Electrical and Computer Engineering Associate Director for Graduate Education, Michigan Robotics Director, Locomotor Control Systems Laboratory",
+      "contact_email": "rdgregg@umich.edu",
+      "research_interests_raw": "Wearable Robots, Legged Robots, Prosthetics & Orthotics, Bipedal Locomotion, Nonlinear Control Theory, Rehabilitation Engineering Karl Grosh",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "robert-gregg"
+    },
+    {
+      "name": "Karl Grosh",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/karl-grosh/",
+      "title": "Professor, Mechanical Engineering Professor, Biomedical Engineering Department",
+      "contact_email": "grosh@umich.edu",
+      "research_interests_raw": "Cochlear mechanics and hearing; acoustic and vibrational transducers; prosthetics and sensors for biomedical applications; MEMS; distributed, active metamaterials; mechanics and computational mechanics; structural acoustics. Jay Guo",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "karl-grosh"
+    },
+    {
+      "name": "Jay Guo",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jay-guo/",
+      "title": "Professor, Mechanical Engineering Professor, Electrical Engineering and Computer Science Professor, Macromolecular Science and Engineering Professor, Applied Physics",
+      "contact_email": "guo@umich.edu",
+      "research_interests_raw": "Polymer-based photonic sensors and photoacoustics, organic and hybrid photovoltaics and photodetectors, flexible transparent conductors, nanophotonics & structural colors, nanomanufacturing technologies and applications Maha Haji",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "jay-guo"
+    },
+    {
+      "name": "Maha Haji",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/maha-haji/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "mhaji@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "maha-haji"
+    },
+    {
+      "name": "Robert Hess",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/robert-hess/",
+      "title": "Professor Emeritus, Mechanical Engineering",
+      "contact_email": "hess@umich.edu",
+      "research_interests_raw": "Dynamics and control systems, biomechanics of humans. Kristan Hilby",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "robert-hess"
+    },
+    {
+      "name": "Kristan Hilby",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/kristan-hilby/",
+      "title": "LEO Lecturer III, Mechanical Engineering",
+      "contact_email": "khilby@umich.edu",
+      "research_interests_raw": "Design and control of energy efficiency vertical takeoff and landing aircraft, with an emphasis on stop-rotor aircraft and morphing wings. John Hoard",
+      "emeritus": false,
+      "lecturer_only": true,
+      "slug": "kristan-hilby"
+    },
+    {
+      "name": "John Hoard",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/john-hoard/",
+      "title": "Associate Research Scientist Emeritus, Mechanical Engineering Jingwen Hu",
+      "contact_email": "",
+      "research_interests_raw": "",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "john-hoard"
+    },
+    {
+      "name": "Jingwen Hu",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jingwen-hu/",
+      "title": "Research Professor, Mechanical Engineering Research Professor, UMTRI",
+      "contact_email": "jwhu@umich.edu",
+      "research_interests_raw": "Impact/Injury Biomechanics: Parametric Human Modeling, Statistical Injury Data Analysis, Cadaver/Volunteer/Dummy Testing - Occupant Protection: Safety equity among diverse populations, Restraint Design Optimization, Rear Seat Occupants, Oblique Impacts, Adaptive Restraint Design, Active and Passive Safety Integration, Tactical Vehicle Safety, Vulnerable Populations, Automated Vehicles, Child Seat Design, Rollover Crashes - Others: Pediatric Fall and Child Abuse, Seat Comfort, Computer Aided Surgery S. Jack Hu",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "jingwen-hu"
+    },
+    {
+      "name": "S. Jack Hu",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/s-jack-hu/",
+      "title": "Professor Emeritus, Mechanical Engineering Professor Emeritus, Industrial and Operations Engineering J. Reid and Polly Anderson Professor Emeritus of Manufacturing",
+      "contact_email": "",
+      "research_interests_raw": "Manufacturing systems: configuration design, performance analysis (quality, productivity and responsiveness), mass customization. Assembly and materials joining: Assembly system design, variation propagation analysis, joint design, joining/welding methods Sheet Metal forming: stamping, hydroforming Engineering statistics: statistical process control and monitoring, robust design Xun (Ryan) Huan",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "s-jack-hu"
+    },
+    {
+      "name": "Xun (Ryan) Huan",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/xun-ryan-huan/",
+      "title": "Associate Professor, Mechanical Engineering",
+      "contact_email": "xhuan@umich.edu",
+      "research_interests_raw": "Uncertainty quantification, data-driven modeling, numerical optimization, optimal experimental design, Bayesian analysis, machine learning Matthew Hughes",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "xun-ryan-huan"
+    },
+    {
+      "name": "Matthew Hughes",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/matthew-hughes/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "matthug@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "matthew-hughes"
+    },
+    {
+      "name": "Greg Hulbert",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/greg-hulbert/",
+      "title": "Professor Emeritus, Mechanical Engineering",
+      "contact_email": "hulbert@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "greg-hulbert"
+    },
+    {
+      "name": "Hugh Huntley",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/hugh-huntley/",
+      "title": "Associate Professor Emeritus, Mechanical Engineering",
+      "contact_email": "huntley@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "hugh-huntley"
+    },
+    {
+      "name": "Art Hyde",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/art-hyde/",
+      "title": "Associate Professor of Engineering Practice, Mechanical Engineering",
+      "contact_email": "ahyde@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "art-hyde"
+    },
+    {
+      "name": "Uduak Inyang-Udoh",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/uduak-inyang-udoh/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "udinyang@umich.edu",
+      "research_interests_raw": "Control theory, graph theory and physics-guided machine learning with application in data-rich advanced manufacturing, thermal and energy storage systems. Ann Jeffers",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "uduak-inyang-udoh"
+    },
+    {
+      "name": "Ann Jeffers",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/ann-jeffers/",
+      "title": "Associate Professor, Mechanical Engineering Associate Professor, Civil & Environmental Engineering",
+      "contact_email": "jffrs@umich.edu",
+      "research_interests_raw": "Analysis of structures subjected to extreme load events, especially fire; various topics in fire safety engineering (e.g., structural fire engineering, smart firefighting, wildland-urban interface fires); advanced finite element methods, including isogeometric analysis; multiphysics simulation, especially coupled fire-structure interaction. Also interested in various topics within engineering education. Eric Johnsen",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "ann-jeffers"
+    },
+    {
+      "name": "Eric Johnsen",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/eric-johnsen/",
+      "title": "Professor, Mechanical Engineering Director, PhD Program in Scientific Computing",
+      "contact_email": "ejohnsen@umich.edu",
+      "research_interests_raw": "Fluid mechanics, with an emphasis on multiphase flow, cavitation and bubble dynamics, computational fluid dynamics, high-speed flow and shock waves, turbulence and mixing, interfacial instabilities, plasmas, and high-performance computing. Applications include biomedical engineering, energy, aeronautics, turbomachinery, naval engineering and high-energy density physics. Elijah Kannatey-Asibu Jr.",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "eric-johnsen"
+    },
+    {
+      "name": "Elijah Kannatey-Asibu Jr.",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/elijah-kannatey-asibu-jr/",
+      "title": "Professor Emeritus, Mechanical Engineering",
+      "contact_email": "asibu@umich.edu",
+      "research_interests_raw": "Multi-sensor monitoring of manufacturing processes, specifically machining, welding, and laser processing; multiple-beam laser processing.",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "elijah-kannatey-asibu-jr"
+    },
+    {
+      "name": "Bikash Kanungo",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/bikash-kanungo/",
+      "title": "Assistant Research Scientist, Mechanical Engineering",
+      "contact_email": "bikash@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "bikash-kanungo"
+    },
+    {
+      "name": "Massoud Kaviany",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/massoud-kaviany/",
+      "title": "Professor, Mechanical Engineering Professor, Applied Physics",
+      "contact_email": "kaviany@umich.edu",
+      "research_interests_raw": "Heat Transfer Physics: efficient and innovative energy transport and conversion (transformation) through atomic tailoring of the principal energy carriers (phonon, electron, fluid particle, and photon). Current energy-related projects include thermoelectricity, phonoelectricity, thermal switch, and multidimensional wicks for record conductance and heat flux.",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "massoud-kaviany"
+    },
+    {
+      "name": "Noboru Kikuchi",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/noboru-kikuchi/",
+      "title": "Professor Emeritus, Mechanical Engineering Roger L. McCarthy Professor Emeritus of Mechanical Engineering",
+      "contact_email": "kikuchi@umich.edu",
+      "research_interests_raw": "Computational mechanics including mechanics of composite materials, structural design optimization, analysis of material processing; development of computational methods for composite mechanics using the homogenization method; topology and shape optimization of elastic structures; development of adaptive remesh methods for simulation of metal forming processes. Brian Kish",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "noboru-kikuchi"
+    },
+    {
+      "name": "Brian Kish",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/brian-kish/",
+      "title": "LEO Lecturer III, Mechanical Engineering",
+      "contact_email": "bakish@umich.edu",
+      "research_interests_raw": "Lecturer for ME 211, ME 360, ME 450, ME 461. Jeffrey Koller",
+      "emeritus": false,
+      "lecturer_only": true,
+      "slug": "brian-kish"
+    },
+    {
+      "name": "Jeffrey Koller",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jeffrey-koller/",
+      "title": "LEO Lecturer III, Mechanical Engineering",
+      "contact_email": "jrkoller@umich.edu",
+      "research_interests_raw": "Lecturer with a focus in teaching dynamics and controls. Yoram Koren",
+      "emeritus": false,
+      "lecturer_only": true,
+      "slug": "jeffrey-koller"
+    },
+    {
+      "name": "Yoram Koren",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/yoram-koren/",
+      "title": "Professor Emeritus, Mechanical Engineering James J. Duderstadt Distinguished University Professor Emeritus of Manufacturing, Mechanical Engineering Paul G. Goebel Professor Emeritus of Engineering, Mechanical Engineering",
+      "contact_email": "ykoren@umich.edu",
+      "research_interests_raw": "Reconfigurable manufacturing systems; global manufacturing; flexible automation; sensing and controls of machining processes; generation of complex surfaces in CNC; adaptive control of machine-tools, autonomous mobile robots, snake robot. Sridhar Kota",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "yoram-koren"
+    },
+    {
+      "name": "Sridhar Kota",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/sridhar-kota/",
+      "title": "Professor Emeritus, Mechanical Engineering Herrick Professor Emeritus of Engineering",
+      "contact_email": "kota@umich.edu",
+      "research_interests_raw": "Bio-inspired engineering design - soft robots, complaint and shape-adaptive systems; Topology, size and shape optimization of complaint mechanisms - product design for no-assembly; Design for manufacturability; Technology policy and advanced manufacturing. Julia Kramer",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "sridhar-kota"
+    },
+    {
+      "name": "Julia Kramer",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/julia-kramer/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "kramerju@umich.edu",
+      "research_interests_raw": "Design theory & methodology, collaborative engagement in engineering design, design for health applications, front-end medical device design processes, global public health, engineering design education Chandramouli Krishnan",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "julia-kramer"
+    },
+    {
+      "name": "Chandramouli Krishnan",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/chandramouli-krishnan/",
+      "title": "Associate Professor, Mechanical Engineering Associate Professor, Physical Medicine and Rehabilitation Associate Professor of Biomedical Engineering Associate Professor of Physical Therapy Associate Professor of Kinesiology",
+      "contact_email": "mouli@umich.edu",
+      "research_interests_raw": "The goal of Dr. Krishnan\u2019s Neuromuscular and Rehabilitation Robotics Laboratory (NeuRRo Lab) is to develop effective and efficient rehabilitation methods for individuals with neurologic and orthopedic disorders. The NeuRRo Lab seeks to achieve this goal by a combination of mechanistic and interventional research approaches that facilitate our current understanding of neuromuscular function and regulation in the context of movement control and neuromuscular plasticity. Specifically, research in the NeuRRo Lab involves building low-cost technologies (e.g., passive and semi-passive robots) and testing these devices to improve neuromuscular function in people with neurological and orthopedic disorders. Neuromotor performance and recovery are evaluated using sophisticated techniques that provide detailed information on changes happening at the biomechanical (kinematic and kinetic), neurophysi",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "chandramouli-krishnan"
+    },
+    {
+      "name": "Grant Kruger",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/grant-kruger/",
+      "title": "Associate Research Scientist, Mechanical Engineering",
+      "contact_email": "ghkruger@umich.edu",
+      "research_interests_raw": "Biomedical design and manufacturing; Digital health; Wearable technology; Intelligent systems; Robotics Katsuo Kurabayashi",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "grant-kruger"
+    },
+    {
+      "name": "Katsuo Kurabayashi",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/katsuo-kurabayashi/",
+      "title": "Professor Emeritus, Mechanical Engineering Professor Emeritus, Electrical Engineering and Computer Science",
+      "contact_email": "katsuo@umich.edu",
+      "research_interests_raw": "Biosensors, Biomedical Microelectromechanical Systems (BioMEMS), Optofluidics, Lab on a Chip",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "katsuo-kurabayashi"
+    },
+    {
+      "name": "Edward Lady",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/edward-lady/",
+      "title": "Professor Emeritus, Mechanical Engineering",
+      "contact_email": "erlady@umich.edu",
+      "research_interests_raw": "Thermal sciences, power systems, cryogenics, boiling heat transfer, superconducting power transmission. Ronald Larson",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "edward-lady"
+    },
+    {
+      "name": "Ronald Larson",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/ronald-larson/",
+      "title": "Professor, Mechanical Engineering Professor, Chemical Engineering Professor, Macromolecular Science & Engineering George Granger Brown Professor of Chemical Engineering A H White Distinguished University Professor of Chemical Engineering",
+      "contact_email": "rlarson@umich.edu",
+      "research_interests_raw": "Complex fluids, polymers, fluid mechanics, surfactants, biomolecules, transport theory, rheology, instabilities, constitutive theory. Xiaogan Liang",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "ronald-larson"
+    },
+    {
+      "name": "Xiaogan Liang",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/xiaogan-liang/",
+      "title": "Professor, Mechanical Engineering Associate Chair for Undergraduate Education, Mechanical Engineering",
+      "contact_email": "xiaoganl@umich.edu",
+      "research_interests_raw": "Advanced Nanofabrication, Nanomanufacturing, and Microsystem Technologies, and Their Applications in Nanoelectronics, Nanophotonics, Integrated Biosensing Systems, and Airborne Sensing Systems Based on Microdrones. Allen Liu",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "xiaogan-liang"
+    },
+    {
+      "name": "Allen Liu",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/allen-liu/",
+      "title": "Professor, Mechanical Engineering Professor, Biomedical Engineering Professor, Biophysics Associate Chair for Graduate Education, Mechanical Engineering",
+      "contact_email": "allenliu@umich.edu",
+      "research_interests_raw": "Mechanobiology and mechanotransduction, bottom-up synthetic biology, quantitative cell biology Henry Liu",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "allen-liu"
+    },
+    {
+      "name": "Henry Liu",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/henry-liu/",
+      "title": "Professor, Mechanical Engineering Professor, Civil & Environmental Engineering",
+      "contact_email": "henryliu@umich.edu",
+      "research_interests_raw": "Prof. Liu conducts interdisciplinary research at the interface between Transportation Engineering, Automotive Engineering, and Artificial Intelligence, with a focus on cyber-physical transportation systems. Specifically, his scholarly interests concern traffic flow monitoring, modeling, and control, testing and evaluation of connected and automated vehicles, and cooperative automated driving. Wei Lu",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "henry-liu"
+    },
+    {
+      "name": "Wei Lu",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/wei-lu/",
+      "title": "Professor, Mechanical Engineering Charles M. Vest Collegiate Professor of Engineering, College of Engineering ME Associate Chair for Facilities and Planning",
+      "contact_email": "weilu@umich.edu",
+      "research_interests_raw": "Energy storage and electrochemistry; simulation of nano/microstructure evolution; mechanics in nano/micro systems; advanced manufacturing; mechanical properties and performance of advanced materials and relation to microstructures. Jon Luntz",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "wei-lu"
+    },
+    {
+      "name": "Jon Luntz",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jon-luntz/",
+      "title": "Associate Research Scientist, Mechanical Engineering Lecturer IV, Mechanical Engineering",
+      "contact_email": "jluntz@umich.edu",
+      "research_interests_raw": "Mechamatronic system design methodology; smart materials and structures",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "jon-luntz"
+    },
+    {
+      "name": "Zheng-Dong Ma",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/zheng-dong-ma/",
+      "title": "Research Scientist Emeritus, Mechanical Engineering",
+      "contact_email": "mazd@umich.edu",
+      "research_interests_raw": "Computational mechanics including flexible multibody dynamics, structural optimization, structural dynamics and structural acoustics; development of numerical tools for the evaluation and analysis of rattle noise. Krishnan Mahesh",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "zheng-dong-ma"
+    },
+    {
+      "name": "Krishnan Mahesh",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/krishnan-mahesh/",
+      "title": "Professor, Mechanical Engineering Richard B. Couch Professor of Naval Architecture and Marine Engineering Director Center for Naval Research and Education",
+      "contact_email": "krmahesh@umich.edu",
+      "research_interests_raw": "High-fidelity simulation of complex, multi-physics, turbulent flows relevant to several applications including: marine propulsors, multiphase flows, cavitation, hydroacoustics, superhydrophobic surfaces, biofouling, fluid/structure interaction, flow stability, and moving-body flows. Xiaoming Mao",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "krishnan-mahesh"
+    },
+    {
+      "name": "Xiaoming Mao",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/xiaoming-mao/",
+      "title": "Professor, Mechanical Engineering Professor, Physics",
+      "contact_email": "maox@umich.edu",
+      "research_interests_raw": "Professor Mao's research interests span the areas of soft condensed matter, materials physics, and statistical mechanics. Her current research mainly runs along two lines: a unified view of soft elasticity and fundamental rules of self-assembly. The project on soft elasticity centers around the idea of isostaticity, i.e., the point where the numbers of degrees of freedom and constraints of a system become equal. The isostatic point not only exhibit rich physics itself such as floppy modes, criticality, and conformal invariance, but also plays an important role in a broad-range of real materials such as jammed solids, glasses, fiber networks, framework-structure crystals, et cetera. Professor Mao\u2019s group extensively investigates the physics of the isostatic point and the design of novel materials based on isostaticity. The project of self-assembly is mainly concerned with the fundamental ",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "xiaoming-mao"
+    },
+    {
+      "name": "Edgar Meyhofer",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/edgar-meyhofer/",
+      "title": "Professor, Mechanical Engineering Professor, Biomedical Engineering",
+      "contact_email": "meyhofer@umich.edu",
+      "research_interests_raw": "Nanotechnology, bionanotechnology, cellular and molecular biomechanics Tian Mi",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "edgar-meyhofer"
+    },
+    {
+      "name": "Tian Mi",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/tian-mi/",
+      "title": "LEO Lecturer III, Mechanical Engineering",
+      "contact_email": "tianm@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": false,
+      "lecturer_only": true,
+      "slug": "tian-mi"
+    },
+    {
+      "name": "Robert Middleton",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/robert-middleton/",
+      "title": "Associate Research Scientist, Mechanical Engineering",
+      "contact_email": "rjmidd@umich.edu",
+      "research_interests_raw": "Combustion, focusing primarily on automotive engines. Simulations of spark ignited and advanced autoignition combustion modes using 1D models and 3D CFD including large scale parallel simulations. Impact of fuel properties and kinetics on engine efficiency and emissions. Amit Misra",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "robert-middleton"
+    },
+    {
+      "name": "Amit Misra",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/amit-misra/",
+      "title": "Professor, Mechanical Engineering Professor, Materials Science & Engineering",
+      "contact_email": "amitmis@umich.edu",
+      "research_interests_raw": "Nano mechanics, electron microscopy, laser processed metallic alloys, metallic thin films Talia Moore",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "amit-misra"
+    },
+    {
+      "name": "Talia Moore",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/talia-moore/",
+      "title": "Assistant Professor, Mechanical Engineering Assistant Professor, Robotics",
+      "contact_email": "taliaym@umich.edu",
+      "research_interests_raw": "Dynamics of terrestrial locomotion, arrhythmic and transient locomotion, bio-inspired design, bio-inspired robotics, soft robotics, animal-robot interaction Sungmin Nam",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "talia-moore"
+    },
+    {
+      "name": "Sungmin Nam",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/sungmin-nam/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "sungminn@umich.edu",
+      "research_interests_raw": "Mechanobiology, Biomaterials, Biomechanics, Medical devices, Mechanotherapy Jun Ni",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "sungmin-nam"
+    },
+    {
+      "name": "Jun Ni",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jun-ni/",
+      "title": "Professor Emeritus, Mechanical Engineering Shien-Ming (Sam) Wu Collegiate Professor Emeritus of Manufacturing Science",
+      "contact_email": "junni@umich.edu",
+      "research_interests_raw": "Intelligent Maintenance of Large Industrial Systems; Optimization of Manufacturing Operations; Manufacturing Process Modeling, Analysis and Design; Precision Engineering and Metrology; Quality Control Methods. Denislav Nikolov",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "jun-ni"
+    },
+    {
+      "name": "Denislav Nikolov",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/denislav-nikolov/",
+      "title": "LEO Lecturer III, Mechanical Engineering",
+      "contact_email": "dnikolov@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": false,
+      "lecturer_only": true,
+      "slug": "denislav-nikolov"
+    },
+    {
+      "name": "Lauro Ojeda",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/lauro-ojeda/",
+      "title": "Research Scientist, Mechanical Engineering",
+      "contact_email": "lojeda@umich.edu",
+      "research_interests_raw": "Inertial sensing, sensor data fusion, Kalman filtering, localization, biomechanics, and human gait analysis Chinedum Okwudire",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "lauro-ojeda"
+    },
+    {
+      "name": "Chinedum Okwudire",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/chinedum-okwudire/",
+      "title": "Professor, Mechanical Engineering Director, University of Michigan Advanced Manufacturing Institute (UMAMI)",
+      "contact_email": "okwudire@umich.edu",
+      "research_interests_raw": "Manufacturing Automation: with key applications in additive manufacturing (or 3-D printing), nano-positioning, machining, distributed manufacturing, and smart manufacturing systems Kenn Oldham",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "chinedum-okwudire"
+    },
+    {
+      "name": "Kenn Oldham",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/kenn-oldham/",
+      "title": "Professor, Mechanical Engineering",
+      "contact_email": "oldham@umich.edu",
+      "research_interests_raw": "Micro-mechatronic systems for endoscopic imaging; micro-robotic systems for manipulation and autonomous locomotion; identification of physiological feedback systems using novel sensing technologies; modeling, system identification, and state estimation for microelectromechanical systems (MEMS) Gabor Orosz",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "kenn-oldham"
+    },
+    {
+      "name": "Gabor Orosz",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/gabor-orosz/",
+      "title": "Professor, Mechanical Engineering Professor, Civil and Environmental Engineering",
+      "contact_email": "orosz@umich.edu",
+      "research_interests_raw": "Nonlinear dynamics and control, time delay systems, connected and automated vehicles, traffic flow Jwo Pan",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "gabor-orosz"
+    },
+    {
+      "name": "Jwo Pan",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jwo-pan/",
+      "title": "Professor Emeritus, Mechanical Engineering",
+      "contact_email": "jwo@umich.edu",
+      "research_interests_raw": "Fracture and failure of materials, fatigue testing and modeling, constitutive laws for porous and pressure-sensitive materials, sheet metal forming, crankshaft fillet rolling and residual stresses, rolling modeling and fatigue, modeling/testing of fusion welds, solid state welds and mechanical joints, modeling/testing of deformation behavior of lithium-ion battery Panos Papalambros",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "jwo-pan"
+    },
+    {
+      "name": "Panos Papalambros",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/panos-papalambros/",
+      "title": "Professor Emeritus, Mechanical Engineering James B. Angell Distinguished University Professor Emeritus Donald C. Graham Professor Emeritus of Engineering Professor Emeritus, Integrative Systems and Design Professor Emeritus, Art and Design Professor Emeritus, Architecture",
+      "contact_email": "pyp@umich.edu",
+      "research_interests_raw": "Design optimization; large scale system synthesis; automotive systems design, including hybrid vehicles; eco-design; product design. Young Geun Park",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "panos-papalambros"
+    },
+    {
+      "name": "Young Geun Park",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/young-geun-park/",
+      "title": "Associate Research Scientist, Mechanical Engineering",
+      "contact_email": "ygpark@umich.edu",
+      "research_interests_raw": "Optofluidics; Functional Nanomaterials; Bioinspired Active Optical System; Solar Optics Based Active Panel for Energy Harvesting and Storage: Integrated Molecular Detection System",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "young-geun-park"
+    },
+    {
+      "name": "Donald Patterson",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/donald-patterson/",
+      "title": "Professor Emeritus, Mechanical Engineering",
+      "contact_email": "",
+      "research_interests_raw": "Internal combustion engines, emissions. Noel Perkins",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "donald-patterson"
+    },
+    {
+      "name": "Noel Perkins",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/noel-perkins/",
+      "title": "Professor Emeritus, Mechanical Engineering Arthur F. Thurnau Professor Emeritus, Mechanical Engineering Donald T. Greenwood Collegiate Professor Emeritus of Mechanical Engineering",
+      "contact_email": "ncp@umich.edu",
+      "research_interests_raw": "Dynamics including vibration and stability, nonlinear dynamics, experimental methods. Applications to nonlinear dynamics of elastic cables, nonlinear fluid-structure interaction, DNA supercoiling, sports engineering, MEMS inertial sensor applications, vehicle systems, axially moving materials. Marc Perlin",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "noel-perkins"
+    },
+    {
+      "name": "Marc Perlin",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/marc-perlin/",
+      "title": "Professor Emeritus, Mechanical Engineering Professor Emeritus, Naval Architecture & Marine Engineering Professor Emeritus, Civil and Environmental Engineering",
+      "contact_email": "perlin@umich.edu",
+      "research_interests_raw": "Nonlinear water-wave dynamics, contact-line dynamics, drag-reduction technologies, and coastal engineering. Kevin Pipe",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "marc-perlin"
+    },
+    {
+      "name": "Kevin Pipe",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/kevin-pipe/",
+      "title": "Professor, Mechanical Engineering Professor, Applied Physics Program Professor, Electrical Engineering and Computer Science Department Associate Dean for Undergraduate Education, College of Engineering",
+      "contact_email": "pipe@umich.edu",
+      "research_interests_raw": "Microscale heat transfer, especially related to electronic and optoelectronic devices; thermoelectric energy conversion; medical applications of heat transfer Bogdan Popa",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "kevin-pipe"
+    },
+    {
+      "name": "Bogdan Popa",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/bogdan-popa/",
+      "title": "Associate Professor, Mechanical Engineering",
+      "contact_email": "bipopa@umich.edu",
+      "research_interests_raw": "Design, optimization, and dynamics of new generations of engineered materials (metamaterials) that allow improved control over the propagation of acoustic, elastic and electromagnetic waves with applications in biomedical engineering, telecommunications, aero- and underwater acoustics; noise control; smart materials; mechatronics. Venkat Raman",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "bogdan-popa"
+    },
+    {
+      "name": "Venkat Raman",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/venkat-raman/",
+      "title": "Professor, Mechanical Engineering Professor, Aerospace Engineering",
+      "contact_email": "ramanvr@umich.edu",
+      "research_interests_raw": "Development of computational models for turbulent reacting flows with application to aircraft and scramjet engines, stationary power generation, and synthesis of novel materials. High-performance supercomputers and detailed numerical simulations to study the performance of combustion devices. Recent focus in the areas of numerical error analysis, uncertainty quantification, hypersonic design and optimization, and rotating detonation engines. Pramod Sangi Reddy",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "venkat-raman"
+    },
+    {
+      "name": "Pramod Sangi Reddy",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/pramod-sangi-reddy/",
+      "title": "Professor, Mechanical Engineering Professor, Materials Science and Engineering",
+      "contact_email": "pramodr@umich.edu",
+      "research_interests_raw": "Nanoscale charge and energy transport, thermoelectric devices, microscale heat transfer, organic photovoltaics, scanning probe microscopy and optics. Elliott Rouse",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "pramod-sangi-reddy"
+    },
+    {
+      "name": "Elliott Rouse",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/elliott-rouse/",
+      "title": "Associate Professor, Mechanical Engineering Associate Professor, Robotics",
+      "contact_email": "ejrouse@umich.edu",
+      "research_interests_raw": "Precision machine design; development of exoskeletons / robotic prostheses; brushless motors; dynamics of human locomotion; human perception and psychophysics; neural control of movement; biomechanics; human performance augmentation Kazu Saitou",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "elliott-rouse"
+    },
+    {
+      "name": "Kazu Saitou",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/kazu-saitou/",
+      "title": "Professor, Mechanical Engineering",
+      "contact_email": "kazu@umich.edu",
+      "research_interests_raw": "Computational design. Manufacturability-driven structural topology optimization. Multi-material, multi-process, multi-component structural topology optimization (M^3 TO). Computational optimal synthesis of structural assemblies. Physics-informed AI for structural and assembly optimization. Anchal Sareen",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "kazu-saitou"
+    },
+    {
+      "name": "Anchal Sareen",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/anchal-sareen/",
+      "title": "Assistant Professor, Mechanical Engineering Assistant Professor, Naval Architecture & Marine Engineering",
+      "contact_email": "asareen@umich.edu",
+      "research_interests_raw": "Experimental Hydrodynamics with an emphasis on renewable energy harvesting and energy-efficient marine propulsion systems. Ulrich Scheven",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "anchal-sareen"
+    },
+    {
+      "name": "Ulrich Scheven",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/ulrich-scheven/",
+      "title": "Associate Research Scientist, Mechanical Engineering",
+      "contact_email": "uscheven@umich.edu",
+      "research_interests_raw": "Development and use of quantitative nuclear magnetic resonance techniques to explore and constrain the physics of displacements (1) in full volume non-linear elasticity in soft tissues, tendons, ligaments, polymers, elastomers; (2) in Newtonian and non-Newtonian fluid flow and tracer transport within natural and manufactured porous media. Bill Schultz",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "ulrich-scheven"
+    },
+    {
+      "name": "Bill Schultz",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/bill-schultz/",
+      "title": "Professor Emeritus, Mechanical Engineering Professor Emeritus, Naval Architecture and Marine Engineering",
+      "contact_email": "schultz@umich.edu",
+      "research_interests_raw": "Extensional rheometry, uretral peristalsis Chenhui Shao",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "bill-schultz"
+    },
+    {
+      "name": "Chenhui Shao",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/chenhui-shao/",
+      "title": "Associate Professor, Mechanical Engineering",
+      "contact_email": "chshao@umich.edu",
+      "research_interests_raw": "Smart manufacturing; machine learning; statistics; big data analytics; in-situ process monitoring and real-time control; materials joining; manufacturing systems control and automation; quality control; robotic additive manufacturing; 3D metrology; cyber-physical infrastructure; human-robot collaboration. Chengzhi Shi",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "chenhui-shao"
+    },
+    {
+      "name": "Chengzhi Shi",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/chengzhi-shi/",
+      "title": "Associate Professor, Mechanical Engineering",
+      "contact_email": "czshi@umich.edu",
+      "research_interests_raw": "Dr. Shi\u2019s research focuses on physical acoustics, wave propagation, structural acoustics, underwater acoustics, metamaterials, biomedical ultrasound imaging, and therapeutic ultrasound. Particularly, he is interested in understanding the wave physics of vortex acoustic waves and their applications for underwater communications and therapies for different diseases, developing new ultrasound imaging techniques for cellular imaging and medical diagnostics, and creating novel experimental platforms for the studies of condense matter and quantum physics. Albert Shih",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "chengzhi-shi"
+    },
+    {
+      "name": "Albert Shih",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/albert-shih/",
+      "title": "Professor, Mechanical Engineering Professor, Biomedical Engineering Yoram Koren Collegiate Professor of Engineering, College of Engineering Faculty Member, Institute of Gerontology",
+      "contact_email": "shiha@umich.edu",
+      "research_interests_raw": "Manufacturing; semiconductor manufacturing; biomedical device design; biomedical manufacturing; computed tomography for inspection; neurovascular devices; precision machining of advanced engineering materials; additive manufacturing; cyber-physical manufacturing systems for assistive technology Alex Shorter",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "albert-shih"
+    },
+    {
+      "name": "Alex Shorter",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/alex-shorter/",
+      "title": "Associate Professor, Mechanical Engineering",
+      "contact_email": "kshorter@umich.edu",
+      "research_interests_raw": "Design, Fabrication, Control and Evaluation of Human Assist Devices, Gait Analysis, Biomechanics, Instrument Design. Volker Sick",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "alex-shorter"
+    },
+    {
+      "name": "Volker Sick",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/volker-sick/",
+      "title": "Professor, Mechanical Engineering Arthur F. Thurnau Professor, Mechanical Engineering DTE Energy Professor of Advanced Energy Research Director, Global CO2 Initiative",
+      "contact_email": "vsick@umich.edu",
+      "research_interests_raw": "Accelerating deployments of CO2-utilization technologies that will innovate existing infrastructure and manufacturing processes, thereby finding sustainable solutions to help address the climate crisis. Developing and applying optical measurement techniques to diagnose diseases of the human eye. Jason Siegel",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "volker-sick"
+    },
+    {
+      "name": "Jason Siegel",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jason-siegel/",
+      "title": "Research Associate Professor, Mechanical Engineering",
+      "contact_email": "siegeljb@umich.edu",
+      "research_interests_raw": "Battery Modeling, Control and State of Health Estimation. Control of Hybrid Electric Powertrains. Control of Solid oxide and low temperature PEM fuel cells. Kathleen Sienko",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "jason-siegel"
+    },
+    {
+      "name": "Kathleen Sienko",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/kathleen-sienko/",
+      "title": "Professor, Mechanical Engineering Arthur F. Thurnau Professor, Mechanical Engineering",
+      "contact_email": "sienko@umich.edu",
+      "research_interests_raw": "Sensory augmentation, rehabilitation engineering, biomechanics, medical device design (emphasis on global health contexts and task-shifting devices), design science, engineering design education Steve Skerlos",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "kathleen-sienko"
+    },
+    {
+      "name": "Steve Skerlos",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/steve-skerlos/",
+      "title": "J. Reid and Polly Anderson Professor of Manufacturing Professor, Mechanical Engineering Professor, Civil and Environmental Engineering Arthur F. Thurnau Professor, Mechanical Engineering",
+      "contact_email": "skerlos@umich.edu",
+      "research_interests_raw": "Environmental and sustainable technology systems; life cycle product design optimization; pollution prevention technologies for manufacturing; metalworking fluid formulation and performance; membrane filtration; supercritical fluid delivery of lubricants; biological detection and control in aqueous systems; technology policy analysis. Anna Stefanopoulou",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "steve-skerlos"
+    },
+    {
+      "name": "Anna Stefanopoulou",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/anna-stefanopoulou/",
+      "title": "Professor, Mechanical Engineering Huei Peng Distinguished University Professor of Mechanical Engineering William Clay Ford Professor of Technology",
+      "contact_email": "annastef@umich.edu",
+      "research_interests_raw": "Estimation and control of internal combustion engines and electrochemical processes such as fuel cells and batteries Jeffrey Stein",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "anna-stefanopoulou"
+    },
+    {
+      "name": "Jeffrey Stein",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jeffrey-stein/",
+      "title": "Professor Emeritus, Mechanical Engineering",
+      "contact_email": "stein@umich.edu",
+      "research_interests_raw": "Systems and control including machine design, control, monitoring, and diagnostics; physical system modeling; automated modeling; bond graph theory; proper modeling of active suspensions; proper vehicle handling and ride models; high efficiency dynamic formulations for vehicle dynamics; monitoring and control of thermally induced spindle bearing loads; design and control of high speed spindles and novel milling machines. Jing Sun",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "jeffrey-stein"
+    },
+    {
+      "name": "Jing Sun",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jing-sun/",
+      "title": "Professor, Mechanical Engineering Michael G. Parsons Collegiate Professor of Naval Architecture and Marine Engineering Chair, Naval Architecture and Marine Engineering",
+      "contact_email": "jingsun@umich.edu",
+      "research_interests_raw": "Theory, methodologies and tools for control system integration and optimization, with applications to marine and automotive systems; Connected and automated transportation systems; Renewable energy systems. Thomas Swinburne",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "jing-sun"
+    },
+    {
+      "name": "Thomas Swinburne",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/thomas-swinburne/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "tswin@umich.edu",
+      "research_interests_raw": "Plasticity of metallic alloys, irradiation damage, statistical models, rare event sampling, uncertainty quantification, forecasting Sita Syal",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "thomas-swinburne"
+    },
+    {
+      "name": "Sita Syal",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/sita-syal/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "syalsm@umich.edu",
+      "research_interests_raw": "Energy justice and equity, sustainable energy and mobility systems, human-centered design methods, design needfinding, socially-engaged design, community engagement, optimization, cost modeling, agent-based modeling, uncertainty quantification, multi-attribute decision making, energy policy. Wenda Tan",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "sita-syal"
+    },
+    {
+      "name": "Wenda Tan",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/wenda-tan/",
+      "title": "Associate Professor, Mechanical Engineering",
+      "contact_email": "wendatan@umich.edu",
+      "research_interests_raw": "Our current research efforts have been focused on physics-based modeling for various advanced manufacturing processes. Specifically we are working on computational fluid dynamics and computational materials modeling for additive manufacturing, welding, casting, powder metallurgy, and electrohydrodynamic printing processes. Jing Tang",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "wenda-tan"
+    },
+    {
+      "name": "Jing Tang",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jing-tang/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "jingtang@umich.edu",
+      "research_interests_raw": "Clay Minerals, Critical Minerals, Metals, and Materials (CMMM), Carbon Capture, Utilization, and Sequestration; Battery; Catalysis; Electrochemistry; Cryochemistry; Thermal Sciences; Natural Wood Cellulose; Atomic Engineering; Materials Synthesis, Manufacturing, and Characterization; Solid-State Chemistry; Biomaterials; Bioelectronics. Alan Taub",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "jing-tang"
+    },
+    {
+      "name": "Alan Taub",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/alan-taub/",
+      "title": "Professor, Mechanical Engineering Professor, Materials Science and Engineering",
+      "contact_email": "alantaub@umich.edu",
+      "research_interests_raw": "My major research interest is in understanding the inter-relationships between processing, microstructure and properties in materials; with an emphasis on mechanical, electrical and magnetic applications. Present research focus is on lightweight structures for land, sea and air transportation applications. Projects include incremental forming of sheet metal and nano-particle additions to aluminum alloys. For polymer composites, we are studying the effect of carbon nanotube and graphene additions to polymer composites utilizing electrical and magnetic fields to produce oriented particles for improved mechanical properties. Karen A. Thole",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "alan-taub"
+    },
+    {
+      "name": "Karen A. Thole",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/karen-a-thole/",
+      "title": "Robert J Vlasic Dean of Engineering Professor, Mechanical Engineering Professor, Aerospace Engineering",
+      "contact_email": "kthole@umich.edu",
+      "research_interests_raw": "Convective heat transfer, turbulent boundary layers, high freestream turbulence, gas turbine heat transfer. Michael Thouless",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "karen-a-thole"
+    },
+    {
+      "name": "Michael Thouless",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/michael-thouless/",
+      "title": "Professor, Mechanical Engineering Professor, Materials Science and Engineering Arthur F. Thurnau Professor, Mechanical Engineering Janine Johnson Weins Professor",
+      "contact_email": "thouless@umich.edu",
+      "research_interests_raw": "Micromechanics modeling of materials; interfacial fracture mechanics and adhesion; mechanical properties of thin films and coatings; toughening mechanisms in polymers; mechanical properties of structural adhesives. Dawn Tilbury",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "michael-thouless"
+    },
+    {
+      "name": "Dawn Tilbury",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/dawn-tilbury/",
+      "title": "Professor, Mechanical Engineering Professor, Robotics Professor, Electrical Engineering & Computer Science Herrick Professor of Engineering",
+      "contact_email": "tilbury@umich.edu",
+      "research_interests_raw": "Control theory and applications; logic control for manufacturing systems including diagnostics, fault handling, and recovery; modular control systems; networked control systems; performance management of computing systems; web-based tutorials for controls education. Serife Tol",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "dawn-tilbury"
+    },
+    {
+      "name": "Serife Tol",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/serife-tol/",
+      "title": "Associate Professor, Mechanical Engineering",
+      "contact_email": "stol@umich.edu",
+      "research_interests_raw": "Dynamical systems, smart materials, metamaterials, phononic crystals, electromechanical systems, energy harvesting, mechanical vibrations, wave propagation Aaron Towne",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "serife-tol"
+    },
+    {
+      "name": "Aaron Towne",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/aaron-towne/",
+      "title": "Associate Professor, Mechanical Engineering",
+      "contact_email": "towne@umich.edu",
+      "research_interests_raw": "Fluid mechanics, reduced-complexity modeling, data-driven modeling, flow control, aeroacoustics",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "aaron-towne"
+    },
+    {
+      "name": "Nicolas Triantafyllidis",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/nicolas-triantafyllidis/",
+      "title": "Professor Emeritus, Mechanical Engineering Professor Emeritus, Aerospace Engineering",
+      "contact_email": "nick@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "nicolas-triantafyllidis"
+    },
+    {
+      "name": "Jacinto Ulloa",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jacinto-ulloa/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "julloa@umich.edu",
+      "research_interests_raw": "Computational mechanics; solid mechanics; micromechanics; metamaterials; disordered/granular media; data-driven computing; variational methods; homogenization; multiscale analysis; generalized continua; inelasticity; material failure; multi-physics systems. Galip Ulsoy",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "jacinto-ulloa"
+    },
+    {
+      "name": "Galip Ulsoy",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/galip-ulsoy/",
+      "title": "Professor Emeritus, Mechanical Engineering C.D. Mote Jr. Distinguished University Professor Emeritus, Mechanical Engineering William Clay Ford Professor Emeritus of Manufacturing Deputy Director, NSF Engineering Research Center for Reconfigurable Machining Systems",
+      "contact_email": "ulsoy@umich.edu",
+      "research_interests_raw": "Modeling, analysis and control of dynamic systems; rotating or translating elastic systems; manufacturing automation; vehicle control. Michael Umbriac",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "galip-ulsoy"
+    },
+    {
+      "name": "Michael Umbriac",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/michael-umbriac/",
+      "title": "LEO Lecturer IV, Mechanical Engineering",
+      "contact_email": "mumbriac@umich.edu",
+      "research_interests_raw": "Lecturer for ME250 and ME350 (Design and Manufacturing) Ramanarayan Vasudevan",
+      "emeritus": false,
+      "lecturer_only": true,
+      "slug": "michael-umbriac"
+    },
+    {
+      "name": "Ramanarayan Vasudevan",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/ramanarayan-vasudevan/",
+      "title": "Associate Professor, Mechanical Engineering Associate Professor, Robotics",
+      "contact_email": "ramv@umich.edu",
+      "research_interests_raw": "Optimization, modeling, design, and control of robotic systems that interact with humans and the environment. My group works on a variety of applications including locomotion of legged robots, prosthetic control, autonomous vehicles, and soft robots. Christopher Vermillion",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "ramanarayan-vasudevan"
+    },
+    {
+      "name": "Christopher Vermillion",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/christopher-vermillion/",
+      "title": "Associate Professor, Mechanical Engineering",
+      "contact_email": "cvermill@umich.edu",
+      "research_interests_raw": "Dr. Vermillion\u2019s interests lie in the application of optimal control and design optimization tools to cutting-edge problems in renewable energy and energy efficiency. He is particularly interested in the development of tethered systems for harnessing wind and marine hydrokinetic energy, the development of persistent mission planning algorithms for renewably powered robotic networks, and the use of connected and autonomous vehicles to realize substantial fuel economy improvements over conventional vehicles. Angela Violi",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "christopher-vermillion"
+    },
+    {
+      "name": "Angela Violi",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/angela-violi/",
+      "title": "Arthur F. Thurnau Professor, Mechanical Engineering Dennis Assanis Collegiate Professor, College of Engineering Associate Chair and Professor, Mechanical Engineering Professor, Chemical Engineering Professor, Electrical Engineering and Computer Science Professor, Applied Physics",
+      "contact_email": "avioli@umich.edu",
+      "research_interests_raw": "Multiscale simulations of complex systems, nanoparticle growth and self-assembly, nanoparticle interactions with biomolecular systems, applied chemical kinetics, aerosols. Chemical and physical properties of fuels, alternative fuels, lubricants. Venkat Viswanathan",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "angela-violi"
+    },
+    {
+      "name": "Venkat Viswanathan",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/venkat-viswanathan/",
+      "title": "Associate Professor, Mechanical Engineering Associate Professor, Aerospace Engineering",
+      "contact_email": "venkvis@umich.edu",
+      "research_interests_raw": "Electric aviation, Electric vehicles, Batteries, Scientific machine learning",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "venkat-viswanathan"
+    },
+    {
+      "name": "Anthony Waas",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/anthony-waas/",
+      "title": "Professor, Mechanical Engineering Felix Pawlowski Collegiate Professor, Aerospace Engineering",
+      "contact_email": "awaas@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "anthony-waas"
+    },
+    {
+      "name": "Kon-Well Wang",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/kon-well-wang/",
+      "title": "Professor, Mechanical Engineering A. Galip Ulsoy Distinguished University Professor of Engineering Stephen P. Timoshenko Collegiate Professor of Mechanical Engineering",
+      "contact_email": "kwwang@umich.edu",
+      "research_interests_raw": "Structural dynamics and controls, including emerging intelligent structures harnessing functional materials, reconfigurable origami & metamaterials, and embodied mechano-intelligence via wave-based computing and physical reservoir computing, for engineering functions such as vibration & noise controls, wave manipulation & steering, energy harvesting, and structural health monitoring. Thomas Wang",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "kon-well-wang"
+    },
+    {
+      "name": "Thomas Wang",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/thomas-wang/",
+      "title": "Professor, Mechanical Engineering Professor, Internal Medicine Professor, Biomedical Engineering",
+      "contact_email": "thomaswa@umich.edu",
+      "research_interests_raw": "Biomedical instrument design, imaging systems, micro-optics, bio-microelectromechanical systems (bio-MEMS), miniature sensors, mirrors and actuators Alan Wineman",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "thomas-wang"
+    },
+    {
+      "name": "Alan Wineman",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/alan-wineman/",
+      "title": "Professor Emeritus, Mechanical Engineering Arthur F. Thurnau Professor Emeritus Professor Emeritus, Macromolecular Science and Engineering",
+      "contact_email": "lardan@umich.edu",
+      "research_interests_raw": "Mechanics of continua including nonlinear elasticity and viscoelasticity of polymers; theory of interacting continua; non-Fickian diffusion in polymers; yield-induced phenomena in polymers; modeling microstructural changes in polymers; studies in electrorheological fluids. Margaret Wooldridge",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "alan-wineman"
+    },
+    {
+      "name": "Margaret Wooldridge",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/margaret-wooldridge/",
+      "title": "Professor, Mechanical Engineering Arthur F. Thurnau Professor, Mechanical Engineering Walter J. Weber, Jr. Professor of Sustainable Energy, Environmental and Earth Systems Engineering",
+      "contact_email": "mswool@umich.edu",
+      "research_interests_raw": "Sustainable and renewable energy, power and propulsion systems; combustion, fluid mechanics and thermodynamics; pollution mitigation; high-efficiency, low-resource consumption energy systems; reaction kinetics; aerosol formation, transport and impact; optical diagnostics; gas dynamics Hongyi Xiao",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "margaret-wooldridge"
+    },
+    {
+      "name": "Hongyi Xiao",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/hongyi-xiao/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "hongyix@umich.edu",
+      "research_interests_raw": "Our research group focuses on granular materials consisting of discrete particles that can collectively behave like a solid, a liquid, or a gas. We aim to reveal their related solid and fluid mechanics as well as statistical physics using a combination of 2D and 3D experiments, discrete particle simulations, as well as machine-learning informed modeling. The current focus is to understand how they deform from a structure-property perspective, based on which we design particle interactions and dynamics at the microscopic scale for novel collective behaviors at the material scale. We are also interested in how animals and robots interact with granular matter as a soft and yielding medium.",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "hongyi-xiao"
+    },
+    {
+      "name": "Wei-Hsuin Yang",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/wei-hsuin-yang/",
+      "title": "Professor Emeritus, Mechanical Engineering",
+      "contact_email": "weiyang@umich.edu",
+      "research_interests_raw": "Solid mechanics, applied mathematics, and numerical analysis including plasticity; structural optimization; manufacturing process optimization; structural crash worthiness; optional design of wheels; welding. Euisik Yoon",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "wei-hsuin-yang"
+    },
+    {
+      "name": "Euisik Yoon",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/euisik-yoon/",
+      "title": "Professor, Mechanical Engineering Professor, Electrical Engineering & Computer Science Professor, Biomedical Engineering Director, NSF International Program for Advancement of Neurotechnology (IPAN)",
+      "contact_email": "esyoon@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "euisik-yoon"
+    },
+    {
+      "name": "John Young",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/john-young/",
+      "title": "Associate Professor Emeritus, Mechanical Engineering",
+      "contact_email": "young@umich.edu",
+      "research_interests_raw": "Heat power, thermodynamics, experiential learning.",
+      "emeritus": true,
+      "lecturer_only": false,
+      "slug": "john-young"
+    },
+    {
+      "name": "Xuedong Zhai",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/xuedong-zhai/",
+      "title": "Assistant Research Scientist, Mechanical Engineering",
+      "contact_email": "xzhai@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "xuedong-zhai"
+    },
+    {
+      "name": "Lei Zuo",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/lei-zuo/",
+      "title": "Professor, Mechanical Engineering Professor, Naval Architecture and Marine Engineering",
+      "contact_email": "leizuo@umich.edu",
+      "research_interests_raw": "Marine renewable energy (ocean waves, tidal currents, offshore wind), blue economy, energy harvesting, vibration/dynamics and control, mechatronics design, vehicles and transportation, and advanced manufacturing. University of Michigan Logo ###### Mechanical Engineering G.G. Brown Laboratory 2350 Hayward Ann Arbor MI 48109 Phone: (734) 764-2694 ###### Menu * Admissions * About * Academics * Research * People * News & Events * Quicklinks ###### More Links * Giving * [Campus Safety Policy](http://safety.engin.umich.edu/) * [U-M Home](https://umich.edu/) * [Non-Discrimination Policy](https://oie.umich.edu/) ###### Social * [LinkedIn](https://www.linkedin.com/groups/90070) * [Instagram](https://www.instagram.com/umichme/) * [Facebook](https://www.facebook.com/UMMechanicalEngineering/) * [Flickr](https://www.flickr.com/photos/136347728@N08/) * [YouTube](https://www.youtube.com/channel/UCN2TjT",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "lei-zuo"
+    }
+  ],
+  "active": [
+    {
+      "name": "Jeffrey Abell",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jeffrey-abell/",
+      "title": "Professor of Practice, Mechanical Engineering",
+      "contact_email": "jaabell@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "jeffrey-abell"
+    },
+    {
+      "name": "Solomon Adera",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/solomon-adera/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "sadera@umich.edu",
+      "research_interests_raw": "Adera earned his Ph. D. in Mechanical Engineering from MIT. He was a postdoctoral associate at the Harvard University before moving to the University of Michigan. His research interests include heat and mass transfer, phase-change (evaporation, condensation, freezing), water/fog harvesting, micro/nanoengineering, and fluid-structure interactions. Alauddin Ahmed",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "solomon-adera"
+    },
+    {
+      "name": "Alauddin Ahmed",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/alauddin-ahmed/",
+      "title": "Associate Research Scientist, Mechanical Engineering",
+      "contact_email": "alauddin@umich.edu",
+      "research_interests_raw": "Applications: Energy storage (e.g., hydrogen, thermal, natural gas), battery (e.g., electrolytes, manufacturing); Materials: Nanoporous materials (e.g., metal organic frameworks, covalent organic frameworks), metal oxides, metal hydrides, energetic materials, small molecules, nanoporous composites; Methods: Applied machine learning & AI, Ab initio & density functional theory (DFT), Monte Carlo & molecular dynamics, high-throughput computing, materials by design; Developments: Methods for interpretable machine learning, algorithm for predicting thermophysical properties of chemical compounds. Rayhaneh Akhavan",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "alauddin-ahmed"
+    },
+    {
+      "name": "Rayhaneh Akhavan",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/rayhaneh-akhavan/",
+      "title": "Associate Professor, Mechanical Engineering",
+      "contact_email": "raa@umich.edu",
+      "research_interests_raw": "Fluid mechanics with emphasis on turbulence physics, turbulence modeling and turbulence control; high fidelity computations and reduced-order modeling of complex turbulent flows involving multi phases, fluid-structure interactions and viscoelastic effects; biomimetic and bio-inspired concepts for flow control and drag reduction; lattice Boltzmann, pseudo-spectral and stochastic methods; high performance computing. Applications in energy, environment, aerospace and naval disciplines. Mitra Aliabouzar",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "rayhaneh-akhavan"
+    },
+    {
+      "name": "Mitra Aliabouzar",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/mitra-aliabouzar/",
+      "title": "Assistant Research Scientist, Mechanical Engineering Research Assistant Professor, Radiology",
+      "contact_email": "aliabouz@med.umich.edu",
+      "research_interests_raw": "Cavitation enabled therapy, Mechanics of soft and bio-materials, High speed rheometry, 3D bioprinting",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "mitra-aliabouzar"
+    },
+    {
+      "name": "John Allison",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/john-allison/",
+      "title": "Professor, Mechanical Engineering Professor, Materials Science and Engineering William F. Hosford Professor of Materials Science and Engineering",
+      "contact_email": "johnea@umich.edu",
+      "research_interests_raw": "Understanding the inter-relationships between processing, alloying, microstructure and properties in metallic materials \u2013 and in incorporating this knowledge into computational tools for use in research, education and engineering. Ellen Arruda",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "john-allison"
+    },
+    {
+      "name": "Ellen Arruda",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/ellen-arruda/",
+      "title": "Tim Manganello/BorgWarner Department Chair, Mechanical Engineering Professor, Mechanical Engineering Professor, Biomedical Engineering Professor, Program in Macromolecular Science and Engineering Maria Comninou Collegiate Professor of Mechanical Engineering",
+      "contact_email": "arruda@umich.edu",
+      "research_interests_raw": "Mechanical behavior of materials including polymers, elastomers and soft tissue; tissue engineering of tendon and muscle constructs; constitutive modeling of growth, remodeling and functional adaptation in soft tissue; deformation mechanisms in polymers; crystal transformation mechanisms in semi-crystalline polymers; split Hopkinson pressure bar testing of polymers and elastomers for high strain rate applications including crashworthiness in automotive applications. James Ashton-Miller",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "ellen-arruda"
+    },
+    {
+      "name": "Shorya Awtar",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/shorya-awtar/",
+      "title": "Professor, Mechanical Engineering Joseph E. Shigley Collegiate Professor of Engineering",
+      "contact_email": "awtar@umich.edu",
+      "research_interests_raw": "Mechanical design, precision engineering, human-centric design, mechatronic systems, and robotics. Specific research and development topics include constraint-based design, parallel kinematics, flexure mechanisms, dynamics of flexible systems, electromagnetic actuators, medical devices for minimally invasive surgery, precision motion stages for semiconductor metrology, motion sickness mitigation in autonomous vehicles, rehab robotics, modular prostheses, and micro-electromechanical systems (MEMS). Rohini Bala Chandran",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "shorya-awtar"
+    },
+    {
+      "name": "Rohini Bala Chandran",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/rohini-bala-chandran/",
+      "title": "Associate Professor, Mechanical Engineering",
+      "contact_email": "rbchan@umich.edu",
+      "research_interests_raw": "Thermal and fluid sciences, multiscale computational model development, radiative heat transfer, optics, chemical kinetics of heterogeneous reactions, electrochemical engineering, semiconductor physics Mihaela Banu",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "rohini-bala-chandran"
+    },
+    {
+      "name": "Mihaela Banu",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/mihaela-banu/",
+      "title": "Professor, Mechanical Engineering OVPR Collegiate Research Professor Associate Chair of Master and Doctoral Engineering",
+      "contact_email": "mbanu@umich.edu",
+      "research_interests_raw": "The research focuses on lightweight materials, with emphasis on developing micro- and nanocellulose composites, natural fiber composites and associated manufacturing processes for automotive and aerospace applications, multi-scale modeling of materials and simulation of forming processes, manufacturing of personalized dental ligaplants. James Barber",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "mihaela-banu"
+    },
+    {
+      "name": "James Barber",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/james-barber/",
+      "title": "Professor, Mechanical Engineering Arthur F. Thurnau Professor, Mechanical Engineering Jon R. & Beverly S. Holt Professor, College of Engineering",
+      "contact_email": "jbarber@umich.edu",
+      "research_interests_raw": "Solid mechanics including thermoelasticity; elasticity; solidification; contact mechanics; tribology; elastodynamics, fracture; stability of thermoelastic contact; friction, contact of rough surfaces. Kira Barton",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "james-barber"
+    },
+    {
+      "name": "Kira Barton",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/kira-barton/",
+      "title": "Professor, Mechanical Engineering Professor, Robotics Miller Faculty Scholar",
+      "contact_email": "bartonkl@umich.edu",
+      "research_interests_raw": "Control theory and applications; iterative learning control; multi-agent systems; human/robot collaborations; smart manufacturing; manufacturing robotics; high-performance micro/nano-scale printing for electrical and biomedical applications Michael Bernitsas",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "kira-barton"
+    },
+    {
+      "name": "Michael Bernitsas",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/michael-bernitsas/",
+      "title": "Professor, Mechanical Engineering Mortimer E Cooley Collegiate Professor, Naval Architecture & Marine Engineering",
+      "contact_email": "michaelb@umich.edu",
+      "research_interests_raw": "Current Energy Conversion; Enhancement of High-Damping, High-Reynolds Vortex Induced Vibration; Suppression of Vortex Induced Vibration; Mooring System Dynamics; Structural Redesign and Topology/Material Evolution; Riser and Pipeline Mechanics Andre Boehman",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "michael-bernitsas"
+    },
+    {
+      "name": "Andre Boehman",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/andre-boehman/",
+      "title": "Professor, Mechanical Engineering Vennema Professor of Engineering Director, W.E. Lay Automotive Laboratory",
+      "contact_email": "boehman@umich.edu",
+      "research_interests_raw": "Automotive engineering, energy and thermal sciences including: fuel production and formulation, alternative fuels, diesel combustion, spark ignition combustion, autoignition, spray behavior, particulate emissions, NOx emissions, emissions control, thermodynamics of energy conversion systems. Claus Borgnakke",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "andre-boehman"
+    },
+    {
+      "name": "Diann Brei",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/diann-brei/",
+      "title": "Professor, Mechanical Engineering",
+      "contact_email": "dibrei@umich.edu",
+      "research_interests_raw": "Design; smart materials and structures; sensor and actuator design; structural dynamics; vibration and noise control; mechatronics, smart mechanisms Daniel Bruder",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "diann-brei"
+    },
+    {
+      "name": "Daniel Bruder",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/daniel-bruder/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "bruderd@umich.edu",
+      "research_interests_raw": "Design, modeling, and control of soft and other non-traditional robotic systems with the goal of actualizing robots that are capable of safely assisting humans in real-world unstructured environments. Ashley Bucsek",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "daniel-bruder"
+    },
+    {
+      "name": "Ashley Bucsek",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/ashley-bucsek/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "abucsek@umich.edu",
+      "research_interests_raw": "Mechanical behavior of materials; micromechanical modeling; in situ/in operando characterization including X-ray imaging and diffraction; functional materials; lightweight structural metals; shape memory alloys; phase transformations; energy conversion Jesse Capecelatro",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "ashley-bucsek"
+    },
+    {
+      "name": "Jesse Capecelatro",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jesse-capecelatro/",
+      "title": "Associate Professor, Mechanical Engineering Associate Professor, Aerospace Engineering",
+      "contact_email": "jcaps@umich.edu",
+      "research_interests_raw": "Fluid mechanics, with an emphasis on multiphase flow, turbulence, reacting flows, and high-performance computing. Applications include renewable energy, disease transmission, and space exploration. Steve Ceccio",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "jesse-capecelatro"
+    },
+    {
+      "name": "Steve Ceccio",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/steve-ceccio/",
+      "title": "Professor, Mechanical Engineering Professor, Naval Architecture & Marine Engineering Vincent T and Gloria M Gorguze Professor of Engineering",
+      "contact_email": "ceccio@umich.edu",
+      "research_interests_raw": "Fluid mechanics with emphasis on experimental methods, multiphase flows, high Reynolds number flows, cavitation and bubbly flows, optical flow measurement methods, electrical and radiation based tomography. Erin Cech",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "steve-ceccio"
+    },
+    {
+      "name": "Erin Cech",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/erin-cech/",
+      "title": "Associate Professor, Mechanical Engineering Associate Professor, Sociology",
+      "contact_email": "ecech@umich.edu",
+      "research_interests_raw": "Gender and Sexuality; Inequalities and Stratification; Sociology of Culture; Theory, Knowledge, and Science; Work, Economy, and Organizations; Mixed Methods; Sociology; Administration",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "erin-cech"
+    },
+    {
+      "name": "Yun Chen",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/yun-chen/",
+      "title": "Associate Research Scientist, Mechanical Engineering",
+      "contact_email": "cyshi@umich.edu",
+      "research_interests_raw": "Yun Chen\u2019s research focuses on AI-enabled communication, sensing, and robotic systems. Her work bridges communication chips, 6G wireless systems, reconfigurable intelligent surfaces, hardware-software co-design, and programmable sensing environments for robotics and cyber-physical systems. Before joining the University of Michigan, she was a full professor at Fudan University, where she led research on high-efficiency communication baseband chips and AI-driven wireless systems.",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "yun-chen"
+    },
+    {
+      "name": "Daniel Cooper",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/daniel-cooper/",
+      "title": "Associate Professor, Mechanical Engineering Associate Professor, Integrative Systems and Design Director of the Global CO\u2082 Initiative",
+      "contact_email": "drcooper@umich.edu",
+      "research_interests_raw": "My research, which focuses on making impactful contributions to the areas of manufacturing and sustainability, considers multiple scales: identifying significant opportunities to cut emissions and/or costs by conducting large scale analyses on processes, factories and material supply chains, and pursuing a rigorous technical analysis in order to capitalize on the opportunities. Shanna Daly",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "daniel-cooper"
+    },
+    {
+      "name": "Shanna Daly",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/shanna-daly/",
+      "title": "Associate Professor, Mechanical Engineering Miller Faculty Scholar Arthur F. Thurnau Professor, Mechanical Engineering",
+      "contact_email": "srdaly@umich.edu",
+      "research_interests_raw": "Front-end design processes; idea generation; engineering creativity and divergent thinking; design cognition; socially-engaged design; socio-technical engineering skillsets; design ethnography; design problem finding and framing; design prototyping; design education",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "shanna-daly"
+    },
+    {
+      "name": "Sambit Das",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/sambit-das/",
+      "title": "Assistant Research Scientist, Mechanical Engineering",
+      "contact_email": "dsambit@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "sambit-das"
+    },
+    {
+      "name": "Neil Dasgupta",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/neil-dasgupta/",
+      "title": "Professor, Mechanical Engineering Professor, Materials Science and Engineering Miller Faculty Scholar",
+      "contact_email": "ndasgupt@umich.edu",
+      "research_interests_raw": "Renewable energy and energy storage; Batteries; Solar Energy; Catalysis; Nanomanufacturing; Atomic layer deposition; Bio-inspired materials; High-resolution microscopy and spectroscopy of nanomaterials; In situ/operando electrochemistry; Energy policy and economics Pingsha Dong",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "neil-dasgupta"
+    },
+    {
+      "name": "Pingsha Dong",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/pingsha-dong/",
+      "title": "Professor, Mechanical Engineering Professor, Naval Architecture and Marine Engineering Director, Welded Structures Laboratory",
+      "contact_email": "dongp@umich.edu",
+      "research_interests_raw": "(1) High-speed method for directly joining plastics directly to metals for manufacture of multi-materials lightweight structures; (2) solid-state rapid deposition technique for additive manufacture of bimetal components without introducing detrimental intermetallic compounds; (3) Fracture mechanics modeling of randomly distributed defects in additively-manufactured metal components; (4) smart modular design for manufacturing and assembly methods for advanced lightweight marine structures. Karthik Duraisamy",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "pingsha-dong"
+    },
+    {
+      "name": "Karthik Duraisamy",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/karthik-duraisamy/",
+      "title": "Professor, Mechanical Engineering Professor, Aerospace Engineering Associate Director of Michigan Institute for Computational Discovery and Engineering (MICDE)",
+      "contact_email": "kdur@umich.edu",
+      "research_interests_raw": "Computational Science and Engineering, Aerodynamics, High-Speed Flows, Turbulence modeling and simulation, Vortical Flows, Uncertainty Quantification, High-Performance Computing, Rotorcraft Aeromechanics, Adjoint-based methods, Optimization Paolo Elvati",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "karthik-duraisamy"
+    },
+    {
+      "name": "Paolo Elvati",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/paolo-elvati/",
+      "title": "Associate Research Scientist, Mechanical Engineering",
+      "contact_email": "elvati@umich.edu",
+      "research_interests_raw": "Nanoparticle formations and interactions using computational tools (Molecular Dynamics, Machine Learning, Stochastic Solvers), with particular emphasis on biological systems, non-thermal plasma and reactive gas-phase conditions. Applications include drug transport, bacterial biofilms control, combustion, ultra-soft materials, and low temperature plasma. Bogdan Epureanu",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "paolo-elvati"
+    },
+    {
+      "name": "Bogdan Epureanu",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/bogdan-epureanu/",
+      "title": "Professor, Mechanical Engineering Roger L. McCarthy Professor of Mechanical Engineering Arthur F. Thurnau Professor, Mechanical Engineering Director, Automotive Research Center",
+      "contact_email": "epureanu@umich.edu",
+      "research_interests_raw": "Research focuses on biological and epidemiological systems, aerospace and automotive structures, and turbomachinery. Examples include creating novel mechano-chemical dynamic models of nanoscale intracellular transport processes, developing the next generation of highly-sensitive diagnosis and monitoring techniques, discovering novel methods for forecasting tipping points in complex systems such as disease epidemics and ecological systems, developing innovative reduced order models of multi-physics systems such as Li-ion batteries and complex structures, creating advanced system identification and control methodologies for smart structures and fluid-structural systems. These blend novel methods and theory with fundamental experiments in linear and nonlinear dynamics from macro to nano-scale. Martin Erinin",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "bogdan-epureanu"
+    },
+    {
+      "name": "Martin Erinin",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/martin-erinin/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "merinin@umich.edu",
+      "research_interests_raw": "Experimental fluid mechanics with broad interests in multiphase flows, free-surface flows, surfactant dominated flows, and development of optical measurement techniques for thermos-fluids. Specific problems of interests include ocean waves, air-sea interaction, transport of particles by ocean waves, wave-wave interaction, accretion of ice on marine structures, interaction of waves with ice sheets. This research typically has environmental, naval, and/or industrial applications. Tulga Ersal",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "martin-erinin"
+    },
+    {
+      "name": "Tulga Ersal",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/tulga-ersal/",
+      "title": "Associate Professor, Mechanical Engineering",
+      "contact_email": "tersal@umich.edu",
+      "research_interests_raw": "Autonomous and semi-autonomous vehicles; human-autonomy interactions Jon Estrada",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "tulga-ersal"
+    },
+    {
+      "name": "Jon Estrada",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jon-estrada/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "jbestrad@umich.edu",
+      "research_interests_raw": "Experimental mechanics of soft and bio-materials, material characterization including high speed rheometry, magnetic resonance, and inverse techniques, inertial cavitation dynamics, photoacoustic and laser microscopy, cell mechanics, image processing techniques, digital image and volume correlation Yue Fan",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "jon-estrada"
+    },
+    {
+      "name": "Yue Fan",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/yue-fan/",
+      "title": "Associate Professor, Mechanical Engineering",
+      "contact_email": "fanyue@umich.edu",
+      "research_interests_raw": "Defects behaviors and microstructural evolution in structure materials, deformation mechanisms and mechanical properties of amorphous solids, long time scale atomistic simulation Nima Fazeli",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "yue-fan"
+    },
+    {
+      "name": "Nima Fazeli",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/nima-fazeli/",
+      "title": "Assistant Professor, Mechanical Engineering Assistant Professor, Robotics",
+      "contact_email": "nfz@umich.edu",
+      "research_interests_raw": "Robotic Manipulation, Physical Interaction and Contact, Robot Learning and Control, State-Estimation Evgueni Filipov",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "nima-fazeli"
+    },
+    {
+      "name": "Evgueni Filipov",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/evgueni-filipov/",
+      "title": "Associate Professor, Mechanical Engineering Associate Professor, Civil and Environmental Engineering",
+      "contact_email": "filipov@umich.edu",
+      "research_interests_raw": "My research interests lie in the field of deployable and reconfigurable structural systems. Folding and adaptable structures based on the principles of origami can have practical applications ranging in scale and discipline from biomedical robotics to deployable architecture. David Fleming",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "evgueni-filipov"
+    },
+    {
+      "name": "Evan Fleming",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/evan-fleming/",
+      "title": "Assistant Research Scientist, Mechanical Engineering",
+      "contact_email": "eflem@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "evan-fleming"
+    },
+    {
+      "name": "Theodor Freiheit",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/theodor-freiheit/",
+      "title": "Research Associate Professor, Mechanical Engineering",
+      "contact_email": "tfreihei@umich.edu",
+      "research_interests_raw": "Manufacturing systems engineering. Design of manufacturing and service systems. Reliability and productivity. Markov chain models, including the application of predictive control. Interaction between manufacturing process parameters and failure modes. Product quality. The influence of production system approaches across industries. Applications of controls to manufacturing systems. Design theory and methodology. Product development. New product design. Design of machine components and systems. The influence of designer personality and environment on design outcomes. Engineering Management - with a particular interest in product development. Lean product design. Interaction of business, product, and process in engineering systems. Products design for flexible manufacturing systems. Nicole Friedberg",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "theodor-freiheit"
+    },
+    {
+      "name": "Jianping Fu",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jianping-fu/",
+      "title": "Professor, Mechanical Engineering Professor, Biomedical Engineering Professor, Cell and Developmental Biology",
+      "contact_email": "jpfu@umich.edu",
+      "research_interests_raw": "Stem Cell Bioengineering, Developmental Bioengineering, Mechanobiology, and BioMEMS Vikram Gavini",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "jianping-fu"
+    },
+    {
+      "name": "Vikram Gavini",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/vikram-gavini/",
+      "title": "Professor, Mechanical Engineering Professor, Materials Science and Engineering",
+      "contact_email": "vikramg@umich.edu",
+      "research_interests_raw": "Developing algorithms and computational frameworks for large-scale ab-initio calculations to understand materials properties; HPC aspects of electronic structure calculations; Electronic structure studies on defects in solids; Multi-scale modeling; Analysis of approximation theories Yogesh Gianchandani",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "vikram-gavini"
+    },
+    {
+      "name": "Yogesh Gianchandani",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/yogesh-gianchandani/",
+      "title": "Professor, Mechanical Engineering Professor, Electrical Engineering and Computer Science",
+      "contact_email": "yogesh@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "yogesh-gianchandani"
+    },
+    {
+      "name": "Brent Gillespie",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/brent-gillespie/",
+      "title": "Professor, Mechanical Engineering Professor, Robotics",
+      "contact_email": "brentg@umich.edu",
+      "research_interests_raw": "Haptic interface and robotics Steven Goldstein",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "brent-gillespie"
+    },
+    {
+      "name": "Hugo Gonzalez Villasanti",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/hugo-g-villasanti/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "hugov@umich.edu",
+      "research_interests_raw": "Control theory and engineering strategies in social systems to empower people and improve their well-being. Jerard Gordon",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "hugo-g-villasanti"
+    },
+    {
+      "name": "Jerard Gordon",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jerard-gordon/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "jerardvg@umich.edu",
+      "research_interests_raw": "Process-structure-property relationships of advanced materials; metal additive manufacturing; in-situ property evaluation; experimental and computational mechanics; materials discovery; design and manufacturing. Nakhiah Goulbourne",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "jerard-gordon"
+    },
+    {
+      "name": "Nakhiah Goulbourne",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/nakhiah-goulbourne/",
+      "title": "Associate Professor, Mechanical Engineering Associate Professor, Aerospace Engineering",
+      "contact_email": "ngbourne@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "nakhiah-goulbourne"
+    },
+    {
+      "name": "Robert Gregg",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/robert-gregg/",
+      "title": "Professor, Mechanical Engineering Professor, Robotics Professor, Electrical and Computer Engineering Associate Director for Graduate Education, Michigan Robotics Director, Locomotor Control Systems Laboratory",
+      "contact_email": "rdgregg@umich.edu",
+      "research_interests_raw": "Wearable Robots, Legged Robots, Prosthetics & Orthotics, Bipedal Locomotion, Nonlinear Control Theory, Rehabilitation Engineering Karl Grosh",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "robert-gregg"
+    },
+    {
+      "name": "Karl Grosh",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/karl-grosh/",
+      "title": "Professor, Mechanical Engineering Professor, Biomedical Engineering Department",
+      "contact_email": "grosh@umich.edu",
+      "research_interests_raw": "Cochlear mechanics and hearing; acoustic and vibrational transducers; prosthetics and sensors for biomedical applications; MEMS; distributed, active metamaterials; mechanics and computational mechanics; structural acoustics. Jay Guo",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "karl-grosh"
+    },
+    {
+      "name": "Jay Guo",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jay-guo/",
+      "title": "Professor, Mechanical Engineering Professor, Electrical Engineering and Computer Science Professor, Macromolecular Science and Engineering Professor, Applied Physics",
+      "contact_email": "guo@umich.edu",
+      "research_interests_raw": "Polymer-based photonic sensors and photoacoustics, organic and hybrid photovoltaics and photodetectors, flexible transparent conductors, nanophotonics & structural colors, nanomanufacturing technologies and applications Maha Haji",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "jay-guo"
+    },
+    {
+      "name": "Maha Haji",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/maha-haji/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "mhaji@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "maha-haji"
+    },
+    {
+      "name": "Jingwen Hu",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jingwen-hu/",
+      "title": "Research Professor, Mechanical Engineering Research Professor, UMTRI",
+      "contact_email": "jwhu@umich.edu",
+      "research_interests_raw": "Impact/Injury Biomechanics: Parametric Human Modeling, Statistical Injury Data Analysis, Cadaver/Volunteer/Dummy Testing - Occupant Protection: Safety equity among diverse populations, Restraint Design Optimization, Rear Seat Occupants, Oblique Impacts, Adaptive Restraint Design, Active and Passive Safety Integration, Tactical Vehicle Safety, Vulnerable Populations, Automated Vehicles, Child Seat Design, Rollover Crashes - Others: Pediatric Fall and Child Abuse, Seat Comfort, Computer Aided Surgery S. Jack Hu",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "jingwen-hu"
+    },
+    {
+      "name": "Xun (Ryan) Huan",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/xun-ryan-huan/",
+      "title": "Associate Professor, Mechanical Engineering",
+      "contact_email": "xhuan@umich.edu",
+      "research_interests_raw": "Uncertainty quantification, data-driven modeling, numerical optimization, optimal experimental design, Bayesian analysis, machine learning Matthew Hughes",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "xun-ryan-huan"
+    },
+    {
+      "name": "Matthew Hughes",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/matthew-hughes/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "matthug@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "matthew-hughes"
+    },
+    {
+      "name": "Art Hyde",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/art-hyde/",
+      "title": "Associate Professor of Engineering Practice, Mechanical Engineering",
+      "contact_email": "ahyde@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "art-hyde"
+    },
+    {
+      "name": "Uduak Inyang-Udoh",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/uduak-inyang-udoh/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "udinyang@umich.edu",
+      "research_interests_raw": "Control theory, graph theory and physics-guided machine learning with application in data-rich advanced manufacturing, thermal and energy storage systems. Ann Jeffers",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "uduak-inyang-udoh"
+    },
+    {
+      "name": "Ann Jeffers",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/ann-jeffers/",
+      "title": "Associate Professor, Mechanical Engineering Associate Professor, Civil & Environmental Engineering",
+      "contact_email": "jffrs@umich.edu",
+      "research_interests_raw": "Analysis of structures subjected to extreme load events, especially fire; various topics in fire safety engineering (e.g., structural fire engineering, smart firefighting, wildland-urban interface fires); advanced finite element methods, including isogeometric analysis; multiphysics simulation, especially coupled fire-structure interaction. Also interested in various topics within engineering education. Eric Johnsen",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "ann-jeffers"
+    },
+    {
+      "name": "Eric Johnsen",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/eric-johnsen/",
+      "title": "Professor, Mechanical Engineering Director, PhD Program in Scientific Computing",
+      "contact_email": "ejohnsen@umich.edu",
+      "research_interests_raw": "Fluid mechanics, with an emphasis on multiphase flow, cavitation and bubble dynamics, computational fluid dynamics, high-speed flow and shock waves, turbulence and mixing, interfacial instabilities, plasmas, and high-performance computing. Applications include biomedical engineering, energy, aeronautics, turbomachinery, naval engineering and high-energy density physics. Elijah Kannatey-Asibu Jr.",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "eric-johnsen"
+    },
+    {
+      "name": "Bikash Kanungo",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/bikash-kanungo/",
+      "title": "Assistant Research Scientist, Mechanical Engineering",
+      "contact_email": "bikash@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "bikash-kanungo"
+    },
+    {
+      "name": "Massoud Kaviany",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/massoud-kaviany/",
+      "title": "Professor, Mechanical Engineering Professor, Applied Physics",
+      "contact_email": "kaviany@umich.edu",
+      "research_interests_raw": "Heat Transfer Physics: efficient and innovative energy transport and conversion (transformation) through atomic tailoring of the principal energy carriers (phonon, electron, fluid particle, and photon). Current energy-related projects include thermoelectricity, phonoelectricity, thermal switch, and multidimensional wicks for record conductance and heat flux.",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "massoud-kaviany"
+    },
+    {
+      "name": "Julia Kramer",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/julia-kramer/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "kramerju@umich.edu",
+      "research_interests_raw": "Design theory & methodology, collaborative engagement in engineering design, design for health applications, front-end medical device design processes, global public health, engineering design education Chandramouli Krishnan",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "julia-kramer"
+    },
+    {
+      "name": "Chandramouli Krishnan",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/chandramouli-krishnan/",
+      "title": "Associate Professor, Mechanical Engineering Associate Professor, Physical Medicine and Rehabilitation Associate Professor of Biomedical Engineering Associate Professor of Physical Therapy Associate Professor of Kinesiology",
+      "contact_email": "mouli@umich.edu",
+      "research_interests_raw": "The goal of Dr. Krishnan\u2019s Neuromuscular and Rehabilitation Robotics Laboratory (NeuRRo Lab) is to develop effective and efficient rehabilitation methods for individuals with neurologic and orthopedic disorders. The NeuRRo Lab seeks to achieve this goal by a combination of mechanistic and interventional research approaches that facilitate our current understanding of neuromuscular function and regulation in the context of movement control and neuromuscular plasticity. Specifically, research in the NeuRRo Lab involves building low-cost technologies (e.g., passive and semi-passive robots) and testing these devices to improve neuromuscular function in people with neurological and orthopedic disorders. Neuromotor performance and recovery are evaluated using sophisticated techniques that provide detailed information on changes happening at the biomechanical (kinematic and kinetic), neurophysi",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "chandramouli-krishnan"
+    },
+    {
+      "name": "Grant Kruger",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/grant-kruger/",
+      "title": "Associate Research Scientist, Mechanical Engineering",
+      "contact_email": "ghkruger@umich.edu",
+      "research_interests_raw": "Biomedical design and manufacturing; Digital health; Wearable technology; Intelligent systems; Robotics Katsuo Kurabayashi",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "grant-kruger"
+    },
+    {
+      "name": "Ronald Larson",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/ronald-larson/",
+      "title": "Professor, Mechanical Engineering Professor, Chemical Engineering Professor, Macromolecular Science & Engineering George Granger Brown Professor of Chemical Engineering A H White Distinguished University Professor of Chemical Engineering",
+      "contact_email": "rlarson@umich.edu",
+      "research_interests_raw": "Complex fluids, polymers, fluid mechanics, surfactants, biomolecules, transport theory, rheology, instabilities, constitutive theory. Xiaogan Liang",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "ronald-larson"
+    },
+    {
+      "name": "Xiaogan Liang",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/xiaogan-liang/",
+      "title": "Professor, Mechanical Engineering Associate Chair for Undergraduate Education, Mechanical Engineering",
+      "contact_email": "xiaoganl@umich.edu",
+      "research_interests_raw": "Advanced Nanofabrication, Nanomanufacturing, and Microsystem Technologies, and Their Applications in Nanoelectronics, Nanophotonics, Integrated Biosensing Systems, and Airborne Sensing Systems Based on Microdrones. Allen Liu",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "xiaogan-liang"
+    },
+    {
+      "name": "Allen Liu",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/allen-liu/",
+      "title": "Professor, Mechanical Engineering Professor, Biomedical Engineering Professor, Biophysics Associate Chair for Graduate Education, Mechanical Engineering",
+      "contact_email": "allenliu@umich.edu",
+      "research_interests_raw": "Mechanobiology and mechanotransduction, bottom-up synthetic biology, quantitative cell biology Henry Liu",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "allen-liu"
+    },
+    {
+      "name": "Henry Liu",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/henry-liu/",
+      "title": "Professor, Mechanical Engineering Professor, Civil & Environmental Engineering",
+      "contact_email": "henryliu@umich.edu",
+      "research_interests_raw": "Prof. Liu conducts interdisciplinary research at the interface between Transportation Engineering, Automotive Engineering, and Artificial Intelligence, with a focus on cyber-physical transportation systems. Specifically, his scholarly interests concern traffic flow monitoring, modeling, and control, testing and evaluation of connected and automated vehicles, and cooperative automated driving. Wei Lu",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "henry-liu"
+    },
+    {
+      "name": "Wei Lu",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/wei-lu/",
+      "title": "Professor, Mechanical Engineering Charles M. Vest Collegiate Professor of Engineering, College of Engineering ME Associate Chair for Facilities and Planning",
+      "contact_email": "weilu@umich.edu",
+      "research_interests_raw": "Energy storage and electrochemistry; simulation of nano/microstructure evolution; mechanics in nano/micro systems; advanced manufacturing; mechanical properties and performance of advanced materials and relation to microstructures. Jon Luntz",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "wei-lu"
+    },
+    {
+      "name": "Jon Luntz",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jon-luntz/",
+      "title": "Associate Research Scientist, Mechanical Engineering Lecturer IV, Mechanical Engineering",
+      "contact_email": "jluntz@umich.edu",
+      "research_interests_raw": "Mechamatronic system design methodology; smart materials and structures",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "jon-luntz"
+    },
+    {
+      "name": "Krishnan Mahesh",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/krishnan-mahesh/",
+      "title": "Professor, Mechanical Engineering Richard B. Couch Professor of Naval Architecture and Marine Engineering Director Center for Naval Research and Education",
+      "contact_email": "krmahesh@umich.edu",
+      "research_interests_raw": "High-fidelity simulation of complex, multi-physics, turbulent flows relevant to several applications including: marine propulsors, multiphase flows, cavitation, hydroacoustics, superhydrophobic surfaces, biofouling, fluid/structure interaction, flow stability, and moving-body flows. Xiaoming Mao",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "krishnan-mahesh"
+    },
+    {
+      "name": "Xiaoming Mao",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/xiaoming-mao/",
+      "title": "Professor, Mechanical Engineering Professor, Physics",
+      "contact_email": "maox@umich.edu",
+      "research_interests_raw": "Professor Mao's research interests span the areas of soft condensed matter, materials physics, and statistical mechanics. Her current research mainly runs along two lines: a unified view of soft elasticity and fundamental rules of self-assembly. The project on soft elasticity centers around the idea of isostaticity, i.e., the point where the numbers of degrees of freedom and constraints of a system become equal. The isostatic point not only exhibit rich physics itself such as floppy modes, criticality, and conformal invariance, but also plays an important role in a broad-range of real materials such as jammed solids, glasses, fiber networks, framework-structure crystals, et cetera. Professor Mao\u2019s group extensively investigates the physics of the isostatic point and the design of novel materials based on isostaticity. The project of self-assembly is mainly concerned with the fundamental ",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "xiaoming-mao"
+    },
+    {
+      "name": "Edgar Meyhofer",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/edgar-meyhofer/",
+      "title": "Professor, Mechanical Engineering Professor, Biomedical Engineering",
+      "contact_email": "meyhofer@umich.edu",
+      "research_interests_raw": "Nanotechnology, bionanotechnology, cellular and molecular biomechanics Tian Mi",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "edgar-meyhofer"
+    },
+    {
+      "name": "Robert Middleton",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/robert-middleton/",
+      "title": "Associate Research Scientist, Mechanical Engineering",
+      "contact_email": "rjmidd@umich.edu",
+      "research_interests_raw": "Combustion, focusing primarily on automotive engines. Simulations of spark ignited and advanced autoignition combustion modes using 1D models and 3D CFD including large scale parallel simulations. Impact of fuel properties and kinetics on engine efficiency and emissions. Amit Misra",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "robert-middleton"
+    },
+    {
+      "name": "Amit Misra",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/amit-misra/",
+      "title": "Professor, Mechanical Engineering Professor, Materials Science & Engineering",
+      "contact_email": "amitmis@umich.edu",
+      "research_interests_raw": "Nano mechanics, electron microscopy, laser processed metallic alloys, metallic thin films Talia Moore",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "amit-misra"
+    },
+    {
+      "name": "Talia Moore",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/talia-moore/",
+      "title": "Assistant Professor, Mechanical Engineering Assistant Professor, Robotics",
+      "contact_email": "taliaym@umich.edu",
+      "research_interests_raw": "Dynamics of terrestrial locomotion, arrhythmic and transient locomotion, bio-inspired design, bio-inspired robotics, soft robotics, animal-robot interaction Sungmin Nam",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "talia-moore"
+    },
+    {
+      "name": "Sungmin Nam",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/sungmin-nam/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "sungminn@umich.edu",
+      "research_interests_raw": "Mechanobiology, Biomaterials, Biomechanics, Medical devices, Mechanotherapy Jun Ni",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "sungmin-nam"
+    },
+    {
+      "name": "Lauro Ojeda",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/lauro-ojeda/",
+      "title": "Research Scientist, Mechanical Engineering",
+      "contact_email": "lojeda@umich.edu",
+      "research_interests_raw": "Inertial sensing, sensor data fusion, Kalman filtering, localization, biomechanics, and human gait analysis Chinedum Okwudire",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "lauro-ojeda"
+    },
+    {
+      "name": "Chinedum Okwudire",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/chinedum-okwudire/",
+      "title": "Professor, Mechanical Engineering Director, University of Michigan Advanced Manufacturing Institute (UMAMI)",
+      "contact_email": "okwudire@umich.edu",
+      "research_interests_raw": "Manufacturing Automation: with key applications in additive manufacturing (or 3-D printing), nano-positioning, machining, distributed manufacturing, and smart manufacturing systems Kenn Oldham",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "chinedum-okwudire"
+    },
+    {
+      "name": "Kenn Oldham",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/kenn-oldham/",
+      "title": "Professor, Mechanical Engineering",
+      "contact_email": "oldham@umich.edu",
+      "research_interests_raw": "Micro-mechatronic systems for endoscopic imaging; micro-robotic systems for manipulation and autonomous locomotion; identification of physiological feedback systems using novel sensing technologies; modeling, system identification, and state estimation for microelectromechanical systems (MEMS) Gabor Orosz",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "kenn-oldham"
+    },
+    {
+      "name": "Gabor Orosz",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/gabor-orosz/",
+      "title": "Professor, Mechanical Engineering Professor, Civil and Environmental Engineering",
+      "contact_email": "orosz@umich.edu",
+      "research_interests_raw": "Nonlinear dynamics and control, time delay systems, connected and automated vehicles, traffic flow Jwo Pan",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "gabor-orosz"
+    },
+    {
+      "name": "Young Geun Park",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/young-geun-park/",
+      "title": "Associate Research Scientist, Mechanical Engineering",
+      "contact_email": "ygpark@umich.edu",
+      "research_interests_raw": "Optofluidics; Functional Nanomaterials; Bioinspired Active Optical System; Solar Optics Based Active Panel for Energy Harvesting and Storage: Integrated Molecular Detection System",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "young-geun-park"
+    },
+    {
+      "name": "Kevin Pipe",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/kevin-pipe/",
+      "title": "Professor, Mechanical Engineering Professor, Applied Physics Program Professor, Electrical Engineering and Computer Science Department Associate Dean for Undergraduate Education, College of Engineering",
+      "contact_email": "pipe@umich.edu",
+      "research_interests_raw": "Microscale heat transfer, especially related to electronic and optoelectronic devices; thermoelectric energy conversion; medical applications of heat transfer Bogdan Popa",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "kevin-pipe"
+    },
+    {
+      "name": "Bogdan Popa",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/bogdan-popa/",
+      "title": "Associate Professor, Mechanical Engineering",
+      "contact_email": "bipopa@umich.edu",
+      "research_interests_raw": "Design, optimization, and dynamics of new generations of engineered materials (metamaterials) that allow improved control over the propagation of acoustic, elastic and electromagnetic waves with applications in biomedical engineering, telecommunications, aero- and underwater acoustics; noise control; smart materials; mechatronics. Venkat Raman",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "bogdan-popa"
+    },
+    {
+      "name": "Venkat Raman",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/venkat-raman/",
+      "title": "Professor, Mechanical Engineering Professor, Aerospace Engineering",
+      "contact_email": "ramanvr@umich.edu",
+      "research_interests_raw": "Development of computational models for turbulent reacting flows with application to aircraft and scramjet engines, stationary power generation, and synthesis of novel materials. High-performance supercomputers and detailed numerical simulations to study the performance of combustion devices. Recent focus in the areas of numerical error analysis, uncertainty quantification, hypersonic design and optimization, and rotating detonation engines. Pramod Sangi Reddy",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "venkat-raman"
+    },
+    {
+      "name": "Pramod Sangi Reddy",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/pramod-sangi-reddy/",
+      "title": "Professor, Mechanical Engineering Professor, Materials Science and Engineering",
+      "contact_email": "pramodr@umich.edu",
+      "research_interests_raw": "Nanoscale charge and energy transport, thermoelectric devices, microscale heat transfer, organic photovoltaics, scanning probe microscopy and optics. Elliott Rouse",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "pramod-sangi-reddy"
+    },
+    {
+      "name": "Elliott Rouse",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/elliott-rouse/",
+      "title": "Associate Professor, Mechanical Engineering Associate Professor, Robotics",
+      "contact_email": "ejrouse@umich.edu",
+      "research_interests_raw": "Precision machine design; development of exoskeletons / robotic prostheses; brushless motors; dynamics of human locomotion; human perception and psychophysics; neural control of movement; biomechanics; human performance augmentation Kazu Saitou",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "elliott-rouse"
+    },
+    {
+      "name": "Kazu Saitou",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/kazu-saitou/",
+      "title": "Professor, Mechanical Engineering",
+      "contact_email": "kazu@umich.edu",
+      "research_interests_raw": "Computational design. Manufacturability-driven structural topology optimization. Multi-material, multi-process, multi-component structural topology optimization (M^3 TO). Computational optimal synthesis of structural assemblies. Physics-informed AI for structural and assembly optimization. Anchal Sareen",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "kazu-saitou"
+    },
+    {
+      "name": "Anchal Sareen",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/anchal-sareen/",
+      "title": "Assistant Professor, Mechanical Engineering Assistant Professor, Naval Architecture & Marine Engineering",
+      "contact_email": "asareen@umich.edu",
+      "research_interests_raw": "Experimental Hydrodynamics with an emphasis on renewable energy harvesting and energy-efficient marine propulsion systems. Ulrich Scheven",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "anchal-sareen"
+    },
+    {
+      "name": "Ulrich Scheven",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/ulrich-scheven/",
+      "title": "Associate Research Scientist, Mechanical Engineering",
+      "contact_email": "uscheven@umich.edu",
+      "research_interests_raw": "Development and use of quantitative nuclear magnetic resonance techniques to explore and constrain the physics of displacements (1) in full volume non-linear elasticity in soft tissues, tendons, ligaments, polymers, elastomers; (2) in Newtonian and non-Newtonian fluid flow and tracer transport within natural and manufactured porous media. Bill Schultz",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "ulrich-scheven"
+    },
+    {
+      "name": "Chenhui Shao",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/chenhui-shao/",
+      "title": "Associate Professor, Mechanical Engineering",
+      "contact_email": "chshao@umich.edu",
+      "research_interests_raw": "Smart manufacturing; machine learning; statistics; big data analytics; in-situ process monitoring and real-time control; materials joining; manufacturing systems control and automation; quality control; robotic additive manufacturing; 3D metrology; cyber-physical infrastructure; human-robot collaboration. Chengzhi Shi",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "chenhui-shao"
+    },
+    {
+      "name": "Chengzhi Shi",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/chengzhi-shi/",
+      "title": "Associate Professor, Mechanical Engineering",
+      "contact_email": "czshi@umich.edu",
+      "research_interests_raw": "Dr. Shi\u2019s research focuses on physical acoustics, wave propagation, structural acoustics, underwater acoustics, metamaterials, biomedical ultrasound imaging, and therapeutic ultrasound. Particularly, he is interested in understanding the wave physics of vortex acoustic waves and their applications for underwater communications and therapies for different diseases, developing new ultrasound imaging techniques for cellular imaging and medical diagnostics, and creating novel experimental platforms for the studies of condense matter and quantum physics. Albert Shih",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "chengzhi-shi"
+    },
+    {
+      "name": "Albert Shih",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/albert-shih/",
+      "title": "Professor, Mechanical Engineering Professor, Biomedical Engineering Yoram Koren Collegiate Professor of Engineering, College of Engineering Faculty Member, Institute of Gerontology",
+      "contact_email": "shiha@umich.edu",
+      "research_interests_raw": "Manufacturing; semiconductor manufacturing; biomedical device design; biomedical manufacturing; computed tomography for inspection; neurovascular devices; precision machining of advanced engineering materials; additive manufacturing; cyber-physical manufacturing systems for assistive technology Alex Shorter",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "albert-shih"
+    },
+    {
+      "name": "Alex Shorter",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/alex-shorter/",
+      "title": "Associate Professor, Mechanical Engineering",
+      "contact_email": "kshorter@umich.edu",
+      "research_interests_raw": "Design, Fabrication, Control and Evaluation of Human Assist Devices, Gait Analysis, Biomechanics, Instrument Design. Volker Sick",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "alex-shorter"
+    },
+    {
+      "name": "Volker Sick",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/volker-sick/",
+      "title": "Professor, Mechanical Engineering Arthur F. Thurnau Professor, Mechanical Engineering DTE Energy Professor of Advanced Energy Research Director, Global CO2 Initiative",
+      "contact_email": "vsick@umich.edu",
+      "research_interests_raw": "Accelerating deployments of CO2-utilization technologies that will innovate existing infrastructure and manufacturing processes, thereby finding sustainable solutions to help address the climate crisis. Developing and applying optical measurement techniques to diagnose diseases of the human eye. Jason Siegel",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "volker-sick"
+    },
+    {
+      "name": "Jason Siegel",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jason-siegel/",
+      "title": "Research Associate Professor, Mechanical Engineering",
+      "contact_email": "siegeljb@umich.edu",
+      "research_interests_raw": "Battery Modeling, Control and State of Health Estimation. Control of Hybrid Electric Powertrains. Control of Solid oxide and low temperature PEM fuel cells. Kathleen Sienko",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "jason-siegel"
+    },
+    {
+      "name": "Kathleen Sienko",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/kathleen-sienko/",
+      "title": "Professor, Mechanical Engineering Arthur F. Thurnau Professor, Mechanical Engineering",
+      "contact_email": "sienko@umich.edu",
+      "research_interests_raw": "Sensory augmentation, rehabilitation engineering, biomechanics, medical device design (emphasis on global health contexts and task-shifting devices), design science, engineering design education Steve Skerlos",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "kathleen-sienko"
+    },
+    {
+      "name": "Steve Skerlos",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/steve-skerlos/",
+      "title": "J. Reid and Polly Anderson Professor of Manufacturing Professor, Mechanical Engineering Professor, Civil and Environmental Engineering Arthur F. Thurnau Professor, Mechanical Engineering",
+      "contact_email": "skerlos@umich.edu",
+      "research_interests_raw": "Environmental and sustainable technology systems; life cycle product design optimization; pollution prevention technologies for manufacturing; metalworking fluid formulation and performance; membrane filtration; supercritical fluid delivery of lubricants; biological detection and control in aqueous systems; technology policy analysis. Anna Stefanopoulou",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "steve-skerlos"
+    },
+    {
+      "name": "Anna Stefanopoulou",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/anna-stefanopoulou/",
+      "title": "Professor, Mechanical Engineering Huei Peng Distinguished University Professor of Mechanical Engineering William Clay Ford Professor of Technology",
+      "contact_email": "annastef@umich.edu",
+      "research_interests_raw": "Estimation and control of internal combustion engines and electrochemical processes such as fuel cells and batteries Jeffrey Stein",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "anna-stefanopoulou"
+    },
+    {
+      "name": "Jing Sun",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jing-sun/",
+      "title": "Professor, Mechanical Engineering Michael G. Parsons Collegiate Professor of Naval Architecture and Marine Engineering Chair, Naval Architecture and Marine Engineering",
+      "contact_email": "jingsun@umich.edu",
+      "research_interests_raw": "Theory, methodologies and tools for control system integration and optimization, with applications to marine and automotive systems; Connected and automated transportation systems; Renewable energy systems. Thomas Swinburne",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "jing-sun"
+    },
+    {
+      "name": "Thomas Swinburne",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/thomas-swinburne/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "tswin@umich.edu",
+      "research_interests_raw": "Plasticity of metallic alloys, irradiation damage, statistical models, rare event sampling, uncertainty quantification, forecasting Sita Syal",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "thomas-swinburne"
+    },
+    {
+      "name": "Sita Syal",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/sita-syal/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "syalsm@umich.edu",
+      "research_interests_raw": "Energy justice and equity, sustainable energy and mobility systems, human-centered design methods, design needfinding, socially-engaged design, community engagement, optimization, cost modeling, agent-based modeling, uncertainty quantification, multi-attribute decision making, energy policy. Wenda Tan",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "sita-syal"
+    },
+    {
+      "name": "Wenda Tan",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/wenda-tan/",
+      "title": "Associate Professor, Mechanical Engineering",
+      "contact_email": "wendatan@umich.edu",
+      "research_interests_raw": "Our current research efforts have been focused on physics-based modeling for various advanced manufacturing processes. Specifically we are working on computational fluid dynamics and computational materials modeling for additive manufacturing, welding, casting, powder metallurgy, and electrohydrodynamic printing processes. Jing Tang",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "wenda-tan"
+    },
+    {
+      "name": "Jing Tang",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jing-tang/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "jingtang@umich.edu",
+      "research_interests_raw": "Clay Minerals, Critical Minerals, Metals, and Materials (CMMM), Carbon Capture, Utilization, and Sequestration; Battery; Catalysis; Electrochemistry; Cryochemistry; Thermal Sciences; Natural Wood Cellulose; Atomic Engineering; Materials Synthesis, Manufacturing, and Characterization; Solid-State Chemistry; Biomaterials; Bioelectronics. Alan Taub",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "jing-tang"
+    },
+    {
+      "name": "Alan Taub",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/alan-taub/",
+      "title": "Professor, Mechanical Engineering Professor, Materials Science and Engineering",
+      "contact_email": "alantaub@umich.edu",
+      "research_interests_raw": "My major research interest is in understanding the inter-relationships between processing, microstructure and properties in materials; with an emphasis on mechanical, electrical and magnetic applications. Present research focus is on lightweight structures for land, sea and air transportation applications. Projects include incremental forming of sheet metal and nano-particle additions to aluminum alloys. For polymer composites, we are studying the effect of carbon nanotube and graphene additions to polymer composites utilizing electrical and magnetic fields to produce oriented particles for improved mechanical properties. Karen A. Thole",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "alan-taub"
+    },
+    {
+      "name": "Karen A. Thole",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/karen-a-thole/",
+      "title": "Robert J Vlasic Dean of Engineering Professor, Mechanical Engineering Professor, Aerospace Engineering",
+      "contact_email": "kthole@umich.edu",
+      "research_interests_raw": "Convective heat transfer, turbulent boundary layers, high freestream turbulence, gas turbine heat transfer. Michael Thouless",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "karen-a-thole"
+    },
+    {
+      "name": "Michael Thouless",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/michael-thouless/",
+      "title": "Professor, Mechanical Engineering Professor, Materials Science and Engineering Arthur F. Thurnau Professor, Mechanical Engineering Janine Johnson Weins Professor",
+      "contact_email": "thouless@umich.edu",
+      "research_interests_raw": "Micromechanics modeling of materials; interfacial fracture mechanics and adhesion; mechanical properties of thin films and coatings; toughening mechanisms in polymers; mechanical properties of structural adhesives. Dawn Tilbury",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "michael-thouless"
+    },
+    {
+      "name": "Dawn Tilbury",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/dawn-tilbury/",
+      "title": "Professor, Mechanical Engineering Professor, Robotics Professor, Electrical Engineering & Computer Science Herrick Professor of Engineering",
+      "contact_email": "tilbury@umich.edu",
+      "research_interests_raw": "Control theory and applications; logic control for manufacturing systems including diagnostics, fault handling, and recovery; modular control systems; networked control systems; performance management of computing systems; web-based tutorials for controls education. Serife Tol",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "dawn-tilbury"
+    },
+    {
+      "name": "Serife Tol",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/serife-tol/",
+      "title": "Associate Professor, Mechanical Engineering",
+      "contact_email": "stol@umich.edu",
+      "research_interests_raw": "Dynamical systems, smart materials, metamaterials, phononic crystals, electromechanical systems, energy harvesting, mechanical vibrations, wave propagation Aaron Towne",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "serife-tol"
+    },
+    {
+      "name": "Aaron Towne",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/aaron-towne/",
+      "title": "Associate Professor, Mechanical Engineering",
+      "contact_email": "towne@umich.edu",
+      "research_interests_raw": "Fluid mechanics, reduced-complexity modeling, data-driven modeling, flow control, aeroacoustics",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "aaron-towne"
+    },
+    {
+      "name": "Jacinto Ulloa",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/jacinto-ulloa/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "julloa@umich.edu",
+      "research_interests_raw": "Computational mechanics; solid mechanics; micromechanics; metamaterials; disordered/granular media; data-driven computing; variational methods; homogenization; multiscale analysis; generalized continua; inelasticity; material failure; multi-physics systems. Galip Ulsoy",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "jacinto-ulloa"
+    },
+    {
+      "name": "Ramanarayan Vasudevan",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/ramanarayan-vasudevan/",
+      "title": "Associate Professor, Mechanical Engineering Associate Professor, Robotics",
+      "contact_email": "ramv@umich.edu",
+      "research_interests_raw": "Optimization, modeling, design, and control of robotic systems that interact with humans and the environment. My group works on a variety of applications including locomotion of legged robots, prosthetic control, autonomous vehicles, and soft robots. Christopher Vermillion",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "ramanarayan-vasudevan"
+    },
+    {
+      "name": "Christopher Vermillion",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/christopher-vermillion/",
+      "title": "Associate Professor, Mechanical Engineering",
+      "contact_email": "cvermill@umich.edu",
+      "research_interests_raw": "Dr. Vermillion\u2019s interests lie in the application of optimal control and design optimization tools to cutting-edge problems in renewable energy and energy efficiency. He is particularly interested in the development of tethered systems for harnessing wind and marine hydrokinetic energy, the development of persistent mission planning algorithms for renewably powered robotic networks, and the use of connected and autonomous vehicles to realize substantial fuel economy improvements over conventional vehicles. Angela Violi",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "christopher-vermillion"
+    },
+    {
+      "name": "Angela Violi",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/angela-violi/",
+      "title": "Arthur F. Thurnau Professor, Mechanical Engineering Dennis Assanis Collegiate Professor, College of Engineering Associate Chair and Professor, Mechanical Engineering Professor, Chemical Engineering Professor, Electrical Engineering and Computer Science Professor, Applied Physics",
+      "contact_email": "avioli@umich.edu",
+      "research_interests_raw": "Multiscale simulations of complex systems, nanoparticle growth and self-assembly, nanoparticle interactions with biomolecular systems, applied chemical kinetics, aerosols. Chemical and physical properties of fuels, alternative fuels, lubricants. Venkat Viswanathan",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "angela-violi"
+    },
+    {
+      "name": "Venkat Viswanathan",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/venkat-viswanathan/",
+      "title": "Associate Professor, Mechanical Engineering Associate Professor, Aerospace Engineering",
+      "contact_email": "venkvis@umich.edu",
+      "research_interests_raw": "Electric aviation, Electric vehicles, Batteries, Scientific machine learning",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "venkat-viswanathan"
+    },
+    {
+      "name": "Anthony Waas",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/anthony-waas/",
+      "title": "Professor, Mechanical Engineering Felix Pawlowski Collegiate Professor, Aerospace Engineering",
+      "contact_email": "awaas@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "anthony-waas"
+    },
+    {
+      "name": "Kon-Well Wang",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/kon-well-wang/",
+      "title": "Professor, Mechanical Engineering A. Galip Ulsoy Distinguished University Professor of Engineering Stephen P. Timoshenko Collegiate Professor of Mechanical Engineering",
+      "contact_email": "kwwang@umich.edu",
+      "research_interests_raw": "Structural dynamics and controls, including emerging intelligent structures harnessing functional materials, reconfigurable origami & metamaterials, and embodied mechano-intelligence via wave-based computing and physical reservoir computing, for engineering functions such as vibration & noise controls, wave manipulation & steering, energy harvesting, and structural health monitoring. Thomas Wang",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "kon-well-wang"
+    },
+    {
+      "name": "Thomas Wang",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/thomas-wang/",
+      "title": "Professor, Mechanical Engineering Professor, Internal Medicine Professor, Biomedical Engineering",
+      "contact_email": "thomaswa@umich.edu",
+      "research_interests_raw": "Biomedical instrument design, imaging systems, micro-optics, bio-microelectromechanical systems (bio-MEMS), miniature sensors, mirrors and actuators Alan Wineman",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "thomas-wang"
+    },
+    {
+      "name": "Margaret Wooldridge",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/margaret-wooldridge/",
+      "title": "Professor, Mechanical Engineering Arthur F. Thurnau Professor, Mechanical Engineering Walter J. Weber, Jr. Professor of Sustainable Energy, Environmental and Earth Systems Engineering",
+      "contact_email": "mswool@umich.edu",
+      "research_interests_raw": "Sustainable and renewable energy, power and propulsion systems; combustion, fluid mechanics and thermodynamics; pollution mitigation; high-efficiency, low-resource consumption energy systems; reaction kinetics; aerosol formation, transport and impact; optical diagnostics; gas dynamics Hongyi Xiao",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "margaret-wooldridge"
+    },
+    {
+      "name": "Hongyi Xiao",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/hongyi-xiao/",
+      "title": "Assistant Professor, Mechanical Engineering",
+      "contact_email": "hongyix@umich.edu",
+      "research_interests_raw": "Our research group focuses on granular materials consisting of discrete particles that can collectively behave like a solid, a liquid, or a gas. We aim to reveal their related solid and fluid mechanics as well as statistical physics using a combination of 2D and 3D experiments, discrete particle simulations, as well as machine-learning informed modeling. The current focus is to understand how they deform from a structure-property perspective, based on which we design particle interactions and dynamics at the microscopic scale for novel collective behaviors at the material scale. We are also interested in how animals and robots interact with granular matter as a soft and yielding medium.",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "hongyi-xiao"
+    },
+    {
+      "name": "Euisik Yoon",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/euisik-yoon/",
+      "title": "Professor, Mechanical Engineering Professor, Electrical Engineering & Computer Science Professor, Biomedical Engineering Director, NSF International Program for Advancement of Neurotechnology (IPAN)",
+      "contact_email": "esyoon@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "euisik-yoon"
+    },
+    {
+      "name": "Xuedong Zhai",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/xuedong-zhai/",
+      "title": "Assistant Research Scientist, Mechanical Engineering",
+      "contact_email": "xzhai@umich.edu",
+      "research_interests_raw": "",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "xuedong-zhai"
+    },
+    {
+      "name": "Lei Zuo",
+      "profile_url": "https://me.engin.umich.edu/people/faculty/lei-zuo/",
+      "title": "Professor, Mechanical Engineering Professor, Naval Architecture and Marine Engineering",
+      "contact_email": "leizuo@umich.edu",
+      "research_interests_raw": "Marine renewable energy (ocean waves, tidal currents, offshore wind), blue economy, energy harvesting, vibration/dynamics and control, mechatronics design, vehicles and transportation, and advanced manufacturing. University of Michigan Logo ###### Mechanical Engineering G.G. Brown Laboratory 2350 Hayward Ann Arbor MI 48109 Phone: (734) 764-2694 ###### Menu * Admissions * About * Academics * Research * People * News & Events * Quicklinks ###### More Links * Giving * [Campus Safety Policy](http://safety.engin.umich.edu/) * [U-M Home](https://umich.edu/) * [Non-Discrimination Policy](https://oie.umich.edu/) ###### Social * [LinkedIn](https://www.linkedin.com/groups/90070) * [Instagram](https://www.instagram.com/umichme/) * [Facebook](https://www.facebook.com/UMMechanicalEngineering/) * [Flickr](https://www.flickr.com/photos/136347728@N08/) * [YouTube](https://www.youtube.com/channel/UCN2TjT",
+      "emeritus": false,
+      "lecturer_only": false,
+      "slug": "lei-zuo"
+    }
+  ]
+}

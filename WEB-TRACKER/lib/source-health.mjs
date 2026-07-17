@@ -31,6 +31,9 @@ export function summarizeSourceHealth({ registryPath, statePath, jobsPath, phdPa
         status,
         api_url: source.api_url || null,
         careers_url: source.careers_url || null,
+        provider: ss.provider || source.platform || null,
+        access_status: ss.access_status || null,
+        last_error: ss.last_error || null,
         notes: source.notes || null,
       });
     }
@@ -41,6 +44,8 @@ export function summarizeSourceHealth({ registryPath, statePath, jobsPath, phdPa
         name: source.name,
         next_poll: ss.next_poll,
         last_poll: ss.last_poll || null,
+        provider: ss.provider || source.platform || null,
+        access_status: ss.access_status || null,
       });
     }
   }

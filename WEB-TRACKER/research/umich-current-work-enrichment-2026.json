@@ -1,0 +1,1664 @@
+{
+  "research_date": "2026-07-09",
+  "research_run": "trun_dd47611047ba451990e2122c73439b1b",
+  "method": "tiered Parallel web_fetch + profile interest fallback; no invented publications",
+  "counts": {
+    "store_total": 197,
+    "depth_A_targets": 59,
+    "depth_B_targets": 90,
+    "depth_C_targets": 48,
+    "updated_current_focus": 180,
+    "updated_recent_publication": 8,
+    "verified_seed_rows": 45,
+    "enrichment_rows": 183
+  },
+  "enrichments": [
+    {
+      "id": "umich-name-ganesh-harish-hydrodynamic-cavitation",
+      "name": "Harish Ganesh",
+      "depth": "A",
+      "current_focus": "Fluid dynamics research focused on hydrodynamic cavitation and experimental methods for multiphase flow diagnostics.",
+      "recent_publication": "",
+      "source_url": "https://name.engin.umich.edu/people/ganesh-harish/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-ryan-mcbride-ppml",
+      "name": "Ryan McBride",
+      "depth": "A",
+      "current_focus": "Director of PPML / MACH; experimental and theoretical MagLIF and magnetically driven cylindrically imploding plasmas with pulsed-power diagnostics.",
+      "recent_publication": "",
+      "source_url": "https://ners.engin.umich.edu/people/mcbride-ryan/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-name-ceccio-steven-l-multiphase-flows",
+      "name": "Steven L. Ceccio",
+      "depth": "A",
+      "current_focus": "Multiphase and high-Reynolds-number fluid mechanics including cavitation, propulsors/turbomachinery, drag reduction, and flow diagnostics development.",
+      "recent_publication": "",
+      "source_url": "https://name.engin.umich.edu/people/ceccio-steven-l/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-karl-krushelnick-cuos-zeus",
+      "name": "Karl Krushelnick",
+      "depth": "A",
+      "current_focus": "High-intensity short-pulse laser systems, laser-plasma interactions, table-top laser accelerators, high-field physics, and X-ray laser applications at CUOS.",
+      "recent_publication": "",
+      "source_url": "https://ners.engin.umich.edu/people/krushelnick-karl/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-igor-jovanovic-ansg",
+      "name": "Igor Jovanovic",
+      "depth": "A",
+      "current_focus": "Radiation detection/measurement, intense laser science, and laser-matter interactions for nuclear security, nuclear energy, and fundamental science (Applied Nuclear Science Group).",
+      "recent_publication": "",
+      "source_url": "https://ners.engin.umich.edu/people/jovanovic-igor/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-margaret-wooldridge-combustion",
+      "name": "Margaret Wooldridge",
+      "depth": "A",
+      "current_focus": "Sustainable energy and propulsion systems spanning combustion, reaction kinetics, aerosol formation, optical diagnostics, and pollution mitigation.",
+      "recent_publication": "2024 — Q&A: Getting serious about atmospheric methane removal (National Academies report discussion) — https://me.engin.umich.edu/news-events/news/qa-getting-serious-about-atmospheric-methane-removal/",
+      "source_url": "https://me.engin.umich.edu/people/faculty/margaret-wooldridge/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-paolo-elvati-nanoparticle-formations",
+      "name": "Paolo Elvati",
+      "depth": "A",
+      "current_focus": "Computational nanoparticle formation/interactions (MD, ML, stochastic solvers) for biological systems, non-thermal plasma, and reactive gas-phase conditions.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/paolo-elvati/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-steve-ceccio-fluid-mechanics",
+      "name": "Steve Ceccio",
+      "depth": "A",
+      "current_focus": "Experimental multiphase flows, cavitation and bubbly flows, with optical flow measurement and electrical/radiation tomography methods.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/steve-ceccio/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-volker-sick-optical-diagnostics",
+      "name": "Volker Sick",
+      "depth": "A",
+      "current_focus": "CO2-utilization technology deployment for infrastructure/manufacturing sustainability, plus optical measurement techniques for eye-disease diagnostics.",
+      "recent_publication": "2023 — ME professor receives ASME 2023 Edwin F. Church Medal — https://me.engin.umich.edu/news-events/news/me-professor-receives-asme-2023-edwin-f-church-medal/",
+      "source_url": "https://me.engin.umich.edu/people/faculty/volker-sick/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-gennady-fiksel-cuos",
+      "name": "Gennady Fiksel",
+      "depth": "A",
+      "current_focus": "High-field / pulsed-power plasma experiments affiliated with CUOS High Field Science; magnetized plasma and pulsed-power diagnostics (verify latest lab page before outreach).",
+      "recent_publication": "",
+      "source_url": "https://cuos.engin.umich.edu/researchgroups/hfs/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-name-maki-kevin-j-marine-computational-mechani",
+      "name": "Kevin J. Maki",
+      "depth": "A",
+      "current_focus": "Director of the Aaron Friedman Marine Hydrodynamics Laboratory; marine computational mechanics and experimental hydrodynamics via MHL / BRIDGE.",
+      "recent_publication": "",
+      "source_url": "https://name.engin.umich.edu/people/maki-kevin-j/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-name-bernitsas-michael-marine-renewable-energy",
+      "name": "Michael Bernitsas",
+      "depth": "A",
+      "current_focus": "Marine Renewable Energy Laboratory lead; vortex-induced vibration energy harvesting (VIVACE) and related marine renewable systems.",
+      "recent_publication": "",
+      "source_url": "https://name.engin.umich.edu/people/bernitsas-michael/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-alec-thomas-cuos",
+      "name": "Alec Thomas",
+      "depth": "A",
+      "current_focus": "Experimental and theoretical high-power laser–plasma interactions using HERCULES and Lambda-cubed systems in the CUOS High Field Science group.",
+      "recent_publication": "",
+      "source_url": "https://ners.engin.umich.edu/people/thomas-alec/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-john-foster-pstl",
+      "name": "John Foster",
+      "depth": "A",
+      "current_focus": "Low-temperature plasmas for advanced space propulsion, plasma diagnostics, processing plasmas, and environmental plasma remediation (Plasma Science and Technology Lab).",
+      "recent_publication": "",
+      "source_url": "https://ners.engin.umich.edu/people/foster-john/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-kenn-oldham-micro-mechatronic-systems-fo",
+      "name": "Kenn Oldham",
+      "depth": "A",
+      "current_focus": "Micro-mechatronic systems for endoscopic imaging, micro-robotic manipulation/locomotion, and MEMS modeling/system identification/state estimation.",
+      "recent_publication": "2024 — ME researchers receive $1.7M to develop endoscopic microscope that may help detect neurological diseases — https://me.engin.umich.edu/news-events/news/1-7-million-for-a-new-endoscopic-microscopy-tool/",
+      "source_url": "https://me.engin.umich.edu/people/faculty/kenn-oldham/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-louise-willingale-zeus",
+      "name": "Louise Willingale",
+      "depth": "A",
+      "current_focus": "Intense laser-plasma interactions including laser-driven ion acceleration, relativistic laser propagation, and proton deflectometry; Director of NSF ZEUS laser facility.",
+      "recent_publication": "",
+      "source_url": "https://willingale.engin.umich.edu/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-name-sareen-anchal-experimental-hydrodynamics",
+      "name": "Anchal Sareen",
+      "depth": "A",
+      "current_focus": "Experimental Fluid Dynamics Laboratory developing flow-control strategies for unmanned underwater/aerial vehicles, bio-inspired propulsion, and renewable-energy harvesting.",
+      "recent_publication": "",
+      "source_url": "https://name.engin.umich.edu/people/sareen-anchal/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-andre-boehman-automotive-engineering",
+      "name": "Andre Boehman",
+      "depth": "A",
+      "current_focus": "Director of W.E. Lay Automotive Laboratory; fuels, combustion, emissions, and energy-conversion thermodynamics for automotive propulsion.",
+      "recent_publication": "2023 — Two ME faculty receive Fulbright Scholar Awards — https://me.engin.umich.edu/news-events/news/two-me-faculty-receive-fulbright-scholar-awards/",
+      "source_url": "https://me.engin.umich.edu/people/faculty/andre-boehman/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-anna-stefanopoulou-estimation",
+      "name": "Anna Stefanopoulou",
+      "depth": "A",
+      "current_focus": "Estimation and control of internal combustion engines and electrochemical processes such as fuel cells and batteries, including aging and fault detection.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/anna-stefanopoulou/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-benjamin-jorns-pepl",
+      "name": "Benjamin Jorns",
+      "depth": "A",
+      "current_focus": "Co-director of PEPL; electric propulsion wear/stability, low-temperature plasma turbulence, plasma diagnostics, and high-power EP testing (JANUS).",
+      "recent_publication": "",
+      "source_url": "https://aerospace.engin.umich.edu/people/jorns-benjamin/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-eric-johnsen-me",
+      "name": "Eric Johnsen",
+      "depth": "A",
+      "current_focus": "Multiphase flow, cavitation/bubble dynamics, high-speed flow and shock waves, interfacial instabilities, plasmas, and high-performance computing for flow physics.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/eric-johnsen/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-name-sun-jing-adaptive-control",
+      "name": "Jing Sun",
+      "depth": "A",
+      "current_focus": "RACELab lead applying control theory and optimization to marine and automotive propulsion systems; real-time adaptive control engineering.",
+      "recent_publication": "",
+      "source_url": "https://name.engin.umich.edu/people/sun-jing/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-jon-estrada-experimental-mechanics-of-so",
+      "name": "Jon Estrada",
+      "depth": "A",
+      "current_focus": "Experimental Soft Mechanics Lab: soft/bio-material characterization, high-speed rheometry, inertial cavitation, photoacoustic/laser microscopy, and DIC/DVC image methods.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/jon-estrada/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-name-kartik-praful-naik-marine-renewable-energy",
+      "name": "Kartik Praful Naik",
+      "depth": "A",
+      "current_focus": "Experimental renewable-energy harvesting and co-design/real-time control for underwater kite and reconfigurable turbine concepts (ARPA-E SHARKS project manager).",
+      "recent_publication": "",
+      "source_url": "https://name.engin.umich.edu/people/kartik-praful-naik/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-martin-erinin-experimental-fluid-mechanics",
+      "name": "Martin Erinin",
+      "depth": "A",
+      "current_focus": "Experimental multiphase and free-surface flows, surfactant-dominated flows, and optical measurement techniques for thermo-fluids with naval/environmental applications.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/martin-erinin/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-robert-middleton-combustion",
+      "name": "Robert Middleton",
+      "depth": "A",
+      "current_focus": "Automotive engine combustion simulations (1D and 3D CFD) spanning spark-ignited and advanced autoignition modes, fuel properties, efficiency, and emissions.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/robert-middleton/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-name-mccoy-timothy-marine-power-and-propulsion",
+      "name": "Timothy McCoy",
+      "depth": "A",
+      "current_focus": "Adjunct / engineering-practice lead for Marine Engineering Laboratory; ship power and energy systems design, construction, and operation with ONR-backed experimental facilities.",
+      "recent_publication": "",
+      "source_url": "https://name.engin.umich.edu/people/mccoy-timothy/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-venkat-raman-scramjet-engines",
+      "name": "Venkat Raman",
+      "depth": "A",
+      "current_focus": "Computational models for turbulent reacting flows (aircraft/scramjet, power generation, materials synthesis), with recent focus on hypersonics and rotating detonation engines.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/venkat-raman/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-young-geun-park-optofluidics",
+      "name": "Young Geun Park",
+      "depth": "A",
+      "current_focus": "Optofluidics, functional nanomaterials, bioinspired active optical systems, and solar-optics panels for energy harvesting/storage and molecular detection.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/young-geun-park/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-carolyn-kuranz-chedar",
+      "name": "Carolyn Kuranz",
+      "depth": "A",
+      "current_focus": "Experimental high-energy-density plasmas, hydrodynamic instabilities, radiation hydrodynamics, and magnetized plasmas on NIF and Omega laser facilities; Director of CHEDAR.",
+      "recent_publication": "",
+      "source_url": "https://ners.engin.umich.edu/people/kuranz-carolyn/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-kira-barton-control-theory",
+      "name": "Kira Barton",
+      "depth": "A",
+      "current_focus": "BRG combines novel sensing, planning, and control with experimental implementation for smart manufacturing, multi-robot systems, and high-precision 3D printing.",
+      "recent_publication": "2024 — Model detects indoor or outdoor walks based only on movement data — https://me.engin.umich.edu/news-events/news/model-detects-indoor-or-outdoor-walks-based-only-on-movement-data/",
+      "source_url": "https://me.engin.umich.edu/people/faculty/kira-barton/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-nicholas-jordan-ppml",
+      "name": "Nicholas Jordan",
+      "depth": "A",
+      "current_focus": "PPML lab manager; high-power microwaves, pulsed-power technology, plasma diagnostics, Z-pinch dynamics, plasma imaging, and laser diagnostics.",
+      "recent_publication": "",
+      "source_url": "https://ners.engin.umich.edu/people/jordan-nicholas/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-nima-fazeli-robotic-manipulation",
+      "name": "Nima Fazeli",
+      "depth": "A",
+      "current_focus": "Manipulation and Machine Intelligence Lab: robotic manipulation, physical contact interaction, robot learning/control, and state estimation.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/nima-fazeli/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-christopher-vermillion-marine-hydrokinetic-energy",
+      "name": "Christopher Vermillion",
+      "depth": "A",
+      "current_focus": "CORE Lab: optimal control and design optimization for tethered wind/marine hydrokinetic energy, renewably powered robotic networks, and connected/autonomous vehicle efficiency.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/christopher-vermillion/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-yogesh-gianchandani-mechanical-engineering-resea",
+      "name": "Yogesh Gianchandani",
+      "depth": "A",
+      "current_focus": "MEMS/microsystems sensors and actuators, microplasma and microdischarge devices, and harsh-environment microsystems instrumentation.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/yogesh-gianchandani/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-jerard-gordon-metal-additive-manufacturing",
+      "name": "Jerard Gordon",
+      "depth": "A",
+      "current_focus": "Metal additive manufacturing with in-situ property evaluation and experimental mechanics linking process to structure and properties.",
+      "recent_publication": "2026 — Eight ME faculty members win 2025-26 College of Engineering Faculty Awards (includes Gordon) — https://me.engin.umich.edu/news-events/news/eight-me-faculty-members-win-2025-26-college-of-engineering-faculty-awards/",
+      "source_url": "https://me.engin.umich.edu/people/faculty/jerard-gordon/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-milos-burger-cuos",
+      "name": "Milos Burger",
+      "depth": "A",
+      "current_focus": "Ultrashort laser–matter coupling and optical sensing, including laser-induced plasmas for remote elemental detection and optical instrumentation for advanced reactors.",
+      "recent_publication": "",
+      "source_url": "https://ners.engin.umich.edu/people/burger-milos/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-paul-campbell-cuos",
+      "name": "Paul Campbell",
+      "depth": "A",
+      "current_focus": "ZEUS Laser Facility assistant research scientist; particle acceleration and magnetic-field generation during intense laser–plasma interactions (magnetized HEDP / laboratory astrophysics).",
+      "recent_publication": "",
+      "source_url": "https://cuos.engin.umich.edu/researchgroups/hfs/profiles/paul-campbell/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-timothy-smith-pepl",
+      "name": "Timothy Smith",
+      "depth": "A",
+      "current_focus": "Electric propulsion, plasma physics, and optical diagnostics affiliated with the Plasmadynamics & Electric Propulsion Laboratory.",
+      "recent_publication": "",
+      "source_url": "https://aero.engin.umich.edu/people/smith-timothy-b/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-amy-brooks-cuos",
+      "name": "Amy Brooks",
+      "depth": "A",
+      "current_focus": "CUOS-affiliated researcher; verify current project focus on the CUOS faculty/staff pages before outreach.",
+      "recent_publication": "",
+      "source_url": "https://cuos.engin.umich.edu/faculty",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-anatoly-maksimchuk-cuos",
+      "name": "Anatoly Maksimchuk",
+      "depth": "A",
+      "current_focus": "Laser–matter interaction at relativistic intensities, table-top plasma accelerators for electron/proton beams, and ultrashort X-ray/gamma-ray generation.",
+      "recent_publication": "",
+      "source_url": "https://cuos.engin.umich.edu/researchgroups/hfs/profiles/anatoly-maksimchuk/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-yong-ma-cuos",
+      "name": "Yong Ma",
+      "depth": "A",
+      "current_focus": "Experimental and numerical laser-wakefield acceleration, advanced radiation sources, and electron acceleration from laser–solid interactions.",
+      "recent_publication": "2025 — Measuring electron pulses for future compact ultra-bright X-ray sources — https://ners.engin.umich.edu/2025/09/09/measuring-electron-pulses-for-future-compact-ultra-bright-x-ray-sources/",
+      "source_url": "https://ners.engin.umich.edu/people/ma-yong/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-john-nees-cuos",
+      "name": "John Nees",
+      "depth": "A",
+      "current_focus": "Relativistic laser–plasma interactions, attosecond pulses from solids, high-average-power ultrafast lasers, and related high-field experimental diagnostics.",
+      "recent_publication": "",
+      "source_url": "https://cuos.engin.umich.edu/researchgroups/hfs/profiles/john-nees/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-scott-baalrud-ners",
+      "name": "Scott Baalrud",
+      "depth": "A",
+      "current_focus": "Theoretical plasma physics and kinetic theory for strongly coupled plasmas, high-energy-density plasmas, low-temperature plasma sheaths, and magnetic reconnection.",
+      "recent_publication": "",
+      "source_url": "https://ners.engin.umich.edu/people/baalrud-scott/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-albert-shih-biomedical-manufacturing-per",
+      "name": "Albert Shih",
+      "depth": "A",
+      "current_focus": "Precision machining, CT inspection, semiconductor/biomedical manufacturing, and cyber-physical manufacturing systems including assistive-technology devices.",
+      "recent_publication": "2026 — Eight ME faculty members win 2025-26 College of Engineering Faculty Awards (Rexford E. Hall Innovation Excellence Award) — https://me.engin.umich.edu/news-events/news/eight-me-faculty-members-win-2025-26-college-of-engineering-faculty-awards/",
+      "source_url": "https://me.engin.umich.edu/people/faculty/albert-shih/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-almantas-galvanauskas-fiber-lasers",
+      "name": "Almantas Galvanauskas",
+      "depth": "B",
+      "current_focus": "Almantas Galvanauskas works on high-power fiber lasers, ultrafast lasers, coherent beam combining.",
+      "recent_publication": "",
+      "source_url": "https://galvanauskas.engin.umich.edu/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-bogdan-epureanu-biological-and-epidemiologic",
+      "name": "Bogdan Epureanu",
+      "depth": "B",
+      "current_focus": "Research focuses on biological and epidemiological systems, aerospace and automotive structures, and turbomachinery. Examples include creating novel mechano-chemical dynamic models of nanoscale intracellular transport processes, developing the next generation of highly-sensiti…",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/bogdan-epureanu/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-dawn-tilbury-control-theory",
+      "name": "Dawn Tilbury",
+      "depth": "B",
+      "current_focus": "Control theory and applications; logic control for manufacturing systems including diagnostics, fault handling, and recovery; modular control systems; networked control systems; performance management of computing systems; web-based tutorials for controls education.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/dawn-tilbury/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-diann-brei-design",
+      "name": "Diann Brei",
+      "depth": "B",
+      "current_focus": "Design; smart materials and structures; sensor and actuator design; structural dynamics; vibration and noise control; mechatronics, smart mechanisms.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/diann-brei/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-name-hofmann-heath-power-electronics",
+      "name": "Heath Hofmann",
+      "depth": "B",
+      "current_focus": "Heath Hofmann (EECS, joint NAME) works on power electronics and electromechanical systems, including energy harvesting, flywheel storage, and design/control of electric machines. Relevant to marine electric propulsion and energy systems that need controls and electromechanical…",
+      "recent_publication": "",
+      "source_url": "https://name.engin.umich.edu/people/hofmann-heath/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-jay-guo-polymer-based-photonic-senso",
+      "name": "Jay Guo",
+      "depth": "B",
+      "current_focus": "Polymer-based photonic sensors and photoacoustics, organic and hybrid photovoltaics and photodetectors, flexible transparent conductors, nanophotonics & structural colors, nanomanufacturing technologies and applications",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/jay-guo/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-name-zuo-lei-marine-renewable-energy",
+      "name": "Lei Zuo",
+      "depth": "B",
+      "current_focus": "Lei Zuo works on marine renewable energy (ocean waves, tidal currents, offshore wind), blue economy, energy harvesting, vibration/dynamics and control, and mechatronics design. His group builds electromechanical energy-harvesting and control systems with strong experimental ha…",
+      "recent_publication": "",
+      "source_url": "https://name.engin.umich.edu/people/zuo-lei/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-thomas-wang-biomedical-instrument-design",
+      "name": "Thomas Wang",
+      "depth": "B",
+      "current_focus": "Biomedical instrument design, imaging systems, micro-optics, bio-microelectromechanical systems (bio-MEMS), miniature sensors, mirrors and actuators",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/thomas-wang/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-allen-hunter-mc2",
+      "name": "Allen Hunter",
+      "depth": "B",
+      "current_focus": "Allen Hunter works on FIB, SEM, atom probe tomography, ion beams, materials characterization.",
+      "recent_publication": "",
+      "source_url": "https://mc2.engin.umich.edu/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-hongyi-xiao-a-liquid",
+      "name": "Hongyi Xiao",
+      "depth": "B",
+      "current_focus": "Our research group focuses on granular materials consisting of discrete particles that can collectively behave like a solid, a liquid, or a gas. We aim to reveal their related solid and fluid mechanics as well as statistical physics using a combination of 2D and 3D experiments…",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/hongyi-xiao/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-jason-siegel-battery-modeling",
+      "name": "Jason Siegel",
+      "depth": "B",
+      "current_focus": "Battery Modeling, Control and State of Health Estimation. Control of Hybrid Electric Powertrains. Control of Solid oxide and low temperature PEM fuel cells.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/jason-siegel/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-karl-grosh-cochlear-mechanics",
+      "name": "Karl Grosh",
+      "depth": "B",
+      "current_focus": "Cochlear mechanics and hearing; acoustic and vibrational transducers; prosthetics and sensors for biomedical applications; MEMS; distributed, active metamaterials; mechanics and computational mechanics; structural acoustics.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/karl-grosh/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-kathleen-sienko-sensory-augmentation",
+      "name": "Kathleen Sienko",
+      "depth": "B",
+      "current_focus": "Sensory augmentation, rehabilitation engineering, biomechanics, medical device design (emphasis on global health contexts and task-shifting devices), design science, engineering design education",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/kathleen-sienko/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-lauro-ojeda-inertial-sensing",
+      "name": "Lauro Ojeda",
+      "depth": "B",
+      "current_focus": "Inertial sensing, sensor data fusion, Kalman filtering, localization, biomechanics, and human gait analysis.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/lauro-ojeda/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-lei-zuo-marine-renewable-energy-ocea",
+      "name": "Lei Zuo",
+      "depth": "B",
+      "current_focus": "Marine renewable energy (ocean waves, tidal currents, offshore wind), blue economy, energy harvesting, vibration/dynamics and control, mechatronics design, vehicles and transportation, and advanced manufacturing. University of Michigan Logo ###### Mechanical Engineering G.G. B…",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/lei-zuo/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-name-ghaffari-maani-robot-autonomy",
+      "name": "Maani Ghaffari",
+      "depth": "B",
+      "current_focus": "Maani Ghaffari directs CURLY, developing algorithms for robot autonomy in unstructured, dynamic, and uncertain environments. Expertise spans geometric state estimation, control, motion planning, and mapping for mobile robots, including marine/robotics joint appointments — a st…",
+      "recent_publication": "",
+      "source_url": "https://name.engin.umich.edu/people/ghaffari-maani/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-pramod-sangi-reddy-nanoscale-charge",
+      "name": "Pramod Sangi Reddy",
+      "depth": "B",
+      "current_focus": "Nanoscale charge and energy transport, thermoelectric devices, microscale heat transfer, organic photovoltaics, scanning probe microscopy and optics.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/pramod-sangi-reddy/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-shorya-awtar-mechanical-design",
+      "name": "Shorya Awtar",
+      "depth": "B",
+      "current_focus": "Mechanical design, precision engineering, human-centric design, mechatronic systems, and robotics. Specific research and development topics include constraint-based design, parallel kinematics, flexure mechanisms, dynamics of flexible systems, electromagnetic actuators, medica…",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/shorya-awtar/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-steve-cundiff-ultrafast",
+      "name": "Steve Cundiff",
+      "depth": "B",
+      "current_focus": "Steve Cundiff works on ultrafast optics, spectroscopy, imaging and spectroscopy.",
+      "recent_publication": "",
+      "source_url": "https://lsa.umich.edu/appliedphysics/people/faculty.directory.html",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-ted-norris-ultrafast",
+      "name": "Ted Norris",
+      "depth": "B",
+      "current_focus": "Ted Norris works on ultrafast optics, THz generation, semiconductor nanostructures, biological imaging.",
+      "recent_publication": "",
+      "source_url": "https://norris.engin.umich.edu/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-name-pan-yulin-theoretical-hydrodynamics",
+      "name": "Yulin Pan",
+      "depth": "B",
+      "current_focus": "Yulin Pan leads the Flow Physics & Engineering Lab, focusing on theoretical and computational hydrodynamics with applications in ocean engineering. Topics include nonlinear ocean wave mechanics, wave turbulence, propeller and bio-inspired foil propulsion, and ship/offshore res…",
+      "recent_publication": "",
+      "source_url": "https://name.engin.umich.edu/people/pan-yulin/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-daniel-bruder-controls",
+      "name": "Daniel Bruder",
+      "depth": "B",
+      "current_focus": "Design, modeling, and control of soft and other non-traditional robotic systems with the goal of actualizing robots that are capable of safely assisting humans in real-world unstructured environments.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/daniel-bruder/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-elliott-rouse-precision-machine-design",
+      "name": "Elliott Rouse",
+      "depth": "B",
+      "current_focus": "Precision machine design; development of exoskeletons / robotic prostheses; brushless motors; dynamics of human locomotion; human perception and psychophysics; neural control of movement; biomechanics; human performance augmentation",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/elliott-rouse/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-hui-deng-amo",
+      "name": "Hui Deng",
+      "depth": "B",
+      "current_focus": "Hui Deng works on AMO, condensed matter physics, quantum optics.",
+      "recent_publication": "",
+      "source_url": "https://lsa.umich.edu/appliedphysics/people/faculty.directory.html",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-russell-bornschein-chem-ms",
+      "name": "Russell Bornschein",
+      "depth": "B",
+      "current_focus": "Russell Bornschein works on mass spectrometry, analytical instrumentation, chromatography, MALDI, GCMS, ICP-MS.",
+      "recent_publication": "",
+      "source_url": "https://lsa.umich.edu/chem/people/staff/technical-services/rbornsc.html",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-name-alan-papalia-marine-robotics",
+      "name": "Alan Papalia",
+      "depth": "B",
+      "current_focus": "Alan Papalia directs the Robotic Exploration Lab, working on robust and certifiable algorithms for robot navigation, environmental monitoring, marine robotics, and perception in challenging environments. Strong sensing/autonomy overlap for instrumented marine platforms.",
+      "recent_publication": "",
+      "source_url": "https://name.engin.umich.edu/people/alan-papalia/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-alex-shorter-design",
+      "name": "Alex Shorter",
+      "depth": "B",
+      "current_focus": "Design, Fabrication, Control and Evaluation of Human Assist Devices, Gait Analysis, Biomechanics, Instrument Design.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/alex-shorter/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-amit-misra-nano-mechanics",
+      "name": "Amit Misra",
+      "depth": "B",
+      "current_focus": "Nano mechanics, electron microscopy, laser processed metallic alloys, metallic thin films",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/amit-misra/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-bogdan-popa-design",
+      "name": "Bogdan Popa",
+      "depth": "B",
+      "current_focus": "Design, optimization, and dynamics of new generations of engineered materials (metamaterials) that allow improved control over the propagation of acoustic, elastic and electromagnetic waves with applications in biomedical engineering, telecommunications, aero- and underwater a…",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/bogdan-popa/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-brent-gillespie-haptic-interface",
+      "name": "Brent Gillespie",
+      "depth": "B",
+      "current_focus": "Brent Gillespie works on haptic interface, robotics..",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/brent-gillespie/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-chandramouli-krishnan-the-goal-of-dr-krishnan-s-ne",
+      "name": "Chandramouli Krishnan",
+      "depth": "B",
+      "current_focus": "The goal of Dr. Krishnan’s Neuromuscular and Rehabilitation Robotics Laboratory (NeuRRo Lab) is to develop effective and efficient rehabilitation methods for individuals with neurologic and orthopedic disorders. The NeuRRo Lab seeks to achieve this goal by a combination of mec…",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/chandramouli-krishnan/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-euisik-yoon-mechanical-engineering-resea",
+      "name": "Euisik Yoon",
+      "depth": "B",
+      "current_focus": "MEMS/NEMS; neural interfaces and neurotechnology; biomedical microsystems; integrated sensors and circuits for neural recording/stimulation; microfabricated instrumentation.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/euisik-yoon/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-evgueni-filipov-deployable-structural-system",
+      "name": "Evgueni Filipov",
+      "depth": "B",
+      "current_focus": "My research interests lie in the field of deployable and reconfigurable structural systems. Folding and adaptable structures based on the principles of origami can have practical applications ranging in scale and discipline from biomedical robotics to deployable architecture.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/evgueni-filipov/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-grant-kruger-biomedical-design-and-manufa",
+      "name": "Grant Kruger",
+      "depth": "B",
+      "current_focus": "Biomedical design and manufacturing; Digital health; Wearable technology; Intelligent systems; Robotics",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/grant-kruger/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-jesse-capecelatro-fluid-mechanics",
+      "name": "Jesse Capecelatro",
+      "depth": "B",
+      "current_focus": "Fluid mechanics, with an emphasis on multiphase flow, turbulence, reacting flows, and high-performance computing. Applications include renewable energy, disease transmission, and space exploration.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/jesse-capecelatro/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-karen-a-thole-convective-heat-transfer",
+      "name": "Karen A. Thole",
+      "depth": "B",
+      "current_focus": "Convective heat transfer, turbulent boundary layers, high freestream turbulence, gas turbine heat transfer.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/karen-a-thole/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-krishnan-mahesh-high-fidelity-simulation-of-",
+      "name": "Krishnan Mahesh",
+      "depth": "B",
+      "current_focus": "High-fidelity simulation of complex, multi-physics, turbulent flows relevant to several applications including: marine propulsors, multiphase flows, cavitation, hydroacoustics, superhydrophobic surfaces, biofouling, fluid/structure interaction, flow stability, and moving-body …",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/krishnan-mahesh/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-rayhaneh-akhavan-fluid-mechanics-with-emphasi",
+      "name": "Rayhaneh Akhavan",
+      "depth": "B",
+      "current_focus": "Fluid mechanics with emphasis on turbulence physics, turbulence modeling and turbulence control; high fidelity computations and reduced-order modeling of complex turbulent flows involving multi phases, fluid-structure interactions and viscoelastic effects; biomimetic and bio-i…",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/rayhaneh-akhavan/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-robert-gregg-wearable-robots",
+      "name": "Robert Gregg",
+      "depth": "B",
+      "current_focus": "Wearable Robots, Legged Robots, Prosthetics & Orthotics, Bipedal Locomotion, Nonlinear Control Theory, Rehabilitation Engineering",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/robert-gregg/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-steve-yalisove-materials-laser",
+      "name": "Steve Yalisove",
+      "depth": "B",
+      "current_focus": "Steve Yalisove works on laser-material interactions, ultrafast material processing, materials characterization.",
+      "recent_publication": "",
+      "source_url": "https://mse.engin.umich.edu/people/smy",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-talia-moore-dynamics-of-terrestrial-loco",
+      "name": "Talia Moore",
+      "depth": "B",
+      "current_focus": "Dynamics of terrestrial locomotion, arrhythmic and transient locomotion, bio-inspired design, bio-inspired robotics, soft robotics, animal-robot interaction",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/talia-moore/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-wei-lu-energy-storage",
+      "name": "Wei Lu",
+      "depth": "B",
+      "current_focus": "Energy storage and electrochemistry; simulation of nano/microstructure evolution; mechanics in nano/micro systems; advanced manufacturing; mechanical properties and performance of advanced materials and relation to microstructures.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/wei-lu/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-yun-chen-ai-enabled-communication",
+      "name": "Yun Chen",
+      "depth": "B",
+      "current_focus": "Yun Chen’s research focuses on AI-enabled communication, sensing, and robotic systems. Her work bridges communication chips, 6G wireless systems, reconfigurable intelligent surfaces, hardware-software co-design, and programmable sensing environments for robotics and cyber-phys…",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/yun-chen/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-aaron-towne-fluid-mechanics",
+      "name": "Aaron Towne",
+      "depth": "B",
+      "current_focus": "Fluid mechanics, reduced-complexity modeling, data-driven modeling, flow control, aeroacoustics",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/aaron-towne/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-anchal-sareen-energy-efficient-marine-prop",
+      "name": "Anchal Sareen",
+      "depth": "A",
+      "current_focus": "Experimental Fluid Dynamics Laboratory developing flow-control strategies for unmanned underwater/aerial vehicles, bio-inspired propulsion, and renewable-energy harvesting.",
+      "recent_publication": "",
+      "source_url": "https://name.engin.umich.edu/people/sareen-anchal/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-anthony-waas-mechanical-engineering-resea",
+      "name": "Anthony Waas",
+      "depth": "B",
+      "current_focus": "Anthony Waas works on mechanical engineering research.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/anthony-waas/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-ashley-bucsek-mechanical-behavior-of-mater",
+      "name": "Ashley Bucsek",
+      "depth": "B",
+      "current_focus": "Mechanical behavior of materials; micromechanical modeling; in situ/in operando characterization including X-ray imaging and diffraction; functional materials; lightweight structural metals; shape memory alloys; phase transformations; energy conversion",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/ashley-bucsek/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-chengzhi-shi-dr-shi-s-research-focuses-on",
+      "name": "Chengzhi Shi",
+      "depth": "B",
+      "current_focus": "Dr. Shi’s research focuses on physical acoustics, wave propagation, structural acoustics, underwater acoustics, metamaterials, biomedical ultrasound imaging, and therapeutic ultrasound. Particularly, he is interested in understanding the wave physics of vortex acoustic waves a…",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/chengzhi-shi/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-name-dowling-david-r-acoustics",
+      "name": "David R. Dowling",
+      "depth": "B",
+      "current_focus": "David Dowling (NAME Chair) researches acoustics and fluid mechanics using experimental, theoretical, and computational techniques. Projects often collaborate with Ceccio and others on fluid-dynamic and acoustic wave problems relevant to marine and offshore design performance, …",
+      "recent_publication": "",
+      "source_url": "https://name.engin.umich.edu/people/dowling-david-r/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-georg-raithel-amo",
+      "name": "Georg Raithel",
+      "depth": "B",
+      "current_focus": "Georg Raithel works on AMO physics, Rydberg atoms, precision measurement, laser spectroscopy.",
+      "recent_publication": "",
+      "source_url": "https://lsa.umich.edu/physics/people/faculty.html",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-henry-liu-automotive-engineering",
+      "name": "Henry Liu",
+      "depth": "B",
+      "current_focus": "Prof. Liu conducts interdisciplinary research at the interface between Transportation Engineering, Automotive Engineering, and Artificial Intelligence, with a focus on cyber-physical transportation systems. Specifically, his scholarly interests concern traffic flow monitoring,…",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/henry-liu/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-hugo-g-villasanti-control-theory",
+      "name": "Hugo Gonzalez Villasanti",
+      "depth": "B",
+      "current_focus": "Control theory and engineering strategies in social systems to empower people and improve their well-being.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/hugo-g-villasanti/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-jianping-fu-stem-cell-bioengineering",
+      "name": "Jianping Fu",
+      "depth": "B",
+      "current_focus": "Stem Cell Bioengineering, Developmental Bioengineering, Mechanobiology, and BioMEMS",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/jianping-fu/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-jing-sun-control-systems",
+      "name": "Jing Sun",
+      "depth": "A",
+      "current_focus": "RACELab lead applying control theory and optimization to marine and automotive propulsion systems; real-time adaptive control engineering.",
+      "recent_publication": "",
+      "source_url": "https://name.engin.umich.edu/people/sun-jing/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-name-martins-joaquinn-r-r-a-multidisciplinary-design-opt",
+      "name": "Joaquim Martins R. R. A.",
+      "depth": "B",
+      "current_focus": "Joaquim Martins (Aerospace, joint NAME) heads the Multidisciplinary Design Optimization Laboratory, developing MDO techniques and applying them to aircraft and other engineering systems. Transfer is mainly computational design optimization rather than experimental marine lab w…",
+      "recent_publication": "",
+      "source_url": "https://name.engin.umich.edu/people/martins-joaquinn-r-r-a/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-jon-luntz-mechatronic-system-design-me",
+      "name": "Jon Luntz",
+      "depth": "B",
+      "current_focus": "Mechamatronic system design methodology; smart materials and structures",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/jon-luntz/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-karthik-duraisamy-computational-science",
+      "name": "Karthik Duraisamy",
+      "depth": "B",
+      "current_focus": "Computational Science and Engineering, Aerodynamics, High-Speed Flows, Turbulence modeling and simulation, Vortical Flows, Uncertainty Quantification, High-Performance Computing, Rotorcraft Aeromechanics, Adjoint-based methods, Optimization",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/karthik-duraisamy/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-kazu-saitou-multi-process",
+      "name": "Kazu Saitou",
+      "depth": "B",
+      "current_focus": "Computational design. Manufacturability-driven structural topology optimization. Multi-material, multi-process, multi-component structural topology optimization (M^3 TO). Computational optimal synthesis of structural assemblies. Physics-informed AI for structural and assembly …",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/kazu-saitou/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-kevin-pipe-microscale-heat-transfer",
+      "name": "Kevin Pipe",
+      "depth": "B",
+      "current_focus": "Microscale heat transfer, especially related to electronic and optoelectronic devices; thermoelectric energy conversion; medical applications of heat transfer",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/kevin-pipe/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-kon-well-wang-structural-dynamics",
+      "name": "Kon-Well Wang",
+      "depth": "B",
+      "current_focus": "Structural dynamics and controls, including emerging intelligent structures harnessing functional materials, reconfigurable origami & metamaterials, and embodied mechano-intelligence via wave-based computing and physical reservoir computing, for engineering functions such as v…",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/kon-well-wang/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-name-mahesh-krishnan-turbulent-flows",
+      "name": "Krishnan Mahesh",
+      "depth": "B",
+      "current_focus": "Krishnan Mahesh leads computational research on complex, multi-physics turbulent flows relevant to naval and marine systems. His Computational Fluids Laboratory develops simulation methods for high-fidelity turbulence and multi-physics problems rather than wet-lab diagnostics,…",
+      "recent_publication": "",
+      "source_url": "https://name.engin.umich.edu/people/mahesh-krishnan/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-massoud-kaviany-heat-transfer-physics-effici",
+      "name": "Massoud Kaviany",
+      "depth": "B",
+      "current_focus": "Heat Transfer Physics: efficient and innovative energy transport and conversion (transformation) through atomic tailoring of the principal energy carriers (phonon, electron, fluid particle, and photon). Current energy-related projects include thermoelectricity, phonoelectricit…",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/massoud-kaviany/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-mitra-aliabouzar-cavitation-enabled-therapy",
+      "name": "Mitra Aliabouzar",
+      "depth": "B",
+      "current_focus": "Cavitation enabled therapy, Mechanics of soft and bio-materials, High speed rheometry, 3D bioprinting",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/mitra-aliabouzar/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-nakhiah-goulbourne-mechanical-engineering-resea",
+      "name": "Nakhiah Goulbourne",
+      "depth": "B",
+      "current_focus": "Nakhiah Goulbourne works on mechanical engineering research.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/nakhiah-goulbourne/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-pingsha-dong-4-smart-modular-design-for-m",
+      "name": "Pingsha Dong",
+      "depth": "B",
+      "current_focus": "(1) High-speed method for directly joining plastics directly to metals for manufacture of multi-materials lightweight structures; (2) solid-state rapid deposition technique for additive manufacture of bimetal components without introducing detrimental intermetallic compounds; …",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/pingsha-dong/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-ramanarayan-vasudevan-optimization",
+      "name": "Ramanarayan Vasudevan",
+      "depth": "B",
+      "current_focus": "Optimization, modeling, design, and control of robotic systems that interact with humans and the environment. My group works on a variety of applications including locomotion of legged robots, prosthetic control, autonomous vehicles, and soft robots.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/ramanarayan-vasudevan/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-rohini-bala-chandran-thermal",
+      "name": "Rohini Bala Chandran",
+      "depth": "B",
+      "current_focus": "Thermal and fluid sciences, multiscale computational model development, radiative heat transfer, optics, chemical kinetics of heterogeneous reactions, electrochemical engineering, semiconductor physics",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/rohini-bala-chandran/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-solomon-adera-heat-and-mass-transfer",
+      "name": "Solomon Adera",
+      "depth": "B",
+      "current_focus": "heat and mass transfer, phase-change (evaporation, condensation, freezing), water/fog harvesting, micro/nanoengineering, and fluid-structure interactions.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/solomon-adera/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-u-m-careers-research-278715",
+      "name": "U-M Careers Research Scientist Posting 278715",
+      "depth": "B",
+      "current_focus": "U-M Careers Research Scientist Posting 278715 works on research scientist, active posting, Ann Arbor.",
+      "recent_publication": "",
+      "source_url": "https://careers.umich.edu/job_detail/278715/research-asst-professorassistant-research-scientist",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-ulrich-scheven-development",
+      "name": "Ulrich Scheven",
+      "depth": "B",
+      "current_focus": "Development and use of quantitative nuclear magnetic resonance techniques to explore and constrain the physics of displacements (1) in full volume non-linear elasticity in soft tissues, tendons, ligaments, polymers, elastomers; (2) in Newtonian and non-Newtonian fluid flow and…",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/ulrich-scheven/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-venkat-viswanathan-electric-aviation",
+      "name": "Venkat Viswanathan",
+      "depth": "B",
+      "current_focus": "Electric aviation, Electric vehicles, Batteries, Scientific machine learning",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/venkat-viswanathan/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-name-zhigang-wei-computational-mechanics",
+      "name": "Zhigang Wei",
+      "depth": "B",
+      "current_focus": "Zhigang Wei is an Associate Research Scientist on the NAME research-faculty track. Public profile details are sparse; deep-research sources describe support for computational mechanics and ship hydrodynamics / CFD modeling within the department. Verify current project focus on…",
+      "recent_publication": "",
+      "source_url": "https://name.engin.umich.edu/people/zhigang-wei/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-becky-peterson-lnf",
+      "name": "Becky Peterson",
+      "depth": "B",
+      "current_focus": "Becky Peterson works on nanofabrication, semiconductor devices, thin films, cleanroom.",
+      "recent_publication": "",
+      "source_url": "https://lsa.umich.edu/appliedphysics/people/faculty.directory.html",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-mipse-job-board",
+      "name": "MIPSE Plasma Job Board",
+      "depth": "B",
+      "current_focus": "MIPSE Plasma Job Board works on plasma job board, postdoc openings, PhD openings, research staff.",
+      "recent_publication": "",
+      "source_url": "http://mipse.umich.edu/jobs.php",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-nancy-muyanja-mc2",
+      "name": "Nancy Muyanja",
+      "depth": "B",
+      "current_focus": "Nancy Muyanja works on X-ray microscopy, 3D imaging, materials characterization.",
+      "recent_publication": "",
+      "source_url": "https://mc2.engin.umich.edu/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-parag-deotare-optics",
+      "name": "Parag Deotare",
+      "depth": "B",
+      "current_focus": "Parag Deotare works on optoelectronics, nanophotonics, light-matter interaction.",
+      "recent_publication": "",
+      "source_url": "https://lsa.umich.edu/appliedphysics/people/faculty.directory.html",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-shaun-clarke-applied-physics",
+      "name": "Shaun Clarke",
+      "depth": "B",
+      "current_focus": "Shaun Clarke works on applied physics, instrumentation, nuclear engineering adjacent.",
+      "recent_publication": "",
+      "source_url": "https://lsa.umich.edu/appliedphysics/people/faculty.directory.html",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-tao-ma-mc2",
+      "name": "Tao Ma",
+      "depth": "B",
+      "current_focus": "Tao Ma works on TEM, electron diffraction, electron microscopy.",
+      "recent_publication": "",
+      "source_url": "https://mc2.engin.umich.edu/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-tulga-ersal-autonomous",
+      "name": "Tulga Ersal",
+      "depth": "B",
+      "current_focus": "Autonomous and semi-autonomous vehicles; human-autonomy interactions.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/tulga-ersal/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-carmen-dunbar-bioms",
+      "name": "Carmen Dunbar",
+      "depth": "B",
+      "current_focus": "Carmen Dunbar works on LC-MS, protein analysis, ion mobility, metabolomics.",
+      "recent_publication": "",
+      "source_url": "https://cores.research.umich.edu/core/biological-mass-spectrometry",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-daniel-welling-space-plasma",
+      "name": "Daniel Welling",
+      "depth": "B",
+      "current_focus": "Daniel Welling works on space plasmas, magnetosphere-ionosphere, space weather.",
+      "recent_publication": "",
+      "source_url": "https://clasp.engin.umich.edu/people/daniel-welling/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-gabor-orosz-nonlinear-dynamics",
+      "name": "Gabor Orosz",
+      "depth": "B",
+      "current_focus": "Nonlinear dynamics and control, time delay systems, connected and automated vehicles, traffic flow.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/gabor-orosz/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-shuai-liu-photonics",
+      "name": "Shuai Liu",
+      "depth": "B",
+      "current_focus": "Shuai Liu works on integrated photonics, nanofabrication, nonlinear optics, quantum optics.",
+      "recent_publication": "",
+      "source_url": "https://optics.engin.umich.edu/people/faculty/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-hye-kyong-kweon-chem-ms",
+      "name": "Hye Kyong Kweon",
+      "depth": "B",
+      "current_focus": "Hye Kyong Kweon works on mass spectrometry, analytical instrumentation.",
+      "recent_publication": "",
+      "source_url": "https://lsa.umich.edu/chem/technical-services/mass-spectrometry.html",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-mackillo-kira-quantum-optics",
+      "name": "Mackillo Kira",
+      "depth": "B",
+      "current_focus": "Mackillo Kira works on quantum optics, terahertz spectroscopy, semiconductor quantum optics.",
+      "recent_publication": "",
+      "source_url": "https://optics.engin.umich.edu/people/faculty/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-mark-moldwin-space-plasma",
+      "name": "Mark Moldwin",
+      "depth": "B",
+      "current_focus": "Mark Moldwin works on space plasmas, space weather, magnetosphere.",
+      "recent_publication": "",
+      "source_url": "https://clasp.engin.umich.edu/people/mark-moldwin/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-miron-liu-pepl-peer",
+      "name": "Miron Liu",
+      "depth": "B",
+      "current_focus": "Miron Liu works on low-temperature plasma diagnostics, Hall thrusters, plasma waves.",
+      "recent_publication": "",
+      "source_url": "https://pepl.engin.umich.edu/personnel",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-aleksandra-szczuka-plasma-chemistry",
+      "name": "Aleksandra Szczuka",
+      "depth": "B",
+      "current_focus": "Aleksandra Szczuka works on plasma chemistry, environmental engineering, water treatment.",
+      "recent_publication": "",
+      "source_url": "https://cee.engin.umich.edu/people/szczuka-aleksandra/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-john-riley-otoole-pepl-peer",
+      "name": "John Riley O'Toole",
+      "depth": "B",
+      "current_focus": "John Riley O'Toole works on laser diagnostics, Hall thrusters, alternative propellants.",
+      "recent_publication": "",
+      "source_url": "https://pepl.engin.umich.edu/personnel",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-michael-garner-fiber-laser-peer",
+      "name": "Michael Garner",
+      "depth": "B",
+      "current_focus": "Michael Garner works on fiber laser systems, high-power optics, laser-plasma acceleration.",
+      "recent_publication": "",
+      "source_url": "https://linkedin.com/in/michael-garner-50a292193",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-ageeth-bol-chemistry",
+      "name": "Ageeth Bol",
+      "depth": "C",
+      "current_focus": "Ageeth Bol works on plasma chemistry, materials, thin films.",
+      "recent_publication": "",
+      "source_url": "https://lsa.umich.edu/chem/people/faculty.html",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-jacinto-ulloa-computational-mechanics",
+      "name": "Jacinto Ulloa",
+      "depth": "C",
+      "current_focus": "Computational mechanics; solid mechanics; micromechanics; metamaterials; disordered/granular media; data-driven computing; variational methods; homogenization; multiscale analysis; generalized continua; inelasticity; material failure; multi-physics systems.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/jacinto-ulloa/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-jingwen-hu-impact-injury-biomechanics",
+      "name": "Jingwen Hu",
+      "depth": "C",
+      "current_focus": "Impact/Injury Biomechanics: Parametric Human Modeling, Statistical Injury Data Analysis, Cadaver/Volunteer/Dummy Testing - Occupant Protection: Safety equity among diverse populations, Restraint Design Optimization, Rear Seat Occupants, Oblique Impacts, Adaptive Restraint Desi…",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/jingwen-hu/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-michael-bernitsas-current-energy-conversion",
+      "name": "Michael Bernitsas",
+      "depth": "A",
+      "current_focus": "Marine Renewable Energy Laboratory lead; vortex-induced vibration energy harvesting (VIVACE) and related marine renewable systems.",
+      "recent_publication": "",
+      "source_url": "https://name.engin.umich.edu/people/bernitsas-michael/",
+      "confidence": "high"
+    },
+    {
+      "id": "umich-name-vlahopoulos-nickolas-structural-acoustics",
+      "name": "Nickolas Vlahopoulos",
+      "depth": "C",
+      "current_focus": "Nickolas Vlahopoulos (Graduate Program Chair) works on computational structural acoustics, multi-discipline ship design under uncertainty, and blast/shock simulations. Expertise includes FEM/BEM, energy finite element analysis, and optimization algorithms for complex naval sys…",
+      "recent_publication": "",
+      "source_url": "https://name.engin.umich.edu/people/vlahopoulos-nickolas/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-serife-tol-dynamical-systems",
+      "name": "Serife Tol",
+      "depth": "C",
+      "current_focus": "Dynamical systems, smart materials, metamaterials, phononic crystals, electromechanical systems, energy harvesting, mechanical vibrations, wave propagation",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/serife-tol/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-sita-syal-energy-justice",
+      "name": "Sita Syal",
+      "depth": "C",
+      "current_focus": "Energy justice and equity, sustainable energy and mobility systems, human-centered design methods, design needfinding, socially-engaged design, community engagement, optimization, cost modeling, agent-based modeling, uncertainty quantification, multi-attribute decision making,…",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/sita-syal/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-vikram-gavini-developing-algorithms",
+      "name": "Vikram Gavini",
+      "depth": "C",
+      "current_focus": "Developing algorithms and computational frameworks for large-scale ab-initio calculations to understand materials properties; HPC aspects of electronic structure calculations; Electronic structure studies on defects in solids; Multi-scale modeling; Analysis of approximation th…",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/vikram-gavini/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-xun-ryan-huan-uncertainty-quantification",
+      "name": "Xun (Ryan) Huan",
+      "depth": "C",
+      "current_focus": "Uncertainty quantification, data-driven modeling, numerical optimization, optimal experimental design, Bayesian analysis, machine learning",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/xun-ryan-huan/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-christopher-limbach-aero",
+      "name": "Christopher Limbach",
+      "depth": "C",
+      "current_focus": "Christopher Limbach works on aerospace experiments, sensors, diagnostics.",
+      "recent_publication": "",
+      "source_url": "https://aero.engin.umich.edu/role/faculty/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-john-allison-understanding-the-inter-rela",
+      "name": "John Allison",
+      "depth": "C",
+      "current_focus": "Understanding the inter-relationships between processing, alloying, microstructure and properties in metallic materials – and in incorporating this knowledge into computational tools for use in research, education and engineering.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/john-allison/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-madison-allen-pepl-peer",
+      "name": "Madison Allen",
+      "depth": "C",
+      "current_focus": "Madison Allen works on high-power Hall thrusters, facility effects.",
+      "recent_publication": "",
+      "source_url": "https://pepl.engin.umich.edu/personnel",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-michael-thouless-micromechanics-modeling-of-m",
+      "name": "Michael Thouless",
+      "depth": "C",
+      "current_focus": "Micromechanics modeling of materials; interfacial fracture mechanics and adhesion; mechanical properties of thin films and coatings; toughening mechanisms in polymers; mechanical properties of structural adhesives.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/michael-thouless/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-mirko-gamba-aero",
+      "name": "Mirko Gamba",
+      "depth": "C",
+      "current_focus": "Mirko Gamba works on aerospace experiments, propulsion, diagnostics.",
+      "recent_publication": "",
+      "source_url": "https://aero.engin.umich.edu/role/faculty/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-name-dong-pingsha-welded-structures",
+      "name": "Pingsha Dong",
+      "depth": "C",
+      "current_focus": "Pingsha Dong focuses on advanced design and analysis of engineering structures, especially welded structures, and novel computational modeling for manufacturing processes. His methods have been adopted into ASME/API codes for fatigue and fitness-for-service evaluation of welde…",
+      "recent_publication": "",
+      "source_url": "https://name.engin.umich.edu/people/dong-pingsha/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-tanya-ty-pepl-peer",
+      "name": "Tanya Ty",
+      "depth": "C",
+      "current_focus": "Tanya Ty works on facility effects, high-power Hall thrusters, plasma propulsion.",
+      "recent_publication": "",
+      "source_url": "https://pepl.engin.umich.edu/personnel",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-will-hurley-pepl-peer",
+      "name": "Will Hurley",
+      "depth": "C",
+      "current_focus": "Will Hurley works on high-power Hall thrusters, electric propulsion.",
+      "recent_publication": "",
+      "source_url": "https://pepl.engin.umich.edu/personnel",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-yue-fan-defects-behaviors",
+      "name": "Yue Fan",
+      "depth": "C",
+      "current_focus": "Defects behaviors and microstructural evolution in structure materials, deformation mechanisms and mechanical properties of amorphous solids, long time scale atomistic simulation",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/yue-fan/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-karthik-duraisamy-aero",
+      "name": "Karthik Duraisamy",
+      "depth": "C",
+      "current_focus": "Karthik Duraisamy works on aerospace systems, fluid dynamics, scientific computing.",
+      "recent_publication": "",
+      "source_url": "https://aero.engin.umich.edu/role/faculty/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-angela-violi-multiscale-simulations-of-co",
+      "name": "Angela Violi",
+      "depth": "C",
+      "current_focus": "Multiscale simulations of complex systems, nanoparticle growth and self-assembly, nanoparticle interactions with biomolecular systems, applied chemical kinetics, aerosols. Chemical and physical properties of fuels, alternative fuels, lubricants.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/angela-violi/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-ann-jeffers-analysis-of-structures-subje",
+      "name": "Ann Jeffers",
+      "depth": "C",
+      "current_focus": "Analysis of structures subjected to extreme load events, especially fire; various topics in fire safety engineering (e.g., structural fire engineering, smart firefighting, wildland-urban interface fires); advanced finite element methods, including isogeometric analysis; multip…",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/ann-jeffers/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-name-singer-david-j-ship-design-theory",
+      "name": "David J. Singer",
+      "depth": "C",
+      "current_focus": "David Singer directs the Advanced Naval Concepts Research Lab and NAVSEA Ship Production Science Program. Research covers ship design theory, set-based design, ship arrangements, complexity/network science for naval combatants, and design decision frameworks used in Navy rapid…",
+      "recent_publication": "",
+      "source_url": "https://name.engin.umich.edu/people/singer-david-j/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-edgar-meyhofer-nanotechnology",
+      "name": "Edgar Meyhofer",
+      "depth": "C",
+      "current_focus": "Nanotechnology, bionanotechnology, cellular and molecular biomechanics",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/edgar-meyhofer/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-ellen-arruda-mechanical-behavior-of-mater",
+      "name": "Ellen Arruda",
+      "depth": "C",
+      "current_focus": "Mechanical behavior of materials including polymers, elastomers and soft tissue; tissue engineering of tendon and muscle constructs; constitutive modeling of growth, remodeling and functional adaptation in soft tissue; deformation mechanisms in polymers; crystal transformation…",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/ellen-arruda/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-james-barber-solid-mechanics-including-th",
+      "name": "James Barber",
+      "depth": "C",
+      "current_focus": "Solid mechanics including thermoelasticity; elasticity; solidification; contact mechanics; tribology; elastodynamics, fracture; stability of thermoelastic contact; friction, contact of rough surfaces.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/james-barber/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-name-collette-matthew-d-marine-structures",
+      "name": "Matthew D. Collette",
+      "depth": "C",
+      "current_focus": "Matthew Collette leads the Marine Structures Design Lab, which develops next-generation platform reliability, design science, and lifecycle support tools for the marine industry. The lab combines machine learning, digital twins, and probabilistic methods with an exclusive mari…",
+      "recent_publication": "",
+      "source_url": "https://name.engin.umich.edu/people/collette-matthew-d/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-sungmin-nam-mechanobiology",
+      "name": "Sungmin Nam",
+      "depth": "C",
+      "current_focus": "Mechanobiology, Biomaterials, Biomechanics, Medical devices, Mechanotherapy",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/sungmin-nam/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-name-mckenney-thomas-maritime-decarbonization",
+      "name": "Thomas McKenney",
+      "depth": "C",
+      "current_focus": "Thomas McKenney is Associate Professor of Engineering Practice focused on maritime decarbonization, sustainability, and passenger vessel design/operation. He previously led ship design at the Mærsk Mc-Kinney Møller Center for Zero Carbon Shipping and connects NAME teaching wit…",
+      "recent_publication": "",
+      "source_url": "https://name.engin.umich.edu/people/mckenney-thomas/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-alan-taub-microstructure",
+      "name": "Alan Taub",
+      "depth": "C",
+      "current_focus": "My major research interest is in understanding the inter-relationships between processing, microstructure and properties in materials; with an emphasis on mechanical, electrical and magnetic applications. Present research focus is on lightweight structures for land, sea and ai…",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/alan-taub/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-name-jonathan-page-set-based-design",
+      "name": "Jonathan Page",
+      "depth": "C",
+      "current_focus": "Jonathan Page is Professor of Engineering Practice (NAVSEA Professor of Naval Systems Engineering). His research centers on flexibility in engineering design, real options, set-based design for maritime systems of systems, and design-tool/workforce development for naval engine…",
+      "recent_publication": "",
+      "source_url": "https://name.engin.umich.edu/people/jonathan-page/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-julia-kramer-design-theory-methodology",
+      "name": "Julia Kramer",
+      "depth": "C",
+      "current_focus": "Design theory & methodology, collaborative engagement in engineering design, design for health applications, front-end medical device design processes, global public health, engineering design education",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/julia-kramer/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-ronald-larson-complex-fluids",
+      "name": "Ronald Larson",
+      "depth": "C",
+      "current_focus": "Complex fluids, polymers, fluid mechanics, surfactants, biomolecules, transport theory, rheology, instabilities, constitutive theory.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/ronald-larson/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-shanna-daly-front-end-design-processes",
+      "name": "Shanna Daly",
+      "depth": "C",
+      "current_focus": "Front-end design processes; idea generation; engineering creativity and divergent thinking; design cognition; socially-engaged design; socio-technical engineering skillsets; design ethnography; design problem finding and framing; design prototyping; design education",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/shanna-daly/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-theodor-freiheit-manufacturing-systems-engine",
+      "name": "Theodor Freiheit",
+      "depth": "C",
+      "current_focus": "Manufacturing systems engineering. Design of manufacturing and service systems. Reliability and productivity. Markov chain models, including the application of predictive control. Interaction between manufacturing process parameters and failure modes. Product quality. The infl…",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/theodor-freiheit/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-xiaoming-mao-theoretical-architected-mate",
+      "name": "Xiaoming Mao",
+      "depth": "C",
+      "current_focus": "Professor Mao's research interests span the areas of soft condensed matter, materials physics, and statistical mechanics. Her current research mainly runs along two lines: a unified view of soft elasticity and fundamental rules of self-assembly. The project on soft elasticity …",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/xiaoming-mao/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-name-wu-yue-cynthia-wave-turbulence",
+      "name": "Yue (Cynthia) Wu",
+      "depth": "C",
+      "current_focus": "Yue (Cynthia) Wu is an Assistant Research Scientist studying dynamics and energetics of waves and turbulence in the ocean and atmosphere. She uses theoretical and numerical approaches for geostrophic turbulence, gravity/lee/acoustic waves, and wave-turbulence interactions — mo…",
+      "recent_publication": "",
+      "source_url": "https://name.engin.umich.edu/people/wu-yue-cynthia/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-sridhar-kota-mechatronics",
+      "name": "Sridhar Kota",
+      "depth": "C",
+      "current_focus": "Bio-inspired engineering design; soft robots; compliant and shape-adaptive systems; topology optimization of compliant mechanisms; design for manufacturability.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/sridhar-kota/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-allen-liu-mechanobiology",
+      "name": "Allen Liu",
+      "depth": "C",
+      "current_focus": "Mechanobiology and mechanotransduction, bottom-up synthetic biology, quantitative cell biology",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/allen-liu/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-art-hyde-mechanical-engineering-resea",
+      "name": "Art Hyde",
+      "depth": "C",
+      "current_focus": "Art Hyde works on mechanical engineering research.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/art-hyde/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-bikash-kanungo-mechanical-engineering-resea",
+      "name": "Bikash Kanungo",
+      "depth": "C",
+      "current_focus": "Bikash Kanungo works on mechanical engineering research.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/bikash-kanungo/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-erin-cech-gender-and-sexuality",
+      "name": "Erin Cech",
+      "depth": "C",
+      "current_focus": "Gender and Sexuality; Inequalities and Stratification; Sociology of Culture; Theory, Knowledge, and Science; Work, Economy, and Organizations; Mixed Methods; Sociology; Administration",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/erin-cech/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-evan-fleming-mechanical-engineering-resea",
+      "name": "Evan Fleming",
+      "depth": "C",
+      "current_focus": "Evan Fleming works on mechanical engineering research.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/evan-fleming/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-maha-haji-mechanical-engineering-resea",
+      "name": "Maha Haji",
+      "depth": "C",
+      "current_focus": "Maha Haji works on mechanical engineering research.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/maha-haji/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-matthew-hughes-mechanical-engineering-resea",
+      "name": "Matthew Hughes",
+      "depth": "C",
+      "current_focus": "Matthew Hughes works on mechanical engineering research.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/matthew-hughes/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-sambit-das-mechanical-engineering-resea",
+      "name": "Sambit Das",
+      "depth": "C",
+      "current_focus": "Sambit Das works on mechanical engineering research.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/sambit-das/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-thomas-swinburne-plasticity-of-metallic-alloy",
+      "name": "Thomas Swinburne",
+      "depth": "C",
+      "current_focus": "Plasticity of metallic alloys, irradiation damage, statistical models, rare event sampling, uncertainty quantification, forecasting",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/thomas-swinburne/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-xuedong-zhai-mechanical-engineering-resea",
+      "name": "Xuedong Zhai",
+      "depth": "C",
+      "current_focus": "Xuedong Zhai works on mechanical engineering research.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/xuedong-zhai/",
+      "confidence": "medium"
+    },
+    {
+      "id": "umich-kristan-hilby-mechatronics",
+      "name": "Kristan Hilby",
+      "depth": "C",
+      "current_focus": "Teaching-focused mechatronics instruction; no research group listed on ME profile.",
+      "recent_publication": "",
+      "source_url": "https://me.engin.umich.edu/people/faculty/kristan-hilby/",
+      "confidence": "medium"
+    }
+  ]
+}

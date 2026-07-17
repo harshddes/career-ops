@@ -1,0 +1,397 @@
+{
+  "run_id": "trun_dd47611047ba4519ad43e99bcacf5f77",
+  "interaction_id": "trun_dd47611047ba4519ad43e99bcacf5f77",
+  "result_url": "https://platform.parallel.ai/play/deep-research/trun_dd47611047ba4519ad43e99bcacf5f77",
+  "status": "completed",
+  "output": {
+    "basis": [
+      {
+        "field": "executive_summary",
+        "reasoning": "Reasoning: The field_answer provides a comprehensive identity verification ( Name, affiliation, contact), disambiguation of namesakes, a clear stance on post-2024 funding attribution (no verified Cohen-specific 2024+ grant evidence), notes on adjacent lab-level funding not attributed to Cohen, and hiring signals with explicit caveats about attribution. It also references historical/contextual items (SSI postings, prior pre-2024 awards) and cites sources in the excerpts. Completeness: The answer covers identity, disambiguation, funding status (post-2024 absence of evidence with rationale), hiring signals (non-Cohen attribution, open/closed postings), and mentions sources. It does not attempt to fabricate new funding data and clearly marks what is found/not found. This aligns with the user\u2019s requested structure and caveats. Excerpts: The supporting excerpts include direct pages from PPPL and Princeton (identity pages, news items, job postings, etc.), which corroborate the claims made in the field_answer. Confidence caveats: The user asks for explicit citations; the field_answer provides narrative with bracketed references and mentions sources. If additional, exact per-grant citation data is needed, the answer would require pulling specific funder databases, which is not present in the excerpts. Overall, completeness = true; supported = true.",
+        "citations": [
+          {
+            "url": "https://www.pppl.gov/people/sam-cohen",
+            "excerpts": [
+              "Sam Cohen\nSam Cohen, Title: Principal Research Physicist, Email: scohen@pppl.gov, PPPL Logo, Princeton Plasma Physics Laboratory, 100 Stellarator Road, Princeton, NJ."
+            ],
+            "title": "Sam Cohen"
+          },
+          {
+            "url": "https://plasma.princeton.edu/people/samuel-cohen",
+            "excerpts": [
+              "Samuel A. Cohen | Princeton Program in Plasma Physics\nPosition: Lecturer with the Rank of Professor. Role: Director, Program in Plasma Science and Technology. Office Phone: 609-243-3185. Email: scohen@pppl.gov."
+            ],
+            "title": "Samuel A. Cohen | Princeton Program in Plasma Physics"
+          },
+          {
+            "url": "https://materials.princeton.edu/people/samuel-cohen",
+            "excerpts": [
+              "Samuel A. Cohen - Princeton Materials Institute\nSamuel A. Cohen Director, Program in Plasma Science and Technology, P.I., Magnetic Nozzle & FRC Experiments. Lecturer with the rank of Professor in Astrophysical Sciences."
+            ],
+            "title": "Samuel A. Cohen - Princeton Materials Institute"
+          },
+          {
+            "url": "https://mnx.pppl.gov/pages/cohen_cv.html",
+            "excerpts": [
+              "Samuel A. Cohen: CV\nDirector, Program in Plasma Physics and Technology, Princeton University. Principal Investigator, Magnetic Nozzle and FRC Experiments, Plasma Science and Technology Department, PPPL. Ph.D., Massachusetts Institute of Technology, 1973."
+            ],
+            "title": "Samuel A. Cohen: CV"
+          },
+          {
+            "url": "https://il.linkedin.com/in/samuelcohenfairgen",
+            "excerpts": [
+              "\u200fSamuel Cohen (Ph.D.)\u200f - \u200fCEO @ Fairgen (the Generative AI Suite for"
+            ],
+            "title": "\u200fSamuel Cohen (Ph.D.)\u200f - \u200fCEO @ Fairgen (the Generative AI Suite for ..."
+          },
+          {
+            "url": "https://www.pppl.gov/",
+            "excerpts": [
+              "Princeton Plasma Physics Laboratory (.gov)"
+            ],
+            "title": "Princeton Plasma Physics Laboratory (.gov) https://www.pppl.gov Princeton Plasma Physics Laboratory (PPPL)"
+          },
+          {
+            "url": "https://www.pppl.gov/news/2024/princeton-plasma-innovation-center-receives-funds-early-construction-activities-and",
+            "excerpts": [
+              "Princeton Plasma Innovation Center receives funds for ...\nFeb 22, 2024 \u2014 PPPL recently received permission to use $10 million in funding from Princeton University to prepare the site and received a $2.3 million grant"
+            ],
+            "title": "Princeton Plasma Innovation Center receives funds for ..."
+          },
+          {
+            "url": "https://www.pppl.gov/news/2025/brief%C2%A0pppl-lead-two-doe-funded-fusion-innovation-research-teams",
+            "excerpts": [
+              "PPPL to lead two DOE-funded fusion innovation research"
+            ],
+            "title": "PPPL to lead two DOE-funded fusion innovation research ... Princeton Plasma Physics Laboratory (.gov) https://www.pppl.gov \u203a news \u203a brief\u00a0pppl-lead-two-doe-f..."
+          },
+          {
+            "url": "https://pppl-princeton.icims.com/jobs/21860/associate-research-physicist---amss%28postdoc%29/job",
+            "excerpts": [
+              "Princeton Plasma Physics Lab | Associate Research Physicist\nMay 27, 2026 \u2014 Princeton Plasma Physics Laboratory (PPPL) is seeking a highly motivated Associate Research Physicist to advance quantum technologies based"
+            ],
+            "title": "Princeton Plasma Physics Lab | Associate Research Physicist"
+          },
+          {
+            "url": "https://www.pppl.gov/SSI-associate-research-scientist",
+            "excerpts": [
+              "Associate Research Scientist to advance PPPL Strategic ...\nThe Princeton Plasma Physics Laboratory (PPPL) seeks exceptional postdoctoral (post-doc) researchers with demonstrated leadership potential to play a major"
+            ],
+            "title": "Associate Research Scientist to advance PPPL Strategic ..."
+          },
+          {
+            "url": "https://www.pppl.gov/news/2020/pppl-physicist-receive-edison-award-fusion-powered-rocket-propulsion",
+            "excerpts": [
+              "PPPL physicist to receive Edison Award for fusion-powered ...\nOct 21, 2020 \u2014 Cohen and his partners received a U.S. patent for their \u201cmethod and apparatus to produce high specific impulse and moderate thrust from a fusion"
+            ],
+            "title": "PPPL physicist to receive Edison Award for fusion-powered ..."
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "identity",
+        "reasoning": "Assessment reasoning:\n- The field_description asks for identity verification of the lead, recent/active funding details (with exact grant data and URLs), recent/open positions with postings dates and URLs, LinkedIn evidence, confidence/caveats, and a structured set of sources.\n- The provided field_answer focuses on identity, affiliation, and contact details for Samuel A. Cohen at PPPL/Princeton, with multiple citations to internal PPPL pages and related Princeton pages. However, it does not provide any of the requested funding information (grants, funders, amounts, dates, statuses, roles, or URLs) nor the requested hiring postings, LinkedIn evidence, or a formal confidence assessment.\n- Therefore, the answer addresses part of the identity/affiliation aspect but fails to fulfill the funding and hiring/reporting portions and the explicit sourcing structure for those items. If the user intended to only verify identity, the answer would be closer to complete, but given the comprehensive scope in the query, completeness should be false.\n- Excerpts do support the identity-related statements (email, title/roles, PPPL affiliation) but do not corroborate any funding or hiring postings beyond stating roles. Hence, field_answer is partially supported by the excerpts.\n- Action: mark completeness as false due to missing required sections; mark supported as true since identity claims are supported by excerpts. Provide explicit note that no verified public funding or current postings are included in the field_answer.",
+        "citations": [
+          {
+            "url": "https://www.pppl.gov/people/sam-cohen",
+            "excerpts": [
+              "Sam Cohen\nSam Cohen, Title: Principal Research Physicist, Email: scohen@pppl.gov, PPPL Logo, Princeton Plasma Physics Laboratory, 100 Stellarator Road, Princeton, NJ."
+            ],
+            "title": "Sam Cohen"
+          },
+          {
+            "url": "https://plasma.princeton.edu/people/samuel-cohen",
+            "excerpts": [
+              "Samuel A. Cohen | Princeton Program in Plasma Physics\nPosition: Lecturer with the Rank of Professor. Role: Director, Program in Plasma Science and Technology. Office Phone: 609-243-3185. Email: scohen@pppl.gov."
+            ],
+            "title": "Samuel A. Cohen | Princeton Program in Plasma Physics"
+          },
+          {
+            "url": "https://materials.princeton.edu/people/samuel-cohen",
+            "excerpts": [
+              "Samuel A. Cohen - Princeton Materials Institute\nSamuel A. Cohen Director, Program in Plasma Science and Technology, P.I., Magnetic Nozzle & FRC Experiments. Lecturer with the rank of Professor in Astrophysical Sciences."
+            ],
+            "title": "Samuel A. Cohen - Princeton Materials Institute"
+          },
+          {
+            "url": "https://mnx.pppl.gov/pages/cohen_cv.html",
+            "excerpts": [
+              "Samuel A. Cohen: CV\nDirector, Program in Plasma Physics and Technology, Princeton University. Principal Investigator, Magnetic Nozzle and FRC Experiments, Plasma Science and Technology Department, PPPL. Ph.D., Massachusetts Institute of Technology, 1973."
+            ],
+            "title": "Samuel A. Cohen: CV"
+          },
+          {
+            "url": "https://www.pppl.gov/Princeton-Field-Reversed-Configuration",
+            "excerpts": [
+              "Princeton Field-Reversed Configuration (PFRC) - pppl.gov\nThe Princeton Field-Reversed Configuration (PFRC) is a fusion reactor concept with two defining features: the novel use of radio-frequency waves that drive an electrical current and heat the plasma, and magnetic mirrors that trap the plasma particles in a to-and-fro motion. While studying the relatively cool plasma within PFRC, researchers discovered electrons with unexpectedly intense energy"
+            ],
+            "title": "Princeton Field-Reversed Configuration (PFRC) - pppl.gov"
+          },
+          {
+            "url": "https://il.linkedin.com/in/samuelcohenfairgen",
+            "excerpts": [
+              "\u200fSamuel Cohen (Ph.D.)\u200f - \u200fCEO @ Fairgen (the Generative AI Suite for"
+            ],
+            "title": "\u200fSamuel Cohen (Ph.D.)\u200f - \u200fCEO @ Fairgen (the Generative AI Suite for ..."
+          },
+          {
+            "url": "https://www.linkedin.com/in/samlouiscohen",
+            "excerpts": [
+              "Samuel Cohen - AI Engineering @ BlackRock\nVP, AI Engineering at BlackRock. Studied Computer Science (Intelligent Systems) at Columbia. Continually awed that we've created thinking sand."
+            ],
+            "title": "Samuel Cohen - AI Engineering @ BlackRock"
+          },
+          {
+            "url": "https://www.indiangamingtradeshow.com/speakers/sam-cohen",
+            "excerpts": [
+              "Sam Cohen - Indian Gaming 2026\nSince 2005, Sam Cohen has brought his legal talents to the Santa Ynez Band of Chumash Indians as the Government Affairs Officer and Legal Officer."
+            ],
+            "title": "Sam Cohen - Indian Gaming 2026"
+          },
+          {
+            "url": "https://people.maths.ox.ac.uk/cohens",
+            "excerpts": [
+              "Sam Cohen\nContact Details. samuel.cohen@maths.ox.ac.uk; Mathematical Institute Andrew Wiles Building Radcliffe Infirmary Quarter Oxford OX2 6GG United Kingdom; Office"
+            ],
+            "title": "Sam Cohen"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "recent_active_funding",
+        "reasoning": "Assessment reasoning:\n- The field_description asks for a structured report including Identity, Recent/Active Funding, Recent and Open Positions, LinkedIn Evidence, Confidence and Caveats, and Sources, with explicit URLs for positive claims. It also requires clear verification of identity and current affiliation, and distinctions among funding types. The provided field_answer focuses almost entirely on funding notes for 2024 onward with many placeholders (e.g., [recent_active_funding[0]]) and statements like \"No verified public evidence found\". It does not deliver a complete, structured report as requested (no explicit Identity block, no Open Positions, no LinkedIn evidence, and no full, verifiable source URLs for each claim). Furthermore, there are inconsistencies: the field_answer uses Cohen-attributable framing but includes adjacent lab-only funding and a claim about no Cohen-attributable grants since 2024 without robust source links. The Excerpts supplied do not clearly corroborate all positive assertions (and some references appear as placeholders), so the answer is not clearly supported by the excerpts. Overall, the answer is not complete and its positive claims are not reliably supported by the excerpts provided.",
+        "citations": [
+          {
+            "url": "https://www.pppl.gov/news/2024/princeton-plasma-innovation-center-receives-funds-early-construction-activities-and",
+            "excerpts": [
+              "Princeton Plasma Innovation Center receives funds for ...\nFeb 22, 2024 \u2014 PPPL recently received permission to use $10 million in funding from Princeton University to prepare the site and received a $2.3 million grant"
+            ],
+            "title": "Princeton Plasma Innovation Center receives funds for ..."
+          },
+          {
+            "url": "https://www.pppl.gov/news/2025/brief%C2%A0pppl-lead-two-doe-funded-fusion-innovation-research-teams",
+            "excerpts": [
+              "PPPL to lead two DOE-funded fusion innovation research"
+            ],
+            "title": "PPPL to lead two DOE-funded fusion innovation research ... Princeton Plasma Physics Laboratory (.gov) https://www.pppl.gov \u203a news \u203a brief\u00a0pppl-lead-two-doe-f..."
+          },
+          {
+            "url": "https://www.pppl.gov/news/2026/going-further-fusion-together",
+            "excerpts": [
+              "Going further with fusion, together\nJan 7, 2026 \u2014 PPPL's expertise aids many in plasma physics theory, computer simulations and advanced measurement tools, known as diagnostics Link is external."
+            ],
+            "title": "Going further with fusion, together"
+          },
+          {
+            "url": "https://www.pppl.gov/news/2020/pppl-physicist-receive-edison-award-fusion-powered-rocket-propulsion",
+            "excerpts": [
+              "PPPL physicist to receive Edison Award for fusion-powered ...\nOct 21, 2020 \u2014 Cohen and his partners received a U.S. patent for their \u201cmethod and apparatus to produce high specific impulse and moderate thrust from a fusion"
+            ],
+            "title": "PPPL physicist to receive Edison Award for fusion-powered ..."
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "recent_and_open_positions",
+        "reasoning": "Assessment notes: The field_description asks to locate currently open PhD/doctoral/research openings connected to Samuel Cohen (PPPL/PPST/FRC topics) or his group, including postings after 2026-01-01, and to also surface closed/historical postings, with structured details and evidence. The provided field_answer states that there is no verified public evidence of an open position explicitly tied to Cohen or his named programs, and then lists one open position in a different PPPL department (AMSS) with Cohen attribution explicitly marked as No. It also includes a closed/historical posting and some ancillary graduate-program information. To be complete, the answer should (a) confirm whether any Cohen-tied or PPST/PPPL-group openings exist now or recently, (b) provide structured details for any such postings if found, (c) include LinkedIn evidence if available, and (d) provide direct URLs for every positive claim. The current answer partially addresses the absence of Cohen-tied open positions and provides some related postings, but does not comprehensively enumerate all possible Cohen-affiliated opportunities (including potential postings after 2026-01-01 that might exist elsewhere in PPPL) nor systematically verify LinkedIn or other corroborating sources. Therefore, completeness is likely false. The excerpts provided do support that the only clearly open posting in the vicinity is in a different department and not Cohen-related, which aligns with the claim of no Cohen-tied open positions found in the provided data set.",
+        "citations": [
+          {
+            "url": "https://pppl-princeton.icims.com/jobs/21860/associate-research-physicist---amss%28postdoc%29/job",
+            "excerpts": [
+              "Princeton Plasma Physics Lab | Associate Research Physicist\nMay 27, 2026 \u2014 Princeton Plasma Physics Laboratory (PPPL) is seeking a highly motivated Associate Research Physicist to advance quantum technologies based"
+            ],
+            "title": "Princeton Plasma Physics Lab | Associate Research Physicist"
+          },
+          {
+            "url": "https://www.pppl.gov/SSI-associate-research-scientist",
+            "excerpts": [
+              "Associate Research Scientist to advance PPPL Strategic ...\nThe Princeton Plasma Physics Laboratory (PPPL) seeks exceptional postdoctoral (post-doc) researchers with demonstrated leadership potential to play a major"
+            ],
+            "title": "Associate Research Scientist to advance PPPL Strategic ..."
+          },
+          {
+            "url": "https://pppl-princeton.icims.com/jobs/21325/strategic-science-initiative-fellowship-%28ssi%29/job",
+            "excerpts": [],
+            "title": "Work With Us | Princeton Plasma Physics Laboratory"
+          },
+          {
+            "url": "https://plasma.princeton.edu/admissions",
+            "excerpts": [
+              "Admissions | Princeton Program in Plasma Physics"
+            ],
+            "title": "Admissions | Princeton Program in Plasma Physics Princeton Program in Plasma Physics https://plasma.princeton.edu \u203a admissions"
+          },
+          {
+            "url": "https://gradschool.princeton.edu/academics/degrees-requirements/fields-study/astrophysical-sciences",
+            "excerpts": [
+              "Astrophysical Sciences - Graduate School\nThe graduate program in Astrophysical Sciences prepares students for scientific careers in astrophysics through a combination of classes and early and active participation in research projects, culminating in original thesis research. The program length is five years."
+            ],
+            "title": "Astrophysical Sciences - Graduate School"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "linkedin_evidence",
+        "reasoning": "Assessment steps:\n- Field: linkedin_evidence for Samuel Cohen (PPPL).\n- The provided field_answer asserts no verified public LinkedIn profile or posts for the target Samuel Cohen affiliated with PPPL, and includes a small verification table and a note about search results. It also provides a PPPL excerpt indicating a Sam Cohen with an institutional email scohen@pppl.gov on PPPL's site, which helps establish identity but is not LinkedIn-related.\n- Completeness check:\n  - The user query asks for LinkedIn evidence among other items (Identity, Funding, Hiring, LinkedIn Evidence, Confidence, and Sources).\n  - The field_answer covers LinkedIn evidence by claiming no verified LinkedIn presence and explains search results. It does not, however, provide any actual LinkedIn URLs or postings (since none were found). Given the instruction to explicitly state No verified public evidence when appropriate, the answer fulfills that component.\n  - Therefore, the field answer fully addresses the LinkedIn evidence aspect (it states the lack of verified LinkedIn evidence and explains checks).\n- However, the supporting excerpts provided do not directly corroborate the conclusion (the excerpt is from PPPL staff page, not LinkedIn). This means the field answer is not supported by the excerpts with respect to LinkedIn evidence, though it does align with the factual absence claim.\n- Overall: Completeness = true (the answer addresses the LinkedIn evidence requirement). Supported = false (the excerpts do not substantiate the LinkedIn conclusion directly).\n- Note for future improvements: including explicit URLs for any LinkedIn searches attempted and clarifying what constitutes a \u201cverified public LinkedIn profile\u201d would strengthen supportability.",
+        "citations": [
+          {
+            "url": "https://www.pppl.gov/people/sam-cohen",
+            "excerpts": [
+              "Sam Cohen\nSam Cohen, Title: Principal Research Physicist, Email: scohen@pppl.gov, PPPL Logo, Princeton Plasma Physics Laboratory, 100 Stellarator Road, Princeton, NJ."
+            ],
+            "title": "Sam Cohen"
+          }
+        ],
+        "confidence": "medium"
+      },
+      {
+        "field": "confidence_and_caveats",
+        "reasoning": "Assessment reasoning:\n- The field_answer presents a structured set of verification methods and caveats, which aligns with the query's request to verify identity, current affiliation, and to surface caveats about funding/positions. \n- It enumerates multiple sources (PPPL profile, Princeton programs, NSF, DOE/PPPL news, etc.) and includes explicit caveats about findings and limitations. \n- Therefore, the field_answer appears to address identity/affiliation verification and provide caveats and sources. \n- Based on the evidence, completeness is true since the answer covers identity verification, caveats, and references; however, it does not provide a fully consolidated final summary of Recent Funding and Open Positions within the answer body itself, it does reference the relevant sources and caveats. Overall, it satisfies the field\u2019s core expectations for confidence and caveats with direct URLs in the sources. \n- Excerpt support: multiple excerpts corroborate the identity, title, and email; NSF/DOE mentions provide context for funding searches; LinkedIn results are noted as not yielding a match. \nNo contradictory claims detected in the provided field_answer versus excerpts.",
+        "citations": [
+          {
+            "url": "https://www.pppl.gov/people/sam-cohen",
+            "excerpts": [
+              "Sam Cohen\nSam Cohen, Title: Principal Research Physicist, Email: scohen@pppl.gov, PPPL Logo, Princeton Plasma Physics Laboratory, 100 Stellarator Road, Princeton, NJ."
+            ],
+            "title": "Sam Cohen"
+          },
+          {
+            "url": "https://plasma.princeton.edu/people/samuel-cohen",
+            "excerpts": [
+              "Samuel A. Cohen | Princeton Program in Plasma Physics\nPosition: Lecturer with the Rank of Professor. Role: Director, Program in Plasma Science and Technology. Office Phone: 609-243-3185. Email: scohen@pppl.gov."
+            ],
+            "title": "Samuel A. Cohen | Princeton Program in Plasma Physics"
+          },
+          {
+            "url": "https://materials.princeton.edu/people/samuel-cohen",
+            "excerpts": [
+              "Samuel A. Cohen - Princeton Materials Institute\nSamuel A. Cohen Director, Program in Plasma Science and Technology, P.I., Magnetic Nozzle & FRC Experiments. Lecturer with the rank of Professor in Astrophysical Sciences."
+            ],
+            "title": "Samuel A. Cohen - Princeton Materials Institute"
+          },
+          {
+            "url": "https://mnx.pppl.gov/pages/cohen_cv.html",
+            "excerpts": [
+              "Samuel A. Cohen: CV\nDirector, Program in Plasma Physics and Technology, Princeton University. Principal Investigator, Magnetic Nozzle and FRC Experiments, Plasma Science and Technology Department, PPPL. Ph.D., Massachusetts Institute of Technology, 1973."
+            ],
+            "title": "Samuel A. Cohen: CV"
+          },
+          {
+            "url": "https://www.nsf.gov/awardsearch/show-award?AWD_ID=2239297&HistoricalAwards=false",
+            "excerpts": [
+              "Award Details - NSF Award Search\nRecipient: THE TRUSTEES OF PRINCETON UNIVERSITY ; Initial Amendment Date: February 21, 2023 ; Latest Amendment Date: May 21, 2026 ; Award Number: 2239297 ; Award"
+            ],
+            "title": "Award Details - NSF Award Search"
+          },
+          {
+            "url": "https://www.pppl.gov/news/2026/going-further-fusion-together",
+            "excerpts": [
+              "Going further with fusion, together\nJan 7, 2026 \u2014 PPPL's expertise aids many in plasma physics theory, computer simulations and advanced measurement tools, known as diagnostics Link is external."
+            ],
+            "title": "Going further with fusion, together"
+          },
+          {
+            "url": "https://www.pppl.gov/news-category/fusion-energy",
+            "excerpts": [
+              "Fusion Energy\nDecades of coding experience are powering the next era of fusion energy \u00b7 PPPL launches STELLAR-AI platform to accelerate fusion energy research \u00b7 Going further"
+            ],
+            "title": "Fusion Energy"
+          },
+          {
+            "url": "https://www.pppl.gov/news/2025/brief%C2%A0pppl-lead-two-doe-funded-fusion-innovation-research-teams",
+            "excerpts": [
+              "PPPL to lead two DOE-funded fusion innovation research"
+            ],
+            "title": "PPPL to lead two DOE-funded fusion innovation research ... Princeton Plasma Physics Laboratory (.gov) https://www.pppl.gov \u203a news \u203a brief\u00a0pppl-lead-two-doe-f..."
+          },
+          {
+            "url": "https://pppl-princeton.icims.com/jobs/?hashed=-435679187",
+            "excerpts": [],
+            "title": "Work With Us | Princeton Plasma Physics Laboratory"
+          },
+          {
+            "url": "https://www.pppl.gov/SSI-associate-research-scientist",
+            "excerpts": [
+              "Associate Research Scientist to advance PPPL Strategic ...\nThe Princeton Plasma Physics Laboratory (PPPL) seeks exceptional postdoctoral (post-doc) researchers with demonstrated leadership potential to play a major"
+            ],
+            "title": "Associate Research Scientist to advance PPPL Strategic ..."
+          },
+          {
+            "url": "https://www.pppl.gov/apply-pppl-position",
+            "excerpts": [
+              "APPLY FOR A PPPL POSITION\nApply for a PPPL position. Career advancement support from PPPL. PPPL Logo Princeton Plasma Physics Laboratory 100 Stellarator Road, Princeton, NJ"
+            ],
+            "title": "APPLY FOR A PPPL POSITION"
+          },
+          {
+            "url": "https://www.pppl.gov/Princeton-Field-Reversed-Configuration",
+            "excerpts": [
+              "Princeton Field-Reversed Configuration (PFRC) - pppl.gov\nThe Princeton Field-Reversed Configuration (PFRC) is a fusion reactor concept with two defining features: the novel use of radio-frequency waves that drive an electrical current and heat the plasma, and magnetic mirrors that trap the plasma particles in a to-and-fro motion. While studying the relatively cool plasma within PFRC, researchers discovered electrons with unexpectedly intense energy"
+            ],
+            "title": "Princeton Field-Reversed Configuration (PFRC) - pppl.gov"
+          },
+          {
+            "url": "https://www.pppl.gov/news/2020/pppl-physicist-receive-edison-award-fusion-powered-rocket-propulsion",
+            "excerpts": [
+              "PPPL physicist to receive Edison Award for fusion-powered ...\nOct 21, 2020 \u2014 Cohen and his partners received a U.S. patent for their \u201cmethod and apparatus to produce high specific impulse and moderate thrust from a fusion"
+            ],
+            "title": "PPPL physicist to receive Edison Award for fusion-powered ..."
+          }
+        ],
+        "confidence": "high"
+      }
+    ],
+    "content": {
+      "executive_summary": "- **Identity Confirmed**: Samuel A. Cohen, Principal Research Physicist at PPPL, scohen@pppl.gov, Lecturer with the Rank of Professor in Astrophysical Sciences at Princeton University, Director of the Program in Plasma Science and Technology (PPST), and Principal Investigator of Magnetic Nozzle & FRC Experiments at the Plasma Science and Technology Department of PPPL [executive_summary[0]] [10] [executive_summary[1]] [1] [executive_summary[2]] [73]. -> Treat the Lead ID lead-038 as the canonical Samuel Cohen advocate for engagement.\n- **Namesakes Disambiguated**: No risk of merge. The Princeton PPPL Samuel Cohen has a 1973 MIT Ph.D. and a Princeton faculty page; the namesake CEOs at Fairgen and other LinkedIn profiles are unrelated [executive_summary[3]] [74] [executive_summary[4]] [60]. -> No ambiguity when filtering inbound outreach or invitations.\n- **Funding on/after 2024-01-01 in Cohen's Name**: No verified public evidence found for any competitive grant, fellowship, or PI/Co-PI award explicitly awarded to Cohen as PI or co-PI announced on or after 2024-01-01 [executive_summary[5]] [50] NSF Award Search DOE Innovation Network for Fusion Energy. -> Do not list grant-attributable funds to Cohen for 2024+ in outreach without further qualifying.\n- **Adjacent Lab-Level Funding (Cohen-Lab Not Required)**: Princeton Plasma Innovation Center (PPIC) received USD **10M from Princeton University** plus USD **2.3M DOE AFFECT grant** announced 2024-02-22 for site prep and geothermal works on a USD **109.7M total project**; Cohen is not named [executive_summary[6]] [28]. -> Useful background but not a Cohen-specific grant; do not list as personal funding.\n- **2025 DOE FIRE Collaboratives - Two PPPL Teams**: USD **128M** awarded across seven teams (up to USD **220M** over four years per announcement); PPPL teams led by Nathaniel Ferraro (MiRACL), Rajesh Maingi, Ben Lindley, and Andrei Khodak - **Cohen is not a PI on these 2025 teams** [executive_summary[7]] [51]. -> Useful context; correctly exclude from Cohen-attributable list.\n- **Open Hiring as of July 11, 2026**: One PPPL postdoc posting in the AMSS department (applied materials & sustainable sciences) is currently OPEN, posted 2026-05-27, salary USD **93,500 to 149,300**; uses diamond color center / microelectronics focus and is NOT Cohen-attributable [executive_summary[8]] [44]. -> Good AMSS candidate lead; not a Cohen-group posting.\n- **Fellowship Call Deadline Crossover**: The PPPL-wide **SSI Strategic Science Initiative Fellowship** Associate Research Scientist posting carried deadline 2026-01-31; on 2026-07-11 this is **Closed/Historical** - it is institutional, not Cohen-attributable, but still surfaces a recent entry-point signal to the lab [executive_summary[9]] [36] -> Use as historical evidence of a recurring recruitment pathway, not a Cohen-specific signal.\n- **Prior Recognitions (Pre-2024 informational only)**: 2020 Thomas Edison Patent Award (New Jersey Development Council) for fusion-powered rocket propulsion patent - recognized as a PRIZE (not a research grant); PLUS pre-2024 funding (2018 NASA STTR Phase II ~USD **750K**, 2019 ARPA-E USD **1.25M** award of which approximately USD **700K** was at Princeton) - all OUT OF the post-2024 window [executive_summary[10]] [14]. -> Keep in CV context, do not count toward 2024-onward funding.",
+      "identity": "Samuel A. Cohen is a long-tenured Principal Research Physicist at the Princeton Plasma Physics Laboratory (PPPL), operating under Princeton University's School of Engineering and Applied Science and the U.S. Department of Energy (DOE). His institutional email at the lab is **scohen@pppl.gov**. PPPL's primary profile catalog displays him under \"Sam Cohen\" with the line \"Sam Cohen, Title: Principal Research Physicist, Email: scohen@pppl.gov, PPPL Logo, Princeton Plasma Physics Laboratory, 100 Stellarator Road, Princeton, NJ\" [identity[0]] [10]. The Princeton Program in Plasma Physics website lists \"Position: Lecturer with the Rank of Professor. Role: Director, Program in Plasma Science and Technology. Office Phone: 609-243-3185. Email: scohen@pppl.gov\" [identity[1]] [1]. The Princeton Materials Institute directory describes him as \"Director, Program in Plasma Science and Technology, P.I., Magnetic Nozzle & FRC Experiments. Lecturer with the rank of Professor in Astrophysical Sciences\" [identity[2]] [73]. The PPPL-hosted CV page confirms: \"Director, Program in Plasma Physics and Technology, Princeton University. Principal Investigator, Magnetic Nozzle and FRC Experiments, Plasma Science and Technology Department, PPPL. Ph.D., Massachusetts Institute of Technology, 1973\" [identity[3]] [74]. He earned a B.S. in Physics at MIT in 1968 and Ph.D. at MIT in 1973, with research interests in Magnetic Fusion, Field-Reversed Configuration, Dynamic Stabilization, Advanced (Aneutronic) Fuels for Fusion, Plasma Thrusters for Space Propulsion, Plasma Recombination, and Nonlinear Dynamics of Charged Particles in FRCs [identity[2]] [73].\n\nHis lead programs are the **Princeton Field-Reversed Configuration (PFRC)**, including the **PFRC-2** device, and fusion-propulsion thrusters (PFRC rocket concept). The PPPL PFRC page describes it as \"a fusion reactor concept... with the novel use of radio-frequency waves that drive an electrical current and heat the plasma, and magnetic mirrors that trap the plasma particles\" [identity[4]] [40].\n\n### Namesake Disambiguation\n\nMultiple Samuel Cohens exist online and on LinkedIn; none conflict with this lead.\n\n| Person | Role | Identifier | Source |\n|---|---|---|---|\n| **Samuel A. Cohen (target lead)** | Principal Research Physicist, PPPL; Lecturer with Rank of Professor, Princeton; Director, PPST; PI Magnetic Nozzle & FRC Experiments | scohen@pppl.gov; MIT 1973 Ph.D. | [identity[0]] [10]; [identity[3]] [74] |\n| Samuel Cohen (Ph.D.) | CEO Fairgen (synthetic data / AI digital twins) | Israel / Tel Aviv; previously Check Point Software, Facebook AI | [identity[5]] [60]; Fairgen Digital Twins with Samuel Cohen - Greenbook |\n| Samuel Cohen | Ad Tech & Operations / Designer | GroupM, University of Wisconsin-Madison | Samuel Cohen | LinkedIn |\n| Samuel Cohen | VP AI Engineering, BlackRock | Studied CS at Columbia | [identity[6]] [59] |\n| Sam Cohen (Indian Gaming speaker) | Industry speaker | Indian Gaming 2026 trade show | [identity[7]] [22] |\n| Samuel Cohen (Math, Oxford) | samuel.cohen@maths.ox.ac.uk | Mathematical Institute, Oxford | [identity[8]] [6] |\n\nTakeaway: the official PPPL Princeton faculty listing and lab-hosted CV are the canonical identifiers; any outreach should use **scohen@pppl.gov** and the Princeton faculty directory as corroboration.",
+      "recent_active_funding": "### Funding Window 2024-01-01 to Present (Cohen-Attributable)\n\n**No verified public evidence found** for any competitive grant, DOE or NSF award, fellowship, or consortium funding where Samuel A. Cohen is named PI or co-PI announced on or after 2024-01-01. The verification methods used are listed under Confidence and Caveats.\n\n### Adjacent Lab-Level Funding (2024-2026) Worth Documenting (Not Cohen-Attributable)\n\n| Date | Source | Funding Item | Amount (USD) | Currency | Cohen Role | Direct URL |\n|---|---|---|---|---|---|---|\n| 2024-02-22 | Princeton University press / PPPL News | PPIC Construction Site Prep (Princeton institutional funding) | **10,000,000** | USD | Not named (institutional) | [recent_active_funding[0]] [28] |\n| 2024-02-22 | U.S. DOE (AFFECT program) | PPIC Site Prep / Geothermal Wells Grant | **2,300,000** | USD | Not named (institutional) | [recent_active_funding[0]] [28] |\n| 2024-02-22 | Total PPIC Project | (Construction total) | **109,700,000** | USD | (institutional, no Cohen) | [recent_active_funding[0]] [28] |\n| 2025-09-16 | DOE Fusion Innovation Research Engine (FIRE) Collaboratives | Total program funding (two PPPL-led teams of seven total) | **128,000,000** awarded; up to **220,000,000** over four years | USD | Cohen not on these PPPL teams (Ferraro, Maingi, Lindley, Khodak) | [recent_active_funding[1]] [51] |\n| 2026-01-07 | Multiple (DOE contracts DE-AC02-09CH11466, DE-AC05-00OR22725; CRADA NFE-19-07769; EUROfusion grants 633053 and 101052200; UK EPSRC; DOE 6-month feasibility study FuRTH; FY2025 INFUSE >6M USD total with project grants USD 100K-500K) | PPPL fusion program support (institutional) | Not specifically Cohen-attributable | USD | Not named | [recent_active_funding[2]] [55] |\n\n### What Was Already Awarded to Cohen Before 2024 (Out of Window)\n\n| Award Year | Funder | Item | Amount (USD) | Cited Source |\n|---|---|---|---|---|\n| 2018 | NASA via Princeton Satellite Systems (STTR Phase II) | Superconducting magnet R&D for PFRC-2 propulsion | **750,000** | [recent_active_funding[3]] [14] |\n| 2019 | ARPA-E (PFRC-2 ion heating) | Total award (Cohen ~portion of which) | **1,250,000**; approximately **700,000** attributed to Cohen via PPPL | [recent_active_funding[3]] [14] |\n| 2020 | New Jersey Development Council (Thomas Edison Patent Award) | PRIZE - U.S. patent for fusion-powered rocket propulsion (\"method and apparatus to produce high specific impulse and moderate thrust from a fusion reaction\") | Prize (not a grant) | [recent_active_funding[3]] [14] |\n\nTakeaway: there is a clear funding gap attributable to Cohen in the official record from 2024 onward; PPPL-level facilities and FIRE-Collaborative funding are running, but Cohen is not the named PI. Engage on the basis of lab channels and the FRC program rather than competitive grant signals.",
+      "recent_and_open_positions": "### Open As of 2026-07-11\n\n**No verified public evidence found** for an open position explicitly tied to Cohen, FRC, PFRC, Magnetic Nozzle, or PPST programs.\n\nThe only PPPL postdoc posting currently publicly recordable is in a separate department:\n\n| Title | Type | Status | Posted Date | Deadline | Location | Salary | Description Topic | Cohen-Attributable? | Direct URL |\n|---|---|---|---|---|---|---|---|---|---|\n| Associate Research Physicist - AMSS(Postdoc) | Postdoc (Research Staff) | **Open** | 2026-05-27 (Date Posted 1 month ago as of July 2026) | Not publicly listed | PPPL, Princeton, NJ, Forrestal Campus | **USD 93,500 - 149,300** | Quantum technologies based on diamond color centers and microelectronics, PPPL Appl Mat & Sustainblty Sc (AMSS) department | **No** (different department - AMSS, not Cohen's PPST) | [recent_and_open_positions[0]] [44] |\n\n### Closed / Historical From 2026-01-01 Onward\n\n| Title | Type | Status | Posted Date | Deadline | Location | Description Topic | Cohen-Attributable? | Direct URL |\n|---|---|---|---|---|---|---|---|---|\n| Associate Research Scientist (Strategic Science Initiative Fellowship - SSI) | Postdoc Fellowship (Research Staff) | **Closed/Historical** (deadline passed) | Posted for FY2026 cycle (PPPL institutional rollout) | **2026-01-31** | Princeton, NJ (PPPL) | PPPL-wide fellowship; two-year minimum, three-year term renewable annually; PhD within 5 years of application | **No** (lab-wide; no Cohen named as advisor) | [recent_and_open_positions[1]] [36]; ICIMS requisition [recent_and_open_positions[2]] [63] |\n\n### Associated Graduate-Program Pathway (Informational)\n\nPrinceton's Program in Plasma Physics is the departmental gateway; admissions page indicates graduate study in plasma physics [recent_and_open_positions[3]] [77]. Princeton's Graduate School lists a five-year Astrophysical Sciences PhD program accepting plasma-related thesis work [recent_and_open_positions[4]] [78]. No evidence ties a posted 2024-2026 graduate opening exclusively to Cohen.\n\nTakeaway: as of the audit date, no Lab-internal job posting is associated with Cohen or his sub-program (PPST/FRC/PFRC). The AMSS Postdoc is the only currently-open PPPL hire and it is in a different department.",
+      "linkedin_evidence": "**No verified public LinkedIn profile of record for Samuel A. Cohen at PPPL** was located. Search-of-record queries (site:linkedin.com) returned only namesake individuals, none with the affiliation, MIT-1973 PhD timeline, or PPPL email identity consistent with the lead:\n\n| Query Angle | Result | Why Unrelated |\n|---|---|---|\n| \"Samuel Cohen\" Princeton Plasma Physics | Sam Cohen at PPPL page (institution, not LinkedIn) | [linkedin_evidence[0]] [10] |\n| Samuel Cohen CEO Fairgen | Ph.D., Check Point / Facebook AI; Israel/Tel Aviv | Different person and field (AI/synthetic data) |\n| Samuel Cohen BlackRock | VP AI Engineering; Columbia CS | Industry, not PPPL |\n| Samuel Cohen GroupM / UW-Madison | Ad Tech & Operations | Industry, not PPPL |\n| Samuel Cohen AI Software Engineer | Industry AI engineer | Unrelated |\n| Sam Cohen Process Engineer Kraton | Process Engineer, Kraton; Georgia Tech | Industry, not PPPL |\n| Sam Cohen Indian Gaming speaker | Industry speaker | Different sector |\n| Sam Cohen Mathematical Institute Oxford | Oxford mathematician | Different person |\n\nNo public LinkedIn **post** about Cohen (or FRC/PFRC hiring) was located.\n\nTakeaway: there is no public LinkedIn profile OR post of record for the target Cohen; outreach should rely on Princeton's official directories and the PPPL faculty/profiles page rather than on LinkedIn-sourced evidence.",
+      "confidence_and_caveats": "### Verification Methods Performed\n\n1. **PPPL official site (pppl.gov)**: The PPPL profile page confirms Principal Research Physicist + scohen@pppl.gov + 100 Stellarator Road, Princeton, NJ [confidence_and_caveats[0]] [10].\n2. **Princeton Program in Plasma Physics directory**: Confirms Lecturer with the Rank of Professor + Director, Program in Plasma Science and Technology + scohen@pppl.gov [confidence_and_caveats[1]] [1].\n3. **Princeton Materials Institute directory**: Confirms PPST directorship + Magnetic Nozzle & FRC P.I. status + Astrophysical Sciences Lecturer rank [confidence_and_caveats[2]] [73].\n4. **PPPL-hosted CV**: Confirms Directory of PPST, PI of Magnetic Nozzle and FRC Experiments, MIT 1973 PhD [confidence_and_caveats[3]] [74].\n5. **NSF Award Search**: Queried Princeton plasma Cohen grants (including NSF Award 2239297 surfaced in early discovery; full extraction confirmed PI is Chi Jin on a Computer Science PORL CAREER award, not plasma physics and not Cohen) [confidence_and_caveats[4]] [7].\n6. **DOE/FES and PPPL news pages 2024-2026**: Review of PPPL News categories for fusion-energy and \"Going further with fusion, together\" (Jan 7, 2026) - no Cohen-named funding PI [confidence_and_caveats[5]] [55]; PPPL News 2024; [confidence_and_caveats[6]] [56].\n7. **PPPL FIRE Collaboratives brief (2025-09-16)**: PIs Ferraro, Maingi, Lindley, Khodak - Cohen is not on these teams [confidence_and_caveats[7]] [51].\n8. **PPPL ICIMS careers (Princeton portal)**: Searched for open postings and SSI fellowship [confidence_and_caveats[8]] [49]; [confidence_and_caveats[9]] [36]; [confidence_and_caveats[10]] [19].\n9. **PFRC program page (PPPL) and Edison Award news**: Documented pre-2024 funding context [confidence_and_caveats[11]] [40]; [confidence_and_caveats[12]] [14].\n10. **LinkedIn discovery**: site:linkedin.com queries returned only clear namesakes, none reconcilable with PPPL, MIT 1973 PhD, or scoop cohen@pppl.gov identity.\n\n### Caveats\n\n- **Funding record lookup limitations**: PPPL is a federally managed national laboratory; the DOE prime contract (DE-AC02-09CH11466) is institutional and therefore does not appear as a \"Cohen grant\" in any competitive funder database. INFUSE program partnership (DOE PFY2025) lists PPPL as one of three winners of USD 100K-500K project awards - of the three, Cohen is not listed as PI in the news disclosures [confidence_and_caveats[5]] [55].\n- **No 2024-2026 NSF search award specifically tied to Cohen surfaced** in the queries attempted; the single Princeton plasma-relevant NSF award that surfaced (NSF 2239297) was Chi Jin on Reinforcement Learning, unrelated to plasma/fusion.\n- **Job posting future-proofing**: SSI fellowship (deadline 2026-01-31) and AMSS postdoc (posted 2026-05-27) are the only recordable items in the audit window. ICIMS pages have a publicly accessible canonical URL but posting detail is sometimes JS-rendered; if a Cohen-lab position appears, it would be located via the PPPL ICIMS portal (filter by department Plasma Science and Technology). \n- **LinkedIn limitations**: The lack of an identifiable LinkedIn profile for Cohen reduces the corroboration pathways to institutional sources and the PPPL CV page.\n- **Words of caution on PRE-2024 history**: The Edison Award is a prize (not a grant), and the NASA / ARPA-E 2018-2019 instruments are out of the funding window but provide useful context for Cohen's PFRC/rocket-propulsion portfolio."
+    },
+    "type": "json",
+    "beta_fields": null,
+    "mcp_tool_calls": null,
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "executive_summary": {
+          "type": "string",
+          "title": "Executive Summary"
+        },
+        "identity": {
+          "type": "string",
+          "title": "Identity"
+        },
+        "recent_active_funding": {
+          "type": "string",
+          "title": "Recent/Active Funding"
+        },
+        "recent_and_open_positions": {
+          "type": "string",
+          "title": "Recent and Open Positions"
+        },
+        "linkedin_evidence": {
+          "type": "string",
+          "title": "LinkedIn Evidence"
+        },
+        "confidence_and_caveats": {
+          "type": "string",
+          "title": "Confidence and Caveats"
+        }
+      },
+      "required": [
+        "executive_summary",
+        "identity",
+        "recent_active_funding",
+        "recent_and_open_positions",
+        "linkedin_evidence",
+        "confidence_and_caveats"
+      ]
+    }
+  }
+}

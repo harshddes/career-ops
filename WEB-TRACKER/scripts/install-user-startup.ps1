@@ -8,6 +8,8 @@ $ErrorActionPreference = "Stop"
 
 $scriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 $trackerRoot = (Resolve-Path (Join-Path $scriptRoot "..")).Path
+$careerOpsRoot = (Resolve-Path (Join-Path $trackerRoot "..")).Path
+$launcher = Join-Path $careerOpsRoot "Launch-CareerOps-Dashboard.cmd"
 $startupDir = [Environment]::GetFolderPath("Startup")
 $startupFile = Join-Path $startupDir "CareerOps-Dashboard-Autostart.cmd"
 
@@ -23,32 +25,28 @@ if ($Remove) {
   exit 0
 }
 
-if (-not (Test-Path (Join-Path $trackerRoot "run.mjs"))) {
-  throw "Cannot find run.mjs in $trackerRoot"
+if (-not (Test-Path $launcher)) {
+  throw "Cannot find dashboard launcher at $launcher"
 }
 
-$safeTrackerRoot = $trackerRoot.Replace('"', '""')
+$safeCareerOpsRoot = $careerOpsRoot.Replace('"', '""')
+$safeLauncher = $launcher.Replace('"', '""')
 $content = @"
 @echo off
 setlocal EnableExtensions
-set "TRACKER_ROOT=$safeTrackerRoot"
+set "CAREER_OPS_ROOT=$safeCareerOpsRoot"
+set "DASHBOARD_LAUNCHER=$safeLauncher"
 
-cd /d "%TRACKER_ROOT%" || goto fail
-if not exist "run.mjs" goto fail
-
-if not exist "node_modules\express\package.json" (
-  call npm install --no-audit --no-fund
-  if errorlevel 1 goto fail
-)
-
-node run.mjs --mode $Mode --no-open
+cd /d "%CAREER_OPS_ROOT%" || goto fail
+if not exist "%DASHBOARD_LAUNCHER%" goto fail
+call "%DASHBOARD_LAUNCHER%" $Mode --no-open
 if errorlevel 1 goto fail
 exit /b 0
 
 :fail
 echo.
 echo [career-ops] Dashboard autostart failed.
-echo [career-ops] Open "%TRACKER_ROOT%" and run Launch-CareerOps-Dashboard.cmd to debug.
+echo [career-ops] Open "%CAREER_OPS_ROOT%" and run Launch-CareerOps-Dashboard.cmd to debug.
 pause
 exit /b 1
 "@
@@ -57,6 +55,8 @@ Set-Content -Path $startupFile -Value $content -Encoding Ascii
 
 Write-Host "Installed startup launcher (no admin needed):"
 Write-Host "  $startupFile"
+Write-Host "Dashboard launcher:"
+Write-Host "  $launcher"
 Write-Host "Mode: $Mode"
 Write-Host ""
 Write-Host "To remove later:"

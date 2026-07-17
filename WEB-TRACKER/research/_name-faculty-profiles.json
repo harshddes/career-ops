@@ -1,0 +1,228 @@
+{
+  "research_date": "2026-07-09",
+  "department": "Naval Architecture and Marine Engineering",
+  "mhl": {
+    "name": "Aaron Friedman Marine Hydrodynamics Laboratory",
+    "url": "https://mhl.engin.umich.edu/",
+    "summary": "Century-old NAME experimental facility for marine and hydrodynamic testing. Facilities include a towing tank and wind-wave tank. Work covers calm-water resistance, seakeeping, propeller tests, and cutting-edge instrumentation / data acquisition for marine experiments.",
+    "facilities": ["Towing Tank", "Wind-Wave Tank", "instrumentation and DAQ systems"]
+  },
+  "profiles": {
+    "bernitsas-michael": {
+      "contact_email": "michaelb@umich.edu",
+      "phone": "(734) 764-9317",
+      "lab": "Marine Renewable Energy Laboratory",
+      "lab_url": "https://websites.umich.edu/~mrel/",
+      "keywords": ["marine renewable energy", "vortex-induced vibrations", "VIVACE", "hydrokinetic energy", "offshore engineering"],
+      "methods": ["experimental hydrodynamics", "MHL towing-tank testing", "energy converter prototyping"],
+      "summary": "Michael Bernitsas directs the Marine Renewable Energy Laboratory and pioneered VIVACE (Vortex Induced Vibrations for Aquatic Clean Energy), converting underwater vortex-induced cylinder oscillations into mechanical/electrical power. His group bridges offshore structural hydrodynamics with marine renewable energy, including river and ocean testing pathways and MHL towing-tank experiments."
+    },
+    "ceccio-steven-l": {
+      "contact_email": "ceccio@umich.edu",
+      "phone": "(734) 647-7010",
+      "lab": "Ceccio multiphase / high-Re fluids research",
+      "lab_url": "https://ceccio.engin.umich.edu/",
+      "keywords": ["multiphase flows", "cavitation", "high Reynolds number flows", "flow diagnostics", "propulsors", "drag reduction"],
+      "methods": ["optical and experimental flow diagnostics", "multiphase experiments", "propulsor/turbomachinery testing"],
+      "summary": "Steven Ceccio works on fluid mechanics of multiphase and high-Reynolds-number flows, including cavitation, propulsors/turbomachinery, friction drag reduction, and development of flow diagnostics. His experimental diagnostics focus is one of the strongest NAME bridges to plasma/optical instrumentation and DAQ-heavy lab work."
+    },
+    "collette-matthew-d": {
+      "contact_email": "mdcoll@umich.edu",
+      "phone": "(734) 764-8422",
+      "lab": "Marine Structures Design Lab",
+      "lab_url": "https://msdl.engin.umich.edu/",
+      "keywords": ["marine structures", "platform reliability", "digital twins", "lifecycle support", "stochastic methods"],
+      "methods": ["machine learning", "digital twins", "probabilistic/stochastic structural methods"],
+      "summary": "Matthew Collette leads the Marine Structures Design Lab, which develops next-generation platform reliability, design science, and lifecycle support tools for the marine industry. The lab combines machine learning, digital twins, and probabilistic methods with an exclusive marine-domain focus, and he is also linked to the Great Lakes Maritime and BRIDGE initiatives."
+    },
+    "dong-pingsha": {
+      "contact_email": "dongp@umich.edu",
+      "phone": "(734) 615-7484",
+      "lab": "Welded structures / advanced manufacturing analysis",
+      "lab_url": "",
+      "keywords": ["welded structures", "fatigue design", "computational manufacturing", "structural stress methods", "fitness-for-service"],
+      "methods": ["computational structural analysis", "mesh-insensitive structural stress methods", "manufacturing process modeling"],
+      "summary": "Pingsha Dong focuses on advanced design and analysis of engineering structures, especially welded structures, and novel computational modeling for manufacturing processes. His methods have been adopted into ASME/API codes for fatigue and fitness-for-service evaluation of welded systems used across marine and industrial structures."
+    },
+    "dowling-david-r": {
+      "contact_email": "drd@umich.edu",
+      "phone": "(734) 936-0423",
+      "lab": "Acoustics and fluid mechanics research",
+      "lab_url": "",
+      "keywords": ["acoustics", "fluid mechanics", "experimental methods", "computational acoustics", "marine/offshore performance"],
+      "methods": ["experimental acoustics", "theoretical fluid/acoustic modeling", "computational techniques"],
+      "summary": "David Dowling (NAME Chair) researches acoustics and fluid mechanics using experimental, theoretical, and computational techniques. Projects often collaborate with Ceccio and others on fluid-dynamic and acoustic wave problems relevant to marine and offshore design performance, with historical ONR/DARPA support."
+    },
+    "ganesh-harish": {
+      "contact_email": "gharish@umich.edu",
+      "phone": "(734) 764-2694",
+      "lab": "Experimental cavitation / hydrodynamics",
+      "lab_url": "",
+      "keywords": ["hydrodynamic cavitation", "experimental fluid dynamics", "multiphase flows"],
+      "methods": ["experimental methods", "cavitation experiments", "flow diagnostics"],
+      "summary": "Harish Ganesh is an Associate Research Scientist whose research centers on fluid dynamics with emphasis on hydrodynamic cavitation and experimental methods. This is a hands-on experimental hydrodynamics role tightly adjacent to instrumentation, optical diagnostics, and multiphase test operations."
+    },
+    "ghaffari-maani": {
+      "contact_email": "maanigj@umich.edu",
+      "phone": "(734) 615-8629",
+      "lab": "Computational Autonomy and Robotics Laboratory (CURLY)",
+      "lab_url": "https://curly.engin.umich.edu/",
+      "keywords": ["robot autonomy", "marine robotics", "geometric state estimation", "motion planning", "mapping"],
+      "methods": ["geometric control", "information-theoretic planning", "deep geometric networks", "field robotics algorithms"],
+      "summary": "Maani Ghaffari directs CURLY, developing algorithms for robot autonomy in unstructured, dynamic, and uncertain environments. Expertise spans geometric state estimation, control, motion planning, and mapping for mobile robots, including marine/robotics joint appointments — a strong autonomy and sensing bridge."
+    },
+    "hofmann-heath": {
+      "contact_email": "",
+      "phone": "(734) 647-1107",
+      "lab": "Power electronics and electromechanical systems",
+      "lab_url": "https://hofmann.engin.umich.edu/",
+      "keywords": ["power electronics", "electric machines", "energy harvesting", "flywheel storage", "electromechanics"],
+      "methods": ["finite element analysis", "machine design and control", "power electronics experiments"],
+      "summary": "Heath Hofmann (EECS, joint NAME) works on power electronics and electromechanical systems, including energy harvesting, flywheel storage, and design/control of electric machines. Relevant to marine electric propulsion and energy systems that need controls and electromechanical hardware support."
+    },
+    "mahesh-krishnan": {
+      "contact_email": "krmahesh@umich.edu",
+      "phone": "(734) 764-3723",
+      "lab": "Computational Fluids Laboratory",
+      "lab_url": "http://www.umich.edu/~krmahesh",
+      "keywords": ["turbulent flows", "multi-physics CFD", "computational fluid dynamics", "naval hydrodynamics"],
+      "methods": ["high-fidelity simulation", "multi-physics turbulence modeling", "HPC CFD"],
+      "summary": "Krishnan Mahesh leads computational research on complex, multi-physics turbulent flows relevant to naval and marine systems. His Computational Fluids Laboratory develops simulation methods for high-fidelity turbulence and multi-physics problems rather than wet-lab diagnostics, but remains a core NAME hydrodynamics contact."
+    },
+    "maki-kevin-j": {
+      "contact_email": "",
+      "phone": "(734) 936-2804",
+      "lab": "Aaron Friedman Marine Hydrodynamics Laboratory",
+      "lab_url": "https://mhl.engin.umich.edu/",
+      "keywords": ["marine computational mechanics", "ship hydroelasticity", "CFD for naval design", "extreme loading", "MHL"],
+      "methods": ["coupled FEM-fluid models", "CFD virtual design tools", "experimental MHL collaboration"],
+      "summary": "Kevin Maki is Director of the Aaron Friedman Marine Hydrodynamics Laboratory and works in marine computational mechanics for performance evaluation of marine vehicles. He couples full ship finite-element models with nonlinear fluid models (breaking waves, turbulence) for extreme loading, and develops CFD tools used in naval virtual design environments. MHL itself emphasizes instrumentation and DAQ for towing-tank and wind-wave experiments."
+    },
+    "martins-joaquinn-r-r-a": {
+      "contact_email": "",
+      "phone": "(734) 615-9652",
+      "lab": "Multidisciplinary Design Optimization Laboratory",
+      "lab_url": "https://mdolab.engin.umich.edu/",
+      "keywords": ["multidisciplinary design optimization", "aerodynamic shape optimization", "CFD", "aircraft design", "sustainable aviation"],
+      "methods": ["MDO algorithms", "adjoint CFD optimization", "system design optimization"],
+      "summary": "Joaquim Martins (Aerospace, joint NAME) heads the Multidisciplinary Design Optimization Laboratory, developing MDO techniques and applying them to aircraft and other engineering systems. Transfer is mainly computational design optimization rather than experimental marine lab work."
+    },
+    "mckenney-thomas": {
+      "contact_email": "tmckenne@umich.edu",
+      "phone": "(734) 764-6470",
+      "lab": "Great Lakes Maritime Initiative / ship design practice",
+      "lab_url": "https://maritime.engin.umich.edu/",
+      "keywords": ["maritime decarbonization", "sustainability", "passenger vessel design", "ship design", "alternative fuels"],
+      "methods": ["ship design practice", "sustainability R&D pathways", "design teaching and applied projects"],
+      "summary": "Thomas McKenney is Associate Professor of Engineering Practice focused on maritime decarbonization, sustainability, and passenger vessel design/operation. He previously led ship design at the Mærsk Mc-Kinney Møller Center for Zero Carbon Shipping and connects NAME teaching with applied zero-carbon ship technology pathways."
+    },
+    "kartik-praful-naik": {
+      "contact_email": "naikk@umich.edu",
+      "phone": "",
+      "lab": "Real-time Adaptive Control Engineering Laboratory (RACELab)",
+      "lab_url": "https://websites.umich.edu/~racelab/",
+      "keywords": ["marine renewable energy", "underwater kites", "co-design", "real-time control", "reconfigurable turbine arrays"],
+      "methods": ["experimental energy-harvester demos", "hardware real-time control", "design-control co-optimization"],
+      "summary": "Kartik Naik is an Assistant Research Scientist working on experimental renewable-energy harvesting concepts (underwater kites), co-design, and real-time control implementation on hardware. He continues research in RACELab on reconfigurable turbine arrays and ARPA-E SHARKS project management — a strong controls/DAQ/hardware bridge."
+    },
+    "jonathan-page": {
+      "contact_email": "",
+      "phone": "(734) 647-5391",
+      "lab": "BRIDGE Initiative / naval systems design practice",
+      "lab_url": "https://bridge.engin.umich.edu/",
+      "keywords": ["set-based design", "naval systems engineering", "design flexibility", "real options", "complex system design"],
+      "methods": ["set-based design methods", "design decision frameworks", "naval workforce/tool development"],
+      "summary": "Jonathan Page is Professor of Engineering Practice (NAVSEA Professor of Naval Systems Engineering). His research centers on flexibility in engineering design, real options, set-based design for maritime systems of systems, and design-tool/workforce development for naval engineering."
+    },
+    "pan-yulin": {
+      "contact_email": "",
+      "phone": "(734) 764-9799",
+      "lab": "Flow Physics & Engineering Lab",
+      "lab_url": "https://sites.google.com/umich.edu/fpel",
+      "keywords": ["theoretical hydrodynamics", "wave turbulence", "propeller propulsion", "bio-inspired foils", "nonlinear waves"],
+      "methods": ["theoretical/computational hydrodynamics", "wave mechanics analysis", "propeller and foil optimization"],
+      "summary": "Yulin Pan leads the Flow Physics & Engineering Lab, focusing on theoretical and computational hydrodynamics with applications in ocean engineering. Topics include nonlinear ocean wave mechanics, wave turbulence, propeller and bio-inspired foil propulsion, and ship/offshore response in wave fields, with some experimental investigations of wave turbulence physics."
+    },
+    "alan-papalia": {
+      "contact_email": "apapalia@umich.edu",
+      "phone": "(734) 936-0568",
+      "lab": "Robotic Exploration Lab",
+      "lab_url": "https://robex.engin.umich.edu/",
+      "keywords": ["marine robotics", "robot navigation", "environmental monitoring", "perception", "certifiable algorithms"],
+      "methods": ["robust navigation algorithms", "field robotics", "perception in challenging environments"],
+      "summary": "Alan Papalia directs the Robotic Exploration Lab, working on robust and certifiable algorithms for robot navigation, environmental monitoring, marine robotics, and perception in challenging environments. Strong sensing/autonomy overlap for instrumented marine platforms."
+    },
+    "sareen-anchal": {
+      "contact_email": "",
+      "phone": "",
+      "lab": "Experimental Fluid Dynamics Laboratory",
+      "lab_url": "https://sareengroup.engin.umich.edu/",
+      "keywords": ["experimental hydrodynamics", "fluid-structure interaction", "bio-inspired flow control", "renewable energy harvesting", "UUV/UAV efficiency"],
+      "methods": ["experimental fluid mechanics", "flow control experiments", "optical/experimental measurement methods"],
+      "summary": "Anchal Sareen leads the Experimental Fluid Dynamics Laboratory, developing flow-control strategies for unmanned underwater/aerial vehicles, bio-inspired propulsion, and renewable-energy harvesting. Research interests include experimental hydrodynamics, fluid-structure interaction, and smart morphable surfaces — a high-value experimental instrumentation target."
+    },
+    "singer-david-j": {
+      "contact_email": "",
+      "phone": "(734) 764-4509",
+      "lab": "Advanced Naval Concepts Research Lab",
+      "lab_url": "https://ancr.engin.umich.edu/",
+      "keywords": ["ship design theory", "set-based design", "ship production", "network science", "naval combatant design"],
+      "methods": ["set-based design", "design decision frameworks", "ship arrangement optimization", "production science"],
+      "summary": "David Singer directs the Advanced Naval Concepts Research Lab and NAVSEA Ship Production Science Program. Research covers ship design theory, set-based design, ship arrangements, complexity/network science for naval combatants, and design decision frameworks used in Navy rapid ship design environments."
+    },
+    "sun-jing": {
+      "contact_email": "",
+      "phone": "(734) 615-8061",
+      "lab": "Real-time Adaptive Control Engineering Laboratory (RACELab)",
+      "lab_url": "https://websites.umich.edu/~racelab/",
+      "keywords": ["adaptive control", "marine propulsion control", "electrified vehicles", "model predictive control", "experimental validation"],
+      "methods": ["system identification", "real-time control prototyping", "experimental validation", "optimal/nonlinear control"],
+      "summary": "Jing Sun leads RACELab, applying control theory and optimization to marine and automotive propulsion systems. Work includes modeling/identification, control algorithm development, rapid prototyping, and experimental validation for marine surface vessels, fuel-cell/turbocharger systems, and electrified energy management — a direct controls/DAQ bridge."
+    },
+    "vlahopoulos-nickolas": {
+      "contact_email": "",
+      "phone": "(734) 764-8341",
+      "lab": "Structural acoustics / multi-discipline ship design",
+      "lab_url": "",
+      "keywords": ["structural acoustics", "ship design under uncertainty", "blast/shock simulation", "energy finite elements", "vibro-acoustics"],
+      "methods": ["finite/boundary element methods", "energy finite element analysis", "blast and shock simulation", "design optimization"],
+      "summary": "Nickolas Vlahopoulos (Graduate Program Chair) works on computational structural acoustics, multi-discipline ship design under uncertainty, and blast/shock simulations. Expertise includes FEM/BEM, energy finite element analysis, and optimization algorithms for complex naval systems."
+    },
+    "wu-yue-cynthia": {
+      "contact_email": "",
+      "phone": "(734) 936-0568",
+      "lab": "Ocean/atmosphere wave-turbulence research",
+      "lab_url": "https://sites.google.com/view/yue-wu",
+      "keywords": ["wave turbulence", "gravity waves", "geostrophic turbulence", "ocean dynamics", "acoustic waves"],
+      "methods": ["theoretical ocean science", "numerical modeling of waves and turbulence"],
+      "summary": "Yue (Cynthia) Wu is an Assistant Research Scientist studying dynamics and energetics of waves and turbulence in the ocean and atmosphere. She uses theoretical and numerical approaches for geostrophic turbulence, gravity/lee/acoustic waves, and wave-turbulence interactions — more theory/computation than wet-lab instrumentation."
+    },
+    "zuo-lei": {
+      "contact_email": "leizuo@umich.edu",
+      "phone": "(734) 660-9328",
+      "lab": "Marine renewable energy / mechatronics research",
+      "lab_url": "https://marine.engin.umich.edu",
+      "keywords": ["marine renewable energy", "ocean waves", "tidal currents", "offshore wind", "energy harvesting", "mechatronics"],
+      "methods": ["mechatronics design", "vibration/dynamics and control", "energy harvesting prototypes"],
+      "summary": "Lei Zuo works on marine renewable energy (ocean waves, tidal currents, offshore wind), blue economy, energy harvesting, vibration/dynamics and control, and mechatronics design. His group builds electromechanical energy-harvesting and control systems with strong experimental hardware character."
+    },
+    "mccoy-timothy": {
+      "contact_email": "tjmccoy@umich.edu",
+      "phone": "(734) 936-9680",
+      "lab": "Marine Engineering Laboratory",
+      "lab_url": "https://mel.engin.umich.edu/",
+      "keywords": ["marine power and propulsion", "shipboard electric systems", "machinery reliability", "autonomous vessels", "data acquisition and control"],
+      "methods": ["multi-physics hardware experiments", "fault-injection testing", "DAQ over 100 signals", "machine learning for failure prediction"],
+      "summary": "Timothy McCoy (Adjunct / Engineering Practice) established the Marine Engineering Laboratory with ONR funding — a multi-physics hardware lab with scaled shipboard electric power/propulsion, seawater cooling, and fuel systems. MEL uses a data acquisition and control system managing over 100 signals to study machinery reliability and enable autonomous machinery for surface vessels. Strong experimental DAQ/controls bridge despite adjunct title."
+    },
+    "zhigang-wei": {
+      "contact_email": "zgwei@umich.edu",
+      "phone": "734-936-0568",
+      "lab": "Computational mechanics / ship hydrodynamics research support",
+      "lab_url": "",
+      "keywords": ["computational mechanics", "ship hydrodynamics", "CFD", "fluid-structure modeling"],
+      "methods": ["numerical simulation", "CFD modeling"],
+      "summary": "Zhigang Wei is an Associate Research Scientist on the NAME research-faculty track. Public profile details are sparse; deep-research sources describe support for computational mechanics and ship hydrodynamics / CFD modeling within the department. Verify current project focus on the profile or with the PI before outreach."
+    }
+  }
+}

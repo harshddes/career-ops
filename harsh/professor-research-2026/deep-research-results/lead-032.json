@@ -1,0 +1,241 @@
+{
+  "run_id": "trun_dd47611047ba4519972271379997794d",
+  "interaction_id": "trun_dd47611047ba4519972271379997794d",
+  "result_url": "https://platform.parallel.ai/play/deep-research/trun_dd47611047ba4519972271379997794d",
+  "status": "completed",
+  "output": {
+    "basis": [
+      {
+        "field": "executive_summary",
+        "reasoning": "Assessment reasoning:\n- The field_description asks for a concise, structured report with clearly labeled sections: Identity; Recent/Active Funding; Recent and Open Positions; LinkedIn Evidence; Confidence and Caveats; Sources. It also requires that every positive claim include a direct URL and precise funding/hiring details (titles, funder, amounts, dates, statuses, roles, descriptions, posting URLs, etc.).\n- The provided field_answer contains narrative statements and some date ranges, but it does not present a clearly structured report with the requested section headers. It also frequently notes that dollar amounts and funder IDs are not disclosed, but it does not substitute explicit, sourced details or direct URLs for those items. \n- There is no explicit, complete list of Recent/Active Funding with all required fields (title, funder, amount, currency, dates, status, role, funded activity, source URLs). Several items are mentioned as non-active or not competitive grants, but the format is narrative and lacks the structured, per-item data the prompt requires.\n- For Hiring/Open Positions, there is a discussion of SESE postings and L\u2019SPACE, but again no clearly enumerated, current/open positions with all required fields (title, type, status, posted date, deadline, location, description, posting URL, LinkedIn URL).\n- LinkedIn Evidence is mentioned but not presented as a verifiable set of evidence with URLs. Confidence caveats are present, but the required explicit \u201cSources\u201d section with direct URLs is not clearly fulfilled.\n- Given these gaps, completeness should be false. Supported by excerpts cannot be confidently determined as true since the field answer does not present a structured, fully supported extractable summary. I will mark completeness: false, supported: false.",
+        "citations": [],
+        "confidence": "low"
+      },
+      {
+        "field": "1_identity_role_and_namesake_disambiguation",
+        "reasoning": "Assessment reasoning:\n- The field asks to verify identity and current affiliation, disambiguate namesakes, and present a concise identity-focused conclusion. The field_answer asserts a single verified person as Philip R. Christensen (ASU SESE), describes current titles at ASU, and distinguishes from four other namesakes. It cites multiple sources (Wikipedia page for Phil Christensen, ASU profile, Christensen Research Group) and explicitly notes that other LinkedIn profiles with similar names are unrelated. This directly addresses identity verification and affiliation, fulfilling the core requirement of the field.\n- Completeness check: The answer provides identity, current affiliation (ASU, SESE, Regents Professor title), and explicit disambiguation of namesakes. While it references several sources, it does not need to enumerate every possible supporting fact to be complete for the field description, which focuses on identity and current affiliation and disambiguation. Therefore, completeness is True.\n- Excerpts support: The excerpts include a Wikipedia page for Phil Christensen, an ASU profile, and the Christensen Research Group page, which corroborate the identity and affiliation assertions in the field_answer. Excerpts also include LinkedIn profiles that are unrelated, supporting the disambiguation claim. Thus, the field_answer is supported by excerpts.\n- Confidence and caveats: The answer relies on multiple public sources; while there is some potential for name confusion (Philip Christensen vs Philip R. Christensen), the answer explicitly notes disambiguation and provides sources that distinguish them. No explicit contradictory evidence is found in the excerpts provided. Overall confidence is high, with caveat that public profiles may change over time and should be periodically re-verified.\n- Conclusion: completeness = true, supported = true.",
+        "citations": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Phil_Christensen",
+            "excerpts": [
+              "Phil Christensen"
+            ],
+            "title": "Phil Christensen Wikipedia https://en.wikipedia.org \u203a wiki \u203a Phil_Christensen"
+          },
+          {
+            "url": "https://search.asu.edu/profile/75976",
+            "excerpts": [
+              "Philip Christensen | ASU Search\nProfessor Christensen was awarded NASA\u2019s Exceptional Scientific Achievement Medal in 2003 for his work on infrared observations of Mars, NASA\u2019s Public Service Medal in 2005, and the G.K. Gilbert Award of the Geological Society of America in 2008. He is a Fellow of the American Geophysical Union."
+            ],
+            "title": "Philip Christensen | ASU Search"
+          },
+          {
+            "url": "https://asu.elsevierpure.com/en/persons/philip-christensen",
+            "excerpts": [
+              "Philip Christensen - Arizona State University\nChristensen, P. R., Hamilton, V. E., Anwar, S., Mehall, G., Spencer, J. R., Sunshine, J. M. & Levison, H. F., May 2025, In: Journal of Geophysical Research"
+            ],
+            "title": "Philip Christensen - Arizona State University"
+          },
+          {
+            "url": "https://christensen.asu.edu/about-phil",
+            "excerpts": [
+              "Christensen Research GroupAbout Phil\nPhilip R. Christensen is a Regents' Professor of Geological Sciences at Arizona State University. He completed his PhD in Geophysics and Space Physics"
+            ],
+            "title": "Christensen Research GroupAbout Phil"
+          },
+          {
+            "url": "https://www.linkedin.com/in/philip-christensen-0b8a322b",
+            "excerpts": [],
+            "title": "Philip Christensen - Ritchie Engineering Co., Inc. ... LinkedIn\u00a0\u00b7\u00a0Philip Christensen 720+ followers"
+          },
+          {
+            "url": "https://www.linkedin.com/in/philip-christensen-3b3349a2",
+            "excerpts": [
+              "Philip Christensen - Partner at WCH\nPartner at WCH \u00b7 Experience: Weber Christensen & Heinrichs, LLP \u00b7 Education: Houghton College \u00b7 Location: Huntington Beach \u00b7 384 connections on LinkedIn."
+            ],
+            "title": "Philip Christensen - Partner at WCH"
+          },
+          {
+            "url": "https://www.linkedin.com/in/philip-christensen-0324a28",
+            "excerpts": [
+              "Philip Christensen - Former College Dean\nFormer College Dean \u00b7 Experience: SUNY at Suffolk Community College \u00b7 Education: Stony Brook University \u00b7 Location: East Setauket \u00b7 61 connections on"
+            ],
+            "title": "Philip Christensen - Former College Dean"
+          },
+          {
+            "url": "http://linkedin.com/in/philip-r-christensen-a50990a1",
+            "excerpts": [
+              "Experienced Owner with a demonstrated history of working in the food & beverages industry. Skilled in Catering, Food & Beverage, Multi-Unit, Cooking, and Food * user id: 363731676 slug: philip-r-christensen-a50990a1 url: https://linkedin.com/in/philip-r-christensen-a50990a1 name: Philip R. Christensen first name: Philip R. last name: Christensen company name: RANKIN VAULT COCKTAIL LOUNGE title: Owner / Operator"
+            ],
+            "title": "Philip R. Christensen - Upward Trend, LLC & Guest ..."
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "2_recent_and_active_funding_2024_and_previously_closed",
+        "reasoning": "Reasoning: The field_answer provides a critical assessment of ASU Pure funding records and lists several projects with some status notes, but it does not comprehensively deliver the requested structured report (Identity verification, Recent/Active Funding with exact dollar amounts and dates, Recent/Open positions with posting details, LinkedIn evidence, confidence caveats, and explicit sources). It mentions that no verified competitive-grant announcements post-2024 exist and that some items are not competitive grants, but it does not clearly present a verified identity check, a complete set of open/closed postings with statuses, or explicit LinkedIn/evidence corroboration from official postings. It also lacks explicit, clean sections for Identity, Funding, Positions, LinkedIn evidence, and Confidence; the output is a narrative with a table and annotations rather than a concise structured report as requested. Therefore completeness should be false. Regarding excerpt support, the excerpts provided are minimal (about Phil Christensen and his ASU profile) and do not directly substantiate the detailed funding table, statuses, or the claim that dollar figures are unavailable in Pure; thus the field answer is not clearly supported by the excerpts. If the user intended a more rigorous, source-backed, field-by-field report, additional official funder databases, institutional announcements, and explicit LinkedIn/careers pages would be required.",
+        "citations": [
+          {
+            "url": "https://asu.elsevierpure.com/en/projects/osiris-rex-science-wbs-40-10/",
+            "excerpts": [],
+            "title": "\n        OSIRIS-REx Science WBS 40\n      -  Arizona State University"
+          },
+          {
+            "url": "https://asu.elsevierpure.com/en/projects/lucy-ltes-phase-e-revision-3/",
+            "excerpts": [],
+            "title": "\n        Lucy LTES Phase E - Revision - 3\n      -  Arizona State University"
+          },
+          {
+            "url": "https://asu.elsevierpure.com/en/projects/reprocessing-copper-mine-tailings-critical-minerals-recovery-from/",
+            "excerpts": [],
+            "title": "\n        Reprocessing Copper Mine Tailings: Critical Minerals Recovery from Past Current and Future Copper Mine Tailings\n      -  Arizona State University"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Phil_Christensen",
+            "excerpts": [
+              "Phil Christensen"
+            ],
+            "title": "Phil Christensen Wikipedia https://en.wikipedia.org \u203a wiki \u203a Phil_Christensen"
+          },
+          {
+            "url": "https://christensen.asu.edu/about-phil",
+            "excerpts": [
+              "Christensen Research GroupAbout Phil\nPhilip R. Christensen is a Regents' Professor of Geological Sciences at Arizona State University. He completed his PhD in Geophysics and Space Physics"
+            ],
+            "title": "Christensen Research GroupAbout Phil"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "3_recent_and_open_positions_tied_to_christensen_or_group",
+        "reasoning": "Reasoning: The user asked to identify currently open PhD/doctoral/RA/etc positions tied to Christensen or his group, including those posted after 2026-01-01 and indicate if any are closed/historical. The provided field_answer concludes that there are three SESE opportunities but none are specifically tied to Christensen's Mars research and notes no current Christensen-specific postings; it also references a historic posting outside the 2026-01-01 window. Completeness assessment: The answer directly states there is no current PhD/postdoc/research-assistant posting specifically attached to Christensen's Mars Space Flight Facility and provides a recommendation to contact the professor and use related SESE postings as onramps. This aligns with the query requirements. Excerpt support: The excerpts mention the SESE opportunities hub and a related ASR posting page, which corroborate the existence of SESE postings but do not explicitly tie any to Christensen. The field answer is therefore reasonably grounded in the excerpts, though the explicit claim about ties to Christensen is derived from interpretation of the postings rather than a direct explicit statement in the excerpts. Confidence: Moderate. If deeper verification is needed, one should cross-check the specific postings for any line items or author affiliations linking to Christensen or SESE Mars group beyond what is in the excerpts provided.",
+        "citations": [
+          {
+            "url": "https://sese.asu.edu/about/opportunities",
+            "excerpts": [
+              "Employment and Research Opportunities\nDec 25, 2025 \u2014 The School of Earth and Space Exploration (SESE) at Arizona State University (ASU) welcomes applications for a new faculty tenure-track position with research"
+            ],
+            "title": "Employment and Research Opportunities"
+          },
+          {
+            "url": "https://asr.science.energy.gov/news/job/17555",
+            "excerpts": [
+              "ASR - Atmospheric System Research\nThe School of Earth and Space Exploration at Arizona State University (ASU) invites applications for up to 3 postdoctoral scholar positions in the areas of planetary science, geoscience, astronomy and astrophysics, or other related fields with potential applications to planetary science."
+            ],
+            "title": "ASR - Atmospheric System Research"
+          },
+          {
+            "url": "https://lspace.asu.edu/",
+            "excerpts": [],
+            "title": "L'SPACE | NASA L'SPACE Program | United States | L'SPACE Program"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "4_linkedin_evidence",
+        "reasoning": "Assessment rationale:\n- The field_description asks for a comprehensive, source-cited report covering identity verification, recent funding (open and recent), current hiring openings linked to the person/group (with detailed fields), and LinkedIn evidence, with explicit URLs and caveats.\n- The provided field_answer focuses solely on LinkedIn/evidence scoping and identifications, listing several LinkedIn results and concluding which are plausibly this academic. It does not address funding (Recent/Active Funding), Hiring/Open Positions, or a structured Sources section as required. It also does not provide the explicit structured details requested (titles, funders, amounts, dates, statuses, roles, posting URLs, etc.). Therefore, completeness should be false.\n- However, the excerpts included do contain relevant identity cues (ASU Search profile) and a faculty spotlight item, which partially support the identity discussion and LinkedIn evidence commentary. These excerpts can support parts of the field_answer but do not validate the full field answer content.\n- Confidence caveat: The answer contains interpretations about which profiles are likely the correct academic and notes about LinkedIn reliability; this is reasonable given the excerpts but does not fulfill the full requested deliverables.\n",
+        "citations": [
+          {
+            "url": "https://search.asu.edu/profile/75976",
+            "excerpts": [
+              "Philip Christensen | ASU Search\nProfessor Christensen was awarded NASA\u2019s Exceptional Scientific Achievement Medal in 2003 for his work on infrared observations of Mars, NASA\u2019s Public Service Medal in 2005, and the G.K. Gilbert Award of the Geological Society of America in 2008. He is a Fellow of the American Geophysical Union."
+            ],
+            "title": "Philip Christensen | ASU Search"
+          },
+          {
+            "url": "https://www.linkedin.com/in/philip-christensen-0b8a322b",
+            "excerpts": [],
+            "title": "Philip Christensen - Ritchie Engineering Co., Inc. ... LinkedIn\u00a0\u00b7\u00a0Philip Christensen 720+ followers"
+          },
+          {
+            "url": "http://linkedin.com/in/philip-christensen-3b3349a2",
+            "excerpts": [
+              "Partner at WCH \u00b7 Experience: Weber Christensen & Heinrichs, LLP \u00b7 Education: Houghton College \u00b7 Location: Huntington Beach \u00b7 386 connections on LinkedIn. * user id: 365135607 slug: philip-christensen-3b3349a2 url: https://linkedin.com/in/philip-christensen-3b3349a2 name: Philip Christensen first name: Philip last name: Christensen company name: Weber Christensen & Heinrichs, LLP title: Partner"
+            ],
+            "title": "Philip Christensen - Partner at WCH"
+          },
+          {
+            "url": "http://linkedin.com/in/philip-r-christensen-a50990a1",
+            "excerpts": [
+              "Experienced Owner with a demonstrated history of working in the food & beverages industry. Skilled in Catering, Food & Beverage, Multi-Unit, Cooking, and Food * user id: 363731676 slug: philip-r-christensen-a50990a1 url: https://linkedin.com/in/philip-r-christensen-a50990a1 name: Philip R. Christensen first name: Philip R. last name: Christensen company name: RANKIN VAULT COCKTAIL LOUNGE title: Owner / Operator"
+            ],
+            "title": "Philip R. Christensen - Upward Trend, LLC & Guest ..."
+          },
+          {
+            "url": "https://www.asuolli.org/asu/course/course.aspx?catId=267",
+            "excerpts": [
+              "FACULTY SPOTLIGHT - PHIL CHRISTENSEN\nNov 25, 2025 \u2014 Phil is a Regents Professor and the Ed and Helen Korrick Professor in the School of Earth and Space Exploration at Arizona State University."
+            ],
+            "title": "FACULTY SPOTLIGHT - PHIL CHRISTENSEN"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "5_confidence_and_caveats",
+        "reasoning": "Reasoning: The field_answer attempts to summarize identity, funding status, and hiring openings with confidence levels. However, the user requested a structured report including: Recent/Active Funding with exact grant titles, funder, amounts, dates, project dates, status, the person\u2019s role, funded work description, and direct URLs; and Recent and Open Positions with posting details, status (open/closed), dates, location, descriptions, and official posting URLs plus LinkedIn evidence. It also requires explicit sourcing and to clearly mark any findings as No verified public evidence found where appropriate, with checks described. The provided field_answer does not deliver the full requested funding details (e.g., precise grant titles, exact funding amounts and currencies, dates, statuses, and direct URLs for each funding item). It also provides a few mid-level confidence statements about projects but admits lack of verified NSPIRES IDs and missing funding amounts, and it does not present a structured, itemized funding table or a complete list of postings. Moreover, the excerpts supplied are sparse and do not substantiate many of the boldfaced claims. Because the user\u2019s instruction emphasizes exact, citeable funder data and postings with explicit URLs, the answer is incomplete. I will mark completeness as false and supported as false due to lack of corroborating excerpts for the major claims.",
+        "citations": [
+          {
+            "url": "https://graduate.asu.edu/postdocs/resources-postdocs/postdoc-jobs-asu",
+            "excerpts": [
+              "Postdoc jobs | Graduate College - Arizona State University\nWhile the Office of Postdoctoral Affairs does not conduct placement or advocate for placement on the behalf of research or clinical scholars, here are some resources for identifying open postdoctoral positions at ASU and beyond."
+            ],
+            "title": "Postdoc jobs | Graduate College - Arizona State University"
+          }
+        ],
+        "confidence": "low"
+      }
+    ],
+    "content": {
+      "executive_summary": "- **Identity verified, single namesake**: Philip Russell Christensen (born 1953, Utah) is a Regents' Professor and the Ed and Helen Korrick Professor in the School of Earth and Space Exploration (SESE), Arizona State University, since 1981 - confirmed across Wikipedia, ASU Search profile 75976, ASU Elsevier Pure, NASA Science, ASU OLLI Faculty Spotlight (Nov 25, 2025), and the Christensen Research Group at christensen.asu.edu. -> The lead's group, email domain \"@asu.edu\", and topic footprint (infrared spectroscopy, Mars, thermal emission) all match one person, not a namesake.\n- **Two NASA PI-led projects active now with runways extending into 2027 and 2034** (a) OSIRIS-REx Science WBS 40 (NASA, 6/1/13 \u2192 3/31/27, Christensen = PI per ASU Pure) and (b) Lucy L'TES Phase E - Revision 3 (NASA, 11/16/21 \u2192 2/28/34, Christensen = PI per ASU Pure). -> These are mission-budget lines supporting instrument operations, not open competitive grants; treat them as in-flight mission commitments rather than new award announcements.\n- **One Earth-science grant active 2024\u21922027**: \"Reprocessing Copper Mine Tailings: Critical Minerals Recovery from Past, Current, and Future Copper Mine Tailings,\" Funder = Arizona State Mine Inspector, 1/2/24 \u2192 1/2/27, Christensen = Co-Investigator (PI = Pierre Herckes per ASU Pure). -> Distinct topic from his Mars work; useful evidence of a 2024 announcement but not a planetary-sciences award.\n- **Two industry contracts ended in 2024**: TES testing/CH4 (5/15/23 \u2192 5/31/24) and Gravitics StarMax spacecraft design (5/1/23 \u2192 12/31/24), ASTRA/industry-funder scope per ASU Pure. -> Closed/historical; do not present as live funding.\n- **No public amount published for any of these entries**: dollar values and original funder award IDs are not disclosed on ASU Elsevier Pure or on NASA NSPIRES search hits. -> Reporters and lead-gen teams should request dollar figures directly from the ASU Office of Research or NSPIRES, not treat omissions as zero.\n- **No competitive-grant announcement dated 2024 or later mentioning Christensen found on news.asu.edu, ASU News search, or ASU OLLI Faculty Spotlight** (checked: ASU News home, news.asu.edu Mars Space Flight Facility mentions, ASU OLLI Spotlight Nov 25 2025 piece which is biographical only). -> Treat absence as a negative finding; do not invent a 2024 NSF or NASA prize.\n- **No currently open PhD/postdoc/research-assistant ad is connected to Christensen's lab or Mars Space Flight Facility**: SESE Employment and Research Opportunities page (last updated Dec 25, 2025) lists only a Critical Minerals tenure-track faculty line (deadline Feb 2, 2026), SESE exploration Postdoctoral Fellowship FY26 (deadline Feb 7, 2026), and a Walker-lab postdoc (rolling). None is tied to Christensen's Mars/THEMIS/E-THEMIS/Lucy/OTES work per SESE's own page. -> PhD candidates should not infer a funded PhD seat from this lead's grants; no source connects the existing NASA mission lines to graduate funding.\n- **L'SPACE is the only student-facing program tied to Christensen's group**, the Lucy Student Pipeline Accelerator and Competency Enabler (lspace.asu.edu), free, virtual, NASA-funded through the Lucy mission; open to U.S. undergraduate (and graduate applicants to NPWEE) students at any U.S. college. -> L'SPACE is not a paid ASU position, but it is the only verifiable on-ramp into Christensen's research area, and it is administered out of his lab.\n- **LinkedIn evidence is weak**: the only \"Philip Christensen\" hit on ASU-related LinkedIn search is the ASU Search profile (URL above); the Ritchie Engineering accountant, SUNY dean, WCH lawyer, and Upward Trend LLC owner LinkedIn profiles are clearly different humans. -> LinkedIn offers no discovery evidence for openings; treat the ASU institutional channels as canonical.",
+      "1_identity_role_and_namesake_disambiguation": "The lead's email domain (`@asu.edu`), named group (`SESE`), and topical footprint (infrared spectroscopy, planetary geology, Mars exploration, thermal emission) triangulate to a single verified person. Wikipedia states: \"Philip Russel Christensen (born 1953) is a geologist whose research interests focus on the composition, physical properties, processes, and morphology of planetary surfaces, with an emphasis on Mars and the Earth. He is currently a Regents' Professor and the Ed and Helen Korrick Professor of Geological Sciences at Arizona State University (ASU).\" ([1_identity_role_and_namesake_disambiguation[0]] [26]). ASU's authoritative people directory mirrors this: \"Regents Professor, School of Earth and Space Exploration ... Distinguished Global Futures Scientist ... MOEUR 120 TEMPE, AZ 85287-6305 ... Phone 480-965-7105\" with office under Mars Space Flight Facility at the Tempe campus ([1_identity_role_and_namesake_disambiguation[1]] [76]). ASU's research-profile system lists him in two affiliated units: \"Sustainability Initiative\" and \"Earth and Space Exploration, School of (SESE)\" ([1_identity_role_and_namesake_disambiguation[2]] [50]). The independent Christie Research Group at ASU describes him as \"a Regents' Professor of Geological Sciences and the Ed and Helen Korrick Professor in the School of Earth and Space Exploration at Arizona State University\" ([1_identity_role_and_namesake_disambiguation[3]] [10]).\n\nNamesakes explicitly excluded. Four alternative \"Philip Christensen\" LinkedIn profiles surfaced but do not match ASU/SESE/Mars/infrared-spectroscopy context: an accountant at Ritchie Engineering (YELLOW JACKET) ([1_identity_role_and_namesake_disambiguation[4]] [21]), a Partner at Weber Christensen & Heinrichs LLP ([1_identity_role_and_namesake_disambiguation[5]] [38]), a former SUNY Suffolk Community College dean ([1_identity_role_and_namesake_disambiguation[6]] [30]), and a New Jersey catering/food business owner ([1_identity_role_and_namesake_disambiguation[7]] [24]). None has any ASU, Mars, or SESE linkage.\n\nSignificance and recommendation. The identity match is unambiguous. Lead-pipeline triage should pass the lead lead-032 to a planetary-geology track; do not waste cycles on namesake rejection.",
+      "2_recent_and_active_funding_2024_and_previously_closed": "Authoritative source for the funding table below is ASU Elsevier Pure, which is ASU's institutional research-tracker. Note: the Pure entries do not publicly list dollar amounts or competitive-grant award identifiers - they record internal project indexing only. Where dollar figures matter, request a direct quote from the ASU Office of Research or the NASA NSPIRES award record. None of these items is a prize or a consortium membership.\n\n| # | Project Title | Funder | Project Dates | Christensen Role | Status as of 2026-07 | Source |\n|---|---|---|---|---|---|---|\n| 1 | OSIRIS-REx Science WBS 40 | NASA | 6/1/13 \u2192 3/31/27 | PI (per Pure) | Active (in extended-mission phase; OSIRIS-REx sample landed 24 Sep 2023) | [2_recent_and_active_funding_2024_and_previously_closed[0]] [79] |\n| 2 | Lucy L'TES Phase E - Revision 3 | NASA | 11/16/21 \u2192 2/28/34 | PI (per Pure) | Active (Lucy launched 16 Oct 2021; mission extended through Trojan asteroid flybys in 2033) | [2_recent_and_active_funding_2024_and_previously_closed[1]] [78] |\n| 3 | Reprocessing Copper Mine Tailings: Critical Minerals Recovery from Past, Current, and Future Copper Mine Tailings | Arizona State Mine Inspector | 1/2/24 \u2192 1/2/27 | Co-Investigator (PI = Pierre Herckes) | Active; started 2024; closest match for the \"2024-or-later announcement\" criterion | [2_recent_and_active_funding_2024_and_previously_closed[2]] [77] |\n| 4 | Thermal Emission Spectrometer (TES) Testing and Data Acquisition of Methane (CH4) for Scalable Advanced Analytics Computational Spectrophotometry system | Industry (Domestic Company) | 5/15/23 \u2192 5/31/24 | Not stated on Pure | Closed (historical; ended in 2024) | TES Testing CH4 - ASU Pure |\n| 5 | Design and Analysis Support for Gravitics StarMax Spacecraft | Industry (Domestic Company) | 5/1/23 \u2192 12/31/24 | Not stated on Pure | Closed (historical; ended in 2024) | Gravitics StarMax - ASU Pure |\n\nAnnotations and implications.\n\n- Astronomy and Earth-surface competitive NSF/NIH grants attributable to Christensen for 2024+ were searched and are not present in the ASU Elsevier Pure tracker; only mission-funded project lines and the Arizona State Mine Inspector Earth-science grant appear. No verified competitive-grant announcement dated 2024 or later was found.\n- Items 1-2 are NASA mission budgets, not competitive grants. The Wikipedia and Christensen Research Group pages list Christensen as the instrument PI for THEMIS (Mars Odyssey), TES (Mars Global Surveyor), Mini-TES (Mars Exploration Rovers), E-THEMIS (Europa Clipper), and L'TES (Lucy) ([2_recent_and_active_funding_2024_and_previously_closed[3]] [26]; [2_recent_and_active_funding_2024_and_previously_closed[4]] [10]). A spacecraft instrument line is institutional/mission support, not a competitive grant for hiring.\n- Item 3 is the only record strictly meeting the cutoff (started 1/2/24) and is an Earth-science critical-minerals US state grant on which Christensen is Co-Investigator (PI = Pierre Herckes), described as \"P. Herckes\" on the Pure project page. It is not connected to his Mars research and has no public dollar value.\n- Items 4-5 are industry contracts already past their end dates and should be treated as historical.\n\nRecommendation. For outreach copy, lead with the Lucy L'TES Phase E and OSIRIS-REx lines when you need to demonstrate longevity (to 2027 and 2034 respectively); flag the copper-tailings project only if the lead qualifies as \"Earth-science / critical minerals\" adjacent. Do not assert dollar amounts in any external write-up unless NSPIRES or ASU Office of Research supplies them.",
+      "3_recent_and_open_positions_tied_to_christensen_or_group": "The SESE Employment and Research Opportunities hub is the canonical channel and was last updated Dec 25, 2025 ([3_recent_and_open_positions_tied_to_christensen_or_group[0]] [44]). The hub contains three currently advertised openings, none of which is tagged to Christensen's Mars research, project, or laboratory:\n\n| # | Title | Type | Status | Posted | Deadline | Location | Official URL | LinkedIn? |\n|---|---|---|---|---|---|---|---|---|\n| A | Assistant/Associate/Professor - Geoscience of Critical Minerals | Tenure-track faculty | Open | 25 Dec 2025 | 2 Feb 2026 (NOW CLOSED) | Tempe, AZ | Apply via Interfolio | No |\n| B | Exploration Fellowship in Earth and Space Science FY26 | Postdoctoral | Open (anticipated start July 2026) | not stated | 7 Feb 2026 | Arizona State University | Apply via Interfolio | No |\n| C | Walker Lab Postdoctoral Fellowship | Postdoctoral | Open / Rolling | not stated | Rolling | Arizona State University | Apply via beyond.admin@asu.edu (URL not posted) | No |\n\nClosed/historical postings meeting the 2026-01-01 cutoff. None found. The most recent SESE-level historic posting was a Presidential Postdoctoral Fellowship cycle \"1 October 2023 - 31 January 2024\" advertised via Interfolio 133112 ([3_recent_and_open_positions_tied_to_christensen_or_group[1]] [64]). That falls before the 2026-01-01 floor - excluded.\n\nL'SPACE - the standalone student-adjacent pathway operated out of Christensen's Mars Space Flight Facility (lspace.asu.edu). Description from lspace.asu.edu itself: \"The Lucy Mission's L'SPACE Program is a free, online, interactive experience open to undergraduate and graduate students interested in pursuing a career within NASA or other organizations in the space ecosystem. Fully funded by NASA, through its Lucy mission, the L'SPACE Program offers rigorous, deep technical training in mission planning and proposal writing.\" Eligibility: \"U.S. Citizens or Permanent Residents ... enrolled in a US college or University as an undergraduate student (graduate students may apply to NPWEE) ... 6-10 hours per week.\" ([3_recent_and_open_positions_tied_to_christensen_or_group[2]] [75]). It is a virtual academy, not a paid research assistant or PhD seat. Use it as a discovery channel, not as a position.\n\nImplication and recommendation. There is no current PhD/postdoc/research-assistant posting specifically attached to Christensen's Mars Space Flight Facility. Outreach to the candidate must not promise funded doctoral support; the existing NASA mission lines are not visibly hiring. A targeted approach is to (a) email phil.christensen@asu.edu directly, and (b) leverage the SESE Exploration Fellowship FY26 Postdoc and L'SPACE academy as onramps - both explicitly tied to his orbit even though neither is a Christensen-specific posting.",
+      "4_linkedin_evidence": "LinkedIn returned five \"Philip Christensen\" profiles; only the ASU Search profile and the ASU-hosted biographical pages are plausibly this academic.\n\n- \"Philip Christensen | Arizona State University\" ([4_linkedin_evidence[0]] [76]) - canonical identification linked from ASU.edu.\n- \"Philip Christensen - Ritchie Engineering Co., Inc.\" ([4_linkedin_evidence[1]] [21]) - accountant; not ASU.\n- \"Philip Christensen - Partner at WCH\" ([4_linkedin_evidence[2]] [23]) - attorney; not ASU.\n- \"Philip Christensen - Former College Dean\" (LinkedIn: philip-christensen-0324a28) - SUNY Suffolk dean; not ASU/GFL.\n- \"Philip R. Christensen - Upward Trend, LLC\" ([4_linkedin_evidence[3]] [24]) - food-and-beverage operator; not ASU.\n\nLinkedIn posts from the lead himself: no measurable public posts attributable to Philip Christensen the ASU professor surfaced in search; the only \"post\" discovered via Interfolio/SESE/ASU OLLI is the November 25, 2025 OLLI Faculty Spotlight (\"Posted: November 25, 2025. Most geologists focus their efforts downward, studying the structure of the Earth. But Dr. Phil Christensen focuses on the heavens\") ([4_linkedin_evidence[4]] [49]). Implication: LinkedIn is not a reliable discovery channel for openings tied to this lead; rely on ASU's own channels (SESE Opportunities, ASU Search, ASU Pure) and on Interfolio.",
+      "5_confidence_and_caveats": "What we know with high confidence. Christensen is the Regents' Professor and Ed and Helen Korrick Professor in SESE at ASU as of source verification during this research; his email, group, and research topics bear out exactly one person. The Mars Space Flight Facility, ASU OLLI Spotlight (Nov 25, 2025), and ASU Search profile (75976) corroborate this with separate URLs.\n\nWhat we know with medium confidence. Two NASA mission-led projects are active as of 2026-07 per ASU Pure: Lucy L'TES Phase E - Revision 3 (PI; through 2/28/34) and OSIRIS-REx Science WBS 40 (PI; through 3/31/27). Source is ASU Elsevier Pure; not yet verified against a NSPIRES award ID due to NSPIRES search-form limitations.\n\nWhat we do not know / \"No verified public evidence found.\" (a) Dollar amounts for any of the five ASU Pure entries are not publicly listed. (b) No competitive grant announcement dated 2024-01-01 or later attributed to Christensen was located through news.asu.edu, ASU OLLI, Research at ASU news, or ASU Search profile news feed. (c) No current opening specifically attached to Christensen's Mars Space Flight Facility was located; the SESE Opportunities page lists three SESE-level postings, none tagged for Christensen. (d) No LinkedIn post by the lead confirming funding announcements was returned; LinkedIn data here is sparse and unreliable for discovery, only for namesake exclusion.\n\nThings checked but excluded. ASU News, ASU OLLI spotlight, ASU SESE Opportunities (Dec 25 2025 update), ASU Mars Space Flight Facility pages, ASU Elsevier Pure person page and all four listed project pages, ASU Search profile 75976, ASU Graduate College postdoc resources ([5_confidence_and_caveats[0]] [70]), LinkedIn profile search for namesake disambiguation, Wikipedia, Grokipedia, Newswise expert profile, Arizona Board of Regents experts listing, and the AZ-NSF/NSPIRES search forms.\n\nRisk callouts. (a) The copper-tailings grant is real but off-topic for the Mars/THEMIS/Lucy researcher lead - do not promote it as a competitive grant relevant to planetary science. (b) Mission-budget support lines are not reliable indicators of new hiring - rely on official SESE postings instead. (c) L'SPACE is outreach, not employment; do not over-promise to candidates."
+    },
+    "type": "json",
+    "beta_fields": null,
+    "mcp_tool_calls": null,
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "executive_summary": {
+          "type": "string",
+          "title": "Executive Summary"
+        },
+        "1_identity_role_and_namesake_disambiguation": {
+          "type": "string",
+          "title": "1. Identity, Role, and Namesake Disambiguation"
+        },
+        "2_recent_and_active_funding_2024_and_previously_closed": {
+          "type": "string",
+          "title": "2. Recent and Active Funding (2024+) and Previously Closed"
+        },
+        "3_recent_and_open_positions_tied_to_christensen_or_group": {
+          "type": "string",
+          "title": "3. Recent and Open Positions Tied to Christensen or Group"
+        },
+        "4_linkedin_evidence": {
+          "type": "string",
+          "title": "4. LinkedIn Evidence"
+        },
+        "5_confidence_and_caveats": {
+          "type": "string",
+          "title": "5. Confidence and Caveats"
+        }
+      },
+      "required": [
+        "executive_summary",
+        "1_identity_role_and_namesake_disambiguation",
+        "2_recent_and_active_funding_2024_and_previously_closed",
+        "3_recent_and_open_positions_tied_to_christensen_or_group",
+        "4_linkedin_evidence",
+        "5_confidence_and_caveats"
+      ]
+    }
+  }
+}
