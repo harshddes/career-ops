@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updated_at": "2026-07-02T22:54:18.177Z",
+  "updated_at": "2026-07-02T22:54:53.793Z",
   "jobs": {
     "ornl-mechanical-design-and-test-engineer-temporary-1403782600": {
-      "updated_at": "2026-07-02T22:53:57.983Z",
+      "updated_at": "2026-07-02T22:54:27.123Z",
       "status": "to_consider",
       "applied": false,
       "applied_at": "",
@@ -17,7 +17,7 @@
       }
     },
     "ornl-beam-instrumentation-systems-lead-16335": {
-      "updated_at": "2026-07-02T22:54:00.183Z",
+      "updated_at": "2026-07-02T22:54:29.318Z",
       "status": "to_consider",
       "applied": false,
       "applied_at": "",
@@ -31,7 +31,7 @@
       }
     },
     "ornl-experiment-project-engineer-16622": {
-      "updated_at": "2026-07-02T22:53:53.587Z",
+      "updated_at": "2026-07-02T22:54:22.664Z",
       "status": "to_consider",
       "applied": false,
       "applied_at": "",
@@ -44,7 +44,7 @@
       }
     },
     "bosch-usa-associate-calibration-engineer": {
-      "updated_at": "2026-07-02T22:54:02.358Z",
+      "updated_at": "2026-07-02T22:54:31.412Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-06-25T01:08:18.025Z",
@@ -57,7 +57,7 @@
       }
     },
     "ornl-technician-grid-systems-hardware-temporary-1399116900": {
-      "updated_at": "2026-07-02T22:53:55.826Z",
+      "updated_at": "2026-07-02T22:54:24.863Z",
       "status": "to_consider",
       "applied": false,
       "applied_at": "",
@@ -71,7 +71,7 @@
       }
     },
     "isar-aerospace-mission-analysis-engineer": {
-      "updated_at": "2026-07-02T22:54:04.711Z",
+      "updated_at": "2026-07-02T22:54:33.748Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-06-27T15:41:02.557Z",
@@ -84,7 +84,7 @@
       }
     },
     "isar-aerospace-propulsion-design-engineer": {
-      "updated_at": "2026-07-02T22:54:06.989Z",
+      "updated_at": "2026-07-02T22:54:36.063Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-06-25T01:14:16.827Z",
@@ -95,7 +95,7 @@
       }
     },
     "isar-aerospace-ait-operations-engineer-launch-vehicle": {
-      "updated_at": "2026-07-02T22:54:09.240Z",
+      "updated_at": "2026-07-02T22:54:38.333Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-06-24T23:44:30.595Z",
@@ -112,7 +112,7 @@
       }
     },
     "isar-aerospace-propulsion-test-engineer": {
-      "updated_at": "2026-07-02T22:54:11.484Z",
+      "updated_at": "2026-07-02T22:54:40.625Z",
       "status": "to_consider",
       "applied": true,
       "applied_at": "2026-06-24T23:47:26.132Z",
@@ -128,7 +128,7 @@
       }
     },
     "ornl-instrument-design-engineer-16596": {
-      "updated_at": "2026-07-02T22:54:13.832Z",
+      "updated_at": "2026-07-02T22:54:42.987Z",
       "status": "to_consider",
       "applied": false,
       "applied_at": "",
@@ -143,7 +143,7 @@
       }
     },
     "ornl-applications-engineer-advanced-manufacturing-16196": {
-      "updated_at": "2026-07-02T22:54:16.005Z",
+      "updated_at": "2026-07-02T22:54:45.191Z",
       "status": "to_consider",
       "applied": false,
       "applied_at": "",
@@ -158,7 +158,7 @@
       }
     },
     "ornl-control-system-software-engineer-16433": {
-      "updated_at": "2026-07-02T22:54:18.177Z",
+      "updated_at": "2026-07-02T22:54:47.435Z",
       "status": "to_consider",
       "applied": false,
       "applied_at": "",
@@ -173,7 +173,7 @@
       }
     },
     "iter-instrumentation-technician-io0214": {
-      "updated_at": "2026-07-02T22:53:23.981Z",
+      "updated_at": "2026-07-02T22:54:51.191Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-06-09T00:33:57.275Z",
@@ -186,7 +186,7 @@
       }
     },
     "helion-r-and-d-engineer-fusion-generator-operations": {
-      "updated_at": "2026-07-02T22:53:26.296Z",
+      "updated_at": "2026-07-02T22:54:53.793Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-05-18T23:51:58.567Z",
@@ -199,7 +199,7 @@
       }
     },
     "pranos-fusion-instrumentation-engineer": {
-      "updated_at": "2026-07-02T22:53:28.505Z",
+      "updated_at": "2026-07-02T22:54:26.454Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-05-16T21:11:02.418Z",
@@ -213,7 +213,7 @@
       }
     },
     "commonwealth-fusion-systems-diagnostician": {
-      "updated_at": "2026-07-02T22:53:31.668Z",
+      "updated_at": "2026-07-02T22:54:28.814Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-05-13T17:15:26.079Z",
@@ -226,7 +226,7 @@
       }
     },
     "helion-nuclear-engineer-diagnostics": {
-      "updated_at": "2026-07-02T22:53:33.880Z",
+      "updated_at": "2026-07-02T22:54:30.902Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-05-17T15:53:19.830Z",
@@ -238,7 +238,7 @@
       }
     },
     "helion-integration-and-test-engineer": {
-      "updated_at": "2026-07-02T22:53:36.147Z",
+      "updated_at": "2026-07-02T22:54:33.025Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-05-19T02:01:33.785Z",
@@ -251,7 +251,7 @@
       }
     },
     "oklo-portfolio-2026-07-01": {
-      "updated_at": "2026-07-02T22:53:44.041Z",
+      "updated_at": "2026-07-02T22:54:38.362Z",
       "status": "to_consider",
       "applied": false,
       "applied_at": "",
@@ -277,7 +277,7 @@
       }
     },
     "oklo-thermal-hydraulic-test-engineer": {
-      "updated_at": "2026-07-02T22:53:46.241Z",
+      "updated_at": "2026-07-02T22:54:40.545Z",
       "status": "to_consider",
       "applied": true,
       "applied_at": "2026-07-01T23:33:16.071Z",
@@ -290,7 +290,7 @@
       }
     },
     "oklo-mechatronics-engineer": {
-      "updated_at": "2026-07-02T22:53:48.470Z",
+      "updated_at": "2026-07-02T22:54:42.723Z",
       "status": "to_consider",
       "applied": false,
       "applied_at": "",
@@ -307,7 +307,7 @@
       }
     },
     "oklo-systems-engineer-requirements-integration": {
-      "updated_at": "2026-07-02T22:53:21.531Z",
+      "updated_at": "2026-07-02T22:54:44.903Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-07-01T23:34:00.724Z",
@@ -324,7 +324,7 @@
       }
     },
     "oklo-hardware-test-engineer": {
-      "updated_at": "2026-07-02T22:53:52.846Z",
+      "updated_at": "2026-07-02T22:54:47.098Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-07-01T23:34:03.145Z",
@@ -341,7 +341,7 @@
       }
     },
     "oklo-open-call-for-engineers": {
-      "updated_at": "2026-07-02T22:53:55.042Z",
+      "updated_at": "2026-07-02T22:54:49.272Z",
       "status": "to_consider",
       "applied": true,
       "applied_at": "2026-07-01T23:33:31.518Z",
@@ -358,7 +358,7 @@
       }
     },
     "zephyr-fusion-intern-outreach": {
-      "updated_at": "2026-07-02T22:53:55.088Z",
+      "updated_at": "2026-07-02T22:54:49.327Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-07-01T22:56:23.330Z",
@@ -373,7 +373,7 @@
       }
     },
     "southern-california-edison-energy-marketing-trading-financial-analyst-associate-specialist": {
-      "updated_at": "2026-07-02T22:53:57.566Z",
+      "updated_at": "2026-07-02T22:54:51.755Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-06-30T21:50:54.613Z",
@@ -476,7 +476,7 @@
       }
     },
     "tokamak-energy-mechanical-design-engineer": {
-      "updated_at": "2026-07-02T22:53:50.672Z",
+      "updated_at": "2026-07-02T22:54:19.504Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-06-28T18:34:58.872Z",
