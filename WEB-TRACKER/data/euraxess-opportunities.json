@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-07-24T19:45:19.921Z",
+  "generated_at": "2026-07-24T19:45:19.945Z",
   "scope": "EURAXESS live research opportunities",
   "scan_summary": {
     "provider": "official_or_permitted_feed",
@@ -48031,5 +48031,8 @@
       "first_seen": "2026-07-18T16:17:01.004Z",
       "last_updated": "2026-07-24T19:45:19.747Z"
     }
-  ]
+  ],
+  "source": "/home/runner/work/career-ops/career-ops/data/euraxess-opportunities.json",
+  "total": 471,
+  "count": 471
 }
