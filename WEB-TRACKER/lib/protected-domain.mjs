@@ -74,6 +74,8 @@ export function matchProtectedDomain(text = '') {
 export function postingProtectedDomainText(posting = {}) {
   return [
     posting.title,
+    posting.working_title,
+    posting.job_title,
     posting.summary,
     posting.description,
     posting.institution,
@@ -81,6 +83,8 @@ export function postingProtectedDomainText(posting = {}) {
     posting.country,
     posting.discipline,
     posting.department,
+    posting.career_interest,
+    posting.organizational_group,
     posting.research_fields,
     posting.academic_level,
     posting.researcher_profile,
@@ -189,8 +193,8 @@ export function assertCanArchiveOpportunity(opportunity = {}, { force = false } 
   const hits = matchProtectedDomain(postingProtectedDomainText(opportunity));
   if (!hits.length) return { allowed: true, reason: 'not_protected' };
 
-  const deadlineUtc = cleanText(opportunity.deadline_utc);
-  const deadline = deadlineUtc ? new Date(deadlineUtc) : null;
+  const deadlineUtc = cleanText(opportunity.deadline_utc || opportunity.posting_end_date);
+  const deadline = deadlineUtc ? new Date(/T/.test(deadlineUtc) ? deadlineUtc : `${deadlineUtc}T23:59:59`) : null;
   const deadlinePassed = Boolean(deadline && !Number.isNaN(deadline.getTime()) && deadline.getTime() < Date.now())
     || (opportunity.risk_flags || []).includes('deadline_passed')
     || opportunity.status === 'closed';

@@ -82,6 +82,37 @@ export function logJobConsiderPatchEvent(job, updates = {}) {
   return events;
 }
 
+export function logNetworkingActivity({
+  action = 'updated',
+  person = null,
+  organization = null,
+  task = null,
+  interaction = null,
+  notes = '',
+} = {}) {
+  if (String(process.env.NETWORKING_ACTIVITY_LOG || '').toLowerCase() === 'off') return null;
+  const subjectId = person?.id || task?.id || interaction?.id || organization?.id || '';
+  const subjectLabel = person?.display_name || task?.subject || interaction?.subject || organization?.name || 'Networking';
+  return appendActivityEvent(baseEvent({
+    domain: 'networking',
+    action: `networking_${cleanText(action || 'updated')}`,
+    subject_id: subjectId,
+    subject_label: subjectLabel,
+    company: person?.current_organization || organization?.name || '',
+    title: person?.title || task?.subject || interaction?.type || '',
+    status: person?.relationship_stage || task?.state || '',
+    source: 'Networking Command Center',
+    notes: cleanText(notes || interaction?.summary || task?.notes || person?.notes || ''),
+    metadata: {
+      person_id: person?.id || task?.person_id || interaction?.person_id || '',
+      organization_id: organization?.id || person?.current_organization_id || task?.organization_id || '',
+      channel: interaction?.channel || '',
+      due_at: task?.due_at || '',
+      occurred_at: interaction?.occurred_at || '',
+    },
+  }));
+}
+
 export function logApplicationRecordedEvent({ num, entry = {}, metadata = {}, core = {}, payload = {} }) {
   return appendActivityEvent(baseEvent({
     domain: 'jobs',

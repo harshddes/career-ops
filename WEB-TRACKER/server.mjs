@@ -23,6 +23,7 @@ import {
   logApplicationPatchEvents,
   logApplicationRecordedEvent,
   logJobConsiderPatchEvent,
+  logNetworkingActivity,
   logResearchStatusEvent,
 } from './lib/dashboard-activity.mjs';
 import { syncArtifactResources } from './lib/artifact-resource-sync.mjs';
@@ -81,6 +82,15 @@ import {
   readPhdscannerOpportunities,
   syncPhdscannerOpportunitiesToDashboard,
 } from './lib/phdscanner/opportunity-store.mjs';
+import {
+  DASHBOARD_UMICH_FILE,
+  archiveUmichOpportunity,
+  findUmichOpportunity,
+  patchUmichOpportunity,
+  readUmichOpportunities,
+  syncUmichOpportunitiesToDashboard,
+  unarchiveUmichOpportunity,
+} from './lib/umich-careers/opportunity-store.mjs';
 import { assertCanArchiveOpportunity } from './lib/protected-domain.mjs';
 import {
   PHDSCANNER_EXECUTION_STAGES,
@@ -105,6 +115,28 @@ import {
   readExhibitorClearQueue,
   refreshExhibitorClearQueueStatus,
 } from './lib/exhibitor/factory.mjs';
+import {
+  appendNetworkingInteraction,
+  buildNetworkingReadModel,
+  deleteNetworkingPerson,
+  patchNetworkingPerson,
+  patchNetworkingTask,
+  readNetworking,
+  reviewNetworkingPerson,
+  syncNetworkingToDashboard,
+  upsertNetworkingEdge,
+  upsertNetworkingEvent,
+  upsertNetworkingOrganization,
+  upsertNetworkingPerson,
+  upsertNetworkingTask,
+} from './lib/networking/store.mjs';
+import {
+  completeNetworkingResearch,
+  markNetworkingResearchInProgress,
+  markNetworkingResearchReviewReady,
+  queueNetworkingResearch,
+  readNetworkingResearchQueue,
+} from './lib/networking/factory.mjs';
 import {
   TRACKER_EDITABLE_FIELDS,
   TRACKER_METADATA_FIELDS,
@@ -871,6 +903,184 @@ app.delete('/api/jobs-to-consider/:id', (req, res) => {
   }
 });
 
+function publishNetworkingUpdate(payload = {}) {
+  const dashboard = syncNetworkingToDashboard();
+  broadcast('networking_updated', { ...payload, summary: dashboard.summary });
+  return dashboard;
+}
+
+app.get('/api/networking', (_req, res) => {
+  try {
+    return res.json(buildNetworkingReadModel(readNetworking()));
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to read networking data' });
+  }
+});
+
+app.post('/api/networking/organizations', (req, res) => {
+  try {
+    const result = upsertNetworkingOrganization(req.body || {});
+    publishNetworkingUpdate({ organization_id: result.organization.id });
+    logNetworkingActivity({ action: 'organization_saved', organization: result.organization });
+    return res.status(201).json(result);
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to save networking organization' });
+  }
+});
+
+app.post('/api/networking/people', (req, res) => {
+  try {
+    const result = upsertNetworkingPerson(req.body || {});
+    publishNetworkingUpdate({ person_id: result.person.id });
+    logNetworkingActivity({ action: 'person_saved', person: result.person });
+    return res.status(201).json(result);
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to save networking person' });
+  }
+});
+
+app.patch('/api/networking/people/:id', (req, res) => {
+  try {
+    const result = patchNetworkingPerson(req.params.id, req.body || {});
+    publishNetworkingUpdate({ person_id: result.person.id });
+    logNetworkingActivity({
+      action: req.body?.relationship_stage ? 'relationship_stage_changed' : 'person_updated',
+      person: result.person,
+    });
+    return res.json(result);
+  } catch (err) {
+    const status = /not found/i.test(err?.message || '') ? 404 : 400;
+    return res.status(status).json({ error: err?.message || 'failed to update networking person' });
+  }
+});
+
+app.patch('/api/networking/people/:id/review', (req, res) => {
+  try {
+    const result = reviewNetworkingPerson(req.params.id, req.body?.action);
+    publishNetworkingUpdate({ person_id: result.person.id, review_status: result.person.review_status });
+    logNetworkingActivity({
+      action: result.person.review_status === 'approved' ? 'candidate_approved' : 'candidate_rejected',
+      person: result.person,
+    });
+    return res.json(result);
+  } catch (err) {
+    const status = /not found/i.test(err?.message || '') ? 404 : 400;
+    return res.status(status).json({ error: err?.message || 'failed to review networking candidate' });
+  }
+});
+
+app.delete('/api/networking/people/:id', (req, res) => {
+  try {
+    const result = deleteNetworkingPerson(req.params.id);
+    publishNetworkingUpdate({ person_id: result.person.id, deleted: true });
+    logNetworkingActivity({ action: 'person_deleted', person: result.person });
+    return res.json(result);
+  } catch (err) {
+    const status = /not found/i.test(err?.message || '') ? 404 : 400;
+    return res.status(status).json({ error: err?.message || 'failed to delete networking person' });
+  }
+});
+
+app.post('/api/networking/interactions', (req, res) => {
+  try {
+    const result = appendNetworkingInteraction(req.body || {});
+    publishNetworkingUpdate({ person_id: result.person.id, interaction_id: result.interaction.id });
+    logNetworkingActivity({
+      action: 'interaction_logged',
+      person: result.person,
+      interaction: result.interaction,
+    });
+    return res.status(201).json(result);
+  } catch (err) {
+    const status = /not found/i.test(err?.message || '') ? 404 : 400;
+    return res.status(status).json({ error: err?.message || 'failed to log networking interaction' });
+  }
+});
+
+app.post('/api/networking/tasks', (req, res) => {
+  try {
+    const result = upsertNetworkingTask(req.body || {});
+    publishNetworkingUpdate({ task_id: result.task.id });
+    logNetworkingActivity({ action: 'task_saved', task: result.task });
+    return res.status(201).json(result);
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to save networking task' });
+  }
+});
+
+app.patch('/api/networking/tasks/:id', (req, res) => {
+  try {
+    const result = patchNetworkingTask(req.params.id, req.body || {});
+    publishNetworkingUpdate({ task_id: result.task.id });
+    logNetworkingActivity({
+      action: result.task.state === 'completed' ? 'task_completed' : 'task_updated',
+      task: result.task,
+    });
+    return res.json(result);
+  } catch (err) {
+    const status = /not found/i.test(err?.message || '') ? 404 : 400;
+    return res.status(status).json({ error: err?.message || 'failed to update networking task' });
+  }
+});
+
+app.post('/api/networking/edges', (req, res) => {
+  try {
+    const result = upsertNetworkingEdge(req.body || {});
+    publishNetworkingUpdate({ edge_id: result.edge.id });
+    logNetworkingActivity({ action: 'path_saved', notes: result.edge.notes });
+    return res.status(201).json(result);
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to save networking path' });
+  }
+});
+
+app.post('/api/networking/events', (req, res) => {
+  try {
+    const result = upsertNetworkingEvent(req.body || {});
+    publishNetworkingUpdate({ event_id: result.event.id });
+    logNetworkingActivity({ action: 'event_saved', notes: result.event.name });
+    return res.status(201).json(result);
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to save networking event' });
+  }
+});
+
+app.get('/api/networking/research-queue', (_req, res) => {
+  try {
+    return res.json(readNetworkingResearchQueue());
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to read networking research queue' });
+  }
+});
+
+app.post('/api/networking/research-queue', (req, res) => {
+  try {
+    const result = queueNetworkingResearch(req.body || {});
+    broadcast('networking_research_queue_updated', { pending_count: result.queue.pending_count });
+    logNetworkingActivity({ action: 'research_queued', notes: result.order.organization_name });
+    return res.status(result.duplicate ? 200 : 201).json(result);
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to queue networking research' });
+  }
+});
+
+app.patch('/api/networking/research-queue/:id', (req, res) => {
+  try {
+    const action = req.body?.action;
+    let result;
+    if (action === 'start') result = markNetworkingResearchInProgress(req.params.id);
+    else if (action === 'review_ready') result = markNetworkingResearchReviewReady(req.params.id, req.body?.candidate_person_ids || []);
+    else if (action === 'complete') result = completeNetworkingResearch(req.params.id);
+    else if (action === 'fail') result = completeNetworkingResearch(req.params.id, { failed: true, error: req.body?.error || '' });
+    else throw new Error('networking research queue action must be start, review_ready, complete, or fail');
+    broadcast('networking_research_queue_updated', { pending_count: result.queue.pending_count, order_id: result.order.id });
+    return res.json(result);
+  } catch (err) {
+    const status = /not found/i.test(err?.message || '') ? 404 : 400;
+    return res.status(status).json({ error: err?.message || 'failed to update networking research order' });
+  }
+});
+
 app.get('/api/research-prospects', (req, res) => {
   try {
     res.json(readResearchProspects());
@@ -1551,6 +1761,264 @@ app.post('/api/euraxess/opportunities/:id/apply', (req, res) => {
     return res.json(withToday({ opportunity: result.opportunity, application: trackerResult }));
   } catch (err) {
     return res.status(400).json({ error: err?.message || 'failed to update EURAXESS applied state' });
+  }
+});
+
+// ── U-M Careers tracker ─────────────────────────────────────────────
+
+app.get('/api/umich-careers/opportunities', (_req, res) => {
+  try {
+    // Serve the dashboard projection (trimmed descriptions) when present.
+    const path = existsSync(DASHBOARD_UMICH_FILE) ? DASHBOARD_UMICH_FILE : undefined;
+    res.json(readUmichOpportunities(path));
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to read U-M Careers opportunities' });
+  }
+});
+
+app.get('/api/umich-careers/health', (_req, res) => {
+  try {
+    const store = readUmichOpportunities();
+    res.json({ generated_at: new Date().toISOString(), ...store.scan_health });
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to read U-M Careers health' });
+  }
+});
+
+app.post('/api/umich-careers/scan', (req, res) => {
+  const input = req.body || {};
+  const mode = ['full', 'details', 'rescore', 'discover'].includes(String(input.mode)) ? String(input.mode) : 'discover';
+  const args = [`--${mode}`];
+  if (input.dry_run || input.dryRun) args.push('--dry-run');
+  const job = jobStore.create('umich_careers_scan', input, {
+    label: `Scan U-M Careers (${mode})`,
+    description: 'Crawl the permitted careers.umich.edu browse catalogs and update the U-M Careers tracker.',
+  });
+  jobStore.update(job.id, { status: 'running' });
+  queueMicrotask(async () => {
+    try {
+      const { execFile } = await import('child_process');
+      const result = await new Promise(resolve => {
+        execFile(process.execPath, [join(BASE, 'umich-careers-scan.mjs'), ...args], {
+          cwd: BASE,
+          timeout: (mode === 'full' ? 30 : 10) * 60_000,
+          windowsHide: true,
+        }, (err, stdout = '', stderr = '') => {
+          resolve({ err, stdout, stderr });
+        });
+      });
+      if (result.stdout) jobStore.appendLog(job.id, 'stdout', result.stdout);
+      if (result.stderr) jobStore.appendLog(job.id, 'stderr', result.stderr);
+      if (result.err) throw result.err;
+      jobStore.finish(job.id, 0);
+      broadcast('umich_careers_opportunities_updated', { total: readUmichOpportunities().opportunities?.length || 0 });
+    } catch (err) {
+      jobStore.appendLog(job.id, 'stderr', err?.stack || err?.message || String(err));
+      jobStore.finish(job.id, 1, err?.message || String(err));
+      broadcast('umich_careers_scan_failed', { error: err?.message || String(err) });
+    }
+  });
+  res.status(202).json({ job });
+});
+
+app.get('/api/umich-careers/opportunities/:id', (req, res) => {
+  try {
+    const opportunity = findUmichOpportunity(req.params.id, readUmichOpportunities());
+    if (!opportunity) return res.status(404).json({ error: 'U-M Careers opportunity not found' });
+    return res.json({ opportunity });
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to read U-M Careers opportunity' });
+  }
+});
+
+app.patch('/api/umich-careers/opportunities/:id', (req, res) => {
+  try {
+    const result = patchUmichOpportunity(req.params.id, req.body || {});
+    const dashboard = syncUmichOpportunitiesToDashboard();
+    broadcast('umich_careers_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    return res.json(result);
+  } catch (err) {
+    const status = /not found/i.test(err?.message || '') ? 404 : 400;
+    return res.status(status).json({ error: err?.message || 'failed to update U-M Careers opportunity' });
+  }
+});
+
+app.post('/api/umich-careers/opportunities/:id/archive', (req, res) => {
+  try {
+    const existing = findUmichOpportunity(req.params.id, readUmichOpportunities());
+    if (!existing) return res.status(404).json({ error: 'U-M Careers opportunity not found' });
+    const gate = assertCanArchiveOpportunity(existing, { force: Boolean(req.body?.force) });
+    if (!gate.allowed) {
+      return res.status(409).json({ error: gate.message, ...gate });
+    }
+    const result = archiveUmichOpportunity(req.params.id, {
+      reason: req.body?.reason || req.body?.archive_reason || 'Archived from dashboard.',
+      force: Boolean(req.body?.force),
+    });
+    const dashboard = syncUmichOpportunitiesToDashboard();
+    broadcast('umich_careers_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    return res.json({
+      ...result,
+      message: `Archived: ${result.opportunity.working_title || result.opportunity.title}`,
+    });
+  } catch (err) {
+    const status = /not found/i.test(err?.message || '') ? 404 : 400;
+    return res.status(status).json({ error: err?.message || 'failed to archive U-M Careers opportunity' });
+  }
+});
+
+app.post('/api/umich-careers/opportunities/:id/unarchive', (req, res) => {
+  try {
+    const result = unarchiveUmichOpportunity(req.params.id);
+    const dashboard = syncUmichOpportunitiesToDashboard();
+    broadcast('umich_careers_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    return res.json({
+      ...result,
+      message: `Restored from archive: ${result.opportunity.working_title || result.opportunity.title}`,
+    });
+  } catch (err) {
+    const status = /not found/i.test(err?.message || '') ? 404 : 400;
+    return res.status(status).json({ error: err?.message || 'failed to unarchive U-M Careers opportunity' });
+  }
+});
+
+app.post('/api/umich-careers/opportunities/:id/apply', (req, res) => {
+  try {
+    const applied = req.body?.applied !== false;
+    const existing = findUmichOpportunity(req.params.id, readUmichOpportunities());
+    if (!existing) return res.status(404).json({ error: 'U-M Careers opportunity not found' });
+
+    if (!applied) {
+      if (existing.application_num) {
+        try {
+          deleteTrackerRow({ num: Number(existing.application_num) });
+        } catch (err) {
+          if (!/not found/i.test(err?.message || '')) throw err;
+        }
+      }
+      const result = patchUmichOpportunity(req.params.id, {
+        applied: false,
+        application_num: null,
+        applied_at: '',
+      });
+      const dashboard = syncUmichOpportunitiesToDashboard();
+      syncApplications();
+      triggerSync();
+      broadcast('umich_careers_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+      broadcast('application_deleted', { num: existing.application_num || null });
+      return res.json(withToday({
+        opportunity: result.opportunity,
+        application: null,
+        message: 'Moved back out of Applications.',
+      }));
+    }
+
+    const role = existing.working_title || existing.title || `U-M job ${existing.job_id}`;
+    const score = Number.isFinite(Number(existing.score))
+      ? `${Number(existing.score).toFixed(1)}/5`
+      : 'N/A';
+    const notes = [
+      existing.fit_rationale,
+      existing.job_id ? `U-M job opening ID ${existing.job_id}.` : '',
+      existing.salary_text ? `Salary ${existing.salary_text}.` : '',
+      existing.posting_end_date ? `Posting ends ${existing.posting_end_date}.` : '',
+      'Applied from U-M Careers tracker.',
+    ].filter(Boolean).join(' ');
+
+    const trackerResult = createTrackerRow({
+      entry: {
+        date: localDateString(new Date(), DEFAULT_DIGEST_TIMEZONE),
+        company: 'University of Michigan',
+        role,
+        score,
+        status: 'Applied',
+        pdf: false,
+        report: '-',
+        notes,
+      },
+      metadata: {
+        posting_url: existing.url || existing.apply_url || '',
+        submitted_date: localDateString(new Date(), DEFAULT_DIGEST_TIMEZONE),
+        date_due: existing.posting_end_date || '',
+        department: existing.department || '',
+        division_field: existing.career_interest || existing.organizational_group || '',
+        way_to_apply: existing.apply_url || existing.url || '',
+        track_kind: 'job',
+      },
+    });
+
+    const result = patchUmichOpportunity(req.params.id, {
+      applied: true,
+      application_num: trackerResult.num,
+      applied_at: new Date().toISOString(),
+      // Applied cards leave the active priority tray; keep archive flag as-is.
+      archived: false,
+      archive_reason: '',
+      archived_at: '',
+    });
+    const dashboard = syncUmichOpportunitiesToDashboard();
+    syncApplications();
+    triggerSync();
+    broadcast('umich_careers_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    broadcast('application_updated', {
+      num: trackerResult.num,
+      created: !trackerResult.duplicate,
+      duplicate: trackerResult.duplicate,
+    });
+    return res.json(withToday({
+      opportunity: result.opportunity,
+      application: trackerResult,
+      message: `Applied: ${role} → Applications #${trackerResult.num}`,
+    }));
+  } catch (err) {
+    const status = /not found/i.test(err?.message || '') ? 404 : 400;
+    return res.status(status).json({ error: err?.message || 'failed to update U-M Careers applied state' });
+  }
+});
+
+app.post('/api/umich-careers/opportunities/:id/add-to-consider', (req, res) => {
+  try {
+    const existing = findUmichOpportunity(req.params.id, readUmichOpportunities());
+    if (!existing) return res.status(404).json({ error: 'U-M Careers opportunity not found' });
+
+    // Idempotent: reuse the linked Jobs to Consider entry when it still exists.
+    const linked = existing.jobs_to_consider_id ? findConsiderJob(existing.jobs_to_consider_id) : null;
+    const byUrl = linked || (existing.url ? findConsiderJob({ url: existing.url }) : null);
+    if (byUrl) {
+      if (!existing.jobs_to_consider_id || existing.jobs_to_consider_id !== byUrl.id) {
+        patchUmichOpportunity(req.params.id, { jobs_to_consider_id: byUrl.id });
+        syncUmichOpportunitiesToDashboard();
+      }
+      return res.json({ job: byUrl, created: false, message: 'Already on Jobs to Consider.' });
+    }
+
+    upsertConsiderJob({
+      company: 'University of Michigan',
+      title: existing.working_title || existing.title,
+      url: existing.url,
+      location: [existing.work_location, existing.city_location].filter(Boolean).join(' — '),
+      team: existing.department,
+      source: 'umich_careers',
+      score: Number.isFinite(Number(existing.score)) ? `${Number(existing.score).toFixed(1)}/5` : '',
+      fit_summary: existing.fit_rationale,
+      notes: [
+        `U-M job opening ID ${existing.job_id}.`,
+        existing.salary_text ? `Salary ${existing.salary_text}.` : '',
+        existing.posting_end_date ? `Posting ends ${existing.posting_end_date}.` : '',
+      ].filter(Boolean).join(' '),
+      region: 'US',
+    });
+    const job = findConsiderJob({ url: existing.url, company: 'University of Michigan', title: existing.working_title || existing.title });
+    if (job) {
+      patchUmichOpportunity(req.params.id, { jobs_to_consider_id: job.id });
+    }
+    const dashboard = syncConsiderJobsToDashboard();
+    syncUmichOpportunitiesToDashboard();
+    broadcast('jobs_to_consider_updated', { total: dashboard.total });
+    broadcast('umich_careers_opportunities_updated', { id: existing.id });
+    return res.status(201).json({ job, created: true, message: 'Added to Jobs to Consider for review.' });
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to add U-M Careers opportunity to Jobs to Consider' });
   }
 });
 
@@ -2359,6 +2827,7 @@ export function startServer(port = PORT, host = HOST) {
     let settled = false;
     const server = app.listen(port, host, () => {
       const migrated = bootstrapResearchUserStateFromCanonical();
+      syncNetworkingToDashboard();
       if (migrated > 0) {
         console.log(`[boot] Migrated ${migrated} research prospect status(es) into user-state overlay`);
       }

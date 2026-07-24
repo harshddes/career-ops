@@ -62,6 +62,8 @@ export function collectApiPaths(phdSources = []) {
     '/api/euraxess/health',
     '/api/phdscanner/opportunities',
     '/api/phdscanner/health',
+    '/api/umich-careers/opportunities',
+    '/api/umich-careers/health',
     '/api/exhibitor/companies',
     '/api/exhibitor/clear-queue',
     '/api/exhibitor/factory/status',
@@ -97,6 +99,52 @@ function runSyncAll() {
   });
 }
 
+export function isPrivateDataFile(name) {
+  return /^networking(?:-|\.json$)/i.test(String(name || ''));
+}
+
+export function sanitizeActivityNdjson(content = '') {
+  return String(content || '')
+    .split(/\r?\n/)
+    .map(line => line.trim())
+    .filter(Boolean)
+    .filter(line => {
+      try {
+        return JSON.parse(line).domain !== 'networking';
+      } catch {
+        return false;
+      }
+    })
+    .join('\n');
+}
+
+export function sanitizeStaticApiPayload(apiPath, payload) {
+  if (!apiPath.startsWith('/api/today-activity') || !payload || typeof payload !== 'object') {
+    return payload;
+  }
+  const details = payload.details && typeof payload.details === 'object'
+    ? payload.details
+    : {};
+  const isNetworkingRow = row => (
+    String(row?.type || '').startsWith('networking_')
+    || row?.source === 'Networking Command Center'
+    || row?.domain === 'networking'
+    || row?.dashboard_area === 'Networking'
+  );
+  return {
+    ...payload,
+    details: {
+      ...details,
+      audit_activity: Array.isArray(details.audit_activity)
+        ? details.audit_activity.filter(row => !isNetworkingRow(row))
+        : [],
+      all_activity: Array.isArray(details.all_activity)
+        ? details.all_activity.filter(row => !isNetworkingRow(row))
+        : [],
+    },
+  };
+}
+
 function copyDataFiles(outputDir) {
   const outData = join(outputDir, 'data');
   mkdirSync(outData, { recursive: true });
@@ -105,7 +153,13 @@ function copyDataFiles(outputDir) {
   const copied = [];
   for (const name of readdirSync(DATA_DIR)) {
     if (!/\.(json|ndjson)$/i.test(name)) continue;
-    cpSync(join(DATA_DIR, name), join(outData, name));
+    if (isPrivateDataFile(name)) continue;
+    if (name === 'dashboard-activity-log.ndjson') {
+      const sanitized = sanitizeActivityNdjson(readFileSync(join(DATA_DIR, name), 'utf-8'));
+      writeFileSync(join(outData, name), sanitized ? `${sanitized}\n` : '', 'utf-8');
+    } else {
+      cpSync(join(DATA_DIR, name), join(outData, name));
+    }
     copied.push(name);
   }
   return copied;
@@ -160,7 +214,7 @@ export async function generateStaticSnapshot(options = {}) {
       try {
         const payload = await fetchJson(baseUrl, apiPath);
         const target = apiSnapshotPath(outputDir, apiPath);
-        writeJson(target, payload);
+        writeJson(target, sanitizeStaticApiPayload(apiPath, payload));
         manifest.api_snapshots.push(apiPath.split('?')[0]);
       } catch (err) {
         manifest.errors.push({ path: apiPath, error: err.message });

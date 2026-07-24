@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-07-14T14:13:08.750Z",
+  "generated_at": "2026-07-23T20:00:17.297Z",
   "scope": "University of Michigan Ann Arbor research prospects",
   "prospects": [
     {
@@ -5729,20 +5729,20 @@
       "research_interests_summary": "",
       "recent_publication": "",
       "priority": "C",
-      "status": "not_contacted",
-      "last_contacted": "",
+      "status": "contacted",
+      "last_contacted": "2026-07-17",
       "last_followed_up": "",
-      "follow_up_date": "",
+      "follow_up_date": "2026-07-24",
       "notes": "",
       "outreach": {
         "stage": "",
-        "stage_updated_at": "",
+        "stage_updated_at": "2026-07-17T13:09:27.464Z",
         "entered_at": "",
         "notes": ""
       },
       "source_report": "WEB-TRACKER/research/umich-research-prospects-ann-arbor-2026.json",
       "first_seen": "2026-06-24T00:00:00.000Z",
-      "last_updated": "2026-07-09T21:43:21.975Z",
+      "last_updated": "2026-07-17T13:09:27.463Z",
       "defense_sheet": [
         {
           "id": "professor_work",
@@ -9862,20 +9862,20 @@
       "research_interests_summary": "",
       "recent_publication": "",
       "priority": "C",
-      "status": "contacted",
+      "status": "followed_up",
       "last_contacted": "2026-07-13",
-      "last_followed_up": "2026-07-13",
-      "follow_up_date": "2026-07-20",
+      "last_followed_up": "2026-07-23",
+      "follow_up_date": "",
       "notes": "",
       "outreach": {
-        "stage": "",
-        "stage_updated_at": "2026-07-13T15:53:01.933Z",
-        "entered_at": "",
+        "stage": "finished",
+        "stage_updated_at": "2026-07-23T20:00:17.154Z",
+        "entered_at": "2026-07-23T19:59:52.966Z",
         "notes": ""
       },
       "source_report": "WEB-TRACKER/research/umich-research-prospects-ann-arbor-2026.json",
       "first_seen": "2026-06-24T00:00:00.000Z",
-      "last_updated": "2026-07-13T15:41:17.138Z",
+      "last_updated": "2026-07-23T20:00:17.149Z",
       "defense_sheet": [
         {
           "id": "professor_work",
@@ -22844,20 +22844,20 @@
       "research_interests_summary": "",
       "recent_publication": "",
       "priority": "D",
-      "status": "not_contacted",
-      "last_contacted": "",
+      "status": "contacted",
+      "last_contacted": "2026-07-17",
       "last_followed_up": "",
-      "follow_up_date": "",
+      "follow_up_date": "2026-07-24",
       "notes": "",
       "outreach": {
         "stage": "",
-        "stage_updated_at": "",
+        "stage_updated_at": "2026-07-17T13:40:47.153Z",
         "entered_at": "",
         "notes": ""
       },
       "source_report": "WEB-TRACKER/research/umich-research-prospects-ann-arbor-2026.json",
       "first_seen": "2026-06-24T00:00:00.000Z",
-      "last_updated": "2026-07-09T21:43:21.983Z",
+      "last_updated": "2026-07-17T13:40:47.153Z",
       "defense_sheet": [
         {
           "id": "professor_work",

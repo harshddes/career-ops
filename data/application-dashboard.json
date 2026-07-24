@@ -184,6 +184,82 @@
       "field": "Cryogenics / facilities",
       "track_kind": "phd",
       "way_to_apply": "output/alba-synchrotron/application-email-alba-synchrotron-project-engineer-cryogenic-2026-07-13.md"
+    },
+    "65": {
+      "posting_url": "https://euraxess.ec.europa.eu/jobs/446816",
+      "submitted_date": "2026-07-20",
+      "university": "Fondazione Bruno Kessler",
+      "field": "Space",
+      "track_kind": "phd"
+    },
+    "66": {
+      "division_field": "Engineering & Architecture",
+      "date_due": "2026-07-27",
+      "posting_url": "https://careers.umich.edu/job_detail/279279/component-engineer",
+      "submitted_date": "2026-07-21",
+      "way_to_apply": "https://careers.umich.edu/job_detail/apply/279279",
+      "department": "CoE Space Physics Research Lab",
+      "track_kind": "job"
+    },
+    "67": {
+      "posting_url": "https://jobs.rohde-schwarz.com/en_US/careers/JobDetail/System-Architect/15101",
+      "submitted_date": "2026-07-21",
+      "way_to_apply": "",
+      "track_kind": "job"
+    },
+    "68": {
+      "division_field": "Research",
+      "date_due": "2026-08-03",
+      "posting_url": "https://careers.umich.edu/job_detail/279700/innovation-partnerships-fellow",
+      "submitted_date": "2026-07-21",
+      "way_to_apply": "https://careers.umich.edu/job_detail/apply/279700",
+      "department": "UMOR Innovation Pshps Admin",
+      "track_kind": "job"
+    },
+    "69": {
+      "division_field": "Administration",
+      "date_due": "2026-07-30",
+      "posting_url": "https://careers.umich.edu/job_detail/280189/nqvl-project-manager",
+      "submitted_date": "2026-07-21",
+      "way_to_apply": "https://careers.umich.edu/job_detail/apply/280189",
+      "department": "CoE EECS - ECE Division",
+      "track_kind": "job"
+    },
+    "70": {
+      "division_field": "Engineering & Architecture",
+      "date_due": "2026-07-21",
+      "posting_url": "https://careers.umich.edu/job_detail/279520/engineering-technician-manufacturing-lab",
+      "submitted_date": "2026-07-21",
+      "way_to_apply": "https://careers.umich.edu/job_detail/apply/279520",
+      "department": "CoE Mechanical Engineering",
+      "track_kind": "job"
+    },
+    "71": {
+      "division_field": "Engineering & Architecture",
+      "date_due": "2026-07-28",
+      "posting_url": "https://careers.umich.edu/job_detail/280110/engineer-research-lnf-user-services",
+      "submitted_date": "2026-07-21",
+      "way_to_apply": "https://careers.umich.edu/job_detail/apply/280110",
+      "department": "CoE Lurie Nanofabr Facility",
+      "track_kind": "job"
+    },
+    "72": {
+      "division_field": "Engineering & Architecture",
+      "date_due": "2026-07-31",
+      "posting_url": "https://careers.umich.edu/job_detail/279981/engineering-technician",
+      "submitted_date": "2026-07-21",
+      "way_to_apply": "https://careers.umich.edu/job_detail/apply/279981",
+      "department": "CoE Mechanical Engineering",
+      "track_kind": "job"
+    },
+    "73": {
+      "division_field": "Temporary Job Opening",
+      "date_due": "2026-07-22",
+      "posting_url": "https://careers.umich.edu/job_detail/279462/research-asst-i-temp",
+      "submitted_date": "2026-07-21",
+      "way_to_apply": "https://careers.umich.edu/job_detail/apply/279462",
+      "department": "LSA Astronomy",
+      "track_kind": "job"
     }
   },
   "schedule": {

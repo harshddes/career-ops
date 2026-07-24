@@ -13,6 +13,10 @@
     "scan:euraxess": "node euraxess-scan.mjs --all --refresh-liveness",
     "scan:phdscanner": "node phdscanner-scan.mjs --all --refresh-liveness",
     "scan:findaphd": "node findaphd-scan.mjs --all --refresh-liveness",
+    "scan:umich": "node umich-careers-scan.mjs --discover",
+    "scan:umich:full": "node umich-careers-scan.mjs --full",
+    "scan:umich:details": "node umich-careers-scan.mjs --details",
+    "scan:umich:rescore": "node umich-careers-scan.mjs --rescore",
     "factory:euraxess": "node euraxess-factory-worker.mjs --max 3",
     "factory:euraxess:dry": "node euraxess-factory-worker.mjs --dry-run --max 3",
     "factory:phdscanner": "node phdscanner-factory-worker.mjs --max 3",
@@ -34,6 +38,7 @@
     "install:publish-daemon": "powershell -ExecutionPolicy Bypass -File scripts/install-publish-daemon.ps1"
   },
   "dependencies": {
+    "cheerio": "^1.2.0",
     "chokidar": "^4.0.0",
     "exceljs": "^4.4.0",
     "express": "^4.22.2",

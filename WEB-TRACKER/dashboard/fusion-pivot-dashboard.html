@@ -309,6 +309,46 @@ body.read-only #pulse-apps-table textarea { pointer-events: none; opacity: 0.85;
 .outreach-kanban-followups-grid .outreach-kanban-crumb.is-expanded {
   grid-column: 1 / -1;
 }
+.outreach-thread-outcome {
+  margin-top: 0.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.outreach-thread-outcome label {
+  color: var(--text-muted);
+  font-size: 0.62rem;
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 0.02em;
+}
+.outreach-thread-outcome textarea {
+  width: 100%;
+  min-height: 3.4rem;
+  resize: vertical;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(0, 212, 255, 0.28);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-size: 0.78rem;
+  line-height: 1.4;
+  padding: 0.45rem 0.55rem;
+  font-family: inherit;
+}
+.outreach-thread-outcome textarea:focus {
+  outline: none;
+  border-color: var(--accent-fusion);
+  box-shadow: 0 0 0 1px rgba(0, 212, 255, 0.25);
+}
+.outreach-thread-outcome-preview {
+  margin-top: 0.35rem;
+  color: var(--text-secondary);
+  font-size: 0.68rem;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
 /* EURAXESS research report — fullscreen rendered Markdown on the dashboard */
 .euraxess-report-overlay {
@@ -715,6 +755,48 @@ body.read-only #pulse-apps-table textarea { pointer-events: none; opacity: 0.85;
 .coach-card.primary { border-color: var(--accent-plasma); box-shadow: 0 0 30px var(--border-glow); }
 .coach-card h3 { font-size: 1.2rem; margin-bottom: 0.7rem; }
 .coach-card p { color: var(--text-secondary); line-height: 1.55; font-size: 0.92rem; }
+
+.notion-embed-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+.notion-embed-toolbar .plain-help {
+  margin: 0;
+  flex: 1 1 220px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+.notion-embed-wrap {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+.notion-embed-wrap iframe {
+  display: block;
+  width: 100%;
+  height: 720px;
+  border: 0;
+  background: #fff;
+}
+.notion-embed-notice {
+  display: none;
+  margin: 0 0 1.5rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid color-mix(in srgb, var(--accent-warn) 45%, var(--border));
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--accent-warn) 12%, var(--bg-card));
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+.notion-embed-notice.is-visible { display: block; }
 
 .action-card {
   background: var(--bg-card); border: 1px solid var(--border);
@@ -1272,6 +1354,809 @@ textarea.pulse-edit-field {
   text-align: center;
 }
 
+/* Networking Command Center */
+.networking-shell {
+  display: grid;
+  gap: 1rem;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.networking-shell > *,
+#networking-main {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.networking-start-here,
+.networking-guided-section,
+.networking-how-it-works,
+.networking-recipe {
+  background: rgba(255,255,255,0.025);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.networking-recipe {
+  margin: 0 0 1rem;
+  padding-left: 1.6rem;
+  border-color: rgba(255, 107, 53, 0.45);
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(0, 212, 255, 0.04));
+  box-shadow: inset 3px 0 0 var(--accent-plasma);
+  color: var(--text-primary);
+  line-height: 1.55;
+  font-size: 0.9rem;
+}
+
+.networking-recipe li + li {
+  margin-top: 0.35rem;
+}
+
+.networking-recipe code {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.82rem;
+  color: var(--accent-fusion);
+  background: rgba(0, 212, 255, 0.08);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+
+.networking-how-it-works {
+  border-color: rgba(157, 78, 221, 0.4);
+  background: linear-gradient(135deg, rgba(157, 78, 221, 0.08), rgba(0, 212, 255, 0.03));
+}
+
+.networking-how-it-works h3 {
+  color: var(--accent-nuclear);
+}
+
+.networking-start-here {
+  border-color: rgba(0, 212, 255, 0.45);
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.08), rgba(157, 78, 221, 0.045));
+  box-shadow: inset 3px 0 0 var(--accent-fusion);
+}
+
+.networking-start-here h3 {
+  color: var(--accent-fusion);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.networking-guided-section.networking-guided-review {
+  border-color: rgba(157, 78, 221, 0.5);
+  background: linear-gradient(160deg, rgba(157, 78, 221, 0.1), rgba(255,255,255,0.02));
+  box-shadow: inset 3px 0 0 var(--accent-nuclear);
+}
+
+.networking-guided-section.networking-guided-moves {
+  border-color: rgba(0, 200, 83, 0.45);
+  background: linear-gradient(160deg, rgba(0, 200, 83, 0.08), rgba(0, 212, 255, 0.03));
+  box-shadow: inset 3px 0 0 var(--accent-green);
+}
+
+.networking-guided-section h3 {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.networking-guided-review h3 { color: var(--accent-nuclear); }
+.networking-guided-moves h3 { color: var(--accent-green); }
+
+.networking-start-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 0.85rem;
+  align-items: start;
+}
+
+.networking-company-picker {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.55rem;
+  align-items: end;
+}
+
+.networking-company-picker label {
+  min-width: 0;
+}
+
+.networking-company-picker input {
+  width: 100%;
+  max-width: 100%;
+}
+
+.networking-research-status {
+  border-left: 3px solid var(--accent-fusion);
+  padding: 0.65rem 0.75rem;
+  background: rgba(0, 212, 255, 0.045);
+  border-radius: 0 8px 8px 0;
+}
+
+.networking-instruction {
+  margin-top: 0.75rem;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.networking-instruction code {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.82rem;
+  color: var(--accent-fusion);
+  background: rgba(0, 212, 255, 0.08);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+
+.networking-guided-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.networking-stats-compact {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 0.85rem;
+}
+
+.networking-stats-compact .stat-card {
+  padding: 0.65rem;
+}
+
+.networking-how-it-works ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.networking-review-card {
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(157, 78, 221, 0.42);
+  border-radius: 10px;
+  padding: 0.9rem;
+  min-width: 0;
+  box-shadow: inset 3px 0 0 rgba(157, 78, 221, 0.85);
+}
+
+.networking-review-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.55rem;
+}
+
+.networking-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  border-radius: 999px;
+  padding: 0.18rem 0.5rem;
+  font-size: 0.68rem;
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 0.02em;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  background: rgba(255,255,255,0.03);
+}
+
+.networking-chip-persona {
+  color: var(--accent-fusion);
+  border-color: rgba(0, 212, 255, 0.4);
+  background: rgba(0, 212, 255, 0.08);
+}
+
+.networking-chip-affinity {
+  color: var(--accent-nuclear);
+  border-color: rgba(157, 78, 221, 0.45);
+  background: rgba(157, 78, 221, 0.1);
+}
+
+.networking-chip-confidence {
+  color: var(--accent-green);
+  border-color: rgba(0, 200, 83, 0.45);
+  background: rgba(0, 200, 83, 0.1);
+}
+
+.networking-chip-confidence.is-low {
+  color: var(--accent-warn);
+  border-color: rgba(255, 171, 0, 0.45);
+  background: rgba(255, 171, 0, 0.1);
+}
+
+.networking-stage-pill {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.16rem 0.48rem;
+  font-size: 0.68rem;
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 0.03em;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+}
+
+.networking-stage-pill[data-lane="discover"] { color: #5ad7ff; background: rgba(0, 212, 255, 0.12); }
+.networking-stage-pill[data-lane="prepare"] { color: #ffc14d; background: rgba(255, 171, 0, 0.12); }
+.networking-stage-pill[data-lane="reach"] { color: #ff8f5c; background: rgba(255, 107, 53, 0.14); }
+.networking-stage-pill[data-lane="engage"] { color: #76ffa3; background: rgba(0, 200, 83, 0.12); }
+.networking-stage-pill[data-lane="activate"] { color: #c79bff; background: rgba(157, 78, 221, 0.14); }
+.networking-stage-pill[data-lane="maintain"] { color: #a8b0c0; background: rgba(168, 176, 192, 0.1); }
+
+.networking-evidence-list {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 0.65rem;
+}
+
+.networking-evidence-list a {
+  overflow-wrap: anywhere;
+  color: var(--accent-fusion);
+}
+
+.networking-advanced {
+  border: 1px solid rgba(0, 212, 255, 0.4);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.07), rgba(255, 107, 53, 0.04));
+  box-shadow: inset 3px 0 0 var(--accent-fusion);
+}
+
+.networking-advanced > summary {
+  cursor: pointer;
+  color: var(--accent-fusion);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  list-style: none;
+}
+
+.networking-advanced > summary::-webkit-details-marker { display: none; }
+
+.networking-advanced > summary::before {
+  content: '▸ ';
+  color: var(--accent-plasma);
+}
+
+.networking-advanced[open] > summary::before {
+  content: '▾ ';
+}
+
+.networking-advanced-bar {
+  margin-bottom: 1rem;
+}
+
+.networking-company-group {
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  background: rgba(8, 10, 18, 0.55);
+  overflow: hidden;
+}
+
+.networking-company-group + .networking-company-group {
+  margin-top: 0.7rem;
+}
+
+.networking-company-group-head {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.75rem 0.9rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.networking-company-group-head:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+.networking-company-group-head h3 {
+  margin: 0;
+  flex: 1;
+  font-size: 0.95rem;
+}
+
+.networking-company-group-meta {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-family: 'Space Mono', monospace;
+}
+
+.networking-company-group-chevron {
+  color: var(--accent-fusion);
+  font-size: 0.85rem;
+}
+
+.networking-company-group-body {
+  padding: 0 0.75rem 0.85rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.networking-person-crumb {
+  margin-top: 0.55rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  background: rgba(12, 14, 22, 0.85);
+  padding: 0.55rem 0.7rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.networking-person-crumb:hover {
+  border-color: rgba(0, 212, 255, 0.35);
+}
+
+.networking-person-crumb.is-expanded {
+  border-color: rgba(0, 212, 255, 0.45);
+  background: rgba(0, 212, 255, 0.05);
+}
+
+.networking-person-crumb-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.networking-person-crumb-title {
+  flex: 1;
+  min-width: 0;
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+.networking-person-crumb-sub {
+  margin-top: 0.15rem;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.networking-person-crumb-chevron {
+  color: var(--accent-plasma);
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.networking-person-crumb-body {
+  margin-top: 0.65rem;
+  cursor: default;
+}
+
+.networking-person-crumb-body .control-btn,
+.networking-person-crumb-body a,
+.networking-person-crumb-body select,
+.networking-person-crumb-body button {
+  cursor: pointer;
+}
+
+.networking-view-tabs {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.networking-view-tabs .control-btn[aria-pressed="true"] {
+  border-color: var(--accent-plasma);
+  color: #fff;
+  background: rgba(255, 107, 53, 0.22);
+  box-shadow: 0 0 16px rgba(255, 107, 53, 0.18);
+}
+
+.networking-view-tabs .control-btn[data-networking-view="pipeline"][aria-pressed="true"] {
+  border-color: var(--accent-warn);
+  background: rgba(255, 171, 0, 0.2);
+  box-shadow: 0 0 16px rgba(255, 171, 0, 0.16);
+}
+
+.networking-view-tabs .control-btn[data-networking-view="people"][aria-pressed="true"] {
+  border-color: var(--accent-fusion);
+  background: rgba(0, 212, 255, 0.18);
+  box-shadow: 0 0 16px rgba(0, 212, 255, 0.14);
+}
+
+.networking-view-tabs .control-btn[data-networking-view="companies"][aria-pressed="true"] {
+  border-color: var(--accent-nuclear);
+  background: rgba(157, 78, 221, 0.18);
+}
+
+.networking-view-tabs .control-btn[data-networking-view="paths"][aria-pressed="true"],
+.networking-view-tabs .control-btn[data-networking-view="events"][aria-pressed="true"],
+.networking-view-tabs .control-btn[data-networking-view="metrics"][aria-pressed="true"] {
+  border-color: var(--accent-green);
+  background: rgba(0, 200, 83, 0.16);
+}
+
+.networking-action-stack,
+.networking-company-grid,
+.networking-event-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.networking-action-card,
+.networking-company-card,
+.networking-event-card,
+.networking-person-row,
+.networking-path-card {
+  background: rgba(255,255,255,0.028);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.9rem;
+}
+
+.networking-action-card {
+  border-color: rgba(0, 212, 255, 0.32);
+  box-shadow: inset 3px 0 0 var(--accent-fusion);
+}
+
+.networking-action-card.is-overdue {
+  border-color: rgba(255, 23, 68, 0.55);
+  box-shadow: inset 3px 0 0 var(--accent-red);
+  background: linear-gradient(135deg, rgba(255, 23, 68, 0.08), rgba(255,255,255,0.02));
+}
+
+.networking-action-card.is-queue {
+  border-color: rgba(255, 171, 0, 0.45);
+  box-shadow: inset 3px 0 0 var(--accent-warn);
+  background: linear-gradient(135deg, rgba(255, 171, 0, 0.08), rgba(255,255,255,0.02));
+}
+
+.networking-company-card {
+  border-color: rgba(157, 78, 221, 0.35);
+  box-shadow: inset 3px 0 0 var(--accent-nuclear);
+}
+
+.networking-event-card {
+  border-color: rgba(0, 200, 83, 0.35);
+  box-shadow: inset 3px 0 0 var(--accent-green);
+}
+
+.networking-path-card {
+  border-color: rgba(0, 212, 255, 0.3);
+  box-shadow: inset 3px 0 0 rgba(0, 212, 255, 0.7);
+}
+
+.networking-action-card h3,
+.networking-company-card h3,
+.networking-event-card h3 { margin: 0 0 0.35rem; font-size: 0.95rem; }
+
+.networking-action-card h3.networking-action-name {
+  margin: 0 0 0.2rem;
+  font-family: inherit;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--accent-green);
+  line-height: 1.25;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.networking-action-org {
+  margin: 0 0 0.45rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent-green);
+  opacity: 0.82;
+  line-height: 1.3;
+}
+
+.networking-action-todo {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  line-height: 1.4;
+  opacity: 0.92;
+}
+
+.networking-reason {
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.networking-pipeline-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.35rem 0 0.85rem;
+}
+
+.networking-pipeline {
+  display: flex;
+  gap: 0.7rem;
+  overflow-x: auto;
+  padding-bottom: 0.65rem;
+  max-width: 100%;
+  width: 100%;
+  min-width: 0;
+  scrollbar-gutter: stable;
+}
+
+.networking-pipeline-column {
+  flex: 1 0 220px;
+  min-width: 220px;
+  background: rgba(255,255,255,0.022);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem;
+}
+
+.networking-pipeline-column[data-lane="discover"] {
+  border-color: rgba(0, 212, 255, 0.5);
+  background: linear-gradient(180deg, rgba(0, 212, 255, 0.12), rgba(255,255,255,0.02));
+  box-shadow: inset 0 3px 0 #5ad7ff;
+}
+
+.networking-pipeline-column[data-lane="prepare"] {
+  border-color: rgba(255, 171, 0, 0.5);
+  background: linear-gradient(180deg, rgba(255, 171, 0, 0.12), rgba(255,255,255,0.02));
+  box-shadow: inset 0 3px 0 #ffc14d;
+}
+
+.networking-pipeline-column[data-lane="reach"] {
+  border-color: rgba(255, 107, 53, 0.55);
+  background: linear-gradient(180deg, rgba(255, 107, 53, 0.13), rgba(255,255,255,0.02));
+  box-shadow: inset 0 3px 0 #ff8f5c;
+}
+
+.networking-pipeline-column[data-lane="engage"] {
+  border-color: rgba(0, 200, 83, 0.5);
+  background: linear-gradient(180deg, rgba(0, 200, 83, 0.12), rgba(255,255,255,0.02));
+  box-shadow: inset 0 3px 0 #76ffa3;
+}
+
+.networking-pipeline-column[data-lane="activate"] {
+  border-color: rgba(157, 78, 221, 0.55);
+  background: linear-gradient(180deg, rgba(157, 78, 221, 0.14), rgba(255,255,255,0.02));
+  box-shadow: inset 0 3px 0 #c79bff;
+}
+
+.networking-pipeline-column[data-lane="maintain"] {
+  border-color: rgba(168, 176, 192, 0.45);
+  background: linear-gradient(180deg, rgba(168, 176, 192, 0.1), rgba(255,255,255,0.02));
+  box-shadow: inset 0 3px 0 #a8b0c0;
+}
+
+.networking-pipeline-column h3 {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin: 0 0 0.65rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.73rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.networking-pipeline-column[data-lane="discover"] h3 { color: #5ad7ff; }
+.networking-pipeline-column[data-lane="prepare"] h3 { color: #ffc14d; }
+.networking-pipeline-column[data-lane="reach"] h3 { color: #ff8f5c; }
+.networking-pipeline-column[data-lane="engage"] h3 { color: #76ffa3; }
+.networking-pipeline-column[data-lane="activate"] h3 { color: #c79bff; }
+.networking-pipeline-column[data-lane="maintain"] h3 { color: #a8b0c0; }
+
+.networking-pipeline-count {
+  display: inline-flex;
+  min-width: 1.4rem;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.05rem 0.35rem;
+  font-weight: 400;
+  background: rgba(0,0,0,0.28);
+  color: inherit;
+}
+
+.networking-pipeline-card {
+  background: rgba(8, 10, 18, 0.72);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 0.65rem;
+  margin-bottom: 0.55rem;
+}
+
+.networking-pipeline-card:hover {
+  border-color: rgba(255,255,255,0.2);
+}
+
+.networking-stat-people { box-shadow: inset 0 -2px 0 var(--accent-fusion); }
+.networking-stat-active { box-shadow: inset 0 -2px 0 var(--accent-green); }
+.networking-stat-warm { box-shadow: inset 0 -2px 0 var(--accent-nuclear); }
+.networking-stat-tasks { box-shadow: inset 0 -2px 0 var(--accent-warn); }
+.networking-stat-overdue { box-shadow: inset 0 -2px 0 var(--accent-red); }
+.networking-stat-conversations { box-shadow: inset 0 -2px 0 #76ffa3; }
+.networking-stat-referrals { box-shadow: inset 0 -2px 0 #c79bff; }
+.networking-stat-events { box-shadow: inset 0 -2px 0 #5ad7ff; }
+
+.networking-pipeline-card select {
+  width: 100%;
+  margin-top: 0.45rem;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.35rem;
+}
+
+.networking-table-wrap {
+  overflow: auto;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.networking-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 880px;
+}
+
+.networking-table th,
+.networking-table td {
+  padding: 0.7rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.networking-table th {
+  position: sticky;
+  top: 0;
+  background: #11111a;
+  color: var(--accent-fusion);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+}
+
+.networking-coverage {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.35rem;
+  margin: 0.7rem 0;
+}
+
+.networking-coverage span {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.24rem 0.42rem;
+  font-size: 0.68rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.networking-coverage span.covered {
+  color: #76ffa3;
+  border-color: rgba(0, 200, 83, 0.45);
+}
+
+.networking-path-list {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 0.8rem;
+}
+
+.networking-path-step {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  align-items: center;
+  color: var(--text-secondary);
+}
+
+.networking-path-node {
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  border-radius: 999px;
+  padding: 0.32rem 0.55rem;
+  color: var(--text-primary);
+  font-size: 0.75rem;
+}
+
+.networking-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  display: none;
+  justify-content: flex-end;
+  background: rgba(4, 6, 12, 0.78);
+  backdrop-filter: blur(3px);
+}
+
+.networking-drawer-overlay.is-open { display: flex; }
+
+.networking-drawer {
+  width: min(760px, 96vw);
+  height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  box-sizing: border-box;
+  background: #101018;
+  border-left: 1px solid var(--border);
+  box-shadow: -20px 0 60px rgba(0,0,0,0.45);
+  padding: 1.25rem;
+}
+
+.networking-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  margin: -1.25rem -1.25rem 1rem;
+  padding: 1rem 1.25rem;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: #101018;
+  border-bottom: 1px solid var(--border);
+}
+
+.networking-drawer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.networking-drawer label {
+  display: grid;
+  gap: 0.28rem;
+  color: var(--text-secondary);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.67rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.networking-drawer input,
+.networking-drawer select,
+.networking-drawer textarea,
+.networking-inline-form input,
+.networking-inline-form select {
+  width: 100%;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.5rem 0.6rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.networking-drawer textarea { min-height: 88px; resize: vertical; }
+.networking-drawer-section { border-top: 1px solid var(--border); margin-top: 1rem; padding-top: 1rem; }
+.networking-inline-form { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.55rem; align-items: end; }
+.networking-timeline { display: grid; gap: 0.5rem; }
+.networking-timeline-item { border-left: 2px solid var(--accent-fusion); padding: 0.45rem 0 0.45rem 0.7rem; }
+.networking-empty { color: var(--text-muted); padding: 1rem; border: 1px dashed var(--border); border-radius: 10px; }
+.networking-private-notice { border-color: rgba(157, 78, 221, 0.5); }
+.networking-drawer-actions {
+  position: sticky;
+  bottom: -1.25rem;
+  z-index: 3;
+  margin: 1rem -1.25rem -1.25rem;
+  padding: 0.85rem 1.25rem;
+  background: #101018;
+  border-top: 1px solid var(--border);
+}
+.networking-drawer-open { overflow: hidden; }
+.networking-drawer-open #sse-status { display: none !important; }
+#sse-status { pointer-events: none; }
+.networking-drawer :focus-visible,
+.networking-shell :focus-visible {
+  outline: 2px solid var(--accent-fusion);
+  outline-offset: 2px;
+}
+
 /* Footer */
 footer {
   padding: 2rem 4rem; border-top: 1px solid var(--border);
@@ -1297,6 +2182,39 @@ footer {
   footer { padding: 1rem; }
   .stats-bar { grid-template-columns: 1fr; }
   .company-grid, .people-grid, .program-grid, .control-grid { grid-template-columns: 1fr; }
+  .networking-drawer-grid { grid-template-columns: 1fr; }
+  .networking-start-grid,
+  .networking-guided-grid,
+  .networking-action-stack,
+  .networking-company-grid,
+  .networking-event-grid { grid-template-columns: minmax(0, 1fr); }
+  .networking-inline-form { grid-template-columns: minmax(0, 1fr); }
+  .networking-stats-compact { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .networking-company-picker { grid-template-columns: minmax(0, 1fr); }
+  .networking-pipeline {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    overflow-x: visible;
+  }
+  .networking-pipeline-column {
+    min-width: 0;
+    width: 100%;
+  }
+  .networking-drawer {
+    width: 100vw;
+    max-width: 100%;
+    padding: 1rem;
+  }
+  .networking-drawer-header {
+    margin: -1rem -1rem 1rem;
+    padding: 0.8rem 1rem;
+  }
+  .networking-drawer-actions {
+    bottom: -1rem;
+    margin: 1rem -1rem -1rem;
+    padding: 0.75rem 1rem;
+  }
+  .networking-coverage { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .transfer-grid, .transfer-item { grid-template-columns: 1fr; gap: 0.65rem; }
   .transfer-arrow { display: none; }
   .transfer-from, .transfer-to { text-align: left; }
@@ -1319,6 +2237,8 @@ footer {
   .section-title { font-size: 1.55rem; }
   .stat-number { font-size: 1.8rem; }
   .control-btn { width: 100%; margin-right: 0; }
+  #sse-status { padding: 0.45rem !important; }
+  #sse-text { display: none; }
 }
 
 /* Animations */
@@ -1358,8 +2278,10 @@ footer {
   <button onclick="switchTab('livejobs', event)">Jobs To Consider</button>
   <button onclick="switchTab('euraxess', event)">EURAXESS Feed</button>
   <button onclick="switchTab('phdscanner', event)">PhDScanner Feed</button>
+  <button onclick="switchTab('umichcareers', event)">U-M Careers</button>
   <button onclick="switchTab('researchprospects', event)">U-M Research</button>
   <button onclick="switchTab('targetcompanies', event)">Target Companies</button>
+  <button onclick="switchTab('networking', event)">Networking</button>
   <button onclick="switchTab('outreach', event)">People To Contact</button>
   <button onclick="switchTab('pulse', event)">Applications</button>
   <button onclick="switchTab('phdradar', event)">PhD Options</button>
@@ -2330,6 +3252,107 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
   <div id="phdscanner-grid"></div>
 </div>
 
+<!-- U-M CAREERS TAB -->
+<div id="umichcareers" class="tab-content">
+  <h2 class="section-title">U-M Careers Tracker</h2>
+  <p style="color:var(--text-secondary); margin-bottom:0.6rem; font-size:0.85rem;" id="umich-meta">Loading University of Michigan postings...</p>
+  <p style="color:var(--text-muted); margin-bottom:1rem; font-size:0.78rem; font-family:'Space Mono',monospace; max-width:980px;">
+    Every full- and part-time posting on <a href="https://careers.umich.edu/browse-jobs/positions" target="_blank" rel="noopener">careers.umich.edu</a>,
+    scored against your requested domains (nuclear, plasma, space/aerospace, mechanical/manufacturing, electrical/electronics, MEMS, materials science, climate, planetary…).
+    <strong>Apply Now</strong> = direct domain + plausible role fit. <strong>High Relevance</strong> = direct domain but the role/eligibility needs your review (faculty, postdoc, clinical…).
+    Nothing is deleted — Other, Closed, and <strong>Archived</strong> stay searchable.
+    <strong>Archive</strong> hides a card from the active priority feed (same as EURAXESS / PhDScanner).
+    Check <strong>Applied</strong> to move it into the Applied section here <em>and</em> create the matching row on the Applications tracker (same architecture as Jobs to Consider).
+    <strong>Scan now</strong> checks page 1 for new postings; <strong>Full reconcile</strong> re-crawls the complete catalog.
+  </p>
+  <div id="umich-feedback" class="inline-notice" role="status" aria-live="polite"></div>
+  <div class="stats-bar" id="umich-stats" style="margin-bottom:1rem;"></div>
+  <div class="stats-bar" id="umich-health" style="margin-bottom:2rem;"></div>
+  <div class="filter-panel" style="margin-bottom:1rem;">
+    <label>Segment
+      <select id="umich-segment" onchange="renderUmichCareersFeed({ force: true })">
+        <option value="priority">Priority (Apply Now + High Relevance)</option>
+        <option value="all">All postings</option>
+        <option value="apply_now">Apply Now</option>
+        <option value="high_relevance">High Relevance</option>
+        <option value="adjacent">Adjacent</option>
+        <option value="other">Other</option>
+        <option value="closed">Closed</option>
+        <option value="archived">Archived</option>
+        <option value="applied">Applied</option>
+      </select>
+    </label>
+    <label>Domain
+      <select id="umich-domain" onchange="renderUmichCareersFeed({ force: true })">
+        <option value="all">All domains</option>
+        <option value="space_aero">Space / aerospace / planetary</option>
+        <option value="nuclear_plasma">Nuclear / plasma</option>
+        <option value="electrical">Electrical / electronics / MEMS</option>
+        <option value="mechanical">Mechanical / manufacturing</option>
+        <option value="materials">Materials science</option>
+        <option value="climate">Climate / atmospheric</option>
+        <option value="instrumentation">Instrumentation / detectors / optics</option>
+        <option value="none">No domain match</option>
+      </select>
+    </label>
+    <label>Time
+      <select id="umich-employment" onchange="renderUmichCareersFeed({ force: true })">
+        <option value="all">Full + part time</option>
+        <option value="full">Full-Time</option>
+        <option value="part">Part-Time</option>
+      </select>
+    </label>
+    <label>Reg/Temp
+      <select id="umich-regular" onchange="renderUmichCareersFeed({ force: true })">
+        <option value="all">All</option>
+        <option value="Regular">Regular</option>
+        <option value="Temporary">Temporary</option>
+      </select>
+    </label>
+    <label>Campus
+      <select id="umich-location" onchange="renderUmichCareersFeed({ force: true })">
+        <option value="">All locations</option>
+      </select>
+    </label>
+    <label>Department
+      <select id="umich-department" onchange="renderUmichCareersFeed({ force: true })">
+        <option value="">All departments</option>
+      </select>
+    </label>
+    <label>Work mode
+      <select id="umich-workmode" onchange="renderUmichCareersFeed({ force: true })">
+        <option value="">All modes</option>
+      </select>
+    </label>
+    <label>Status
+      <select id="umich-status" onchange="renderUmichCareersFeed({ force: true })">
+        <option value="all">All statuses</option>
+        <option value="open">Open</option>
+        <option value="closing_soon">Closing within 7 days</option>
+        <option value="closed">Closed</option>
+      </select>
+    </label>
+    <label>Sort
+      <select id="umich-sort" onchange="renderUmichCareersFeed({ force: true })">
+        <option value="score">Score (high → low)</option>
+        <option value="newest">Newest first</option>
+        <option value="closing">Closing soonest</option>
+        <option value="title">Title A→Z</option>
+      </select>
+    </label>
+    <input id="umich-search" type="search" placeholder="Search title, department, ID, evidence..." oninput="renderUmichCareersFeed({ force: true })" style="min-width:280px;">
+  </div>
+  <p style="color:var(--text-muted); margin:-0.4rem 0 1rem; font-size:0.72rem; font-family:'Space Mono',monospace;" id="umich-filter-help">
+    Cards render in batches — use Load more at the bottom of each section. Evidence chips show the exact matched phrases behind each score.
+  </p>
+  <div class="filter-panel" style="margin-bottom:1rem;">
+    <button class="control-btn" onclick="runUmichControl('discover')">Scan now (new postings)</button>
+    <button class="control-btn secondary" onclick="runUmichControl('full')">Full reconcile</button>
+    <button class="control-btn secondary" onclick="runUmichControl('rescore')">Rescore</button>
+  </div>
+  <div id="umich-grid"></div>
+</div>
+
 <!-- U-M RESEARCH PROSPECTS TAB -->
 <div id="researchprospects" class="tab-content">
   <h2 class="section-title">U-M Research Prospects</h2>
@@ -2387,6 +3410,205 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
   <p style="color:var(--text-muted); font-size:0.8rem; margin-top:2rem;">Research sources: <code>WEB-TRACKER/research/umich-research-prospects-ann-arbor-2026.json</code> · ME faculty: <code>WEB-TRACKER/research/umich-me-faculty-prospects-2026.json</code> · ME mechatronics outreach: <code>WEB-TRACKER/research/umich-me-mechatronics-robotics-outreach-prospects-2026.json</code> · ME manufacturing outreach: <code>WEB-TRACKER/research/umich-me-manufacturing-outreach-prospects-2026.json</code> · current-work enrichment: <code>WEB-TRACKER/research/umich-current-work-enrichment-2026.json</code> · NAME faculty: <code>WEB-TRACKER/research/umich-name-faculty-prospects-2026.json</code>. Cards show verified current work / recent papers only — empty recent paper is preferred over invented titles. Plasma scoring distinguishes ionized-gas / space / fusion plasma from blood / biomedical plasma; MEMS/instrumentation biomedical bridges stay reachable.</p>
 </div>
 
+<!-- NETWORKING COMMAND CENTER TAB — private and local-only -->
+<div id="networking" class="tab-content">
+  <h2 class="section-title">Networking</h2>
+  <p id="networking-meta" style="color:var(--text-secondary); margin-bottom:1rem; font-size:0.85rem;">
+    A private notebook that turns public research into deliberate, human-reviewed networking moves.
+  </p>
+  <div class="inline-notice networking-private-notice" role="note" style="display:block; margin-bottom:1rem;">
+    Private local workspace. Contact records, notes, Gmail links, and research work orders are excluded from the public dashboard snapshot.
+  </div>
+  <ol class="networking-recipe" aria-label="How to research a new company">
+    <li><strong>Type the company</strong> in Start here and click <strong>Research this company</strong>.</li>
+    <li>In Cursor, say exactly: <strong>Find new networking contacts</strong>.</li>
+    <li>Come back here and <strong>Approve</strong> or <strong>Reject</strong> each person.</li>
+    <li>Only then message people yourself — this page never sends anything.</li>
+  </ol>
+  <div id="networking-feedback" class="inline-notice" role="status" aria-live="polite"></div>
+  <div id="networking-static-notice" class="inline-notice" role="status" aria-live="polite"></div>
+  <div id="networking-live-content" class="networking-shell">
+    <details class="networking-advanced networking-advanced-bar" open>
+      <summary>Advanced controls — views &amp; filters</summary>
+      <p class="networking-reason" style="margin:0.65rem 0 0;">These controls filter and switch every section below (review queue, companies, people, pipeline).</p>
+      <div class="jobs-toolbar" style="margin-top:0.8rem;">
+        <div class="networking-view-tabs" role="group" aria-label="Networking views">
+          <button class="control-btn secondary" data-networking-view="start" onclick="setNetworkingView('start')" aria-pressed="true">Start Here</button>
+          <button class="control-btn secondary" data-networking-view="companies" onclick="setNetworkingView('companies')" aria-pressed="false">Companies</button>
+          <button class="control-btn secondary" data-networking-view="pipeline" onclick="setNetworkingView('pipeline')" aria-pressed="false">Pipeline</button>
+          <button class="control-btn secondary" data-networking-view="people" onclick="setNetworkingView('people')" aria-pressed="false">People</button>
+          <button class="control-btn secondary" data-networking-view="paths" onclick="setNetworkingView('paths')" aria-pressed="false">Paths</button>
+          <button class="control-btn secondary" data-networking-view="events" onclick="setNetworkingView('events')" aria-pressed="false">Events</button>
+          <button class="control-btn secondary" data-networking-view="metrics" onclick="setNetworkingView('metrics')" aria-pressed="false">Metrics</button>
+        </div>
+        <div>
+          <button class="control-btn secondary" onclick="openNetworkingPerson('new')">Add person manually</button>
+          <button class="control-btn secondary" onclick="renderNetworking({ force: true })">Refresh</button>
+        </div>
+      </div>
+      <div class="filter-panel" style="margin-bottom:0;">
+        <input id="networking-search" type="search" placeholder="Search person, company, role, affinity..." oninput="renderNetworkingCurrentView()">
+        <label>Stage
+          <select id="networking-stage-filter" onchange="renderNetworkingCurrentView()">
+            <option value="all">All stages</option>
+          </select>
+        </label>
+        <label>Company
+          <select id="networking-company-filter" onchange="renderNetworkingCurrentView()">
+            <option value="all">All companies</option>
+          </select>
+        </label>
+        <label>Channel
+          <select id="networking-channel-filter" onchange="renderNetworkingCurrentView()">
+            <option value="all">All channels</option>
+            <option value="linkedin">LinkedIn</option>
+            <option value="email">Email</option>
+            <option value="gmail">Gmail</option>
+            <option value="x">X / Twitter</option>
+            <option value="github">GitHub</option>
+            <option value="event">Event</option>
+          </select>
+        </label>
+      </div>
+      <div class="stats-bar networking-stats-compact" id="networking-stats"></div>
+    </details>
+    <section class="networking-start-here" aria-labelledby="networking-start-title">
+      <h3 id="networking-start-title" style="margin:0 0 0.35rem;">Start here — research a new company</h3>
+      <p class="networking-reason" style="margin:0 0 0.85rem;">Queue a company, ask Cursor to research, then Approve / Reject below. Use Advanced controls above to filter by company or switch views.</p>
+      <div class="networking-start-grid">
+        <form class="networking-company-picker" onsubmit="return queueNetworkingResearchFromStart(event)">
+          <label>
+            Step 1 — Company name
+            <input id="networking-company-input" list="networking-company-options" required placeholder="e.g. Helion Energy, CFS, NASA JPL">
+            <datalist id="networking-company-options"></datalist>
+          </label>
+          <button class="control-btn" type="submit">Research this company</button>
+        </form>
+        <div>
+          <div id="networking-research-status" class="networking-research-status" role="status" aria-live="polite">No company queued yet. Type one and click Research.</div>
+          <p class="networking-instruction"><strong>Step 2</strong> — Open Cursor and say: <code>Find new networking contacts</code></p>
+          <p class="networking-instruction"><strong>Step 3</strong> — Refresh this tab, then Approve / Reject people below.</p>
+        </div>
+      </div>
+    </section>
+    <div id="networking-research-queue" style="margin-bottom:1rem;"></div>
+    <div id="networking-main" aria-live="polite"></div>
+  </div>
+  <div id="networking-drawer-overlay" class="networking-drawer-overlay" role="dialog" aria-modal="true" aria-labelledby="networking-drawer-title" onclick="if(event.target===this)closeNetworkingDrawer()">
+    <aside class="networking-drawer" id="networking-drawer">
+      <div class="networking-drawer-header">
+        <h3 id="networking-drawer-title">Person</h3>
+        <button class="control-btn secondary" type="button" onclick="closeNetworkingDrawer()">Close</button>
+      </div>
+      <form id="networking-person-form" onsubmit="return saveNetworkingPerson(event)">
+        <input type="hidden" id="networking-person-id" value="">
+        <div class="networking-drawer-grid">
+          <label>Name<input id="networking-person-name" required placeholder="Full name"></label>
+          <label>Organization<input id="networking-person-org" placeholder="Company or university"></label>
+          <label>Team / lab<input id="networking-person-org-unit" placeholder="Instrument Systems Section"></label>
+          <label>Title<input id="networking-person-title" placeholder="Role / title"></label>
+          <label>Stage
+            <select id="networking-person-stage"></select>
+          </label>
+          <label>Email<input id="networking-person-email" type="email" placeholder="name@company.com"></label>
+          <label>LinkedIn URL<input id="networking-person-linkedin" placeholder="https://www.linkedin.com/in/..."></label>
+          <label>Observed LinkedIn degree
+            <select id="networking-person-degree">
+              <option value="">Unknown</option>
+              <option value="1st">1st</option>
+              <option value="2nd">2nd</option>
+              <option value="3rd+">3rd+</option>
+            </select>
+          </label>
+          <label>Personas<input id="networking-person-personas" placeholder="recruiter, peer, hiring_manager, alumnus"></label>
+          <label>Affinity tags<input id="networking-person-affinity" placeholder="umich, vit (explicit evidence only)"></label>
+          <label>Location<input id="networking-person-location" placeholder="City / region"></label>
+        </div>
+        <label style="display:block;margin-top:0.75rem;">Notes<textarea id="networking-person-notes" placeholder="Why this person matters, path notes, proof points"></textarea></label>
+        <div class="networking-drawer-section">
+          <h4 style="margin:0 0 0.55rem;font-size:0.85rem;">Public evidence</h4>
+          <div id="networking-person-evidence" class="networking-evidence-list"></div>
+        </div>
+        <div class="networking-drawer-section">
+          <h4 style="margin:0 0 0.55rem;font-size:0.85rem;">Channels</h4>
+          <div class="networking-drawer-grid">
+            <label>LinkedIn state
+              <select id="networking-channel-linkedin-state">
+                <option value="unknown">unknown</option>
+                <option value="available">available</option>
+                <option value="request_pending">request_pending</option>
+                <option value="contacted">contacted</option>
+                <option value="replied">replied</option>
+                <option value="unavailable">unavailable</option>
+                <option value="do_not_use">do_not_use</option>
+              </select>
+            </label>
+            <label>Email state
+              <select id="networking-channel-email-state">
+                <option value="unknown">unknown</option>
+                <option value="available">available</option>
+                <option value="contacted">contacted</option>
+                <option value="replied">replied</option>
+                <option value="unavailable">unavailable</option>
+                <option value="do_not_use">do_not_use</option>
+              </select>
+            </label>
+            <label>X / Twitter URL<input id="networking-person-x" placeholder="https://x.com/..."></label>
+            <label>GitHub URL<input id="networking-person-github" placeholder="https://github.com/..."></label>
+          </div>
+        </div>
+        <div class="networking-drawer-section">
+          <h4 style="margin:0 0 0.55rem;font-size:0.85rem;">Gmail thread</h4>
+          <label>Paste Gmail thread URL and press Enter
+            <input id="networking-person-gmail" placeholder="https://mail.google.com/mail/u/0/#inbox/..." onkeydown="if(event.key==='Enter'){event.preventDefault();attachNetworkingGmailLink();}">
+          </label>
+          <div id="networking-gmail-link" style="margin-top:0.55rem;"></div>
+        </div>
+        <div class="networking-drawer-section networking-inline-form">
+          <label>Log interaction
+            <select id="networking-log-type">
+              <option value="message">message</option>
+              <option value="follow_up">follow_up</option>
+              <option value="conversation">conversation</option>
+              <option value="meeting">meeting</option>
+              <option value="call">call</option>
+              <option value="event">event</option>
+              <option value="note">note</option>
+            </select>
+          </label>
+          <label>Direction
+            <select id="networking-log-direction">
+              <option value="outbound">outbound</option>
+              <option value="inbound">inbound</option>
+            </select>
+          </label>
+          <label>Channel
+            <select id="networking-log-channel">
+              <option value="linkedin">linkedin</option>
+              <option value="email">email</option>
+              <option value="gmail">gmail</option>
+              <option value="x">x</option>
+              <option value="event">event</option>
+              <option value="phone">phone</option>
+            </select>
+          </label>
+          <label>Summary<input id="networking-log-summary" placeholder="What happened"></label>
+          <button class="control-btn secondary" type="button" onclick="logNetworkingInteraction()">Log</button>
+        </div>
+        <div class="networking-drawer-section">
+          <h4 style="margin:0 0 0.55rem;font-size:0.85rem;">Timeline</h4>
+          <div id="networking-person-timeline" class="networking-timeline"></div>
+        </div>
+        <div class="networking-drawer-section networking-drawer-actions" style="display:flex;gap:0.55rem;flex-wrap:wrap;">
+          <button class="control-btn" type="submit">Save person</button>
+          <button class="control-btn secondary" type="button" onclick="launchLinkedInSearchForPerson()">Open LinkedIn search</button>
+          <button class="control-btn secondary" type="button" id="networking-delete-btn" onclick="deleteNetworkingPersonFromDrawer()" style="display:none;">Delete</button>
+        </div>
+      </form>
+    </aside>
+  </div>
+</div>
+
 <!-- TARGET COMPANIES TAB -->
 <div id="targetcompanies" class="tab-content">
   <h2 class="section-title">Target Companies</h2>
@@ -2424,6 +3646,32 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
 
 <!-- PHD RADAR TAB -->
 <div id="phdradar" class="tab-content">
+  <h2 class="section-title">PhD Directory</h2>
+  <div class="notion-embed-toolbar">
+    <button type="button" class="control-btn" onclick="openPhdNotionExternal()">Open in Notion</button>
+    <button type="button" class="control-btn secondary" onclick="reloadPhdNotionEmbed()">Reload directory</button>
+    <p class="plain-help">
+      Browse here; if a link errors inside the box, the dashboard opens it in a new tab and restores this directory.
+    </p>
+  </div>
+  <div
+    class="notion-embed-wrap"
+    id="phd-notion-embed"
+    data-notion-src="https://alpine-green-3b1.notion.site/ebd//3a6af6dd7a1181a8b9d8e2c2ae2038e7"
+    data-notion-open="https://alpine-green-3b1.notion.site/3a6af6dd7a1181a8b9d8e2c2ae2038e7"
+  >
+    <iframe
+      id="phd-notion-iframe"
+      title="PhD Directory — Notion"
+      width="100%"
+      height="720"
+      frameborder="0"
+      allowfullscreen
+      referrerpolicy="strict-origin-when-cross-origin"
+    ></iframe>
+  </div>
+  <div id="phd-notion-notice" class="notion-embed-notice" role="status" aria-live="polite"></div>
+
   <h2 class="section-title">PhD & Scholarship Deadline Tracker</h2>
   <p style="color:var(--text-secondary); margin-bottom:1.5rem; font-size:0.85rem;">Rolling admissions show as "OPEN NOW". Deadline-based programs show countdown timers.</p>
   <div id="phd-grid" class="program-grid"></div>
@@ -2645,11 +3893,14 @@ const TAB_RENDERERS = {
   livejobs: () => renderLiveJobs({ force: true }),
   euraxess: () => renderEuraxessFeed({ force: true }),
   phdscanner: () => renderPhdscannerFeed({ force: true }),
+  umichcareers: () => renderUmichCareersFeed({ force: true }),
   researchprospects: () => renderResearchProspects({ force: true }),
   targetcompanies: () => renderTargetCompanies(),
+  networking: () => renderNetworking({ force: true }),
   outreach: () => renderContacts(),
   pulse: () => renderPulse(),
   phdradar: () => {
+    mountPhdNotionEmbed();
     renderPhdRadar();
     renderPrivateCompanyPhdPaths({ force: true });
     renderPhdResearchProspects({ force: true });
@@ -2663,6 +3914,161 @@ const TAB_RENDERERS = {
   },
   system: () => renderSystem(),
 };
+
+// Notion Sites iframes fail if they start inside display:none tabs.
+// Mount the official ebd// embed URL only after PhD Options becomes visible.
+// Internal Notion links often jump to app.notion.com, which redirect-loops inside
+// a third-party iframe — detect that, open the page in a top-level tab, reset embed.
+const PHD_NOTION_APP_HOST_RE = /^https?:\/\/(?:www\.)?app\.notion\.com\b/i;
+const PHD_NOTION_ERROR_RE = /redirected you too many times|ERR_TOO_MANY_REDIRECTS|too many redirects/i;
+let phdNotionRecovering = false;
+let phdNotionObserverBound = false;
+let phdNotionLastExternalOpenAt = 0;
+
+function phdNotionEls() {
+  return {
+    wrap: document.getElementById('phd-notion-embed'),
+    iframe: document.getElementById('phd-notion-iframe'),
+    notice: document.getElementById('phd-notion-notice'),
+  };
+}
+
+function phdNotionEmbedSrc() {
+  return phdNotionEls().wrap?.dataset.notionSrc || '';
+}
+
+function phdNotionOpenSrc() {
+  return phdNotionEls().wrap?.dataset.notionOpen || phdNotionEmbedSrc();
+}
+
+function setPhdNotionNotice(message = '') {
+  const { notice } = phdNotionEls();
+  if (!notice) return;
+  notice.textContent = message;
+  notice.classList.toggle('is-visible', Boolean(message));
+}
+
+function rewritePhdNotionExternalUrl(url = '') {
+  const raw = String(url || '').trim();
+  if (!raw) return phdNotionOpenSrc();
+  try {
+    const parsed = new URL(raw);
+    if (!/^(?:www\.)?app\.notion\.com$/i.test(parsed.hostname)) return raw;
+    // /p/<32-hex>  or  /<workspace>/<slug>-<32-hex>
+    const pageId =
+      (parsed.pathname.match(/\/p\/([0-9a-f]{32})\b/i) || [])[1]
+      || (parsed.pathname.match(/([0-9a-f]{32})(?:\b|$)/i) || [])[1];
+    if (!pageId) return phdNotionOpenSrc();
+    return `https://alpine-green-3b1.notion.site/${pageId}`;
+  } catch {
+    return phdNotionOpenSrc();
+  }
+}
+
+function openPhdNotionExternal(url = '') {
+  const target = rewritePhdNotionExternalUrl(url || phdNotionOpenSrc());
+  if (!target) return;
+  window.open(target, '_blank', 'noopener,noreferrer');
+}
+
+function reloadPhdNotionEmbed() {
+  const { iframe } = phdNotionEls();
+  const src = phdNotionEmbedSrc();
+  if (!iframe || !src) return;
+  phdNotionRecovering = false;
+  iframe.dataset.mounted = '1';
+  iframe.setAttribute('src', `${src}${src.includes('?') ? '&' : '?'}reload=${Date.now()}`);
+  setPhdNotionNotice('');
+}
+
+function recoverPhdNotionEmbed(externalUrl = '') {
+  if (phdNotionRecovering) return;
+  phdNotionRecovering = true;
+  const openUrl = String(externalUrl || '').trim();
+  const now = Date.now();
+  // Avoid opening a storm of tabs if multiple observers fire together.
+  if (openUrl && now - phdNotionLastExternalOpenAt > 1500) {
+    phdNotionLastExternalOpenAt = now;
+    openPhdNotionExternal(openUrl);
+  } else if (!openUrl && now - phdNotionLastExternalOpenAt > 1500) {
+    phdNotionLastExternalOpenAt = now;
+    openPhdNotionExternal(phdNotionOpenSrc());
+  }
+  setPhdNotionNotice(
+    'That Notion link cannot open inside the dashboard box (app.notion.com redirect loop). Opened it in a new tab and restored this directory.'
+  );
+  const { iframe } = phdNotionEls();
+  const src = phdNotionEmbedSrc();
+  if (iframe && src) {
+    iframe.dataset.mounted = '1';
+    iframe.setAttribute('src', `${src}${src.includes('?') ? '&' : '?'}recover=${Date.now()}`);
+  }
+  setTimeout(() => { phdNotionRecovering = false; }, 1200);
+}
+
+function phdNotionFrameLooksBroken(iframe) {
+  try {
+    const win = iframe.contentWindow;
+    const doc = iframe.contentDocument;
+    const href = String(win?.location?.href || '');
+    const text = String(doc?.body?.innerText || doc?.title || '');
+    if (!href && !text) return false;
+    if (/chrome-error:/i.test(href)) return true;
+    if (PHD_NOTION_APP_HOST_RE.test(href)) return true;
+    if (PHD_NOTION_ERROR_RE.test(text)) return true;
+    return false;
+  } catch {
+    // Healthy cross-origin Notion site page — parent cannot read it.
+    return false;
+  }
+}
+
+function onPhdNotionIframeLoad() {
+  const { iframe } = phdNotionEls();
+  if (!iframe || phdNotionRecovering) return;
+  if (phdNotionFrameLooksBroken(iframe)) {
+    recoverPhdNotionEmbed(phdNotionOpenSrc());
+  }
+}
+
+function bindPhdNotionNavigationGuard() {
+  if (phdNotionObserverBound || typeof PerformanceObserver !== 'function') return;
+  phdNotionObserverBound = true;
+  try {
+    const observer = new PerformanceObserver((list) => {
+      if (phdNotionRecovering) return;
+      const { iframe } = phdNotionEls();
+      if (!iframe || iframe.dataset.mounted !== '1') return;
+      for (const entry of list.getEntries()) {
+        const name = String(entry.name || '');
+        // Only iframe document navigations — ignore Notion scripts/XHR to app.notion.com.
+        if (entry.initiatorType !== 'iframe') continue;
+        if (!PHD_NOTION_APP_HOST_RE.test(name)) continue;
+        recoverPhdNotionEmbed(name);
+        break;
+      }
+    });
+    observer.observe({ type: 'resource', buffered: true });
+  } catch {
+    // Older browsers without resource PerformanceObserver — load-handler still helps.
+  }
+}
+
+function mountPhdNotionEmbed() {
+  const { wrap, iframe } = phdNotionEls();
+  if (!wrap || !iframe) return;
+  const src = phdNotionEmbedSrc();
+  if (!src) return;
+  bindPhdNotionNavigationGuard();
+  if (iframe.dataset.loadBound !== '1') {
+    iframe.dataset.loadBound = '1';
+    iframe.addEventListener('load', onPhdNotionIframeLoad);
+  }
+  if (iframe.dataset.mounted === '1' && iframe.getAttribute('src')) return;
+  iframe.dataset.mounted = '1';
+  iframe.setAttribute('src', src);
+  setPhdNotionNotice('');
+}
 
 function switchTab(tabId, evt = null) {
   document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
@@ -2748,6 +4154,15 @@ const pendingPulseSaves = new Map();
 const pendingJobSaves = new Map();
 const pendingResearchSaves = new Map();
 const pendingPhdResearchSaves = new Map();
+const pendingNetworkingSaves = new Map();
+let networkingStoreCache = null;
+let networkingResearchQueueCache = null;
+let networkingRenderedSignature = '';
+let networkingView = 'start';
+let networkingSelectedPersonId = '';
+let networkingReturnFocus = null;
+const networkingExpandedCompanies = new Set();
+const networkingExpandedPeople = new Set();
 const TRACKER_STATUSES = ['Evaluated', 'Applied', 'Responded', 'Interview', 'Offer', 'Rejected', 'Discarded', 'SKIP'];
 const TRACKER_EDITABLE_FIELDS = ['date', 'company', 'role', 'score', 'status', 'pdf', 'report', 'notes'];
 const TRACKER_METADATA_FIELDS = [
@@ -3817,7 +5232,7 @@ function queueTodayActivityRefresh(delay = 400) {
 
 function queueRenderAllPanels() {
   const activeTab = document.querySelector('.tab-content.active')?.id || '';
-  if (pendingPulseSaves.size || pendingJobSaves.size || pendingResearchSaves.size || pendingPhdResearchSaves.size) {
+  if (pendingPulseSaves.size || pendingJobSaves.size || pendingResearchSaves.size || pendingPhdResearchSaves.size || pendingNetworkingSaves.size) {
     return;
   }
   if (activeTab === 'researchprospects') {
@@ -5575,6 +6990,464 @@ async function renderEuraxessFeed({ force = false } = {}) {
   grid.innerHTML = `<div class="company-grid">${shown.map(euraxessCard).join('')}</div>`;
 }
 
+// ── U-M Careers Tracker ─────────────────────────────────────────────
+let umichStoreCache = null;
+let umichRenderedSignature = '';
+let umichFacetsLoaded = false;
+let umichFilterSignature = '';
+const umichSectionLimits = new Map();
+const UMICH_PAGE_SIZE = 48;
+
+const UMICH_SEGMENT_LABELS = {
+  apply_now: 'Apply Now',
+  high_relevance: 'High Relevance',
+  adjacent: 'Adjacent',
+  other: 'Other',
+  closed: 'Closed',
+  archived: 'Archived',
+  applied: 'Applied',
+};
+const UMICH_SEGMENT_ORDER = ['apply_now', 'high_relevance', 'adjacent', 'other', 'closed'];
+
+function umichIsArchived(item = {}) {
+  return Boolean(item.archived) && !Boolean(item.applied);
+}
+
+function umichIsApplied(item = {}) {
+  return Boolean(item.applied);
+}
+
+function umichEvidence(item = {}) {
+  const breakdown = item.score_breakdown || {};
+  return [...new Set([
+    ...(breakdown.title_core_matches || []),
+    ...(breakdown.title_strong_matches || []),
+    ...(breakdown.description_core_matches || []),
+    ...(breakdown.description_strong_matches || []),
+  ])];
+}
+
+function umichDomainBucket(item = {}) {
+  const breakdown = item.score_breakdown || {};
+  const evidence = umichEvidence(item).join(' ');
+  if ((breakdown.space_aero_matches || []).length) return 'space_aero';
+  if ((breakdown.nuclear_plasma_matches || []).length) return 'nuclear_plasma';
+  if (/instrument|detector|photonic|optic|laser|spectromet|vacuum|cryogenic/i.test(evidence)) return 'instrumentation';
+  if (/electric|electronic|mems|micro|semiconductor/i.test(evidence)) return 'electrical';
+  if (/mechanic|manufactur|mechatronic|robotic/i.test(evidence)) return 'mechanical';
+  if (/material/i.test(evidence)) return 'materials';
+  if (/climate|atmospheric/i.test(evidence)) return 'climate';
+  return evidence ? 'instrumentation' : 'none';
+}
+
+function umichClosingSoon(item = {}, days = 7) {
+  if (!item.posting_end_date || item.status !== 'open') return false;
+  const end = new Date(`${item.posting_end_date}T23:59:59`);
+  if (Number.isNaN(end.getTime())) return false;
+  const delta = (end.getTime() - Date.now()) / 86400000;
+  return delta >= 0 && delta <= days;
+}
+
+function umichFilters() {
+  return {
+    segment: document.getElementById('umich-segment')?.value || 'priority',
+    domain: document.getElementById('umich-domain')?.value || 'all',
+    employment: document.getElementById('umich-employment')?.value || 'all',
+    regular: document.getElementById('umich-regular')?.value || 'all',
+    location: document.getElementById('umich-location')?.value || '',
+    department: document.getElementById('umich-department')?.value || '',
+    workmode: document.getElementById('umich-workmode')?.value || '',
+    status: document.getElementById('umich-status')?.value || 'all',
+    sort: document.getElementById('umich-sort')?.value || 'score',
+    query: document.getElementById('umich-search')?.value.trim().toLowerCase() || '',
+  };
+}
+
+function umichMatchesFilters(item = {}, filters = {}) {
+  const archived = umichIsArchived(item);
+  const applied = umichIsApplied(item);
+  if (filters.segment === 'archived') {
+    if (!archived) return false;
+  } else if (filters.segment === 'applied') {
+    if (!applied) return false;
+  } else if (filters.segment === 'priority') {
+    // Active priority cards + applied + archived (own sections).
+    if (applied || archived) {
+      /* keep for Applied / Archived sections */
+    } else if (!['apply_now', 'high_relevance'].includes(item.segment)) {
+      return false;
+    }
+  } else if (filters.segment === 'all') {
+    /* keep active, applied, and archived; sections split later */
+  } else if (filters.segment !== 'all') {
+    if (archived || applied) return false;
+    if (item.segment !== filters.segment) return false;
+  }
+  if (filters.domain === 'none') {
+    if (umichEvidence(item).length) return false;
+  } else if (filters.domain !== 'all' && umichDomainBucket(item) !== filters.domain) {
+    return false;
+  }
+  if (filters.employment === 'full' && !/full/i.test(item.employment_type || '')) return false;
+  if (filters.employment === 'part' && !/part/i.test(item.employment_type || '')) return false;
+  if (filters.regular !== 'all' && String(item.regular_temporary || '') !== filters.regular) return false;
+  if (filters.location && String(item.work_location || '') !== filters.location) return false;
+  if (filters.department && String(item.department || '') !== filters.department) return false;
+  if (filters.workmode && String(item.modes_of_work || '') !== filters.workmode) return false;
+  if (filters.status === 'open' && (item.status !== 'open' || archived || applied)) return false;
+  if (filters.status === 'closed' && item.status !== 'closed') return false;
+  if (filters.status === 'closing_soon' && (!umichClosingSoon(item) || archived || applied)) return false;
+  if (filters.query) {
+    const haystack = [
+      item.title, item.working_title, item.job_title, item.department,
+      item.organizational_group, item.career_interest, item.work_location,
+      item.city_location, item.job_id, item.fit_rationale, item.description,
+      item.archive_reason, umichEvidence(item).join(' '),
+    ].join(' ').toLowerCase();
+    if (!haystack.includes(filters.query)) return false;
+  }
+  return true;
+}
+
+function umichSortItems(items = [], sort = 'score') {
+  const sorted = [...items];
+  if (sort === 'newest') {
+    sorted.sort((a, b) => String(b.date_posted || '').localeCompare(String(a.date_posted || '')));
+  } else if (sort === 'closing') {
+    sorted.sort((a, b) => String(a.posting_end_date || '9999').localeCompare(String(b.posting_end_date || '9999')));
+  } else if (sort === 'title') {
+    sorted.sort((a, b) => String(a.title || '').localeCompare(String(b.title || '')));
+  } else {
+    sorted.sort((a, b) => Number(b.score || 0) - Number(a.score || 0) || String(a.title || '').localeCompare(String(b.title || '')));
+  }
+  return sorted;
+}
+
+function umichPopulateFacets(opportunities = []) {
+  if (umichFacetsLoaded) return;
+  umichFacetsLoaded = true;
+  const fill = (id, values, label) => {
+    const select = document.getElementById(id);
+    if (!select) return;
+    const current = select.value;
+    const unique = [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b));
+    select.innerHTML = `<option value="">${label}</option>${unique.map(v => `<option value="${escapeHTML(v)}">${escapeHTML(v)}</option>`).join('')}`;
+    if (unique.includes(current)) select.value = current;
+  };
+  fill('umich-location', opportunities.map(o => o.work_location), 'All locations');
+  fill('umich-department', opportunities.map(o => o.department), 'All departments');
+  fill('umich-workmode', opportunities.map(o => o.modes_of_work), 'All modes');
+}
+
+function setUmichFeedback(message = '', kind = '') {
+  const feedback = document.getElementById('umich-feedback');
+  if (!feedback) return;
+  feedback.textContent = message;
+  feedback.className = `inline-notice${kind ? ` is-${kind}` : ''}${message ? ' is-visible' : ''}`;
+}
+
+function renderUmichStats(store = {}, shown = []) {
+  const statsEl = document.getElementById('umich-stats');
+  if (!statsEl) return;
+  const health = store.scan_health || {};
+  statsEl.innerHTML = `
+    <div class="stat-card"><div class="stat-number">${health.open_count ?? 0}</div><div class="stat-label">Open Postings</div></div>
+    <div class="stat-card"><div class="stat-number fusion-color">${shown.length}</div><div class="stat-label">Shown Now</div></div>
+    <div class="stat-card"><div class="stat-number fusion-color">${health.apply_now_count ?? 0}</div><div class="stat-label">Apply Now</div></div>
+    <div class="stat-card"><div class="stat-number">${health.high_relevance_count ?? 0}</div><div class="stat-label">High Relevance</div></div>
+    <div class="stat-card"><div class="stat-number">${health.adjacent_count ?? 0}</div><div class="stat-label">Adjacent</div></div>
+    <div class="stat-card"><div class="stat-number">${health.other_count ?? 0}</div><div class="stat-label">Other</div></div>
+    <div class="stat-card"><div class="stat-number nuclear-color">${health.closed_count ?? 0}</div><div class="stat-label">Closed</div></div>
+    <div class="stat-card"><div class="stat-number nuclear-color">${health.archived_count ?? 0}</div><div class="stat-label">Archived</div></div>
+    <div class="stat-card"><div class="stat-number fusion-color">${health.applied_count ?? 0}</div><div class="stat-label">Applied</div></div>`;
+}
+
+function renderUmichHealth(store = {}) {
+  const el = document.getElementById('umich-health');
+  if (!el) return;
+  const health = store.scan_health || {};
+  const landing = health.landing_counts || {};
+  const crawled = health.crawled_counts || {};
+  const statusLabel = health.status === 'ok' ? 'healthy' : health.status || 'never run';
+  const reconciled = health.counts_reconciled ? 'reconciled' : 'not reconciled';
+  const lastFull = health.last_full_reconcile ? new Date(health.last_full_reconcile).toLocaleString() : 'never';
+  el.innerHTML = `
+    <div class="stat-card"><div class="stat-number ${health.status === 'ok' ? 'fusion-color' : 'nuclear-color'}">${escapeHTML(statusLabel)}</div><div class="stat-label">Scan Health (${escapeHTML(health.last_mode || '—')})</div></div>
+    <div class="stat-card"><div class="stat-number">${landing.fullTime ?? '—'} / ${landing.partTime ?? '—'}</div><div class="stat-label">Site F / P Totals</div></div>
+    <div class="stat-card"><div class="stat-number">${crawled.F ?? 0} / ${crawled.P ?? 0}</div><div class="stat-label">Crawled F / P (${escapeHTML(reconciled)})</div></div>
+    <div class="stat-card"><div class="stat-number">${health.full_time_count ?? 0} / ${health.part_time_count ?? 0}</div><div class="stat-label">Stored Open F / P</div></div>
+    <div class="stat-card"><div class="stat-number">${health.missing_detail_count ?? 0}</div><div class="stat-label">Awaiting Detail Fetch</div></div>
+    <div class="stat-card"><div class="stat-number" style="font-size:0.85rem;">${escapeHTML(lastFull)}</div><div class="stat-label">Last Full Reconcile</div></div>
+    ${health.last_error ? `<div class="stat-card"><div class="stat-number nuclear-color" style="font-size:0.75rem;">${escapeHTML(String(health.last_error).slice(0, 120))}</div><div class="stat-label">Last Error</div></div>` : ''}`;
+}
+
+function umichCard(item = {}) {
+  const segment = item.segment || 'other';
+  const archived = umichIsArchived(item);
+  const applied = umichIsApplied(item);
+  const tierClass = applied ? 'tier-1' : archived ? 'tier-3' : segment === 'apply_now' ? 'tier-1' : segment === 'high_relevance' ? 'tier-2' : 'tier-3';
+  const badgeClass = applied ? 'badge-tokamak' : archived ? 'badge-other' : segment === 'apply_now' ? 'badge-tokamak' : segment === 'high_relevance' ? 'badge-frc' : 'badge-other';
+  const evidence = umichEvidence(item);
+  const evidenceHtml = evidence.length
+    ? evidence.slice(0, 8).map(term => `<code style="font-size:0.68rem;">${escapeHTML(term)}</code>`).join(' ')
+    : '<span style="color:var(--text-muted);">none</span>';
+  const posted = item.date_posted ? new Date(item.date_posted).toLocaleDateString() : 'unknown';
+  const window = item.posting_begin_end_text || (item.posting_end_date ? `ends ${item.posting_end_date}` : 'not listed');
+  const closingSoon = umichClosingSoon(item);
+  const employment = [item.employment_type, item.regular_temporary, item.modes_of_work].filter(Boolean).join(' · ');
+  const location = [item.work_location, item.city_location].filter(Boolean).join(' — ');
+  const showConsider = ['apply_now', 'high_relevance'].includes(segment) && item.status === 'open' && !archived && !applied;
+  const considerHtml = item.jobs_to_consider_id
+    ? '<span class="card-detail" style="color:var(--accent-green);">On Jobs to Consider ✓</span>'
+    : (showConsider
+      ? `<button class="control-btn secondary" onclick='umichAddToConsider(${JSON.stringify(item.id)})'>Add to Jobs to Consider</button>`
+      : '');
+  const archiveHtml = applied
+    ? ''
+    : (archived
+      ? `<button class="control-btn secondary" onclick='umichOpportunityAction(${JSON.stringify(item.id)}, "unarchive")'>Unarchive</button>`
+      : `<button class="control-btn secondary" onclick='umichOpportunityAction(${JSON.stringify(item.id)}, "archive")'>Archive</button>`);
+  const appliedAt = item.applied_at ? new Date(item.applied_at).toLocaleString() : '';
+  const appliedToggle = `<label class="job-apply-toggle"><input type="checkbox" ${applied ? 'checked' : ''} onchange='umichToggleApplied(${JSON.stringify(item.id)}, this.checked, this)'> Applied</label>`;
+  const appLink = applied && item.application_num
+    ? `<span class="card-detail" style="color:var(--accent-plasma);">Applications #${escapeHTML(String(item.application_num))}${appliedAt ? ` · ${escapeHTML(appliedAt)}` : ''}</span>`
+    : '';
+  return `
+    <div class="company-card ${tierClass}">
+      <div class="card-header">
+        <span class="card-company">${escapeHTML(item.working_title || item.title || item.id)}</span>
+        <span class="card-badge ${badgeClass}">${Number(item.score || 0).toFixed(1)}/5</span>
+      </div>
+      <div class="card-role">${applied ? 'Applied · ' : ''}${archived ? 'Archived · ' : ''}${escapeHTML(UMICH_SEGMENT_LABELS[segment] || segment)}${closingSoon && !archived && !applied ? ' · <span style="color:var(--accent-warn);">closing soon</span>' : ''} · ID ${escapeHTML(item.job_id || '')}</div>
+      <div class="card-detail"><strong>Department:</strong> ${escapeHTML(item.department || 'unknown')}${item.career_interest ? ` · ${escapeHTML(item.career_interest)}` : ''}</div>
+      ${item.job_title && item.job_title !== item.working_title ? `<div class="card-detail"><strong>Job title:</strong> ${escapeHTML(item.job_title)}</div>` : ''}
+      <div class="card-detail"><strong>Location:</strong> ${escapeHTML(location || 'unknown')}</div>
+      <div class="card-detail"><strong>Employment:</strong> ${escapeHTML(employment || 'unknown')}${item.salary_text ? ` · <strong>Salary:</strong> ${escapeHTML(item.salary_text)}` : ''}</div>
+      <div class="card-detail"><strong>Posted:</strong> ${escapeHTML(posted)} · <strong>Window:</strong> ${escapeHTML(window)}</div>
+      <div class="card-detail"><strong>Evidence:</strong> ${evidenceHtml}</div>
+      <div class="card-detail"><strong>Fit:</strong> ${escapeHTML(item.fit_rationale || 'No requested-domain evidence found.')}</div>
+      ${(item.risk_flags || []).length ? `<div class="card-detail"><strong>Flags:</strong> ${escapeHTML((item.risk_flags || []).join(', '))}</div>` : ''}
+      ${item.status === 'closed' ? `<div class="card-detail" style="color:var(--text-muted);"><strong>Closed:</strong> ${escapeHTML(item.closed_reason || 'no longer listed')}</div>` : ''}
+      ${archived ? `<div class="card-detail" style="color:var(--text-muted);"><strong>Archived:</strong> ${escapeHTML(item.archive_reason || 'Archived from dashboard.')}</div>` : ''}
+      ${appLink}
+      <div class="card-actions" style="margin-top:1rem;">
+        <a class="control-btn secondary" href="${escapeHTML(item.url || '#')}" target="_blank" rel="noreferrer">Open posting</a>
+        ${item.apply_url && item.status === 'open' && !archived ? `<a class="control-btn secondary" href="${escapeHTML(item.apply_url)}" target="_blank" rel="noreferrer">U-M apply page</a>` : ''}
+        ${considerHtml}
+        ${archiveHtml}
+        ${appliedToggle}
+      </div>
+    </div>`;
+}
+
+function umichLoadMore(key) {
+  umichSectionLimits.set(key, (umichSectionLimits.get(key) || UMICH_PAGE_SIZE) + UMICH_PAGE_SIZE);
+  renderUmichCareersFeed({ force: true });
+}
+
+function renderUmichSection(title, items, key, sort) {
+  if (!items.length) return '';
+  const limit = umichSectionLimits.get(key) || UMICH_PAGE_SIZE;
+  const sorted = umichSortItems(items, sort);
+  const visible = sorted.slice(0, limit);
+  const remaining = sorted.length - visible.length;
+  return `
+    <div class="jobs-section-title" style="margin-top:1.5rem;">${escapeHTML(title)} (${items.length})</div>
+    <div class="company-grid">${visible.map(umichCard).join('')}</div>
+    ${remaining > 0
+      ? `<div style="text-align:center; margin:1rem 0;">
+           <button class="control-btn secondary" onclick='umichLoadMore(${JSON.stringify(key)})'>Load ${Math.min(remaining, UMICH_PAGE_SIZE)} more (${remaining} hidden)</button>
+         </div>`
+      : ''}`;
+}
+
+async function renderUmichCareersFeed({ force = false } = {}) {
+  const meta = document.getElementById('umich-meta');
+  const grid = document.getElementById('umich-grid');
+  if (!meta || !grid) return;
+
+  if (!umichStoreCache || force) {
+    umichStoreCache = await apiJSON('/api/umich-careers/opportunities', { timeoutMs: API_TIMEOUT_HEAVY_MS }).catch(() => null);
+  }
+  const store = umichStoreCache;
+  if (!store) {
+    meta.textContent = 'U-M Careers tracker is not available yet. Run Scan now or Full reconcile.';
+    grid.innerHTML = '<div class="jobs-empty">No U-M Careers store found. Run a scan from the buttons above (requires the local server).</div>';
+    renderUmichStats({ scan_health: {} }, []);
+    renderUmichHealth({ scan_health: {} });
+    return;
+  }
+
+  const opportunities = [...(store.opportunities || [])];
+  umichPopulateFacets(opportunities);
+  const filters = umichFilters();
+  const filterSig = JSON.stringify(filters);
+  if (filterSig !== umichFilterSignature) {
+    umichFilterSignature = filterSig;
+    umichSectionLimits.clear();
+  }
+  const shown = opportunities.filter(item => umichMatchesFilters(item, filters));
+
+  const signature = JSON.stringify({
+    generated_at: store.generated_at,
+    filters,
+    limits: [...umichSectionLimits.entries()],
+    shown: shown.map(item => [item.id, item.score, item.status, item.segment, item.jobs_to_consider_id || '']),
+  });
+  if (!force && signature === umichRenderedSignature) return;
+  umichRenderedSignature = signature;
+
+  renderUmichStats(store, shown);
+  renderUmichHealth(store);
+
+  const health = store.scan_health || {};
+  const updated = store.generated_at ? new Date(store.generated_at).toLocaleString() : 'unknown';
+  meta.textContent = `Tracking ${health.total_count || opportunities.length} U-M postings (${health.open_count ?? '?'} open) · Apply Now ${health.apply_now_count ?? 0} · High Relevance ${health.high_relevance_count ?? 0} · Applied ${health.applied_count ?? 0} · Archived ${health.archived_count ?? 0} · Showing ${shown.length} · Updated: ${updated}${health.last_error ? ` · Last error: ${health.last_error}` : ''}`;
+
+  if (!shown.length) {
+    grid.innerHTML = `<div class="jobs-empty">No U-M postings match the current filters (${opportunities.length} tracked in total).</div>`;
+    return;
+  }
+
+  const bySegment = segment => shown.filter(item => !umichIsArchived(item) && !umichIsApplied(item) && item.segment === segment);
+  const archivedItems = shown.filter(umichIsArchived);
+  const appliedItems = shown.filter(umichIsApplied);
+
+  if (filters.segment === 'archived') {
+    grid.innerHTML = renderUmichSection('Archived', archivedItems, 'archived', filters.sort)
+      || '<div class="jobs-empty">No archived U-M postings.</div>';
+    return;
+  }
+
+  if (filters.segment === 'applied') {
+    grid.innerHTML = renderUmichSection('Applied', appliedItems, 'applied', filters.sort)
+      || '<div class="jobs-empty">No applied U-M postings yet. Check Applied on a card to create the Applications tracker row.</div>';
+    return;
+  }
+
+  if (filters.segment === 'priority' || filters.segment === 'all') {
+    const sections = (filters.segment === 'priority' ? ['apply_now', 'high_relevance'] : UMICH_SEGMENT_ORDER)
+      .map(segment => renderUmichSection(UMICH_SEGMENT_LABELS[segment], bySegment(segment), segment, filters.sort))
+      .filter(Boolean)
+      .join('');
+    const appliedSection = renderUmichSection('Applied', appliedItems, 'applied', filters.sort);
+    const archivedSection = renderUmichSection('Archived', archivedItems, 'archived', filters.sort);
+    const priorityHint = filters.segment === 'priority'
+      ? `<p style="color:var(--text-muted); font-size:0.72rem; font-family:'Space Mono',monospace; margin-top:1.5rem;">
+           Adjacent ${health.adjacent_count ?? 0} · Other ${health.other_count ?? 0} · Closed ${health.closed_count ?? 0} · Applied ${health.applied_count ?? 0} · Archived ${health.archived_count ?? 0} — switch Segment to browse them; nothing is deleted.
+         </p>`
+      : '';
+    const body = [sections, appliedSection, archivedSection].filter(Boolean).join('')
+      || '<div class="jobs-empty">Nothing to show in these segments.</div>';
+    grid.innerHTML = body + priorityHint;
+    return;
+  }
+
+  grid.innerHTML = renderUmichSection(
+    UMICH_SEGMENT_LABELS[filters.segment] || 'Postings',
+    shown.filter(item => !umichIsArchived(item) && !umichIsApplied(item)),
+    filters.segment,
+    filters.sort,
+  ) || '<div class="jobs-empty">Nothing to show.</div>';
+}
+
+async function umichToggleApplied(id, applied, inputEl = null) {
+  if (!applied && !confirm('Move this posting back out of Applied and remove its linked Applications row?')) {
+    if (inputEl) inputEl.checked = true;
+    return;
+  }
+  setUmichFeedback(applied ? 'Saving as applied → Applications tracker…' : 'Removing from Applications…', 'warn');
+  try {
+    const result = await apiJSON(`/api/umich-careers/opportunities/${encodeURIComponent(id)}/apply`, {
+      method: 'POST',
+      body: JSON.stringify({ applied: Boolean(applied) }),
+    });
+    const num = result.application?.num || result.opportunity?.application_num;
+    setUmichFeedback(
+      applied
+        ? (result.message || `Applied — Applications #${num || '?'}`)
+        : (result.message || 'Removed from Applications.'),
+      'success',
+    );
+    await renderUmichCareersFeed({ force: true });
+  } catch (err) {
+    if (inputEl) inputEl.checked = !applied;
+    setUmichFeedback(`Apply toggle failed: ${err.message}`, 'error');
+  }
+}
+
+async function umichOpportunityAction(id, action) {
+  setUmichFeedback(action === 'archive' ? 'Archiving posting...' : 'Restoring posting...', 'warn');
+  try {
+    const result = await apiJSON(`/api/umich-careers/opportunities/${encodeURIComponent(id)}/${action}`, {
+      method: 'POST',
+      body: JSON.stringify(action === 'archive' ? { reason: 'Archived from dashboard.' } : {}),
+    });
+    setUmichFeedback(result.message || (action === 'archive' ? 'Archived.' : 'Restored from archive.'), 'success');
+    await renderUmichCareersFeed({ force: true });
+  } catch (err) {
+    // Protected-domain gate (same as EURAXESS): allow an explicit force archive after confirm.
+    if (action === 'archive' && /protected-domain|Cannot archive/i.test(err.message || '')) {
+      const ok = window.confirm(`${err.message}\n\nArchive anyway? This is for postings you already applied to or want hidden.`);
+      if (!ok) {
+        setUmichFeedback('Archive cancelled.', 'warn');
+        return;
+      }
+      try {
+        const forced = await apiJSON(`/api/umich-careers/opportunities/${encodeURIComponent(id)}/archive`, {
+          method: 'POST',
+          body: JSON.stringify({ reason: 'Archived from dashboard (forced).', force: true }),
+        });
+        setUmichFeedback(forced.message || 'Archived.', 'success');
+        await renderUmichCareersFeed({ force: true });
+        return;
+      } catch (forceErr) {
+        setUmichFeedback(`archive failed: ${forceErr.message}`, 'error');
+        return;
+      }
+    }
+    setUmichFeedback(`${action} failed: ${err.message}`, 'error');
+  }
+}
+
+async function runUmichControl(mode) {
+  if (STATIC_PUBLISH) {
+    setUmichFeedback('Read-only public snapshot — run scans from the local dashboard.', 'warn');
+    return;
+  }
+  const labels = { discover: 'Discovery scan', full: 'Full reconcile', rescore: 'Rescore' };
+  setUmichFeedback(`${labels[mode] || mode} started — the feed refreshes automatically when it finishes.`, '');
+  try {
+    await apiJSON('/api/umich-careers/scan', {
+      method: 'POST',
+      body: JSON.stringify({ mode }),
+      timeoutMs: API_TIMEOUT_HEAVY_MS,
+    });
+    setUmichFeedback(`${labels[mode] || mode} running in the background. Full reconciles can take several minutes.`, 'success');
+  } catch (err) {
+    setUmichFeedback(`${labels[mode] || mode} failed to start: ${err.message}`, 'error');
+  }
+}
+
+async function umichAddToConsider(id) {
+  if (STATIC_PUBLISH) {
+    setUmichFeedback('Read-only public snapshot — use the local dashboard to shortlist.', 'warn');
+    return;
+  }
+  try {
+    const result = await apiJSON(`/api/umich-careers/opportunities/${encodeURIComponent(id)}/add-to-consider`, {
+      method: 'POST',
+      body: JSON.stringify({}),
+    });
+    setUmichFeedback(result.message || 'Added to Jobs to Consider.', 'success');
+    umichStoreCache = null;
+    umichRenderedSignature = '';
+    await renderUmichCareersFeed({ force: true });
+  } catch (err) {
+    setUmichFeedback(`Add to Jobs to Consider failed: ${err.message}`, 'error');
+  }
+}
+
 // ── PhDScanner Live Feed ──────────────────────────────────────────────
 let phdscannerStoreCache = null;
 let phdscannerFactoryCache = null;
@@ -6964,17 +8837,36 @@ function outreachKanbanMiniCard(prospect = {}, { finishedSection = false, nudgeS
     <button class="control-btn danger" onclick='outreachRemoveFromRail(${JSON.stringify(id)})'>Remove from rail</button>
   `;
 
+  const threadOutcome = String(prospect.outreach?.notes || '').trim();
+  const threadOutcomeField = isFinished ? `
+    <div class="outreach-thread-outcome">
+      <label for="outreach-thread-outcome-${escapeHTML(id)}">Thread outcome — short conclusion of the email thread</label>
+      <textarea id="outreach-thread-outcome-${escapeHTML(id)}"
+        class="control-input"
+        rows="3"
+        maxlength="2000"
+        placeholder="e.g. No openings this cycle; asked to ping again in Sept. Soft yes for coffee."
+        onclick="event.stopPropagation()"
+        onmousedown="event.stopPropagation()"
+        onkeydown="event.stopPropagation()"
+        onblur='saveFinishedThreadOutcome(${JSON.stringify(id)}, this.value)'>${escapeHTML(threadOutcome)}</textarea>
+    </div>` : '';
+  const threadOutcomePreview = (!expanded && isFinished && threadOutcome)
+    ? `<div class="outreach-thread-outcome-preview">${escapeHTML(threadOutcome)}</div>`
+    : '';
+
   const body = expanded ? `
     <div class="outreach-kanban-crumb-body" onclick="event.stopPropagation()">
       <div class="card-detail">${escapeHTML(prospect.department || prospect.unit || '')} · ${escapeHTML(prospect.lab || prospect.title || '')}</div>
       <div class="card-detail"><strong>Stage:</strong> ${escapeHTML(OUTREACH_STAGE_LABELS[stage] || stage || '—')} · <strong>Status:</strong> ${statusLabel}</div>
       <div class="card-detail"><strong>Contacted:</strong> ${contacted}${followDate ? ` · <strong>Due:</strong> ${followDate}` : ''}</div>
       <div class="card-detail"><strong>Angle:</strong> ${escapeHTML(prospect.outreach_angle || '—')}</div>
+      ${threadOutcomeField}
       <div class="outreach-kanban-crumb-actions">
         ${email}${profile}${lab}
         ${stageMoves}
       </div>
-    </div>` : '';
+    </div>` : threadOutcomePreview;
 
   return `
     <div class="outreach-kanban-crumb${expanded ? ' is-expanded' : ''}${finishedSection || isNudge ? ' is-followup' : ''}"
@@ -7047,7 +8939,7 @@ function renderOutreachKanban(prospects = []) {
     <div class="outreach-kanban-followups">
       <div class="jobs-section-title">Finished (${finished.length})</div>
       <p style="color:var(--text-muted); font-size:0.72rem; margin:0 0 0.75rem; font-family:'Space Mono',monospace;">
-      Terminal shelf: Next step locked → Advance (status untouched), or Responded negatively. Undo via the status dropdown (Followed up → Their move).
+      Terminal shelf: Next step locked → Advance (status untouched), or Responded negatively. Undo via the status dropdown (Followed up → Their move). Expand a card to jot the thread outcome.
       </p>
       ${finished.length
         ? `<div class="outreach-kanban-followups-grid">${finished.map(item => outreachKanbanMiniCard(item, { finishedSection: true })).join('')}</div>`
@@ -7093,6 +8985,16 @@ async function patchResearchProspectFields(id, body = {}) {
   } finally {
     if (pendingResearchSaves.get(id) === sequence) pendingResearchSaves.delete(id);
   }
+}
+
+async function saveFinishedThreadOutcome(id, value = '') {
+  const current = (researchProspectsCache?.prospects || []).find(p => p.id === id);
+  const previousNotes = String(current?.outreach?.notes || '');
+  const nextNotes = String(value ?? '').replace(/\r\n/g, '\n').trim();
+  if (previousNotes === nextNotes) return null;
+  const result = await patchResearchProspectFields(id, { outreach: { notes: nextNotes } });
+  if (result) setResearchProspectsFeedback('Saved thread outcome.', 'success');
+  return result;
 }
 
 async function outreachSetStage(id, stage) {
@@ -7191,8 +9093,12 @@ function mergeResearchProspectCache(id, updates = {}) {
     ...researchProspectsCache,
     prospects: researchProspectsCache.prospects.map(prospect => {
       if (prospect.id !== id) return prospect;
-      previous = { ...prospect };
-      return { ...prospect, ...updates };
+      previous = { ...prospect, outreach: { ...(prospect.outreach || {}) } };
+      const next = { ...prospect, ...updates };
+      if (updates.outreach && typeof updates.outreach === 'object') {
+        next.outreach = { ...(prospect.outreach || {}), ...updates.outreach };
+      }
+      return next;
     }),
   };
   return previous;
@@ -8514,6 +10420,1286 @@ async function queueContactTask() {
   renderAgentTasks();
 }
 
+// ── Networking Command Center ───────────────────────────────────────
+const NETWORKING_STAGES = [
+  'identified', 'researching', 'qualified', 'outreach_ready', 'contacted',
+  'engaged', 'conversation', 'warm', 'referral_eligible', 'referred',
+  'nurture', 'dormant', 'declined', 'do_not_contact', 'archived',
+];
+const NETWORKING_STAGE_LABELS = {
+  identified: 'Found',
+  researching: 'Researching',
+  qualified: 'Relevant',
+  outreach_ready: 'Ready for first message',
+  contacted: 'Contacted',
+  engaged: 'Replied',
+  conversation: 'Conversation',
+  warm: 'Warm relationship',
+  referral_eligible: 'Referral may be appropriate',
+  referred: 'Referred',
+  nurture: 'Keep in touch',
+  dormant: 'Paused',
+  declined: 'Declined',
+  do_not_contact: 'Do not contact',
+  archived: 'Archived',
+};
+const NETWORKING_PIPELINE = [
+  { id: 'discover', label: 'Discover', stages: ['identified', 'researching'] },
+  { id: 'prepare', label: 'Prepare', stages: ['qualified', 'outreach_ready'] },
+  { id: 'reach', label: 'Reach', stages: ['contacted'] },
+  { id: 'engage', label: 'Engage', stages: ['engaged', 'conversation'] },
+  { id: 'activate', label: 'Activate', stages: ['warm', 'referral_eligible', 'referred'] },
+  { id: 'maintain', label: 'Maintain', stages: ['nurture', 'dormant', 'declined', 'do_not_contact', 'archived'] },
+];
+const NETWORKING_COVERAGE_LANES = [
+  { id: 'recruiter', label: 'Recruiter', match: (p) => (p.personas || []).some(x => /recruiter/i.test(x)) },
+  { id: 'hiring_manager', label: 'Hiring manager', match: (p) => (p.personas || []).some(x => /hiring.?manager|hm/i.test(x)) },
+  { id: 'peer', label: 'Peer', match: (p) => (p.personas || []).some(x => /peer|teammate|engineer|scientist/i.test(x)) },
+  { id: 'alumnus', label: 'Alumnus / affinity', match: (p) => (p.affinity_tags || []).length > 0 || (p.personas || []).some(x => /alumn/i.test(x)) },
+  { id: 'event', label: 'Event contact', match: (p) => (p.event_ids || []).length > 0 || (p.personas || []).some(x => /event/i.test(x)) },
+  { id: 'warm_path', label: 'Warm path', match: (p) => Number(p.path_strength || 0) >= 0.5 || Boolean(p.introduced_by_person_id) },
+];
+
+function networkingFeedback(message, tone = 'success') {
+  setInlineNotice('networking-feedback', message, tone);
+}
+
+function networkingStageLabel(stage = '') {
+  return NETWORKING_STAGE_LABELS[stage] || String(stage || '').replaceAll('_', ' ');
+}
+
+function networkingLaneForStage(stage = '') {
+  const column = NETWORKING_PIPELINE.find(item => item.stages.includes(stage));
+  return column?.id || 'discover';
+}
+
+function networkingStagePillHtml(stage = '') {
+  const lane = networkingLaneForStage(stage);
+  return `<span class="networking-stage-pill" data-lane="${escapeHTML(lane)}">${escapeHTML(networkingStageLabel(stage))}</span>`;
+}
+
+function isSafeNetworkingGmailUrl(value = '') {
+  try {
+    const parsed = new URL(String(value || '').trim());
+    return parsed.protocol === 'https:' && parsed.hostname.toLowerCase() === 'mail.google.com';
+  } catch {
+    return false;
+  }
+}
+
+function networkingPeopleById(store) {
+  return Object.fromEntries((store.people || []).map(person => [person.id, person]));
+}
+
+function networkingOrgName(person, store) {
+  if (person.current_organization) return person.current_organization;
+  const org = (store.organizations || []).find(item => item.id === person.current_organization_id);
+  return org?.name || '';
+}
+
+function networkingFilters() {
+  return {
+    search: document.getElementById('networking-search')?.value?.trim().toLowerCase() || '',
+    stage: document.getElementById('networking-stage-filter')?.value || 'all',
+    company: document.getElementById('networking-company-filter')?.value || 'all',
+    channel: document.getElementById('networking-channel-filter')?.value || 'all',
+  };
+}
+
+function networkingPersonBelongsToCompany(person, store, companyFilter) {
+  if (!companyFilter || companyFilter === 'all') return true;
+  const orgName = networkingOrgName(person, store);
+  const orgId = person.current_organization_id || '';
+  if (orgId && orgId === companyFilter) return true;
+  if (orgName && orgName === companyFilter) return true;
+  const selectedOrg = (store.organizations || []).find(item => (
+    item.id === companyFilter || item.name === companyFilter
+  ));
+  if (selectedOrg) {
+    if (orgId && orgId === selectedOrg.id) return true;
+    if (orgName && orgName.toLowerCase() === selectedOrg.name.toLowerCase()) return true;
+  }
+  return false;
+}
+
+function networkingPersonMatches(person, store, filters = networkingFilters()) {
+  if (person.merged_into_id) return false;
+  if (filters.stage !== 'all' && person.relationship_stage !== filters.stage) return false;
+  if (!networkingPersonBelongsToCompany(person, store, filters.company)) return false;
+  if (filters.channel !== 'all') {
+    const channel = person.channel_states?.[filters.channel];
+    const hasProfile = filters.channel === 'email'
+      ? Boolean(person.email || channel?.state)
+      : Boolean(person[`${filters.channel}_url`] || channel?.profile_url || channel?.state);
+    if (!channel && !hasProfile) return false;
+    if (channel && ['unavailable', 'do_not_use'].includes(channel.state)) return false;
+  }
+  if (!filters.search) return true;
+  const haystack = [
+    person.display_name, person.title, person.headline, person.notes,
+    networkingOrgName(person, store), person.organization_unit,
+    ...(person.personas || []),
+    ...(person.affinity_tags || []),
+    person.email, person.linkedin_url,
+  ].join(' ').toLowerCase();
+  return haystack.includes(filters.search);
+}
+
+function filteredNetworkingPeople(store) {
+  const filters = networkingFilters();
+  return (store.people || []).filter(person => networkingPersonMatches(person, store, filters));
+}
+
+function networkingPeopleForOrg(store, org, people = null) {
+  const list = people || filteredNetworkingPeople(store);
+  return list.filter(person => (
+    person.current_organization_id === org.id
+    || (person.current_organization || '').toLowerCase() === (org.name || '').toLowerCase()
+  ));
+}
+
+function toggleNetworkingCompanyExpand(companyKey, event) {
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  if (networkingExpandedCompanies.has(companyKey)) networkingExpandedCompanies.delete(companyKey);
+  else networkingExpandedCompanies.add(companyKey);
+  renderNetworkingCurrentView();
+}
+
+function toggleNetworkingPersonExpand(personId, event) {
+  if (event) {
+    const interactive = event.target.closest('button, a, select, input, textarea, label');
+    if (interactive) return;
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  if (networkingExpandedPeople.has(personId)) networkingExpandedPeople.delete(personId);
+  else networkingExpandedPeople.add(personId);
+  renderNetworkingCurrentView();
+}
+
+function networkingPersonCrumbHtml(person, store, {
+  mode = 'review',
+} = {}) {
+  const expanded = networkingExpandedPeople.has(person.id);
+  const orgLabel = networkingOrgName(person, store) || 'No organization';
+  const sources = person.source_refs || [];
+  const confidence = sources.length
+    ? Math.round((sources.reduce((total, source) => total + Number(source.confidence || 0), 0) / sources.length) * 100)
+    : 0;
+  const why = (person.fit_reasons || []).join(' · ') || person.headline || person.notes || 'Review the evidence before deciding.';
+  const channels = Object.entries(person.channel_states || {})
+    .filter(([, value]) => value && !['unknown', 'unavailable', 'do_not_use'].includes(value.state))
+    .map(([name, value]) => `${name}:${value.state}`)
+    .join(', ');
+
+  let body = '';
+  if (expanded && mode === 'review') {
+    body = `
+      <div class="networking-person-crumb-body" onclick="event.stopPropagation()">
+        <p style="margin:0 0 0.55rem;font-size:0.82rem;line-height:1.5;">${escapeHTML(why)}</p>
+        <div class="networking-review-meta">
+          <span class="networking-chip networking-chip-persona">${escapeHTML((person.personas || []).join(', ') || 'persona unset')}</span>
+          <span class="networking-chip networking-chip-affinity">${escapeHTML((person.affinity_tags || []).join(', ') || 'no affinity')}</span>
+          <span class="networking-chip networking-chip-confidence${confidence && confidence < 70 ? ' is-low' : ''}">${confidence ? `${confidence}% evidence` : 'unscored'}</span>
+        </div>
+        <div class="networking-evidence-list">
+          ${sources.length ? sources.map(source => source.url
+            ? `<a href="${escapeHTML(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(source.title || source.observed_value || 'Open public evidence')}</a>`
+            : `<span class="networking-reason">${escapeHTML(source.title || source.observed_value || 'Evidence note')}</span>`)
+            .join('') : '<span class="networking-reason">No public evidence attached—reject or inspect manually.</span>'}
+        </div>
+        <div style="margin-top:0.75rem;display:flex;gap:0.45rem;flex-wrap:wrap;">
+          <button class="control-btn" type="button" onclick="reviewNetworkingCandidate('${escapeHTML(person.id)}','approve')">Approve</button>
+          <button class="control-btn secondary" type="button" onclick="reviewNetworkingCandidate('${escapeHTML(person.id)}','reject')">Reject</button>
+          <button class="control-btn secondary" type="button" onclick="openNetworkingPerson('${escapeHTML(person.id)}')">Inspect details</button>
+        </div>
+      </div>`;
+  } else if (expanded && mode === 'roster') {
+    body = `
+      <div class="networking-person-crumb-body" onclick="event.stopPropagation()">
+        <div class="networking-reason">${escapeHTML(person.organization_unit || 'Team not recorded')}</div>
+        <div style="margin:0.35rem 0;">${networkingStagePillHtml(person.relationship_stage)}</div>
+        <div class="networking-reason">Next: ${escapeHTML(person.next_action?.label || '—')}</div>
+        <div class="networking-reason">Channels: ${escapeHTML(channels || '—')}</div>
+        ${(person.fit_reasons || []).length ? `<p style="margin:0.55rem 0 0;font-size:0.8rem;line-height:1.45;">${escapeHTML((person.fit_reasons || []).join(' · '))}</p>` : ''}
+        <div style="margin-top:0.65rem;display:flex;gap:0.4rem;flex-wrap:wrap;">
+          <button class="control-btn secondary" type="button" onclick="openNetworkingPerson('${escapeHTML(person.id)}')">Open</button>
+          ${person.email ? `<a class="control-btn secondary" href="mailto:${escapeHTML(person.email)}">Email</a>` : ''}
+        </div>
+      </div>`;
+  } else if (expanded && mode === 'pipeline') {
+    body = `
+      <div class="networking-person-crumb-body" onclick="event.stopPropagation()">
+        <div class="networking-reason">${escapeHTML(person.next_action?.label || person.relationship_stage)}</div>
+        <label>Move to
+          <select aria-label="Move ${escapeHTML(person.display_name)}" onchange="moveNetworkingPersonStage('${escapeHTML(person.id)}', this.value)">
+            ${NETWORKING_STAGES.map(stage => `<option value="${stage}"${stage === person.relationship_stage ? ' selected' : ''}>${escapeHTML(networkingStageLabel(stage))}</option>`).join('')}
+          </select>
+        </label>
+        <button class="control-btn secondary" type="button" style="margin-top:0.4rem;" onclick="openNetworkingPerson('${escapeHTML(person.id)}')">Open</button>
+      </div>`;
+  }
+
+  return `
+    <article class="networking-person-crumb${expanded ? ' is-expanded' : ''}"
+      role="button" tabindex="0"
+      onclick="toggleNetworkingPersonExpand('${escapeHTML(person.id)}', event)"
+      onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleNetworkingPersonExpand('${escapeHTML(person.id)}', event);}"
+      title="${expanded ? 'Click to collapse' : 'Click to expand'}">
+      <div class="networking-person-crumb-head">
+        <div class="networking-person-crumb-title">
+          ${escapeHTML(person.display_name)}
+          <div class="networking-person-crumb-sub">
+            ${escapeHTML(person.title || (person.personas || []).join(', ') || 'Role not recorded')}
+            · ${escapeHTML(orgLabel)}${person.organization_unit ? ` → ${escapeHTML(person.organization_unit)}` : ''}
+          </div>
+        </div>
+        ${mode === 'pipeline' ? networkingStagePillHtml(person.relationship_stage) : ''}
+        <span class="networking-person-crumb-chevron" aria-hidden="true">${expanded ? '▾' : '▸'}</span>
+      </div>
+      ${body}
+    </article>`;
+}
+
+function networkingCompanyGroupHtml(org, people, store, {
+  extraMeta = '',
+  coverageHtml = '',
+  footerHtml = '',
+} = {}) {
+  const key = org.id || org.name;
+  const expanded = networkingExpandedCompanies.has(key);
+  return `
+    <article class="networking-company-group${expanded ? ' is-expanded' : ''}">
+      <div class="networking-company-group-head"
+        role="button" tabindex="0"
+        onclick="toggleNetworkingCompanyExpand('${escapeHTML(key)}', event)"
+        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleNetworkingCompanyExpand('${escapeHTML(key)}', event);}">
+        <h3>${escapeHTML(org.name)}</h3>
+        <span class="networking-company-group-meta">${people.length} ${people.length === 1 ? 'contact' : 'contacts'}${extraMeta ? ` · ${escapeHTML(extraMeta)}` : ''}</span>
+        <span class="networking-company-group-chevron" aria-hidden="true">${expanded ? '▾' : '▸'}</span>
+      </div>
+      ${expanded ? `
+        <div class="networking-company-group-body">
+          ${coverageHtml}
+          ${people.length
+            ? people.map(person => networkingPersonCrumbHtml(person, store, { mode: 'roster' })).join('')
+            : '<div class="networking-empty" style="margin-top:0.55rem;">No contacts match the current filters.</div>'}
+          ${footerHtml}
+        </div>` : ''}
+    </article>`;
+}
+
+function populateNetworkingFilterOptions(store) {
+  const stageSelect = document.getElementById('networking-stage-filter');
+  const companySelect = document.getElementById('networking-company-filter');
+  if (stageSelect && stageSelect.options.length <= 1) {
+    for (const stage of NETWORKING_STAGES) {
+      const option = document.createElement('option');
+      option.value = stage;
+      option.textContent = networkingStageLabel(stage);
+      stageSelect.appendChild(option);
+    }
+  }
+  if (companySelect) {
+    const current = companySelect.value || 'all';
+    const orgs = [...(store.organizations || [])]
+      .map(org => ({ id: org.id, name: org.name }))
+      .sort((a, b) => a.name.localeCompare(b.name));
+    const peopleOrgs = (store.people || [])
+      .map(person => ({ id: person.current_organization_id || person.current_organization, name: person.current_organization }))
+      .filter(item => item.name);
+    const seen = new Set(orgs.map(item => item.id || item.name));
+    for (const item of peopleOrgs) {
+      const key = item.id || item.name;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      orgs.push(item);
+    }
+    const companyOptions = document.getElementById('networking-company-options');
+    if (companyOptions) {
+      companyOptions.innerHTML = orgs
+        .map(org => `<option value="${escapeHTML(org.name)}"></option>`)
+        .join('');
+    }
+    companySelect.innerHTML = `<option value="all">All companies</option>${orgs.map(org => (
+      `<option value="${escapeHTML(org.id || org.name)}">${escapeHTML(org.name)}</option>`
+    )).join('')}`;
+    companySelect.value = [...companySelect.options].some(option => option.value === current) ? current : 'all';
+  }
+  const personStage = document.getElementById('networking-person-stage');
+  if (personStage && personStage.options.length === 0) {
+    for (const stage of NETWORKING_STAGES) {
+      const option = document.createElement('option');
+      option.value = stage;
+      option.textContent = networkingStageLabel(stage);
+      personStage.appendChild(option);
+    }
+  }
+}
+
+function setNetworkingView(view) {
+  networkingView = view || 'today';
+  document.querySelectorAll('[data-networking-view]').forEach(button => {
+    button.setAttribute('aria-pressed', button.getAttribute('data-networking-view') === networkingView ? 'true' : 'false');
+  });
+  const advanced = document.querySelector('.networking-advanced');
+  if (advanced && networkingView !== 'start') advanced.open = true;
+  renderNetworkingCurrentView();
+}
+
+function networkingStatsHtml(summary = {}) {
+  const cards = [
+    ['People', summary.people || 0, 'networking-stat-people'],
+    ['Active', summary.active_relationships || 0, 'networking-stat-active'],
+    ['Warm', summary.warm_relationships || 0, 'networking-stat-warm'],
+    ['Tasks', summary.active_tasks || 0, 'networking-stat-tasks'],
+    ['Overdue', summary.overdue_tasks || 0, 'networking-stat-overdue'],
+    ['Conversations', summary.conversations || 0, 'networking-stat-conversations'],
+    ['Referrals', summary.referrals || 0, 'networking-stat-referrals'],
+    ['Events', summary.upcoming_events || 0, 'networking-stat-events'],
+  ];
+  return cards.map(([label, value, tone]) => (
+    `<div class="stat-card ${tone}"><div class="stat-value">${escapeHTML(String(value))}</div><div class="stat-label">${escapeHTML(label)}</div></div>`
+  )).join('');
+}
+
+function renderNetworkingResearchQueue(queue = networkingResearchQueueCache) {
+  const el = document.getElementById('networking-research-queue');
+  const statusEl = document.getElementById('networking-research-status');
+  if (!el) return;
+  const pending = queue?.pending || [];
+  const reviewCount = (networkingStoreCache?.people || [])
+    .filter(person => person.review_status === 'review_ready')
+    .length;
+  const active = pending.find(order => order.status === 'in_progress')
+    || pending.find(order => order.status === 'review_ready')
+    || pending[0];
+  let status = 'No company queued yet. Type one and click Research.';
+  if (reviewCount) status = `Step 3 ready: ${reviewCount} ${reviewCount === 1 ? 'person is' : 'people are'} waiting for Approve / Reject.`;
+  else if (active?.status === 'in_progress') status = `Step 2 running: Cursor is researching ${active.organization_name}.`;
+  else if (active?.status === 'review_ready') status = `Step 3 ready: research for ${active.organization_name} is ready to review.`;
+  else if (active) status = `Step 2 next: open Cursor and say “Find new networking contacts” for ${active.organization_name}.`;
+  else if ((queue?.completed || []).length) status = 'Last research finished. Queue another company above anytime.';
+  if (statusEl) statusEl.textContent = status;
+  if (!pending.length) {
+    el.innerHTML = '';
+    return;
+  }
+  el.innerHTML = `<div class="networking-action-stack">
+      ${pending.map(order => `
+        <article class="networking-action-card is-queue">
+          <h3>${escapeHTML(order.organization_name || 'Organization')}</h3>
+          <div class="networking-reason">${escapeHTML(order.status === 'in_progress' ? 'Researching' : order.status === 'review_ready' ? 'Ready to review' : 'Waiting for Cursor')}</div>
+          <div class="networking-reason">People to look for: ${escapeHTML((order.personas || []).join(', ') || 'any relevant role')}</div>
+          <div class="networking-reason">Affinity: ${escapeHTML((order.affinity_paths || []).join(', ') || 'none specified')}</div>
+          <details style="margin-top:0.55rem;">
+            <summary class="networking-reason" style="cursor:pointer;">Advanced</summary>
+            <button class="control-btn secondary" type="button" style="margin-top:0.45rem;" onclick="copyNetworkingResearchPrompt('${escapeHTML(order.id)}')">Copy work-order details</button>
+          </details>
+        </article>
+      `).join('')}
+    </div>`;
+}
+
+function networkingReviewCardsHtml(store) {
+  const candidates = filteredNetworkingPeople(store)
+    .filter(person => person.review_status === 'review_ready');
+  if (!candidates.length) {
+    const filters = networkingFilters();
+    const filteredAway = filters.company !== 'all' || filters.stage !== 'all' || filters.search || filters.channel !== 'all';
+    return `<div class="networking-empty">${filteredAway
+      ? 'No review candidates match the current Advanced filters. Clear Company / Stage / Search to see everyone waiting.'
+      : 'No people need review. Queue a company above, then ask Cursor to find contacts.'}</div>`;
+  }
+
+  const groups = new Map();
+  for (const person of candidates) {
+    const orgName = networkingOrgName(person, store) || 'Unknown organization';
+    const orgId = person.current_organization_id || orgName;
+    if (!groups.has(orgId)) {
+      groups.set(orgId, {
+        org: { id: orgId, name: orgName },
+        people: [],
+      });
+    }
+    groups.get(orgId).people.push(person);
+  }
+
+  return `<div class="networking-company-stack">${[...groups.values()].map(({ org, people }) => {
+    const key = org.id || org.name;
+    const expanded = networkingExpandedCompanies.has(key);
+    return `
+      <article class="networking-company-group${expanded ? ' is-expanded' : ''}">
+        <div class="networking-company-group-head"
+          role="button" tabindex="0"
+          onclick="toggleNetworkingCompanyExpand('${escapeHTML(key)}', event)"
+          onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleNetworkingCompanyExpand('${escapeHTML(key)}', event);}">
+          <h3>${escapeHTML(org.name)}</h3>
+          <span class="networking-company-group-meta">${people.length} awaiting review</span>
+          <span class="networking-company-group-chevron" aria-hidden="true">${expanded ? '▾' : '▸'}</span>
+        </div>
+        ${expanded ? `
+          <div class="networking-company-group-body">
+            ${people.map(person => networkingPersonCrumbHtml(person, store, { mode: 'review' })).join('')}
+          </div>` : ''}
+      </article>`;
+  }).join('')}</div>`;
+}
+
+function networkingGuidedHtml(store) {
+  return `
+    <div class="networking-guided-grid">
+      <section class="networking-guided-section networking-guided-review" aria-labelledby="networking-review-title">
+        <h3 id="networking-review-title" style="margin:0 0 0.7rem;">Review people</h3>
+        <p class="networking-reason" style="margin:0 0 0.7rem;">Read the public evidence first. Companies and contacts stay collapsed until you expand them. Advanced filters above apply here.</p>
+        ${networkingReviewCardsHtml(store)}
+      </section>
+      <section class="networking-guided-section networking-guided-moves" aria-labelledby="networking-moves-title">
+        <h3 id="networking-moves-title" style="margin:0 0 0.7rem;">Today’s moves</h3>
+        <p class="networking-reason" style="margin:0 0 0.7rem;">
+          Action queue for approved people — not a midnight wipe. Cards stay until you complete, snooze, reject, or change stage. Refresh this page tomorrow and the same open work is still here.
+        </p>
+        ${networkingActionCardsHtml(store)}
+      </section>
+    </div>`;
+}
+
+function networkingActionCardsHtml(store) {
+  const now = Date.now();
+  const people = networkingPeopleById(store);
+  const visiblePeople = new Set(filteredNetworkingPeople(store).map(person => person.id));
+  const taskCards = (store.ranked_tasks || store.tasks || [])
+    .filter(task => {
+      const person = people[task.person_id];
+      return person?.review_status === 'approved'
+        && visiblePeople.has(person.id)
+        && !person.do_not_contact
+        && person.relationship_stage !== 'do_not_contact';
+    })
+    .slice(0, 20)
+    .map(task => {
+      const person = people[task.person_id] || {};
+      const overdue = task.due_at && Date.parse(task.due_at) < now;
+      const reasons = task.priority?.reasons || [];
+      const actionLine = [task.subject, reasons.join(' · ') || task.notes]
+        .filter(Boolean)
+        .join(' — ');
+      return `
+        <article class="networking-action-card${overdue ? ' is-overdue' : ''}">
+          <h3 class="networking-action-name">${escapeHTML(person.display_name || 'Unassigned')}</h3>
+          <div class="networking-action-org">${escapeHTML(networkingOrgName(person, store) || 'No org')}</div>
+          <p class="networking-action-todo">${escapeHTML(actionLine || 'Next action')}</p>
+          <div style="margin-top:0.55rem;display:flex;gap:0.4rem;flex-wrap:wrap;">
+            <button class="control-btn" type="button" onclick="completeNetworkingTask('${escapeHTML(task.id)}')">Complete</button>
+            <button class="control-btn secondary" type="button" onclick="snoozeNetworkingTask('${escapeHTML(task.id)}')">Snooze 2d</button>
+            ${person.id ? `<button class="control-btn secondary" type="button" onclick="openNetworkingPerson('${escapeHTML(person.id)}')">Open person</button>` : ''}
+            ${person.gmail_thread_url ? `<a class="control-btn secondary" href="${escapeHTML(person.gmail_thread_url)}" target="_blank" rel="noopener noreferrer">Open Gmail</a>` : ''}
+          </div>
+        </article>`;
+    });
+  const derived = filteredNetworkingPeople(store)
+    .filter(person => (
+      person.review_status === 'approved'
+      && !person.do_not_contact
+      && person.next_action
+      && person.next_action.type !== 'none'
+      && person.next_action.type !== 'review'
+      && !person.next_action.task_id
+    ))
+    .slice(0, 12)
+    .map(person => `
+      <article class="networking-action-card">
+        <h3 class="networking-action-name">${escapeHTML(person.display_name)}</h3>
+        <div class="networking-action-org">${escapeHTML(networkingOrgName(person, store) || 'No org')}</div>
+        <p class="networking-action-todo">${escapeHTML([person.next_action.label, person.next_action.reason].filter(Boolean).join(' — ') || 'Next step')}</p>
+        <div style="margin-top:0.55rem;">
+          <button class="control-btn secondary" type="button" onclick="openNetworkingPerson('${escapeHTML(person.id)}')">Open person</button>
+        </div>
+      </article>`);
+  const cards = [...taskCards, ...derived];
+  if (!cards.length) {
+    const filters = networkingFilters();
+    const filteredAway = filters.company !== 'all' || filters.stage !== 'all' || filters.search || filters.channel !== 'all';
+    return `<div class="networking-empty">${filteredAway
+      ? 'No approved actions match the current Advanced filters.'
+      : 'No approved action is due. Review candidates, wait for replies, or queue another company.'}</div>`;
+  }
+  return `<div class="networking-action-stack">${cards.join('')}</div>`;
+}
+
+function companyCoverage(store, org) {
+  const people = (store.people || []).filter(person => (
+    person.current_organization_id === org.id
+    || person.current_organization?.toLowerCase() === org.name.toLowerCase()
+  ));
+  return NETWORKING_COVERAGE_LANES.map(lane => ({
+    ...lane,
+    covered: people.some(lane.match),
+    count: people.filter(lane.match).length,
+  }));
+}
+
+function networkingOrganizationMapHtml(store, org) {
+  const people = (store.people || []).filter(person => (
+    person.current_organization_id === org.id
+    || person.current_organization?.toLowerCase() === org.name.toLowerCase()
+  ));
+  const unitNames = [...new Set([
+    ...(org.organization_units || []).map(unit => unit.name),
+    ...people.map(person => person.organization_unit),
+  ].filter(Boolean))];
+  if (!unitNames.length) return '';
+  return `
+    <div class="networking-path-list" style="margin-top:0.75rem;">
+      ${unitNames.map(unitName => {
+        const unitPeople = people.filter(person => person.organization_unit === unitName);
+        return `
+          <div class="networking-path-card">
+            <strong>${escapeHTML(org.name)} → ${escapeHTML(unitName)}</strong>
+            ${unitPeople.length ? unitPeople.map(person => {
+              const channels = Object.entries(person.channel_states || {})
+                .filter(([, channel]) => channel && !['unknown', 'unavailable', 'do_not_use'].includes(channel.state))
+                .map(([name]) => name);
+              return `<div class="networking-reason" style="margin-top:0.3rem;">
+                → ${escapeHTML((person.personas || []).join(', ') || 'person')}
+                → ${escapeHTML(person.display_name)}
+                → ${escapeHTML(channels.join(', ') || 'no legitimate channel recorded')}
+              </div>`;
+            }).join('') : '<div class="networking-reason" style="margin-top:0.3rem;">No reviewed people in this unit yet.</div>'}
+          </div>`;
+      }).join('')}
+    </div>`;
+}
+
+function networkingCompaniesHtml(store) {
+  const filters = networkingFilters();
+  const filteredPeople = filteredNetworkingPeople(store);
+  let orgs = [...(store.organizations || [])];
+  const orphanNames = [...new Set((store.people || [])
+    .map(person => person.current_organization)
+    .filter(Boolean)
+    .filter(name => !orgs.some(org => org.name.toLowerCase() === name.toLowerCase())))];
+  for (const name of orphanNames) orgs.push({ id: name, name, opportunity_ids: [] });
+
+  if (filters.company !== 'all') {
+    orgs = orgs.filter(org => org.id === filters.company || org.name === filters.company);
+  } else if (filters.search || filters.stage !== 'all' || filters.channel !== 'all') {
+    orgs = orgs.filter(org => networkingPeopleForOrg(store, org, filteredPeople).length > 0);
+  }
+
+  if (!orgs.length) {
+    return `<div class="networking-empty">${filters.company !== 'all' || filters.search || filters.stage !== 'all' || filters.channel !== 'all'
+      ? 'No companies match the current Advanced filters.'
+      : 'No companies yet. Add a person with an organization, or queue contact research.'}</div>`;
+  }
+  return `<div class="networking-company-stack">${orgs.map(org => {
+    const people = networkingPeopleForOrg(store, org, filteredPeople);
+    const coverage = companyCoverage(store, org);
+    const gap = coverage.find(item => !item.covered);
+    const coverageHtml = `
+      <div class="networking-coverage" style="margin-top:0.55rem;">
+        ${coverage.map(lane => `<span class="${lane.covered ? 'covered' : ''}">${escapeHTML(lane.label)}${lane.count ? ` (${lane.count})` : ''}</span>`).join('')}
+      </div>
+      <div class="networking-reason" style="margin-top:0.45rem;">Largest gap: ${escapeHTML(gap?.label || 'Coverage looks solid')}</div>
+      ${org.feasibility_label ? `<div class="networking-reason" style="margin-top:0.35rem;"><strong>Feasibility:</strong> ${escapeHTML(org.feasibility_label)}</div>` : ''}
+      ${networkingOrganizationMapHtml(store, org)}`;
+    const footerHtml = `
+      <div style="margin-top:0.65rem;display:flex;gap:0.4rem;flex-wrap:wrap;">
+        <button class="control-btn secondary" type="button" onclick="queueNetworkingResearchForOrg('${escapeHTML(org.id)}')">Research contacts</button>
+        <button class="control-btn secondary" type="button" onclick="document.getElementById('networking-company-filter').value='${escapeHTML(org.id)}';setNetworkingView('people')">Focus people filter</button>
+      </div>`;
+    return networkingCompanyGroupHtml(org, people, store, {
+      extraMeta: `${(org.opportunity_ids || []).length} linked openings`,
+      coverageHtml,
+      footerHtml,
+    });
+  }).join('')}</div>`;
+}
+
+function networkingPipelineHtml(store) {
+  const people = filteredNetworkingPeople(store);
+  return `<p class="networking-reason">Companies stay collapsed; expand a contact crumb for stage moves. Scroll horizontally for all six stages.</p>
+    <div class="networking-pipeline-legend" aria-hidden="true">
+      ${NETWORKING_PIPELINE.map(column => `<span class="networking-stage-pill" data-lane="${escapeHTML(column.id)}">${escapeHTML(column.label)}</span>`).join('')}
+    </div>
+    <div class="networking-pipeline">${NETWORKING_PIPELINE.map(column => {
+    const cards = people.filter(person => column.stages.includes(person.relationship_stage));
+    return `
+      <section class="networking-pipeline-column" data-lane="${escapeHTML(column.id)}" aria-label="${escapeHTML(column.label)}">
+        <h3>${escapeHTML(column.label)} <span class="networking-pipeline-count">${cards.length}</span></h3>
+        ${cards.length
+          ? cards.map(person => networkingPersonCrumbHtml(person, store, { mode: 'pipeline' })).join('')
+          : `<div class="networking-empty">Empty</div>`}
+      </section>`;
+  }).join('')}</div>`;
+}
+
+function networkingPeopleHtml(store) {
+  const people = filteredNetworkingPeople(store);
+  if (!people.length) return `<div class="networking-empty">No people match these filters.</div>`;
+
+  const groups = new Map();
+  for (const person of people) {
+    const orgName = networkingOrgName(person, store) || 'Unknown organization';
+    const orgId = person.current_organization_id || orgName;
+    if (!groups.has(orgId)) {
+      groups.set(orgId, { org: { id: orgId, name: orgName }, people: [] });
+    }
+    groups.get(orgId).people.push(person);
+  }
+
+  return `<div class="networking-company-stack">${[...groups.values()]
+    .sort((a, b) => a.org.name.localeCompare(b.org.name))
+    .map(({ org, people: groupPeople }) => networkingCompanyGroupHtml(org, groupPeople, store))
+    .join('')}</div>`;
+}
+
+function networkingPathNodes(store, personId) {
+  if (personId === 'self') return { id: 'self', display_name: 'You' };
+  return networkingPeopleById(store)[personId] || { id: personId, display_name: personId };
+}
+
+function findNetworkingPathsClient(store, targetPersonId, maxHops = 2) {
+  const edges = store.edges || [];
+  const adjacency = new Map();
+  for (const edge of edges) {
+    const from = edge.from_person_id || 'self';
+    const to = edge.to_person_id;
+    if (!to) continue;
+    if (!adjacency.has(from)) adjacency.set(from, []);
+    adjacency.get(from).push(edge);
+  }
+  const paths = [];
+  const queue = [{ node: 'self', hops: 0, trail: ['self'], edgeTypes: [] }];
+  const visited = new Set(['self|0']);
+  while (queue.length) {
+    const current = queue.shift();
+    if (current.node === targetPersonId && current.hops > 0) {
+      paths.push({ nodes: current.trail, edgeTypes: current.edgeTypes });
+      continue;
+    }
+    if (current.hops >= maxHops) continue;
+    for (const edge of adjacency.get(current.node) || []) {
+      const next = edge.to_person_id;
+      const key = `${next}|${current.hops + 1}`;
+      if (visited.has(key)) continue;
+      visited.add(key);
+      queue.push({
+        node: next,
+        hops: current.hops + 1,
+        trail: [...current.trail, next],
+        edgeTypes: [...current.edgeTypes, edge.type || 'knows'],
+      });
+    }
+  }
+  return paths;
+}
+
+function networkingPathsHtml(store) {
+  const people = filteredNetworkingPeople(store);
+  if (!people.length) return `<div class="networking-empty">Add people and explicit introducer edges to explore warm paths.</div>`;
+  const selectedId = networkingSelectedPersonId && people.some(person => person.id === networkingSelectedPersonId)
+    ? networkingSelectedPersonId
+    : people[0].id;
+  networkingSelectedPersonId = selectedId;
+  const paths = findNetworkingPathsClient(store, selectedId, 2);
+  return `
+    <div class="filter-panel" style="margin-bottom:1rem;">
+      <label>Target person
+        <select id="networking-path-target" onchange="networkingSelectedPersonId=this.value;renderNetworkingCurrentView()">
+          ${people.map(person => `<option value="${escapeHTML(person.id)}"${person.id === selectedId ? ' selected' : ''}>${escapeHTML(person.display_name)} — ${escapeHTML(networkingOrgName(person, store) || '')}</option>`).join('')}
+        </select>
+      </label>
+      <button class="control-btn secondary" type="button" onclick="addNetworkingPathEdge('${escapeHTML(selectedId)}')">Add You → person path</button>
+    </div>
+    <div class="networking-path-list">
+      ${paths.length ? paths.map(path => `
+        <article class="networking-path-card">
+          <div class="networking-path-step">
+            ${path.nodes.map((nodeId, index) => {
+              const node = networkingPathNodes(store, nodeId);
+              const edge = path.edgeTypes[index] || '';
+              return `<span class="networking-path-node">${escapeHTML(node.display_name || nodeId)}</span>${edge ? `<span class="networking-reason">→ ${escapeHTML(edge)} →</span>` : ''}`;
+            }).join('')}
+          </div>
+          <div class="networking-reason">Text path: ${escapeHTML(path.nodes.map(id => networkingPathNodes(store, id).display_name || id).join(' → '))}</div>
+        </article>
+      `).join('') : `<div class="networking-empty">No recorded local paths to this person yet. Paths only use edges you explicitly save — LinkedIn 2nd/3rd degree is never inferred.</div>`}
+    </div>`;
+}
+
+function networkingEventsHtml(store) {
+  const events = store.events || [];
+  if (!events.length) {
+    return `
+      <div class="networking-empty">No events tracked yet.</div>
+      <form class="networking-inline-form" onsubmit="return saveNetworkingEvent(event)" style="margin-top:1rem;">
+        <label>Event name<input id="networking-event-name" required placeholder="Company info session"></label>
+        <label>Organization<input id="networking-event-org" placeholder="Company"></label>
+        <label>Starts<input id="networking-event-starts" type="datetime-local"></label>
+        <label>URL<input id="networking-event-url" placeholder="https://..."></label>
+        <button class="control-btn" type="submit">Add event</button>
+      </form>`;
+  }
+  return `
+    <div class="networking-event-grid">
+      ${events.map(event => `
+        <article class="networking-event-card">
+          <h3>${escapeHTML(event.name)}</h3>
+          <div class="networking-reason">${escapeHTML(event.location || event.status || '')}</div>
+          <div class="networking-reason">${escapeHTML(event.starts_at || 'Date TBD')}</div>
+          ${event.url ? `<a href="${escapeHTML(event.url)}" target="_blank" rel="noopener noreferrer">Open event</a>` : ''}
+        </article>
+      `).join('')}
+    </div>
+    <form class="networking-inline-form" onsubmit="return saveNetworkingEvent(event)" style="margin-top:1rem;">
+      <label>Event name<input id="networking-event-name" required placeholder="Company info session"></label>
+      <label>Organization<input id="networking-event-org" placeholder="Company"></label>
+      <label>Starts<input id="networking-event-starts" type="datetime-local"></label>
+      <label>URL<input id="networking-event-url" placeholder="https://..."></label>
+      <button class="control-btn" type="submit">Add event</button>
+    </form>`;
+}
+
+function networkingMetricsHtml(store) {
+  const people = store.people || [];
+  const interactions = store.interactions || [];
+  const contacted = people.filter(person => ['contacted', 'engaged', 'conversation', 'warm', 'referral_eligible', 'referred'].includes(person.relationship_stage)).length;
+  const replied = interactions.filter(item => item.direction === 'inbound').length;
+  const conversations = interactions.filter(item => ['conversation', 'meeting', 'call'].includes(item.type)).length;
+  const referred = people.filter(person => person.relationship_stage === 'referred').length;
+  const byChannel = {};
+  for (const item of interactions) {
+    const channel = item.channel || 'unknown';
+    byChannel[channel] = (byChannel[channel] || 0) + 1;
+  }
+  return `
+    <div class="stats-bar">
+      <div class="stat-card"><div class="stat-value">${contacted}</div><div class="stat-label">Reached</div></div>
+      <div class="stat-card"><div class="stat-value">${replied} / ${Math.max(contacted, 1)}</div><div class="stat-label">Inbound replies / reached</div></div>
+      <div class="stat-card"><div class="stat-value">${conversations}</div><div class="stat-label">Conversations</div></div>
+      <div class="stat-card"><div class="stat-value">${referred}</div><div class="stat-label">Referrals</div></div>
+    </div>
+    <div class="networking-action-stack" style="margin-top:1rem;">
+      <article class="networking-action-card">
+        <h3>Channel mix</h3>
+        <div class="networking-reason">${escapeHTML(Object.entries(byChannel).map(([name, count]) => `${name}: ${count}`).join(' · ') || 'No interactions yet')}</div>
+      </article>
+      <article class="networking-action-card">
+        <h3>Quality guardrails</h3>
+        <div class="networking-reason">One active channel at a time · one unanswered follow-up max · no automated LinkedIn or Gmail sends · affinity only from explicit evidence</div>
+      </article>
+    </div>`;
+}
+
+function renderNetworkingCurrentView() {
+  const store = networkingStoreCache;
+  const main = document.getElementById('networking-main');
+  if (!main || !store) return;
+  populateNetworkingFilterOptions(store);
+  if (networkingView === 'companies') main.innerHTML = networkingCompaniesHtml(store);
+  else if (networkingView === 'pipeline') main.innerHTML = networkingPipelineHtml(store);
+  else if (networkingView === 'people') main.innerHTML = networkingPeopleHtml(store);
+  else if (networkingView === 'paths') main.innerHTML = networkingPathsHtml(store);
+  else if (networkingView === 'events') main.innerHTML = networkingEventsHtml(store);
+  else if (networkingView === 'metrics') main.innerHTML = networkingMetricsHtml(store);
+  else main.innerHTML = networkingGuidedHtml(store);
+}
+
+async function renderNetworking({ force = false } = {}) {
+  const meta = document.getElementById('networking-meta');
+  const stats = document.getElementById('networking-stats');
+  const live = document.getElementById('networking-live-content');
+  const staticNotice = document.getElementById('networking-static-notice');
+  if (STATIC_PUBLISH) {
+    if (live) live.style.display = 'none';
+    if (staticNotice) {
+      staticNotice.style.display = 'block';
+      setInlineNotice('networking-static-notice', 'Networking is local-only. Contact records, notes, Gmail links, and research orders are excluded from the public snapshot. Open http://127.0.0.1:3737/dashboard/fusion-pivot-dashboard.html for the live workspace.', 'warn');
+    }
+    if (meta) meta.textContent = 'Private networking data is not published to the static dashboard.';
+    return;
+  }
+  if (staticNotice) {
+    staticNotice.style.display = 'none';
+    staticNotice.textContent = '';
+  }
+  if (live) live.style.display = '';
+  try {
+    if (force || !networkingStoreCache) {
+      networkingStoreCache = await apiJSON('/api/networking', { timeoutMs: API_TIMEOUT_HEAVY_MS });
+    }
+    if (force || !networkingResearchQueueCache) {
+      networkingResearchQueueCache = await apiJSON('/api/networking/research-queue').catch(() => ({ pending: [], pending_count: 0 }));
+    }
+    const signature = JSON.stringify({
+      generated_at: networkingStoreCache.generated_at,
+      summary: networkingStoreCache.summary,
+      view: networkingView,
+      queue: networkingResearchQueueCache.pending_count,
+    });
+    if (!force && signature === networkingRenderedSignature && !pendingNetworkingSaves.size) return;
+    networkingRenderedSignature = signature;
+    if (meta) {
+      meta.textContent = `${networkingStoreCache.summary?.people || 0} people · ${networkingStoreCache.summary?.active_tasks || 0} active tasks · local-only workspace`;
+    }
+    if (stats) stats.innerHTML = networkingStatsHtml(networkingStoreCache.summary || {});
+    renderNetworkingResearchQueue(networkingResearchQueueCache);
+    renderNetworkingCurrentView();
+  } catch (error) {
+    if (meta) meta.textContent = `Failed to load networking data: ${error.message}`;
+    networkingFeedback(error.message, 'error');
+  }
+}
+
+function openNetworkingPerson(id = 'new') {
+  networkingReturnFocus = document.activeElement;
+  const overlay = document.getElementById('networking-drawer-overlay');
+  const store = networkingStoreCache || { people: [], interactions: [] };
+  const person = id === 'new' ? null : (store.people || []).find(item => item.id === id);
+  document.getElementById('networking-drawer-title').textContent = person
+    ? `${person.display_name}${person.review_status === 'review_ready' ? ' — needs review' : ''}`
+    : 'Add person';
+  document.getElementById('networking-person-id').value = person?.id || '';
+  document.getElementById('networking-person-name').value = person?.display_name || '';
+  document.getElementById('networking-person-org').value = person?.current_organization || '';
+  document.getElementById('networking-person-org-unit').value = person?.organization_unit || '';
+  document.getElementById('networking-person-title').value = person?.title || '';
+  document.getElementById('networking-person-stage').value = person?.relationship_stage || 'identified';
+  document.getElementById('networking-person-email').value = person?.email || '';
+  document.getElementById('networking-person-linkedin').value = person?.linkedin_url || '';
+  document.getElementById('networking-person-degree').value = person?.linkedin_degree_observed || '';
+  document.getElementById('networking-person-personas').value = (person?.personas || []).join(', ');
+  document.getElementById('networking-person-affinity').value = (person?.affinity_tags || []).join(', ');
+  document.getElementById('networking-person-location').value = person?.location || '';
+  document.getElementById('networking-person-notes').value = person?.notes || '';
+  document.getElementById('networking-person-x').value = person?.x_url || '';
+  document.getElementById('networking-person-github').value = person?.github_url || '';
+  document.getElementById('networking-channel-linkedin-state').value = person?.channel_states?.linkedin?.state || 'unknown';
+  document.getElementById('networking-channel-email-state').value = person?.channel_states?.email?.state || 'unknown';
+  document.getElementById('networking-person-gmail').value = person?.gmail_thread_url || '';
+  const evidenceEl = document.getElementById('networking-person-evidence');
+  if (evidenceEl) {
+    const sources = person?.source_refs || [];
+    evidenceEl.innerHTML = sources.length
+      ? sources.map(source => source.url
+        ? `<a href="${escapeHTML(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(source.title || source.observed_value || 'Open evidence')}</a>`
+        : `<span class="networking-reason">${escapeHTML(source.title || source.observed_value || 'Evidence note')}</span>`)
+        .join('')
+      : '<span class="networking-reason">No public evidence attached.</span>';
+  }
+  const deleteBtn = document.getElementById('networking-delete-btn');
+  if (deleteBtn) deleteBtn.style.display = person ? '' : 'none';
+  renderNetworkingGmailLink(person?.gmail_thread_url || '');
+  renderNetworkingPersonTimeline(person?.id || '');
+  overlay?.classList.add('is-open');
+  document.body.classList.add('networking-drawer-open');
+  document.getElementById('networking-person-name')?.focus();
+}
+
+function closeNetworkingDrawer() {
+  document.getElementById('networking-drawer-overlay')?.classList.remove('is-open');
+  document.body.classList.remove('networking-drawer-open');
+  const returnTarget = networkingReturnFocus?.isConnected
+    ? networkingReturnFocus
+    : document.querySelector('[data-networking-view="start"]');
+  returnTarget?.focus();
+}
+
+document.addEventListener('keydown', event => {
+  const overlay = document.getElementById('networking-drawer-overlay');
+  if (!overlay?.classList.contains('is-open')) return;
+  if (event.key === 'Escape') {
+    event.preventDefault();
+    closeNetworkingDrawer();
+    return;
+  }
+  if (event.key !== 'Tab') return;
+  const focusable = [...overlay.querySelectorAll(
+    'button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])',
+  )].filter(element => element.offsetParent !== null);
+  if (!focusable.length) return;
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
+});
+
+function renderNetworkingGmailLink(url = '') {
+  const el = document.getElementById('networking-gmail-link');
+  if (!el) return;
+  if (!url) {
+    el.innerHTML = '<span class="networking-reason">No Gmail thread linked yet.</span>';
+    return;
+  }
+  el.innerHTML = `<a class="control-btn secondary" href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer">Open Gmail thread</a>`;
+}
+
+function attachNetworkingGmailLink() {
+  const input = document.getElementById('networking-person-gmail');
+  const url = input?.value?.trim() || '';
+  if (!url) return;
+  if (!isSafeNetworkingGmailUrl(url)) {
+    networkingFeedback('Gmail thread URL must use https://mail.google.com', 'error');
+    return;
+  }
+  renderNetworkingGmailLink(url);
+  networkingFeedback('Gmail thread linked. Save the person to persist it.');
+}
+
+function renderNetworkingPersonTimeline(personId = '') {
+  const el = document.getElementById('networking-person-timeline');
+  if (!el) return;
+  if (!personId) {
+    el.innerHTML = '<div class="networking-reason">Save the person, then log interactions.</div>';
+    return;
+  }
+  const items = (networkingStoreCache?.interactions || [])
+    .filter(item => item.person_id === personId)
+    .slice(0, 12);
+  if (!items.length) {
+    el.innerHTML = '<div class="networking-reason">No interactions yet.</div>';
+    return;
+  }
+  el.innerHTML = items.map(item => `
+    <div class="networking-timeline-item">
+      <strong>${escapeHTML(item.type)} · ${escapeHTML(item.direction)} · ${escapeHTML(item.channel || '')}</strong>
+      <div class="networking-reason">${escapeHTML(item.occurred_at || '')}</div>
+      <div>${escapeHTML(item.summary || '')}</div>
+      ${item.gmail_thread_url ? `<a href="${escapeHTML(item.gmail_thread_url)}" target="_blank" rel="noopener noreferrer">Open thread</a>` : ''}
+    </div>
+  `).join('');
+}
+
+function splitNetworkingTags(value = '') {
+  return String(value || '').split(',').map(part => part.trim()).filter(Boolean);
+}
+
+async function saveNetworkingPerson(event) {
+  event.preventDefault();
+  if (STATIC_PUBLISH) return false;
+  const id = document.getElementById('networking-person-id').value;
+  const payload = {
+    display_name: document.getElementById('networking-person-name').value.trim(),
+    current_organization: document.getElementById('networking-person-org').value.trim(),
+    organization_unit: document.getElementById('networking-person-org-unit').value.trim(),
+    title: document.getElementById('networking-person-title').value.trim(),
+    relationship_stage: document.getElementById('networking-person-stage').value,
+    email: document.getElementById('networking-person-email').value.trim(),
+    linkedin_url: document.getElementById('networking-person-linkedin').value.trim(),
+    linkedin_degree_observed: document.getElementById('networking-person-degree').value,
+    personas: splitNetworkingTags(document.getElementById('networking-person-personas').value),
+    affinity_tags: splitNetworkingTags(document.getElementById('networking-person-affinity').value),
+    location: document.getElementById('networking-person-location').value.trim(),
+    notes: document.getElementById('networking-person-notes').value.trim(),
+    x_url: document.getElementById('networking-person-x').value.trim(),
+    github_url: document.getElementById('networking-person-github').value.trim(),
+    gmail_thread_url: document.getElementById('networking-person-gmail').value.trim(),
+    channel_states: {
+      linkedin: { state: document.getElementById('networking-channel-linkedin-state').value },
+      email: { state: document.getElementById('networking-channel-email-state').value },
+    },
+  };
+  const saveKey = id || `new-${Date.now()}`;
+  pendingNetworkingSaves.set(saveKey, true);
+  try {
+    if (payload.current_organization) {
+      await apiJSON('/api/networking/organizations', {
+        method: 'POST',
+        body: JSON.stringify({ name: payload.current_organization }),
+      });
+    }
+    const result = id
+      ? await apiJSON(`/api/networking/people/${encodeURIComponent(id)}`, { method: 'PATCH', body: JSON.stringify(payload) })
+      : await apiJSON('/api/networking/people', { method: 'POST', body: JSON.stringify(payload) });
+    networkingStoreCache = null;
+    networkingRenderedSignature = '';
+    await renderNetworking({ force: true });
+    openNetworkingPerson(result.person.id);
+    networkingFeedback(`Saved ${result.person.display_name}`);
+  } catch (error) {
+    networkingFeedback(error.message, 'error');
+  } finally {
+    pendingNetworkingSaves.delete(saveKey);
+  }
+  return false;
+}
+
+async function reviewNetworkingCandidate(id, action) {
+  if (!id || !['approve', 'reject'].includes(action) || STATIC_PUBLISH) return;
+  pendingNetworkingSaves.set(id, true);
+  try {
+    const result = await apiJSON(`/api/networking/people/${encodeURIComponent(id)}/review`, {
+      method: 'PATCH',
+      body: JSON.stringify({ action }),
+    });
+    networkingStoreCache = null;
+    networkingRenderedSignature = '';
+    await renderNetworking({ force: true });
+    networkingFeedback(`${result.person.display_name} ${action === 'approve' ? 'approved' : 'rejected'}`);
+  } catch (error) {
+    networkingFeedback(error.message, 'error');
+  } finally {
+    pendingNetworkingSaves.delete(id);
+  }
+}
+
+async function deleteNetworkingPersonFromDrawer() {
+  const id = document.getElementById('networking-person-id').value;
+  if (!id || STATIC_PUBLISH) return;
+  if (!confirm('Delete this networking person and their local interactions/tasks?')) return;
+  pendingNetworkingSaves.set(id, true);
+  try {
+    await apiJSON(`/api/networking/people/${encodeURIComponent(id)}`, { method: 'DELETE' });
+    closeNetworkingDrawer();
+    networkingStoreCache = null;
+    await renderNetworking({ force: true });
+    networkingFeedback('Person deleted');
+  } catch (error) {
+    networkingFeedback(error.message, 'error');
+  } finally {
+    pendingNetworkingSaves.delete(id);
+  }
+}
+
+async function moveNetworkingPersonStage(id, stage) {
+  if (!id || !stage || STATIC_PUBLISH) return;
+  pendingNetworkingSaves.set(id, true);
+  try {
+    await apiJSON(`/api/networking/people/${encodeURIComponent(id)}`, {
+      method: 'PATCH',
+      body: JSON.stringify({ relationship_stage: stage }),
+    });
+    networkingStoreCache = null;
+    await renderNetworking({ force: true });
+  } catch (error) {
+    networkingFeedback(error.message, 'error');
+  } finally {
+    pendingNetworkingSaves.delete(id);
+  }
+}
+
+async function logNetworkingInteraction() {
+  const id = document.getElementById('networking-person-id').value;
+  if (!id) {
+    networkingFeedback('Save the person before logging an interaction.', 'warn');
+    return;
+  }
+  const payload = {
+    person_id: id,
+    type: document.getElementById('networking-log-type').value,
+    direction: document.getElementById('networking-log-direction').value,
+    channel: document.getElementById('networking-log-channel').value,
+    summary: document.getElementById('networking-log-summary').value.trim(),
+    gmail_thread_url: document.getElementById('networking-person-gmail').value.trim(),
+    occurred_at: new Date().toISOString(),
+  };
+  pendingNetworkingSaves.set(id, true);
+  try {
+    await apiJSON('/api/networking/interactions', { method: 'POST', body: JSON.stringify(payload) });
+    document.getElementById('networking-log-summary').value = '';
+    networkingStoreCache = null;
+    await renderNetworking({ force: true });
+    openNetworkingPerson(id);
+    networkingFeedback('Interaction logged');
+  } catch (error) {
+    networkingFeedback(error.message, 'error');
+  } finally {
+    pendingNetworkingSaves.delete(id);
+  }
+}
+
+async function completeNetworkingTask(taskId) {
+  if (!taskId || STATIC_PUBLISH) return;
+  pendingNetworkingSaves.set(taskId, true);
+  try {
+    await apiJSON(`/api/networking/tasks/${encodeURIComponent(taskId)}`, {
+      method: 'PATCH',
+      body: JSON.stringify({ state: 'completed' }),
+    });
+    networkingStoreCache = null;
+    await renderNetworking({ force: true });
+    networkingFeedback('Task completed');
+  } catch (error) {
+    networkingFeedback(error.message, 'error');
+  } finally {
+    pendingNetworkingSaves.delete(taskId);
+  }
+}
+
+async function snoozeNetworkingTask(taskId) {
+  if (!taskId || STATIC_PUBLISH) return;
+  const due = new Date(Date.now() + 2 * 86_400_000).toISOString();
+  pendingNetworkingSaves.set(taskId, true);
+  try {
+    await apiJSON(`/api/networking/tasks/${encodeURIComponent(taskId)}`, {
+      method: 'PATCH',
+      body: JSON.stringify({ state: 'snoozed', snoozed_until: due, due_at: due }),
+    });
+    networkingStoreCache = null;
+    await renderNetworking({ force: true });
+    networkingFeedback('Task snoozed for 2 days');
+  } catch (error) {
+    networkingFeedback(error.message, 'error');
+  } finally {
+    pendingNetworkingSaves.delete(taskId);
+  }
+}
+
+async function saveNetworkingEvent(event) {
+  event.preventDefault();
+  if (STATIC_PUBLISH) return false;
+  const name = document.getElementById('networking-event-name')?.value?.trim();
+  const organization = document.getElementById('networking-event-org')?.value?.trim();
+  const starts = document.getElementById('networking-event-starts')?.value;
+  const url = document.getElementById('networking-event-url')?.value?.trim();
+  try {
+    await apiJSON('/api/networking/events', {
+      method: 'POST',
+      body: JSON.stringify({
+        name,
+        organization_id: '',
+        notes: organization ? `Organization: ${organization}` : '',
+        starts_at: starts ? new Date(starts).toISOString() : '',
+        url,
+      }),
+    });
+    networkingStoreCache = null;
+    await renderNetworking({ force: true });
+    setNetworkingView('events');
+    networkingFeedback('Event saved');
+  } catch (error) {
+    networkingFeedback(error.message, 'error');
+  }
+  return false;
+}
+
+async function addNetworkingPathEdge(personId) {
+  if (!personId || STATIC_PUBLISH) return;
+  try {
+    await apiJSON('/api/networking/edges', {
+      method: 'POST',
+      body: JSON.stringify({
+        from_person_id: 'self',
+        to_person_id: personId,
+        type: 'knows',
+        strength: 0.6,
+        source: 'manual',
+        notes: 'Explicit local path from You',
+      }),
+    });
+    networkingStoreCache = null;
+    await renderNetworking({ force: true });
+    setNetworkingView('paths');
+    networkingFeedback('Path edge saved');
+  } catch (error) {
+    networkingFeedback(error.message, 'error');
+  }
+}
+
+function launchLinkedInSearchForPerson() {
+  const name = document.getElementById('networking-person-name')?.value?.trim() || '';
+  const org = document.getElementById('networking-person-org')?.value?.trim() || '';
+  const query = [name, org].filter(Boolean).join(' ');
+  if (!query) {
+    networkingFeedback('Add a name or organization before launching LinkedIn search.', 'warn');
+    return;
+  }
+  const url = `https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(query)}`;
+  window.open(url, '_blank', 'noopener,noreferrer');
+}
+
+async function queueNetworkingResearchForOrg(organizationId = '', organizationName = '') {
+  if (STATIC_PUBLISH) return;
+  const store = networkingStoreCache || { organizations: [], people: [] };
+  const org = (store.organizations || []).find(item => (
+    item.id === organizationId
+    || item.name.toLowerCase() === String(organizationName || '').toLowerCase()
+  ));
+  const name = organizationName
+    || org?.name
+    || (store.people || []).find(person => person.current_organization_id === organizationId || person.current_organization === organizationId)?.current_organization
+    || (organizationId && !String(organizationId).startsWith('network-org-') ? organizationId : '');
+  if (!name) {
+    networkingFeedback('Choose a company before queuing research.', 'warn');
+    return;
+  }
+  try {
+    const result = await apiJSON('/api/networking/research-queue', {
+      method: 'POST',
+      body: JSON.stringify({
+        organization_id: org?.id || (String(organizationId).startsWith('network-org-') ? organizationId : ''),
+        organization_name: name,
+        personas: ['recruiter', 'peer', 'hiring_manager'],
+        affinity_paths: ['University of Michigan', 'VIT'],
+        source_preferences: ['company_page', 'alumni', 'orcid', 'github', 'events'],
+      }),
+    });
+    networkingResearchQueueCache = result.queue;
+    renderNetworkingResearchQueue(result.queue);
+    renderNetworkingCurrentView();
+    networkingFeedback(result.duplicate ? 'Research order already queued' : `Queued research for ${name}`);
+  } catch (error) {
+    networkingFeedback(error.message, 'error');
+  }
+}
+
+async function queueNetworkingResearchFromStart(event) {
+  event.preventDefault();
+  const input = document.getElementById('networking-company-input');
+  const name = input?.value?.trim() || '';
+  if (!name) {
+    networkingFeedback('Choose a company first.', 'warn');
+    return false;
+  }
+  await queueNetworkingResearchForOrg('', name);
+  return false;
+}
+
+async function queueNetworkingResearchPrompt() {
+  const name = document.getElementById('networking-company-input')?.value?.trim() || '';
+  await queueNetworkingResearchForOrg('', name);
+}
+
+function copyNetworkingResearchPrompt(orderId) {
+  const order = (networkingResearchQueueCache?.pending || []).find(item => item.id === orderId);
+  if (!order) return;
+  const text = [
+    'Find new networking contacts',
+    '',
+    `SOP: WEB-TRACKER/lib/networking/NETWORKING_RESEARCH_SOP.md`,
+    `Order id: ${order.id}`,
+    `Organization: ${order.organization_name}`,
+    `Organization id: ${order.organization_id || ''}`,
+    `Personas: ${(order.personas || []).join(', ') || 'any'}`,
+    `Affinity paths: ${(order.affinity_paths || []).join(', ') || 'none'}`,
+    `Known people: ${(order.known_person_ids || []).join(', ') || 'none'}`,
+    '',
+    'Process every pending order in WEB-TRACKER/data/networking-research-queue.json.',
+    'Create candidate people with evidence only. Never auto-contact. Never scrape LinkedIn.',
+  ].join('\n');
+  navigator.clipboard?.writeText(text).then(
+    () => networkingFeedback('Research prompt copied'),
+    () => networkingFeedback(text, 'warn'),
+  );
+}
+
+function renderNetworkingFromSse() {
+  if (pendingNetworkingSaves.size) return;
+  networkingStoreCache = null;
+  networkingResearchQueueCache = null;
+  networkingRenderedSignature = '';
+  if (activeTabId() === 'networking') renderNetworking({ force: true });
+}
+
 // ── SSE Connection ──────────────────────────────────────────────────
 
 function connectSSE() {
@@ -8559,6 +11745,11 @@ function connectSSE() {
         phdscannerRenderedSignature = '';
         if (activeTabId() === 'phdscanner') renderPhdscannerFeed({ force: true });
       }
+      if (data.type === 'umich_careers_opportunities_updated') {
+        umichStoreCache = null;
+        umichRenderedSignature = '';
+        if (activeTabId() === 'umichcareers') renderUmichCareersFeed({ force: true });
+      }
       if (data.type === 'data_updated' || data.type === 'data_added') {
         if (data.file === 'jobs-to-consider.json') {
           if (activeTabId() === 'livejobs') renderLiveJobsFromSse();
@@ -8573,6 +11764,10 @@ function connectSSE() {
         } else if (data.file === 'umich-research-prospects.json') {
           if (activeTabId() === 'researchprospects') renderResearchProspectsFromSse();
           queueTodayActivityRefresh();
+        } else if (data.file === 'umich-careers-opportunities.json') {
+          umichStoreCache = null;
+          umichRenderedSignature = '';
+          if (activeTabId() === 'umichcareers') renderUmichCareersFeed({ force: true });
         } else if (data.file === 'phd-prospect-sources.json') {
           phdResearchProspectSourcesCache = null;
           phdResearchProspectsOptionsLoaded = false;
@@ -8640,6 +11835,13 @@ function connectSSE() {
         if (activeTabId() === 'pulse') renderPulseFromSse();
         queueTodayActivityRefresh();
       }
+      if (data.type === 'networking_updated' || data.type === 'networking_research_queue_updated') {
+        renderNetworkingFromSse();
+        queueTodayActivityRefresh();
+      }
+      if (data.file === 'networking.json' || data.file === 'networking-research-queue.json') {
+        renderNetworkingFromSse();
+      }
     };
     es.onerror = () => {
       if (sseConnection) {
@@ -8675,6 +11877,11 @@ document.getElementById('researchprospects')?.addEventListener('input', () => {
 });
 document.getElementById('researchprospects')?.addEventListener('change', () => {
   researchProspectsUserInteractingUntil = Date.now() + RESEARCH_PROSPECTS_INTERACTION_IDLE_MS;
+});
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && document.getElementById('networking-drawer-overlay')?.classList.contains('is-open')) {
+    closeNetworkingDrawer();
+  }
 });
 document.addEventListener('focusout', (event) => {
   if (event.target?.closest?.('#pulse-add-row, #pulse-apps-table')) flushPulseRenderAfterInteraction();

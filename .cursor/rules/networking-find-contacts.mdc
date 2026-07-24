@@ -1,0 +1,32 @@
+---
+description: Find new networking contacts from the Networking research queue
+alwaysApply: true
+---
+
+# Networking — Find Contacts (ALWAYS)
+
+When the user says any of these (or close variants), execute immediately:
+
+- **Find new networking contacts**
+- Find networking contacts
+- Research networking contacts
+- Clear the networking research queue
+
+## Hard contract
+
+1. This always means the **Networking Command Center** research lane — never EURAXESS, PhDScanner, Target Companies exhibitor, or Operations `agent-tasks.ndjson`.
+2. **Do not ask clarifying questions.** Do not ask which company if pending orders already exist.
+3. First action: read `WEB-TRACKER/data/networking-research-queue.json`.
+4. If `pending_count === 0`: reply only `Networking research queue is empty.` and stop.
+5. If pending: process **every** item in `pending[]` by following `WEB-TRACKER/lib/networking/NETWORKING_RESEARCH_SOP.md` mechanically.
+6. Never scrape LinkedIn. Never auto-send messages. Affinity tags require explicit public evidence only.
+7. Work is incomplete until candidates are upserted with evidence, orders move to `review_ready` / `completed`, and `syncNetworkingToDashboard()` has run.
+
+## Entry points
+
+| File | Role |
+|------|------|
+| `WEB-TRACKER/data/networking-research-queue.json` | Pending work orders |
+| `WEB-TRACKER/lib/networking/NETWORKING_RESEARCH_SOP.md` | Exact research + attach steps |
+| `WEB-TRACKER/lib/networking/factory.mjs` | Queue transitions |
+| `WEB-TRACKER/lib/networking/store.mjs` | `upsertNetworkingPerson` + sync |

@@ -1,0 +1,38 @@
+---
+description: CRITICAL — never change the Fusion Pivot dashboard URL or port (always 3737)
+alwaysApply: true
+---
+
+# Dashboard Fixed URL — NEVER CHANGE (ALWAYS)
+
+## Canonical address (immutable)
+
+```text
+http://127.0.0.1:3737/dashboard/fusion-pivot-dashboard.html
+```
+
+- Default port is **always `3737`** (`WEB-TRACKER/server.mjs`, `server-fast.mjs`, `run.mjs`, `preflight.mjs`).
+- Host is **always `127.0.0.1` / localhost**.
+- Path is **always** `/dashboard/fusion-pivot-dashboard.html`.
+
+## Hard contract for every agent
+
+1. **Never change the default `PORT`**, never "try another port", never rewrite startup to bind elsewhere as the new normal.
+2. **Never tell the user a new dashboard URL** unless they explicitly asked to run a *temporary* side process — and even then, say clearly it is **not** the real dashboard and the real one remains `http://127.0.0.1:3737/...`.
+3. **Do not set `PORT=...` in package scripts, run.mjs, docs, or env examples** to anything other than `3737`.
+4. If port 3737 is busy, **diagnose and free/fix that process** — do not abandon 3737 for 3747/3757/etc.
+5. One-off verification servers on another port are allowed **only** when 3737 is already serving the live dashboard and you must not disrupt it — never present that side port as the project URL, and kill it when done.
+6. When the user cannot see new features on `3737`, the fix is: restart/reload the **3737** process so it picks up code changes — **not** a new address.
+
+## Why this exists
+
+The user runs one continuous dashboard bookmark. Changing the web address breaks continuity and is treated as a **project-critical regression**, not a convenience.
+
+## Related defaults in code
+
+| File | Expectation |
+|------|-------------|
+| `WEB-TRACKER/server.mjs` | `PORT = process.env.PORT \|\| 3737` |
+| `WEB-TRACKER/server-fast.mjs` | `PORT = Number(process.env.PORT \|\| 3737)` |
+| `WEB-TRACKER/run.mjs` | prints `http://localhost:3737` |
+| `WEB-TRACKER/dashboard/fusion-pivot-dashboard.html` | API origin fallback `:3737` |

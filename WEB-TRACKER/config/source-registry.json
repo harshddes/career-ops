@@ -425,6 +425,24 @@
       "opening_model": "deadline_cycle",
       "deadline": "2027-01-15",
       "enabled": true
+    },
+    {
+      "id": "umich-careers",
+      "name": "University of Michigan Careers — Full/Part-Time",
+      "source_type": "lab_portal",
+      "platform": "umich_careers",
+      "careers_url": "https://careers.umich.edu/browse-jobs/positions",
+      "full_time_url": "https://careers.umich.edu/browse-jobs/positions/F",
+      "part_time_url": "https://careers.umich.edu/browse-jobs/positions/P",
+      "api_url": null,
+      "scrape_strategy": "direct_html_browse",
+      "providers": ["direct_html_browse"],
+      "poll_interval_min": 15,
+      "full_reconcile_hours": 6,
+      "detail_refresh_hours": 24,
+      "importance": 0.92,
+      "notes": "Robots disallow /search/; crawl only /browse-jobs/positions/{F|P} and /job_detail/. Discovery every 15m (page 1), full F/P reconcile every 6h, rolling detail refresh daily. Closure requires two consecutive complete crawls with landing-count reconciliation.",
+      "enabled": true
     }
   ]
 }

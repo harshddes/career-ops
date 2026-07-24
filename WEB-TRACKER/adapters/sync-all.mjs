@@ -13,6 +13,7 @@ import { run as syncScanHistory } from './scan-history-adapter.mjs';
 import { run as syncPatterns } from './patterns-adapter.mjs';
 import { run as syncFollowups } from './followups-adapter.mjs';
 import { run as syncJobsToConsider } from './jobs-to-consider-adapter.mjs';
+import { run as syncUmichCareers } from './umich-careers-adapter.mjs';
 import { syncArtifactResources } from '../lib/artifact-resource-sync.mjs';
 import { syncActivityLogToDashboard } from '../lib/activity-log.mjs';
 import { syncJobsUserStateToDashboard } from '../lib/jobs-user-state.mjs';
@@ -27,6 +28,7 @@ const adapters = [
   { name: 'patterns', fn: syncPatterns },
   { name: 'followups', fn: syncFollowups },
   { name: 'jobs-to-consider', fn: syncJobsToConsider },
+  { name: 'umich-careers', fn: syncUmichCareers },
   { name: 'jobs-user-state', fn: syncJobsUserStateToDashboard },
   { name: 'activity-log', fn: syncActivityLogToDashboard },
   { name: 'research-user-state', fn: syncResearchUserStateToDashboard },

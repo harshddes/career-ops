@@ -275,6 +275,7 @@ When spawning headless workers for batch processing, use the appropriate command
 - Node.js (mjs modules), Playwright (PDF + scraping), YAML (config), HTML/CSS (template), Markdown (data), Canva MCP (optional visual CV)
 - Scripts in `.mjs`, configuration in YAML
 - Output in `output/` (gitignored), Reports in `reports/`
+- **RULE: Fusion Pivot dashboard URL is immutable.** Always `http://127.0.0.1:3737/dashboard/fusion-pivot-dashboard.html`. Never change the default port, never invent a replacement URL, never present a temporary side-port as the real dashboard. See `.cursor/rules/dashboard-fixed-url.mdc`.
 - JDs in `jds/` (referenced as `local:jds/{file}` in pipeline.md)
 - Batch in `batch/` (gitignored except scripts and prompt)
 - Report numbering: sequential 3-digit zero-padded, max existing + 1
@@ -283,6 +284,8 @@ When spawning headless workers for batch processing, use the appropriate command
 - **RULE: Jobs to Consider tracker attachment is mandatory.** Whenever you create any application resource (resume, cover letter, application email, or other `job.resources` artifact), immediately link it on the Jobs to Consider tracker in the same turn. Use `upsertConsiderJob()` / `patchConsiderJob()` from `WEB-TRACKER/lib/jobs-to-consider-store.mjs`, then `syncConsiderJobsToDashboard()`. Create the job entry if missing. Never leave files only in `output/` without updating `data/jobs-to-consider.json`. See `modes/application-artifacts.md`.
 - **RULE: EURAXESS Live Feed card attachment is mandatory.** Whenever you create research or pack artifacts for a EURAXESS posting, immediately patch that opportunity’s `resources` / `research_report` via `patchEuraxessOpportunity()` and `syncEuraxessOpportunitiesToDashboard()` so the same card shows download links. Never leave EURAXESS files only in `reports/` or `output/`. See `.cursor/rules/euraxess-artifact-card-links.mdc` and `modes/application-artifacts.md`.
 - **RULE: Target Companies exhibitor clear-queue.** When the user says “Clear the queue in Target Companies” (or close variants), read `WEB-TRACKER/data/exhibitor-clear-queue.json` and execute `WEB-TRACKER/lib/exhibitor/CLEAR_QUEUE_SOP.md` for every pending item with zero clarifying questions. Never mix with EURAXESS / PhDScanner / Operations queues. Attach the research report to the exhibitor company card via `patchExhibitorCompany` + `syncExhibitorCompaniesToDashboard()`, and upsert fit roles to Jobs to Consider. See `.cursor/rules/target-companies-exhibitor-clear-queue.mdc`.
+- **RULE: Networking contact research.** When the user says “Find new networking contacts” (or close variants), read `WEB-TRACKER/data/networking-research-queue.json` and execute `WEB-TRACKER/lib/networking/NETWORKING_RESEARCH_SOP.md` for every pending item with zero clarifying questions. Never scrape LinkedIn, never auto-send outreach, and never infer ethnicity/nationality. Upsert candidate people with evidence, mark orders review_ready/completed, and call `syncNetworkingToDashboard()`. See `.cursor/rules/networking-find-contacts.mdc`.
+- **RULE: Networking PII stays local.** Networking records, Gmail thread links, notes, and research work orders must never be published into the static dashboard snapshot.
 
 ### TSV Format for Tracker Additions
 

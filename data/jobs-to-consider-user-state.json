@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-13T15:10:41.107Z",
+  "updated_at": "2026-07-21T17:07:44.560Z",
   "jobs": {
     "ornl-mechanical-design-and-test-engineer-temporary-1403782600": {
       "updated_at": "2026-07-05T15:45:05.151Z",
@@ -503,6 +503,42 @@
         "cover_letter_pdf": "output/ku-leuven/cover-letter-harsh-desai-ku-leuven-msca-dc2-ejm-cobot-micromachining-2026-07-13.pdf",
         "email_draft": "output/ku-leuven/application-email-ku-leuven-msca-dc2-ejm-cobot-micromachining-2026-07-13.md"
       }
+    },
+    "rohde-and-schwarz-fpga-and-dsp-engineer-singapore-13644": {
+      "updated_at": "2026-07-20T17:42:57.552Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-07-20T17:42:56.956Z",
+      "application_num": 66,
+      "notes": "Rohde & Schwarz global jobboard (~560–600 openings). Prefer space/RF/FPGA/measurement; verify location + sponsorship.",
+      "resources": {}
+    },
+    "rohde-and-schwarz-application-engineer-denver-denver-co-us-app-denver": {
+      "updated_at": "2026-07-20T17:43:16.412Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-07-20T17:43:16.045Z",
+      "application_num": 67,
+      "notes": "Confirm exact JD URL on jobs.rohde-schwarz.com jobboard filter US/Denver before apply. From Target Companies exhibitor clear-queue.",
+      "resources": {}
+    },
+    "rohde-and-schwarz-signal-processing-engineer-signal-analysis-m-w-d-germany-r-and-s-board-1636929": {
+      "updated_at": "2026-07-20T18:03:30.007Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-07-20T18:03:29.908Z",
+      "application_num": 66,
+      "notes": "Rohde & Schwarz global jobboard (~560–600 openings). Prefer space/RF/FPGA/measurement; verify location + sponsorship.",
+      "resources": {}
+    },
+    "rohde-and-schwarz-system-architect-m-w-d-space-systems-dresden-de-15101": {
+      "updated_at": "2026-07-21T17:07:44.560Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-07-21T17:07:44.470Z",
+      "application_num": 67,
+      "notes": "Rohde & Schwarz global jobboard (~560–600 openings). Prefer space/RF/FPGA/measurement; verify location + sponsorship.",
+      "resources": {}
     }
   }
 }

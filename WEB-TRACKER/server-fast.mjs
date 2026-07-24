@@ -8,7 +8,7 @@ import { dirname } from 'path';
 import { loadEnv } from './lib/load-env.mjs';
 import { summarizeSourceHealth } from './lib/source-health.mjs';
 import { DEFAULT_DIGEST_TIMEZONE, digestRecipients, getTodayActivity, localDateString } from './lib/today-activity.mjs';
-import { logJobConsiderPatchEvent, logResearchStatusEvent } from './lib/dashboard-activity.mjs';
+import { logJobConsiderPatchEvent, logNetworkingActivity, logResearchStatusEvent } from './lib/dashboard-activity.mjs';
 import { writeDailyActivityCsv } from './lib/daily-activity-csv.mjs';
 import { run as syncApplications } from './adapters/applications-adapter.mjs';
 import {
@@ -50,6 +50,10 @@ import {
   queuePhdscannerOpportunityWork,
 } from './lib/phdscanner/factory.mjs';
 import {
+  DASHBOARD_UMICH_FILE,
+  readUmichOpportunities,
+} from './lib/umich-careers/opportunity-store.mjs';
+import {
   findExhibitorCompany,
   patchExhibitorCompany,
   readExhibitorCompanies,
@@ -62,6 +66,28 @@ import {
   readExhibitorClearQueue,
   refreshExhibitorClearQueueStatus,
 } from './lib/exhibitor/factory.mjs';
+import {
+  appendNetworkingInteraction,
+  buildNetworkingReadModel,
+  deleteNetworkingPerson,
+  patchNetworkingPerson,
+  patchNetworkingTask,
+  readNetworking,
+  reviewNetworkingPerson,
+  syncNetworkingToDashboard,
+  upsertNetworkingEdge,
+  upsertNetworkingEvent,
+  upsertNetworkingOrganization,
+  upsertNetworkingPerson,
+  upsertNetworkingTask,
+} from './lib/networking/store.mjs';
+import {
+  completeNetworkingResearch,
+  markNetworkingResearchInProgress,
+  markNetworkingResearchReviewReady,
+  queueNetworkingResearch,
+  readNetworkingResearchQueue,
+} from './lib/networking/factory.mjs';
 import {
   createTrackerRow,
   deleteTrackerRow,
@@ -304,6 +330,20 @@ async function routeApi(req, res, pathname) {
   if (pathname === '/api/phdscanner/opportunities') {
     if (req.method !== 'GET') return sendJson(res, { error: 'method not allowed' }, 405), true;
     sendJson(res, readPhdscannerOpportunities());
+    return true;
+  }
+  if (pathname === '/api/umich-careers/opportunities') {
+    if (req.method !== 'GET') return sendJson(res, { error: 'method not allowed' }, 405), true;
+    sendJson(res, readUmichOpportunities(existsSync(DASHBOARD_UMICH_FILE) ? DASHBOARD_UMICH_FILE : undefined));
+    return true;
+  }
+  if (pathname === '/api/umich-careers/health') {
+    if (req.method !== 'GET') return sendJson(res, { error: 'method not allowed' }, 405), true;
+    const store = readUmichOpportunities();
+    sendJson(res, {
+      generated_at: new Date().toISOString(),
+      ...store.scan_health,
+    });
     return true;
   }
   if (pathname === '/api/exhibitor/companies') {
@@ -868,6 +908,199 @@ async function routeApi(req, res, pathname) {
       return true;
     }
     sendJson(res, { opportunity });
+    return true;
+  }
+  if (pathname === '/api/networking') {
+    if (req.method !== 'GET') return sendJson(res, { error: 'method not allowed' }, 405), true;
+    try {
+      sendJson(res, buildNetworkingReadModel(readNetworking()));
+    } catch (err) {
+      sendJson(res, { error: err?.message || 'failed to read networking data' }, 400);
+    }
+    return true;
+  }
+  if (pathname === '/api/networking/organizations') {
+    if (req.method !== 'POST') return sendJson(res, { error: 'method not allowed' }, 405), true;
+    try {
+      const input = await readBodyJson(req);
+      const result = upsertNetworkingOrganization(input || {});
+      syncNetworkingToDashboard();
+      logNetworkingActivity({ action: 'organization_saved', organization: result.organization });
+      sendJson(res, result, 201);
+    } catch (err) {
+      sendJson(res, { error: err?.message || 'failed to save networking organization' }, 400);
+    }
+    return true;
+  }
+  if (pathname === '/api/networking/people') {
+    if (req.method !== 'POST') return sendJson(res, { error: 'method not allowed' }, 405), true;
+    try {
+      const input = await readBodyJson(req);
+      const result = upsertNetworkingPerson(input || {});
+      syncNetworkingToDashboard();
+      logNetworkingActivity({ action: 'person_saved', person: result.person });
+      sendJson(res, result, 201);
+    } catch (err) {
+      sendJson(res, { error: err?.message || 'failed to save networking person' }, 400);
+    }
+    return true;
+  }
+  if (pathname.startsWith('/api/networking/people/')) {
+    const personPath = pathname.slice('/api/networking/people/'.length).split('/');
+    const id = decodeURIComponent(personPath[0] || '');
+    const personAction = personPath[1] || '';
+    if (!id) return sendJson(res, { error: 'networking person id required' }, 400), true;
+    if (personAction === 'review') {
+      if (req.method !== 'PATCH') return sendJson(res, { error: 'method not allowed' }, 405), true;
+      try {
+        const input = await readBodyJson(req);
+        const result = reviewNetworkingPerson(id, input.action);
+        syncNetworkingToDashboard();
+        logNetworkingActivity({
+          action: result.person.review_status === 'approved' ? 'candidate_approved' : 'candidate_rejected',
+          person: result.person,
+        });
+        sendJson(res, result);
+      } catch (err) {
+        const status = /not found/i.test(err?.message || '') ? 404 : 400;
+        sendJson(res, { error: err?.message || 'failed to review networking candidate' }, status);
+      }
+      return true;
+    }
+    if (req.method === 'PATCH') {
+      try {
+        const input = await readBodyJson(req);
+        const result = patchNetworkingPerson(id, input || {});
+        syncNetworkingToDashboard();
+        logNetworkingActivity({
+          action: input?.relationship_stage ? 'relationship_stage_changed' : 'person_updated',
+          person: result.person,
+        });
+        sendJson(res, result);
+      } catch (err) {
+        const status = /not found/i.test(err?.message || '') ? 404 : 400;
+        sendJson(res, { error: err?.message || 'failed to update networking person' }, status);
+      }
+      return true;
+    }
+    if (req.method === 'DELETE') {
+      try {
+        const result = deleteNetworkingPerson(id);
+        syncNetworkingToDashboard();
+        logNetworkingActivity({ action: 'person_deleted', person: result.person });
+        sendJson(res, result);
+      } catch (err) {
+        const status = /not found/i.test(err?.message || '') ? 404 : 400;
+        sendJson(res, { error: err?.message || 'failed to delete networking person' }, status);
+      }
+      return true;
+    }
+    sendJson(res, { error: 'method not allowed' }, 405);
+    return true;
+  }
+  if (pathname === '/api/networking/interactions') {
+    if (req.method !== 'POST') return sendJson(res, { error: 'method not allowed' }, 405), true;
+    try {
+      const input = await readBodyJson(req);
+      const result = appendNetworkingInteraction(input || {});
+      syncNetworkingToDashboard();
+      logNetworkingActivity({ action: 'interaction_logged', person: result.person, interaction: result.interaction });
+      sendJson(res, result, 201);
+    } catch (err) {
+      const status = /not found/i.test(err?.message || '') ? 404 : 400;
+      sendJson(res, { error: err?.message || 'failed to log networking interaction' }, status);
+    }
+    return true;
+  }
+  if (pathname === '/api/networking/tasks') {
+    if (req.method !== 'POST') return sendJson(res, { error: 'method not allowed' }, 405), true;
+    try {
+      const input = await readBodyJson(req);
+      const result = upsertNetworkingTask(input || {});
+      syncNetworkingToDashboard();
+      logNetworkingActivity({ action: 'task_saved', task: result.task });
+      sendJson(res, result, 201);
+    } catch (err) {
+      sendJson(res, { error: err?.message || 'failed to save networking task' }, 400);
+    }
+    return true;
+  }
+  if (pathname.startsWith('/api/networking/tasks/')) {
+    const id = decodeURIComponent(pathname.slice('/api/networking/tasks/'.length).split('/')[0] || '');
+    if (req.method !== 'PATCH') return sendJson(res, { error: 'method not allowed' }, 405), true;
+    try {
+      const input = await readBodyJson(req);
+      const result = patchNetworkingTask(id, input || {});
+      syncNetworkingToDashboard();
+      logNetworkingActivity({ action: result.task.state === 'completed' ? 'task_completed' : 'task_updated', task: result.task });
+      sendJson(res, result);
+    } catch (err) {
+      const status = /not found/i.test(err?.message || '') ? 404 : 400;
+      sendJson(res, { error: err?.message || 'failed to update networking task' }, status);
+    }
+    return true;
+  }
+  if (pathname === '/api/networking/edges') {
+    if (req.method !== 'POST') return sendJson(res, { error: 'method not allowed' }, 405), true;
+    try {
+      const input = await readBodyJson(req);
+      const result = upsertNetworkingEdge(input || {});
+      syncNetworkingToDashboard();
+      logNetworkingActivity({ action: 'path_saved', notes: result.edge.notes });
+      sendJson(res, result, 201);
+    } catch (err) {
+      sendJson(res, { error: err?.message || 'failed to save networking path' }, 400);
+    }
+    return true;
+  }
+  if (pathname === '/api/networking/events') {
+    if (req.method !== 'POST') return sendJson(res, { error: 'method not allowed' }, 405), true;
+    try {
+      const input = await readBodyJson(req);
+      const result = upsertNetworkingEvent(input || {});
+      syncNetworkingToDashboard();
+      logNetworkingActivity({ action: 'event_saved', notes: result.event.name });
+      sendJson(res, result, 201);
+    } catch (err) {
+      sendJson(res, { error: err?.message || 'failed to save networking event' }, 400);
+    }
+    return true;
+  }
+  if (pathname === '/api/networking/research-queue') {
+    if (req.method === 'GET') {
+      sendJson(res, readNetworkingResearchQueue());
+      return true;
+    }
+    if (req.method === 'POST') {
+      try {
+        const input = await readBodyJson(req);
+        const result = queueNetworkingResearch(input || {});
+        logNetworkingActivity({ action: 'research_queued', notes: result.order.organization_name });
+        sendJson(res, result, result.duplicate ? 200 : 201);
+      } catch (err) {
+        sendJson(res, { error: err?.message || 'failed to queue networking research' }, 400);
+      }
+      return true;
+    }
+    sendJson(res, { error: 'method not allowed' }, 405);
+    return true;
+  }
+  if (pathname.startsWith('/api/networking/research-queue/')) {
+    const id = decodeURIComponent(pathname.slice('/api/networking/research-queue/'.length).split('/')[0] || '');
+    if (req.method !== 'PATCH') return sendJson(res, { error: 'method not allowed' }, 405), true;
+    try {
+      const input = await readBodyJson(req);
+      let result;
+      if (input.action === 'start') result = markNetworkingResearchInProgress(id);
+      else if (input.action === 'review_ready') result = markNetworkingResearchReviewReady(id, input.candidate_person_ids || []);
+      else if (input.action === 'complete') result = completeNetworkingResearch(id);
+      else if (input.action === 'fail') result = completeNetworkingResearch(id, { failed: true, error: input.error || '' });
+      else throw new Error('networking research queue action must be start, review_ready, complete, or fail');
+      sendJson(res, result);
+    } catch (err) {
+      const status = /not found/i.test(err?.message || '') ? 404 : 400;
+      sendJson(res, { error: err?.message || 'failed to update networking research order' }, status);
+    }
     return true;
   }
   if (pathname === '/api/jobs-to-consider') {

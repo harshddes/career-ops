@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-17T13:01:27.975Z",
+  "updated_at": "2026-07-23T20:00:17.154Z",
   "sources": {
     "umich": {
       "umich-ryan-mcbride-ppml": {
@@ -90,16 +90,16 @@
         }
       },
       "umich-nicholas-jordan-ppml": {
-        "updated_at": "2026-07-13T15:53:01.933Z",
-        "status": "contacted",
+        "updated_at": "2026-07-23T20:00:17.154Z",
+        "status": "followed_up",
         "last_contacted": "2026-07-13",
-        "last_followed_up": "2026-07-13",
-        "follow_up_date": "2026-07-20",
+        "last_followed_up": "2026-07-23",
+        "follow_up_date": "",
         "notes": "",
         "outreach": {
-          "stage": "",
-          "stage_updated_at": "2026-07-13T15:53:01.933Z",
-          "entered_at": "",
+          "stage": "finished",
+          "stage_updated_at": "2026-07-23T20:00:17.154Z",
+          "entered_at": "2026-07-23T19:59:52.966Z",
           "notes": ""
         }
       },
@@ -397,6 +397,62 @@
         "outreach": {
           "stage": "",
           "stage_updated_at": "2026-07-13T23:10:18.793Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "umich-georg-raithel-amo": {
+        "updated_at": "2026-07-17T13:09:27.464Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-17",
+        "last_followed_up": "",
+        "follow_up_date": "2026-07-24",
+        "notes": "",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-07-17T13:09:27.464Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "umich-steve-cundiff-ultrafast": {
+        "updated_at": "2026-07-17T13:40:47.153Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-17",
+        "last_followed_up": "",
+        "follow_up_date": "2026-07-24",
+        "notes": "",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-07-17T13:40:47.153Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "umich-test-status-1784813586581": {
+        "updated_at": "2026-07-23T13:33:07.031Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-23",
+        "last_followed_up": "",
+        "follow_up_date": "2026-07-30",
+        "notes": "",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-07-23T13:33:07.031Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "umich-test-status-1784813613970": {
+        "updated_at": "2026-07-23T13:33:34.432Z",
+        "status": "contacted",
+        "last_contacted": "2026-07-23",
+        "last_followed_up": "",
+        "follow_up_date": "2026-07-30",
+        "notes": "",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-07-23T13:33:34.432Z",
           "entered_at": "",
           "notes": ""
         }

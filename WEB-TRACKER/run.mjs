@@ -109,6 +109,10 @@ async function runStartupWork() {
     await runScript('phdscanner-factory-worker.mjs', ['--max', '3']);
     const findaphdCode = await runScript('findaphd-scan.mjs', ['--all', '--refresh-liveness'], { timeoutMs: 600_000 });
     if (findaphdCode) console.warn('[boot] FindAPhD scan exited non-zero (Cloudflare/playwright may need a later tick).');
+
+    console.log('[boot] Running initial U-M Careers discovery sweep in background...');
+    const umichCode = await runScript('umich-careers-scan.mjs', ['--discover'], { timeoutMs: 600_000 });
+    if (umichCode) console.warn('[boot] U-M Careers discovery exited non-zero (will retry on cron).');
   }
 
   console.log('[boot] Syncing career-ops data in background...');
@@ -132,13 +136,17 @@ async function runStartupWork() {
 }
 
 // ── Step 1: Start server first ──────────────────────────────────────
+// Full server is the default: it implements every dashboard write endpoint
+// (applications create/edit/delete, schedule, action plan, agent tasks, autonomy).
+// The fast server is a read-mostly subset kept for static snapshot generation;
+// opt in with CAREER_OPS_FAST_SERVER=1 only if you know you don't need writes.
 
-if (envEnabled(process.env.CAREER_OPS_FULL_SERVER)) {
-  const { startServer } = await import('./server.mjs');
-  await startServer();
-} else {
+if (envEnabled(process.env.CAREER_OPS_FAST_SERVER)) {
   const { startFastServer } = await import('./server-fast.mjs');
   await startFastServer();
+} else {
+  const { startServer } = await import('./server.mjs');
+  await startServer();
 }
 
 // ── Step 2: Open browser ────────────────────────────────────────────
@@ -187,6 +195,26 @@ if (MODE !== 'manual') {
     await runScript('adapters/sync-all.mjs');
   });
 
+  // U-M Careers discovery: every 15 minutes (page-1 new IDs only).
+  cron.schedule('*/15 * * * *', async () => {
+    console.log(`\n[cron] Running U-M Careers discovery sweep...`);
+    await runScript('umich-careers-scan.mjs', ['--discover'], { timeoutMs: 600_000 });
+  });
+
+  // U-M Careers full F/P reconciliation: every 6 hours.
+  cron.schedule('7 */6 * * *', async () => {
+    console.log(`\n[cron] Running U-M Careers full reconcile...`);
+    await runScript('umich-careers-scan.mjs', ['--full'], { timeoutMs: 45 * 60_000 });
+    await runScript('adapters/sync-all.mjs');
+  });
+
+  // U-M Careers rolling detail refresh: daily.
+  cron.schedule('41 4 * * *', async () => {
+    console.log(`\n[cron] Running U-M Careers detail refresh...`);
+    await runScript('umich-careers-scan.mjs', ['--details'], { timeoutMs: 30 * 60_000 });
+    await runScript('adapters/sync-all.mjs');
+  });
+
   // EURAXESS factory: every 15 minutes while the dashboard process is alive.
   cron.schedule('*/15 * * * *', async () => {
     console.log(`\n[cron] Running EURAXESS factory worker tick...`);
@@ -221,7 +249,7 @@ if (MODE !== 'manual') {
     });
   }
 
-  console.log(`[cron] Scheduled: jobs (8h), PhD (48h), EURAXESS scan (2h), PhD board scan (2h), EURAXESS factory (15m), PhDScanner factory (15m), sync (2h)${process.env.APIFY_TOKEN || process.env.EURAXESS_APIFY_TOKEN ? ', EURAXESS backfill (daily)' : ''}${MODE === 'autopilot' ? ', gate (4h)' : ''}`);
+  console.log(`[cron] Scheduled: jobs (8h), PhD (48h), EURAXESS scan (2h), PhD board scan (2h), U-M Careers discover (15m) + full (6h) + details (daily), EURAXESS factory (15m), PhDScanner factory (15m), sync (2h)${process.env.APIFY_TOKEN || process.env.EURAXESS_APIFY_TOKEN ? ', EURAXESS backfill (daily)' : ''}${MODE === 'autopilot' ? ', gate (4h)' : ''}`);
   if (envEnabled(process.env.JOBS_TO_CONSIDER_LIVENESS)) {
     console.log('[cron] Jobs to Consider liveness is scheduled by the dashboard server.');
   } else {
