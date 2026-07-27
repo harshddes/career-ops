@@ -1,17 +1,17 @@
 {
   "version": 1,
-  "generated_at": "2026-07-27T20:42:33.747Z",
+  "generated_at": "2026-07-27T22:17:32.409Z",
   "scope": "EURAXESS live research opportunities",
   "scan_summary": {
     "provider": "official_or_permitted_feed",
     "status": "ok",
     "scanned_count": 20,
-    "total_count": 631,
+    "total_count": 633,
     "visible_count": 46,
-    "archived_count": 585,
+    "archived_count": 587,
     "queued_count": 6,
     "top_priority_count": 4,
-    "last_success": "2026-07-27T20:42:32.965Z",
+    "last_success": "2026-07-27T22:17:31.460Z",
     "last_error": "",
     "threshold_visible": 2.4,
     "threshold_strong": 3.2,
@@ -33,7 +33,7 @@
       "failed_count": 0,
       "with_artifacts_count": 4
     },
-    "rescored_at": "2026-07-27T20:42:33.468Z"
+    "rescored_at": "2026-07-27T22:17:32.113Z"
   },
   "opportunities": [
     {
@@ -163,7 +163,7 @@
       },
       "jobs_to_consider_id": "european-synchrotron-radiation-facility-senior-fpga-engineer",
       "first_seen": "2026-07-18T08:17:00.712Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446951",
@@ -290,7 +290,7 @@
       },
       "jobs_to_consider_id": "alba-synchrotron-light-source-project-engineer-cryogenic",
       "first_seen": "2026-07-07T14:17:00.209Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446818",
@@ -410,7 +410,7 @@
       },
       "jobs_to_consider_id": "fondazione-bruno-kessler-phd-candidate-design-fabrication-and-characterization-of-plasmonic-ante",
       "first_seen": "2026-07-06T15:02:00.590Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446816",
@@ -533,7 +533,7 @@
       },
       "jobs_to_consider_id": "fondazione-bruno-kessler-phd-candidate-development-of-3d-integrated-trench-isolated-lgads-for-de",
       "first_seen": "2026-07-06T15:02:00.590Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447004",
@@ -656,7 +656,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-08T00:17:00.592Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446822",
@@ -769,7 +769,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-06T15:02:00.590Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450145",
@@ -884,7 +884,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T08:17:00.712Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452442",
@@ -997,7 +997,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-26T06:48:01.210Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448495",
@@ -1110,7 +1110,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-11T23:03:10.844Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451904",
@@ -1224,7 +1224,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452305",
@@ -1338,7 +1338,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T17:13:49.119Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450142",
@@ -1450,7 +1450,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T08:17:00.712Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446820",
@@ -1559,7 +1559,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-06T15:02:00.590Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452307",
@@ -1671,7 +1671,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T17:13:49.119Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452320",
@@ -1783,7 +1783,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-26T00:12:22.608Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446817",
@@ -1892,7 +1892,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-06T15:02:00.590Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450160",
@@ -2003,7 +2003,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T08:17:00.712Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450158",
@@ -2114,7 +2114,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T08:17:00.712Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448705",
@@ -2225,7 +2225,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-12T06:17:00.667Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447781",
@@ -2336,7 +2336,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T14:31:17.339Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449892",
@@ -2447,7 +2447,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T12:57:32.817Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450491",
@@ -2553,7 +2553,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-20T06:17:00.963Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450486",
@@ -2655,7 +2655,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-20T06:17:00.963Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446777",
@@ -2766,7 +2766,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-05T14:35:47.572Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446784",
@@ -2876,7 +2876,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-05T14:35:47.572Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448698",
@@ -2979,7 +2979,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-12T06:17:00.667Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451275",
@@ -3082,7 +3082,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T11:40:58.212Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452316",
@@ -3191,7 +3191,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T18:07:36.765Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447790",
@@ -3300,7 +3300,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T18:17:00.789Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447782",
@@ -3409,7 +3409,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T14:31:17.339Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450469",
@@ -3518,7 +3518,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-20T06:17:00.963Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447600",
@@ -3627,7 +3627,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T13:09:39.308Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448712",
@@ -3735,7 +3735,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-12T06:17:00.667Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452283",
@@ -3838,7 +3838,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T15:18:17.261Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452280",
@@ -3946,7 +3946,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T14:01:33.703Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449908",
@@ -4056,7 +4056,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T12:57:32.817Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447611",
@@ -4165,7 +4165,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T13:09:39.308Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452160",
@@ -4274,7 +4274,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T09:12:21.531Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452238",
@@ -4382,7 +4382,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T12:08:56.653Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452471",
@@ -4446,7 +4446,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-27T07:49:03.060Z",
-        "last_seen": "2026-07-27T20:42:32.965Z",
+        "last_seen": "2026-07-27T22:17:31.460Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -4489,7 +4489,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-27T07:49:03.060Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450989",
@@ -4594,7 +4594,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-22T12:17:01.133Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447598",
@@ -4703,7 +4703,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T13:09:39.308Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452138",
@@ -4810,7 +4810,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T06:28:31.298Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452162",
@@ -4915,7 +4915,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T09:12:21.531Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450695",
@@ -5020,7 +5020,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-21T16:17:00.382Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452474",
@@ -5084,7 +5084,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-27T15:12:31.763Z",
-        "last_seen": "2026-07-27T20:42:32.965Z",
+        "last_seen": "2026-07-27T22:17:31.460Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -5127,7 +5127,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-27T15:12:31.763Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452195",
@@ -5230,7 +5230,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T10:43:15.926Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447615",
@@ -5333,7 +5333,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T13:09:39.308Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450697",
@@ -5435,7 +5435,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-21T16:17:00.382Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450492",
@@ -5537,7 +5537,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-20T06:17:00.963Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452284",
@@ -5639,7 +5639,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T15:18:17.261Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451055",
@@ -5743,7 +5743,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T04:17:00.985Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451310",
@@ -5844,7 +5844,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T14:17:00.853Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451016",
@@ -5944,7 +5944,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-22T12:17:01.133Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451488",
@@ -6044,7 +6044,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T22:15:52.128Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449961",
@@ -6150,7 +6150,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T18:17:00.900Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447409",
@@ -6252,7 +6252,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-08T18:17:00.366Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452310",
@@ -6356,7 +6356,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T18:07:36.765Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451863",
@@ -6465,7 +6465,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T12:17:00.648Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448718",
@@ -6565,7 +6565,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-12T06:17:00.667Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450497",
@@ -6665,7 +6665,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-20T17:59:52.910Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452123",
@@ -6765,7 +6765,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T06:28:31.298Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452223",
@@ -6865,7 +6865,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T12:08:56.653Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450685",
@@ -6965,7 +6965,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-21T16:17:00.382Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452296",
@@ -7065,7 +7065,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T15:18:17.261Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452181",
@@ -7171,7 +7171,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T09:12:21.531Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452201",
@@ -7271,7 +7271,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T10:43:15.926Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452205",
@@ -7371,7 +7371,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T10:43:15.926Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452208",
@@ -7471,7 +7471,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T10:43:15.926Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452203",
@@ -7571,7 +7571,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T10:43:15.926Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452191",
@@ -7671,7 +7671,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T10:43:15.926Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452199",
@@ -7771,7 +7771,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T10:43:15.926Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452189",
@@ -7871,7 +7871,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T10:43:15.926Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449915",
@@ -7976,7 +7976,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T12:57:32.817Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448714",
@@ -8078,7 +8078,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-12T06:17:00.667Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447002",
@@ -8182,7 +8182,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T18:17:00.483Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446992",
@@ -8287,7 +8287,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T18:17:00.483Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452172",
@@ -8394,7 +8394,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T09:12:21.531Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452247",
@@ -8497,7 +8497,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T12:08:56.653Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451274",
@@ -8604,7 +8604,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T11:40:58.212Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449935",
@@ -8714,7 +8714,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T18:17:00.900Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452464",
@@ -8786,7 +8786,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-26T18:12:03.774Z",
-        "last_seen": "2026-07-27T20:42:32.965Z",
+        "last_seen": "2026-07-27T22:17:31.460Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -8829,7 +8829,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-26T18:12:03.774Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451269",
@@ -8936,7 +8936,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T11:40:58.212Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446948",
@@ -9050,7 +9050,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T14:17:00.209Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452443",
@@ -9156,7 +9156,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-26T06:48:01.210Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448709",
@@ -9272,7 +9272,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-12T06:17:00.667Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447430",
@@ -9383,7 +9383,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-08T22:17:00.827Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448699",
@@ -9488,7 +9488,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-12T06:17:00.667Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452155",
@@ -9591,7 +9591,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T09:12:21.531Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452306",
@@ -9705,7 +9705,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T17:13:49.119Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451474",
@@ -9816,7 +9816,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T22:15:52.128Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450683",
@@ -9919,7 +9919,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-21T16:17:00.382Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448708",
@@ -10026,7 +10026,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-12T06:17:00.667Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451065",
@@ -10132,7 +10132,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T04:17:00.985Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452289",
@@ -10238,7 +10238,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T15:18:17.261Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452290",
@@ -10350,7 +10350,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T15:18:17.261Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450307",
@@ -10469,7 +10469,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450306",
@@ -10579,7 +10579,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452445",
@@ -10696,7 +10696,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-26T06:48:01.210Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452192",
@@ -10802,7 +10802,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T10:43:15.926Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451866",
@@ -10914,7 +10914,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T12:17:00.648Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447424",
@@ -11024,7 +11024,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-08T18:17:00.366Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449910",
@@ -11125,7 +11125,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T12:57:32.817Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452274",
@@ -11226,7 +11226,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T14:01:33.703Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451907",
@@ -11327,7 +11327,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451059",
@@ -11430,7 +11430,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T04:17:00.985Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447005",
@@ -11531,7 +11531,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-08T00:17:00.592Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452170",
@@ -11632,7 +11632,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T09:12:21.531Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448490",
@@ -11733,7 +11733,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-11T23:03:10.844Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446985",
@@ -11834,7 +11834,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T14:17:00.209Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448492",
@@ -11935,7 +11935,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-11T23:03:10.844Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451901",
@@ -12036,7 +12036,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446998",
@@ -12137,7 +12137,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T18:17:00.483Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446993",
@@ -12242,7 +12242,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T18:17:00.483Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451876",
@@ -12343,7 +12343,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T12:17:00.648Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447612",
@@ -12444,7 +12444,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T13:09:39.308Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448493",
@@ -12545,7 +12545,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-11T23:03:10.844Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450291",
@@ -12646,7 +12646,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451283",
@@ -12747,7 +12747,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T11:40:58.212Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450999",
@@ -12848,7 +12848,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-22T12:17:01.133Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450688",
@@ -12949,7 +12949,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-21T16:17:00.382Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452315",
@@ -13050,7 +13050,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T18:07:36.765Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448723",
@@ -13150,7 +13150,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-12T06:17:00.667Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448724",
@@ -13250,7 +13250,107 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-12T12:17:00.899Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
+    },
+    {
+      "id": "euraxess-fusion-452475",
+      "source": "euraxess-fusion",
+      "provider": "official_rss_feed",
+      "external_id": "452475",
+      "url": "https://euraxess.ec.europa.eu/jobs/452475",
+      "title": "(Ref. 1929) 2 research contracts (for OFPI) as part of the XR2Industry project",
+      "institution": "UNIVERSIDAD DE GRANADA",
+      "country": "Europe / International",
+      "summary": "As part of the research project to which they will be assigned, the successful candidate will carry out the following tasks: The pre-doctoral research fellow will undertake quantitative and qualitative research, research communication and teaching…",
+      "posted_at": "Mon, 13 Jul 26 10:12:47 +0200",
+      "deadline_text": "",
+      "deadline_utc": "",
+      "status": "open_unverified",
+      "liveness": "active",
+      "liveness_reason": "RSS feed item has no parsed deadline; verify posting before applying",
+      "score": 1.14,
+      "score_band": "archive",
+      "tier": "D",
+      "visible": false,
+      "archived": true,
+      "fit_rationale": "Role fit: doctoral.",
+      "risk_flags": [
+        "missing_deadline"
+      ],
+      "score_breakdown": {
+        "strong_matches": [],
+        "adjacent_matches": [],
+        "role_matches": [
+          "doctoral"
+        ],
+        "role_archive_matches": [],
+        "negative_matches": [],
+        "computation_matches": [],
+        "physical_hardware_anchors": [],
+        "tier_cap": "",
+        "deadline": "",
+        "protected_domain_matches": []
+      },
+      "research_fields": [],
+      "academic_level": "",
+      "researcher_profile": "",
+      "language": "",
+      "translated_title": "",
+      "translated_summary": "",
+      "needs_research": false,
+      "needs_application_pack": false,
+      "worker_status": "not_needed",
+      "research_report": "",
+      "resources": {},
+      "coverage": {
+        "provider": "official_rss_feed",
+        "feed_window": "",
+        "backfill_profile": "",
+        "first_seen": "2026-07-27T22:17:31.460Z",
+        "last_seen": "2026-07-27T22:17:31.460Z",
+        "duplicate_of": ""
+      },
+      "verification": {
+        "deadline_source": "missing",
+        "status_source": "rss_unverified",
+        "verified_at": "",
+        "verification_required": true
+      },
+      "automation": {
+        "worker_status": "not_needed",
+        "current_stage": "discovered",
+        "attempts": 0,
+        "next_retry_at": "",
+        "last_error": "",
+        "runner": "",
+        "last_run_at": ""
+      },
+      "artifacts": {
+        "research_report": "",
+        "resume_tex": "",
+        "resume_pdf": "",
+        "cover_letter_pdf": "",
+        "email_draft": "",
+        "manifest_path": ""
+      },
+      "decision": {
+        "apply_recommendation": "",
+        "score": 1.14,
+        "confidence": null,
+        "rationale": "Role fit: doctoral.",
+        "archive_reason": ""
+      },
+      "execution": {
+        "stage": null,
+        "ready_checked": false,
+        "stage_updated_at": "",
+        "applied_at": "",
+        "application_num": null,
+        "notes": ""
+      },
+      "jobs_to_consider_id": "",
+      "first_seen": "2026-07-27T22:17:31.460Z",
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451913",
@@ -13350,7 +13450,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452269",
@@ -13452,7 +13552,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T14:01:33.703Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447003",
@@ -13554,7 +13654,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T18:17:00.483Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451270",
@@ -13654,7 +13754,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T11:40:58.212Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448725",
@@ -13754,7 +13854,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-12T12:17:00.899Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451261",
@@ -13854,7 +13954,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T11:40:58.212Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450987",
@@ -13954,7 +14054,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-22T12:17:01.133Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452265",
@@ -14054,7 +14154,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T14:01:33.703Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452276",
@@ -14154,7 +14254,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T14:01:33.703Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452262",
@@ -14254,7 +14354,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T14:01:33.703Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446810",
@@ -14356,7 +14456,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-05T14:35:47.572Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447795",
@@ -14456,7 +14556,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T18:17:00.789Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450487",
@@ -14556,7 +14656,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-20T06:17:00.963Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448717",
@@ -14656,7 +14756,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-12T06:17:00.667Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448505",
@@ -14758,7 +14858,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-11T23:03:10.844Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448503",
@@ -14860,7 +14960,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-11T23:03:10.844Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448507",
@@ -14960,7 +15060,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-11T23:03:10.844Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448508",
@@ -15060,7 +15160,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-11T23:03:10.844Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450696",
@@ -15160,7 +15260,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-21T16:17:00.382Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451064",
@@ -15262,7 +15362,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T04:17:00.985Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452441",
@@ -15362,7 +15462,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-26T06:48:01.210Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448706",
@@ -15464,7 +15564,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-12T06:17:00.667Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447793",
@@ -15564,7 +15664,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T18:17:00.789Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452288",
@@ -15664,7 +15764,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T15:18:17.261Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450699",
@@ -15764,7 +15864,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-21T16:17:00.382Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446785",
@@ -15864,7 +15964,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-05T14:35:47.572Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452301",
@@ -15966,7 +16066,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T15:18:17.261Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452273",
@@ -16066,7 +16166,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T14:01:33.703Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449917",
@@ -16166,7 +16266,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T12:57:32.817Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451475",
@@ -16266,7 +16366,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T22:15:52.128Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452239",
@@ -16366,7 +16466,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T12:08:56.653Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452245",
@@ -16466,7 +16566,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T12:08:56.653Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449976",
@@ -16566,7 +16666,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T00:17:00.527Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449953",
@@ -16668,7 +16768,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T18:17:00.900Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452317",
@@ -16768,7 +16868,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-26T00:12:22.608Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450698",
@@ -16868,7 +16968,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-21T16:17:00.382Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450465",
@@ -16970,7 +17070,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-20T06:17:00.963Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449960",
@@ -17070,7 +17170,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T18:17:00.900Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448710",
@@ -17170,7 +17270,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-12T06:17:00.667Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450427",
@@ -17272,7 +17372,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-19T09:43:22.618Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452214",
@@ -17372,7 +17472,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T10:43:15.926Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446983",
@@ -17474,7 +17574,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T14:17:00.209Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450302",
@@ -17574,7 +17674,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447791",
@@ -17674,7 +17774,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T18:17:00.789Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446995",
@@ -17774,7 +17874,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T18:17:00.483Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447422",
@@ -17874,7 +17974,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-08T18:17:00.366Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449956",
@@ -17974,7 +18074,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T18:17:00.900Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449958",
@@ -18074,7 +18174,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T18:17:00.900Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451483",
@@ -18174,7 +18274,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T22:15:52.128Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451469",
@@ -18276,7 +18376,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T22:15:52.128Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449954",
@@ -18378,7 +18478,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T18:17:00.900Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451478",
@@ -18478,7 +18578,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T22:15:52.128Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451480",
@@ -18578,7 +18678,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T22:15:52.128Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449968",
@@ -18678,7 +18778,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T00:17:00.527Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447413",
@@ -18778,7 +18878,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-08T18:17:00.366Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450294",
@@ -18878,7 +18978,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450296",
@@ -18978,7 +19078,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446991",
@@ -19078,7 +19178,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T18:17:00.483Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449963",
@@ -19178,7 +19278,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T18:17:00.900Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451481",
@@ -19278,7 +19378,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T22:15:52.128Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447783",
@@ -19378,7 +19478,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T14:31:17.339Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451471",
@@ -19478,7 +19578,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T22:15:52.128Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451477",
@@ -19578,7 +19678,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T22:15:52.128Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446974",
@@ -19678,7 +19778,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T14:17:00.209Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447414",
@@ -19778,7 +19878,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-08T18:17:00.366Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452168",
@@ -19878,7 +19978,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T09:12:21.531Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447421",
@@ -19980,7 +20080,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-08T18:17:00.366Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447603",
@@ -20080,7 +20180,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T13:09:39.308Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451875",
@@ -20182,7 +20282,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T12:17:00.648Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449936",
@@ -20282,7 +20382,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T18:17:00.900Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450305",
@@ -20382,7 +20482,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451053",
@@ -20482,7 +20582,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T04:17:00.985Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450666",
@@ -20582,7 +20682,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-21T16:17:00.382Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451281",
@@ -20682,7 +20782,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T11:40:58.212Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451061",
@@ -20782,7 +20882,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T04:17:00.985Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449971",
@@ -20882,7 +20982,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T00:17:00.527Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451062",
@@ -20984,7 +21084,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T04:17:00.985Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452311",
@@ -21084,7 +21184,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T18:07:36.765Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451063",
@@ -21186,7 +21286,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T04:17:00.985Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447601",
@@ -21286,7 +21386,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T13:09:39.308Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446790",
@@ -21386,7 +21486,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-05T14:35:47.572Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452179",
@@ -21486,7 +21586,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T09:12:21.531Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449898",
@@ -21586,7 +21686,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T12:57:32.817Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452202",
@@ -21686,7 +21786,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T10:43:15.926Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450155",
@@ -21788,7 +21888,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T08:17:00.712Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450980",
@@ -21888,7 +21988,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-22T12:17:01.133Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446959",
@@ -21988,7 +22088,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T14:17:00.209Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446812",
@@ -22088,7 +22188,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-05T20:33:36.916Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446819",
@@ -22188,7 +22288,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-06T15:02:00.590Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450148",
@@ -22288,7 +22388,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T08:17:00.712Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446971",
@@ -22388,7 +22488,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T14:17:00.209Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449911",
@@ -22488,7 +22588,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T12:57:32.817Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452447",
@@ -22588,7 +22688,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-26T06:48:01.210Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451902",
@@ -22688,7 +22788,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451479",
@@ -22788,7 +22888,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T22:15:52.128Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451045",
@@ -22888,7 +22988,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T04:17:00.985Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451263",
@@ -22988,7 +23088,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T11:40:58.212Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451264",
@@ -23088,7 +23188,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T11:40:58.212Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452473",
@@ -23145,7 +23245,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-27T07:49:03.060Z",
-        "last_seen": "2026-07-27T20:42:32.965Z",
+        "last_seen": "2026-07-27T22:17:31.460Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -23188,7 +23288,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-27T07:49:03.060Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446809",
@@ -23286,7 +23386,7 @@
       },
       "jobs_to_consider_id": "university-of-valencia-dispositius-per-a-detectar-la-submissi-qu-mica-cpi-26-355",
       "first_seen": "2026-07-05T14:35:47.572Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450482",
@@ -23384,7 +23484,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-20T06:17:00.963Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450485",
@@ -23482,7 +23582,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-20T06:17:00.963Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446808",
@@ -23584,7 +23684,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-05T14:35:47.572Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446807",
@@ -23682,7 +23782,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-05T14:35:47.572Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448713",
@@ -23782,7 +23882,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-12T06:17:00.667Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452472",
@@ -23837,7 +23937,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-27T07:49:03.060Z",
-        "last_seen": "2026-07-27T20:42:32.965Z",
+        "last_seen": "2026-07-27T22:17:31.460Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -23880,7 +23980,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-27T07:49:03.060Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451910",
@@ -23978,7 +24078,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451911",
@@ -24078,7 +24178,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446960",
@@ -24176,7 +24276,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T14:17:00.209Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450480",
@@ -24274,7 +24374,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-20T06:17:00.963Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450484",
@@ -24372,7 +24472,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-20T06:17:00.963Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450488",
@@ -24470,7 +24570,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-20T06:17:00.963Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450479",
@@ -24568,7 +24668,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-20T06:17:00.963Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452206",
@@ -24666,7 +24766,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T10:43:15.926Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450466",
@@ -24764,7 +24864,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-20T06:17:00.963Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452291",
@@ -24864,7 +24964,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T15:18:17.261Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448510",
@@ -24962,7 +25062,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-11T23:03:10.844Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452135",
@@ -25060,7 +25160,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T06:28:31.298Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452248",
@@ -25158,7 +25258,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T12:08:56.653Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451856",
@@ -25256,7 +25356,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T12:17:00.648Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447623",
@@ -25354,7 +25454,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T13:09:39.308Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450431",
@@ -25452,7 +25552,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-19T09:43:22.618Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450679",
@@ -25550,7 +25650,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-21T16:17:00.382Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451923",
@@ -25648,7 +25748,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T19:45:19.149Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452295",
@@ -25746,7 +25846,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T15:18:17.261Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447622",
@@ -25844,7 +25944,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T13:09:39.308Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450287",
@@ -25942,7 +26042,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450434",
@@ -26040,7 +26140,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-19T09:43:22.618Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450446",
@@ -26138,7 +26238,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-19T12:17:00.220Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450442",
@@ -26236,7 +26336,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-19T09:43:22.618Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451334",
@@ -26334,7 +26434,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T14:17:00.853Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450675",
@@ -26432,7 +26532,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-21T16:17:00.382Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448489",
@@ -26530,7 +26630,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-11T23:03:10.844Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451043",
@@ -26628,7 +26728,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T04:17:00.985Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448488",
@@ -26726,7 +26826,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-11T23:03:10.844Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450435",
@@ -26824,7 +26924,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-19T09:43:22.618Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451919",
@@ -26922,7 +27022,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T19:45:19.149Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451920",
@@ -27020,7 +27120,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T19:45:19.149Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446978",
@@ -27118,7 +27218,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T14:17:00.209Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450433",
@@ -27216,7 +27316,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-19T09:43:22.618Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450444",
@@ -27314,7 +27414,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-19T09:43:22.618Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451042",
@@ -27412,7 +27512,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T04:17:00.985Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451924",
@@ -27510,7 +27610,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T19:45:19.149Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451927",
@@ -27608,7 +27708,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T19:45:19.149Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451928",
@@ -27706,7 +27806,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T19:45:19.149Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452293",
@@ -27804,7 +27904,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T15:18:17.261Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452438",
@@ -27902,7 +28002,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-26T06:48:01.210Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450430",
@@ -28000,7 +28100,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-19T09:43:22.618Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451921",
@@ -28098,7 +28198,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T19:45:19.149Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450678",
@@ -28196,7 +28296,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-21T16:17:00.382Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451918",
@@ -28294,7 +28394,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452294",
@@ -28392,7 +28492,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T15:18:17.261Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449945",
@@ -28490,7 +28590,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T18:17:00.900Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450288",
@@ -28588,7 +28688,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450676",
@@ -28686,7 +28786,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-21T16:17:00.382Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450677",
@@ -28784,7 +28884,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-21T16:17:00.382Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451041",
@@ -28882,7 +28982,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T04:17:00.985Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451922",
@@ -28980,7 +29080,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T19:45:19.149Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450439",
@@ -29078,7 +29178,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-19T09:43:22.618Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450441",
@@ -29176,7 +29276,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-19T09:43:22.618Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450447",
@@ -29274,7 +29374,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-19T12:17:00.220Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449946",
@@ -29372,7 +29472,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T18:17:00.900Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450443",
@@ -29470,7 +29570,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-19T09:43:22.618Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450445",
@@ -29568,7 +29668,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-19T09:43:22.618Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451335",
@@ -29666,7 +29766,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T14:17:00.853Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451915",
@@ -29764,7 +29864,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451916",
@@ -29862,7 +29962,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450432",
@@ -29960,7 +30060,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-19T09:43:22.618Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450674",
@@ -30058,7 +30158,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-21T16:17:00.382Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451925",
@@ -30156,7 +30256,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T19:45:19.149Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451926",
@@ -30254,7 +30354,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T19:45:19.149Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451929",
@@ -30352,7 +30452,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T19:45:19.149Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450437",
@@ -30450,7 +30550,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-19T09:43:22.618Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447624",
@@ -30548,7 +30648,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T13:09:39.308Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450429",
@@ -30646,7 +30746,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-19T09:43:22.618Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451917",
@@ -30744,7 +30844,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450448",
@@ -30842,7 +30942,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-19T16:17:00.414Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450673",
@@ -30940,7 +31040,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-21T16:17:00.382Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451914",
@@ -31038,7 +31138,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450436",
@@ -31136,7 +31236,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-19T09:43:22.618Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450438",
@@ -31234,7 +31334,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-19T09:43:22.618Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450440",
@@ -31332,7 +31432,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-19T09:43:22.618Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451870",
@@ -31430,7 +31530,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T12:17:00.648Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451312",
@@ -31528,7 +31628,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T14:17:00.853Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450281",
@@ -31626,7 +31726,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450280",
@@ -31724,7 +31824,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452450",
@@ -31779,7 +31879,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-26T06:48:01.210Z",
-        "last_seen": "2026-07-27T20:42:32.965Z",
+        "last_seen": "2026-07-27T22:17:31.460Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -31822,7 +31922,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-26T06:48:01.210Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452437",
@@ -31920,7 +32020,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-26T06:48:01.210Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451898",
@@ -32018,7 +32118,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451317",
@@ -32116,7 +32216,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T14:17:00.853Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451318",
@@ -32214,7 +32314,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T14:17:00.853Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452261",
@@ -32312,7 +32412,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T14:01:33.703Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452173",
@@ -32410,7 +32510,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T09:12:21.531Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452235",
@@ -32508,7 +32608,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T12:08:56.653Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452176",
@@ -32606,7 +32706,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T09:12:21.531Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452228",
@@ -32704,7 +32804,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T12:08:56.653Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450692",
@@ -32802,7 +32902,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-21T16:17:00.382Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452207",
@@ -32900,7 +33000,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T10:43:15.926Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452227",
@@ -32998,7 +33098,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T12:08:56.653Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447392",
@@ -33096,7 +33196,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-08T18:17:00.366Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451874",
@@ -33194,7 +33294,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T12:17:00.648Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450481",
@@ -33292,7 +33392,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-20T06:17:00.963Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450489",
@@ -33390,7 +33490,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-20T06:17:00.963Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452134",
@@ -33490,7 +33590,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T06:28:31.298Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450303",
@@ -33588,7 +33688,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447410",
@@ -33688,7 +33788,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-08T18:17:00.366Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449904",
@@ -33786,7 +33886,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T12:57:32.817Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446976",
@@ -33884,7 +33984,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T14:17:00.209Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447391",
@@ -33982,7 +34082,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-08T18:17:00.366Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450494",
@@ -34080,7 +34180,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-20T12:17:00.374Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450188",
@@ -34178,7 +34278,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T08:17:00.712Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451260",
@@ -34276,7 +34376,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T11:40:58.212Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450490",
@@ -34374,7 +34474,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-20T06:17:00.963Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451308",
@@ -34472,7 +34572,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T14:17:00.853Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447415",
@@ -34570,7 +34670,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-08T18:17:00.366Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451314",
@@ -34668,7 +34768,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T14:17:00.853Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446787",
@@ -34766,7 +34866,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-05T14:35:47.572Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452129",
@@ -34864,7 +34964,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T06:28:31.298Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446795",
@@ -34962,7 +35062,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-05T14:35:47.572Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449926",
@@ -35060,7 +35160,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T12:57:32.817Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452132",
@@ -35158,7 +35258,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T06:28:31.298Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452233",
@@ -35256,7 +35356,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T12:08:56.653Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451272",
@@ -35354,7 +35454,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T11:40:58.212Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451257",
@@ -35452,7 +35552,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T11:40:58.212Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452131",
@@ -35552,7 +35652,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T06:28:31.298Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452279",
@@ -35650,7 +35750,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T14:01:33.703Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452281",
@@ -35748,7 +35848,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T14:01:33.703Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451326",
@@ -35846,7 +35946,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T14:17:00.853Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446950",
@@ -35944,7 +36044,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T14:17:00.209Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452444",
@@ -36042,7 +36142,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-26T06:48:01.210Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448485",
@@ -36140,7 +36240,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-11T23:03:10.844Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447418",
@@ -36238,7 +36338,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-08T18:17:00.366Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447788",
@@ -36336,7 +36436,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T18:17:00.789Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450301",
@@ -36434,7 +36534,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447784",
@@ -36532,7 +36632,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T14:31:17.339Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446957",
@@ -36630,7 +36730,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T14:17:00.209Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452121",
@@ -36728,7 +36828,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T06:28:31.298Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452118",
@@ -36826,7 +36926,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T06:28:31.298Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452164",
@@ -36924,7 +37024,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T09:12:21.531Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449914",
@@ -37022,7 +37122,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T12:57:32.817Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451900",
@@ -37120,7 +37220,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452285",
@@ -37218,7 +37318,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T15:18:17.261Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452278",
@@ -37318,7 +37418,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T14:01:33.703Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451324",
@@ -37416,7 +37516,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T14:17:00.853Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450425",
@@ -37514,7 +37614,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-19T09:43:22.618Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452476",
@@ -37569,7 +37669,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-27T07:49:03.060Z",
-        "last_seen": "2026-07-27T20:42:32.965Z",
+        "last_seen": "2026-07-27T22:17:31.460Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -37612,7 +37712,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-27T07:49:03.060Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452174",
@@ -37710,7 +37810,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T09:12:21.531Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450981",
@@ -37808,7 +37908,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-22T12:17:01.133Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449957",
@@ -37906,7 +38006,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T18:17:00.900Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450293",
@@ -38006,7 +38106,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450285",
@@ -38106,7 +38206,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446811",
@@ -38204,7 +38304,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-05T14:35:47.572Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446815",
@@ -38302,7 +38402,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-06T15:02:00.590Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452136",
@@ -38400,7 +38500,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T06:28:31.298Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450162",
@@ -38498,7 +38598,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T08:17:00.712Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451309",
@@ -38596,7 +38696,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T14:17:00.853Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446972",
@@ -38694,7 +38794,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T14:17:00.209Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449913",
@@ -38792,7 +38892,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T12:57:32.817Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451861",
@@ -38890,7 +38990,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T12:17:00.648Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452268",
@@ -38988,7 +39088,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T14:01:33.703Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452200",
@@ -39086,7 +39186,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T10:43:15.926Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452271",
@@ -39184,7 +39284,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T14:01:33.703Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450992",
@@ -39282,7 +39382,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-22T12:17:01.133Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451000",
@@ -39380,7 +39480,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-22T12:17:01.133Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452126",
@@ -39480,7 +39580,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T06:28:31.298Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448501",
@@ -39578,7 +39678,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-11T23:03:10.844Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452465",
@@ -39633,7 +39733,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-26T15:20:21.264Z",
-        "last_seen": "2026-07-27T20:42:32.965Z",
+        "last_seen": "2026-07-27T22:17:31.460Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -39676,7 +39776,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-26T15:20:21.264Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451872",
@@ -39776,7 +39876,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T12:17:00.648Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446788",
@@ -39874,7 +39974,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-05T14:35:47.572Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446955",
@@ -39972,7 +40072,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T14:17:00.209Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447602",
@@ -40070,7 +40170,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T13:09:39.308Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450493",
@@ -40168,7 +40268,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-20T06:17:00.963Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450151",
@@ -40266,7 +40366,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T08:17:00.712Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452270",
@@ -40364,7 +40464,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T14:01:33.703Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451265",
@@ -40462,7 +40562,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T11:40:58.212Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451322",
@@ -40560,7 +40660,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T14:17:00.853Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446970",
@@ -40658,7 +40758,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T14:17:00.209Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452117",
@@ -40756,7 +40856,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T06:28:31.298Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452287",
@@ -40854,7 +40954,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T15:18:17.261Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452120",
@@ -40952,7 +41052,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T06:28:31.298Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446988",
@@ -41052,7 +41152,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T18:17:00.483Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452169",
@@ -41150,7 +41250,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T09:12:21.531Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452137",
@@ -41248,7 +41348,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T06:28:31.298Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451865",
@@ -41346,7 +41446,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T12:17:00.648Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451897",
@@ -41444,7 +41544,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451899",
@@ -41542,7 +41642,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451905",
@@ -41640,7 +41740,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451906",
@@ -41740,7 +41840,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452130",
@@ -41838,7 +41938,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T06:28:31.298Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451903",
@@ -41936,7 +42036,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452292",
@@ -42034,7 +42134,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T15:18:17.261Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446828",
@@ -42132,7 +42232,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-06T18:17:00.630Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452469",
@@ -42187,7 +42287,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-27T07:49:03.060Z",
-        "last_seen": "2026-07-27T20:42:32.965Z",
+        "last_seen": "2026-07-27T22:17:31.460Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -42230,7 +42330,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-27T07:49:03.060Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452456",
@@ -42285,7 +42385,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-26T06:48:01.210Z",
-        "last_seen": "2026-07-27T20:42:32.965Z",
+        "last_seen": "2026-07-27T22:17:31.460Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -42328,7 +42428,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-26T06:48:01.210Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450428",
@@ -42432,7 +42532,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-19T09:43:22.618Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446823",
@@ -42536,7 +42636,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-06T15:02:00.590Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448483",
@@ -42640,7 +42740,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-11T23:03:10.844Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450163",
@@ -42743,7 +42843,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T08:17:00.712Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452462",
@@ -42804,7 +42904,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-26T06:48:01.210Z",
-        "last_seen": "2026-07-27T20:42:32.965Z",
+        "last_seen": "2026-07-27T22:17:31.460Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -42847,7 +42947,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-26T06:48:01.210Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450990",
@@ -42952,7 +43052,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-22T12:17:01.133Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450985",
@@ -43057,7 +43157,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-22T12:17:01.133Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449947",
@@ -43165,7 +43265,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T18:17:00.900Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452230",
@@ -43266,7 +43366,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T12:08:56.653Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452231",
@@ -43367,7 +43467,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T12:08:56.653Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452234",
@@ -43468,7 +43568,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T12:08:56.653Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449966",
@@ -43569,7 +43669,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T18:17:00.900Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452167",
@@ -43670,7 +43770,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T09:12:21.531Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450152",
@@ -43775,7 +43875,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T08:17:00.712Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451273",
@@ -43878,7 +43978,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T11:40:58.212Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449894",
@@ -43979,7 +44079,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T12:57:32.817Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451329",
@@ -44080,7 +44180,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T14:17:00.853Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452225",
@@ -44181,7 +44281,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T12:08:56.653Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449901",
@@ -44282,7 +44382,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T12:57:32.817Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452467",
@@ -44340,7 +44440,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-26T15:20:21.264Z",
-        "last_seen": "2026-07-27T20:42:32.965Z",
+        "last_seen": "2026-07-27T22:17:31.460Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -44383,7 +44483,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-26T15:20:21.264Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449964",
@@ -44489,7 +44589,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T18:17:00.900Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451330",
@@ -44590,7 +44690,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T14:17:00.853Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452309",
@@ -44691,7 +44791,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T17:13:49.119Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451277",
@@ -44794,7 +44894,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T11:40:58.212Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452237",
@@ -44895,7 +44995,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T12:08:56.653Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451057",
@@ -44996,7 +45096,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T04:17:00.985Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451058",
@@ -45097,7 +45197,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T04:17:00.985Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446999",
@@ -45198,7 +45298,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T18:17:00.483Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450495",
@@ -45299,7 +45399,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-20T06:17:00.963Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452198",
@@ -45400,7 +45500,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T10:43:15.926Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450983",
@@ -45503,7 +45603,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-22T12:17:01.133Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451046",
@@ -45604,7 +45704,108 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T04:17:00.985Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
+    },
+    {
+      "id": "euraxess-fusion-452477",
+      "source": "euraxess-fusion",
+      "provider": "official_rss_feed",
+      "external_id": "452477",
+      "url": "https://euraxess.ec.europa.eu/jobs/452477",
+      "title": "Assistant Professor, Technical Sciences, Geodesy",
+      "institution": "Faculty of Geodesy, University in Zagreb",
+      "country": "Europe / International",
+      "summary": "UNIVERSITY OF ZAGREB FACULTY OF GEODESY is inviting A P P L I C A T I O N S for the position one (1) employee (m/f) for an open scientific-teaching position of Assistant Professor, in the scientific area…",
+      "posted_at": "Mon, 13 Jul 26 10:18:24 +0200",
+      "deadline_text": "",
+      "deadline_utc": "",
+      "status": "open_unverified",
+      "liveness": "active",
+      "liveness_reason": "RSS feed item has no parsed deadline; verify posting before applying",
+      "score": 0.7,
+      "score_band": "archive",
+      "tier": "D",
+      "visible": false,
+      "archived": true,
+      "fit_rationale": "Archived role class: assistant professor.",
+      "risk_flags": [
+        "missing_deadline",
+        "role_not_targeted"
+      ],
+      "score_breakdown": {
+        "strong_matches": [],
+        "adjacent_matches": [],
+        "role_matches": [],
+        "role_archive_matches": [
+          "assistant professor"
+        ],
+        "negative_matches": [],
+        "computation_matches": [],
+        "physical_hardware_anchors": [],
+        "tier_cap": "",
+        "deadline": "",
+        "protected_domain_matches": []
+      },
+      "research_fields": [],
+      "academic_level": "",
+      "researcher_profile": "",
+      "language": "",
+      "translated_title": "",
+      "translated_summary": "",
+      "needs_research": false,
+      "needs_application_pack": false,
+      "worker_status": "not_needed",
+      "research_report": "",
+      "resources": {},
+      "coverage": {
+        "provider": "official_rss_feed",
+        "feed_window": "",
+        "backfill_profile": "",
+        "first_seen": "2026-07-27T22:17:31.460Z",
+        "last_seen": "2026-07-27T22:17:31.460Z",
+        "duplicate_of": ""
+      },
+      "verification": {
+        "deadline_source": "missing",
+        "status_source": "rss_unverified",
+        "verified_at": "",
+        "verification_required": true
+      },
+      "automation": {
+        "worker_status": "not_needed",
+        "current_stage": "discovered",
+        "attempts": 0,
+        "next_retry_at": "",
+        "last_error": "",
+        "runner": "",
+        "last_run_at": ""
+      },
+      "artifacts": {
+        "research_report": "",
+        "resume_tex": "",
+        "resume_pdf": "",
+        "cover_letter_pdf": "",
+        "email_draft": "",
+        "manifest_path": ""
+      },
+      "decision": {
+        "apply_recommendation": "",
+        "score": 0.7,
+        "confidence": null,
+        "rationale": "Archived role class: assistant professor.",
+        "archive_reason": ""
+      },
+      "execution": {
+        "stage": null,
+        "ready_checked": false,
+        "stage_updated_at": "",
+        "applied_at": "",
+        "application_num": null,
+        "notes": ""
+      },
+      "jobs_to_consider_id": "",
+      "first_seen": "2026-07-27T22:17:31.460Z",
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450691",
@@ -45705,7 +45906,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-21T16:17:00.382Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448716",
@@ -45806,7 +46007,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-12T06:17:00.667Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449937",
@@ -45907,7 +46108,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T18:17:00.900Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451867",
@@ -46008,7 +46209,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T12:17:00.648Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452272",
@@ -46109,7 +46310,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T14:01:33.703Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452159",
@@ -46213,7 +46414,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T09:12:21.531Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452264",
@@ -46317,7 +46518,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T14:01:33.703Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452232",
@@ -46418,7 +46619,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T12:08:56.653Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448711",
@@ -46521,7 +46722,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-12T06:17:00.667Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446776",
@@ -46626,7 +46827,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-05T14:35:47.572Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447389",
@@ -46727,7 +46928,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-08T18:17:00.366Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447390",
@@ -46828,7 +47029,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-08T18:17:00.366Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447599",
@@ -46929,7 +47130,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T13:09:39.308Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451313",
@@ -47032,7 +47233,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T14:17:00.853Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451864",
@@ -47136,7 +47337,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T12:17:00.648Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452197",
@@ -47241,7 +47442,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T10:43:15.926Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450157",
@@ -47342,7 +47543,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T08:17:00.712Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446803",
@@ -47445,7 +47646,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-05T14:35:47.572Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447419",
@@ -47549,7 +47750,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-08T18:17:00.366Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451006",
@@ -47654,7 +47855,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-22T12:17:01.133Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450309",
@@ -47757,7 +47958,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T22:17:00.121Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447428",
@@ -47860,7 +48061,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-08T18:17:00.366Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447429",
@@ -47963,7 +48164,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-08T22:17:00.827Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447431",
@@ -48066,7 +48267,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-08T22:17:00.827Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447789",
@@ -48172,7 +48373,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T18:17:00.789Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451486",
@@ -48275,7 +48476,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T22:15:52.128Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447792",
@@ -48378,7 +48579,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T18:17:00.789Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451485",
@@ -48485,7 +48686,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T22:15:52.128Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452156",
@@ -48588,7 +48789,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T09:12:21.531Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452439",
@@ -48691,7 +48892,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-26T06:48:01.210Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452286",
@@ -48794,7 +48995,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T15:18:17.261Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450667",
@@ -48897,7 +49098,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-21T16:17:00.382Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446994",
@@ -49000,7 +49201,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T18:17:00.483Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452161",
@@ -49103,7 +49304,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T09:12:21.531Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446987",
@@ -49206,7 +49407,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T18:17:00.483Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451060",
@@ -49311,7 +49512,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T04:17:00.985Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452435",
@@ -49414,7 +49615,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-26T06:48:01.210Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447625",
@@ -49517,7 +49718,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T13:09:39.308Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447000",
@@ -49620,7 +49821,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T18:17:00.483Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451484",
@@ -49725,7 +49926,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T22:15:52.128Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449955",
@@ -49826,7 +50027,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T18:17:00.900Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452166",
@@ -49929,7 +50130,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T09:12:21.531Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450295",
@@ -50030,7 +50231,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446963",
@@ -50131,7 +50332,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T14:17:00.209Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447408",
@@ -50234,7 +50435,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-08T18:17:00.366Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450468",
@@ -50337,7 +50538,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-20T06:17:00.963Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451266",
@@ -50438,7 +50639,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T11:40:58.212Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451049",
@@ -50541,7 +50742,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T04:17:00.985Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450159",
@@ -50644,7 +50845,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T08:17:00.712Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447426",
@@ -50747,7 +50948,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-08T18:17:00.366Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450304",
@@ -50848,7 +51049,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447001",
@@ -50949,7 +51150,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T18:17:00.483Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450984",
@@ -51050,7 +51251,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-22T12:17:01.133Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452204",
@@ -51154,7 +51355,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T10:43:15.926Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449897",
@@ -51258,7 +51459,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T12:57:32.817Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449895",
@@ -51362,7 +51563,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T12:57:32.817Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448701",
@@ -51466,7 +51667,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-12T06:17:00.667Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450996",
@@ -51571,7 +51772,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-22T12:17:01.133Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452321",
@@ -51677,7 +51878,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-26T00:12:22.608Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446949",
@@ -51781,7 +51982,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T14:17:00.209Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448500",
@@ -51885,7 +52086,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-11T23:03:10.844Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446786",
@@ -51989,7 +52190,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-05T14:35:47.572Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449959",
@@ -52093,7 +52294,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T18:17:00.900Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452448",
@@ -52197,7 +52398,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-26T06:48:01.210Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448506",
@@ -52303,7 +52504,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-11T23:03:10.844Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448704",
@@ -52407,7 +52608,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-12T06:17:00.667Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449939",
@@ -52513,7 +52714,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T18:17:00.900Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447786",
@@ -52617,7 +52818,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T18:17:00.789Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447787",
@@ -52721,7 +52922,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T18:17:00.789Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450694",
@@ -52825,7 +53026,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-21T16:17:00.382Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452461",
@@ -52886,7 +53087,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-26T06:48:01.210Z",
-        "last_seen": "2026-07-27T20:42:32.965Z",
+        "last_seen": "2026-07-27T22:17:31.460Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -52929,7 +53130,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-26T06:48:01.210Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451004",
@@ -53033,7 +53234,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-22T12:17:01.133Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452193",
@@ -53142,7 +53343,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T10:43:15.926Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449900",
@@ -53246,7 +53447,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T12:57:32.817Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448502",
@@ -53350,7 +53551,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-11T23:03:10.844Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447438",
@@ -53458,7 +53659,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-08T22:17:00.827Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451040",
@@ -53561,7 +53762,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T04:17:00.985Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451279",
@@ -53666,7 +53867,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T11:40:58.212Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452457",
@@ -53726,7 +53927,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-26T06:48:01.210Z",
-        "last_seen": "2026-07-27T20:42:32.965Z",
+        "last_seen": "2026-07-27T22:17:31.460Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -53769,7 +53970,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-26T06:48:01.210Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446782",
@@ -53874,7 +54075,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-05T14:35:47.572Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450474",
@@ -53979,7 +54180,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-20T06:17:00.963Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450150",
@@ -54080,7 +54281,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T08:17:00.712Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450161",
@@ -54181,7 +54382,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T08:17:00.712Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450153",
@@ -54284,7 +54485,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T08:17:00.712Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450308",
@@ -54387,7 +54588,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448509",
@@ -54491,7 +54692,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-11T23:03:10.844Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452314",
@@ -54595,7 +54796,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T18:07:36.765Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452196",
@@ -54698,7 +54899,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T10:43:15.926Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449934",
@@ -54800,7 +55001,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T18:17:00.900Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452468",
@@ -54858,7 +55059,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-27T07:49:03.060Z",
-        "last_seen": "2026-07-27T20:42:32.965Z",
+        "last_seen": "2026-07-27T22:17:31.460Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -54901,7 +55102,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-27T07:49:03.060Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449977",
@@ -55002,7 +55203,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T00:17:00.527Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447796",
@@ -55105,7 +55306,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T18:17:00.789Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447797",
@@ -55206,7 +55407,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T18:17:00.789Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451487",
@@ -55309,7 +55510,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T22:15:52.128Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448700",
@@ -55410,7 +55611,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-12T06:17:00.667Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446825",
@@ -55514,7 +55715,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-06T15:02:00.590Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452163",
@@ -55617,7 +55818,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T09:12:21.531Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452116",
@@ -55723,7 +55924,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T06:28:31.298Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447420",
@@ -55826,7 +56027,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-08T18:17:00.366Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448707",
@@ -55929,7 +56130,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-12T06:17:00.667Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447616",
@@ -56032,7 +56233,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T13:09:39.308Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447614",
@@ -56135,7 +56336,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T13:09:39.308Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449912",
@@ -56245,7 +56446,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T12:57:32.817Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450988",
@@ -56348,7 +56549,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-22T12:17:01.133Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451047",
@@ -56451,7 +56652,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T04:17:00.985Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447423",
@@ -56558,7 +56759,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-08T18:17:00.366Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451323",
@@ -56661,7 +56862,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T14:17:00.853Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451489",
@@ -56764,7 +56965,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T22:15:52.128Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446783",
@@ -56867,7 +57068,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-05T14:35:47.572Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451476",
@@ -56970,7 +57171,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T22:15:52.128Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452308",
@@ -57075,7 +57276,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T17:13:49.119Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451307",
@@ -57178,7 +57379,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T14:17:00.853Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448498",
@@ -57281,7 +57482,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-11T23:03:10.844Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446997",
@@ -57384,7 +57585,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T18:17:00.483Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451482",
@@ -57487,7 +57688,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T22:15:52.128Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447606",
@@ -57592,7 +57793,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T13:09:39.308Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452236",
@@ -57695,7 +57896,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T12:08:56.653Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451328",
@@ -57801,7 +58002,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T14:17:00.853Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448702",
@@ -57907,7 +58108,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-12T06:17:00.667Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450995",
@@ -58014,7 +58215,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-22T12:17:01.133Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446791",
@@ -58121,7 +58322,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-05T14:35:47.572Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451054",
@@ -58228,7 +58429,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T04:17:00.985Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452459",
@@ -58288,7 +58489,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-26T06:48:01.210Z",
-        "last_seen": "2026-07-27T20:42:32.965Z",
+        "last_seen": "2026-07-27T22:17:31.460Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -58331,7 +58532,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-26T06:48:01.210Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451862",
@@ -58434,7 +58635,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T12:17:00.648Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447425",
@@ -58539,7 +58740,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-08T18:17:00.366Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452313",
@@ -58642,7 +58843,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T18:07:36.765Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452277",
@@ -58743,7 +58944,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T14:01:33.703Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452244",
@@ -58844,7 +59045,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T12:08:56.653Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451278",
@@ -58945,7 +59146,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T11:40:58.212Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451284",
@@ -59049,7 +59250,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T11:40:58.212Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450986",
@@ -59150,7 +59351,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-22T12:17:01.133Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450991",
@@ -59251,7 +59452,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-22T12:17:01.133Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452470",
@@ -59312,7 +59513,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-27T07:49:03.060Z",
-        "last_seen": "2026-07-27T20:42:32.965Z",
+        "last_seen": "2026-07-27T22:17:31.460Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -59355,7 +59556,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-27T07:49:03.060Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450149",
@@ -59456,7 +59657,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T08:17:00.712Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452171",
@@ -59557,7 +59758,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T09:12:21.531Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447596",
@@ -59658,7 +59859,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T13:09:39.308Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451871",
@@ -59759,7 +59960,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T12:17:00.648Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452229",
@@ -59863,7 +60064,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T12:08:56.653Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446953",
@@ -59969,7 +60170,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T14:17:00.209Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451873",
@@ -60073,7 +60274,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T12:17:00.648Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452122",
@@ -60177,7 +60378,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T06:28:31.298Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451908",
@@ -60278,7 +60479,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452449",
@@ -60379,7 +60580,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-26T06:48:01.210Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452451",
@@ -60439,7 +60640,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-26T06:48:01.210Z",
-        "last_seen": "2026-07-27T20:42:32.965Z",
+        "last_seen": "2026-07-27T22:17:31.460Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -60482,7 +60683,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-26T06:48:01.210Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452266",
@@ -60583,7 +60784,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T14:01:33.703Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452267",
@@ -60687,7 +60888,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T14:01:33.703Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449896",
@@ -60792,7 +60993,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T12:57:32.817Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450325",
@@ -60896,7 +61097,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T22:17:00.121Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450300",
@@ -61000,7 +61201,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451311",
@@ -61101,7 +61302,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T14:17:00.853Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447608",
@@ -61202,7 +61403,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T13:09:39.308Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452133",
@@ -61303,7 +61504,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T06:28:31.298Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446779",
@@ -61407,7 +61608,7 @@
       },
       "jobs_to_consider_id": "wageningen-university-and-research-centre-via-academictransfer-postdoc-evolution-of-taste-recept",
       "first_seen": "2026-07-05T14:35:47.572Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452119",
@@ -61508,7 +61709,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T06:28:31.298Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451331",
@@ -61609,7 +61810,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T14:17:00.853Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451852",
@@ -61713,7 +61914,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T12:17:00.648Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451854",
@@ -61817,7 +62018,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T12:17:00.648Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451858",
@@ -61921,7 +62122,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T12:17:00.648Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451859",
@@ -62025,7 +62226,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T12:17:00.648Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451860",
@@ -62129,7 +62330,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-24T12:17:00.648Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447604",
@@ -62230,7 +62431,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T13:09:39.308Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452190",
@@ -62331,7 +62532,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T10:43:15.926Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452275",
@@ -62432,7 +62633,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T14:01:33.703Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449893",
@@ -62536,7 +62737,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T12:57:32.817Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449978",
@@ -62640,7 +62841,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T00:17:00.527Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452436",
@@ -62745,7 +62946,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-26T06:48:01.210Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452124",
@@ -62852,7 +63053,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T06:28:31.298Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-452226",
@@ -62956,7 +63157,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-25T12:08:56.653Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-448504",
@@ -63060,7 +63261,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-11T23:03:10.844Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450154",
@@ -63167,7 +63368,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T08:17:00.712Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446794",
@@ -63271,7 +63472,7 @@
       },
       "jobs_to_consider_id": "wageningen-university-and-research-centre-via-academictransfer-phd-position-manipulating-plastid",
       "first_seen": "2026-07-05T14:35:47.572Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450164",
@@ -63375,7 +63576,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T08:17:00.712Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446814",
@@ -63477,7 +63678,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-05T14:52:42.706Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446966",
@@ -63579,7 +63780,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T14:17:00.209Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-446967",
@@ -63681,7 +63882,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-07T14:17:00.209Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-449899",
@@ -63787,7 +63988,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-17T12:57:32.817Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447794",
@@ -63892,7 +64093,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T18:17:00.789Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-447607",
@@ -64001,7 +64202,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-09T13:09:39.308Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451280",
@@ -64103,7 +64304,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-23T11:40:58.212Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-451003",
@@ -64208,7 +64409,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-22T12:17:01.133Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     },
     {
       "id": "euraxess-fusion-450299",
@@ -64317,7 +64518,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-18T16:17:01.004Z",
-      "last_updated": "2026-07-27T20:42:33.468Z"
+      "last_updated": "2026-07-27T22:17:32.113Z"
     }
   ]
 }
