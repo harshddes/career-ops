@@ -1,24 +1,24 @@
 {
   "version": "1.0.0",
-  "last_global_run": "2026-08-05T03:30:59.826Z",
+  "last_global_run": "2026-08-05T06:40:48.474Z",
   "sources": {
     "euraxess-fusion": {
-      "last_poll": "2026-08-05T03:30:59.097Z",
+      "last_poll": "2026-08-05T06:40:47.975Z",
       "last_status": 200,
       "last_error": "",
       "provider": "official_or_permitted_feed",
       "access_status": "allowed_by_robots",
-      "changed_last_run": false,
-      "heat": 0.55109143210833,
+      "changed_last_run": true,
+      "heat": 0.6633185740812475,
       "etag": null,
       "last_modified": null,
-      "last_changed_at": "2026-08-04T23:17:55.517Z",
-      "consecutive_no_change": 1,
-      "total_hits": 752,
-      "total_polls": 126,
-      "hit_rate": 5.968253968253968,
-      "content_fingerprint": "b79ea36f4601aa1754050c87faf0dab38c9acf71ad636389982b1e2734771713",
-      "next_poll": "2026-08-05T05:30:59.097Z"
+      "last_changed_at": "2026-08-05T06:40:47.975Z",
+      "consecutive_no_change": 0,
+      "total_hits": 772,
+      "total_polls": 127,
+      "hit_rate": 6.078740157480315,
+      "content_fingerprint": "13174d8c02fcf60ddfd140ccf683a3803f83083c2dd06ed1cd98c8b441d91eb2",
+      "next_poll": "2026-08-05T08:40:47.975Z"
     }
   }
 }
