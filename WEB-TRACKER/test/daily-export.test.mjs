@@ -341,7 +341,7 @@ test('today applied rows come from applications, not jobs-to-consider directly',
   assert.doesNotMatch(source, /readConsiderJobs/);
   assert.doesNotMatch(source, /jobAppliedToday/);
   assert.doesNotMatch(source, /jobRow/);
-  assert.match(source, /const appliedFromTracker = applications\.filter/);
+  assert.match(source, /const appliedFromTracker = resolvedApplications\.filter/);
 });
 
 test('manual daily digest route validates recipients and sends regenerated attachments', () => {

@@ -7,9 +7,9 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { loadEnv } from './lib/load-env.mjs';
 import { summarizeSourceHealth } from './lib/source-health.mjs';
-import { DEFAULT_DIGEST_TIMEZONE, digestRecipients, getTodayActivity, localDateString } from './lib/today-activity.mjs';
+import { DEFAULT_DIGEST_TIMEZONE, digestRecipients, getCachedTodayActivity, invalidateTodayActivityCache, localDateString } from './lib/today-activity.mjs';
 import { logJobConsiderPatchEvent, logNetworkingActivity, logResearchStatusEvent } from './lib/dashboard-activity.mjs';
-import { writeDailyActivityCsv } from './lib/daily-activity-csv.mjs';
+import { setActivityAppendedHook } from './lib/activity-log.mjs';
 import { run as syncApplications } from './adapters/applications-adapter.mjs';
 import {
   CANONICAL_JOBS_FILE,
@@ -165,8 +165,8 @@ function createFastJob(type, input = {}) {
 }
 
 function withToday(payload = {}) {
-  const activity = getTodayActivity({ timeZone: DEFAULT_DIGEST_TIMEZONE });
-  writeDailyActivityCsv(activity);
+  invalidateTodayActivityCache();
+  const activity = getCachedTodayActivity({ timeZone: DEFAULT_DIGEST_TIMEZONE });
   return {
     ...payload,
     today: {
@@ -176,6 +176,15 @@ function withToday(payload = {}) {
     },
   };
 }
+
+function syncProspectsAfterPatch(result, syncOptions = {}) {
+  if (result?.wrote_canonical === false) {
+    return { total: result.store?.prospects?.length || 0 };
+  }
+  return syncResearchProspectsToDashboard(syncOptions);
+}
+
+setActivityAppendedHook(() => invalidateTodayActivityCache());
 
 function runNode(script, args = [], { timeoutMs = 10 * 60_000 } = {}) {
   return new Promise((resolve, reject) => {
@@ -253,6 +262,20 @@ function serveFile(res, filePath) {
 }
 
 async function routeApi(req, res, pathname) {
+  if (pathname === '/api/today-activity') {
+    if (req.method !== 'GET') return sendJson(res, { error: 'method not allowed' }, 405), true;
+    try {
+      const url = new URL(req.url || '/', 'http://127.0.0.1');
+      const activity = getCachedTodayActivity({
+        date: url.searchParams.get('date') || '',
+        timeZone: url.searchParams.get('timezone') || DEFAULT_DIGEST_TIMEZONE,
+      });
+      sendJson(res, activity);
+    } catch (err) {
+      sendJson(res, { error: err?.message || 'failed to build today activity' }, 400);
+    }
+    return true;
+  }
   if (pathname === '/api/daily-digest/smtp-status') {
     if (req.method !== 'GET') return sendJson(res, { error: 'method not allowed' }, 405), true;
     const { smtpConfigFromEnv, validateSmtpConfig } = await import('./lib/mail-sender.mjs');
@@ -976,7 +999,7 @@ async function routeApi(req, res, pathname) {
           action: input?.relationship_stage ? 'relationship_stage_changed' : 'person_updated',
           person: result.person,
         });
-        sendJson(res, result);
+        sendJson(res, withToday(result));
       } catch (err) {
         const status = /not found/i.test(err?.message || '') ? 404 : 400;
         sendJson(res, { error: err?.message || 'failed to update networking person' }, status);
@@ -1005,7 +1028,7 @@ async function routeApi(req, res, pathname) {
       const result = appendNetworkingInteraction(input || {});
       syncNetworkingToDashboard();
       logNetworkingActivity({ action: 'interaction_logged', person: result.person, interaction: result.interaction });
-      sendJson(res, result, 201);
+      sendJson(res, withToday(result), 201);
     } catch (err) {
       const status = /not found/i.test(err?.message || '') ? 404 : 400;
       sendJson(res, { error: err?.message || 'failed to log networking interaction' }, status);
@@ -1267,7 +1290,7 @@ async function routeApi(req, res, pathname) {
       try {
         const updates = await readBodyJson(req);
         const result = patchResearchProspect(id, updates || {}, { source: 'umich' });
-        const dashboard = syncResearchProspectsToDashboard({ institution: 'umich' });
+        const dashboard = syncProspectsAfterPatch(result, { institution: 'umich' });
         if (updates?.status) logResearchStatusEvent(result.prospect, 'umich');
         sendJson(res, withToday({ ...result, total: dashboard.total }));
       } catch (err) {
@@ -1326,7 +1349,7 @@ async function routeApi(req, res, pathname) {
       try {
         const updates = await readBodyJson(req);
         const result = patchResearchProspect(prospectId, updates || {}, { source: sourceId });
-        const dashboard = syncResearchProspectsToDashboard({ source: sourceId });
+        const dashboard = syncProspectsAfterPatch(result, { source: sourceId });
         if (updates?.status) logResearchStatusEvent(result.prospect, sourceId);
         sendJson(res, withToday({ ...result, total: dashboard.total }));
       } catch (err) {
@@ -1350,7 +1373,6 @@ async function routeApi(req, res, pathname) {
     '/api/autonomy/runs': 'autonomy/runs.json',
     '/api/contacts': 'contacts.json',
     '/api/jobs': 'jobs.json',
-    '/api/today-activity': 'today-activity.json',
   };
   if (simpleFiles[pathname]) {
     if (req.method !== 'GET') return sendJson(res, { error: 'method not allowed' }, 405), true;

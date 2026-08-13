@@ -176,6 +176,47 @@ body.read-only #pulse-apps-table textarea { pointer-events: none; opacity: 0.85;
   font-family: 'Space Mono', monospace;
 }
 
+.today-stats-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 1.25rem;
+  font-family: 'Space Mono', monospace;
+}
+
+.today-stats-nav-btn {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.today-stats-nav-btn:hover,
+#today-stats-today-btn:hover { background: var(--bg-card-hover); }
+
+#today-stats-date {
+  min-width: 10.5rem;
+  padding: 0.35rem 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-family: 'Space Mono', monospace;
+}
+
+#today-stats-heading {
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+}
+
+.global-today-stats { margin-top: 0.85rem; }
+
 /* Section headers */
 .section-title {
   font-family: 'Instrument Serif', serif;
@@ -2270,7 +2311,14 @@ footer {
       <div>Local dashboard, no auto-submit</div>
     </div>
   </div>
-  <div class="stats-bar global-today-stats" id="global-today-stats" style="margin-top:1.5rem;"></div>
+  <div class="today-stats-nav" id="today-stats-nav">
+    <button type="button" class="today-stats-nav-btn" onclick="shiftTodayStatsDate(-1)" aria-label="Previous day">&lt;</button>
+    <input id="today-stats-date" type="date" onchange="setTodayStatsDate(this.value)" aria-label="Stats date">
+    <button type="button" class="today-stats-nav-btn" onclick="shiftTodayStatsDate(1)" aria-label="Next day">&gt;</button>
+    <button type="button" class="control-btn" id="today-stats-today-btn" onclick="resetTodayStatsDate()">Today</button>
+    <span id="today-stats-heading">Stats for …</span>
+  </div>
+  <div class="stats-bar global-today-stats" id="global-today-stats"></div>
 </header>
 
 <nav>
@@ -4078,9 +4126,10 @@ function switchTab(tabId, evt = null) {
     .find(button => (button.getAttribute('onclick') || '').includes(`'${tabId}'`));
   if (activeButton) activeButton.classList.add('active');
   TAB_RENDERERS[tabId]?.();
+  syncPhdRadarTimer();
   if (tabId !== 'researchprospects' && deferredFullPanelRender) {
     deferredFullPanelRender = false;
-    queueRenderAllPanels();
+    queueVisibleDashboardRefresh();
   }
 }
 
@@ -4104,7 +4153,7 @@ const API_BASE = STATIC_PUBLISH
   : (window.location.protocol.startsWith('http') ? window.location.origin : `http://${DASHBOARD_HOST}:3737`);
 const API_TIMEOUT_MS = 15_000;
 const API_TIMEOUT_HEAVY_MS = 60_000;
-const API_GET_CACHE_MS = 1_500;
+const API_GET_CACHE_MS = 30_000;
 const apiInflightGet = new Map();
 const apiGetCache = new Map();
 
@@ -4142,6 +4191,12 @@ function initStaticPublishMode() {
   document.querySelector('nav button[onclick*="operations"]')?.setAttribute('data-tab', 'operations');
 }
 const DASHBOARD_TIMEZONE = 'America/New_York';
+let selectedTodayStatsDate = '';
+let todayStatsAbort = null;
+let lastTodaySummary = null;
+let digestUiHydrated = false;
+let phdRadarTimer = null;
+let pulseFilterTimer = null;
 let sseConnection = null;
 let reconnectTimer = null;
 let refreshTimer = null;
@@ -4343,7 +4398,7 @@ async function apiJSON(path, options = {}) {
 function downloadDashboardExport(scope, format = 'xlsx') {
   const params = new URLSearchParams({
     format,
-    date: easternISODate(),
+    date: selectedActivityDate(),
     timezone: DASHBOARD_TIMEZONE,
   });
   window.location.href = `${API_BASE}/api/export/${encodeURIComponent(scope)}?${params.toString()}`;
@@ -4363,7 +4418,7 @@ async function sendTodayDigestNow() {
     const result = await apiJSON('/api/daily-digest/send', {
       method: 'POST',
       body: JSON.stringify({
-        date: easternISODate(),
+        date: selectedActivityDate(),
         timezone: DASHBOARD_TIMEZONE,
         recipients: recipient,
         dry_run: false,
@@ -4426,9 +4481,74 @@ function todayTrackerCard(value, label, className = '') {
   return `<div class="stat-card"><div class="stat-number${colorClass}">${Number(value || 0)}</div><div class="stat-label">${escapeHTML(label)}</div></div>`;
 }
 
+function selectedActivityDate() {
+  return selectedTodayStatsDate || easternISODate();
+}
+
+function formatStatsHeading(ymd) {
+  const match = String(ymd || '').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!match) return 'Stats for …';
+  const date = new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
+  const formatted = date.toLocaleDateString('en-US', {
+    weekday: 'short',
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  });
+  return `Stats for ${formatted}`;
+}
+
+function formatEasternLongDate(date = new Date()) {
+  return new Intl.DateTimeFormat('en-US', {
+    timeZone: DASHBOARD_TIMEZONE,
+    weekday: 'long',
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  }).format(date);
+}
+
+function shiftIsoDate(ymd, days) {
+  const match = String(ymd || '').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!match) return easternISODate();
+  const date = new Date(Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3])));
+  date.setUTCDate(date.getUTCDate() + Number(days || 0));
+  return date.toISOString().slice(0, 10);
+}
+
+function syncTodayStatsNav(date = selectedActivityDate()) {
+  const input = document.getElementById('today-stats-date');
+  const heading = document.getElementById('today-stats-heading');
+  const todayBtn = document.getElementById('today-stats-today-btn');
+  if (input && input.value !== date) input.value = date;
+  if (heading) heading.textContent = formatStatsHeading(date);
+  todayBtn?.classList.toggle('is-active', date === easternISODate());
+}
+
+function setTodayStatsDate(value) {
+  const next = String(value || '').match(/^\d{4}-\d{2}-\d{2}$/) ? value : easternISODate();
+  if (next === selectedActivityDate() && lastTodaySummary) {
+    syncTodayStatsNav(next);
+    return;
+  }
+  selectedTodayStatsDate = next;
+  lastTodaySummary = null;
+  syncTodayStatsNav(next);
+  renderTodayActivityTracker();
+}
+
+function shiftTodayStatsDate(days) {
+  setTodayStatsDate(shiftIsoDate(selectedActivityDate(), days));
+}
+
+function resetTodayStatsDate() {
+  setTodayStatsDate(easternISODate());
+}
+
 function renderTodayActivitySummary(summary = {}) {
   const statsEl = document.getElementById('global-today-stats');
   if (!statsEl) return;
+  lastTodaySummary = summary;
   statsEl.innerHTML = [
     todayTrackerCard(summary.applied_today, 'Applied Today', 'fusion-color'),
     todayTrackerCard(summary.contacted_today, 'Contacted Today'),
@@ -4438,20 +4558,52 @@ function renderTodayActivitySummary(summary = {}) {
 }
 
 function applyTodayFromResponse(result = {}) {
-  if (result?.today?.summary) renderTodayActivitySummary(result.today.summary);
+  if (!result?.today?.summary) return;
+  const snapshotDate = result.today.date || easternISODate();
+  if (snapshotDate !== selectedActivityDate()) return;
+  renderTodayActivitySummary(result.today.summary);
+}
+
+function todayStatsUnavailableMarkup(message) {
+  return `<div class="jobs-empty">Today tracker unavailable: ${escapeHTML(message)} <button type="button" class="control-btn secondary" onclick="renderTodayActivityTracker()">Retry</button></div>`;
 }
 
 async function renderTodayActivityTracker() {
   const statsEl = document.getElementById('global-today-stats');
   if (!statsEl) return;
+  if (!selectedTodayStatsDate) selectedTodayStatsDate = easternISODate();
+  syncTodayStatsNav(selectedTodayStatsDate);
+  if (todayStatsAbort) {
+    todayStatsAbort.abort();
+    todayStatsAbort = null;
+  }
+  const controller = new AbortController();
+  todayStatsAbort = controller;
+  const timeout = timeoutSignal(API_TIMEOUT_MS);
+  if (typeof timeout.addEventListener === 'function') {
+    timeout.addEventListener('abort', () => {
+      if (!controller.signal.aborted) controller.abort();
+    });
+  }
+  const signal = (typeof AbortSignal !== 'undefined' && typeof AbortSignal.any === 'function')
+    ? AbortSignal.any([controller.signal, timeout])
+    : controller.signal;
   try {
-    const date = easternISODate();
-    const data = await apiJSON(`/api/today-activity?date=${encodeURIComponent(date)}&timezone=${encodeURIComponent(DASHBOARD_TIMEZONE)}`);
+    const date = selectedActivityDate();
+    const data = await apiJSON(
+      `/api/today-activity?date=${encodeURIComponent(date)}&timezone=${encodeURIComponent(DASHBOARD_TIMEZONE)}`,
+      { signal },
+    );
+    if (todayStatsAbort !== controller) return;
     renderTodayActivitySummary(data.summary || {});
   } catch (err) {
-    statsEl.innerHTML = `<div class="jobs-empty">Today tracker unavailable: ${escapeHTML(err.message)}</div>`;
+    if (err?.name === 'AbortError' || controller.signal.aborted) return;
+    if (lastTodaySummary) {
+      renderTodayActivitySummary(lastTodaySummary);
+      return;
+    }
+    statsEl.innerHTML = todayStatsUnavailableMarkup(err.message || 'signal timed out');
   }
-  hydrateDailyDigestEmailUi();
 }
 
 function daysBetween(d1, d2) {
@@ -4869,6 +5021,22 @@ async function commitPulseField(num, field, value) {
   }
 }
 
+function queuePulseLocalRender() {
+  if (pulseFilterTimer) clearTimeout(pulseFilterTimer);
+  pulseFilterTimer = setTimeout(() => {
+    pulseFilterTimer = null;
+    renderPulseTableFromCache();
+  }, 200);
+}
+
+function renderPulseTableFromCache() {
+  if (!pulseEntriesByNum.size) {
+    renderPulse();
+    return;
+  }
+  renderPulse({ localOnly: true });
+}
+
 function setPulseView(view) {
   if (!PULSE_VIEWS[view]) return;
   pulseCurrentView = view;
@@ -4877,30 +5045,32 @@ function setPulseView(view) {
   pulseLastAddRowSignature = '';
   pulseLastRenderedSignature = '';
   pulseSort = view === 'career' ? { field: 'score', direction: 'desc' } : { field: 'date', direction: 'desc' };
-  renderPulse();
+  renderPulseTableFromCache();
 }
 
 function setPulseGlobalSearch(value) {
   pulseGlobalSearch = value || '';
-  renderPulse();
+  queuePulseLocalRender();
 }
 
 function setPulseFilter(field, value) {
   if (value) pulseFilters[field] = value;
   else delete pulseFilters[field];
-  renderPulse();
+  queuePulseLocalRender();
 }
 
 function clearPulseFilters() {
   pulseFilters = {};
   pulseGlobalSearch = '';
-  renderPulse();
+  const search = document.getElementById('pulse-global-search');
+  if (search) search.value = '';
+  renderPulseTableFromCache();
 }
 
 function setPulseTodayFilter() {
   pulseFilters = { ...pulseFilters, __today: todayISODate() };
   pulseGlobalSearch = '';
-  renderPulse();
+  renderPulseTableFromCache();
 }
 
 function updatePulseQuickFilterButtons() {
@@ -4913,7 +5083,7 @@ function setPulseSort(field) {
   } else {
     pulseSort = { field, direction: 'asc' };
   }
-  renderPulse();
+  renderPulseTableFromCache();
 }
 
 function togglePulseAddRow() {
@@ -5368,9 +5538,7 @@ async function renderActionPlan() {
     apiJSON('/api/applications').catch(() => null),
   ]);
   window.__actionPlan = plan;
-  document.getElementById('today-date-label').textContent = new Date().toLocaleDateString(undefined, {
-    weekday: 'long', month: 'short', day: 'numeric', year: 'numeric'
-  });
+  document.getElementById('today-date-label').textContent = formatEasternLongDate();
   const daysLeft = plan?.sprint?.days_left ?? '?';
   document.getElementById('sprint-days-left').textContent = daysLeft;
   const elapsed = Number.isFinite(Number(daysLeft)) ? Math.max(0, 90 - Number(daysLeft)) : 0;
@@ -6874,6 +7042,7 @@ async function euraxessApplyOpportunity(id, applied = true) {
       body: JSON.stringify({ applied: Boolean(applied) }),
     });
     const num = result.application?.num || result.opportunity?.execution?.application_num;
+    applyTodayFromResponse(result);
     setEuraxessFeedback(
       applied
         ? `Applied. PhD Applications row #${num || '?'}.`
@@ -8198,6 +8367,7 @@ async function phdscannerApplyOpportunity(id, applied = true) {
       body: JSON.stringify({ applied: Boolean(applied) }),
     });
     const num = result.application?.num || result.opportunity?.execution?.application_num;
+    applyTodayFromResponse(result);
     setPhdscannerFeedback(
       applied
         ? `Applied. PhD Applications row #${num || '?'}.`
@@ -9839,10 +10009,23 @@ async function renderPhdRadar() {
 
 // ── Career-Ops Pulse Tab ────────────────────────────────────────────
 
-async function renderPulse() {
-  const apps = await apiJSON('/api/applications');
-  const pipeline = await fetchJSON('pipeline.json');
-  const dashboardData = await apiJSON('/api/applications/dashboard').catch(() => null);
+async function renderPulse(options = {}) {
+  const localOnly = Boolean(options.localOnly);
+  const apps = localOnly && pulseEntriesByNum.size
+    ? {
+      count: pulseEntriesByNum.size,
+      entries: [...pulseEntriesByNum.values()],
+      status_summary: [...pulseEntriesByNum.values()].reduce((acc, entry) => {
+        const status = String(entry.status || '').toLowerCase();
+        acc[status] = (acc[status] || 0) + 1;
+        return acc;
+      }, {}),
+    }
+    : await apiJSON('/api/applications');
+  const pipeline = localOnly ? null : await fetchJSON('pipeline.json');
+  const dashboardData = localOnly
+    ? pulseDashboardData
+    : await apiJSON('/api/applications/dashboard').catch(() => null);
   if (dashboardData) pulseDashboardData = dashboardData;
   renderPulseViewSelector();
 
@@ -11474,10 +11657,11 @@ async function moveNetworkingPersonStage(id, stage) {
   if (!id || !stage || STATIC_PUBLISH) return;
   pendingNetworkingSaves.set(id, true);
   try {
-    await apiJSON(`/api/networking/people/${encodeURIComponent(id)}`, {
+    const result = await apiJSON(`/api/networking/people/${encodeURIComponent(id)}`, {
       method: 'PATCH',
       body: JSON.stringify({ relationship_stage: stage }),
     });
+    applyTodayFromResponse(result);
     networkingStoreCache = null;
     await renderNetworking({ force: true });
   } catch (error) {
@@ -11504,7 +11688,8 @@ async function logNetworkingInteraction() {
   };
   pendingNetworkingSaves.set(id, true);
   try {
-    await apiJSON('/api/networking/interactions', { method: 'POST', body: JSON.stringify(payload) });
+    const result = await apiJSON('/api/networking/interactions', { method: 'POST', body: JSON.stringify(payload) });
+    applyTodayFromResponse(result);
     document.getElementById('networking-log-summary').value = '';
     networkingStoreCache = null;
     await renderNetworking({ force: true });
@@ -11788,8 +11973,6 @@ function connectSSE() {
           if (activeTabId() === 'system') renderSystem();
         } else if (data.file === 'jobs.json') {
           if (activeTabId() === 'operations') renderJobs();
-        } else {
-          queueVisibleDashboardRefresh();
         }
         const log = document.getElementById('event-log');
         log.innerHTML = `<div style="margin-bottom:0.3rem;">[${new Date().toLocaleTimeString()}] ${data.type}: ${data.file}</div>` + log.innerHTML;
@@ -11918,11 +12101,22 @@ document.addEventListener('visibilitychange', () => {
     refreshVisibleDashboard();
   }
 });
+function syncPhdRadarTimer() {
+  if (activeTabId() === 'phdradar') {
+    if (!phdRadarTimer) phdRadarTimer = setInterval(() => renderPhdRadar(), 60000);
+    return;
+  }
+  if (phdRadarTimer) {
+    clearInterval(phdRadarTimer);
+    phdRadarTimer = null;
+  }
+}
+
 initStaticPublishMode();
 renderInitialDashboard();
 connectSSE();
-
-setInterval(() => { renderPhdRadar(); }, 60000);
+hydrateDailyDigestEmailUi();
+digestUiHydrated = true;
 </script>
 </body>
 </html>

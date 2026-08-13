@@ -1,9 +1,10 @@
-import { existsSync, mkdirSync, readFileSync, renameSync, unlinkSync, writeFileSync } from 'fs';
+import { existsSync, mkdirSync, readFileSync, renameSync, statSync, unlinkSync, writeFileSync } from 'fs';
 import { basename, dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { slugify } from './jobs-to-consider-store.mjs';
 import { getDefenseSheetEnrichment } from './defense-sheet-enrichment.mjs';
 import {
+  RESEARCH_USER_STATE_FILE,
   applyUserStateToProspect,
   applyUserStateToStore,
   applyOutreachSemantics,
@@ -63,6 +64,42 @@ const ALLOWED_STATUSES = new Set([
 ]);
 export const SILENCE_NUDGE_DAYS = 7;
 const USER_STATE_FIELDS = ['status', 'last_contacted', 'last_followed_up', 'follow_up_date', 'notes', 'outreach'];
+const USER_STATE_FIELD_SET = new Set(USER_STATE_FIELDS);
+const researchProspectReadCache = new Map();
+
+export function isUserStateOnlyPatch(updates = {}) {
+  const keys = Object.keys(updates || {});
+  if (!keys.length) return false;
+  return keys.every(key => USER_STATE_FIELD_SET.has(key));
+}
+
+function fileMtimeMs(filePath) {
+  try {
+    return existsSync(filePath) ? statSync(filePath).mtimeMs : 0;
+  } catch {
+    return 0;
+  }
+}
+
+function cacheKeyForProspects(filePath) {
+  return String(filePath || '');
+}
+
+function rememberResearchProspects(filePath, store) {
+  researchProspectReadCache.set(cacheKeyForProspects(filePath), {
+    mtime: fileMtimeMs(filePath),
+    userMtime: usesPersistentUserState(filePath) ? fileMtimeMs(RESEARCH_USER_STATE_FILE) : 0,
+    store,
+  });
+}
+
+export function invalidateResearchProspectReadCache(filePath = '') {
+  if (!filePath) {
+    researchProspectReadCache.clear();
+    return;
+  }
+  researchProspectReadCache.delete(cacheKeyForProspects(filePath));
+}
 
 export const DEFENSE_SHEET_QUESTIONS = [
   { id: 'professor_work', question: 'What this professor works on' },
@@ -491,25 +528,43 @@ export function readResearchProspects(filePathOrOptions = CANONICAL_RESEARCH_PRO
   const applyState = (store) => (
     usesPersistentUserState(filePath) ? applyUserStateToStore(store, sourceId) : store
   );
-  if (!existsSync(filePath)) return applyState(empty);
+  const mtime = fileMtimeMs(filePath);
+  const userMtime = usesPersistentUserState(filePath) ? fileMtimeMs(RESEARCH_USER_STATE_FILE) : 0;
+  const cached = researchProspectReadCache.get(cacheKeyForProspects(filePath));
+  if (cached && cached.mtime === mtime && cached.userMtime === userMtime) {
+    return cached.store;
+  }
+  if (!existsSync(filePath)) {
+    const applied = applyState(empty);
+    rememberResearchProspects(filePath, applied);
+    return applied;
+  }
   const parsed = JSON.parse(readFileSync(filePath, 'utf-8'));
   const prospects = Array.isArray(parsed.prospects)
     ? parsed.prospects.map(normalizeResearchProspect)
     : [];
-  return applyState({
+  const applied = applyState({
     ...empty,
     ...parsed,
     version: 1,
     prospects,
   });
+  rememberResearchProspects(filePath, applied);
+  return applied;
 }
 
-export function writeResearchProspects(store, filePathOrOptions = CANONICAL_RESEARCH_PROSPECTS_FILE) {
+export function writeResearchProspects(
+  store,
+  filePathOrOptions = CANONICAL_RESEARCH_PROSPECTS_FILE,
+  writeOptions = {},
+) {
   const filePath = filePathFromOptions(filePathOrOptions);
   const sourceId = resolveSourceId(filePathOrOptions, filePath);
   const existingStateByKey = new Map();
   if (shouldPreserveUserState(filePathOrOptions) && existsSync(filePath)) {
-    const existingStore = readResearchProspects(filePathOrOptions);
+    const existingStore = writeOptions.existingStore && Array.isArray(writeOptions.existingStore.prospects)
+      ? writeOptions.existingStore
+      : readResearchProspects(filePathOrOptions);
     for (const prospect of existingStore.prospects || []) {
       for (const key of prospectIdentityKeys(prospect)) {
         existingStateByKey.set(key, prospect);
@@ -565,6 +620,7 @@ export function writeResearchProspects(store, filePathOrOptions = CANONICAL_RESE
     prospects: prospects.map(prospect => normalizeResearchProspect(prospect)),
   };
   atomicWrite(filePath, `${JSON.stringify(next, null, 2)}\n`);
+  rememberResearchProspects(filePath, next);
   return next;
 }
 
@@ -697,9 +753,17 @@ export function patchResearchProspect(id, updates = {}, filePathOrOptions = CANO
       notes: prospect.notes,
       outreach: prospect.outreach,
     });
+    if (isUserStateOnlyPatch(updates)) {
+      rememberResearchProspects(filePath, store);
+      return { store, prospect, wrote_canonical: false };
+    }
   }
-  const nextStore = writeResearchProspects(store, filePathOrOptions);
-  return { store: nextStore, prospect: nextStore.prospects[index] };
+  const nextStore = writeResearchProspects(store, filePathOrOptions, { existingStore: store });
+  return {
+    store: nextStore,
+    prospect: nextStore.prospects[index],
+    wrote_canonical: true,
+  };
 }
 
 export function syncResearchProspectsToDashboard({

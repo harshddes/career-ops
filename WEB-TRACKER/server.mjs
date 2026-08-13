@@ -38,7 +38,8 @@ import { writeDailyActivityCsv } from './lib/daily-activity-csv.mjs';
 import {
   DEFAULT_DIGEST_TIMEZONE,
   buildTodaySnapshot,
-  getTodayActivity,
+  getCachedTodayActivity,
+  invalidateTodayActivityCache,
   localDateString,
   mergeApplicationMetadata,
 } from './lib/today-activity.mjs';
@@ -248,8 +249,8 @@ function attachmentDisposition(filename) {
 }
 
 function todaySnapshotForResponse() {
+  invalidateTodayActivityCache();
   const activity = buildTodaySnapshot({ timeZone: DEFAULT_DIGEST_TIMEZONE });
-  writeDailyActivityCsv(activity);
   return {
     date: activity.date,
     timeZone: activity.timeZone,
@@ -262,6 +263,13 @@ function withToday(payload = {}) {
     ...payload,
     today: todaySnapshotForResponse(),
   };
+}
+
+function syncProspectsAfterPatch(result, syncOptions = {}) {
+  if (result?.wrote_canonical === false) {
+    return { total: result.store?.prospects?.length || 0 };
+  }
+  return syncResearchProspectsToDashboard(syncOptions);
 }
 
 function applicationsPayload() {
@@ -480,7 +488,10 @@ function broadcast(eventType, payload) {
   }
 }
 
-setActivityAppendedHook(event => broadcast('activity_updated', event));
+setActivityAppendedHook(event => {
+  invalidateTodayActivityCache();
+  broadcast('activity_updated', event);
+});
 
 function syncArtifactsToDashboard({ notify = false } = {}) {
   const artifacts = syncArtifactResources();
@@ -737,11 +748,10 @@ app.get('/api/action-plan', (req, res) => {
 
 app.get('/api/today-activity', (req, res) => {
   try {
-    const activity = getTodayActivity({
+    const activity = getCachedTodayActivity({
       date: req.query.date,
       timeZone: req.query.timezone,
     });
-    writeDailyActivityCsv(activity);
     return res.json(activity);
   } catch (err) {
     return res.status(400).json({ error: err?.message || 'failed to build today activity' });
@@ -947,7 +957,7 @@ app.patch('/api/networking/people/:id', (req, res) => {
       action: req.body?.relationship_stage ? 'relationship_stage_changed' : 'person_updated',
       person: result.person,
     });
-    return res.json(result);
+    return res.json(withToday(result));
   } catch (err) {
     const status = /not found/i.test(err?.message || '') ? 404 : 400;
     return res.status(status).json({ error: err?.message || 'failed to update networking person' });
@@ -990,7 +1000,7 @@ app.post('/api/networking/interactions', (req, res) => {
       person: result.person,
       interaction: result.interaction,
     });
-    return res.status(201).json(result);
+    return res.status(201).json(withToday(result));
   } catch (err) {
     const status = /not found/i.test(err?.message || '') ? 404 : 400;
     return res.status(status).json({ error: err?.message || 'failed to log networking interaction' });
@@ -1103,7 +1113,7 @@ app.post('/api/research-prospects', (req, res) => {
 app.patch('/api/research-prospects/:id', (req, res) => {
   try {
     const result = patchResearchProspect(req.params.id, req.body || {});
-    const dashboard = syncResearchProspectsToDashboard();
+    const dashboard = syncProspectsAfterPatch(result);
     if (req.body?.status) logResearchStatusEvent(result.prospect, 'umich');
     broadcast('research_prospects_updated', { id: result.prospect.id, total: dashboard.total });
     return res.json(withToday(result));
@@ -1148,7 +1158,7 @@ app.post('/api/kth-research-prospects', (req, res) => {
 app.patch('/api/kth-research-prospects/:id', (req, res) => {
   try {
     const result = patchResearchProspect(req.params.id, req.body || {}, { institution: 'kth' });
-    const dashboard = syncResearchProspectsToDashboard({ institution: 'kth' });
+    const dashboard = syncProspectsAfterPatch(result, { institution: 'kth' });
     if (req.body?.status) logResearchStatusEvent(result.prospect, 'kth');
     broadcast('kth_research_prospects_updated', { id: result.prospect.id, total: dashboard.total });
     return res.json(withToday(result));
@@ -1197,7 +1207,7 @@ app.patch('/api/phd-research-prospects/:source/:id', (req, res) => {
   const source = req.params.source;
   try {
     const result = patchResearchProspect(req.params.id, req.body || {}, { source });
-    const dashboard = syncResearchProspectsToDashboard({ source });
+    const dashboard = syncProspectsAfterPatch(result, { source });
     if (req.body?.status) logResearchStatusEvent(result.prospect, source);
     broadcast('phd_research_prospects_updated', { source, id: result.prospect.id, total: dashboard.total });
     if (source === 'kth') broadcast('kth_research_prospects_updated', { id: result.prospect.id, total: dashboard.total });
