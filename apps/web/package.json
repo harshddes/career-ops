@@ -1,0 +1,23 @@
+{
+  "name": "career-os-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Public $0 multi-tenant Career OS — isolated workspaces, shared job catalog",
+  "scripts": {
+    "dev": "node src/node-server.mjs",
+    "test": "node --test test/*.test.mjs",
+    "catalog:upsert": "node scripts/upsert-catalog.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.2",
+    "hono": "^4.9.6"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.3.7",
+    "@hono/node-server": "^1.19.1"
+  }
+}
