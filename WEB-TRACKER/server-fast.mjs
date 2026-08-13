@@ -6,6 +6,14 @@ import { extname, join, normalize } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { loadEnv } from './lib/load-env.mjs';
+import { compactJson, encodeCompressedBody } from './lib/http-compress.mjs';
+import {
+  maybeProjectFeed,
+  projectEuraxessListStore,
+  projectPhdscannerListStore,
+  projectResearchListStore,
+  projectUmichListStore,
+} from './lib/feed-list-projection.mjs';
 import { summarizeSourceHealth } from './lib/source-health.mjs';
 import { DEFAULT_DIGEST_TIMEZONE, digestRecipients, getCachedTodayActivity, invalidateTodayActivityCache, localDateString } from './lib/today-activity.mjs';
 import { logJobConsiderPatchEvent, logNetworkingActivity, logResearchStatusEvent } from './lib/dashboard-activity.mjs';
@@ -50,7 +58,7 @@ import {
   queuePhdscannerOpportunityWork,
 } from './lib/phdscanner/factory.mjs';
 import {
-  DASHBOARD_UMICH_FILE,
+  ensureUmichDashboardProjection,
   readUmichOpportunities,
 } from './lib/umich-careers/opportunity-store.mjs';
 import {
@@ -123,11 +131,20 @@ const MIME = {
 };
 
 function sendJson(res, value, status = 200) {
-  res.writeHead(status, {
+  const body = compactJson(value);
+  const { payload, encoding } = encodeCompressedBody(body, res.req?.headers?.['accept-encoding']);
+  const vary = new Set(String(res.getHeader('vary') || res.getHeader('Vary') || '').split(',').map(part => part.trim()).filter(Boolean));
+  vary.add('Origin');
+  vary.add('accept-encoding');
+  const headers = {
     'content-type': 'application/json; charset=utf-8',
     'cache-control': 'no-store',
-  });
-  res.end(`${JSON.stringify(value, null, 2)}\n`);
+    vary: [...vary].join(', '),
+    'content-length': payload.length,
+  };
+  if (encoding) headers['content-encoding'] = encoding;
+  res.writeHead(status, headers);
+  res.end(payload);
 }
 
 function sendText(res, value, status = 200) {
@@ -347,17 +364,17 @@ async function routeApi(req, res, pathname) {
   }
   if (pathname === '/api/euraxess/opportunities') {
     if (req.method !== 'GET') return sendJson(res, { error: 'method not allowed' }, 405), true;
-    sendJson(res, readEuraxessOpportunities());
+    sendJson(res, maybeProjectFeed(req, readEuraxessOpportunities(), projectEuraxessListStore));
     return true;
   }
   if (pathname === '/api/phdscanner/opportunities') {
     if (req.method !== 'GET') return sendJson(res, { error: 'method not allowed' }, 405), true;
-    sendJson(res, readPhdscannerOpportunities());
+    sendJson(res, maybeProjectFeed(req, readPhdscannerOpportunities(), projectPhdscannerListStore));
     return true;
   }
   if (pathname === '/api/umich-careers/opportunities') {
     if (req.method !== 'GET') return sendJson(res, { error: 'method not allowed' }, 405), true;
-    sendJson(res, readUmichOpportunities(existsSync(DASHBOARD_UMICH_FILE) ? DASHBOARD_UMICH_FILE : undefined));
+    sendJson(res, maybeProjectFeed(req, ensureUmichDashboardProjection(), projectUmichListStore));
     return true;
   }
   if (pathname === '/api/umich-careers/health') {
@@ -1253,7 +1270,7 @@ async function routeApi(req, res, pathname) {
   }
   if (pathname === '/api/research-prospects') {
     if (req.method === 'GET') {
-      sendJson(res, readResearchProspects({ source: 'umich' }));
+      sendJson(res, maybeProjectFeed(req, readResearchProspects({ source: 'umich' }), projectResearchListStore));
       return true;
     }
     if (req.method === 'POST') {
@@ -1314,7 +1331,7 @@ async function routeApi(req, res, pathname) {
 
     if (!prospectId) {
       if (req.method === 'GET') {
-        sendJson(res, readResearchProspects({ source: sourceId }));
+        sendJson(res, maybeProjectFeed(req, readResearchProspects({ source: sourceId }), projectResearchListStore));
         return true;
       }
       if (req.method === 'POST') {
@@ -1385,6 +1402,7 @@ async function routeApi(req, res, pathname) {
 
 export function startFastServer(port = PORT, host = HOST) {
   const server = createServer(async (req, res) => {
+    res.req = req;
     const origin = req.headers.origin;
     if (!origin || origin === 'null' || /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)) {
       res.setHeader('access-control-allow-origin', origin || '*');

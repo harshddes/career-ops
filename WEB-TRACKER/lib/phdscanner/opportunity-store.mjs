@@ -1,8 +1,9 @@
-import { existsSync, mkdirSync, readFileSync, renameSync, unlinkSync, writeFileSync } from 'fs';
+import { existsSync, mkdirSync, renameSync, unlinkSync, writeFileSync } from 'fs';
 import { basename, dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { scorePhdscannerPosting } from './scoring-profile.mjs';
 import { consolidatePhdBoardOpportunities, phdBoardDedupeKey } from './dedupe.mjs';
+import { readMtimeCachedStore, rememberMtimeStore } from '../mtime-store-cache.mjs';
 
 const LIB_DIR = dirname(fileURLToPath(import.meta.url));
 export const WEB_TRACKER_DIR = join(LIB_DIR, '..', '..');
@@ -454,18 +455,21 @@ function resolveReadPath(filePath = CANONICAL_PHDSCANNER_FILE) {
 
 export function readPhdscannerOpportunities(filePath = CANONICAL_PHDSCANNER_FILE) {
   const resolved = resolveReadPath(filePath);
-  if (!existsSync(resolved)) return emptyStore();
-  const parsed = JSON.parse(readFileSync(resolved, 'utf-8'));
-  const opportunities = Array.isArray(parsed.opportunities)
-    ? parsed.opportunities.map(normalizePhdscannerOpportunityRecord)
-    : [];
-  return {
-    ...emptyStore(),
-    ...parsed,
-    version: 1,
-    opportunities,
-    scan_summary: summarize(opportunities, parsed.scan_summary || {}),
-  };
+  return readMtimeCachedStore(resolved, {
+    empty: emptyStore,
+    parse: (parsed) => {
+      const opportunities = Array.isArray(parsed.opportunities)
+        ? parsed.opportunities.map(normalizePhdscannerOpportunityRecord)
+        : [];
+      return {
+        ...emptyStore(),
+        ...parsed,
+        version: 1,
+        opportunities,
+        scan_summary: summarize(opportunities, parsed.scan_summary || {}),
+      };
+    },
+  });
 }
 
 export function writePhdscannerOpportunities(store, filePath = CANONICAL_PHDSCANNER_FILE) {
@@ -483,9 +487,16 @@ export function writePhdscannerOpportunities(store, filePath = CANONICAL_PHDSCAN
   };
   const payload = `${JSON.stringify(next, null, 2)}\n`;
   atomicWrite(filePath, payload);
+  rememberMtimeStore(filePath, next);
   // Dual-write compatibility paths
-  if (filePath === CANONICAL_PHDSCANNER_FILE) atomicWrite(CANONICAL_PHD_BOARD_FILE, payload);
-  if (filePath === CANONICAL_PHD_BOARD_FILE) atomicWrite(CANONICAL_PHDSCANNER_FILE, payload);
+  if (filePath === CANONICAL_PHDSCANNER_FILE) {
+    atomicWrite(CANONICAL_PHD_BOARD_FILE, payload);
+    rememberMtimeStore(CANONICAL_PHD_BOARD_FILE, next);
+  }
+  if (filePath === CANONICAL_PHD_BOARD_FILE) {
+    atomicWrite(CANONICAL_PHDSCANNER_FILE, payload);
+    rememberMtimeStore(CANONICAL_PHDSCANNER_FILE, next);
+  }
   return next;
 }
 

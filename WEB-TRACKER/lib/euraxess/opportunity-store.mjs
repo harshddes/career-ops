@@ -1,7 +1,8 @@
-import { existsSync, mkdirSync, readFileSync, renameSync, unlinkSync, writeFileSync } from 'fs';
+import { mkdirSync, renameSync, unlinkSync, writeFileSync } from 'fs';
 import { basename, dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { scoreEuraxessPosting } from './scoring-profile.mjs';
+import { readMtimeCachedStore, rememberMtimeStore } from '../mtime-store-cache.mjs';
 
 const LIB_DIR = dirname(fileURLToPath(import.meta.url));
 export const WEB_TRACKER_DIR = join(LIB_DIR, '..', '..');
@@ -403,18 +404,21 @@ function emptyStore() {
 }
 
 export function readEuraxessOpportunities(filePath = CANONICAL_EURAXESS_FILE) {
-  if (!existsSync(filePath)) return emptyStore();
-  const parsed = JSON.parse(readFileSync(filePath, 'utf-8'));
-  const opportunities = Array.isArray(parsed.opportunities)
-    ? parsed.opportunities.map(normalizeEuraxessOpportunityRecord)
-    : [];
-  return {
-    ...emptyStore(),
-    ...parsed,
-    version: 1,
-    opportunities,
-    scan_summary: summarize(opportunities, parsed.scan_summary || {}),
-  };
+  return readMtimeCachedStore(filePath, {
+    empty: emptyStore,
+    parse: (parsed) => {
+      const opportunities = Array.isArray(parsed.opportunities)
+        ? parsed.opportunities.map(normalizeEuraxessOpportunityRecord)
+        : [];
+      return {
+        ...emptyStore(),
+        ...parsed,
+        version: 1,
+        opportunities,
+        scan_summary: summarize(opportunities, parsed.scan_summary || {}),
+      };
+    },
+  });
 }
 
 export function writeEuraxessOpportunities(store, filePath = CANONICAL_EURAXESS_FILE) {
@@ -429,6 +433,7 @@ export function writeEuraxessOpportunities(store, filePath = CANONICAL_EURAXESS_
     opportunities,
   };
   atomicWrite(filePath, `${JSON.stringify(next, null, 2)}\n`);
+  rememberMtimeStore(filePath, next);
   return next;
 }
 

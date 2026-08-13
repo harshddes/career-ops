@@ -10,7 +10,11 @@ npm install
 npm run start:assisted
 ```
 
-Open `http://127.0.0.1:3737`.
+Open `http://127.0.0.1:3737/dashboard/fusion-pivot-dashboard.html`.
+
+## Public snapshot (read-only)
+
+GitHub Pages is a look-only export, not a replacement for this folder. Full remote use (Applied / kanban / Networking) needs the home PC on plus a tunnel. No domain is purchased. See [docs/hosting.md](docs/hosting.md).
 
 ## Dashboard Control Model
 
