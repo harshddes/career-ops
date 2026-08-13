@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "organization_id": "network-org-kla",
+  "organization_name": "KLA",
+  "location_bias": "Ann Arbor, MI",
+  "role_lane": "ann-arbor-hardware-instrumentation",
+  "shortlisted_job_ids": [
+    "kla-sr-precision-machine-design-engineer-2638749",
+    "kla-electrical-engineer-pcba-design-2638307",
+    "kla-engineering-technician-2638373"
+  ],
+  "contact_budget": 5,
+  "role_cap": 3,
+  "daily_outreach_cap": 1,
+  "playbook_step": "research_hubs",
+  "next_action": {
+    "type": "run_research",
+    "title": "Research hub contacts",
+    "why": "Research order queued for KLA. Cap: 5 people for the whole company — not per role.",
+    "cta": "In Cursor say: Find new networking contacts",
+    "person_id": "",
+    "job_id": "",
+    "copy_text": "",
+    "cursor_phrase": "Find new networking contacts"
+  },
+  "snoozed_until": "",
+  "last_outreach_at": "",
+  "outreach_count_today": 0,
+  "outreach_day_key": "2026-08-11",
+  "skipped_action_keys": [],
+  "updated_at": "2026-08-11T22:17:42.271Z"
+}

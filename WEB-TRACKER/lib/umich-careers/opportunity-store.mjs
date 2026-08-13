@@ -15,6 +15,7 @@ import { existsSync, mkdirSync, readFileSync, renameSync, unlinkSync, writeFileS
 import { basename, dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { scoreUmichPosting, UMICH_SEGMENTS } from './scoring-profile.mjs';
+import { externalScoreToLegacy } from '../opportunity-scoring/index.mjs';
 
 const LIB_DIR = dirname(fileURLToPath(import.meta.url));
 export const WEB_TRACKER_DIR = join(LIB_DIR, '..', '..');
@@ -160,7 +161,23 @@ export function normalizeUmichOpportunityRecord(raw = {}) {
     fit_rationale: cleanText(raw.fit_rationale),
     risk_flags: cleanArray(raw.risk_flags),
     score_breakdown: cleanObject(raw.score_breakdown),
-    policy_version: cleanText(raw.policy_version),
+    legacy_score: cleanText(raw.legacy_score),
+    score_overrides: Array.isArray(raw.score_overrides) ? raw.score_overrides : [],
+    policy_version: cleanText(raw.policy_version || raw.scoring?.policy_version),
+    posting_fingerprint: cleanText(raw.posting_fingerprint || raw.scoring?.posting_fingerprint),
+    eligibility: cleanObject(raw.eligibility || raw.scoring?.eligibility),
+    dimensions: cleanObject(raw.dimensions || raw.scoring?.dimensions),
+    evidence: Array.isArray(raw.evidence) ? raw.evidence : (raw.scoring?.evidence || []),
+    rejected_evidence: Array.isArray(raw.rejected_evidence) ? raw.rejected_evidence : (raw.scoring?.rejected_evidence || []),
+    unknowns: cleanArray(raw.unknowns || raw.scoring?.unknowns),
+    confidence: cleanText(raw.confidence || raw.scoring?.confidence),
+    review_required: Boolean(raw.review_required ?? raw.scoring?.review_required),
+    review_reasons: cleanArray(raw.review_reasons || raw.scoring?.review_reasons),
+    calculation_trace: cleanObject(raw.calculation_trace || raw.scoring?.calculation_trace),
+    score_before_gates: cleanNumber(raw.score_before_gates ?? raw.scoring?.score_before_gates, 0),
+    extractor: cleanObject(raw.extractor || raw.scoring?.extractor),
+    urgency: cleanObject(raw.urgency || raw.scoring?.urgency),
+    scoring: cleanObject(raw.scoring),
     jobs_to_consider_id: cleanText(raw.jobs_to_consider_id),
     applied: Boolean(raw.applied),
     applied_at: cleanText(raw.applied_at),
@@ -236,13 +253,21 @@ export function readUmichOpportunities(filePath = CANONICAL_UMICH_FILE) {
 
 const SEGMENT_ORDER = Object.fromEntries(UMICH_SEGMENTS.map((segment, index) => [segment, index]));
 
+function canonicalRank(a, b) {
+  const eligibility = { clear: 0, risky: 1, unknown: 2, blocked: 3 };
+  const confidence = { high: 0, medium: 1, low: 2 };
+  return (eligibility[a.eligibility?.status] ?? 2) - (eligibility[b.eligibility?.status] ?? 2)
+    || Number(b.score || 0) - Number(a.score || 0)
+    || (confidence[a.confidence] ?? 2) - (confidence[b.confidence] ?? 2)
+    || (SEGMENT_ORDER[a.segment] ?? 9) - (SEGMENT_ORDER[b.segment] ?? 9)
+    || a.title.localeCompare(b.title);
+}
+
 export function writeUmichOpportunities(store, filePath = CANONICAL_UMICH_FILE) {
   const opportunities = (Array.isArray(store?.opportunities) ? store.opportunities : [])
     .map(normalizeUmichOpportunityRecord)
     .filter(item => item.id)
-    .sort((a, b) => (SEGMENT_ORDER[a.segment] ?? 9) - (SEGMENT_ORDER[b.segment] ?? 9)
-      || Number(b.score || 0) - Number(a.score || 0)
-      || a.title.localeCompare(b.title));
+    .sort(canonicalRank);
   const next = {
     version: 1,
     generated_at: new Date().toISOString(),
@@ -276,7 +301,22 @@ function rescoreRecord(item, now) {
     fit_rationale: scoring.fit_rationale,
     risk_flags: scoring.risk_flags,
     score_breakdown: scoring.score_breakdown,
+    legacy_score: item.legacy_score || item.score,
     policy_version: scoring.policy_version,
+    posting_fingerprint: scoring.posting_fingerprint,
+    eligibility: scoring.eligibility,
+    dimensions: scoring.dimensions,
+    evidence: scoring.evidence,
+    rejected_evidence: scoring.rejected_evidence,
+    unknowns: scoring.unknowns,
+    confidence: scoring.confidence,
+    review_required: scoring.review_required,
+    review_reasons: scoring.review_reasons,
+    calculation_trace: scoring.calculation_trace,
+    score_before_gates: scoring.score_before_gates,
+    extractor: scoring.extractor,
+    urgency: scoring.urgency,
+    scoring,
     status: closedByDate ? 'closed' : item.status,
     closed_reason: closedByDate ? (item.closed_reason || 'posting end date passed') : item.closed_reason,
     closed_at: closedByDate ? (item.closed_at || now.toISOString()) : item.closed_at,
@@ -434,6 +474,7 @@ export function patchUmichOpportunity(id, updates = {}, filePath = CANONICAL_UMI
   const index = store.opportunities.findIndex(item => item.id === needle || item.job_id === needle || item.url === needle);
   if (index < 0) throw new Error(`U-M Careers opportunity not found: ${id}`);
   const previous = store.opportunities[index];
+  updates = externalScoreToLegacy(updates, previous);
   store.opportunities[index] = normalizeUmichOpportunityRecord({
     ...previous,
     ...updates,

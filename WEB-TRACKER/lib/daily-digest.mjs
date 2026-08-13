@@ -20,6 +20,7 @@ function summaryList(summary = {}) {
     ['Job events', summary.job_events_today],
     ['PhD option events', summary.phd_events_today],
     ['Applied today', summary.applied_today],
+    // Contacted is the umbrella (research + networking + outreach). Do not list Networking separately.
     ['Contacted today', summary.contacted_today],
     ['Followed today', summary.followed_today],
     ['Follow-ups due today', summary.followups_due_today],
@@ -89,7 +90,7 @@ export async function buildDailyDigest({ date = '', timeZone = process.env.DAILY
       '',
       summaryText,
       '',
-      'The XLSX and CSV attachments include today\'s applied, contacted, followed, and follow-up rows.',
+      'The XLSX and CSV attachments include today\'s applied, contacted (includes networking), followed, and follow-up rows.',
     ].filter(Boolean).join('\n'),
     html: `
       <h2>Career-Ops Daily Digest - ${escapeHtml(activity.date)}</h2>
@@ -99,6 +100,7 @@ export async function buildDailyDigest({ date = '', timeZone = process.env.DAILY
       <h3>Applied Today</h3>
       ${htmlTable(activity.details.applied_today)}
       <h3>Contacted Today</h3>
+      <p style="margin:0 0 0.5rem;color:#555;">Includes U-M / PhD research outreach and Networking Command Center contacts (one row per person).</p>
       ${htmlTable(activity.details.contacted_today)}
       <h3>Followed Today</h3>
       ${htmlTable(activity.details.followed_today)}

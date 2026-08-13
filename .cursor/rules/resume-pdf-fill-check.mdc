@@ -1,0 +1,46 @@
+---
+description: After every resume PDF render, measure page fill and fix under/overfill before stopping
+globs: harsh/resume/**/*
+alwaysApply: true
+---
+
+# Resume Page Fill — Render, Measure, Fix (ALWAYS)
+
+Empty bottom-of-page whitespace on a one-page resume is a defect. Do not ship it and wait for the user to notice.
+
+## Hard contract
+
+1. After **every** resume PDF render under `harsh/resume/`, run:
+
+```bash
+node scripts/measure-pdf-fill.mjs <output.pdf>
+```
+
+   (`generate-latex.mjs` already prints this warning — still verify the numbers.)
+
+2. **One-page target fill**
+   - `fillPct` should be about **90–96%**
+   - `bottomGapIn` should be about **0.35–0.85 in**
+   - If `bottomGapIn > 0.90` → **UNDERFILLED** — add honest, role-relevant content (or slightly restore compressed bullets) and re-render to a **new** PDF name
+   - If `Pages > 1` → **OVERFILLED** — compress, then re-render to a **new** PDF name
+
+3. Prefer filling with **real evidence** (from `cv.md` / known work), not fake padding, not giant empty `\vspace`, not “Microsoft Word” repeated five times.
+
+4. Still obey **never overwrite existing PDFs** (see `resume-pdf-no-overwrite.mdc`). Each fix iteration gets a new filename (`…_v2.pdf`, `…_v3.pdf`, …).
+
+5. Work is incomplete until fill is in band **or** the user explicitly accepts the current gap.
+6. After render, **open/read the PDF** (or a screenshot of it) and check for layout defects: overlapping text, clipped school/company names, colliding date columns, or entries jammed onto one horizontal line. Fill % alone is not enough — a broken Education block can still “fill” the page.
+
+## Fill order (what to add first when underfilled)
+
+1. Strongest role-matching bullets that were compressed away
+2. Mechanical design / assembly / test-stand / vacuum / DAQ evidence
+3. Coursework line under Education (if relevant)
+4. One extra honest project bullet
+5. Only then tiny spacing/font tweaks
+
+## See also
+
+- `scripts/measure-pdf-fill.mjs`
+- `harsh/resume/README.md`
+- `.cursor/rules/resume-pdf-no-overwrite.mdc`

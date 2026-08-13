@@ -54,6 +54,8 @@ package-lock.json
 # Cursor local artifacts
 .cursor/debug-*.log
 .cursor/plans/*.plan.md
+.cursor/agent-scratch/**
+!.cursor/agent-scratch/README.md
 
 # Local scratch files
 harsh/Untitled spreadsheet.xlsx

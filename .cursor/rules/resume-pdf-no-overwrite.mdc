@@ -1,0 +1,37 @@
+---
+description: Never overwrite existing resume PDFs — always write a new relevant filename
+globs: harsh/resume/**/*
+alwaysApply: true
+---
+
+# Resume PDF Render — Never Overwrite (ALWAYS)
+
+When compiling any resume `.tex` under `harsh/resume/` (or any resume PDF elsewhere in this repo):
+
+## Hard contract
+
+1. **Never overwrite an existing PDF.** If `HarshDesai_July2026_Resume_Detectors.pdf` (or any other resume PDF) already exists, do **not** write to that path again.
+2. **One living LaTeX source is fine to edit in place** (e.g. keep iterating on a single `.tex`). PDF outputs are **append-only snapshots**.
+3. Every render must use a **new, relevant PDF filename** that reflects the focus/variant, for example:
+   - `HarshDesai_July2026_Resume_Instrumentation.pdf`
+   - `HarshDesai_July2026_Resume_Instrumentation_v2.pdf`
+   - `HarshDesai_YYYY-MM-DD_Resume_<focus>.pdf`
+4. Prefer an explicit output path with `node generate-latex.mjs <input.tex> <new-output.pdf>`.
+5. `generate-latex.mjs` refuses to overwrite unless `--force` is passed. Agents must **not** use `--force` except when the user explicitly asked to restore/replace a specific PDF.
+
+## Wrong vs right
+
+```text
+❌ node generate-latex.mjs harsh/resume/Foo.tex
+   # when Foo.pdf already exists — silent overwrite
+
+❌ node generate-latex.mjs harsh/resume/Foo.tex harsh/resume/Foo.pdf
+   # same path as an existing PDF
+
+✅ node generate-latex.mjs harsh/resume/Foo.tex harsh/resume/Foo_Instrumentation.pdf
+✅ node generate-latex.mjs harsh/resume/Foo.tex harsh/resume/Foo_Instrumentation_2026-08-11.pdf
+```
+
+## See also
+
+`harsh/resume/README.md`

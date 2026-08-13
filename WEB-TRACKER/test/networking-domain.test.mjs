@@ -25,6 +25,7 @@ import {
   pipelineGroupForStage,
 } from '../lib/networking/workflow.mjs';
 import {
+  cancelNetworkingResearch,
   completeNetworkingResearch,
   markNetworkingResearchInProgress,
   queueNetworkingResearch,
@@ -190,6 +191,42 @@ test('research queue advances without mixing completed work into pending', () =>
   }
 });
 
+test('research queue cancel preserves notes and merges duplicate org orders', () => {
+  const { directory, file } = tempFile('queue-cancel.json');
+  try {
+    const first = queueNetworkingResearch({
+      organization_id: 'network-org-merge',
+      organization_name: 'Merge Co',
+      opportunity_ids: ['job-a'],
+      notes: 'Find AOCS / spacecraft ops contacts',
+    }, file);
+    assert.equal(first.duplicate, false);
+    assert.match(first.order.notes, /AOCS/);
+
+    const second = queueNetworkingResearch({
+      organization_id: 'network-org-merge',
+      organization_name: 'Merge Co',
+      opportunity_ids: ['job-b'],
+      notes: 'Also calibration / radiometry engineers',
+    }, file);
+    assert.equal(second.duplicate, true);
+    assert.equal(second.order.id, first.order.id);
+    assert.deepEqual(second.order.opportunity_ids.sort(), ['job-a', 'job-b']);
+    assert.match(second.order.notes, /AOCS/);
+    assert.match(second.order.notes, /calibration/);
+    assert.equal(readNetworkingResearchQueue(file).pending_count, 1);
+
+    const canceled = cancelNetworkingResearch(first.order.id, file);
+    assert.equal(canceled.order.status, 'canceled');
+    const after = readNetworkingResearchQueue(file);
+    assert.equal(after.pending_count, 0);
+    assert.equal(after.completed[0].status, 'canceled');
+    assert.match(after.completed[0].notes, /AOCS/);
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
+});
+
 test('person patch preserves independent channel state', () => {
   const { directory, file } = tempFile('networking.json');
   try {
@@ -246,6 +283,39 @@ test('candidate review gates outreach and approval advances the workflow', () =>
       channel: 'email',
     }, file);
     assert.equal(contacted.person.relationship_stage, 'contacted');
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
+});
+
+test('explicit Kanban stage moves auto-approve outreach transitions', () => {
+  const { directory, file } = tempFile('networking.json');
+  try {
+    const created = upsertNetworkingPerson({
+      display_name: 'Kanban Candidate',
+      review_status: 'review_ready',
+      relationship_stage: 'identified',
+      source_refs: [{
+        field: 'title',
+        observed_value: 'Systems Engineer',
+        url: 'https://example.test/kanban-profile',
+        source_type: 'official_profile',
+      }],
+    }, file);
+
+    const researching = patchNetworkingPerson(created.person.id, {
+      relationship_stage: 'researching',
+    }, file);
+    assert.equal(researching.person.relationship_stage, 'researching');
+    assert.equal(researching.person.review_status, 'review_ready');
+
+    const contacted = patchNetworkingPerson(created.person.id, {
+      relationship_stage: 'contacted',
+      approve_on_stage_move: true,
+    }, file);
+    assert.equal(contacted.person.relationship_stage, 'contacted');
+    assert.equal(contacted.person.review_status, 'approved');
+    assert.equal(Object.prototype.hasOwnProperty.call(contacted.person, 'approve_on_stage_move'), false);
   } finally {
     rmSync(directory, { recursive: true, force: true });
   }

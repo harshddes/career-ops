@@ -12,6 +12,9 @@ import {
   sourceIdFromCanonicalPath,
 } from './research-user-state.mjs';
 import { DEFAULT_DIGEST_TIMEZONE, localDateString } from './today-activity.mjs';
+import { scoreResearchProspect } from './research-fit-scoring.mjs';
+import { externalScoreToLegacy } from './opportunity-scoring/index.mjs';
+import { normalizeActiveGrants } from './professor-grants/schema.mjs';
 
 const LIB_DIR = dirname(fileURLToPath(import.meta.url));
 export const WEB_TRACKER_DIR = join(LIB_DIR, '..');
@@ -49,6 +52,12 @@ const RESEARCH_PROSPECT_CONFIGS = {
     sourceReport: 'WEB-TRACKER/research/private-company-phd-collaboration-2026.md',
     canonicalFile: join(CAREER_DATA_DIR, 'private-co-phd-paths.json'),
     dashboardFile: join(DASHBOARD_DATA_DIR, 'private-co-phd-paths.json'),
+  },
+  'professor-list': {
+    scope: 'Harsh Desai professor and PhD advisor outreach list',
+    sourceReport: 'HarshD_Professors List/HarshD_Professors_List_Research_Enriched_2026-07-10.html',
+    canonicalFile: join(CAREER_DATA_DIR, 'professor-list-research-prospects.json'),
+    dashboardFile: join(DASHBOARD_DATA_DIR, 'professor-list-research-prospects.json'),
   },
 };
 
@@ -320,6 +329,33 @@ function cleanEvidence(value = []) {
   })).filter(item => item.url || item.note || item.label);
 }
 
+function cleanGmailUrl(value = '') {
+  try {
+    const parsed = new URL(cleanText(value));
+    return parsed.protocol === 'https:' && parsed.hostname.toLowerCase() === 'mail.google.com'
+      ? parsed.href
+      : '';
+  } catch {
+    return '';
+  }
+}
+
+function cleanOpenings(value = []) {
+  if (!Array.isArray(value)) return [];
+  return value.map(item => ({
+    title: cleanText(item?.title),
+    type: cleanText(item?.type),
+    status: cleanText(item?.status),
+    posted_date: cleanText(item?.posted_date),
+    deadline: cleanText(item?.deadline),
+    location: cleanText(item?.location),
+    summary: cleanMultilineText(item?.summary),
+    application_url: cleanText(item?.application_url),
+    linkedin_url: cleanText(item?.linkedin_url),
+    source_urls: cleanArray(item?.source_urls),
+  })).filter(item => item.title || item.application_url);
+}
+
 function cleanObject(value = {}) {
   if (!value || typeof value !== 'object' || Array.isArray(value)) return {};
   return Object.fromEntries(Object.entries(value).filter(([, entry]) => entry !== undefined));
@@ -377,8 +413,17 @@ export function normalizeResearchProspect(raw = {}) {
   const lab = cleanText(raw.lab || raw.group);
   const title = cleanText(raw.title);
   const id = cleanText(raw.id) || slugify(`${name}-${department || lab || title}`);
-  const score = Number(raw.score);
+  const canonicalFit = scoreResearchProspect(raw);
+  const score = canonicalFit.score;
   const now = new Date().toISOString();
+  const previousPolicy = cleanText(raw.policy_version);
+  const incomingLegacy = cleanText(raw.legacy_score);
+  const externalScore = cleanText(raw.score);
+  const legacyScore = incomingLegacy
+    || (previousPolicy && previousPolicy !== cleanText(canonicalFit.policy_version) ? externalScore : '')
+    || (raw.scoring?.canonical === true && raw.scoring?.policy_version === canonicalFit.policy_version
+      ? ''
+      : externalScore);
 
   return {
     id,
@@ -397,6 +442,9 @@ export function normalizeResearchProspect(raw = {}) {
     profile_url: cleanText(raw.profile_url),
     lab_url: cleanText(raw.lab_url),
     linkedin_url: cleanText(raw.linkedin_url),
+    gmail_thread_url: cleanGmailUrl(raw.gmail_thread_url),
+    gmail_thread_url_2: cleanGmailUrl(raw.gmail_thread_url_2),
+    gmail_search_url: cleanGmailUrl(raw.gmail_search_url),
     contact_email: cleanText(raw.contact_email),
     contact_page: cleanText(raw.contact_page || raw.profile_url || raw.lab_url),
     phone: cleanText(raw.phone),
@@ -405,22 +453,38 @@ export function normalizeResearchProspect(raw = {}) {
     facilities: cleanArray(raw.facilities),
     transfer_vectors: cleanArray(raw.transfer_vectors),
     hiring_signals: cleanEvidence(raw.hiring_signals),
+    active_grants: normalizeActiveGrants(raw.active_grants),
+    openings: cleanOpenings(raw.openings),
+    grants_checked_at: cleanText(raw.grants_checked_at),
+    grant_research_status: cleanText(raw.grant_research_status),
+    grant_research_attempts: Array.isArray(raw.grant_research_attempts)
+      ? raw.grant_research_attempts.map(cleanObject)
+      : [],
     evidence: cleanEvidence(raw.evidence),
-    score: Number.isNaN(score) ? 0 : Math.max(0, Math.min(5, score)),
-    tier: cleanText(raw.tier || scoreTier(score)),
-    fit_rationale: cleanText(raw.fit_rationale),
-    outreach_angle: cleanText(raw.outreach_angle),
+    score,
+    legacy_score: legacyScore,
+    score_overrides: Array.isArray(raw.score_overrides) ? raw.score_overrides : [],
+    tier: canonicalFit.tier,
+    fit_rationale: canonicalFit.fit_rationale,
+    outreach_angle: canonicalFit.outreach_angle,
     likely_route: cleanText(raw.likely_route),
     opt_h1b_notes: cleanText(raw.opt_h1b_notes),
     uncertainty_notes: cleanText(raw.uncertainty_notes),
     research_interests_summary: cleanMultilineText(raw.research_interests_summary),
     recent_publication: cleanMultilineText(raw.recent_publication),
-    priority: cleanText(raw.priority || raw.tier || scoreTier(score)),
+    priority: canonicalFit.priority,
     status: normalizeStatus(raw.status),
     last_contacted: cleanText(raw.last_contacted),
     last_followed_up: cleanText(raw.last_followed_up),
     follow_up_date: cleanText(raw.follow_up_date),
     notes: cleanText(raw.notes),
+    outreach_category: cleanText(raw.outreach_category),
+    outreach_color: cleanText(raw.outreach_color),
+    outreach_source_color: cleanText(raw.outreach_source_color),
+    outreach_status_detail: cleanText(raw.outreach_status_detail),
+    outreach_outcome: cleanMultilineText(raw.outreach_outcome),
+    verification_evidence: cleanMultilineText(raw.verification_evidence),
+    source_details: cleanObject(raw.source_details),
     outreach: normalizeOutreach(raw.outreach),
     source_report: cleanText(raw.source_report || defaultSourceReport(raw)),
     first_seen: cleanText(raw.first_seen || raw.created_at || now),
@@ -456,16 +520,36 @@ export function normalizeResearchProspect(raw = {}) {
     translated_summary: cleanText(raw.translated_summary),
     translation_cache_key: cleanText(raw.translation_cache_key),
     score_band: cleanText(raw.score_band),
-    score_breakdown: cleanObject(raw.score_breakdown),
+    score_breakdown: canonicalFit.score_breakdown,
     score_audit: cleanObject(raw.score_audit),
-    tier_cap: cleanText(raw.tier_cap),
-    cap_reasons: cleanArray(raw.cap_reasons),
-    daily_work_type: cleanText(raw.daily_work_type),
-    verified_overlap: cleanArray(raw.verified_overlap),
-    missing_evidence: cleanArray(raw.missing_evidence),
+    tier_cap: canonicalFit.tier_cap,
+    cap_reasons: canonicalFit.cap_reasons,
+    daily_work_type: canonicalFit.daily_work_type,
+    verified_overlap: canonicalFit.verified_overlap,
+    missing_evidence: canonicalFit.missing_evidence,
     area_assessments: cleanObject(raw.area_assessments),
-    risk_flags: cleanArray(raw.risk_flags),
-    needs_deep_research: Boolean(raw.needs_deep_research),
+    risk_flags: canonicalFit.risk_flags || [],
+    needs_deep_research: Boolean(canonicalFit.review_required || canonicalFit.needs_deep_research),
+    policy_version: canonicalFit.policy_version,
+    posting_fingerprint: canonicalFit.posting_fingerprint,
+    eligibility: canonicalFit.eligibility,
+    dimensions: canonicalFit.dimensions,
+    rejected_evidence: canonicalFit.rejected_evidence || [],
+    unknowns: canonicalFit.unknowns || [],
+    confidence: canonicalFit.confidence,
+    evidence_confidence: cleanObject(canonicalFit.evidence_confidence),
+    relationship_signal: cleanObject(canonicalFit.relationship_signal),
+    funding_opening_signal: cleanObject(canonicalFit.funding_opening_signal),
+    concepts: Array.isArray(canonicalFit.concepts) ? canonicalFit.concepts : [],
+    scoring_kind: cleanText(canonicalFit.scoring_kind || 'research_contact'),
+    recalibration_pending: Boolean(canonicalFit.recalibration_pending),
+    review_required: canonicalFit.review_required,
+    review_reasons: canonicalFit.review_reasons || [],
+    calculation_trace: canonicalFit.calculation_trace,
+    score_before_gates: canonicalFit.score_before_gates,
+    extractor: canonicalFit.extractor,
+    urgency: canonicalFit.urgency,
+    scoring: canonicalFit,
   };
 }
 
@@ -613,7 +697,7 @@ export function patchResearchProspect(id, updates = {}, filePathOrOptions = CANO
   if (index < 0) throw new Error(`research prospect not found: ${id}`);
 
   const current = store.prospects[index];
-  const semanticUpdates = { ...updates };
+  const semanticUpdates = externalScoreToLegacy(updates, current);
   const nextStatus = updates.status === undefined
     ? normalizeStatus(current.status)
     : normalizeStatus(updates.status, { strict: true });

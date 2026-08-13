@@ -22,7 +22,7 @@ test('plasma diagnostics PhD clears strong visibility', () => {
   assert.ok(result.score_breakdown.strong_matches.includes('plasma'));
 });
 
-test('funding flags do not change score', () => {
+test('funding evidence changes eligibility confidence, not technical fit arithmetic', () => {
   const base = {
     title: 'PhD in cryogenic heat pipes',
     summary: 'Experimental cryogenics, thermal engineering, fluid mechanics.',
@@ -38,7 +38,9 @@ test('funding flags do not change score', () => {
   }, NOW);
   assert.equal(unfunded.score, funded.score);
   assert.equal(unfunded.score_band, funded.score_band);
-  assert.equal(funded.score_breakdown.funding_ignored, true);
+  assert.equal(unfunded.eligibility.status, 'unknown');
+  assert.equal(funded.eligibility.status, 'clear');
+  assert.equal(funded.score_breakdown.funding_ignored, false);
 });
 
 test('dentistry junk archives', () => {

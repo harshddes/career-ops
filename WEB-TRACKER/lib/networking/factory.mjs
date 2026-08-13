@@ -14,9 +14,30 @@ function cleanText(value) {
   return String(value ?? '').replace(/\r?\n/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
+/** Preserve paragraphs in research briefs; collapse only trailing/leading whitespace per line. */
+function cleanNotes(value) {
+  return String(value ?? '')
+    .replace(/\r\n/g, '\n')
+    .split('\n')
+    .map(line => line.replace(/[ \t]+/g, ' ').trimEnd())
+    .join('\n')
+    .replace(/^\n+/, '')
+    .replace(/\n+$/, '')
+    .trim();
+}
+
 function cleanArray(value) {
   if (!Array.isArray(value)) return [];
   return [...new Set(value.map(cleanText).filter(Boolean))];
+}
+
+function mergeNotes(existing, incoming) {
+  const prev = cleanNotes(existing);
+  const next = cleanNotes(incoming);
+  if (!next) return prev;
+  if (!prev) return next;
+  if (prev.includes(next)) return prev;
+  return `${prev}\n${next}`;
 }
 
 function atomicWrite(filePath, content) {
@@ -59,8 +80,8 @@ function normalizeResearchOrder(raw = {}) {
     exclusions: cleanArray(raw.exclusions),
     known_person_ids: cleanArray(raw.known_person_ids),
     source_preferences: cleanArray(raw.source_preferences),
-    notes: cleanText(raw.notes),
-    status: ['queued', 'in_progress', 'review_ready', 'completed', 'failed'].includes(raw.status)
+    notes: cleanNotes(raw.notes),
+    status: ['queued', 'in_progress', 'review_ready', 'completed', 'failed', 'canceled'].includes(raw.status)
       ? raw.status
       : 'queued',
     candidate_person_ids: cleanArray(raw.candidate_person_ids),
@@ -128,11 +149,28 @@ export function queueNetworkingResearch(raw = {}, filePath = NETWORKING_RESEARCH
   });
   if (!order.organization_name) throw new Error('networking research order requires organization_name');
 
-  const existing = queue.pending.find(item => (
+  const existingIndex = queue.pending.findIndex(item => (
     item.organization_id && item.organization_id === order.organization_id
     && ['queued', 'in_progress'].includes(item.status)
   ));
-  if (existing) return { queue, order: existing, duplicate: true };
+  if (existingIndex >= 0) {
+    const existing = queue.pending[existingIndex];
+    const merged = normalizeResearchOrder({
+      ...existing,
+      opportunity_ids: [...(existing.opportunity_ids || []), ...(order.opportunity_ids || [])],
+      personas: [...(existing.personas || []), ...(order.personas || [])],
+      affinity_paths: [...(existing.affinity_paths || []), ...(order.affinity_paths || [])],
+      locations: [...(existing.locations || []), ...(order.locations || [])],
+      exclusions: [...(existing.exclusions || []), ...(order.exclusions || [])],
+      known_person_ids: [...(existing.known_person_ids || []), ...(order.known_person_ids || [])],
+      source_preferences: [...(existing.source_preferences || []), ...(order.source_preferences || [])],
+      notes: mergeNotes(existing.notes, order.notes),
+      updated_at: new Date().toISOString(),
+    });
+    queue.pending[existingIndex] = merged;
+    const next = writeNetworkingResearchQueue(queue, filePath);
+    return { queue: next, order: merged, duplicate: true };
+  }
   queue.pending.push(order);
   const next = writeNetworkingResearchQueue(queue, filePath);
   return { queue: next, order, duplicate: false };
@@ -149,7 +187,7 @@ function updateResearchOrder(id, updates, filePath = NETWORKING_RESEARCH_QUEUE_F
     id: previous.id,
     updated_at: new Date().toISOString(),
   });
-  if (['completed', 'failed'].includes(order.status)) {
+  if (['completed', 'failed', 'canceled'].includes(order.status)) {
     queue.pending.splice(index, 1);
     queue.completed.push(order);
   } else {
@@ -175,5 +213,13 @@ export function completeNetworkingResearch(id, { failed = false, error = '' } = 
   return updateResearchOrder(id, {
     status: failed ? 'failed' : 'completed',
     error: failed ? cleanText(error || 'research failed') : '',
+  }, filePath);
+}
+
+/** Drop a pending research work order without deleting the organization or people. */
+export function cancelNetworkingResearch(id, filePath = NETWORKING_RESEARCH_QUEUE_FILE) {
+  return updateResearchOrder(id, {
+    status: 'canceled',
+    error: '',
   }, filePath);
 }

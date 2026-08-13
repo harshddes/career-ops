@@ -1,0 +1,165 @@
+[
+  {
+    "id": "ivo-classen-plasma-diagnostics",
+    "label": "Ivo Classen PEPD / Magnum-PSI diagnostics",
+    "prospect": {
+      "name": "Ivo Classen",
+      "title": "Group Leader, Plasma Edge Physics and Diagnostics (PEPD) — DIFFER",
+      "lab": "Plasma Edge Physics and Diagnostics at DIFFER; Magnum-PSI-related diagnostics",
+      "current_focus": "Fusion plasma control, plasma edge physics, plasma-wall interaction, multispectral imaging, CXRS, Motional Stark Effect, exhaust/divertor diagnostics",
+      "research_keywords": [
+        "Fusion plasma control, plasma edge physics, plasma-wall interaction, multispectral imaging",
+        "CXRS",
+        "Motional Stark Effect, exhaust/divertor diagnostics"
+      ],
+      "methods": [],
+      "facilities": [],
+      "evidence": [{ "label": "DIFFER PEPD", "url": "https://www.differ.nl/research/plasma-edge-physics-and-diagnostics" }],
+      "status": "responded_positive",
+      "outreach_status_detail": "Strong positive signal",
+      "outreach_outcome": "Strongly endorsed engineering fit"
+    },
+    "expected": {
+      "min_score": 4.0,
+      "tier": "A",
+      "max_tier": "A",
+      "must_include_concepts": ["plasma_diagnostics", "fusion_plasma"],
+      "relationship_does_not_change_tier": true
+    }
+  },
+  {
+    "id": "martin-rubin-space-ms",
+    "label": "Martin Rubin Space Mass Spectrometry thin record",
+    "prospect": {
+      "name": "Martin Rubin",
+      "title": "Space Mass Spectrometry",
+      "unit": "Space Mass Spectrometry",
+      "lab": "Space Mass Spectrometry",
+      "current_focus": "",
+      "research_keywords": [],
+      "methods": [],
+      "facilities": [],
+      "evidence": [],
+      "status": "responded_positive",
+      "outreach_status_detail": "Strong positive signal"
+    },
+    "expected": {
+      "min_score": 4.0,
+      "tier": ["A", "B"],
+      "confidence": "low",
+      "must_include_concepts": ["space_mass_spectrometry"],
+      "relationship_does_not_change_tier": true
+    }
+  },
+  {
+    "id": "hans-meister-iter-diagnostics",
+    "label": "Hans Meister ITER diagnostics group leader",
+    "prospect": {
+      "name": "Hans Meister",
+      "title": "ITER Technology & Diagnostics — ITER Diagnostics Group Leader",
+      "lab": "ITER Diagnostics",
+      "current_focus": "ITER diagnostics technology and plasma diagnostic systems",
+      "research_keywords": ["ITER", "diagnostics"],
+      "methods": ["plasma diagnostics"],
+      "facilities": ["ITER"],
+      "evidence": [{ "label": "ITER", "url": "https://www.iter.org/" }]
+    },
+    "expected": {
+      "min_score": 4.0,
+      "tier": ["A", "B"],
+      "must_include_concepts": ["plasma_diagnostics", "fusion_plasma"]
+    }
+  },
+  {
+    "id": "bern-lims-cluster",
+    "label": "Bern LIMS / space mass spectrometry",
+    "prospect": {
+      "name": "Rico Fausch",
+      "title": "LIMS / Space Mass Spectrometry",
+      "lab": "LIMS",
+      "current_focus": "Laser ionization mass spectrometry for space applications",
+      "research_keywords": ["LIMS", "space mass spectrometry"],
+      "methods": ["mass spectrometry"],
+      "facilities": ["LIMS"]
+    },
+    "expected": {
+      "min_score": 4.0,
+      "tier": ["A", "B"],
+      "must_include_concepts": ["space_mass_spectrometry"]
+    }
+  },
+  {
+    "id": "theory-only-control",
+    "label": "Computation/theory dominant control",
+    "prospect": {
+      "name": "Theory Only",
+      "title": "Professor of Computational Modeling",
+      "current_focus": "Numerical simulation, computational modeling, high-performance computing, and theoretical fluid modeling without experimental facilities",
+      "methods": ["simulation", "computational modeling", "HPC"],
+      "facilities": []
+    },
+    "expected": {
+      "max_score": 2.9,
+      "tier": ["C", "D"],
+      "risk_flags_include": ["computation_dominant_no_hardware_anchor"]
+    }
+  },
+  {
+    "id": "false-friend-office-space",
+    "label": "Office space false friend",
+    "prospect": {
+      "name": "Facilities Manager",
+      "title": "Office Space Planning Lead",
+      "current_focus": "Campus office space planning and work space utilization studies",
+      "methods": [],
+      "facilities": []
+    },
+    "expected": {
+      "max_score": 2.4,
+      "tier": ["C", "D"],
+      "must_not_include_concepts": ["space_instrumentation", "space_plasma", "space_mass_spectrometry"]
+    }
+  },
+  {
+    "id": "plasma-hardware-control",
+    "label": "Verified plasma diagnostics hardware control",
+    "prospect": {
+      "name": "Experimental Plasma PI",
+      "title": "Professor",
+      "lab": "Plasma Diagnostics Laboratory",
+      "lab_url": "https://example.edu/plasma-lab",
+      "current_focus": "Experimental plasma diagnostics using vacuum chambers, high-voltage pulsed power, optical diagnostics, particle detectors, calibration, and synchronized data acquisition.",
+      "methods": ["vacuum chamber experiments", "optical diagnostics", "detector calibration", "DAQ"],
+      "facilities": ["high-voltage vacuum test stand"],
+      "evidence": [
+        { "label": "Faculty profile", "url": "https://example.edu/faculty/person" },
+        { "label": "Lab page", "url": "https://example.edu/lab" }
+      ]
+    },
+    "expected": {
+      "min_score": 4.0,
+      "tier": "A"
+    }
+  },
+  {
+    "id": "jing-tang-autonomous-lab",
+    "label": "Autonomous-lab AI materials discovery stays capped",
+    "prospect": {
+      "name": "Jing Tang",
+      "title": "Assistant Professor",
+      "lab": "Tang Group",
+      "lab_url": "https://tang.engin.umich.edu/",
+      "current_focus": "Autonomous laboratory and AI-powered materials discovery for batteries, catalysis, and materials synthesis.",
+      "research_interests_summary": "Artificial intelligence, machine learning, autonomous laboratory, electrochemistry, materials synthesis.",
+      "methods": ["autonomous lab systems", "machine learning", "materials characterization"],
+      "evidence": [
+        { "label": "Faculty profile", "url": "https://example.edu/faculty/person" },
+        { "label": "Lab page", "url": "https://example.edu/lab" }
+      ]
+    },
+    "expected": {
+      "max_score": 2.9,
+      "tier": ["C", "D"]
+    }
+  }
+]

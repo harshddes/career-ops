@@ -3,10 +3,13 @@ param(
   [string]$ControlTaskName = "CareerOpsControlTick",
   [string]$FactoryTaskName = "CareerOpsEuraxessFactoryTick",
   [string]$DigestTaskName = "CareerOpsDailyDigest",
+  [string]$GithubSyncTaskName = "CareerOpsGithubSync",
   [string]$Mode = "assisted",
   [switch]$SkipControlTick,
   [switch]$SkipFactoryTick,
   [switch]$SkipDigestTick,
+  [switch]$SkipGithubSyncTick,
+  [switch]$SkipAutopilotTick,
   [switch]$Remove
 )
 
@@ -26,7 +29,7 @@ if ($Mode -notin @("assisted", "autopilot", "manual")) {
 }
 
 if ($Remove) {
-  foreach ($name in @($TaskName, $ControlTaskName, $FactoryTaskName, $DigestTaskName)) {
+  foreach ($name in @($TaskName, $ControlTaskName, $FactoryTaskName, $DigestTaskName, $GithubSyncTaskName)) {
     $existing = Get-ScheduledTask -TaskName $name -ErrorAction SilentlyContinue
     if ($existing) {
       Unregister-ScheduledTask -TaskName $name -Confirm:$false
@@ -44,32 +47,35 @@ if (-not $cmd) {
 }
 # Prefer current user registration so Dropbox/path moves do not require elevation.
 $taskUser = if ($env:USERDOMAIN -and $env:USERNAME) { "$env:USERDOMAIN\$env:USERNAME" } else { $env:USERNAME }
-$arguments = "/c `"`"$launcher`" $Mode --no-open`""
 
-$action = New-ScheduledTaskAction -Execute $cmd -Argument $arguments -WorkingDirectory $careerOpsRoot
-$trigger = New-ScheduledTaskTrigger -AtLogOn -User $taskUser
-$settings = New-ScheduledTaskSettingsSet `
-  -AllowStartIfOnBatteries `
-  -DontStopIfGoingOnBatteries `
-  -StartWhenAvailable `
-  -RunOnlyIfNetworkAvailable `
-  -RestartCount 3 `
-  -RestartInterval (New-TimeSpan -Minutes 5) `
-  -ExecutionTimeLimit (New-TimeSpan -Hours 12)
+if (-not $SkipAutopilotTick) {
+  $arguments = "/c `"`"$launcher`" $Mode --no-open`""
 
-Register-ScheduledTask `
-  -TaskName $TaskName `
-  -Action $action `
-  -Trigger $trigger `
-  -Settings $settings `
-  -Description "Runs the local Career-Ops dashboard control plane and scheduled scans at login." `
-  -User $taskUser `
-  -Force | Out-Null
+  $action = New-ScheduledTaskAction -Execute $cmd -Argument $arguments -WorkingDirectory $careerOpsRoot
+  $trigger = New-ScheduledTaskTrigger -AtLogOn -User $taskUser
+  $settings = New-ScheduledTaskSettingsSet `
+    -AllowStartIfOnBatteries `
+    -DontStopIfGoingOnBatteries `
+    -StartWhenAvailable `
+    -RunOnlyIfNetworkAvailable `
+    -RestartCount 3 `
+    -RestartInterval (New-TimeSpan -Minutes 5) `
+    -ExecutionTimeLimit (New-TimeSpan -Hours 12)
 
-Write-Host "Registered scheduled task: $TaskName"
-Write-Host "Mode: $Mode"
-Write-Host "User: $taskUser"
-Write-Host "Working directory: $careerOpsRoot"
+  Register-ScheduledTask `
+    -TaskName $TaskName `
+    -Action $action `
+    -Trigger $trigger `
+    -Settings $settings `
+    -Description "Runs the local Career-Ops dashboard control plane and scheduled scans at login." `
+    -User $taskUser `
+    -Force | Out-Null
+
+  Write-Host "Registered scheduled task: $TaskName"
+  Write-Host "Mode: $Mode"
+  Write-Host "User: $taskUser"
+  Write-Host "Working directory: $careerOpsRoot"
+}
 
 if (-not $SkipControlTick) {
   $controlArgs = "--health"
@@ -137,38 +143,81 @@ if (-not $SkipFactoryTick) {
 }
 
 if (-not $SkipDigestTick) {
-  $digestScript = Join-Path $trackerRoot "scripts\send-daily-digest.mjs"
-  if (-not (Test-Path $digestScript)) {
-    throw "Cannot find daily digest script at $digestScript"
+  $digestLauncher = Join-Path $trackerRoot "scripts\send-daily-digest.cmd"
+  if (-not (Test-Path $digestLauncher)) {
+    throw "Cannot find daily digest launcher at $digestLauncher"
   }
-  $digestCommand = "/c `"node `"`"$digestScript`"`" --send >> `"`"$trackerRoot\runtime\daily-digest.log`"`" 2>&1`""
-  $digestAction = New-ScheduledTaskAction -Execute $cmd -Argument $digestCommand -WorkingDirectory $trackerRoot
+  # Use the .cmd wrapper directly. Nested cmd /c "node ""path with spaces"" ..."
+  # silently no-ops (exit 0, no mail, no log) on this Dropbox path.
+  $digestAction = New-ScheduledTaskAction -Execute $digestLauncher -WorkingDirectory $trackerRoot
   $digestTrigger = New-ScheduledTaskTrigger -Daily -At 11:59pm
+  # Fixed 23:59 only. Do NOT enable StartWhenAvailable — that is what caused
+  # catch-up sends at 2 AM / late morning after sleep.
   $digestSettings = New-ScheduledTaskSettingsSet `
     -AllowStartIfOnBatteries `
     -DontStopIfGoingOnBatteries `
-    -StartWhenAvailable `
     -RunOnlyIfNetworkAvailable `
     -RestartCount 2 `
     -RestartInterval (New-TimeSpan -Minutes 5) `
-    -ExecutionTimeLimit (New-TimeSpan -Hours 1)
+    -ExecutionTimeLimit (New-TimeSpan -Hours 1) `
+    -MultipleInstances IgnoreNew
 
   try {
     $digestSettings.WakeToRun = $true
   } catch {
-    Write-Host "WakeToRun not available on this Windows edition; StartWhenAvailable still applies."
+    Write-Host "WakeToRun not available on this Windows edition; PC must be awake at 23:59."
   }
+  try {
+    $digestSettings.StartWhenAvailable = $false
+  } catch {}
 
   Register-ScheduledTask `
     -TaskName $DigestTaskName `
     -Action $digestAction `
     -Trigger $digestTrigger `
     -Settings $digestSettings `
-    -Description "Sends Career-Ops Daily Digest to DAILY_DIGEST_RECIPIENTS (harshddes@gmail.com + desaienggworks@gmail.com) at 23:59 local time. StartWhenAvailable catches missed nights after sleep." `
+    -Description "Sends Career-Ops Daily Digest to DAILY_DIGEST_RECIPIENTS at exactly 23:59 Eastern. No catch-up after sleep." `
     -User $taskUser `
     -Force | Out-Null
 
   Write-Host "Registered scheduled task: $DigestTaskName"
-  Write-Host "Digest: daily 11:59 PM local, StartWhenAvailable=on"
+  Write-Host "Digest: daily 11:59 PM Eastern via $digestLauncher (no StartWhenAvailable)"
   Write-Host "Log: $trackerRoot\runtime\daily-digest.log"
+}
+
+if (-not $SkipGithubSyncTick) {
+  $githubSyncLauncher = Join-Path $trackerRoot "scripts\push-local-to-github.cmd"
+  if (-not (Test-Path $githubSyncLauncher)) {
+    throw "Cannot find GitHub sync launcher at $githubSyncLauncher"
+  }
+  $githubSyncAction = New-ScheduledTaskAction -Execute $githubSyncLauncher -WorkingDirectory $trackerRoot
+  $githubSyncTrigger = New-ScheduledTaskTrigger -Daily -At 11:50pm
+  $githubSyncSettings = New-ScheduledTaskSettingsSet `
+    -AllowStartIfOnBatteries `
+    -DontStopIfGoingOnBatteries `
+    -StartWhenAvailable `
+    -RunOnlyIfNetworkAvailable `
+    -RestartCount 2 `
+    -RestartInterval (New-TimeSpan -Minutes 5) `
+    -ExecutionTimeLimit (New-TimeSpan -Hours 1) `
+    -MultipleInstances IgnoreNew
+
+  try {
+    $githubSyncSettings.WakeToRun = $true
+  } catch {
+    Write-Host "WakeToRun not available on this Windows edition; PC must be awake at 23:50 for GitHub sync."
+  }
+
+  Register-ScheduledTask `
+    -TaskName $GithubSyncTaskName `
+    -Action $githubSyncAction `
+    -Trigger $githubSyncTrigger `
+    -Settings $githubSyncSettings `
+    -Description "Pushes allowlisted local Career-Ops changes to GitHub at 23:50, before the 23:59 digest. Never commits WEB-TRACKER/.env. Catch-up after sleep is allowed." `
+    -User $taskUser `
+    -Force | Out-Null
+
+  Write-Host "Registered scheduled task: $GithubSyncTaskName"
+  Write-Host "GitHub sync: daily 11:50 PM via $githubSyncLauncher (StartWhenAvailable on; no force push; no .env)"
+  Write-Host "Log: $trackerRoot\runtime\github-sync.log"
 }

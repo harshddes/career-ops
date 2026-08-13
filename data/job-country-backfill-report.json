@@ -1,0 +1,640 @@
+{
+  "generated_at": "2026-07-26T23:48:59.347Z",
+  "total_jobs": 170,
+  "with_country": 155,
+  "unknown_count": 15,
+  "unknown_jobs": [
+    {
+      "id": "fondazione-bruno-kessler-phd-candidate-design-fabrication-and-characterization-of-plasmonic-ante",
+      "location": ""
+    },
+    {
+      "id": "stockholm-university-phd-student-in-physics-experimental-particle-physics-with-the-atlas-experim",
+      "location": ""
+    },
+    {
+      "id": "european-synchrotron-radiation-facility-senior-fpga-engineer",
+      "location": ""
+    },
+    {
+      "id": "oklo-portfolio-2026-07-01",
+      "location": "Multiple"
+    },
+    {
+      "id": "oklo-open-call-for-engineers",
+      "location": "Any"
+    },
+    {
+      "id": "muon-space-instrument-systems-engineer",
+      "location": ""
+    },
+    {
+      "id": "muon-space-instrument-development-engineer-optomechanical",
+      "location": ""
+    },
+    {
+      "id": "muon-space-instrument-development-engineer-mechanisms",
+      "location": ""
+    },
+    {
+      "id": "commonwealth-fusion-systems-diagnostician",
+      "location": ""
+    },
+    {
+      "id": "helion-nuclear-engineer-diagnostics",
+      "location": ""
+    },
+    {
+      "id": "helion-integration-and-test-engineer",
+      "location": ""
+    },
+    {
+      "id": "pacific-fusion-oba-research-scientist-engineer-fusion-energy-systems",
+      "location": ""
+    },
+    {
+      "id": "marathon-fusion-research-scientist-plasma-diagnostics",
+      "location": ""
+    },
+    {
+      "id": "muon-space-spacecraft-test-engineer",
+      "location": ""
+    },
+    {
+      "id": "periodic-labs-research-scientist-materials-characterization",
+      "location": ""
+    }
+  ],
+  "distinct_locations": [
+    {
+      "location": "(empty)",
+      "country_code": null,
+      "countries": [],
+      "region": "Unknown",
+      "is_unknown": true
+    },
+    {
+      "location": "Denver, CO (US)",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Germany (R&S board)",
+      "country_code": "DE",
+      "countries": [
+        "DE"
+      ],
+      "region": "Europe",
+      "is_unknown": false
+    },
+    {
+      "location": "Singapore",
+      "country_code": "SG",
+      "countries": [
+        "SG"
+      ],
+      "region": "Asia",
+      "is_unknown": false
+    },
+    {
+      "location": "Dresden, DE",
+      "country_code": "DE",
+      "countries": [
+        "DE"
+      ],
+      "region": "Europe",
+      "is_unknown": false
+    },
+    {
+      "location": "Luxembourg",
+      "country_code": "LU",
+      "countries": [
+        "LU"
+      ],
+      "region": "Europe",
+      "is_unknown": false
+    },
+    {
+      "location": "Buenos Aires, AR (Hybrid)",
+      "country_code": "AR",
+      "countries": [
+        "AR"
+      ],
+      "region": "Latin America",
+      "is_unknown": false
+    },
+    {
+      "location": "Buenos Aires, AR",
+      "country_code": "AR",
+      "countries": [
+        "AR"
+      ],
+      "region": "Latin America",
+      "is_unknown": false
+    },
+    {
+      "location": "Berlin, DE",
+      "country_code": "DE",
+      "countries": [
+        "DE"
+      ],
+      "region": "Europe",
+      "is_unknown": false
+    },
+    {
+      "location": "München, DE",
+      "country_code": "DE",
+      "countries": [
+        "DE"
+      ],
+      "region": "Europe",
+      "is_unknown": false
+    },
+    {
+      "location": "Ottobrunn, DE",
+      "country_code": "DE",
+      "countries": [
+        "DE"
+      ],
+      "region": "Europe",
+      "is_unknown": false
+    },
+    {
+      "location": "Marlborough, MA",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Littleton, CO",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Goleta, CA",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Longmont, CO",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Chantilly, VA",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Albuquerque, NM",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Japan (Pale Blue)",
+      "country_code": "JP",
+      "countries": [
+        "JP"
+      ],
+      "region": "Asia",
+      "is_unknown": false
+    },
+    {
+      "location": "Houghton, MI (HQ)",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Middle River, MD",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Auckland, NZ",
+      "country_code": "NZ",
+      "countries": [
+        "NZ"
+      ],
+      "region": "Oceania",
+      "is_unknown": false
+    },
+    {
+      "location": "Long Beach, CA",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Waikato, NZ",
+      "country_code": "NZ",
+      "countries": [
+        "NZ"
+      ],
+      "region": "Oceania",
+      "is_unknown": false
+    },
+    {
+      "location": "Tucson, AZ",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Pasadena, CA",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Stennis Space Center, MS",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Wallops Island, VA",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Toronto, CAN",
+      "country_code": "CA",
+      "countries": [
+        "CA"
+      ],
+      "region": "North America",
+      "is_unknown": false
+    },
+    {
+      "location": "Leuven, Belgium",
+      "country_code": "BE",
+      "countries": [
+        "BE"
+      ],
+      "region": "Europe",
+      "is_unknown": false
+    },
+    {
+      "location": "Trento / Povo, Italy",
+      "country_code": "IT",
+      "countries": [
+        "IT"
+      ],
+      "region": "Europe",
+      "is_unknown": false
+    },
+    {
+      "location": "Cerdanyola del Vallès, Spain",
+      "country_code": "ES",
+      "countries": [
+        "ES"
+      ],
+      "region": "Europe",
+      "is_unknown": false
+    },
+    {
+      "location": "Multiple",
+      "country_code": null,
+      "countries": [],
+      "region": "Unknown",
+      "is_unknown": true
+    },
+    {
+      "location": "Idaho Falls, ID",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Santa Clara, CA or Remote",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Any",
+      "country_code": null,
+      "countries": [],
+      "region": "Unknown",
+      "is_unknown": true
+    },
+    {
+      "location": "San Diego, CA, USA",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Rosemead, CA, US",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Hyderabad, Telangana, India",
+      "country_code": "IN",
+      "countries": [
+        "IN"
+      ],
+      "region": "Asia",
+      "is_unknown": false
+    },
+    {
+      "location": "Mamidipally, Hyderabad, Telangana, India",
+      "country_code": "IN",
+      "countries": [
+        "IN"
+      ],
+      "region": "Asia",
+      "is_unknown": false
+    },
+    {
+      "location": "Yarnton, Oxfordshire, UK",
+      "country_code": "GB",
+      "countries": [
+        "GB"
+      ],
+      "region": "UK",
+      "is_unknown": false
+    },
+    {
+      "location": "Richmond, BC, Canada",
+      "country_code": "CA",
+      "countries": [
+        "CA"
+      ],
+      "region": "North America",
+      "is_unknown": false
+    },
+    {
+      "location": "Karlsruhe, Germany",
+      "country_code": "DE",
+      "countries": [
+        "DE"
+      ],
+      "region": "Europe",
+      "is_unknown": false
+    },
+    {
+      "location": "Abingdon, Oxfordshire, United Kingdom",
+      "country_code": "GB",
+      "countries": [
+        "GB"
+      ],
+      "region": "UK",
+      "is_unknown": false
+    },
+    {
+      "location": "Oak Ridge, TN, US (partner site)",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Knoxville / Oak Ridge, TN, US",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Oak Ridge, TN, US",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Farmington Hills, MI, USA",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Ottobrunn, Bavaria, Germany",
+      "country_code": "DE",
+      "countries": [
+        "DE"
+      ],
+      "region": "Europe",
+      "is_unknown": false
+    },
+    {
+      "location": "Kiruna, Norrbotten, Sweden",
+      "country_code": "SE",
+      "countries": [
+        "SE"
+      ],
+      "region": "Europe",
+      "is_unknown": false
+    },
+    {
+      "location": "Knoxville, TN, US",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Lathrop, CA, USA",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Palo Alto, CA, USA",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Fremont, CA, USA",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "St-Paul-lez-Durance, France",
+      "country_code": "FR",
+      "countries": [
+        "FR"
+      ],
+      "region": "Europe",
+      "is_unknown": false
+    },
+    {
+      "location": "France (itinerant)",
+      "country_code": "FR",
+      "countries": [
+        "FR"
+      ],
+      "region": "Europe",
+      "is_unknown": false
+    },
+    {
+      "location": "Steinebrunn, Switzerland",
+      "country_code": "CH",
+      "countries": [
+        "CH"
+      ],
+      "region": "Europe",
+      "is_unknown": false
+    },
+    {
+      "location": "Asslar, Germany",
+      "country_code": "DE",
+      "countries": [
+        "DE"
+      ],
+      "region": "Europe",
+      "is_unknown": false
+    },
+    {
+      "location": "Haag, St. Gallen, Switzerland",
+      "country_code": "CH",
+      "countries": [
+        "CH"
+      ],
+      "region": "Europe",
+      "is_unknown": false
+    },
+    {
+      "location": "Austin, TX",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "San Jose, CA",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "San Jose, CA area (remote field — Bay Area customers)",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Nashua, NH (on-site)",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Everett, WA (on-site)",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "region": "US",
+      "is_unknown": false
+    },
+    {
+      "location": "Bangalore, India (on-site)",
+      "country_code": "IN",
+      "countries": [
+        "IN"
+      ],
+      "region": "Asia",
+      "is_unknown": false
+    }
+  ]
+}

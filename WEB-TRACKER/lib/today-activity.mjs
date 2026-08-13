@@ -3,6 +3,7 @@ import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { parseApplications } from '../adapters/applications-adapter.mjs';
 import { readActivityEvents } from './activity-log.mjs';
+import { readNetworking } from './networking/store.mjs';
 import { allResearchSources } from './phd-research-sources.mjs';
 import { readResearchProspects } from './research-prospect-store.mjs';
 import { readDashboardData } from '../../update-tracker-row.mjs';
@@ -12,8 +13,31 @@ const WEB_TRACKER_DIR = join(LIB_DIR, '..');
 const CAREER_OPS_DIR = join(WEB_TRACKER_DIR, '..');
 const FOLLOWUPS_FILE = join(WEB_TRACKER_DIR, 'data', 'followups.json');
 const PROFILE_FILE = join(CAREER_OPS_DIR, 'config', 'profile.yml');
-const DEFAULT_DIGEST_RECIPIENTS = ['harshddes@gmail.com', 'desaienggworks@gmail.com'];
+const DEFAULT_DIGEST_RECIPIENTS = [
+  'harshddes@gmail.com',
+  'desaienggworks@gmail.com',
+  'namrataprayaan@gmail.com',
+];
 export const DEFAULT_DIGEST_TIMEZONE = 'America/New_York';
+
+const NETWORKING_CONTACTED_STAGES = new Set([
+  'contacted',
+  'engaged',
+  'conversation',
+  'warm',
+  'referral_eligible',
+  'referred',
+]);
+const NETWORKING_FOLLOW_ACTIONS = new Set([
+  'networking_task_completed',
+  'networking_interaction_logged',
+]);
+const NETWORKING_CONTACT_ACTIONS = new Set([
+  'networking_interaction_logged',
+  'networking_relationship_stage_changed',
+  'networking_person_saved',
+  'networking_task_completed',
+]);
 
 function cleanText(value) {
   return String(value ?? '').replace(/\r?\n/g, ' ').replace(/\s+/g, ' ').trim();
@@ -206,9 +230,196 @@ function eventRow(event) {
     status: event.status || '',
     contact: event.subject_label || '',
     email: event.metadata?.email || '',
-    followup_date: event.metadata?.follow_up_date || '',
+    followup_date: event.metadata?.follow_up_date || event.metadata?.due_at || '',
     source: event.source || event.domain || 'Dashboard',
     notes: event.notes || '',
+  };
+}
+
+function dashboardAreaForDomain(domain = '') {
+  const clean = cleanText(domain).toLowerCase();
+  if (clean === 'umich_research') return 'U-M Research';
+  if (clean === 'phd_options') return 'PhD Options';
+  if (clean === 'jobs') return 'Jobs';
+  if (clean === 'networking') return 'Networking';
+  return 'Dashboard';
+}
+
+function networkingPersonById(store, personId) {
+  const needle = cleanText(personId).toLowerCase();
+  if (!needle) return null;
+  return (store.people || []).find(person => cleanText(person.id).toLowerCase() === needle) || null;
+}
+
+function networkingPersonRow(person, type, dateField, overrides = {}) {
+  return {
+    type,
+    id: person.id || '',
+    date: person[dateField] || overrides.date || '',
+    company: person.current_organization || '',
+    title: person.display_name || person.title || '',
+    status: person.relationship_stage || '',
+    contact: person.display_name || '',
+    email: person.email || '',
+    followup_date: overrides.followup_date || '',
+    source: 'Networking Command Center',
+    notes: person.notes || overrides.notes || '',
+    ...overrides,
+  };
+}
+
+function networkingEventIsContact(event) {
+  const action = cleanText(event.action).toLowerCase();
+  const status = cleanText(event.status).toLowerCase();
+  if (!NETWORKING_CONTACT_ACTIONS.has(action)) return false;
+  if (action === 'networking_relationship_stage_changed') {
+    return NETWORKING_CONTACTED_STAGES.has(status);
+  }
+  if (action === 'networking_person_saved') {
+    return NETWORKING_CONTACTED_STAGES.has(status);
+  }
+  if (action === 'networking_task_completed') {
+    return true;
+  }
+  return action === 'networking_interaction_logged';
+}
+
+function networkingEventIsFollow(event) {
+  const action = cleanText(event.action).toLowerCase();
+  const status = cleanText(event.status).toLowerCase();
+  const notes = cleanText(event.notes).toLowerCase();
+  if (!NETWORKING_FOLLOW_ACTIONS.has(action)) return false;
+  if (action === 'networking_task_completed') {
+    return status === 'completed' || /follow/.test(notes) || /follow/.test(cleanText(event.title).toLowerCase());
+  }
+  return /follow/.test(status) || /follow/.test(notes) || /follow/.test(cleanText(event.title).toLowerCase());
+}
+
+function collectNetworkingToday(store, activityEvents, targetDate, timeZone) {
+  const peopleById = new Map((store.people || []).map(person => [person.id, person]));
+  const networkingEvents = activityEvents.filter(event => cleanText(event.domain).toLowerCase() === 'networking');
+
+  // Contact signals from the audit log — used only as input to person-level dedupe.
+  const contactedFromEvents = networkingEvents
+    .filter(networkingEventIsContact)
+    .map(event => ({
+      ...eventRow(event),
+      type: 'networking_contact',
+      source: 'Networking Command Center',
+    }));
+
+  const followedFromEvents = networkingEvents
+    .filter(networkingEventIsFollow)
+    .map(event => ({
+      ...eventRow(event),
+      type: 'networking_follow_up',
+      source: 'Networking Command Center',
+    }));
+
+  const interactionsToday = (store.interactions || []).filter(item => (
+    dateOnly(item.occurred_at, timeZone) === targetDate
+  ));
+  const contactedFromInteractions = interactionsToday.map(item => {
+    const person = peopleById.get(item.person_id) || null;
+    return {
+      type: 'networking_contact',
+      id: item.person_id || item.id,
+      date: item.occurred_at || '',
+      company: person?.current_organization || '',
+      title: person?.display_name || item.subject || item.type || '',
+      status: person?.relationship_stage || item.type || 'contacted',
+      contact: person?.display_name || '',
+      email: person?.email || '',
+      followup_date: '',
+      source: 'Networking Command Center',
+      notes: item.summary || item.subject || '',
+    };
+  });
+
+  // Prefer last_interaction_at so note edits / org saves do not mint fake contacts.
+  const stageTouchedToday = (store.people || []).filter(person => (
+    NETWORKING_CONTACTED_STAGES.has(cleanText(person.relationship_stage).toLowerCase())
+    && dateOnly(person.last_interaction_at, timeZone) === targetDate
+  ));
+  const contactedFromPeople = stageTouchedToday.map(person => (
+    networkingPersonRow(person, 'networking_contact', 'last_interaction_at', {
+      date: person.last_interaction_at || '',
+    })
+  ));
+
+  const tasksDueToday = (store.tasks || []).filter(task => {
+    const state = cleanText(task.state).toLowerCase();
+    if (!['open', 'waiting', 'snoozed', 'blocked'].includes(state)) return false;
+    return dateOnly(task.due_at, timeZone) === targetDate;
+  });
+  const followupsFromTasks = tasksDueToday.map(task => {
+    const person = networkingPersonById(store, task.person_id);
+    return {
+      type: 'networking_followup_due',
+      id: task.id || task.person_id || '',
+      date: task.due_at || '',
+      company: person?.current_organization || '',
+      title: person?.display_name || task.subject || '',
+      status: task.state || '',
+      contact: person?.display_name || '',
+      email: person?.email || '',
+      followup_date: task.due_at || '',
+      source: 'Networking Command Center',
+      notes: task.notes || task.subject || '',
+    };
+  });
+
+  const tasksCompletedToday = (store.tasks || []).filter(task => (
+    cleanText(task.state).toLowerCase() === 'completed'
+    && (
+      dateOnly(task.completed_at, timeZone) === targetDate
+      || dateOnly(task.updated_at, timeZone) === targetDate
+    )
+  ));
+  const followedFromTasks = tasksCompletedToday.map(task => {
+    const person = networkingPersonById(store, task.person_id);
+    return {
+      type: 'networking_follow_up',
+      id: task.id || task.person_id || '',
+      date: task.completed_at || task.updated_at || '',
+      company: person?.current_organization || '',
+      title: person?.display_name || task.subject || '',
+      status: 'completed',
+      contact: person?.display_name || '',
+      email: person?.email || '',
+      followup_date: task.due_at || '',
+      source: 'Networking Command Center',
+      notes: task.notes || task.subject || '',
+    };
+  });
+
+  // One person contacted = one row. Do NOT count every activity-log side effect
+  // (org save, research queue, stage change + interaction) as separate "networking" hits.
+  const contactedToday = uniqueContactRows([
+    ...contactedFromEvents,
+    ...contactedFromInteractions,
+    ...contactedFromPeople,
+  ], timeZone);
+
+  // Networking Today is the same people as networking contacts — not a second scoreboard.
+  const networkingToday = contactedToday.map(row => ({
+    ...row,
+    dashboard_area: 'Networking',
+    occurred_at: row.date,
+  }));
+
+  return {
+    networkingToday,
+    contactedToday,
+    followedToday: uniqueContactRows([
+      ...followedFromEvents,
+      ...followedFromTasks,
+    ], timeZone),
+    followupsDueToday: uniqueRows(followupsFromTasks.map(row => ({
+      ...row,
+      date: dateOnly(row.date, timeZone) || row.date,
+      followup_date: dateOnly(row.followup_date, timeZone) || row.followup_date,
+    }))),
   };
 }
 
@@ -224,6 +435,27 @@ function uniqueRows(rows = []) {
   return out;
 }
 
+/** One person / org contact = one row, regardless of how many log events fired. */
+function uniqueContactRows(rows = [], timeZone = DEFAULT_DIGEST_TIMEZONE) {
+  const seen = new Set();
+  const out = [];
+  for (const row of rows) {
+    const personKey = cleanText(row.id).toLowerCase()
+      || cleanText(row.contact).toLowerCase()
+      || cleanText(row.title).toLowerCase()
+      || cleanText(row.email).toLowerCase();
+    if (!personKey || seen.has(personKey)) continue;
+    seen.add(personKey);
+    out.push({
+      ...row,
+      type: row.type || 'networking_contact',
+      date: dateOnly(row.date, timeZone) || row.date,
+      source: row.source || 'Networking Command Center',
+    });
+  }
+  return out;
+}
+
 export function getTodayActivity({ date = '', timeZone } = {}) {
   const resolvedTimeZone = resolveDigestTimeZone(timeZone);
   const targetDate = cleanText(date) || localDateString(new Date(), resolvedTimeZone);
@@ -231,6 +463,8 @@ export function getTodayActivity({ date = '', timeZone } = {}) {
   const researchProspects = collectResearchProspects();
   const followups = readJsonFile(FOLLOWUPS_FILE, { entries: [] }).entries || [];
   const activityEvents = readActivityEvents({ date: targetDate, timeZone: resolvedTimeZone });
+  const networkingStore = readNetworking();
+  const networking = collectNetworkingToday(networkingStore, activityEvents, targetDate, resolvedTimeZone);
 
   const appliedFromTracker = applications.filter(entry => applicationAppliedToday(entry, targetDate, resolvedTimeZone));
   const contactedFromPulse = applications.filter(entry => pulseContactedToday(entry, targetDate, resolvedTimeZone));
@@ -244,13 +478,16 @@ export function getTodayActivity({ date = '', timeZone } = {}) {
   const appliedToday = uniqueRows([
     ...appliedFromTracker.map(applicationRow),
   ]);
-  const contactedToday = uniqueRows([
+  // Contacted is the umbrella: research + apps outreach + networking people, one row per person.
+  const contactedToday = uniqueContactRows([
     ...contactedFromPulse.map(applicationRow),
     ...contactedFromResearch.map(prospect => prospectRow(prospect, 'research_contact', 'last_contacted')),
-  ]);
-  const followedToday = uniqueRows([
+    ...networking.contactedToday,
+  ], resolvedTimeZone);
+  const followedToday = uniqueContactRows([
     ...followedFromResearch.map(prospect => prospectRow(prospect, 'research_follow_up', 'last_followed_up')),
-  ]);
+    ...networking.followedToday,
+  ], resolvedTimeZone);
   const followupsDueToday = uniqueRows([
     ...applicationFollowupsDue.map(applicationRow),
     ...cadenceFollowupsDue.map(entry => ({
@@ -266,22 +503,34 @@ export function getTodayActivity({ date = '', timeZone } = {}) {
       source: 'Follow-up Cadence',
       notes: entry.notes || '',
     })),
+    ...networking.followupsDueToday,
   ]);
-  const allActivity = [
+  // Same people as networking rows inside contactedToday — never a second additive score.
+  const networkingToday = networking.networkingToday;
+  const networkingContactCount = contactedToday.filter(row => row.source === 'Networking Command Center').length;
+  const allActivity = uniqueRows([
     ...appliedToday.map(row => ({ dashboard_area: 'Applications', occurred_at: row.date, ...row })),
-    ...contactedToday.map(row => ({ dashboard_area: row.type === 'application' ? 'Applications' : 'Research', occurred_at: row.date, ...row })),
-    ...followedToday.map(row => ({ dashboard_area: 'Research', occurred_at: row.date, ...row })),
-    ...followupsDueToday.map(row => ({ dashboard_area: 'Follow-ups', occurred_at: row.followup_date || row.date, ...row })),
-  ];
+    ...contactedToday.map(row => ({
+      dashboard_area: row.source === 'Networking Command Center'
+        ? 'Networking'
+        : (row.type === 'application' ? 'Applications' : 'Research'),
+      occurred_at: row.date,
+      ...row,
+    })),
+    ...followedToday.map(row => ({
+      dashboard_area: row.source === 'Networking Command Center' ? 'Networking' : 'Research',
+      occurred_at: row.date,
+      ...row,
+    })),
+    ...followupsDueToday.map(row => ({
+      dashboard_area: row.source === 'Networking Command Center' ? 'Networking' : 'Follow-ups',
+      occurred_at: row.followup_date || row.date,
+      ...row,
+    })),
+  ]);
   const auditActivity = activityEvents.map(event => ({
     ...eventRow(event),
-    dashboard_area: event.domain === 'umich_research'
-      ? 'U-M Research'
-      : event.domain === 'phd_options'
-        ? 'PhD Options'
-        : event.domain === 'jobs'
-          ? 'Jobs'
-          : 'Dashboard',
+    dashboard_area: dashboardAreaForDomain(event.domain),
     occurred_at: event.occurred_at,
   }));
 
@@ -294,10 +543,14 @@ export function getTodayActivity({ date = '', timeZone } = {}) {
       contacted_today: contactedToday.length,
       followed_today: followedToday.length,
       followups_due_today: followupsDueToday.length,
+      // Kept for API/export compatibility; equals networking subset of contacted (not event spam).
+      networking_today: networkingContactCount,
       dashboard_events_today: allActivity.length,
       umich_research_events_today: contactedToday.filter(row => row.source === 'U-M Research').length + followedToday.filter(row => row.source === 'U-M Research').length,
       job_events_today: appliedToday.filter(row => row.type === 'application').length + contactedToday.filter(row => row.type === 'application').length,
-      phd_events_today: contactedToday.filter(row => row.source !== 'U-M Research' && row.type !== 'application').length + followedToday.filter(row => row.source !== 'U-M Research').length,
+      phd_events_today: contactedToday.filter(row => row.source !== 'U-M Research' && row.source !== 'Networking Command Center' && row.type !== 'application').length
+        + followedToday.filter(row => row.source !== 'U-M Research' && row.source !== 'Networking Command Center').length,
+      networking_events_today: networkingContactCount,
       overdue_followups: applicationFollowupsOverdue.length + cadenceFollowupsDueOrOverdue.filter(entry => dateOnly(entry.nextFollowupDate) < targetDate).length,
     },
     details: {
@@ -307,6 +560,8 @@ export function getTodayActivity({ date = '', timeZone } = {}) {
       contacted_today: contactedToday,
       followed_today: followedToday,
       followups_due_today: followupsDueToday,
+      // Detail list kept for XLSX filter sheet; CSV/email do not re-count these under a second section.
+      networking_today: networkingToday,
     },
   };
 }

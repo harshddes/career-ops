@@ -21,6 +21,13 @@ import {
   upsertConsiderJob,
 } from './lib/jobs-to-consider-store.mjs';
 import {
+  assertConsiderJobApplyAllowed,
+  enrichConsiderJobWithNetworking,
+  enrichConsiderJobsStore,
+  queueNetworkingForConsiderJob,
+  unlinkCanceledResearchOrder,
+} from './lib/jobs-networking-bridge.mjs';
+import {
   findResearchProspect,
   patchResearchProspect,
   readResearchProspects,
@@ -82,12 +89,21 @@ import {
   upsertNetworkingTask,
 } from './lib/networking/store.mjs';
 import {
+  cancelNetworkingResearch,
   completeNetworkingResearch,
   markNetworkingResearchInProgress,
   markNetworkingResearchReviewReady,
   queueNetworkingResearch,
   readNetworkingResearchQueue,
 } from './lib/networking/factory.mjs';
+import {
+  advanceCompanyFocus,
+  buildCompanyFocusReadModel,
+  pinCompanyFocus,
+  readCompanyFocus,
+  syncCompanyFocusToDashboard,
+  updateCompanyFocus,
+} from './lib/company-focus.mjs';
 import {
   createTrackerRow,
   deleteTrackerRow,
@@ -252,7 +268,23 @@ function serveFile(res, filePath) {
   createReadStream(filePath).pipe(res);
 }
 
-async function routeApi(req, res, pathname) {
+async function routeApi(req, res, pathname, requestUrl = null) {
+  if (pathname === '/api/today-activity') {
+    if (req.method !== 'GET') return sendJson(res, { error: 'method not allowed' }, 405), true;
+    try {
+      const url = requestUrl || new URL(req.url || '/', 'http://127.0.0.1');
+      const activity = getTodayActivity({
+        date: url.searchParams.get('date') || '',
+        timeZone: url.searchParams.get('timezone') || DEFAULT_DIGEST_TIMEZONE,
+      });
+      writeDailyActivityCsv(activity);
+      sendJson(res, activity);
+    } catch (err) {
+      sendJson(res, { error: err?.message || 'failed to build today activity' }, 400);
+    }
+    return true;
+  }
+
   if (pathname === '/api/daily-digest/smtp-status') {
     if (req.method !== 'GET') return sendJson(res, { error: 'method not allowed' }, 405), true;
     const { smtpConfigFromEnv, validateSmtpConfig } = await import('./lib/mail-sender.mjs');
@@ -910,10 +942,55 @@ async function routeApi(req, res, pathname) {
     sendJson(res, { opportunity });
     return true;
   }
+  if (pathname === '/api/company-focus') {
+    if (req.method === 'GET') {
+      try {
+        sendJson(res, buildCompanyFocusReadModel({ focus: readCompanyFocus() }));
+      } catch (err) {
+        sendJson(res, { error: err?.message || 'failed to read company focus' }, 400);
+      }
+      return true;
+    }
+    if (req.method === 'PUT') {
+      try {
+        const input = await readBodyJson(req);
+        sendJson(res, updateCompanyFocus(input || {}));
+      } catch (err) {
+        sendJson(res, { error: err?.message || 'failed to update company focus' }, 400);
+      }
+      return true;
+    }
+    return sendJson(res, { error: 'method not allowed' }, 405), true;
+  }
+  if (pathname === '/api/company-focus/pin') {
+    if (req.method !== 'POST') return sendJson(res, { error: 'method not allowed' }, 405), true;
+    try {
+      const input = await readBodyJson(req);
+      sendJson(res, pinCompanyFocus(input || {}), 201);
+    } catch (err) {
+      sendJson(res, { error: err?.message || 'failed to pin company focus' }, 400);
+    }
+    return true;
+  }
+  if (pathname === '/api/company-focus/advance') {
+    if (req.method !== 'POST') return sendJson(res, { error: 'method not allowed' }, 405), true;
+    try {
+      const input = await readBodyJson(req);
+      const result = advanceCompanyFocus(input || {});
+      syncCompanyFocusToDashboard();
+      sendJson(res, result);
+    } catch (err) {
+      sendJson(res, { error: err?.message || 'failed to advance company focus' }, 400);
+    }
+    return true;
+  }
   if (pathname === '/api/networking') {
     if (req.method !== 'GET') return sendJson(res, { error: 'method not allowed' }, 405), true;
     try {
-      sendJson(res, buildNetworkingReadModel(readNetworking()));
+      const focus = readCompanyFocus();
+      sendJson(res, buildNetworkingReadModel(readNetworking(), new Date(), {
+        focus_organization_id: focus.organization_id,
+      }));
     } catch (err) {
       sendJson(res, { error: err?.message || 'failed to read networking data' }, 400);
     }
@@ -1095,7 +1172,13 @@ async function routeApi(req, res, pathname) {
       else if (input.action === 'review_ready') result = markNetworkingResearchReviewReady(id, input.candidate_person_ids || []);
       else if (input.action === 'complete') result = completeNetworkingResearch(id);
       else if (input.action === 'fail') result = completeNetworkingResearch(id, { failed: true, error: input.error || '' });
-      else throw new Error('networking research queue action must be start, review_ready, complete, or fail');
+      else if (input.action === 'cancel') {
+        result = cancelNetworkingResearch(id);
+        unlinkCanceledResearchOrder(result.order);
+        syncConsiderJobsToDashboard();
+        logNetworkingActivity({ action: 'research_canceled', notes: result.order.organization_name });
+      }
+      else throw new Error('networking research queue action must be start, review_ready, complete, fail, or cancel');
       sendJson(res, result);
     } catch (err) {
       const status = /not found/i.test(err?.message || '') ? 404 : 400;
@@ -1105,7 +1188,7 @@ async function routeApi(req, res, pathname) {
   }
   if (pathname === '/api/jobs-to-consider') {
     if (req.method === 'GET') {
-      sendJson(res, readConsiderJobs());
+      sendJson(res, enrichConsiderJobsStore(readConsiderJobs()));
       return true;
     }
     if (req.method === 'POST') {
@@ -1126,6 +1209,26 @@ async function routeApi(req, res, pathname) {
     const segments = pathname.split('/');
     const action = segments.length > 4 ? segments.pop() : '';
     const id = decodeURIComponent(segments.pop() || '');
+
+    if (req.method === 'POST' && action === 'queue-networking') {
+      try {
+        const input = await readBodyJson(req);
+        const result = queueNetworkingForConsiderJob(id, {
+          personas: input?.personas,
+          notes: input?.notes || '',
+        });
+        syncConsiderJobsToDashboard();
+        logNetworkingActivity({
+          action: 'research_queued',
+          notes: `${result.organization?.name || ''} ← ${result.job.title}`,
+        });
+        sendJson(res, result, result.duplicate ? 200 : 201);
+      } catch (err) {
+        const status = /not found/i.test(err?.message || '') ? 404 : 400;
+        sendJson(res, { error: err?.message || 'failed to queue networking for job' }, status);
+      }
+      return true;
+    }
 
     if (req.method === 'POST' && action === 'apply') {
       try {
@@ -1154,7 +1257,7 @@ async function routeApi(req, res, pathname) {
           });
           syncConsiderJobsToDashboard();
           syncApplications();
-          sendJson(res, { job: result.job, application: null });
+          sendJson(res, { job: enrichConsiderJobWithNetworking(result.job), application: null });
           return true;
         }
 
@@ -1162,6 +1265,7 @@ async function routeApi(req, res, pathname) {
         const report = reportPath
           ? `[${job.id.replace(/-/g, ' ')}](${reportPath})`
           : '-';
+        assertConsiderJobApplyAllowed(job, { force: input.force_apply === true });
         const trackerResult = createTrackerRow({
           entry: {
             date: localDateString(new Date(), DEFAULT_DIGEST_TIMEZONE),
@@ -1187,9 +1291,21 @@ async function routeApi(req, res, pathname) {
           applied_at: new Date().toISOString(),
         });
         logJobConsiderPatchEvent(result.job, { applied: true, status: 'applied', application_num: trackerResult.num });
+        let networking = null;
+        if (input.queue_networking === true) {
+          try {
+            networking = queueNetworkingForConsiderJob(result.job.id);
+          } catch (err) {
+            networking = { error: err?.message || 'failed to queue networking research' };
+          }
+        }
         syncConsiderJobsToDashboard();
         syncApplications();
-        sendJson(res, { job: result.job, application: trackerResult });
+        sendJson(res, {
+          job: enrichConsiderJobWithNetworking(networking?.job || result.job),
+          application: trackerResult,
+          networking,
+        });
       } catch (err) {
         sendJson(res, { error: err?.message || 'failed to update applied state' }, 400);
       }
@@ -1350,7 +1466,6 @@ async function routeApi(req, res, pathname) {
     '/api/autonomy/runs': 'autonomy/runs.json',
     '/api/contacts': 'contacts.json',
     '/api/jobs': 'jobs.json',
-    '/api/today-activity': 'today-activity.json',
   };
   if (simpleFiles[pathname]) {
     if (req.method !== 'GET') return sendJson(res, { error: 'method not allowed' }, 405), true;
@@ -1414,7 +1529,7 @@ export function startFastServer(port = PORT, host = HOST) {
       res.write(`event: connected\ndata: ${JSON.stringify({ ok: true })}\n\n`);
       return;
     }
-    if (pathname.startsWith('/api/') && await routeApi(req, res, pathname)) return;
+    if (pathname.startsWith('/api/') && await routeApi(req, res, pathname, url)) return;
     if (pathname.startsWith('/data/')) {
       serveFile(res, dataFile(decodeURIComponent(pathname.slice('/data/'.length))));
       return;

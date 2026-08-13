@@ -2,6 +2,15 @@
 
 Cuando el candidato pega una oferta (texto o URL), entregar SIEMPRE los 7 bloques (A-F evaluation + G legitimacy):
 
+## Scoring boundary (MANDATORY)
+
+Do not calculate, estimate, round, adjust, or recommend a score. Produce an
+`opportunity-evidence-v1` fact sheet containing exact JD quotes, their source
+locations, approved `opportunity_scoring.candidate_facts` IDs, and explicit
+unknowns. Pass that fact sheet and the saved posting text to the canonical
+scoring engine. Only copy the engine's returned eligibility, personal fit,
+confidence, recommendation, policy version, and trace into the report.
+
 ## Paso 0 — Detección de Arquetipo
 
 Clasificar la oferta en uno de los 6 arquetipos (ver `_shared.md`). Si es híbrido, indicar los 2 más cercanos. Esto determina:
@@ -144,7 +153,10 @@ Analyze the job posting for signals that indicate whether this is a real, active
 
 ## Block H -- Visa & Work Authorization Analysis (MANDATORY)
 
-**This block runs BEFORE scoring and PDF generation.** If visa status is a hard blocker, the score is irrelevant and no PDF should be generated.
+**This block extracts evidence BEFORE the scoring engine and PDF generation.**
+Do not decide the verdict yourself. Quote the restriction exactly, record
+sponsorship evidence and unresolved facts, and let the canonical engine apply
+the hard gate. If the engine returns blocked, do not generate a PDF.
 
 **When to run:** ALWAYS run this block if `config/profile.yml` field `visa_status` is anything other than "U.S. Citizen" or "Permanent Resident". Skip this block only for U.S. citizens/green card holders.
 
@@ -179,9 +191,12 @@ Classify:
 - **Rare sponsor:** Few or old H-1B filings, or only for very senior roles
 - **No record:** No H-1B filings found and no public evidence of sponsoring
 
-### Step 3 -- Produce a verdict
+### Step 3 -- Submit facts for deterministic verdict
 
-| JD Restriction | Company Sponsors? | Verdict |
+The following table describes the engine policy; it is not permission for the
+agent to write the verdict.
+
+| JD Restriction | Company Sponsors? | Engine outcome |
 |---|---|---|
 | Hard block (U.S. person only) | Any | **SKIP** -- do not apply, do not generate PDF |
 | TS/SCI or Secret clearance required | Any | **SKIP** -- cannot obtain as F-1 |
@@ -238,7 +253,10 @@ Guardar evaluación completa en `reports/{###}-{company-slug}-{YYYY-MM-DD}.md`.
 
 **Fecha:** {YYYY-MM-DD}
 **Arquetipo:** {detectado}
-**Score:** {X/5}
+**Score:** {canonical engine personal_fit/5}
+**Eligibility:** {canonical engine status}
+**Confidence:** {canonical engine confidence}
+**Policy:** {canonical engine policy_version}
 **Legitimacy:** {High Confidence | Proceed with Caution | Suspicious}
 **Visa:** {Clear | Caution -- reason | SKIP -- reason}
 **PDF:** {path or pending or SKIP}
@@ -285,7 +303,7 @@ Guardar evaluación completa en `reports/{###}-{company-slug}-{YYYY-MM-DD}.md`.
 - Fecha actual
 - Empresa
 - Rol
-- Score: promedio de match (1-5)
+- Score: canonical engine personal fit (1-5); never an agent estimate
 - Estado: `Evaluada`
 - PDF: ❌ (o ✅ si auto-pipeline generó PDF)
 - Report: link relativo al report .md (ej: `[001](reports/001-company-2026-01-01.md)`)

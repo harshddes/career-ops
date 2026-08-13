@@ -1,0 +1,105 @@
+{
+  "policy_version": "2026-08-unified-v1",
+  "now": "2026-08-08T12:00:00.000Z",
+  "cases": [
+    {
+      "id": "clear-fusion-hardware-phd",
+      "type": "phd",
+      "posting": {
+        "title": "Fully funded PhD in fusion plasma diagnostics",
+        "description": "Build tokamak vacuum instrumentation, high-voltage detector readout, DAQ, calibration hardware, and experimental test stands. The studentship is fully funded.",
+        "deadline_utc": "2027-01-15T23:59:00.000Z",
+        "fully_funded": true
+      },
+      "expected": { "eligibility": "clear", "band": "apply", "review": false, "minimum_score": 4.0 }
+    },
+    {
+      "id": "computation-only-phd",
+      "type": "phd",
+      "posting": {
+        "title": "Fully funded PhD in artificial intelligence",
+        "description": "Machine learning, deep learning, computational modeling, data science, software development, optimization, and theory. Fully funded studentship.",
+        "deadline_utc": "2027-02-01T23:59:00.000Z",
+        "fully_funded": true
+      },
+      "expected": { "eligibility": "clear", "band": "skip", "review": false, "maximum_score": 2.9, "risk": "computation_dominant_no_hardware_anchor" }
+    },
+    {
+      "id": "us-person-hard-block",
+      "type": "job",
+      "posting": {
+        "title": "Spacecraft Instrumentation Engineer",
+        "description": "Build payload detector electronics and environmental test hardware. Applicants must be a U.S. person.",
+        "deadline_utc": "2027-03-01T23:59:00.000Z"
+      },
+      "expected": { "eligibility": "blocked", "band": "skip", "review": false, "maximum_score": 1.0 }
+    },
+    {
+      "id": "soft-export-control-risk",
+      "type": "job",
+      "posting": {
+        "title": "Plasma Test Engineer",
+        "description": "Operate vacuum test stands, DAQ, sensors, and high-voltage hardware. This role is subject to ITAR and candidates must be eligible to obtain export authorization.",
+        "deadline_utc": "2027-03-01T23:59:00.000Z"
+      },
+      "expected": { "eligibility": "risky", "review": true, "minimum_score": 3.2 }
+    },
+    {
+      "id": "sponsored-space-hardware-job",
+      "type": "job",
+      "posting": {
+        "title": "Space Payload Test Engineer",
+        "description": "Visa sponsorship available. Build spacecraft payload prototypes, detector readout electronics, DAQ, calibration rigs, and environmental testing workflows.",
+        "deadline_utc": "2027-04-01T23:59:00.000Z"
+      },
+      "expected": { "eligibility": "clear", "band": "apply", "review": false, "minimum_score": 4.0 }
+    },
+    {
+      "id": "manufacturing-bridge",
+      "type": "phd",
+      "posting": {
+        "title": "Fully funded PhD in additive manufacturing for aerospace hardware",
+        "description": "Experimental additive manufacturing, precision machining, metrology, process monitoring, mechanical testing, and fabrication of complex propulsion hardware. Fully funded.",
+        "deadline_utc": "2027-05-01T23:59:00.000Z",
+        "fully_funded": true
+      },
+      "expected": { "eligibility": "clear", "band": "apply", "review": true, "minimum_score": 4.0 }
+    },
+    {
+      "id": "misleading-office-space",
+      "type": "job",
+      "posting": {
+        "title": "Office Space Marketing Coordinator",
+        "description": "Manage office space, marketing campaigns, sales operations, recruitment, and human resources. Visa sponsorship available.",
+        "deadline_utc": "2027-05-01T23:59:00.000Z"
+      },
+      "expected": { "eligibility": "clear", "band": "skip", "review": false, "maximum_score": 1.9, "risk": "negative_topic_match" }
+    },
+    {
+      "id": "missing-source-data",
+      "type": "job",
+      "posting": { "title": "Engineer" },
+      "expected": { "eligibility": "unknown", "band": "skip", "review": true, "maximum_score": 2.3 }
+    },
+    {
+      "id": "wrong-postdoc-role",
+      "type": "phd",
+      "posting": {
+        "title": "Postdoctoral fellow in fusion plasma physics",
+        "description": "Experimental tokamak diagnostics and detector calibration. Fully funded appointment.",
+        "deadline_utc": "2027-06-01T23:59:00.000Z"
+      },
+      "expected": { "eligibility": "clear", "band": "skip", "review": false, "maximum_score": 1.9, "risk": "role_not_targeted" }
+    },
+    {
+      "id": "dentistry-negative-control",
+      "type": "phd",
+      "posting": {
+        "title": "Fully funded PhD in clinical dentistry",
+        "description": "Dental patient care, orthodontics, nursing collaboration, and clinical trials. Fully funded.",
+        "deadline_utc": "2027-06-01T23:59:00.000Z"
+      },
+      "expected": { "eligibility": "clear", "band": "skip", "review": false, "maximum_score": 1.9, "risk": "negative_topic_match" }
+    }
+  ]
+}

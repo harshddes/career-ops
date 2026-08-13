@@ -187,10 +187,11 @@
     },
     "65": {
       "posting_url": "https://euraxess.ec.europa.eu/jobs/446816",
-      "submitted_date": "2026-07-20",
+      "submitted_date": "2026-07-26",
       "university": "Fondazione Bruno Kessler",
       "field": "Space",
-      "track_kind": "phd"
+      "track_kind": "job",
+      "way_to_apply": "output/fondazione-bruno-kessler/application-email-fondazione-bruno-kessler-phd-ti-lgad-soft-xray-space-2026-07-13.md"
     },
     "66": {
       "division_field": "Engineering & Architecture",
@@ -223,7 +224,10 @@
       "submitted_date": "2026-07-21",
       "way_to_apply": "https://careers.umich.edu/job_detail/apply/280189",
       "department": "CoE EECS - ECE Division",
-      "track_kind": "job"
+      "track_kind": "job",
+      "followup_date": "2026-08-11",
+      "contact": "Amy Brooks",
+      "response": "Decision expected in next 2–3 weeks (email Aug 11–12)."
     },
     "70": {
       "division_field": "Engineering & Architecture",
@@ -254,11 +258,113 @@
     },
     "73": {
       "division_field": "Temporary Job Opening",
-      "date_due": "2026-07-22",
-      "posting_url": "https://careers.umich.edu/job_detail/279462/research-asst-i-temp",
-      "submitted_date": "2026-07-21",
-      "way_to_apply": "https://careers.umich.edu/job_detail/apply/279462",
-      "department": "LSA Astronomy",
+      "date_due": "",
+      "posting_url": "https://careers.umich.edu/job_detail/277418/research-asst-i-temp",
+      "submitted_date": "2026-07-24",
+      "way_to_apply": "https://careers.umich.edu/job_detail/apply/277418",
+      "department": "CoE Space Physics Research Lab",
+      "track_kind": "job"
+    },
+    "74": {
+      "posting_url": "https://www.odysseus.space/careers/systems-engineer",
+      "submitted_date": "2026-07-26",
+      "way_to_apply": "",
+      "track_kind": "job"
+    },
+    "75": {
+      "posting_url": "https://novospace.bamboohr.com/careers/42",
+      "submitted_date": "2026-07-26",
+      "way_to_apply": "",
+      "track_kind": "job"
+    },
+    "76": {
+      "posting_url": "https://reflex-aerospace-gmbh.jobs.personio.de/job/2649451?language=en",
+      "submitted_date": "2026-07-26",
+      "way_to_apply": "",
+      "track_kind": "job"
+    },
+    "77": {
+      "posting_url": "https://www.mckinsey.com/careers/search-jobs/jobs/productengineer-costengineering-108001",
+      "submitted_date": "2026-07-26",
+      "way_to_apply": "",
+      "track_kind": "job"
+    },
+    "78": {
+      "posting_url": "https://open.talentio.com/r/1/c/pale-blue/homes/2329",
+      "submitted_date": "2026-07-26",
+      "way_to_apply": "",
+      "track_kind": "job"
+    },
+    "79": {
+      "posting_url": "",
+      "submitted_date": "2026-07-27",
+      "way_to_apply": "Darwinbox careers portal",
+      "track_kind": "job"
+    },
+    "80": {
+      "posting_url": "",
+      "submitted_date": "2026-07-27",
+      "way_to_apply": "Darwinbox careers portal",
+      "track_kind": "job"
+    },
+    "81": {
+      "posting_url": "https://terafab.ai/careers",
+      "submitted_date": "2026-07-28",
+      "way_to_apply": "",
+      "track_kind": "job"
+    },
+    "82": {
+      "posting_url": "https://www.asm.com/open-vacancies/engineer-field-process-hillsboro-or-4931155101?gh_jid=4931155101",
+      "submitted_date": "2026-07-28",
+      "way_to_apply": "",
+      "track_kind": "job"
+    },
+    "83": {
+      "posting_url": "https://euraxess.ec.europa.eu/jobs/446818",
+      "submitted_date": "2026-08-09",
+      "way_to_apply": "",
+      "track_kind": "job"
+    },
+    "84": {
+      "posting_url": "https://emploi.cnrs.fr/Offres/Doctorant/UMR8190-FRAMON-012/Default.aspx?lang=EN",
+      "submitted_date": "2026-08-12",
+      "way_to_apply": "",
+      "track_kind": "phd"
+    },
+    "85": {
+      "posting_url": "https://kla.wd1.myworkdayjobs.com/Search/job/Ann-Arbor-MI/Opto-Mechanical-Design-Engineer_2533228",
+      "submitted_date": "2026-08-11",
+      "way_to_apply": "",
+      "track_kind": "job"
+    },
+    "86": {
+      "posting_url": "https://jobs.wisc.edu/jobs/jr10013359",
+      "submitted_date": "2026-08-11",
+      "way_to_apply": "",
+      "track_kind": "job"
+    },
+    "87": {
+      "posting_url": "",
+      "submitted_date": "2026-08-11",
+      "way_to_apply": "",
+      "track_kind": "job"
+    },
+    "88": {
+      "posting_url": "",
+      "submitted_date": "2026-08-11",
+      "way_to_apply": "",
+      "track_kind": "job"
+    },
+    "89": {
+      "posting_url": "",
+      "submitted_date": "2026-08-11",
+      "way_to_apply": "",
+      "track_kind": "job"
+    },
+    "90": {
+      "posting_url": "",
+      "submitted_date": "2026-08-11",
+      "way_to_apply": "",
       "track_kind": "job"
     }
   },

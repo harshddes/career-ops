@@ -24,10 +24,11 @@ test('deduplicates digest recipients from environment', () => {
   );
 });
 
-test('falls back to both default digest inboxes when env and profile are unset', () => {
+test('falls back to default digest inboxes when env and profile are unset', () => {
   const recipients = digestRecipients({});
   assert.ok(recipients.includes('harshddes@gmail.com'));
   assert.ok(recipients.includes('desaienggworks@gmail.com'));
+  assert.ok(recipients.includes('namrataprayaan@gmail.com'));
 });
 
 test('validates generic SMTP configuration without sending mail', () => {
@@ -46,8 +47,9 @@ test('validates generic SMTP configuration without sending mail', () => {
 
 test('builds export data and buffers for today activity', async () => {
   const data = buildExportData({ scope: 'today-activity', date: '2026-06-30', timeZone: 'America/New_York' });
-  assert.equal(data.sheets.length, 5);
+  assert.equal(data.sheets.length, 6);
   assert.equal(data.sheets[0].name, 'All Dashboard Activity');
+  assert.equal(data.sheets[5].name, 'Networking Today');
 
   const xlsx = await buildExportBuffer({ scope: 'today-activity', format: 'xlsx', date: '2026-06-30', timeZone: 'America/New_York' });
   const csv = await buildExportBuffer({ scope: 'today-activity', format: 'csv', date: '2026-06-30', timeZone: 'America/New_York' });
@@ -195,6 +197,35 @@ test('groups today activity events by action for counting', () => {
   assert.equal(events.filter(event => event.action === 'job_applied').length, 1);
 });
 
+test('today tracker folds Networking contacts into Contacted once (no event inflation)', async () => {
+  const { getTodayActivity } = await import('../lib/today-activity.mjs');
+  const activity = getTodayActivity({ date: '2026-07-26', timeZone: 'America/New_York' });
+  assert.ok(activity.details.networking_today, 'networking_today detail section exists');
+  assert.equal(activity.summary.networking_today, activity.details.networking_today.length);
+
+  const networkingContacted = activity.details.contacted_today.filter(row => row.source === 'Networking Command Center');
+  assert.equal(
+    activity.summary.networking_today,
+    networkingContacted.length,
+    'networking_today equals unique networking people inside contacted_today'
+  );
+
+  // One person must not appear twice inside contacted_today.
+  const contactedIds = activity.details.contacted_today
+    .map(row => String(row.id || row.title || '').toLowerCase())
+    .filter(Boolean);
+  assert.equal(contactedIds.length, new Set(contactedIds).size);
+
+  const exportData = buildExportData({ scope: 'today-activity', date: '2026-07-26', timeZone: 'America/New_York' });
+  assert.ok(exportData.sheets.some(sheet => sheet.name === 'Networking Today'));
+  // Flat CSV must not re-list Networking under a second section (Contacted already has them).
+  assert.equal(exportData.csvRows.some(row => row.section === 'Networking Today'), false);
+  assert.ok(
+    exportData.csvRows.some(row => row.section === 'Contacted Today' && row.source === 'Networking Command Center')
+      || activity.summary.networking_today === 0
+  );
+});
+
 test('research refresh preserves user-owned status fields', () => {
   const dir = mkdtempSync(join(tmpdir(), 'career-ops-preserve-'));
   const filePath = join(dir, 'prospects.json');
@@ -227,7 +258,9 @@ test('research refresh preserves user-owned status fields', () => {
   assert.equal(prospect.status, 'contacted');
   assert.equal(prospect.last_contacted, '2026-06-29');
   assert.equal(prospect.notes, 'Already emailed.');
-  assert.equal(prospect.score, 4.8);
+  assert.notEqual(prospect.score, 4.8);
+  assert.equal(prospect.legacy_score, '4.8');
+  assert.equal(prospect.policy_version, '2026-08-research-contact-v1');
 });
 
 test('jobs upsert preserves user-owned applied state', () => {
@@ -261,7 +294,9 @@ test('jobs upsert preserves user-owned applied state', () => {
   assert.equal(job.applied, true);
   assert.equal(job.applied_at, '2026-07-01T12:00:00.000Z');
   assert.equal(job.notes, 'User applied today.');
-  assert.equal(job.score, '4.6/5');
+  assert.notEqual(job.score, '4.6/5');
+  assert.equal(job.legacy_score, '4.6');
+  assert.equal(job.policy_version, '2026-08-unified-v1');
 });
 
 test('jobs delete resolves stale dashboard identities safely', () => {
@@ -310,10 +345,12 @@ test('today summary equals generated detail row counts', () => {
   assert.equal(activity.summary.contacted_today, activity.details.contacted_today.length);
   assert.equal(activity.summary.followed_today, activity.details.followed_today.length);
   assert.equal(activity.summary.followups_due_today, activity.details.followups_due_today.length);
+  assert.equal(activity.summary.networking_today, activity.details.networking_today.length);
 });
 
 test('today CSV uses one deduplicated current-state table', async () => {
   const data = buildExportData({ scope: 'today-activity', date: '2099-01-15', timeZone: 'America/New_York' });
+  // Networking people live under Contacted — do not add networking_today again.
   const expectedRows = data.activity.summary.applied_today
     + data.activity.summary.contacted_today
     + data.activity.summary.followed_today
@@ -407,4 +444,8 @@ test('Windows autostart paths use the fixed-port launcher', () => {
   assert.match(task, /--no-open/);
   assert.match(task, /New-ScheduledTaskAction -Execute \$cmd/);
   assert.doesNotMatch(task, /Get-Command node/);
+  assert.match(task, /CareerOpsGithubSync/);
+  assert.match(task, /Daily -At 11:50pm/);
+  assert.match(task, /push-local-to-github\.cmd/);
+  assert.match(task, /StartWhenAvailable = \$false/);
 });

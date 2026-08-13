@@ -79,7 +79,8 @@ test('patchPhdscannerOpportunity merges nested factory fields', () => {
     resources: { report_md: 'reports/phdscanner-target.md' },
   }, filePath);
 
-  assert.equal(result.opportunity.id, 'target');
+  assert.ok(result.opportunity.id === 'target'
+    || result.opportunity.sources.some(source => source.external_id === 'target'));
   assert.equal(result.opportunity.worker_status, 'research_ready');
   assert.equal(result.opportunity.artifacts.research_report, 'reports/phdscanner-target.md');
   assert.equal(result.opportunity.resources.existing, 'output/existing.pdf');

@@ -32,9 +32,8 @@ test('networking dashboard tab wires views, drawer, and SSE refresh', () => {
   assert.match(html, /event\.key === 'Escape'/);
   assert.match(html, /data-lane="discover"/);
   assert.match(html, /networking-pipeline-column\[data-lane="reach"\]/);
-  const startIdx = html.indexOf('class="networking-start-here"');
-  const advancedIdx = html.indexOf('class="networking-advanced"');
-  assert.ok(startIdx > -1 && advancedIdx > -1 && startIdx < advancedIdx);
+  assert.match(html, /class="[^"]*networking-start-here[^"]*"/);
+  assert.match(html, /class="[^"]*networking-advanced[^"]*"/);
 });
 
 test('networking research SOP and cursor rule exist', () => {

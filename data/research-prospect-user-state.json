@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-23T20:00:17.154Z",
+  "updated_at": "2026-08-13T03:04:24.614Z",
   "sources": {
     "umich": {
       "umich-ryan-mcbride-ppml": {
@@ -18,16 +18,16 @@
         }
       },
       "umich-karl-krushelnick-cuos-zeus": {
-        "updated_at": "2026-07-13T21:49:11.972Z",
-        "status": "contacted",
+        "updated_at": "2026-08-13T03:02:30.096Z",
+        "status": "followed_up",
         "last_contacted": "2026-06-30",
-        "last_followed_up": "",
-        "follow_up_date": "2026-07-07",
+        "last_followed_up": "2026-08-12",
+        "follow_up_date": "",
         "notes": "",
         "outreach": {
-          "stage": "",
-          "stage_updated_at": "2026-07-13T21:49:11.972Z",
-          "entered_at": "",
+          "stage": "your_move",
+          "stage_updated_at": "2026-08-13T03:02:24.957Z",
+          "entered_at": "2026-08-13T03:02:24.951Z",
           "notes": ""
         }
       },
@@ -76,40 +76,46 @@
         }
       },
       "umich-benjamin-jorns-pepl": {
-        "updated_at": "2026-07-13T21:44:16.242Z",
-        "status": "contacted",
+        "updated_at": "2026-08-13T03:04:24.614Z",
+        "status": "followed_up",
         "last_contacted": "2026-07-01",
-        "last_followed_up": "2026-07-13",
-        "follow_up_date": "2026-07-20",
+        "last_followed_up": "2026-08-12",
+        "follow_up_date": "",
         "notes": "",
         "outreach": {
-          "stage": "",
-          "stage_updated_at": "2026-07-13T21:44:16.242Z",
-          "entered_at": "",
+          "stage": "your_move",
+          "stage_updated_at": "2026-08-13T03:04:24.614Z",
+          "entered_at": "2026-08-13T03:04:24.608Z",
           "notes": ""
         }
       },
       "umich-nicholas-jordan-ppml": {
-        "updated_at": "2026-07-23T20:00:17.154Z",
+        "updated_at": "2026-08-13T02:33:04.484Z",
         "status": "followed_up",
         "last_contacted": "2026-07-13",
-        "last_followed_up": "2026-07-23",
+        "last_followed_up": "2026-08-11",
         "follow_up_date": "",
-        "notes": "",
+        "notes": "Mid-August follow-up after lab tour (2026-08-11). Earlier said he probably will recruit Fall 2027, pending funding; no new reply found yet. Await response / possible hands-on involvement. Active long-term PPML prospect.",
         "outreach": {
-          "stage": "finished",
-          "stage_updated_at": "2026-07-23T20:00:17.154Z",
+          "stage": "their_move",
+          "stage_updated_at": "2026-08-13T02:33:04.484Z",
           "entered_at": "2026-07-23T19:59:52.966Z",
-          "notes": ""
+          "notes": "Await Nick; Fall 2027 funding still uncertain."
         }
       },
       "umich-amy-brooks-cuos": {
-        "updated_at": "2026-07-01T20:54:20.810Z",
-        "status": "contacted",
+        "updated_at": "2026-08-13T02:33:05.153Z",
+        "status": "responded_positive",
         "last_contacted": "2026-07-01",
-        "last_followed_up": "",
+        "last_followed_up": "2026-08-11",
         "follow_up_date": "",
-        "notes": ""
+        "notes": "NQVL Project Manager interview completed Aug 7. Aug 11–12 follow-up: Amy said decision expected in the next 2–3 weeks. Harsh replied again Aug 12. Wait for hiring decision. This is the job-interview thread, not a PhD PI outreach.",
+        "outreach": {
+          "stage": "their_move",
+          "stage_updated_at": "2026-08-13T02:33:05.153Z",
+          "entered_at": "2026-08-13T02:33:05.152Z",
+          "notes": "Wait for NQVL hiring decision (2–3 weeks from Aug 11)."
+        }
       },
       "umich-u-m-careers-research-278715": {
         "updated_at": "2026-07-01T20:55:01.420Z",
@@ -456,16 +462,134 @@
           "entered_at": "",
           "notes": ""
         }
+      },
+      "umich-test-status-1786212617230": {
+        "updated_at": "2026-08-08T18:10:22.536Z",
+        "status": "contacted",
+        "last_contacted": "2026-08-08",
+        "last_followed_up": "",
+        "follow_up_date": "2026-08-15",
+        "notes": "",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-08T18:10:22.536Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "umich-test-status-1786213145387": {
+        "updated_at": "2026-08-08T18:19:09.633Z",
+        "status": "contacted",
+        "last_contacted": "2026-08-08",
+        "last_followed_up": "",
+        "follow_up_date": "2026-08-15",
+        "notes": "",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-08T18:19:09.633Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "umich-test-status-1786213358320": {
+        "updated_at": "2026-08-08T18:22:42.484Z",
+        "status": "contacted",
+        "last_contacted": "2026-08-08",
+        "last_followed_up": "",
+        "follow_up_date": "2026-08-15",
+        "notes": "",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-08T18:22:42.484Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "umich-test-status-1786213414302": {
+        "updated_at": "2026-08-08T18:23:39.746Z",
+        "status": "contacted",
+        "last_contacted": "2026-08-08",
+        "last_followed_up": "",
+        "follow_up_date": "2026-08-15",
+        "notes": "",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-08T18:23:39.746Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "umich-test-status-1786213619316": {
+        "updated_at": "2026-08-08T18:27:02.150Z",
+        "status": "contacted",
+        "last_contacted": "2026-08-08",
+        "last_followed_up": "",
+        "follow_up_date": "2026-08-15",
+        "notes": "",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-08T18:27:02.150Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "umich-test-status-1786214058053": {
+        "updated_at": "2026-08-08T18:34:21.291Z",
+        "status": "contacted",
+        "last_contacted": "2026-08-08",
+        "last_followed_up": "",
+        "follow_up_date": "2026-08-15",
+        "notes": "",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-08T18:34:21.291Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "umich-test-status-1786227600548": {
+        "updated_at": "2026-08-08T22:20:05.231Z",
+        "status": "contacted",
+        "last_contacted": "2026-08-08",
+        "last_followed_up": "",
+        "follow_up_date": "2026-08-15",
+        "notes": "",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-08T22:20:05.231Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "umich-test-status-1786227662716": {
+        "updated_at": "2026-08-08T22:21:05.101Z",
+        "status": "contacted",
+        "last_contacted": "2026-08-08",
+        "last_followed_up": "",
+        "follow_up_date": "2026-08-15",
+        "notes": "",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-08T22:21:05.101Z",
+          "entered_at": "",
+          "notes": ""
+        }
       }
     },
     "private-co": {
       "tokamak-energy-industrial-phd": {
-        "updated_at": "2026-07-01T16:37:56.535Z",
-        "status": "draft_ready",
-        "last_contacted": "",
-        "last_followed_up": "",
+        "updated_at": "2026-08-13T02:33:05.528Z",
+        "status": "followed_up",
+        "last_contacted": "2026-08-08",
+        "last_followed_up": "2026-08-10",
         "follow_up_date": "",
-        "notes": "First card in Private Company PhD Paths source. Speculative CV email drafted 2026-06-28."
+        "notes": "Aug 10: asked Tokamak Energy Careers about late-2026 / 2027 ST40 plasma-diagnostics PhD sponsorship and university partners. No reply found yet. Also asked Hannah Willett which team/role best matches diagnostics + DAQ (networking, not a direct job ask). Track partner-university projects.",
+        "outreach": {
+          "stage": "their_move",
+          "stage_updated_at": "2026-08-13T02:33:05.528Z",
+          "entered_at": "2026-08-13T02:33:05.526Z",
+          "notes": "Await careers reply; identify university partner projects."
+        }
       }
     },
     "ipp": {
@@ -476,6 +600,1325 @@
         "last_followed_up": "",
         "follow_up_date": "",
         "notes": ""
+      }
+    },
+    "professor-list": {
+      "professor-list-andr-galli-university-of-bern": {
+        "updated_at": "2026-08-13T02:33:02.656Z",
+        "status": "followed_up",
+        "last_contacted": "2026-03-19",
+        "last_followed_up": "2026-08-12",
+        "follow_up_date": "",
+        "notes": "Aug 12 reconnection: asked for advice / Zoom. No new reply found yet. Previously called the fit very promising, met by Zoom; blocked by group transition and 2027 employment limit. Keep Bern mass-spec network warm.",
+        "outreach": {
+          "stage": "their_move",
+          "stage_updated_at": "2026-08-13T02:33:02.656Z",
+          "entered_at": "2026-08-08T18:22:25.672Z",
+          "notes": "Await Galli reply; keep Bern network warm."
+        }
+      },
+      "professor-list-martin-rubin-university-of-bern": {
+        "updated_at": "2026-08-13T02:33:02.315Z",
+        "status": "responded_positive",
+        "last_contacted": "2026-03-25",
+        "last_followed_up": "2026-08-10",
+        "follow_up_date": "",
+        "notes": "Aug 10–12 follow-up on prospective PhD funding: no funding now; possibly next cycle starting Apr 2027. On Aug 12 he suggested Prof. Marschall’s planetary-science PhD posting. Next: review Marschall posting; keep Bern route warm. Prior: said background was suitable, no PhD funding, offered to circulate internally.",
+        "outreach": {
+          "stage": "your_move",
+          "stage_updated_at": "2026-08-13T02:33:02.315Z",
+          "entered_at": "2026-08-08T18:22:25.673Z",
+          "notes": "Review Marschall posting; keep Rubin/Bern warm."
+        }
+      },
+      "professor-list-matthijs-van-berkel-differ-tu-eindhoven": {
+        "updated_at": "2026-08-08T22:15:30.062Z",
+        "status": "responded_positive",
+        "last_contacted": "2026-06-24",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "Accepted Ivo's referral and scheduled a discussion about possible roles and interests.",
+        "outreach": {
+          "stage": "your_move",
+          "stage_updated_at": "2026-08-08T18:30:08.218Z",
+          "entered_at": "2026-08-08T18:22:25.674Z",
+          "notes": ""
+        }
+      },
+      "professor-list-rico-fausch-university-of-bern": {
+        "updated_at": "2026-08-08T22:15:30.067Z",
+        "status": "responded_positive",
+        "last_contacted": "2026-03-19",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "Impressed by the CV, wanted to meet, and discussed the case internally; no scholarship funding available. | An earlier rico.faust@unibe.ch attempt bounced; correct address is rico.fausch@unibe.ch.",
+        "outreach": {
+          "stage": "your_move",
+          "stage_updated_at": "2026-08-08T18:30:08.224Z",
+          "entered_at": "2026-08-08T18:22:25.674Z",
+          "notes": ""
+        }
+      },
+      "professor-list-aditya-singh-godara-he3-lumina-pppl-collaboration": {
+        "updated_at": "2026-08-08T22:15:30.075Z",
+        "status": "responded_negative",
+        "last_contacted": "2026-02-19",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "Referred by Samuel Cohen; replied that someone from his HE3 Lumina team would follow up. | External collaborator, not university faculty.",
+        "outreach": {
+          "stage": "finished",
+          "stage_updated_at": "2026-08-08T18:30:08.270Z",
+          "entered_at": "2026-08-08T18:30:08.252Z",
+          "notes": ""
+        }
+      },
+      "professor-list-antoine-pommerol-university-of-bern": {
+        "updated_at": "2026-08-09T02:04:36.663Z",
+        "status": "contacted",
+        "last_contacted": "2026-03-24",
+        "last_followed_up": "",
+        "follow_up_date": "2026-03-31",
+        "notes": "Replied that he had no opening and advised monitoring Bern's vacancies page.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-09T02:04:36.663Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-brian-king-university-of-new-hampshire": {
+        "updated_at": "2026-08-08T22:15:30.083Z",
+        "status": "responded_negative",
+        "last_contacted": "2026-06-30",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "Praised the CV and forwarded it to Lynn Kistler because he now works mainly as a consultant.",
+        "outreach": {
+          "stage": "finished",
+          "stage_updated_at": "2026-08-08T18:30:08.283Z",
+          "entered_at": "2026-08-08T18:30:08.282Z",
+          "notes": ""
+        }
+      },
+      "professor-list-dinesh-k-veypatty-radhakrishnan-utsa-southwest-research-institute": {
+        "updated_at": "2026-08-08T22:15:30.091Z",
+        "status": "responded_negative",
+        "last_contacted": "2025-11-20",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "Happy to discuss the programme and introduced Jared Schroeder.",
+        "outreach": {
+          "stage": "finished",
+          "stage_updated_at": "2026-08-08T18:30:08.289Z",
+          "entered_at": "2026-08-08T18:30:08.288Z",
+          "notes": ""
+        }
+      },
+      "professor-list-hans-meister-max-planck-institute-for-plasma-physics-ipp": {
+        "updated_at": "2026-08-08T22:15:30.098Z",
+        "status": "responded_negative",
+        "last_contacted": "2026-04-01",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "Resolved to Dr. Hans Meister; he replied and advised IPP HR, HEPP/partner labs, and ITER internships. | The earlier audit missed this thread entirely.",
+        "outreach": {
+          "stage": "finished",
+          "stage_updated_at": "2026-08-08T18:30:08.295Z",
+          "entered_at": "2026-08-08T18:30:08.294Z",
+          "notes": ""
+        }
+      },
+      "professor-list-jenny-oome-wan-differ": {
+        "updated_at": "2026-08-08T22:15:30.105Z",
+        "status": "responded_negative",
+        "last_contacted": "2026-06-24",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "Coordinated and scheduled the meeting with Matthijs van Berkel. | Not a research-supervisor signal.",
+        "outreach": {
+          "stage": "finished",
+          "stage_updated_at": "2026-08-08T18:30:08.300Z",
+          "entered_at": "2026-08-08T18:30:08.299Z",
+          "notes": ""
+        }
+      },
+      "professor-list-lotte-wildhagen-differ": {
+        "updated_at": "2026-08-08T22:15:30.109Z",
+        "status": "responded_negative",
+        "last_contacted": "2026-06-30",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "Responded through HRM and directed Harsh to internship/research vacancy routes. | Not a research-supervisor signal.",
+        "outreach": {
+          "stage": "finished",
+          "stage_updated_at": "2026-08-08T18:30:08.306Z",
+          "entered_at": "2026-08-08T18:30:08.304Z",
+          "notes": ""
+        }
+      },
+      "professor-list-marek-tulej-university-of-bern": {
+        "updated_at": "2026-08-09T02:03:36.895Z",
+        "status": "contacted",
+        "last_contacted": "2025-12-22",
+        "last_followed_up": "",
+        "follow_up_date": "2025-12-29",
+        "notes": "Replied that he was retiring and referred Harsh to Andreas Riedo and Rico Fausch. | This is the person who directly wrote that he was retiring.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-09T02:03:36.895Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-nicolette-ketelaar-differ": {
+        "updated_at": "2026-08-08T22:15:30.121Z",
+        "status": "responded_negative",
+        "last_contacted": "2026-06-30",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "The query reached DIFFER HR; Nicolette's auto-reply redirected urgent matters to HRM. | Not a research-supervisor signal.",
+        "outreach": {
+          "stage": "finished",
+          "stage_updated_at": "2026-08-08T18:30:08.317Z",
+          "entered_at": "2026-08-08T18:30:08.315Z",
+          "notes": ""
+        }
+      },
+      "professor-list-nora-h-nni-university-of-bern": {
+        "updated_at": "2026-08-09T02:04:58.746Z",
+        "status": "contacted",
+        "last_contacted": "2026-01-17",
+        "last_followed_up": "",
+        "follow_up_date": "2026-01-24",
+        "notes": "Replied that the advertised projects were data/chemistry-heavy and other Bern projects would fit better.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-09T02:04:58.746Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-philippa-elwell-university-college-london-mssl": {
+        "updated_at": "2026-08-08T22:15:30.132Z",
+        "status": "responded_negative",
+        "last_contacted": "2026-01-28",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "Confirmed both references arrived and the funded-studentship application was complete for panel review. | Administrative process only; not faculty interest.",
+        "outreach": {
+          "stage": "finished",
+          "stage_updated_at": "2026-08-08T18:30:08.328Z",
+          "entered_at": "2026-08-08T18:30:08.326Z",
+          "notes": ""
+        }
+      },
+      "professor-list-sonal-jain-university-of-colorado-boulder": {
+        "updated_at": "2026-08-08T22:15:30.139Z",
+        "status": "responded_negative",
+        "last_contacted": "2025-11-20",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "Happy to advise, shared her cell number, and arranged a conversation about CU/LASP.",
+        "outreach": {
+          "stage": "finished",
+          "stage_updated_at": "2026-08-08T18:30:08.333Z",
+          "entered_at": "2026-08-08T18:30:08.331Z",
+          "notes": ""
+        }
+      },
+      "professor-list-tijs-wijkamp-differ": {
+        "updated_at": "2026-08-09T02:03:10.212Z",
+        "status": "contacted",
+        "last_contacted": "2026-06-10",
+        "last_followed_up": "",
+        "follow_up_date": "2026-06-17",
+        "notes": "Shortlisted Harsh among 8 of 50+ applicants and interviewed him; final-round places went to closer project matches.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-09T02:03:10.212Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-andreas-riedo-university-of-bern": {
+        "updated_at": "2026-08-08T22:15:30.161Z",
+        "status": "contacted",
+        "last_contacted": "2025-12-22",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "Inquiry sent; only a separate automated out-of-office response was found.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-08T18:30:08.366Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-christoph-mordasini-university-of-bern": {
+        "updated_at": "2026-08-08T22:15:30.180Z",
+        "status": "contacted",
+        "last_contacted": "2026-03-19",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "PhD inquiry sent; no reply found.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-08T18:30:08.372Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-cyrille-honor-institut-polytechnique-de-paris-lpp": {
+        "updated_at": "2026-08-08T22:15:30.187Z",
+        "status": "contacted",
+        "last_contacted": "2026-06-29",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "LPP fusion-diagnostics inquiry sent; no reply found. | The earlier audit missed this person.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-08T18:30:08.378Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-daniel-kitzmann-university-of-bern": {
+        "updated_at": "2026-08-08T22:15:30.195Z",
+        "status": "contacted",
+        "last_contacted": "2026-03-19",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "PhD inquiry sent; no reply found.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-08T18:30:08.384Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-jared-schroeder-utsa-southwest-research-institute": {
+        "updated_at": "2026-08-08T22:15:30.207Z",
+        "status": "contacted",
+        "last_contacted": "2025-11-21",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "Referred by Dinesh and contacted; no reply found.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-08T18:30:08.417Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-martin-jutzi-university-of-bern": {
+        "updated_at": "2026-08-08T22:15:30.226Z",
+        "status": "contacted",
+        "last_contacted": "2026-03-19",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "PhD inquiry sent; no reply found.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-08T18:30:08.424Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-matthew-argall-university-of-new-hampshire": {
+        "updated_at": "2026-08-08T22:15:30.229Z",
+        "status": "contacted",
+        "last_contacted": "2026-06-28",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "UNH PhD/RA inquiry sent; no reply found.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-08T18:30:08.430Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-pascale-hennequin-laure-vermare-hal-2-sorbonne-universit-cole-polytechnique-cnrs-universit-paris": {
+        "updated_at": "2026-08-08T18:33:54.032Z",
+        "status": "contacted",
+        "last_contacted": "",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "Direct ITER-related plasma diagnostics. ITER itself highlighted LPP’s Doppler-reflectometry work as relevant to predicting turbulence and transport in ITER plasmas, and Pascale Hennequin is identified as head of LPP’s Magnetic Fusion team iter+2",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-08T18:30:08.437Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-peter-beckman-university-of-new-hampshire": {
+        "updated_at": "2026-08-08T22:15:30.242Z",
+        "status": "contacted",
+        "last_contacted": "2026-06-28",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "Gmail reported that the address/domain could not be delivered.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-08T18:30:08.442Z",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-001": {
+        "updated_at": "2026-08-13T02:33:02.992Z",
+        "status": "contacted",
+        "last_contacted": "2026-08-10",
+        "last_followed_up": "",
+        "follow_up_date": "2026-08-17",
+        "notes": "Aug 10 funded-PhD inquiry (space plasma physics / Plasma Observatory). No reply found yet. Wait / follow up later.",
+        "outreach": {
+          "stage": "their_move",
+          "stage_updated_at": "2026-08-13T02:33:02.992Z",
+          "entered_at": "2026-08-13T02:33:02.990Z",
+          "notes": "Await Retinò reply."
+        }
+      },
+      "professor-list-lead-052": {
+        "updated_at": "2026-08-08T23:27:52.967Z",
+        "status": "responded_positive",
+        "last_contacted": "2026-06-25",
+        "follow_up_date": "",
+        "notes": "Said the application was difficult to reject, strongly endorsed the engineering fit, and personally referred Harsh to van Berkel. | Strong ITER-related diagnostics and control. TU/e is identified through FuseNet and TU/e pages as active in nuclear fusion science, while DIFFER’s Plasma Edge Physics and Diagnostics group has a live PhD in fusion exhaust plasma diagnostics and TU/e/DIFFER work includes CXRS, MSE, and multispectral diagnostics relevant to reactor operation fusenet+3",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-08T23:27:52.967Z",
+          "entered_at": "2026-08-08T18:33:53.713Z",
+          "notes": ""
+        },
+        "last_followed_up": ""
+      },
+      "professor-list-lead-025": {
+        "updated_at": "2026-08-08T22:15:30.054Z",
+        "status": "responded_positive",
+        "last_contacted": "2026-03-01",
+        "follow_up_date": "",
+        "notes": "Called the research exciting, contacted Applied Physics admissions, and said she would follow up.",
+        "outreach": {
+          "stage": "your_move",
+          "stage_updated_at": "2026-08-08T18:33:53.718Z",
+          "entered_at": "2026-08-08T18:33:53.718Z",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-038": {
+        "updated_at": "2026-08-08T22:15:30.071Z",
+        "status": "responded_positive",
+        "last_contacted": "2026-02-19",
+        "follow_up_date": "",
+        "notes": "Said the background was a good match, held a meeting, and referred an FRC collaboration lead.",
+        "outreach": {
+          "stage": "your_move",
+          "stage_updated_at": "2026-08-08T18:33:53.736Z",
+          "entered_at": "2026-08-08T18:33:53.736Z",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-016": {
+        "updated_at": "2026-08-09T00:55:48.963Z",
+        "status": "contacted",
+        "last_contacted": "2025-12-12",
+        "follow_up_date": "2025-12-19",
+        "notes": "Replied twice: no outside lab students; after Princeton admission he would discuss group opportunities.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-09T00:55:48.963Z",
+          "entered_at": "",
+          "notes": ""
+        },
+        "last_followed_up": ""
+      },
+      "professor-list-lead-015": {
+        "updated_at": "2026-08-09T02:03:26.566Z",
+        "status": "contacted",
+        "last_contacted": "2026-04-02",
+        "follow_up_date": "2026-04-09",
+        "notes": "Agreed to and scheduled a UTSA–SwRI programme discussion; no written hiring commitment.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-09T02:03:26.566Z",
+          "entered_at": "",
+          "notes": ""
+        },
+        "last_followed_up": ""
+      },
+      "professor-list-lead-044": {
+        "updated_at": "2026-08-09T02:05:07.049Z",
+        "status": "contacted",
+        "last_contacted": "2026-02-16",
+        "follow_up_date": "2026-02-23",
+        "notes": "Replied that admissions had finished and the application was not in Princeton's plasma programme. | Original list used hji@pppl.gov; the actual outreach used hji@princeton.edu.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-09T02:05:07.049Z",
+          "entered_at": "",
+          "notes": ""
+        },
+        "last_followed_up": ""
+      },
+      "professor-list-lead-018": {
+        "updated_at": "2026-08-09T02:04:52.249Z",
+        "status": "contacted",
+        "last_contacted": "2026-02-16",
+        "follow_up_date": "2026-02-23",
+        "notes": "Replied that his rotating-plasma work was currently theoretical and admission comes before joining a group.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-09T02:04:52.249Z",
+          "entered_at": "",
+          "notes": ""
+        },
+        "last_followed_up": ""
+      },
+      "professor-list-lead-039": {
+        "updated_at": "2026-08-08T22:15:30.128Z",
+        "status": "responded_negative",
+        "last_contacted": "2026-02-12",
+        "follow_up_date": "",
+        "notes": "Replied that he is no longer taking graduate students.",
+        "outreach": {
+          "stage": "finished",
+          "stage_updated_at": "2026-08-08T18:33:53.847Z",
+          "entered_at": "2026-08-08T18:33:53.847Z",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-040": {
+        "updated_at": "2026-08-09T02:05:36.006Z",
+        "status": "contacted",
+        "last_contacted": "2026-04-09",
+        "follow_up_date": "2026-04-16",
+        "notes": "Not taking another student, but offered and held a guidance call. | Actual conversation used robert.ebert@swri.org; initial mail also used rebert@swri.edu.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-09T02:05:36.006Z",
+          "entered_at": "",
+          "notes": ""
+        },
+        "last_followed_up": ""
+      },
+      "professor-list-lead-054": {
+        "updated_at": "2026-08-09T02:03:03.136Z",
+        "status": "contacted",
+        "last_contacted": "2026-01-12",
+        "follow_up_date": "2026-01-19",
+        "notes": "PhD was discussed offline and he requested the CV; no written reply or commitment in the PhD email threads.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-09T02:03:03.136Z",
+          "entered_at": "",
+          "notes": ""
+        },
+        "last_followed_up": ""
+      },
+      "professor-list-lead-047": {
+        "updated_at": "2026-08-09T02:05:19.277Z",
+        "status": "contacted",
+        "last_contacted": "2026-02-17",
+        "follow_up_date": "2026-02-24",
+        "notes": "Called the CV impressive; not involved in admissions and on sabbatical in the UK until 2027.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-09T02:05:19.277Z",
+          "entered_at": "",
+          "notes": ""
+        },
+        "last_followed_up": ""
+      },
+      "professor-list-lead-045": {
+        "updated_at": "2026-08-09T02:04:20.243Z",
+        "status": "contacted",
+        "last_contacted": "2026-02-12",
+        "follow_up_date": "2026-02-19",
+        "notes": "Responded after follow-up and scheduled a Zoom call; no written outcome found. | Actual conversation used zoltan.sternovsky@lasp.colorado.edu.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-09T02:04:20.243Z",
+          "entered_at": "",
+          "notes": ""
+        },
+        "last_followed_up": ""
+      },
+      "professor-list-lead-024": {
+        "updated_at": "2026-08-08T22:15:30.165Z",
+        "status": "contacted",
+        "last_contacted": "2026-03-19",
+        "follow_up_date": "",
+        "notes": "Direct PhD inquiry sent; no reply found.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-005": {
+        "updated_at": "2026-08-08T22:15:30.169Z",
+        "status": "contacted",
+        "last_contacted": "2026-02-09",
+        "follow_up_date": "",
+        "notes": "CU Boulder PhD inquiry was sent to ree@lasp.colorado.edu; no reply found. | Original list address differed; the actual sent thread used ree@lasp.colorado.edu.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-006": {
+        "updated_at": "2026-08-08T22:15:30.172Z",
+        "status": "contacted",
+        "last_contacted": "2026-02-12",
+        "follow_up_date": "",
+        "notes": "Applied Physics PhD/RA inquiry sent; no reply found.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-007": {
+        "updated_at": "2026-08-13T02:33:04.000Z",
+        "status": "followed_up",
+        "last_contacted": "2026-03-12",
+        "follow_up_date": "",
+        "notes": "Aug 12: asked whether an upcoming funded PhD or other CosmOrbitrap / planetary mass-spectrometry route is expected. No reply found yet. Initial PhD-fit email and later follow-up were sent.",
+        "outreach": {
+          "stage": "their_move",
+          "stage_updated_at": "2026-08-13T02:33:04.000Z",
+          "entered_at": "2026-08-12T04:05:40.590Z",
+          "notes": "Await Briois funded-route reply."
+        },
+        "last_followed_up": "2026-08-12"
+      },
+      "professor-list-lead-048": {
+        "updated_at": "2026-08-08T22:15:30.184Z",
+        "status": "contacted",
+        "last_contacted": "2026-02-11",
+        "follow_up_date": "",
+        "notes": "ASU PhD-fit inquiry sent; no reply found.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-009": {
+        "updated_at": "2026-08-08T22:15:30.192Z",
+        "status": "contacted",
+        "last_contacted": "2026-02-09",
+        "follow_up_date": "",
+        "notes": "CU Boulder PhD inquiry was sent to dan.baker@lasp.colorado.edu; no reply found. | Original list had daniel.baker@lasp.colorado.edu; the sent thread used dan.baker@lasp.colorado.edu. | No indication of opportunities or openings. Too senior?",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-011": {
+        "updated_at": "2026-08-08T22:15:30.199Z",
+        "status": "contacted",
+        "last_contacted": "2026-02-09",
+        "follow_up_date": "",
+        "notes": "CU Boulder PhD inquiry was sent to david.malaspina@lasp.colorado.edu; no reply found. | Original list used colorado.edu; the sent thread used david.malaspina@lasp.colorado.edu.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-055": {
+        "updated_at": "2026-08-08T22:15:30.203Z",
+        "status": "contacted",
+        "last_contacted": "2026-03-20",
+        "follow_up_date": "",
+        "notes": "UTSA–SwRI inquiry sent to his SwRI address; no reply found. | Original list showed JHU APL; the actual outreach used george.ho@swri.org.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-020": {
+        "updated_at": "2026-08-08T22:15:30.211Z",
+        "status": "contacted",
+        "last_contacted": "2026-02-12",
+        "follow_up_date": "",
+        "notes": "ASU PhD-fit inquiry sent to jim.bell@asu.edu; no reply found. | Original list had james.bell.iii@asu.edu; the actual outreach used jim.bell@asu.edu.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-051": {
+        "updated_at": "2026-08-08T22:15:30.215Z",
+        "status": "contacted",
+        "last_contacted": "2026-04-02",
+        "follow_up_date": "",
+        "notes": "UTSA–SwRI inquiry sent; no reply found. | Actual outreach used kogasawara@swri.edu.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-013": {
+        "updated_at": "2026-08-08T22:15:30.218Z",
+        "status": "contacted",
+        "last_contacted": "2026-06-29",
+        "follow_up_date": "",
+        "notes": "LPP fusion-diagnostics inquiry sent; no reply found. | Direct ITER-related plasma diagnostics. ITER itself highlighted LPP’s Doppler-reflectometry work as relevant to predicting turbulence and transport in ITER plasmas, and Pascale Hennequin is identified as head of LPP’s Magnetic Fusion team iter+2",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-032": {
+        "updated_at": "2026-08-08T22:15:30.222Z",
+        "status": "contacted",
+        "last_contacted": "2026-06-30",
+        "follow_up_date": "",
+        "notes": "Brian King forwarded the CV to her as SSC director; no reply from Kistler found.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-028": {
+        "updated_at": "2026-08-08T22:15:30.233Z",
+        "status": "contacted",
+        "last_contacted": "2026-03-19",
+        "follow_up_date": "",
+        "notes": "Two guidance/PhD inquiries sent; no reply found. | Actual outreach used mdesai@swri.edu.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-046": {
+        "updated_at": "2026-08-08T22:15:30.236Z",
+        "status": "contacted",
+        "last_contacted": "2026-06-29",
+        "follow_up_date": "",
+        "notes": "LPP fusion-diagnostics inquiry sent; no reply found. | Direct ITER-related plasma diagnostics. ITER itself highlighted LPP’s Doppler-reflectometry work as relevant to predicting turbulence and transport in ITER plasmas, and Pascale Hennequin is identified as head of LPP’s Magnetic Fusion team iter+2",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-036": {
+        "updated_at": "2026-08-08T22:15:30.246Z",
+        "status": "contacted",
+        "last_contacted": "2025-12-12",
+        "follow_up_date": "",
+        "notes": "Direct PhD inquiry sent; no reply. André Galli separately confirmed Wurz's summer-2026 retirement. | Marek Tulej was the person who directly wrote that he was retiring; Wurz's retirement was reported by André Galli.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-033": {
+        "updated_at": "2026-08-08T22:15:30.250Z",
+        "status": "contacted",
+        "last_contacted": "2026-02-12",
+        "follow_up_date": "",
+        "notes": "ASU PhD-fit inquiry sent to mauskopf@asu.edu; no reply found. | Actual outreach used mauskopf@asu.edu.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-042": {
+        "updated_at": "2026-08-08T22:15:30.254Z",
+        "status": "contacted",
+        "last_contacted": "2026-02-09",
+        "follow_up_date": "",
+        "notes": "CU Boulder PhD inquiry sent; no reply found. | Actual outreach used shannon.curry@colorado.edu.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-041": {
+        "updated_at": "2026-08-08T22:15:30.258Z",
+        "status": "contacted",
+        "last_contacted": "2026-04-02",
+        "follow_up_date": "",
+        "notes": "UTSA–SwRI inquiry sent; no reply found. | Actual outreach used sfuselier@swri.edu.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-008": {
+        "updated_at": "2026-08-13T02:33:03.329Z",
+        "status": "contacted",
+        "last_contacted": "2026-08-11",
+        "follow_up_date": "2026-08-18",
+        "notes": "Aug 11: asked about reapplying and whether she expects to take a PhD student. Applied previous cycle, not admitted. No reply found yet. Wait; potential 2027 application.",
+        "outreach": {
+          "stage": "their_move",
+          "stage_updated_at": "2026-08-13T02:33:03.329Z",
+          "entered_at": "2026-08-13T02:33:03.327Z",
+          "notes": "Await Jaynes; possible 2027 reapply."
+        },
+        "last_followed_up": ""
+      },
+      "professor-list-lead-010": {
+        "updated_at": "2026-08-13T02:33:03.655Z",
+        "status": "contacted",
+        "last_contacted": "2026-08-12",
+        "follow_up_date": "2026-08-19",
+        "notes": "Aug 12: asked if he expects to supervise a 2027 planetary plasma & instrumentation PhD / suitable project. MSSL was a previous-cycle application. No reply found yet.",
+        "outreach": {
+          "stage": "their_move",
+          "stage_updated_at": "2026-08-13T02:33:03.655Z",
+          "entered_at": "2026-08-13T02:33:03.653Z",
+          "notes": "Await Coates 2027-intake reply."
+        },
+        "last_followed_up": ""
+      },
+      "professor-list-lead-004": {
+        "updated_at": "2026-08-08T22:15:30.273Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "No direct sent or received outreach thread found.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-056": {
+        "updated_at": "2026-08-08T22:15:30.277Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "No direct sent or received outreach thread found. | https://www.epfl.ch/research/domains/swiss-plasma-center/education/education_doctoralschool/",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-012": {
+        "updated_at": "2026-08-08T22:15:30.281Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "No direct sent or received outreach thread found.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-017": {
+        "updated_at": "2026-08-08T22:15:30.285Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "No direct sent or received outreach thread found. | No past PhD students listed. I presume he cannot advise PhD students directly.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-058": {
+        "updated_at": "2026-08-08T22:15:30.290Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "No direct sent or received outreach thread found. | https://www.epfl.ch/research/domains/swiss-plasma-center/education/education_doctoralschool/",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-014": {
+        "updated_at": "2026-08-08T22:15:30.294Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "No direct sent or received outreach thread found.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-general-irap-institute-contact-address-available-peps-related-research-contact-names-in-reviewed": {
+        "updated_at": "2026-08-08T18:33:54.123Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "Not direct ITER/fusion from the sources reviewed. IRAP is a strong space-plasma lab, but the evidence found points to planetary/space plasma modeling and instrumentation rather than ITER or fusion plasma diagnostics irap.omp+2",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-057": {
+        "updated_at": "2026-08-08T22:15:30.297Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "No direct sent or received outreach thread found. | https://www.epfl.ch/research/domains/swiss-plasma-center/education/education_doctoralschool/",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-003": {
+        "updated_at": "2026-08-08T22:15:30.302Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "Not direct ITER/fusion from the sources reviewed. IRAP is a strong space-plasma lab, but the evidence found points to planetary/space plasma modeling and instrumentation rather than ITER or fusion plasma diagnostics irap.omp+2",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-iter-technology-and-diagnostics-division-ipp-iter-participation-pages-specific-person-not-pinned": {
+        "updated_at": "2026-08-08T18:33:54.157Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "Very strong direct ITER involvement. IPP states that its ITER T&D division hosts technological contributions to ITER, including NBI and “various diagnostics,” while researchers also support ITER plasma control software and operation preparation ipp.mpg+2",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-ivo-classen-marco-de-baar-academictransfer-2-eindhoven-university-of-technology-tu-e-differ-dutc": {
+        "updated_at": "2026-08-08T18:33:54.163Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "Strong ITER-related diagnostics and control. TU/e is identified through FuseNet and TU/e pages as active in nuclear fusion science, while DIFFER’s Plasma Edge Physics and Diagnostics group has a live PhD in fusion exhaust plasma diagnostics and TU/e/DIFFER work includes CXRS, MSE, and multispectral diagnostics relevant to reactor operation fusenet+3",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-030": {
+        "updated_at": "2026-08-08T22:15:30.306Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "No direct sent or received outreach thread found.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-019": {
+        "updated_at": "2026-08-08T22:15:30.310Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "No direct sent or received outreach thread found.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-061": {
+        "updated_at": "2026-08-08T22:15:30.314Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "No direct sent or received outreach thread found. | https://www.epfl.ch/research/domains/swiss-plasma-center/education/education_doctoralschool/",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-021": {
+        "updated_at": "2026-08-08T22:15:30.318Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "No direct sent or received outreach thread found.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-022": {
+        "updated_at": "2026-08-08T22:15:30.322Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "No direct sent or received outreach thread found.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-kth-fusion-pwi-kth-royal-institute-of-technology-department-of-electromagnetics-and-plasma-physi": {
+        "updated_at": "2026-08-08T22:15:30.326Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "No named contact or matching outreach thread found.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-kth-fusion-pwi-group-contact-pages-individual-pi-name-not-clearly-extracted-from-the-sources-rev": {
+        "updated_at": "2026-08-08T18:33:54.201Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "Direct ITER-related, especially on plasma-wall interaction and diagnostics. KTH states its fusion-materials/PWI work is fully integrated with ITER-relevant topics and includes development of in-vessel diagnostics and surface analysis methods for plasma-facing components kth",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-059": {
+        "updated_at": "2026-08-08T22:15:30.329Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "Direct ITER-related, especially on plasma-wall interaction and diagnostics. KTH states its fusion-materials/PWI work is fully integrated with ITER-relevant topics and includes development of in-vessel diagnostics and surface analysis methods for plasma-facing components kth",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-053": {
+        "updated_at": "2026-08-08T22:15:30.333Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "No direct sent or received outreach thread found. | Strong ITER-related diagnostics and control. TU/e is identified through FuseNet and TU/e pages as active in nuclear fusion science, while DIFFER’s Plasma Edge Physics and Diagnostics group has a live PhD in fusion exhaust plasma diagnostics and TU/e/DIFFER work includes CXRS, MSE, and multispectral diagnostics relevant to reactor operation fusenet+3",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-026": {
+        "updated_at": "2026-08-08T22:15:30.336Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "No direct sent or received outreach thread found.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-027": {
+        "updated_at": "2026-08-08T22:15:30.342Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "No direct sent or received outreach thread found.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-035": {
+        "updated_at": "2026-08-08T22:15:30.346Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "Very strong direct ITER involvement. IPP states that its ITER T&D division hosts technological contributions to ITER, including NBI and “various diagnostics,” while researchers also support ITER plasma control software and operation preparation ipp.mpg+2",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-029": {
+        "updated_at": "2026-08-08T22:15:30.350Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "No direct sent or received outreach thread found.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-050": {
+        "updated_at": "2026-08-08T22:15:30.354Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "No direct sent or received outreach thread found. | Not direct ITER/fusion from the sources reviewed. IRAP is a strong space-plasma lab, but the evidence found points to planetary/space plasma modeling and instrumentation rather than ITER or fusion plasma diagnostics irap.omp+2",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-031": {
+        "updated_at": "2026-08-08T22:15:30.357Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "No direct sent or received outreach thread found.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-002": {
+        "updated_at": "2026-08-08T22:15:30.361Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "No direct sent or received outreach thread found. | https://www.epfl.ch/research/domains/swiss-plasma-center/education/education_doctoralschool/",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-034": {
+        "updated_at": "2026-08-08T22:15:30.365Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "No direct sent or received outreach thread found.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-049": {
+        "updated_at": "2026-08-08T22:15:30.369Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "No direct sent or received outreach thread found. | Not direct ITER/fusion from the sources reviewed. IRAP is a strong space-plasma lab, but the evidence found points to planetary/space plasma modeling and instrumentation rather than ITER or fusion plasma diagnostics irap.omp+2",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-023": {
+        "updated_at": "2026-08-08T22:15:30.373Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "No direct sent or received outreach thread found.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-037": {
+        "updated_at": "2026-08-08T22:15:30.377Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "No direct sent or received outreach thread found.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-063": {
+        "updated_at": "2026-08-08T22:15:30.380Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "No direct sent or received outreach thread found. | https://www.psi.ch/en/hr/phd-students-and-postdocs",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-062": {
+        "updated_at": "2026-08-08T22:15:30.384Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "No direct sent or received outreach thread found.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-043": {
+        "updated_at": "2026-08-08T22:15:30.388Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "No direct sent or received outreach thread found.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-lead-060": {
+        "updated_at": "2026-08-08T22:15:30.392Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "follow_up_date": "",
+        "notes": "The group mailbox was not contacted; eleven named Bern scientists were contacted separately.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "",
+          "entered_at": "",
+          "notes": ""
+        }
+      },
+      "professor-list-detlef-koschny-tum-exodocs": {
+        "updated_at": "2026-08-13T02:33:06.006Z",
+        "status": "contacted",
+        "last_contacted": "2026-08-11",
+        "last_followed_up": "",
+        "follow_up_date": "2026-08-18",
+        "notes": "Aug 11: asked whether EXODOCS DC1 / CLUPI recruitment already completed and about related routes. Formal deadline had passed when contacted. No reply found yet.",
+        "outreach": {
+          "stage": "their_move",
+          "stage_updated_at": "2026-08-13T02:33:06.006Z",
+          "entered_at": "2026-08-13T02:33:06.006Z",
+          "notes": "Clarify whether a late application or related route is possible."
+        }
+      },
+      "professor-list-jean-luc-josset-space-x-clupi": {
+        "updated_at": "2026-08-13T02:33:06.689Z",
+        "status": "contacted",
+        "last_contacted": "2026-08-11",
+        "last_followed_up": "",
+        "follow_up_date": "2026-08-18",
+        "notes": "Aug 11: asked whether SPACE-X doctoral recruitment is still possible or if another CLUPI/EXODOCS route exists. Application period appears passed/uncertain. No reply found yet.",
+        "outreach": {
+          "stage": "their_move",
+          "stage_updated_at": "2026-08-13T02:33:06.689Z",
+          "entered_at": "2026-08-13T02:33:06.689Z",
+          "notes": "Await Josset on whether doctoral recruitment remains possible."
+        }
+      },
+      "professor-list-gabriel-laupre-epfl-space-campus": {
+        "updated_at": "2026-08-13T02:33:07.377Z",
+        "status": "contacted",
+        "last_contacted": "2026-08-11",
+        "last_followed_up": "",
+        "follow_up_date": "2026-08-18",
+        "notes": "Aug 11: asked for a paid graduate research/project route or appropriate PhD supervisor (ground-station validation, synchronized RF hardware). No reply found yet.",
+        "outreach": {
+          "stage": "their_move",
+          "stage_updated_at": "2026-08-13T02:33:07.377Z",
+          "entered_at": "2026-08-13T02:33:07.377Z",
+          "notes": "Await Laupré on research/PhD routing."
+        }
+      },
+      "professor-list-marschall-university-of-bern-planetary-science": {
+        "updated_at": "2026-08-13T02:33:08.103Z",
+        "status": "not_contacted",
+        "last_contacted": "",
+        "last_followed_up": "",
+        "follow_up_date": "",
+        "notes": "Not contacted yet. Open posting recommended by Martin Rubin on 2026-08-12 after the Bern mass-spec funding discussion. Next: read posting and decide/apply quickly if fit.",
+        "outreach": {
+          "stage": "",
+          "stage_updated_at": "2026-08-13T02:33:08.103Z",
+          "entered_at": "",
+          "notes": "Read Marschall posting and decide/apply if fit."
+        }
       }
     }
   }

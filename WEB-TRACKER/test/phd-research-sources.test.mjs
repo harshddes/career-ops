@@ -23,3 +23,11 @@ test('loads dynamic PhD research source registry', () => {
   assert.equal(registry.sources[0].id, 'euraxess-fusion');
   assert.equal(registry.sources[0].api_prefix, '/api/phd-research-prospects/euraxess-fusion');
 });
+
+test('registers the imported professor list as a PhD advisor source', () => {
+  const registry = loadPhdResearchSources();
+  const source = registry.sources.find(item => item.id === 'professor-list');
+  assert.ok(source);
+  assert.equal(source.prospects_file, 'professor-list-research-prospects.json');
+  assert.equal(source.api_prefix, '/api/phd-research-prospects/professor-list');
+});

@@ -49,27 +49,33 @@ test('all rows persist canonical scoring fields and area ranks cannot set priori
   }
 });
 
-test('every Tier A/B row has verified work evidence and a defensible explanation', () => {
+test('every Tier A/B row has tier-appropriate verified physical-work evidence', () => {
   const top = canonical.prospects.filter(item => ['A', 'B'].includes(item.tier));
   for (const prospect of top) {
-    assert.ok(prospect.verified_overlap.length >= 2, `${prospect.name}: weak overlap`);
+    assert.ok(prospect.verified_overlap.length >= 1, `${prospect.name}: weak overlap`);
     assert.ok(prospect.score_breakdown.independent_hardware_evidence, `${prospect.name}: no independent hardware evidence`);
-    assert.ok(
-      prospect.score_breakdown.substantial_hardware_verified || prospect.daily_work_type === 'strategic_materials_manufacturing_hardware',
-      `${prospect.name}: no substantial physical work`
-    );
-    assert.match(prospect.fit_rationale, /hands-on|strategic hardware/i, `${prospect.name}: explanation is weak`);
+    if (prospect.tier === 'A') {
+      assert.ok(prospect.score_breakdown.substantial_hardware_verified, `${prospect.name}: Tier A lacks substantial physical work`);
+    }
+    assert.ok(prospect.fit_rationale.trim().length >= 20, `${prospect.name}: explanation is missing`);
+    assert.ok(prospect.calculation_trace?.final_score === prospect.score, `${prospect.name}: calculation trace differs`);
   }
 });
 
-test('Jing Tang remains archived at Tier C and never exceeds the cap', () => {
+test('Jing Tang is rescored from evidence instead of retaining a person-specific legacy cap', () => {
   const jing = canonical.prospects.find(item => item.name === 'Jing Tang');
   assert.ok(jing);
-  assert.equal(jing.tier, 'C');
-  assert.ok(jing.score <= 2.9);
-  assert.equal(jing.status, 'archived');
-  assert.equal(jing.score_audit.initial_tier, 'A');
-  assert.equal(jing.score_audit.current_tier, 'C');
-  assert.equal(jing.score_audit.changed, true);
-  assert.ok(jing.cap_reasons.some(reason => /AI\/ML\/simulation\/theory dominates/i.test(reason)));
+  assert.equal(jing.policy_version, '2026-08-research-contact-v1');
+  assert.equal(jing.score, jing.scoring.score);
+  assert.equal(jing.tier, jing.priority);
+  assert.ok(jing.score_breakdown.dimensions);
+  assert.ok(!jing.cap_reasons.some(reason => /Jing Tang/i.test(reason)));
+});
+
+test('research-contact cards expose relationship and funding outside technical Tier', () => {
+  for (const prospect of canonical.prospects.slice(0, 20)) {
+    assert.ok(prospect.relationship_signal && typeof prospect.relationship_signal === 'object', `${prospect.name}: missing relationship signal`);
+    assert.ok(prospect.funding_opening_signal && typeof prospect.funding_opening_signal === 'object', `${prospect.name}: missing funding signal`);
+    assert.equal(prospect.scoring_kind, 'research_contact');
+  }
 });

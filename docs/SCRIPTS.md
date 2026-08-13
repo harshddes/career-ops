@@ -207,9 +207,30 @@ npm run scan
 
 ---
 
+## Company Focus / KLA Execute Mode (WEB-TRACKER)
+
+Pins one company so Networking + Jobs collapse to a single next move (hub contacts, not 2–3 people per role).
+
+```bash
+# Seed KLA org + ≤3 Ann Arbor hardware roles + pin focus + queue research
+node WEB-TRACKER/scripts/seed-kla-networking.mjs
+```
+
+Then open `http://127.0.0.1:3737/dashboard/fusion-pivot-dashboard.html` → **Networking** → **Execute Mode**.
+
+When the card says to research contacts, say in Cursor: `Find new networking contacts`.
+
+State files:
+- `data/company-focus.json` (canonical)
+- `WEB-TRACKER/data/company-focus.json` (dashboard mirror)
+
+APIs: `GET/PUT /api/company-focus`, `POST /api/company-focus/pin`, `POST /api/company-focus/advance`.
+
+---
+
 ## Daily digest email (WEB-TRACKER)
 
-Sends a nightly summary of today's dashboard activity (applied, contacted, followed, follow-ups) with XLSX/CSV attachments and the live audit CSV from `output/digests/today-activity-YYYY-MM-DD.csv`.
+Sends a nightly summary of today's dashboard activity (applied, contacted, followed, networking, follow-ups) with XLSX/CSV attachments and the live audit CSV from `output/digests/today-activity-YYYY-MM-DD.csv`.
 
 ### Gmail App Password setup
 

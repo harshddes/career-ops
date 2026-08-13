@@ -64,6 +64,13 @@ export function scoreNetworkingTask(task = {}, context = {}, now = new Date()) {
     penalties.push('unanswered follow-up limit reached');
   }
 
+  let focusBoost = 0;
+  const focusOrgId = String(context.focus_organization_id || '').trim();
+  if (focusOrgId && person.current_organization_id === focusOrgId) {
+    focusBoost = 0.22;
+    reasons.push('focus company');
+  }
+
   const raw = (
     (0.28 * outcomeValue)
     + (0.22 * urgency)
@@ -71,6 +78,7 @@ export function scoreNetworkingTask(task = {}, context = {}, now = new Date()) {
     + (0.12 * pathQuality)
     + (0.10 * readiness)
     + (0.10 * freshness)
+    + focusBoost
     - penalty
   );
   const score = Math.round(clamp(raw) * 100);
@@ -86,6 +94,7 @@ export function scoreNetworkingTask(task = {}, context = {}, now = new Date()) {
       path_quality: Math.round(pathQuality * 100),
       readiness: Math.round(readiness * 100),
       freshness: Math.round(freshness * 100),
+      focus_boost: Math.round(focusBoost * 100),
     },
   };
 }

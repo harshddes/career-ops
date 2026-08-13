@@ -150,7 +150,7 @@ export function normalizePhdscannerPosting(raw = {}, { sourceId = 'phdscanner-fu
     research_fields: researchFields,
     deadline_utc: deadline.deadline_utc,
     posted_at: postedAt,
-    // Funding intentionally omitted from scoring inputs.
+    ...funding,
   }, now);
 
   const id = `phdscanner-${externalId}`.toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-+|-+$/g, '');
@@ -185,6 +185,7 @@ export function normalizePhdscannerPosting(raw = {}, { sourceId = 'phdscanner-fu
     fit_rationale: scoring.fit_rationale,
     risk_flags: scoring.risk_flags,
     score_breakdown: scoring.score_breakdown,
+    scoring,
     research_fields: researchFields,
     academic_level: 'PhD',
     researcher_profile: 'R1',

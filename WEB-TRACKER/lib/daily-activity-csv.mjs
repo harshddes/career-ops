@@ -74,10 +74,11 @@ export function appendDailyActivityCsvRow(event = {}) {
 }
 
 function snapshotRows(activity = {}) {
+  // Contacted already includes Networking people — do not emit a second Networking section.
   const sections = [
     ['Applied Today', 'Applications', activity.details?.applied_today || []],
-    ['Contacted Today', 'Research / Applications', activity.details?.contacted_today || []],
-    ['Followed Today', 'Research', activity.details?.followed_today || []],
+    ['Contacted Today', 'Research / Applications / Networking', activity.details?.contacted_today || []],
+    ['Followed Today', 'Research / Networking', activity.details?.followed_today || []],
     ['Follow-ups Due Today', 'Follow-ups', activity.details?.followups_due_today || []],
   ];
   const seen = new Set();

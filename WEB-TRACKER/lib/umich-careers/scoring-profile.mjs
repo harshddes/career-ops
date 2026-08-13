@@ -21,6 +21,7 @@ import { existsSync, readFileSync, statSync } from 'fs';
 import { createRequire } from 'module';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
+import { scoreOpportunity } from '../opportunity-scoring/index.mjs';
 
 const require = createRequire(import.meta.url);
 const LIB_DIR = dirname(fileURLToPath(import.meta.url));
@@ -213,6 +214,28 @@ function capped(count, first, extra, cap) {
  * @param {Date} now
  */
 export function scoreUmichPosting(posting = {}, now = new Date(), { policy = null } = {}) {
+  const canonical = scoreOpportunity(posting, { type: 'job', now });
+  const closed = canonical.eligibility.reasons.some(reason => ['posting_closed', 'deadline_passed'].includes(reason));
+  const canonicalSegment = closed
+    ? 'closed'
+    : canonical.score >= 4
+      ? 'apply_now'
+      : canonical.score >= 3.2
+        ? 'high_relevance'
+        : canonical.score >= 2.4
+          ? 'adjacent'
+          : 'other';
+  return {
+    ...canonical,
+    segment: canonicalSegment,
+    visible: !closed && canonicalSegment !== 'other',
+    direct_domain: canonical.score_breakdown.protected_domain_matches.length > 0
+      && !canonical.risk_flags.includes('negative_topic_match'),
+    risk_flags: canonical.urgency.status === 'urgent'
+      ? [...new Set([...canonical.risk_flags, 'closing_soon'])]
+      : canonical.risk_flags,
+  };
+  /* Legacy implementation retained below as migration reference. */
   const activePolicy = policy || loadUmichScoringPolicy();
   const { thresholds, weights, domains, role_fit: roleFit, exclusions } = activePolicy;
 

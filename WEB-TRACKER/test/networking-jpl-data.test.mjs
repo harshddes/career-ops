@@ -24,7 +24,7 @@ test('NASA JPL map contains official evidence, team branches, and review-ready p
     if (person.review_status === 'approved') {
       return !['identified', 'researching', 'archived', 'declined', 'do_not_contact'].includes(person.relationship_stage);
     }
-    return person.relationship_stage === 'archived';
+    return ['researching', 'archived'].includes(person.relationship_stage);
   }));
   assert.ok(people.every(person => person.organization_unit));
   assert.ok(people.every(person => person.source_refs.length > 0));
@@ -32,7 +32,9 @@ test('NASA JPL map contains official evidence, team branches, and review-ready p
     source.source_type === 'official'
     && /^https:\/\/(?:[\w-]+\.)*(?:jpl\.nasa\.gov|nasa\.gov|caltech\.edu)\//.test(source.url)
   ))));
-  assert.ok(people.every(person => !person.email && !person.linkedin_url));
+  assert.ok(people
+    .filter(person => person.review_status === 'review_ready')
+    .every(person => !person.email && !person.linkedin_url));
   assert.equal(store.people.some(person => person.display_name === 'Smoke Contact'), false);
 });
 

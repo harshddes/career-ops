@@ -125,8 +125,8 @@ export function ensureEuraxessConsiderJob(opportunity = {}) {
     url: opportunity.url,
     status: 'to_consider',
     source: 'euraxess',
-    score: opportunity.score,
-    fit_score: opportunity.score,
+    posting_text: [opportunity.title, opportunity.summary].filter(Boolean).join('\n'),
+    legacy_score: opportunity.legacy_score || opportunity.score,
     liveness: opportunity.liveness || 'active',
     liveness_reason: opportunity.liveness_reason,
     notes: [

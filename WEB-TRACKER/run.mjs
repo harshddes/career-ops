@@ -257,22 +257,30 @@ if (MODE !== 'manual') {
   }
 }
 
-// Daily digest is independent of scan autonomy — still needs the process (or Windows task) awake at 23:59.
+// Daily digest is independent of scan autonomy — still needs the process (or Windows task) awake.
 const digestTimezone = process.env.DAILY_DIGEST_TIMEZONE || process.env.TZ || 'America/New_York';
-if (envEnabled(process.env.DAILY_DIGEST_ENABLED)) {
-  cron.schedule('59 23 * * *', async () => {
-    console.log(`\n[cron] Sending daily digest...`);
-    try {
-      await runScript('adapters/sync-all.mjs');
-      await runCareerOpsScript('followup-cadence.mjs');
-      const { sendDailyDigest } = await import('./lib/daily-digest.mjs');
-      const result = await sendDailyDigest({ timeZone: digestTimezone });
-      console.log(`[cron] Daily digest sent: ${result.messageId || 'sent'} → ${(result.accepted || []).join(', ') || 'see SMTP log'}`);
-    } catch (err) {
-      console.error(`[cron] Daily digest failed: ${err.message}`);
+async function runScheduledDigestCron(label) {
+  console.log(`\n[cron] ${label}...`);
+  try {
+    await runScript('adapters/sync-all.mjs');
+    await runCareerOpsScript('followup-cadence.mjs');
+    const { sendScheduledDailyDigest } = await import('./scripts/send-daily-digest.mjs');
+    const result = await sendScheduledDailyDigest({ timeZone: digestTimezone });
+    if (result.skipped) {
+      console.log(`[cron] Daily digest skipped: ${result.reason}${result.date ? ` (${result.date})` : ''}`);
+      return;
     }
-  }, { timezone: digestTimezone });
+    console.log(`[cron] Daily digest sent: ${result.messageId || 'sent'} → ${(result.accepted || []).join(', ') || 'see SMTP log'}`);
+  } catch (err) {
+    console.error(`[cron] Daily digest failed: ${err.message}`);
+  }
+}
+if (envEnabled(process.env.DAILY_DIGEST_ENABLED)) {
+  cron.schedule('59 23 * * *', () => runScheduledDigestCron('Sending daily digest'), { timezone: digestTimezone });
+  // One-night backup: 02:00 ET on 2026-08-13 still sends the Aug 12 digest; other nights no-op via the window check.
+  cron.schedule('0 2 * * *', () => runScheduledDigestCron('Overnight digest window check'), { timezone: digestTimezone });
   console.log(`[cron] Daily digest armed for 23:59 ${digestTimezone} → ${(process.env.DAILY_DIGEST_RECIPIENTS || 'default recipients')}`);
+  console.log('[cron] One-night 02:00 backup armed (2026-08-13 only; later nights skip)');
 } else {
   console.log('[cron] Daily digest off (set DAILY_DIGEST_ENABLED=true in WEB-TRACKER/.env)');
 }

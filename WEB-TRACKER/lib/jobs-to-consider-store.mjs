@@ -2,6 +2,13 @@ import { existsSync, mkdirSync, readFileSync, renameSync, unlinkSync, writeFileS
 import { basename, dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { applyJobsUserStateToStore, patchJobsUserState, removeJobsUserState } from './jobs-user-state.mjs';
+import {
+  locationToCountry,
+  regionForCountryCode,
+  countryDisplayName,
+} from './geo/location-to-country.mjs';
+import { enrichConsiderJobEligibility } from './work-auth.mjs';
+import { externalScoreToLegacy, scoreRecord } from './opportunity-scoring/index.mjs';
 
 const LIB_DIR = dirname(fileURLToPath(import.meta.url));
 export const WEB_TRACKER_DIR = join(LIB_DIR, '..');
@@ -81,38 +88,107 @@ function normalizeJobScore(value) {
   return clean;
 }
 
+function normalizeCountryCode(value) {
+  const code = cleanText(value).toUpperCase();
+  if (!code) return '';
+  if (code === 'UK') return 'GB';
+  if (code === 'CAN') return 'CA';
+  return /^[A-Z]{2}$/.test(code) ? code : '';
+}
+
+function normalizeCountries(value = [], fallbackCode = '') {
+  const fromArray = normalizeStringArray(value)
+    .map(normalizeCountryCode)
+    .filter(Boolean);
+  const codes = [...new Set(fromArray)];
+  if (!codes.length && fallbackCode) codes.push(fallbackCode);
+  return codes;
+}
+
+function enrichGeoFields(raw = {}) {
+  const location = cleanText(raw.location);
+  const parsed = locationToCountry(location);
+
+  let country_code = normalizeCountryCode(raw.country_code) || parsed.country_code || '';
+  // Never trust EURAXESS-style placeholder continents as a country.
+  const rawCountry = cleanText(raw.country);
+  if (!country_code && rawCountry && !/europe\s*\/\s*international|international|europe only/i.test(rawCountry)) {
+    const fromName = locationToCountry(rawCountry);
+    country_code = fromName.country_code || '';
+  }
+
+  let countries = normalizeCountries(raw.countries, country_code);
+  if (!countries.length && parsed.countries.length) {
+    countries = parsed.countries;
+    country_code = country_code || countries[0] || '';
+  }
+
+  const country = cleanText(raw.country)
+    && !/europe\s*\/\s*international/i.test(rawCountry)
+    ? rawCountry
+    : (country_code ? countryDisplayName(country_code) : '');
+
+  let region = cleanText(raw.region);
+  if (!region && country_code) {
+    region = regionForCountryCode(country_code);
+  } else if (!region && parsed.region && parsed.region !== 'Unknown') {
+    region = parsed.region;
+  }
+
+  return {
+    location,
+    country_code,
+    countries,
+    country,
+    region: region || '',
+  };
+}
+
 export function normalizeConsiderJob(raw = {}) {
+  const original = raw;
+  raw = externalScoreToLegacy(raw);
   const company = cleanText(raw.company);
   const title = cleanText(raw.title || raw.role);
   const id = cleanText(raw.id) || slugify(`${company}-${title}`);
   const status = normalizeStatus(raw.status, raw.applied ? 'applied' : 'to_consider');
   const now = new Date().toISOString();
+  const geo = enrichGeoFields(raw);
 
-  return {
+  const base = {
     id,
     company,
     title,
     url: cleanText(raw.url),
-    location: cleanText(raw.location),
+    location: geo.location,
+    country: geo.country,
+    country_code: geo.country_code,
+    countries: geo.countries,
     team: cleanText(raw.team),
     source: cleanText(raw.source || 'manual_research'),
     status,
     applied: Boolean(raw.applied || status === 'applied'),
-    score: normalizeJobScore(raw.score),
+    legacy_score: normalizeJobScore(raw.legacy_score || original.score),
+    score_overrides: Array.isArray(raw.score_overrides) ? raw.score_overrides : [],
+    posting_text: String(raw.posting_text || raw.description || '').trim(),
     fit_summary: cleanText(raw.fit_summary),
     recommendation: cleanText(raw.recommendation),
     notes: cleanText(raw.notes),
     first_seen: cleanText(raw.first_seen || raw.created_at || now),
     last_updated: cleanText(raw.last_updated || now),
     last_checked: cleanText(raw.last_checked),
-    region: cleanText(raw.region),
+    region: geo.region,
     h1b_status: cleanText(raw.h1b_status),
     h1b_sponsorship: cleanText(raw.h1b_sponsorship),
     green_card_sponsorship: cleanText(raw.green_card_sponsorship),
     export_control: cleanText(raw.export_control),
     export_control_risk: cleanText(raw.export_control_risk),
+    work_permit_model: cleanText(raw.work_permit_model),
     opt_story_strength: cleanText(raw.opt_story_strength),
+    opt_story_reason: cleanText(raw.opt_story_reason),
     adjacent_fields: normalizeStringArray(raw.adjacent_fields),
+    visa_verdict: cleanText(raw.visa_verdict),
+    // open | selective | closed | unknown — NOT a Jobs "tier" (see work-auth nomenclature lock)
+    eligibility_band: cleanText(raw.eligibility_band),
     liveness: cleanText(raw.liveness || 'active'),
     liveness_reason: cleanText(raw.liveness_reason),
     // Exempts bot-walled career sites (e.g. Tesla/Akamai) from automated liveness
@@ -123,7 +199,36 @@ export function normalizeConsiderJob(raw = {}) {
       : Number(raw.application_num),
     applied_at: cleanText(raw.applied_at),
     resources: normalizeResources(raw.resources),
+    networking_org_id: cleanText(raw.networking_org_id),
+    networking_person_ids: normalizeStringArray(raw.networking_person_ids),
+    networking_research_order_id: cleanText(raw.networking_research_order_id),
   };
+
+  const enriched = enrichConsiderJobEligibility(base);
+  const canonical = scoreRecord({
+    ...base,
+    h1b_sponsorship: cleanText(enriched.h1b_sponsorship),
+    green_card_sponsorship: cleanText(enriched.green_card_sponsorship),
+    export_control: cleanText(enriched.export_control),
+    export_control_risk: cleanText(enriched.export_control_risk),
+    work_permit_model: cleanText(enriched.work_permit_model),
+    opt_story_strength: cleanText(enriched.opt_story_strength),
+    opt_story_reason: cleanText(enriched.opt_story_reason),
+    adjacent_fields: normalizeStringArray(enriched.adjacent_fields),
+    visa_verdict: cleanText(enriched.visa_verdict),
+    eligibility_band: cleanText(enriched.eligibility_band) || 'unknown',
+  }, { type: 'job', previous: original });
+  const explicitUsPersonBlock = canonical.eligibility?.status === 'blocked'
+    && (canonical.eligibility?.evidence || []).some(item => /u\.?s\.? person|u\.?s\.? citizen/i.test(item.term || item.quote || ''));
+  return explicitUsPersonBlock
+    ? {
+      ...canonical,
+      export_control: 'hard_us_person',
+      export_control_risk: 'hard_block',
+      visa_verdict: 'skip',
+      eligibility_band: 'closed',
+    }
+    : canonical;
 }
 
 export function readConsiderJobs(filePath = CANONICAL_JOBS_FILE) {
@@ -202,7 +307,7 @@ export function findConsiderJob(input, store = readConsiderJobs()) {
 
 export function upsertConsiderJob(raw, filePath = CANONICAL_JOBS_FILE) {
   const store = readConsiderJobs(filePath);
-  const incoming = normalizeConsiderJob(raw);
+  const incoming = normalizeConsiderJob(externalScoreToLegacy(raw));
   if (!incoming.company || !incoming.title) {
     throw new Error('company and title are required');
   }
@@ -217,6 +322,11 @@ export function upsertConsiderJob(raw, filePath = CANONICAL_JOBS_FILE) {
       applied: existing.applied,
       applied_at: existing.applied_at,
       application_num: existing.application_num,
+      networking_org_id: existing.networking_org_id || incoming.networking_org_id,
+      networking_person_ids: existing.networking_person_ids?.length
+        ? existing.networking_person_ids
+        : incoming.networking_person_ids,
+      networking_research_order_id: existing.networking_research_order_id || incoming.networking_research_order_id,
       notes: existing.notes || incoming.notes,
       resources: { ...(incoming.resources || {}), ...(existing.resources || {}) },
       first_seen: existing.first_seen || incoming.first_seen,
@@ -230,6 +340,7 @@ export function upsertConsiderJob(raw, filePath = CANONICAL_JOBS_FILE) {
 
 export function patchConsiderJob(id, updates = {}, filePath = CANONICAL_JOBS_FILE) {
   const store = readConsiderJobs(filePath);
+  updates = externalScoreToLegacy(updates, store.jobs.find(job => job.id === id) || {});
   const index = findConsiderJobIndex({ id, ...updates }, store);
   if (index < 0) throw new Error(`job not found: ${id}`);
 
@@ -255,6 +366,9 @@ export function patchConsiderJob(id, updates = {}, filePath = CANONICAL_JOBS_FIL
     application_num: store.jobs[index].application_num,
     notes: store.jobs[index].notes,
     resources: store.jobs[index].resources,
+    networking_org_id: store.jobs[index].networking_org_id,
+    networking_person_ids: store.jobs[index].networking_person_ids,
+    networking_research_order_id: store.jobs[index].networking_research_order_id,
   });
   const nextStore = writeConsiderJobs(store, filePath);
   return { store: nextStore, job: nextStore.jobs[index] };

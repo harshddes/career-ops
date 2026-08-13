@@ -1,10 +1,17 @@
 #!/usr/bin/env node
 import { mkdirSync, writeFileSync } from 'fs';
-import { dirname, join } from 'path';
+import { dirname, join, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { loadEnv } from '../lib/load-env.mjs';
 import { buildDailyDigest, sendDailyDigest } from '../lib/daily-digest.mjs';
-import { digestRecipients } from '../lib/today-activity.mjs';
+import {
+  digestDateForSend,
+  hasDigestBeenSent,
+  isWithinFixedDigestWindow,
+  localClockParts,
+  markDigestSent,
+} from '../lib/digest-send-window.mjs';
+import { digestRecipients, resolveDigestTimeZone } from '../lib/today-activity.mjs';
 
 const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
 const WEB_TRACKER_DIR = join(SCRIPT_DIR, '..');
@@ -32,6 +39,7 @@ function printUsage() {
     '  --date YYYY-MM-DD       Build the digest for a specific date.',
     '  --timezone IANA_ZONE    Override DAILY_DIGEST_TIMEZONE.',
     '  --to a,b@example.com    Override DAILY_DIGEST_RECIPIENTS for this run.',
+    '  --force                 Bypass the fixed 23:59 Eastern send window.',
   ].join('\n'));
 }
 
@@ -49,6 +57,56 @@ function writeDryRunAttachments(digest) {
   return files;
 }
 
+export async function sendScheduledDailyDigest({
+  now = new Date(),
+  force = false,
+  date = '',
+  timeZone = '',
+} = {}) {
+  const resolvedTimeZone = resolveDigestTimeZone(timeZone || process.env.DAILY_DIGEST_TIMEZONE || process.env.TZ);
+  const resolvedRecipients = digestRecipients();
+  const clock = localClockParts(now, resolvedTimeZone);
+
+  if (!force && !isWithinFixedDigestWindow(now, resolvedTimeZone)) {
+    return {
+      sent: false,
+      skipped: true,
+      reason: 'outside_fixed_2359_window',
+      timezone: resolvedTimeZone,
+      local_time: `${String(clock.hour).padStart(2, '0')}:${String(clock.minute).padStart(2, '0')}`,
+      allowed_window: '23:50-00:10 Eastern; one-night extension until 02:00 on 2026-08-13',
+      recipients: resolvedRecipients,
+      hint: 'Scheduled sends only run at 11:59 PM Eastern (tonight also until 2:00 AM). Use --force for a manual send.',
+    };
+  }
+
+  const digestDate = date || digestDateForSend(now, resolvedTimeZone);
+  if (!force && hasDigestBeenSent(digestDate)) {
+    return {
+      sent: false,
+      skipped: true,
+      reason: 'already_sent',
+      date: digestDate,
+      timezone: resolvedTimeZone,
+      local_time: `${String(clock.hour).padStart(2, '0')}:${String(clock.minute).padStart(2, '0')}`,
+      recipients: resolvedRecipients,
+      hint: `Digest for ${digestDate} already sent; skipping duplicate.`,
+    };
+  }
+
+  const result = await sendDailyDigest({ date: digestDate, timeZone: resolvedTimeZone });
+  markDigestSent(digestDate, result);
+  return {
+    sent: true,
+    date: digestDate,
+    messageId: result.messageId,
+    accepted: result.accepted,
+    rejected: result.rejected,
+    recipients: resolvedRecipients,
+    summary: result.activity.summary,
+  };
+}
+
 async function main() {
   if (hasArg('--help') || hasArg('-h')) {
     printUsage();
@@ -56,22 +114,19 @@ async function main() {
   }
 
   const date = argValue('--date');
-  const timeZone = argValue('--timezone') || process.env.DAILY_DIGEST_TIMEZONE || process.env.TZ;
+  const timeZone = resolveDigestTimeZone(
+    argValue('--timezone') || process.env.DAILY_DIGEST_TIMEZONE || process.env.TZ
+  );
   const recipients = argValue('--to');
   if (recipients) process.env.DAILY_DIGEST_RECIPIENTS = recipients;
 
-  const resolvedRecipients = digestRecipients();
-
   if (hasArg('--send')) {
-    const result = await sendDailyDigest({ date, timeZone });
-    console.log(JSON.stringify({
-      sent: true,
-      messageId: result.messageId,
-      accepted: result.accepted,
-      rejected: result.rejected,
-      recipients: resolvedRecipients,
-      summary: result.activity.summary,
-    }, null, 2));
+    const result = await sendScheduledDailyDigest({
+      force: hasArg('--force'),
+      date,
+      timeZone,
+    });
+    console.log(JSON.stringify(result, null, 2));
     return;
   }
 
@@ -83,13 +138,24 @@ async function main() {
     subject: digest.subject,
     date: digest.activity.date,
     timezone: digest.activity.timeZone,
-    recipients: resolvedRecipients,
+    recipients: digestRecipients(),
     summary: digest.activity.summary,
     files,
   }, null, 2));
 }
 
-main().catch(err => {
-  console.error(err.message);
-  process.exitCode = 1;
-});
+function isDirectRun() {
+  if (!process.argv[1]) return false;
+  try {
+    return fileURLToPath(import.meta.url).toLowerCase() === resolve(process.argv[1]).toLowerCase();
+  } catch {
+    return false;
+  }
+}
+
+if (isDirectRun()) {
+  main().catch(err => {
+    console.error(err.message);
+    process.exitCode = 1;
+  });
+}

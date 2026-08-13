@@ -5,6 +5,7 @@ import {
   collectApiPaths,
   isPrivateDataFile,
   sanitizeActivityNdjson,
+  sanitizeProfessorGmailData,
   sanitizeStaticApiPayload,
 } from '../lib/generate-static-snapshot.mjs';
 
@@ -63,4 +64,25 @@ test('static Today API removes networking rows and private metadata', () => {
   assert.equal(payload.details.audit_activity.length, 1);
   assert.equal(payload.details.all_activity.length, 1);
   assert.doesNotMatch(JSON.stringify(payload), /Private person|Private note|networking_/);
+});
+
+test('static professor snapshots remove promoted and raw Gmail links', () => {
+  const payload = sanitizeStaticApiPayload('/api/phd-research-prospects/professor-list', {
+    prospects: [{
+      id: 'professor-list-ada',
+      name: 'Ada Lovelace',
+      gmail_thread_url: 'https://mail.google.com/mail/u/0/#inbox/private',
+      source_details: {
+        email_audit: {
+          'Direct Gmail Thread URL': 'https://mail.google.com/mail/u/0/#inbox/private',
+          'Crisp Thread Outcome': 'Public-safe summary',
+        },
+      },
+    }],
+  });
+
+  assert.equal(payload.prospects[0].gmail_thread_url, undefined);
+  assert.equal(payload.prospects[0].source_details.email_audit['Direct Gmail Thread URL'], undefined);
+  assert.equal(payload.prospects[0].source_details.email_audit['Crisp Thread Outcome'], 'Public-safe summary');
+  assert.doesNotMatch(JSON.stringify(sanitizeProfessorGmailData(payload)), /mail\.google\.com/);
 });

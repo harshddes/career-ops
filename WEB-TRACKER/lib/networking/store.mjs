@@ -18,6 +18,10 @@ import {
   normalizeReviewState,
   normalizeTaskState,
 } from './workflow.mjs';
+import {
+  inferCareerDomainsFromOrg,
+  normalizeCareerDomains,
+} from '../career-domains.mjs';
 
 const LIB_DIR = dirname(fileURLToPath(import.meta.url));
 export const WEB_TRACKER_DIR = join(LIB_DIR, '..', '..');
@@ -178,6 +182,18 @@ export function normalizeNetworkingOrganization(raw = {}, { previous = null } = 
   const name = cleanText(raw.name ?? previous?.name);
   const id = cleanText(raw.id) || previous?.id || networkingOrganizationId(name);
   const now = new Date().toISOString();
+  const explicitDomains = raw.career_domains !== undefined
+    ? normalizeCareerDomains(raw.career_domains)
+    : (previous?.career_domains !== undefined ? normalizeCareerDomains(previous.career_domains) : null);
+  const careerDomains = explicitDomains && explicitDomains.length
+    ? explicitDomains
+    : inferCareerDomainsFromOrg({
+      name,
+      tags: cleanArray(raw.tags ?? previous?.tags),
+      notes: cleanLongText(raw.notes ?? previous?.notes),
+      feasibility_notes: cleanLongText(raw.feasibility_notes ?? previous?.feasibility_notes),
+      career_domains: previous?.career_domains,
+    });
   return {
     id,
     name,
@@ -189,6 +205,7 @@ export function normalizeNetworkingOrganization(raw = {}, { previous = null } = 
     strategy_status: cleanText((raw.strategy_status ?? previous?.strategy_status) || 'active'),
     locations: cleanArray(raw.locations ?? previous?.locations),
     tags: cleanArray(raw.tags ?? previous?.tags),
+    career_domains: careerDomains,
     opportunity_ids: cleanArray(raw.opportunity_ids ?? previous?.opportunity_ids),
     organization_units: normalizeOrganizationUnits(raw.organization_units ?? previous?.organization_units),
     feasibility_label: cleanText(raw.feasibility_label ?? previous?.feasibility_label),
@@ -487,9 +504,34 @@ export function upsertNetworkingOrganization(raw = {}, filePath = CANONICAL_NETW
   const incoming = normalizeNetworkingOrganization(raw);
   if (!incoming.name) throw new Error('networking organization requires name');
   const index = store.organizations.findIndex(item => item.id === incoming.id || item.normalized_name === incoming.normalized_name);
-  if (index < 0) store.organizations.push(incoming);
-  else store.organizations[index] = normalizeNetworkingOrganization({ ...store.organizations[index], ...raw }, { previous: store.organizations[index] });
+  if (index < 0) {
+    store.organizations.push(incoming);
+  } else {
+    const previous = store.organizations[index];
+    // Union domains on update so research-queue / partial patches never wipe island membership.
+    let mergedDomains = raw.career_domains !== undefined
+      ? [...new Set([
+        ...normalizeCareerDomains(previous.career_domains),
+        ...normalizeCareerDomains(raw.career_domains),
+      ])]
+      : normalizeCareerDomains(previous.career_domains);
+    if (mergedDomains.length > 1) {
+      mergedDomains = mergedDomains.filter(domain => domain !== 'unassigned');
+    }
+    store.organizations[index] = normalizeNetworkingOrganization({
+      ...previous,
+      ...raw,
+      id: previous.id,
+      career_domains: mergedDomains.length ? mergedDomains : inferCareerDomainsFromOrg({
+        ...previous,
+        ...raw,
+      }),
+    }, { previous });
+  }
   const next = writeNetworking(store, filePath);
+  if (filePath === CANONICAL_NETWORKING_FILE) {
+    try { syncNetworkingToDashboard({ sourcePath: filePath }); } catch { /* non-fatal */ }
+  }
   return { store: next, organization: findNetworkingOrganization(incoming.id, next) || findNetworkingOrganization(incoming.name, next) };
 }
 
@@ -541,17 +583,38 @@ export function patchNetworkingPerson(id, updates = {}, filePath = CANONICAL_NET
     'referral_eligible',
     'referred',
   ]);
-  if (protectedStages.has(updates.relationship_stage) && previous.review_status !== 'approved') {
-    throw new Error('Approve this researched candidate before moving them into outreach.');
+  const nextStage = updates.relationship_stage === undefined
+    ? previous.relationship_stage
+    : updates.relationship_stage;
+  const movingIntoProtected = protectedStages.has(nextStage)
+    && nextStage !== previous.relationship_stage;
+  const explicitKanbanMove = updates.approve_on_stage_move === true
+    || updates.confirm_stage_move === true;
+  // Strip UI-only flags before merge so they never persist on the person record.
+  const {
+    approve_on_stage_move: _approveOnStageMove,
+    confirm_stage_move: _confirmStageMove,
+    ...persistedUpdates
+  } = updates;
+
+  let reviewStatus = previous.review_status;
+  if (movingIntoProtected && previous.review_status !== 'approved') {
+    if (!explicitKanbanMove) {
+      throw new Error('Approve this researched candidate before moving them into outreach.');
+    }
+    // Explicit Kanban/stage dropdown moves count as human approval of that person.
+    reviewStatus = 'approved';
   }
+
   store.people[index] = normalizeNetworkingPerson({
     ...previous,
-    ...updates,
+    ...persistedUpdates,
     id: previous.id,
-    channel_states: updates.channel_states === undefined
+    review_status: reviewStatus,
+    channel_states: persistedUpdates.channel_states === undefined
       ? previous.channel_states
-      : { ...(previous.channel_states || {}), ...(updates.channel_states || {}) },
-    source_refs: updates.source_refs === undefined ? previous.source_refs : updates.source_refs,
+      : { ...(previous.channel_states || {}), ...(persistedUpdates.channel_states || {}) },
+    source_refs: persistedUpdates.source_refs === undefined ? previous.source_refs : persistedUpdates.source_refs,
     updated_at: new Date().toISOString(),
   }, { previous });
   const next = writeNetworking(store, filePath);
@@ -713,11 +776,15 @@ export function upsertNetworkingEvent(raw = {}, filePath = CANONICAL_NETWORKING_
   return { store: next, event: next.events.find(event => event.id === incoming.id) };
 }
 
-export function buildNetworkingReadModel(store = readNetworking(), now = new Date()) {
+export function buildNetworkingReadModel(store = readNetworking(), now = new Date(), options = {}) {
   const peopleById = Object.fromEntries(store.people.map(person => [person.id, person]));
+  const focusOrganizationId = String(options.focus_organization_id || '').trim();
   const contextByTask = Object.fromEntries(store.tasks.map(task => [
     task.id,
-    { person: peopleById[task.person_id] || {} },
+    {
+      person: peopleById[task.person_id] || {},
+      focus_organization_id: focusOrganizationId,
+    },
   ]));
   const rankedTasks = rankNetworkingTasks(store.tasks, contextByTask, now);
   const people = store.people.map(person => ({
@@ -731,5 +798,6 @@ export function buildNetworkingReadModel(store = readNetworking(), now = new Dat
     ranked_tasks: rankedTasks,
     summary: summarize({ ...store, people }),
     local_only: true,
+    focus_organization_id: focusOrganizationId || null,
   };
 }

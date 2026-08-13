@@ -47,13 +47,21 @@ markExhibitorTaskInProgress(company_id);
 - Paginate until exhausted. Do not sample.
 - Save raw inventory under `batch/exhibitors/{company-slug}/` (JSON and/or markdown).
 
-### 4. Score against profile
+### 4. Extract evidence for canonical scoring
 
 Read `modes/_profile.md` + `config/profile.yml`.
 
-**Add to Jobs to Consider when:** instrumentation, diagnostics, HV/vacuum, detectors/DAQ, payload, propulsion hardware, manufacturing that enables space/fusion hardware, mass-spec/ion-optics.
+For every posting, save the complete posting text and an
+`opportunity-evidence-v1` fact sheet: exact quotes, source locations, approved
+candidate fact IDs, and unresolved questions. Do not write a score, tier,
+recommendation, penalty, eligibility result, confidence, or override. The
+Jobs-to-Consider store invokes the deterministic engine and rejects direct
+canonical score writes.
 
-**Do not add when:** software-platform-only, sales, pure theory, hard U.S.-person/clearance-only blockers, generic ops with no hardware path. Mention those in the report only.
+**Add to Jobs to Consider when the engine returns:** eligible/risky plus
+`apply`, `consider`, or `adjacent`. Blocked and `skip` results stay in the
+report. Review-required results may be added only with their review state
+visible.
 
 ### 5. Upsert fit roles
 
@@ -65,7 +73,7 @@ upsertConsiderJob({
   url,
   location,
   source: 'exhibitor-smallsat-2026',
-  score: 'X.X/5',
+  posting_text: fullPostingText,
   fit_summary: '...',
   notes: 'From Target Companies exhibitor clear-queue.',
   status: 'to_consider',
@@ -88,7 +96,7 @@ patchExhibitorCompany(company_id, {
   careers_url,
   research_report: 'reports/exhibitor-....md',
   resources: { report_md: 'reports/exhibitor-....md' },
-  jobs_found: [{ id, title, url, score }],
+  jobs_found: [{ id, title, url, scoring: 'canonical result copied from stored JTC record' }],
   postings_scanned: N,
   postings_added: M,
   last_researched_at: new Date().toISOString(),

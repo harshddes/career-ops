@@ -1,6 +1,16 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { classifyAdjacentField, normalizeWorkAuth, parseExportControlVerdict, parseVisaVerdict } from '../lib/work-auth.mjs';
+import {
+  classifyAdjacentField,
+  enrichConsiderJobEligibility,
+  eligibilityBandFromSignals,
+  isHardUsPersonBlock,
+  normalizeWorkAuth,
+  parseExportControlVerdict,
+  parseVisaVerdict,
+} from '../lib/work-auth.mjs';
+import { normalizeConsiderJob } from '../lib/jobs-to-consider-store.mjs';
+import { assertConsiderJobApplyAllowed } from '../lib/jobs-networking-bridge.mjs';
 
 test('normalizes confirmed H-1B source', () => {
   const auth = normalizeWorkAuth({ h1b_status: 'confirmed' });
@@ -29,4 +39,52 @@ test('classifies OPT story strength for adjacent STEM roles', () => {
   assert.equal(fit.opt_story_strength, 'strong');
   assert.ok(fit.fields.includes('aerospace systems'));
   assert.ok(fit.fields.includes('instrumentation and test'));
+});
+
+test('enriches consider-job eligibility from exact posting restriction without Jobs tier field', () => {
+  const job = normalizeConsiderJob({
+    company: 'Defense Co',
+    title: 'Avionics Engineer',
+    region: 'US',
+    posting_text: 'Applicants must be a U.S. person.',
+  });
+  assert.equal(job.export_control, 'hard_us_person');
+  assert.equal(job.eligibility_band, 'closed');
+  assert.equal(job.visa_verdict, 'skip');
+  assert.equal(Object.hasOwn(job, 'tier'), false);
+  assert.equal(isHardUsPersonBlock(job), true);
+});
+
+test('Europe region without ITAR narrative becomes open eligibility band', () => {
+  const band = eligibilityBandFromSignals({
+    export_control: '',
+    visa_verdict: 'unknown',
+    region: 'Europe',
+    h1b_sponsorship: 'not_applicable',
+  });
+  assert.equal(band, 'open');
+});
+
+test('enrichConsiderJobEligibility fills soft review from work-auth recommendation text', () => {
+  const enriched = enrichConsiderJobEligibility({
+    company: 'Fusion Lab',
+    title: 'Diagnostics Engineer',
+    region: 'US',
+    recommendation: 'Review JD + work-auth before apply',
+  });
+  assert.equal(enriched.visa_verdict, 'caution');
+  assert.equal(enriched.eligibility_band, 'selective');
+});
+
+test('assertConsiderJobApplyAllowed blocks hard US-person without force', () => {
+  const job = normalizeConsiderJob({
+    company: 'Prime',
+    title: 'Missile Engineer',
+    posting_text: 'The applicant must be a U.S. person.',
+  });
+  assert.throws(
+    () => assertConsiderJobApplyAllowed(job),
+    /HARD_US_PERSON_APPLY_BLOCKED|Blocked: this posting/,
+  );
+  assert.equal(assertConsiderJobApplyAllowed(job, { force: true }), true);
 });

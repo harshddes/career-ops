@@ -8,6 +8,7 @@ import {
   matchProtectedDomain,
   postingProtectedDomainText,
 } from '../protected-domain.mjs';
+import { scoreOpportunity } from '../opportunity-scoring/index.mjs';
 
 export const VISIBLE_THRESHOLD = 2.4;
 export const STRONG_THRESHOLD = 3.2;
@@ -175,6 +176,8 @@ function roleArchiveMatchesFor(posting = {}, text = '') {
 }
 
 export function scoreEuraxessPosting(posting = {}, now = new Date()) {
+  return scoreOpportunity(posting, { type: 'phd', now });
+  /* Legacy implementation retained below as migration reference. */
   const text = [
     posting.title,
     posting.summary,

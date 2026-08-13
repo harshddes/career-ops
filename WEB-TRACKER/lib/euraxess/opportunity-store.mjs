@@ -2,6 +2,7 @@ import { existsSync, mkdirSync, readFileSync, renameSync, unlinkSync, writeFileS
 import { basename, dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { scoreEuraxessPosting } from './scoring-profile.mjs';
+import { externalScoreToLegacy } from '../opportunity-scoring/index.mjs';
 
 const LIB_DIR = dirname(fileURLToPath(import.meta.url));
 export const WEB_TRACKER_DIR = join(LIB_DIR, '..', '..');
@@ -46,6 +47,15 @@ function cleanNumber(value, fallback = 0) {
   if (value === null || value === undefined || value === '') return fallback;
   const parsed = Number(value);
   return Number.isFinite(parsed) ? parsed : fallback;
+}
+
+function canonicalRank(a, b) {
+  const eligibility = { clear: 0, risky: 1, unknown: 2, blocked: 3 };
+  const confidence = { high: 0, medium: 1, low: 2 };
+  return (eligibility[a.eligibility?.status] ?? 2) - (eligibility[b.eligibility?.status] ?? 2)
+    || Number(b.score || 0) - Number(a.score || 0)
+    || (confidence[a.confidence] ?? 2) - (confidence[b.confidence] ?? 2)
+    || a.title.localeCompare(b.title);
 }
 
 function atomicWrite(filePath, content) {
@@ -255,6 +265,23 @@ export function normalizeEuraxessOpportunityRecord(raw = {}, { previous = null }
     fit_rationale: cleanText(raw.fit_rationale),
     risk_flags: cleanArray(raw.risk_flags),
     score_breakdown: cleanObject(raw.score_breakdown),
+    legacy_score: cleanText(raw.legacy_score),
+    score_overrides: Array.isArray(raw.score_overrides) ? raw.score_overrides : [],
+    policy_version: cleanText(raw.policy_version || raw.scoring?.policy_version),
+    posting_fingerprint: cleanText(raw.posting_fingerprint || raw.scoring?.posting_fingerprint),
+    eligibility: cleanObject(raw.eligibility || raw.scoring?.eligibility),
+    dimensions: cleanObject(raw.dimensions || raw.scoring?.dimensions),
+    evidence: Array.isArray(raw.evidence) ? raw.evidence : (raw.scoring?.evidence || []),
+    rejected_evidence: Array.isArray(raw.rejected_evidence) ? raw.rejected_evidence : (raw.scoring?.rejected_evidence || []),
+    unknowns: cleanArray(raw.unknowns || raw.scoring?.unknowns),
+    confidence: cleanText(raw.confidence || raw.scoring?.confidence),
+    review_required: Boolean(raw.review_required ?? raw.scoring?.review_required),
+    review_reasons: cleanArray(raw.review_reasons || raw.scoring?.review_reasons),
+    calculation_trace: cleanObject(raw.calculation_trace || raw.scoring?.calculation_trace),
+    score_before_gates: cleanNumber(raw.score_before_gates ?? raw.scoring?.score_before_gates, 0),
+    extractor: cleanObject(raw.extractor || raw.scoring?.extractor),
+    urgency: cleanObject(raw.urgency || raw.scoring?.urgency),
+    scoring: cleanObject(raw.scoring),
     research_fields: cleanArray(raw.research_fields),
     academic_level: cleanText(raw.academic_level),
     researcher_profile: cleanText(raw.researcher_profile),
@@ -366,6 +393,22 @@ export function rescoreEuraxessOpportunities({ filePath = CANONICAL_EURAXESS_FIL
       fit_rationale: scoring.fit_rationale,
       risk_flags: scoring.risk_flags,
       score_breakdown: scoring.score_breakdown,
+      legacy_score: item.legacy_score || item.score,
+      policy_version: scoring.policy_version,
+      posting_fingerprint: scoring.posting_fingerprint,
+      eligibility: scoring.eligibility,
+      dimensions: scoring.dimensions,
+      evidence: scoring.evidence,
+      rejected_evidence: scoring.rejected_evidence,
+      unknowns: scoring.unknowns,
+      confidence: scoring.confidence,
+      review_required: scoring.review_required,
+      review_reasons: scoring.review_reasons,
+      calculation_trace: scoring.calculation_trace,
+      score_before_gates: scoring.score_before_gates,
+      extractor: scoring.extractor,
+      urgency: scoring.urgency,
+      scoring,
       needs_research: scoring.needs_deep_research && ['open', 'open_unverified'].includes(nextStatus),
       needs_application_pack: scoring.needs_application_pack && ['open', 'open_unverified'].includes(nextStatus),
       visible: manual ? false : scoring.visible,
@@ -420,7 +463,7 @@ export function readEuraxessOpportunities(filePath = CANONICAL_EURAXESS_FILE) {
 export function writeEuraxessOpportunities(store, filePath = CANONICAL_EURAXESS_FILE) {
   const opportunities = (Array.isArray(store?.opportunities) ? store.opportunities : [])
     .map(normalizeEuraxessOpportunityRecord)
-    .sort((a, b) => Number(b.score || 0) - Number(a.score || 0) || a.title.localeCompare(b.title));
+    .sort(canonicalRank);
   const next = {
     version: 1,
     generated_at: new Date().toISOString(),
@@ -498,6 +541,7 @@ export function patchEuraxessOpportunity(id, updates = {}, filePath = CANONICAL_
   const index = store.opportunities.findIndex(item => item.id === id || item.external_id === id || item.url === id);
   if (index < 0) throw new Error(`EURAXESS opportunity not found: ${id}`);
   const previous = store.opportunities[index];
+  updates = externalScoreToLegacy(updates, previous);
   store.opportunities[index] = normalizeEuraxessOpportunityRecord({
     ...previous,
     ...updates,

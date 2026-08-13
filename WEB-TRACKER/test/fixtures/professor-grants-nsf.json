@@ -1,0 +1,22 @@
+{
+  "response": {
+    "award": [
+      {
+        "id": "2612345",
+        "awardTitle": "Active plasma diagnostics award",
+        "fundsObligatedAmt": "750000",
+        "startDate": "09/01/2025",
+        "expDate": "08/31/2028",
+        "agency": "Example University"
+      },
+      {
+        "id": "1512345",
+        "awardTitle": "Expired detector award",
+        "fundsObligatedAmt": "200000",
+        "startDate": "09/01/2014",
+        "expDate": "08/31/2018",
+        "agency": "Example University"
+      }
+    ]
+  }
+}

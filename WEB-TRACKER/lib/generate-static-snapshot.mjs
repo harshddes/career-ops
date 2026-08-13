@@ -118,7 +118,26 @@ export function sanitizeActivityNdjson(content = '') {
     .join('\n');
 }
 
+export function sanitizeProfessorGmailData(value) {
+  if (Array.isArray(value)) return value.map(sanitizeProfessorGmailData);
+  if (!value || typeof value !== 'object') {
+    if (typeof value !== 'string') return value;
+    return value
+      .replace(/https:\/\/mail\.google\.com\/[^\s|"'<)]+/gi, '')
+      .replace(/\s*\|\s*\|+/g, ' | ')
+      .trim();
+  }
+  return Object.fromEntries(
+    Object.entries(value)
+      .filter(([key]) => !/gmail/i.test(key))
+      .map(([key, entry]) => [key, sanitizeProfessorGmailData(entry)])
+  );
+}
+
 export function sanitizeStaticApiPayload(apiPath, payload) {
+  if (/^\/api\/phd-research-prospects\/professor-list(?:\?|$)/.test(apiPath)) {
+    return sanitizeProfessorGmailData(payload);
+  }
   if (!apiPath.startsWith('/api/today-activity') || !payload || typeof payload !== 'object') {
     return payload;
   }
@@ -157,6 +176,9 @@ function copyDataFiles(outputDir) {
     if (name === 'dashboard-activity-log.ndjson') {
       const sanitized = sanitizeActivityNdjson(readFileSync(join(DATA_DIR, name), 'utf-8'));
       writeFileSync(join(outData, name), sanitized ? `${sanitized}\n` : '', 'utf-8');
+    } else if (name === 'professor-list-research-prospects.json') {
+      const parsed = JSON.parse(readFileSync(join(DATA_DIR, name), 'utf-8'));
+      writeJson(join(outData, name), sanitizeProfessorGmailData(parsed));
     } else {
       cpSync(join(DATA_DIR, name), join(outData, name));
     }

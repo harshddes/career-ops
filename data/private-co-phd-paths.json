@@ -1,8 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-06-28T18:00:00.000Z",
+  "generated_at": "2026-08-13T02:33:05.532Z",
   "scope": "Private company PhD collaboration paths — university enrollment with industrial co-supervision",
-  "path_model": "Apply to university PhD programmes; company provides co-supervision, facility access, and sponsored topics — not direct enrollment at the company.",
   "prospects": [
     {
       "id": "tokamak-energy-industrial-phd",
@@ -11,6 +10,9 @@
       "title": "Industrial PhD Sponsorship — ST40 / Diagnostics Route",
       "unit": "Private Fusion Company",
       "department": "Tokamak Energy Ltd · Oxfordshire, UK",
+      "departments": [
+        "Tokamak Energy Ltd · Oxfordshire, UK"
+      ],
       "lab": "ST40 Spherical Tokamak · HTS Magnet Systems · Magnetics Diagnostics",
       "institution": "private-co",
       "application_route": "apply_via_university_partner",
@@ -19,8 +21,13 @@
       "campus": "Milton Park, Abingdon · UKAEA/Culham ecosystem",
       "profile_url": "https://tokamakenergy.com/",
       "lab_url": "https://tokamakenergy.com/early-careers-fusion-energy-apprenticeships-student-placements-phd-sponsorship/",
+      "linkedin_url": "",
+      "gmail_thread_url": "https://mail.google.com/mail/#all/19fea4ca60cc0453",
+      "gmail_thread_url_2": "",
+      "gmail_search_url": "",
       "contact_email": "careers@tokamakenergy.com",
       "contact_page": "https://tokamakenergy.com/careers-at-tokamak-energy-fusion-energy/",
+      "phone": "",
       "research_keywords": [
         "industrial PhD sponsorship",
         "university partnership",
@@ -68,6 +75,11 @@
           "note": "Applications via university; careers@ for general questions on research priorities."
         }
       ],
+      "active_grants": [],
+      "openings": [],
+      "grants_checked_at": "",
+      "grant_research_status": "",
+      "grant_research_attempts": [],
       "evidence": [
         {
           "type": "source",
@@ -98,18 +110,1521 @@
           "note": "Email template asking for university programme pointers"
         }
       ],
-      "score": 4.1,
+      "score": 5,
+      "legacy_score": "4.1",
+      "score_overrides": [],
       "tier": "A",
-      "fit_rationale": "Official university-partnership PhD route in UK fusion heartland. Strong diagnostics overlap (ST40, magnetics instrumentation, experimental data analysis). Harsh's space plasma instrumentation, DAQ, and calibration work maps to company-stated placement themes. Not a direct professor email path — enroll via UK university (York CDT, Oxford/Culham-linked programmes) and target Tokamak co-supervision.",
-      "outreach_angle": "Ask careers@ which university programmes or sponsored diagnostics topics align with plasma measurement / test-hardware work before choosing where to apply. Frame as UK PhD applicant exploring industrial co-supervision, not a request to enroll directly at the company.",
+      "fit_rationale": "Direct technical fit via plasma_diagnostics, fusion_plasma, vacuum_hv_daq, hardware_fabrication. Confidence high; relationship and funding are separate signals.",
+      "outreach_angle": "Lead with plasma_diagnostics, fusion_plasma, vacuum_hv_daq and ask about the current experimental bottleneck.",
       "likely_route": "1) Apply to UK fusion PhD (York CDT, UKAEA-linked programmes). 2) Parallel email to careers@tokamakenergy.com for sponsored-topic guidance. 3) Optional FOSTER summer placement as bridge. 4) Research statement names ST40 diagnostics / magnetics instrumentation interest.",
       "opt_h1b_notes": "UK PhD route — separate from US OPT. Student visa for PhD; post-PhD skilled worker route possible. Confirm international fee coverage on CDT programmes.",
       "uncertainty_notes": "Specific university partners and sponsored topic list change yearly — verify before applying. Do not assume direct PhD enrollment at Tokamak Energy.",
       "research_interests_summary": "Tokamak Energy sponsors PhD research through university partnerships while hosting collaboration at ST40 and magnetics/diagnostics teams. Official focus areas include diagnostics, plasma physics, experimental data analysis, and materials — aligned with Harsh's instrumentation background.",
+      "recent_publication": "",
       "priority": "A",
-      "status": "draft_ready",
-      "notes": "First card in Private Company PhD Paths source. Speculative CV email drafted 2026-06-28.",
-      "source_report": "WEB-TRACKER/research/private-company-phd-collaboration-2026.md"
+      "status": "followed_up",
+      "last_contacted": "2026-08-08",
+      "last_followed_up": "2026-08-10",
+      "follow_up_date": "",
+      "notes": "Aug 10: asked Tokamak Energy Careers about late-2026 / 2027 ST40 plasma-diagnostics PhD sponsorship and university partners. No reply found yet. Also asked Hannah Willett which team/role best matches diagnostics + DAQ (networking, not a direct job ask). Track partner-university projects.",
+      "outreach_category": "",
+      "outreach_color": "",
+      "outreach_source_color": "",
+      "outreach_status_detail": "",
+      "outreach_outcome": "",
+      "verification_evidence": "",
+      "source_details": {},
+      "outreach": {
+        "stage": "their_move",
+        "stage_updated_at": "2026-08-13T02:33:05.528Z",
+        "entered_at": "2026-08-13T02:33:05.526Z",
+        "notes": "Await careers reply; identify university partner projects."
+      },
+      "source_report": "WEB-TRACKER/research/private-company-phd-collaboration-2026.md",
+      "first_seen": "2026-08-08T18:20:35.727Z",
+      "last_updated": "2026-08-13T02:33:05.526Z",
+      "defense_sheet": [
+        {
+          "id": "professor_work",
+          "question": "What this professor works on",
+          "researched_answer": "Tokamak Energy works in ST40 Spherical Tokamak · HTS Magnet Systems · Magnetics Diagnostics (Tokamak Energy Ltd · Oxfordshire, UK).\n\nResearch focus: industrial PhD sponsorship, university partnership, spherical tokamak diagnostics, magnetics diagnostics, plasma diagnostics, experimental data analysis.\n\nMethods and tools: university PhD enrollment + company co-supervision, ST40 experimental campaigns, diagnostics development and calibration, vacuum and cryogenic test hardware, FOSTER summer placement bridge.\n\nDirect technical fit via plasma_diagnostics, fusion_plasma, vacuum_hv_daq, hardware_fabrication. Confidence high; relationship and funding are separate signals.",
+          "user_response": ""
+        },
+        {
+          "id": "research_interests",
+          "question": "What did you research? What does this person work on? What are their research interests?",
+          "researched_answer": "Tokamak Energy sponsors PhD research through university partnerships while hosting collaboration at ST40 and magnetics/diagnostics teams. Official focus areas include diagnostics, plasma physics, experimental data analysis, and materials — aligned with Harsh's instrumentation background.",
+          "user_response": ""
+        },
+        {
+          "id": "recent_publication",
+          "question": "What is their current research from a recent publication?",
+          "researched_answer": "No specific recent publication title was extracted for this contact. Current research lines from lab-page / report research, to verify against one recent paper before emailing:\n- university PhD enrollment + company co-supervision\n- ST40 experimental campaigns\n- diagnostics development and calibration\n- vacuum and cryogenic test hardware\n- FOSTER summer placement bridge\nActive programme notes: Open role confirms active magnetics/diagnostics hiring — adjacent to PhD diagnostics themes.; Applications via university; careers@ for general questions on research priorities.\nFacilities/machines: ST40 tokamak (Milton Park), University of York Fusion CDT pipeline, UKAEA Culham / FOSTER network, Oxford-area fusion cluster.\n\nAction: Open https://tokamakenergy.com/ or Google Scholar -> pick one paper from 2023-2026 -> write title + one-sentence takeaway in column 3.",
+          "user_response": ""
+        },
+        {
+          "id": "hook_plain_english",
+          "question": "What the hook means in plain English",
+          "researched_answer": "Your outreach hook: \"Lead with plasma_diagnostics, fusion_plasma, vacuum_hv_daq and ask about the current experimental bottleneck.\"\nIn plain English: you are connecting your real diagnostics, vacuum, DAQ, or test-engineering experience to a problem their lab actually works on. You are not claiming you already solved their exact research question.\nBridge skills to mention honestly: plasma diagnostics, DAQ automation, detector calibration, vacuum systems.",
+          "user_response": ""
+        },
+        {
+          "id": "honest_meeting_answer",
+          "question": "What you can honestly say if asked in a meeting",
+          "researched_answer": "If asked what you bring, stay concrete and verifiable:\n- LVACCS 1300V hollow-cathode plasma-source workflow, Python/PyVISA ignition control, and DAQ synchronization.\n- High-voltage operations, detector calibration, FPGA readout, and ESA/CEM-style charged-particle measurement work.\n- Closest overlap with their lab: plasma diagnostics, DAQ automation, detector calibration, vacuum systems.\n- Their facilities (ST40 tokamak (Milton Park), University of York Fusion CDT pipeline, UKAEA Culham / FOSTER network, Oxford-area fusion cluster) need reliable experimental execution; that is the part you can defend.\nSay you want to learn their bottleneck, not that you already mastered their subfield.",
+          "user_response": ""
+        },
+        {
+          "id": "risky_sentence",
+          "question": "Which sentence is risky and should be softened",
+          "researched_answer": "Uncertainty to verify first: Specific university partners and sponsored topic list change yearly — verify before applying. Do not assume direct PhD enrollment at Tokamak Energy.\n\nReview this line before sending:\n\"Lead with plasma_diagnostics, fusion_plasma, vacuum_hv_daq and ask about the current experimental bottleneck.\"\n\nSafer pattern: \"I came across your work on [topic]. From my diagnostics and test-engineering background, I would like to understand how [one bottleneck] is handled in your lab.\"\nAvoid: \"I have studied your work extensively\" unless you actually read multiple primary sources.",
+          "user_response": ""
+        }
+      ],
+      "provider": "",
+      "external_id": "",
+      "opportunity_status": "",
+      "liveness": "",
+      "liveness_reason": "",
+      "deadline_text": "",
+      "deadline_utc": "",
+      "country": "",
+      "research_fields": [],
+      "outreach_tier": "",
+      "design_heavy": false,
+      "role_note": "",
+      "plasma_context": "",
+      "plasma_context_note": "",
+      "current_focus": "",
+      "manufacturing_fit_primary": "",
+      "manufacturing_fit_secondary": "",
+      "laser_or_optical_flag": false,
+      "lpbf_am_flag": false,
+      "process_sensing_flag": false,
+      "sheet_metal_or_forming_flag": false,
+      "academic_level": "",
+      "researcher_profile": "",
+      "sector": "",
+      "funding_programme": "",
+      "language": "",
+      "translated_title": "",
+      "translated_summary": "",
+      "translation_cache_key": "",
+      "score_band": "",
+      "score_breakdown": {
+        "dimensions": {
+          "domain_alignment": {
+            "score": 5,
+            "weight": 0.35,
+            "contribution": 1.75,
+            "evidence": [
+              {
+                "concept_id": "plasma_diagnostics",
+                "polarities": [
+                  "domain",
+                  "method"
+                ],
+                "quote": "plasma diagnos",
+                "source_location": "research_evidence"
+              },
+              {
+                "concept_id": "fusion_plasma",
+                "polarities": [
+                  "domain"
+                ],
+                "quote": "Fusion",
+                "source_location": "research_evidence"
+              }
+            ],
+            "rationale": "2 domain concept(s)"
+          },
+          "method_alignment": {
+            "score": 5,
+            "weight": 0.3,
+            "contribution": 1.5,
+            "evidence": [
+              {
+                "concept_id": "plasma_diagnostics",
+                "polarities": [
+                  "domain",
+                  "method"
+                ],
+                "quote": "plasma diagnos",
+                "source_location": "research_evidence"
+              },
+              {
+                "concept_id": "vacuum_hv_daq",
+                "polarities": [
+                  "method"
+                ],
+                "quote": "calibration",
+                "source_location": "research_evidence"
+              },
+              {
+                "concept_id": "hardware_fabrication",
+                "polarities": [
+                  "method"
+                ],
+                "quote": "hardware",
+                "source_location": "research_evidence"
+              }
+            ],
+            "rationale": "3 method concept(s)"
+          },
+          "skill_transfer": {
+            "score": 5,
+            "weight": 0.2,
+            "contribution": 1,
+            "evidence": [
+              {
+                "fact_id": "lvaccs-hv-daq",
+                "label": "LVACCS high-voltage plasma test rig, protection, DAQ, and hollow-cathode workflow",
+                "matched_concept_ids": [
+                  "plasma_diagnostics",
+                  "vacuum_hv_daq"
+                ]
+              },
+              {
+                "fact_id": "fpga-detector-readout",
+                "label": "FPGA and ADC detector readout-chain implementation",
+                "matched_concept_ids": [
+                  "vacuum_hv_daq"
+                ]
+              },
+              {
+                "fact_id": "mechanical-hardware",
+                "label": "Mechanical engineering, mechanisms, fabrication, fluids, and hardware validation",
+                "matched_concept_ids": [
+                  "hardware_fabrication"
+                ]
+              }
+            ],
+            "rationale": "3 approved CV fact(s)"
+          },
+          "route_relevance": {
+            "score": 5,
+            "weight": 0.15,
+            "contribution": 0.75,
+            "evidence": [
+              {
+                "concept_id": "plasma_diagnostics",
+                "polarities": [
+                  "domain",
+                  "method"
+                ],
+                "quote": "plasma diagnos",
+                "source_location": "research_evidence"
+              },
+              {
+                "concept_id": "fusion_plasma",
+                "polarities": [
+                  "domain"
+                ],
+                "quote": "Fusion",
+                "source_location": "research_evidence"
+              },
+              {
+                "concept_id": "plasma_diagnostics",
+                "polarities": [
+                  "domain",
+                  "method"
+                ],
+                "quote": "plasma diagnos",
+                "source_location": "research_evidence"
+              },
+              {
+                "concept_id": "vacuum_hv_daq",
+                "polarities": [
+                  "method"
+                ],
+                "quote": "calibration",
+                "source_location": "research_evidence"
+              },
+              {
+                "concept_id": "hardware_fabrication",
+                "polarities": [
+                  "method"
+                ],
+                "quote": "hardware",
+                "source_location": "research_evidence"
+              }
+            ],
+            "rationale": "Route relevance from verified concepts"
+          }
+        },
+        "daily_work_interest": 5,
+        "hands_on_experimental": 5,
+        "direct_skill_contribution": 5,
+        "strategic_learning_value": 5,
+        "active_lab_route": 5,
+        "evidence_confidence": 5,
+        "core_destination_matches": [
+          "plasma_diagnostics",
+          "fusion_plasma"
+        ],
+        "enabling_hardware_matches": [
+          "plasma_diagnostics",
+          "vacuum_hv_daq",
+          "hardware_fabrication"
+        ],
+        "hands_on_matches": [
+          "plasma_diagnostics",
+          "vacuum_hv_daq",
+          "hardware_fabrication"
+        ],
+        "computation_theory_matches": [],
+        "candidate_fact_ids": [
+          "lvaccs-hv-daq",
+          "fpga-detector-readout",
+          "mechanical-hardware"
+        ],
+        "protected_domain_matches": [
+          "plasma_diagnostics",
+          "fusion_plasma"
+        ],
+        "computation_dominant": false,
+        "independent_hardware_evidence": true,
+        "substantial_hardware_verified": true,
+        "policy_version": "2026-08-research-contact-v1",
+        "strong_matches": [
+          "plasma_diagnostics",
+          "fusion_plasma",
+          "vacuum_hv_daq",
+          "hardware_fabrication"
+        ],
+        "adjacent_matches": [],
+        "negative_matches": []
+      },
+      "score_audit": {},
+      "tier_cap": "",
+      "cap_reasons": [],
+      "daily_work_type": "core_experimental_hardware",
+      "verified_overlap": [
+        "plasma_diagnostics",
+        "fusion_plasma",
+        "vacuum_hv_daq",
+        "hardware_fabrication"
+      ],
+      "missing_evidence": [],
+      "area_assessments": {},
+      "risk_flags": [],
+      "needs_deep_research": false,
+      "policy_version": "2026-08-research-contact-v1",
+      "posting_fingerprint": "6b046c7a8de98b4e1d6b27852142949b5fe0d26025bf22df0da59998c6755914",
+      "eligibility": {
+        "status": "clear",
+        "reasons": [],
+        "unknowns": [],
+        "evidence": []
+      },
+      "dimensions": {
+        "domain_alignment": {
+          "score": 5,
+          "weight": 0.35,
+          "contribution": 1.75,
+          "evidence": [
+            {
+              "concept_id": "plasma_diagnostics",
+              "polarities": [
+                "domain",
+                "method"
+              ],
+              "quote": "plasma diagnos",
+              "source_location": "research_evidence"
+            },
+            {
+              "concept_id": "fusion_plasma",
+              "polarities": [
+                "domain"
+              ],
+              "quote": "Fusion",
+              "source_location": "research_evidence"
+            }
+          ],
+          "rationale": "2 domain concept(s)"
+        },
+        "method_alignment": {
+          "score": 5,
+          "weight": 0.3,
+          "contribution": 1.5,
+          "evidence": [
+            {
+              "concept_id": "plasma_diagnostics",
+              "polarities": [
+                "domain",
+                "method"
+              ],
+              "quote": "plasma diagnos",
+              "source_location": "research_evidence"
+            },
+            {
+              "concept_id": "vacuum_hv_daq",
+              "polarities": [
+                "method"
+              ],
+              "quote": "calibration",
+              "source_location": "research_evidence"
+            },
+            {
+              "concept_id": "hardware_fabrication",
+              "polarities": [
+                "method"
+              ],
+              "quote": "hardware",
+              "source_location": "research_evidence"
+            }
+          ],
+          "rationale": "3 method concept(s)"
+        },
+        "skill_transfer": {
+          "score": 5,
+          "weight": 0.2,
+          "contribution": 1,
+          "evidence": [
+            {
+              "fact_id": "lvaccs-hv-daq",
+              "label": "LVACCS high-voltage plasma test rig, protection, DAQ, and hollow-cathode workflow",
+              "matched_concept_ids": [
+                "plasma_diagnostics",
+                "vacuum_hv_daq"
+              ]
+            },
+            {
+              "fact_id": "fpga-detector-readout",
+              "label": "FPGA and ADC detector readout-chain implementation",
+              "matched_concept_ids": [
+                "vacuum_hv_daq"
+              ]
+            },
+            {
+              "fact_id": "mechanical-hardware",
+              "label": "Mechanical engineering, mechanisms, fabrication, fluids, and hardware validation",
+              "matched_concept_ids": [
+                "hardware_fabrication"
+              ]
+            }
+          ],
+          "rationale": "3 approved CV fact(s)"
+        },
+        "route_relevance": {
+          "score": 5,
+          "weight": 0.15,
+          "contribution": 0.75,
+          "evidence": [
+            {
+              "concept_id": "plasma_diagnostics",
+              "polarities": [
+                "domain",
+                "method"
+              ],
+              "quote": "plasma diagnos",
+              "source_location": "research_evidence"
+            },
+            {
+              "concept_id": "fusion_plasma",
+              "polarities": [
+                "domain"
+              ],
+              "quote": "Fusion",
+              "source_location": "research_evidence"
+            },
+            {
+              "concept_id": "plasma_diagnostics",
+              "polarities": [
+                "domain",
+                "method"
+              ],
+              "quote": "plasma diagnos",
+              "source_location": "research_evidence"
+            },
+            {
+              "concept_id": "vacuum_hv_daq",
+              "polarities": [
+                "method"
+              ],
+              "quote": "calibration",
+              "source_location": "research_evidence"
+            },
+            {
+              "concept_id": "hardware_fabrication",
+              "polarities": [
+                "method"
+              ],
+              "quote": "hardware",
+              "source_location": "research_evidence"
+            }
+          ],
+          "rationale": "Route relevance from verified concepts"
+        }
+      },
+      "rejected_evidence": [],
+      "unknowns": [],
+      "confidence": "high",
+      "evidence_confidence": {
+        "value": 5,
+        "label": "high",
+        "reasons": [
+          "official/profile source",
+          "lab or profile URL",
+          "current work or interests described",
+          "methods/facilities listed",
+          "multiple specific research concepts"
+        ]
+      },
+      "relationship_signal": {
+        "status": "contacted",
+        "label": "Contacted",
+        "strength": "pending",
+        "note": "Outreach sent; awaiting technical follow-up"
+      },
+      "funding_opening_signal": {
+        "status": "open_opening",
+        "label": "Open hiring/opening signal",
+        "openings": [
+          {
+            "label": "Senior Instrumentation Engineer — Magnetics Diagnostics",
+            "note": "Open role confirms active magnetics/diagnostics hiring — adjacent to PhD diagnostics themes.",
+            "url": "https://apply.workable.com/tokamak-energy/?lng=en"
+          },
+          {
+            "label": "Official PhD Sponsorships page",
+            "note": "Applications via university; careers@ for general questions on research priorities.",
+            "url": "https://tokamakenergy.com/early-careers-fusion-energy-apprenticeships-student-placements-phd-sponsorship/"
+          }
+        ],
+        "funding": []
+      },
+      "concepts": [
+        {
+          "concept_id": "plasma_diagnostics",
+          "polarities": [
+            "domain",
+            "method"
+          ],
+          "quote": "plasma diagnos",
+          "source_location": "research_evidence"
+        },
+        {
+          "concept_id": "vacuum_hv_daq",
+          "polarities": [
+            "method"
+          ],
+          "quote": "calibration",
+          "source_location": "research_evidence"
+        },
+        {
+          "concept_id": "fusion_plasma",
+          "polarities": [
+            "domain"
+          ],
+          "quote": "Fusion",
+          "source_location": "research_evidence"
+        },
+        {
+          "concept_id": "hardware_fabrication",
+          "polarities": [
+            "method"
+          ],
+          "quote": "hardware",
+          "source_location": "research_evidence"
+        }
+      ],
+      "scoring_kind": "research_contact",
+      "recalibration_pending": false,
+      "review_required": false,
+      "review_reasons": [],
+      "calculation_trace": {
+        "formula": "sum(research_dimension_score * weight), then deterministic caps",
+        "weighted_sum": 5,
+        "floors": [],
+        "caps": [],
+        "final_score": 5,
+        "concepts": [
+          "plasma_diagnostics",
+          "vacuum_hv_daq",
+          "fusion_plasma",
+          "hardware_fabrication"
+        ]
+      },
+      "score_before_gates": 5,
+      "extractor": {
+        "provider": "deterministic",
+        "model": "research-concept-matcher",
+        "run_id": ""
+      },
+      "scoring": {
+        "canonical": true,
+        "scoring_kind": "research_contact",
+        "policy_version": "2026-08-research-contact-v1",
+        "posting_fingerprint": "6b046c7a8de98b4e1d6b27852142949b5fe0d26025bf22df0da59998c6755914",
+        "opportunity_type": "research",
+        "score": 5,
+        "personal_fit": 5,
+        "score_before_gates": 5,
+        "tier": "A",
+        "priority": "A",
+        "tier_cap": "",
+        "cap_reasons": [],
+        "confidence": "high",
+        "evidence_confidence": {
+          "value": 5,
+          "label": "high",
+          "reasons": [
+            "official/profile source",
+            "lab or profile URL",
+            "current work or interests described",
+            "methods/facilities listed",
+            "multiple specific research concepts"
+          ]
+        },
+        "relationship_signal": {
+          "status": "contacted",
+          "label": "Contacted",
+          "strength": "pending",
+          "note": "Outreach sent; awaiting technical follow-up"
+        },
+        "funding_opening_signal": {
+          "status": "open_opening",
+          "label": "Open hiring/opening signal",
+          "openings": [
+            {
+              "label": "Senior Instrumentation Engineer — Magnetics Diagnostics",
+              "note": "Open role confirms active magnetics/diagnostics hiring — adjacent to PhD diagnostics themes.",
+              "url": "https://apply.workable.com/tokamak-energy/?lng=en"
+            },
+            {
+              "label": "Official PhD Sponsorships page",
+              "note": "Applications via university; careers@ for general questions on research priorities.",
+              "url": "https://tokamakenergy.com/early-careers-fusion-energy-apprenticeships-student-placements-phd-sponsorship/"
+            }
+          ],
+          "funding": []
+        },
+        "review_required": false,
+        "review_reasons": [],
+        "recalibration_pending": false,
+        "dimensions": {
+          "domain_alignment": {
+            "score": 5,
+            "weight": 0.35,
+            "contribution": 1.75,
+            "evidence": [
+              {
+                "concept_id": "plasma_diagnostics",
+                "polarities": [
+                  "domain",
+                  "method"
+                ],
+                "quote": "plasma diagnos",
+                "source_location": "research_evidence"
+              },
+              {
+                "concept_id": "fusion_plasma",
+                "polarities": [
+                  "domain"
+                ],
+                "quote": "Fusion",
+                "source_location": "research_evidence"
+              }
+            ],
+            "rationale": "2 domain concept(s)"
+          },
+          "method_alignment": {
+            "score": 5,
+            "weight": 0.3,
+            "contribution": 1.5,
+            "evidence": [
+              {
+                "concept_id": "plasma_diagnostics",
+                "polarities": [
+                  "domain",
+                  "method"
+                ],
+                "quote": "plasma diagnos",
+                "source_location": "research_evidence"
+              },
+              {
+                "concept_id": "vacuum_hv_daq",
+                "polarities": [
+                  "method"
+                ],
+                "quote": "calibration",
+                "source_location": "research_evidence"
+              },
+              {
+                "concept_id": "hardware_fabrication",
+                "polarities": [
+                  "method"
+                ],
+                "quote": "hardware",
+                "source_location": "research_evidence"
+              }
+            ],
+            "rationale": "3 method concept(s)"
+          },
+          "skill_transfer": {
+            "score": 5,
+            "weight": 0.2,
+            "contribution": 1,
+            "evidence": [
+              {
+                "fact_id": "lvaccs-hv-daq",
+                "label": "LVACCS high-voltage plasma test rig, protection, DAQ, and hollow-cathode workflow",
+                "matched_concept_ids": [
+                  "plasma_diagnostics",
+                  "vacuum_hv_daq"
+                ]
+              },
+              {
+                "fact_id": "fpga-detector-readout",
+                "label": "FPGA and ADC detector readout-chain implementation",
+                "matched_concept_ids": [
+                  "vacuum_hv_daq"
+                ]
+              },
+              {
+                "fact_id": "mechanical-hardware",
+                "label": "Mechanical engineering, mechanisms, fabrication, fluids, and hardware validation",
+                "matched_concept_ids": [
+                  "hardware_fabrication"
+                ]
+              }
+            ],
+            "rationale": "3 approved CV fact(s)"
+          },
+          "route_relevance": {
+            "score": 5,
+            "weight": 0.15,
+            "contribution": 0.75,
+            "evidence": [
+              {
+                "concept_id": "plasma_diagnostics",
+                "polarities": [
+                  "domain",
+                  "method"
+                ],
+                "quote": "plasma diagnos",
+                "source_location": "research_evidence"
+              },
+              {
+                "concept_id": "fusion_plasma",
+                "polarities": [
+                  "domain"
+                ],
+                "quote": "Fusion",
+                "source_location": "research_evidence"
+              },
+              {
+                "concept_id": "plasma_diagnostics",
+                "polarities": [
+                  "domain",
+                  "method"
+                ],
+                "quote": "plasma diagnos",
+                "source_location": "research_evidence"
+              },
+              {
+                "concept_id": "vacuum_hv_daq",
+                "polarities": [
+                  "method"
+                ],
+                "quote": "calibration",
+                "source_location": "research_evidence"
+              },
+              {
+                "concept_id": "hardware_fabrication",
+                "polarities": [
+                  "method"
+                ],
+                "quote": "hardware",
+                "source_location": "research_evidence"
+              }
+            ],
+            "rationale": "Route relevance from verified concepts"
+          }
+        },
+        "concepts": [
+          {
+            "concept_id": "plasma_diagnostics",
+            "polarities": [
+              "domain",
+              "method"
+            ],
+            "quote": "plasma diagnos",
+            "source_location": "research_evidence"
+          },
+          {
+            "concept_id": "vacuum_hv_daq",
+            "polarities": [
+              "method"
+            ],
+            "quote": "calibration",
+            "source_location": "research_evidence"
+          },
+          {
+            "concept_id": "fusion_plasma",
+            "polarities": [
+              "domain"
+            ],
+            "quote": "Fusion",
+            "source_location": "research_evidence"
+          },
+          {
+            "concept_id": "hardware_fabrication",
+            "polarities": [
+              "method"
+            ],
+            "quote": "hardware",
+            "source_location": "research_evidence"
+          }
+        ],
+        "verified_overlap": [
+          "plasma_diagnostics",
+          "fusion_plasma",
+          "vacuum_hv_daq",
+          "hardware_fabrication"
+        ],
+        "missing_evidence": [],
+        "daily_work_type": "core_experimental_hardware",
+        "calculation_trace": {
+          "formula": "sum(research_dimension_score * weight), then deterministic caps",
+          "weighted_sum": 5,
+          "floors": [],
+          "caps": [],
+          "final_score": 5,
+          "concepts": [
+            "plasma_diagnostics",
+            "vacuum_hv_daq",
+            "fusion_plasma",
+            "hardware_fabrication"
+          ]
+        },
+        "score_breakdown": {
+          "dimensions": {
+            "domain_alignment": {
+              "score": 5,
+              "weight": 0.35,
+              "contribution": 1.75,
+              "evidence": [
+                {
+                  "concept_id": "plasma_diagnostics",
+                  "polarities": [
+                    "domain",
+                    "method"
+                  ],
+                  "quote": "plasma diagnos",
+                  "source_location": "research_evidence"
+                },
+                {
+                  "concept_id": "fusion_plasma",
+                  "polarities": [
+                    "domain"
+                  ],
+                  "quote": "Fusion",
+                  "source_location": "research_evidence"
+                }
+              ],
+              "rationale": "2 domain concept(s)"
+            },
+            "method_alignment": {
+              "score": 5,
+              "weight": 0.3,
+              "contribution": 1.5,
+              "evidence": [
+                {
+                  "concept_id": "plasma_diagnostics",
+                  "polarities": [
+                    "domain",
+                    "method"
+                  ],
+                  "quote": "plasma diagnos",
+                  "source_location": "research_evidence"
+                },
+                {
+                  "concept_id": "vacuum_hv_daq",
+                  "polarities": [
+                    "method"
+                  ],
+                  "quote": "calibration",
+                  "source_location": "research_evidence"
+                },
+                {
+                  "concept_id": "hardware_fabrication",
+                  "polarities": [
+                    "method"
+                  ],
+                  "quote": "hardware",
+                  "source_location": "research_evidence"
+                }
+              ],
+              "rationale": "3 method concept(s)"
+            },
+            "skill_transfer": {
+              "score": 5,
+              "weight": 0.2,
+              "contribution": 1,
+              "evidence": [
+                {
+                  "fact_id": "lvaccs-hv-daq",
+                  "label": "LVACCS high-voltage plasma test rig, protection, DAQ, and hollow-cathode workflow",
+                  "matched_concept_ids": [
+                    "plasma_diagnostics",
+                    "vacuum_hv_daq"
+                  ]
+                },
+                {
+                  "fact_id": "fpga-detector-readout",
+                  "label": "FPGA and ADC detector readout-chain implementation",
+                  "matched_concept_ids": [
+                    "vacuum_hv_daq"
+                  ]
+                },
+                {
+                  "fact_id": "mechanical-hardware",
+                  "label": "Mechanical engineering, mechanisms, fabrication, fluids, and hardware validation",
+                  "matched_concept_ids": [
+                    "hardware_fabrication"
+                  ]
+                }
+              ],
+              "rationale": "3 approved CV fact(s)"
+            },
+            "route_relevance": {
+              "score": 5,
+              "weight": 0.15,
+              "contribution": 0.75,
+              "evidence": [
+                {
+                  "concept_id": "plasma_diagnostics",
+                  "polarities": [
+                    "domain",
+                    "method"
+                  ],
+                  "quote": "plasma diagnos",
+                  "source_location": "research_evidence"
+                },
+                {
+                  "concept_id": "fusion_plasma",
+                  "polarities": [
+                    "domain"
+                  ],
+                  "quote": "Fusion",
+                  "source_location": "research_evidence"
+                },
+                {
+                  "concept_id": "plasma_diagnostics",
+                  "polarities": [
+                    "domain",
+                    "method"
+                  ],
+                  "quote": "plasma diagnos",
+                  "source_location": "research_evidence"
+                },
+                {
+                  "concept_id": "vacuum_hv_daq",
+                  "polarities": [
+                    "method"
+                  ],
+                  "quote": "calibration",
+                  "source_location": "research_evidence"
+                },
+                {
+                  "concept_id": "hardware_fabrication",
+                  "polarities": [
+                    "method"
+                  ],
+                  "quote": "hardware",
+                  "source_location": "research_evidence"
+                }
+              ],
+              "rationale": "Route relevance from verified concepts"
+            }
+          },
+          "daily_work_interest": 5,
+          "hands_on_experimental": 5,
+          "direct_skill_contribution": 5,
+          "strategic_learning_value": 5,
+          "active_lab_route": 5,
+          "evidence_confidence": 5,
+          "core_destination_matches": [
+            "plasma_diagnostics",
+            "fusion_plasma"
+          ],
+          "enabling_hardware_matches": [
+            "plasma_diagnostics",
+            "vacuum_hv_daq",
+            "hardware_fabrication"
+          ],
+          "hands_on_matches": [
+            "plasma_diagnostics",
+            "vacuum_hv_daq",
+            "hardware_fabrication"
+          ],
+          "computation_theory_matches": [],
+          "candidate_fact_ids": [
+            "lvaccs-hv-daq",
+            "fpga-detector-readout",
+            "mechanical-hardware"
+          ],
+          "protected_domain_matches": [
+            "plasma_diagnostics",
+            "fusion_plasma"
+          ],
+          "computation_dominant": false,
+          "independent_hardware_evidence": true,
+          "substantial_hardware_verified": true,
+          "policy_version": "2026-08-research-contact-v1",
+          "strong_matches": [
+            "plasma_diagnostics",
+            "fusion_plasma",
+            "vacuum_hv_daq",
+            "hardware_fabrication"
+          ],
+          "adjacent_matches": [],
+          "negative_matches": []
+        },
+        "risk_flags": [],
+        "eligibility": {
+          "status": "clear",
+          "reasons": [],
+          "unknowns": [],
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "concept_id": "plasma_diagnostics",
+            "polarities": [
+              "domain",
+              "method"
+            ],
+            "quote": "plasma diagnos",
+            "source_location": "research_evidence"
+          },
+          {
+            "concept_id": "vacuum_hv_daq",
+            "polarities": [
+              "method"
+            ],
+            "quote": "calibration",
+            "source_location": "research_evidence"
+          },
+          {
+            "concept_id": "fusion_plasma",
+            "polarities": [
+              "domain"
+            ],
+            "quote": "Fusion",
+            "source_location": "research_evidence"
+          },
+          {
+            "concept_id": "hardware_fabrication",
+            "polarities": [
+              "method"
+            ],
+            "quote": "hardware",
+            "source_location": "research_evidence"
+          }
+        ],
+        "rejected_evidence": [],
+        "unknowns": [],
+        "extractor": {
+          "provider": "deterministic",
+          "model": "research-concept-matcher",
+          "run_id": ""
+        },
+        "recommendation": "outreach",
+        "fit_rationale": "Direct technical fit via plasma_diagnostics, fusion_plasma, vacuum_hv_daq, hardware_fabrication. Confidence high; relationship and funding are separate signals.",
+        "outreach_angle": "Lead with plasma_diagnostics, fusion_plasma, vacuum_hv_daq and ask about the current experimental bottleneck.",
+        "transfer_vectors": [
+          "plasma_diagnostics",
+          "fusion_plasma",
+          "vacuum_hv_daq",
+          "hardware_fabrication"
+        ],
+        "scoring": {
+          "canonical": true,
+          "scoring_kind": "research_contact",
+          "policy_version": "2026-08-research-contact-v1",
+          "posting_fingerprint": "6b046c7a8de98b4e1d6b27852142949b5fe0d26025bf22df0da59998c6755914",
+          "opportunity_type": "research",
+          "score": 5,
+          "personal_fit": 5,
+          "score_before_gates": 5,
+          "tier": "A",
+          "priority": "A",
+          "tier_cap": "",
+          "cap_reasons": [],
+          "confidence": "high",
+          "evidence_confidence": {
+            "value": 5,
+            "label": "high",
+            "reasons": [
+              "official/profile source",
+              "lab or profile URL",
+              "current work or interests described",
+              "methods/facilities listed",
+              "multiple specific research concepts"
+            ]
+          },
+          "relationship_signal": {
+            "status": "contacted",
+            "label": "Contacted",
+            "strength": "pending",
+            "note": "Outreach sent; awaiting technical follow-up"
+          },
+          "funding_opening_signal": {
+            "status": "open_opening",
+            "label": "Open hiring/opening signal",
+            "openings": [
+              {
+                "label": "Senior Instrumentation Engineer — Magnetics Diagnostics",
+                "note": "Open role confirms active magnetics/diagnostics hiring — adjacent to PhD diagnostics themes.",
+                "url": "https://apply.workable.com/tokamak-energy/?lng=en"
+              },
+              {
+                "label": "Official PhD Sponsorships page",
+                "note": "Applications via university; careers@ for general questions on research priorities.",
+                "url": "https://tokamakenergy.com/early-careers-fusion-energy-apprenticeships-student-placements-phd-sponsorship/"
+              }
+            ],
+            "funding": []
+          },
+          "review_required": false,
+          "review_reasons": [],
+          "recalibration_pending": false,
+          "dimensions": {
+            "domain_alignment": {
+              "score": 5,
+              "weight": 0.35,
+              "contribution": 1.75,
+              "evidence": [
+                {
+                  "concept_id": "plasma_diagnostics",
+                  "polarities": [
+                    "domain",
+                    "method"
+                  ],
+                  "quote": "plasma diagnos",
+                  "source_location": "research_evidence"
+                },
+                {
+                  "concept_id": "fusion_plasma",
+                  "polarities": [
+                    "domain"
+                  ],
+                  "quote": "Fusion",
+                  "source_location": "research_evidence"
+                }
+              ],
+              "rationale": "2 domain concept(s)"
+            },
+            "method_alignment": {
+              "score": 5,
+              "weight": 0.3,
+              "contribution": 1.5,
+              "evidence": [
+                {
+                  "concept_id": "plasma_diagnostics",
+                  "polarities": [
+                    "domain",
+                    "method"
+                  ],
+                  "quote": "plasma diagnos",
+                  "source_location": "research_evidence"
+                },
+                {
+                  "concept_id": "vacuum_hv_daq",
+                  "polarities": [
+                    "method"
+                  ],
+                  "quote": "calibration",
+                  "source_location": "research_evidence"
+                },
+                {
+                  "concept_id": "hardware_fabrication",
+                  "polarities": [
+                    "method"
+                  ],
+                  "quote": "hardware",
+                  "source_location": "research_evidence"
+                }
+              ],
+              "rationale": "3 method concept(s)"
+            },
+            "skill_transfer": {
+              "score": 5,
+              "weight": 0.2,
+              "contribution": 1,
+              "evidence": [
+                {
+                  "fact_id": "lvaccs-hv-daq",
+                  "label": "LVACCS high-voltage plasma test rig, protection, DAQ, and hollow-cathode workflow",
+                  "matched_concept_ids": [
+                    "plasma_diagnostics",
+                    "vacuum_hv_daq"
+                  ]
+                },
+                {
+                  "fact_id": "fpga-detector-readout",
+                  "label": "FPGA and ADC detector readout-chain implementation",
+                  "matched_concept_ids": [
+                    "vacuum_hv_daq"
+                  ]
+                },
+                {
+                  "fact_id": "mechanical-hardware",
+                  "label": "Mechanical engineering, mechanisms, fabrication, fluids, and hardware validation",
+                  "matched_concept_ids": [
+                    "hardware_fabrication"
+                  ]
+                }
+              ],
+              "rationale": "3 approved CV fact(s)"
+            },
+            "route_relevance": {
+              "score": 5,
+              "weight": 0.15,
+              "contribution": 0.75,
+              "evidence": [
+                {
+                  "concept_id": "plasma_diagnostics",
+                  "polarities": [
+                    "domain",
+                    "method"
+                  ],
+                  "quote": "plasma diagnos",
+                  "source_location": "research_evidence"
+                },
+                {
+                  "concept_id": "fusion_plasma",
+                  "polarities": [
+                    "domain"
+                  ],
+                  "quote": "Fusion",
+                  "source_location": "research_evidence"
+                },
+                {
+                  "concept_id": "plasma_diagnostics",
+                  "polarities": [
+                    "domain",
+                    "method"
+                  ],
+                  "quote": "plasma diagnos",
+                  "source_location": "research_evidence"
+                },
+                {
+                  "concept_id": "vacuum_hv_daq",
+                  "polarities": [
+                    "method"
+                  ],
+                  "quote": "calibration",
+                  "source_location": "research_evidence"
+                },
+                {
+                  "concept_id": "hardware_fabrication",
+                  "polarities": [
+                    "method"
+                  ],
+                  "quote": "hardware",
+                  "source_location": "research_evidence"
+                }
+              ],
+              "rationale": "Route relevance from verified concepts"
+            }
+          },
+          "concepts": [
+            {
+              "concept_id": "plasma_diagnostics",
+              "polarities": [
+                "domain",
+                "method"
+              ],
+              "quote": "plasma diagnos",
+              "source_location": "research_evidence"
+            },
+            {
+              "concept_id": "vacuum_hv_daq",
+              "polarities": [
+                "method"
+              ],
+              "quote": "calibration",
+              "source_location": "research_evidence"
+            },
+            {
+              "concept_id": "fusion_plasma",
+              "polarities": [
+                "domain"
+              ],
+              "quote": "Fusion",
+              "source_location": "research_evidence"
+            },
+            {
+              "concept_id": "hardware_fabrication",
+              "polarities": [
+                "method"
+              ],
+              "quote": "hardware",
+              "source_location": "research_evidence"
+            }
+          ],
+          "verified_overlap": [
+            "plasma_diagnostics",
+            "fusion_plasma",
+            "vacuum_hv_daq",
+            "hardware_fabrication"
+          ],
+          "missing_evidence": [],
+          "daily_work_type": "core_experimental_hardware",
+          "calculation_trace": {
+            "formula": "sum(research_dimension_score * weight), then deterministic caps",
+            "weighted_sum": 5,
+            "floors": [],
+            "caps": [],
+            "final_score": 5,
+            "concepts": [
+              "plasma_diagnostics",
+              "vacuum_hv_daq",
+              "fusion_plasma",
+              "hardware_fabrication"
+            ]
+          },
+          "score_breakdown": {
+            "dimensions": {
+              "domain_alignment": {
+                "score": 5,
+                "weight": 0.35,
+                "contribution": 1.75,
+                "evidence": [
+                  {
+                    "concept_id": "plasma_diagnostics",
+                    "polarities": [
+                      "domain",
+                      "method"
+                    ],
+                    "quote": "plasma diagnos",
+                    "source_location": "research_evidence"
+                  },
+                  {
+                    "concept_id": "fusion_plasma",
+                    "polarities": [
+                      "domain"
+                    ],
+                    "quote": "Fusion",
+                    "source_location": "research_evidence"
+                  }
+                ],
+                "rationale": "2 domain concept(s)"
+              },
+              "method_alignment": {
+                "score": 5,
+                "weight": 0.3,
+                "contribution": 1.5,
+                "evidence": [
+                  {
+                    "concept_id": "plasma_diagnostics",
+                    "polarities": [
+                      "domain",
+                      "method"
+                    ],
+                    "quote": "plasma diagnos",
+                    "source_location": "research_evidence"
+                  },
+                  {
+                    "concept_id": "vacuum_hv_daq",
+                    "polarities": [
+                      "method"
+                    ],
+                    "quote": "calibration",
+                    "source_location": "research_evidence"
+                  },
+                  {
+                    "concept_id": "hardware_fabrication",
+                    "polarities": [
+                      "method"
+                    ],
+                    "quote": "hardware",
+                    "source_location": "research_evidence"
+                  }
+                ],
+                "rationale": "3 method concept(s)"
+              },
+              "skill_transfer": {
+                "score": 5,
+                "weight": 0.2,
+                "contribution": 1,
+                "evidence": [
+                  {
+                    "fact_id": "lvaccs-hv-daq",
+                    "label": "LVACCS high-voltage plasma test rig, protection, DAQ, and hollow-cathode workflow",
+                    "matched_concept_ids": [
+                      "plasma_diagnostics",
+                      "vacuum_hv_daq"
+                    ]
+                  },
+                  {
+                    "fact_id": "fpga-detector-readout",
+                    "label": "FPGA and ADC detector readout-chain implementation",
+                    "matched_concept_ids": [
+                      "vacuum_hv_daq"
+                    ]
+                  },
+                  {
+                    "fact_id": "mechanical-hardware",
+                    "label": "Mechanical engineering, mechanisms, fabrication, fluids, and hardware validation",
+                    "matched_concept_ids": [
+                      "hardware_fabrication"
+                    ]
+                  }
+                ],
+                "rationale": "3 approved CV fact(s)"
+              },
+              "route_relevance": {
+                "score": 5,
+                "weight": 0.15,
+                "contribution": 0.75,
+                "evidence": [
+                  {
+                    "concept_id": "plasma_diagnostics",
+                    "polarities": [
+                      "domain",
+                      "method"
+                    ],
+                    "quote": "plasma diagnos",
+                    "source_location": "research_evidence"
+                  },
+                  {
+                    "concept_id": "fusion_plasma",
+                    "polarities": [
+                      "domain"
+                    ],
+                    "quote": "Fusion",
+                    "source_location": "research_evidence"
+                  },
+                  {
+                    "concept_id": "plasma_diagnostics",
+                    "polarities": [
+                      "domain",
+                      "method"
+                    ],
+                    "quote": "plasma diagnos",
+                    "source_location": "research_evidence"
+                  },
+                  {
+                    "concept_id": "vacuum_hv_daq",
+                    "polarities": [
+                      "method"
+                    ],
+                    "quote": "calibration",
+                    "source_location": "research_evidence"
+                  },
+                  {
+                    "concept_id": "hardware_fabrication",
+                    "polarities": [
+                      "method"
+                    ],
+                    "quote": "hardware",
+                    "source_location": "research_evidence"
+                  }
+                ],
+                "rationale": "Route relevance from verified concepts"
+              }
+            },
+            "daily_work_interest": 5,
+            "hands_on_experimental": 5,
+            "direct_skill_contribution": 5,
+            "strategic_learning_value": 5,
+            "active_lab_route": 5,
+            "evidence_confidence": 5,
+            "core_destination_matches": [
+              "plasma_diagnostics",
+              "fusion_plasma"
+            ],
+            "enabling_hardware_matches": [
+              "plasma_diagnostics",
+              "vacuum_hv_daq",
+              "hardware_fabrication"
+            ],
+            "hands_on_matches": [
+              "plasma_diagnostics",
+              "vacuum_hv_daq",
+              "hardware_fabrication"
+            ],
+            "computation_theory_matches": [],
+            "candidate_fact_ids": [
+              "lvaccs-hv-daq",
+              "fpga-detector-readout",
+              "mechanical-hardware"
+            ],
+            "protected_domain_matches": [
+              "plasma_diagnostics",
+              "fusion_plasma"
+            ],
+            "computation_dominant": false,
+            "independent_hardware_evidence": true,
+            "substantial_hardware_verified": true,
+            "policy_version": "2026-08-research-contact-v1",
+            "strong_matches": [
+              "plasma_diagnostics",
+              "fusion_plasma",
+              "vacuum_hv_daq",
+              "hardware_fabrication"
+            ],
+            "adjacent_matches": [],
+            "negative_matches": []
+          },
+          "risk_flags": [],
+          "eligibility": {
+            "status": "clear",
+            "reasons": [],
+            "unknowns": [],
+            "evidence": []
+          },
+          "evidence": [
+            {
+              "concept_id": "plasma_diagnostics",
+              "polarities": [
+                "domain",
+                "method"
+              ],
+              "quote": "plasma diagnos",
+              "source_location": "research_evidence"
+            },
+            {
+              "concept_id": "vacuum_hv_daq",
+              "polarities": [
+                "method"
+              ],
+              "quote": "calibration",
+              "source_location": "research_evidence"
+            },
+            {
+              "concept_id": "fusion_plasma",
+              "polarities": [
+                "domain"
+              ],
+              "quote": "Fusion",
+              "source_location": "research_evidence"
+            },
+            {
+              "concept_id": "hardware_fabrication",
+              "polarities": [
+                "method"
+              ],
+              "quote": "hardware",
+              "source_location": "research_evidence"
+            }
+          ],
+          "rejected_evidence": [],
+          "unknowns": [],
+          "extractor": {
+            "provider": "deterministic",
+            "model": "research-concept-matcher",
+            "run_id": ""
+          },
+          "recommendation": "outreach"
+        }
+      }
     }
-  ]
+  ],
+  "path_model": "Apply to university PhD programmes; company provides co-supervision, facility access, and sponsored topics — not direct enrollment at the company."
 }

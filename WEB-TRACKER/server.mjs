@@ -53,6 +53,13 @@ import {
   upsertConsiderJob,
 } from './lib/jobs-to-consider-store.mjs';
 import {
+  assertConsiderJobApplyAllowed,
+  enrichConsiderJobWithNetworking,
+  enrichConsiderJobsStore,
+  queueNetworkingForConsiderJob,
+  unlinkCanceledResearchOrder,
+} from './lib/jobs-networking-bridge.mjs';
+import {
   findResearchProspect,
   patchResearchProspect,
   readResearchProspects,
@@ -131,12 +138,21 @@ import {
   upsertNetworkingTask,
 } from './lib/networking/store.mjs';
 import {
+  cancelNetworkingResearch,
   completeNetworkingResearch,
   markNetworkingResearchInProgress,
   markNetworkingResearchReviewReady,
   queueNetworkingResearch,
   readNetworkingResearchQueue,
 } from './lib/networking/factory.mjs';
+import {
+  advanceCompanyFocus,
+  buildCompanyFocusReadModel,
+  pinCompanyFocus,
+  readCompanyFocus,
+  syncCompanyFocusToDashboard,
+  updateCompanyFocus,
+} from './lib/company-focus.mjs';
 import {
   TRACKER_EDITABLE_FIELDS,
   TRACKER_METADATA_FIELDS,
@@ -853,7 +869,7 @@ app.get('/api/applications', (req, res) => {
 
 app.get('/api/jobs-to-consider', (req, res) => {
   try {
-    res.json(readConsiderJobs());
+    res.json(enrichConsiderJobsStore(readConsiderJobs()));
   } catch (err) {
     return res.status(400).json({ error: err?.message || 'failed to read jobs to consider' });
   }
@@ -911,7 +927,10 @@ function publishNetworkingUpdate(payload = {}) {
 
 app.get('/api/networking', (_req, res) => {
   try {
-    return res.json(buildNetworkingReadModel(readNetworking()));
+    const focus = readCompanyFocus();
+    return res.json(buildNetworkingReadModel(readNetworking(), new Date(), {
+      focus_organization_id: focus.organization_id,
+    }));
   } catch (err) {
     return res.status(400).json({ error: err?.message || 'failed to read networking data' });
   }
@@ -1045,6 +1064,55 @@ app.post('/api/networking/events', (req, res) => {
   }
 });
 
+app.get('/api/company-focus', (_req, res) => {
+  try {
+    return res.json(buildCompanyFocusReadModel({ focus: readCompanyFocus() }));
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to read company focus' });
+  }
+});
+
+app.put('/api/company-focus', (req, res) => {
+  try {
+    const result = updateCompanyFocus(req.body || {});
+    broadcast('company_focus_updated', {
+      organization_id: result.organization_id,
+      playbook_step: result.playbook_step,
+    });
+    return res.json(result);
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to update company focus' });
+  }
+});
+
+app.post('/api/company-focus/pin', (req, res) => {
+  try {
+    const result = pinCompanyFocus(req.body || {});
+    broadcast('company_focus_updated', {
+      organization_id: result.organization_id,
+      playbook_step: result.playbook_step,
+    });
+    return res.status(201).json(result);
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to pin company focus' });
+  }
+});
+
+app.post('/api/company-focus/advance', (req, res) => {
+  try {
+    const result = advanceCompanyFocus(req.body || {});
+    syncCompanyFocusToDashboard();
+    broadcast('company_focus_updated', {
+      organization_id: result.organization_id,
+      playbook_step: result.playbook_step,
+      next_action_type: result.next_action?.type,
+    });
+    return res.json(result);
+  } catch (err) {
+    return res.status(400).json({ error: err?.message || 'failed to advance company focus' });
+  }
+});
+
 app.get('/api/networking/research-queue', (_req, res) => {
   try {
     return res.json(readNetworkingResearchQueue());
@@ -1072,8 +1140,15 @@ app.patch('/api/networking/research-queue/:id', (req, res) => {
     else if (action === 'review_ready') result = markNetworkingResearchReviewReady(req.params.id, req.body?.candidate_person_ids || []);
     else if (action === 'complete') result = completeNetworkingResearch(req.params.id);
     else if (action === 'fail') result = completeNetworkingResearch(req.params.id, { failed: true, error: req.body?.error || '' });
-    else throw new Error('networking research queue action must be start, review_ready, complete, or fail');
+    else if (action === 'cancel') {
+      result = cancelNetworkingResearch(req.params.id);
+      unlinkCanceledResearchOrder(result.order);
+      syncConsiderJobsToDashboard();
+      logNetworkingActivity({ action: 'research_canceled', notes: result.order.organization_name });
+    }
+    else throw new Error('networking research queue action must be start, review_ready, complete, fail, or cancel');
     broadcast('networking_research_queue_updated', { pending_count: result.queue.pending_count, order_id: result.order.id });
+    if (action === 'cancel') broadcast('jobs_to_consider_updated', { reason: 'research_canceled' });
     return res.json(result);
   } catch (err) {
     const status = /not found/i.test(err?.message || '') ? 404 : 400;
@@ -1999,7 +2074,8 @@ app.post('/api/umich-careers/opportunities/:id/add-to-consider', (req, res) => {
       location: [existing.work_location, existing.city_location].filter(Boolean).join(' — '),
       team: existing.department,
       source: 'umich_careers',
-      score: Number.isFinite(Number(existing.score)) ? `${Number(existing.score).toFixed(1)}/5` : '',
+      posting_text: [existing.working_title || existing.title, existing.description].filter(Boolean).join('\n'),
+      legacy_score: existing.legacy_score || existing.score,
       fit_summary: existing.fit_rationale,
       notes: [
         `U-M job opening ID ${existing.job_id}.`,
@@ -2444,6 +2520,7 @@ app.post('/api/jobs-to-consider/:id/apply', (req, res) => {
     const report = reportPath
       ? `[${job.id.replace(/-/g, ' ')}](${reportPath})`
       : '-';
+    assertConsiderJobApplyAllowed(job, { force: req.body?.force_apply === true });
     const trackerResult = createTrackerRow({
       entry: {
         date: localDateString(new Date(), DEFAULT_DIGEST_TIMEZONE),
@@ -2470,6 +2547,14 @@ app.post('/api/jobs-to-consider/:id/apply', (req, res) => {
       applied_at: new Date().toISOString(),
     });
     logJobConsiderPatchEvent(result.job, { applied: true, status: 'applied', application_num: trackerResult.num });
+    let networking = null;
+    if (req.body?.queue_networking === true) {
+      try {
+        networking = queueNetworkingForConsiderJob(result.job.id);
+      } catch (err) {
+        networking = { error: err?.message || 'failed to queue networking research' };
+      }
+    }
     const dashboard = syncConsiderJobsToDashboard();
     syncApplications();
     triggerSync();
@@ -2479,9 +2564,38 @@ app.post('/api/jobs-to-consider/:id/apply', (req, res) => {
       created: !trackerResult.duplicate,
       duplicate: trackerResult.duplicate,
     });
-    return res.json(withToday({ job: result.job, application: trackerResult }));
+    if (networking?.order) {
+      broadcast('networking_research_queue_updated', { order_id: networking.order.id });
+      broadcast('networking_updated', {});
+    }
+    return res.json(withToday({
+      job: enrichConsiderJobWithNetworking(networking?.job || result.job),
+      application: trackerResult,
+      networking,
+    }));
   } catch (err) {
     return res.status(400).json({ error: err?.message || 'failed to update applied state' });
+  }
+});
+
+app.post('/api/jobs-to-consider/:id/queue-networking', (req, res) => {
+  try {
+    const result = queueNetworkingForConsiderJob(req.params.id, {
+      personas: req.body?.personas,
+      notes: req.body?.notes || '',
+    });
+    const dashboard = syncConsiderJobsToDashboard();
+    broadcast('jobs_to_consider_updated', { id: result.job.id, total: dashboard.total });
+    broadcast('networking_research_queue_updated', { order_id: result.order.id, duplicate: result.duplicate });
+    broadcast('networking_updated', { organization_id: result.organization?.id });
+    logNetworkingActivity({
+      action: 'research_queued',
+      notes: `${result.organization?.name || ''} ← ${result.job.title}`,
+    });
+    return res.status(result.duplicate ? 200 : 201).json(withToday(result));
+  } catch (err) {
+    const status = /not found/i.test(err?.message || '') ? 404 : 400;
+    return res.status(status).json({ error: err?.message || 'failed to queue networking for job' });
   }
 });
 

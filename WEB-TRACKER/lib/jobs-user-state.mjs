@@ -9,7 +9,17 @@ const CAREER_OPS_DIR = join(WEB_TRACKER_DIR, '..');
 export const JOBS_USER_STATE_FILE = join(CAREER_OPS_DIR, 'data', 'jobs-to-consider-user-state.json');
 export const DASHBOARD_JOBS_USER_STATE_FILE = join(WEB_TRACKER_DIR, 'data', 'jobs-to-consider-user-state.json');
 
-const USER_STATE_FIELDS = ['status', 'applied', 'applied_at', 'application_num', 'notes', 'resources'];
+const USER_STATE_FIELDS = [
+  'status',
+  'applied',
+  'applied_at',
+  'application_num',
+  'notes',
+  'resources',
+  'networking_org_id',
+  'networking_person_ids',
+  'networking_research_order_id',
+];
 
 function cleanText(value) {
   return String(value ?? '').replace(/\r?\n/g, ' ').replace(/\s+/g, ' ').trim();

@@ -50,6 +50,10 @@ const RESEARCH_COLUMNS = [
   { header: 'Department', key: 'department', width: 34 },
   { header: 'Lab', key: 'lab', width: 34 },
   { header: 'Email', key: 'contact_email', width: 30 },
+  { header: 'Imported Outreach Group', key: 'outreach_category', width: 24 },
+  { header: 'Imported Outreach Colour', key: 'outreach_color', width: 22 },
+  { header: 'Original Outreach Status', key: 'outreach_status_detail', width: 34 },
+  { header: 'Thread Outcome', key: 'outreach_outcome', width: 64 },
   { header: 'Last Contacted', key: 'last_contacted', width: 18 },
   { header: 'Last Followed Up', key: 'last_followed_up', width: 18 },
   { header: 'Follow-up Due', key: 'follow_up_date', width: 18 },
@@ -58,6 +62,8 @@ const RESEARCH_COLUMNS = [
   { header: 'Outreach Angle', key: 'outreach_angle', width: 64 },
   { header: 'Fit Rationale', key: 'fit_rationale', width: 64 },
   { header: 'Profile URL', key: 'profile_url', width: 42 },
+  { header: 'Imported Notes', key: 'notes', width: 64 },
+  { header: 'All Source Fields', key: 'source_details', width: 100 },
 ];
 
 const JOB_COLUMNS = [
@@ -66,6 +72,8 @@ const JOB_COLUMNS = [
   { header: 'Company', key: 'company', width: 28 },
   { header: 'Title', key: 'title', width: 42 },
   { header: 'Location', key: 'location', width: 24 },
+  { header: 'Country', key: 'country', width: 18 },
+  { header: 'Country Code', key: 'country_code', width: 12 },
   { header: 'Score', key: 'score', width: 12 },
   { header: 'Region', key: 'region', width: 16 },
   { header: 'H-1B', key: 'h1b_status', width: 18 },
@@ -168,10 +176,11 @@ function phdOpportunityRows() {
 }
 
 function todayDetailRows(activity = {}) {
+  // Flat CSV: Contacted already includes Networking — no second section.
   const sections = [
     ['Applied Today', 'Applications', activity.details?.applied_today || []],
-    ['Contacted Today', 'Research / Applications', activity.details?.contacted_today || []],
-    ['Followed Today', 'Research', activity.details?.followed_today || []],
+    ['Contacted Today', 'Research / Applications / Networking', activity.details?.contacted_today || []],
+    ['Followed Today', 'Research / Networking', activity.details?.followed_today || []],
     ['Follow-ups Due Today', 'Follow-ups', activity.details?.followups_due_today || []],
   ];
   const seen = new Set();
@@ -235,6 +244,11 @@ function todaySheets({ date, timeZone }) {
         name: 'Followups Due',
         columns: TODAY_COLUMNS,
         rows: activity.details.followups_due_today.map(row => ({ section: 'Follow-ups Due Today', ...row })),
+      },
+      {
+        name: 'Networking Today',
+        columns: TODAY_COLUMNS,
+        rows: (activity.details.networking_today || []).map(row => ({ section: 'Networking Today', ...row })),
       },
     ],
     activity,

@@ -3,17 +3,26 @@
  * generate-latex.mjs - compile a LaTeX resume to PDF.
  *
  * Usage:
- *   node generate-latex.mjs <input.tex> [output.pdf] [--engine=xelatex|lualatex|pdflatex] [--keep-build]
+ *   node generate-latex.mjs <input.tex> [output.pdf] [--engine=xelatex|lualatex|pdflatex] [--keep-build] [--force]
  *
  * The Harsh resume baseline uses fontspec, so xelatex is the default engine.
+ * Existing PDF outputs are never overwritten unless --force is passed.
+ * Prefer a new, relevant PDF filename for each render (see harsh/resume/README.md).
  */
 
 import { copyFileSync, existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, statSync } from 'fs';
 import { dirname, extname, join, resolve, basename } from 'path';
+import { fileURLToPath } from 'url';
 import { spawnSync } from 'child_process';
 import { tmpdir } from 'os';
 
 const VALID_ENGINES = new Set(['xelatex', 'lualatex', 'pdflatex']);
+const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
+const MEASURE_FILL_SCRIPT = join(SCRIPT_DIR, 'scripts', 'measure-pdf-fill.mjs');
+/** One-page resumes with more empty bottom than this are underfilled. */
+const MAX_BOTTOM_GAP_IN = 0.9;
+/** One-page resumes with less empty bottom than this are cramped (still OK, but note). */
+const MIN_BOTTOM_GAP_IN = 0.3;
 
 const args = parseArgs(process.argv.slice(2));
 
@@ -37,6 +46,14 @@ if (!VALID_ENGINES.has(engine)) {
 
 const outputPath = resolve(args.output || inputPath.replace(/\.tex$/i, '.pdf'));
 const keepBuild = Boolean(args.keepBuild);
+const forceOverwrite = Boolean(args.force);
+
+if (existsSync(outputPath) && !forceOverwrite) {
+  fail(
+    `Refusing to overwrite existing PDF: ${outputPath}\n` +
+      `Pick a new, relevant output name (e.g. *_Instrumentation.pdf), or pass --force only if the user explicitly asked to restore/replace this file.`
+  );
+}
 
 ensureEngineAvailable(engine);
 
@@ -66,6 +83,8 @@ try {
   console.log(`Pages: ${pageCount || 'unknown'}`);
   console.log(`Size: ${(stats.size / 1024).toFixed(1)} KB`);
 
+  reportPageFill({ outputPath, pageCount });
+
   if (!keepBuild) {
     rmSync(buildDir, { recursive: true, force: true });
   } else {
@@ -78,17 +97,69 @@ try {
   fail(error.message);
 }
 
+function reportPageFill({ outputPath, pageCount }) {
+  if (!existsSync(MEASURE_FILL_SCRIPT)) return;
+
+  const measure = spawnSync(process.execPath, [MEASURE_FILL_SCRIPT, outputPath], {
+    encoding: 'utf-8',
+    windowsHide: true,
+  });
+  if (measure.status !== 0 || !measure.stdout) {
+    console.log('Fill check: unavailable (pdftotext -bbox failed or missing)');
+    return;
+  }
+
+  let data;
+  try {
+    data = JSON.parse(measure.stdout.trim());
+  } catch {
+    console.log('Fill check: unavailable (bad JSON)');
+    return;
+  }
+  if (!data.ok) {
+    console.log(`Fill check: unavailable (${data.error || 'unknown'})`);
+    return;
+  }
+
+  console.log(
+    `Fill: ${data.fillPct}% of page height used; bottom gap ${data.bottomGapIn} in (${data.bottomGapPt} pt)`
+  );
+
+  if (pageCount > 1) {
+    console.warn(
+      `FILL WARNING: ${pageCount} pages — overfilled for a one-page resume. Compress content and re-render to a NEW PDF name.`
+    );
+    return;
+  }
+
+  if (pageCount === 1 && data.bottomGapIn > MAX_BOTTOM_GAP_IN) {
+    console.warn(
+      `FILL WARNING: underfilled — ${data.bottomGapIn} in empty at bottom (target ≤ ${MAX_BOTTOM_GAP_IN} in). ` +
+        `Add honest role-relevant content and re-render to a NEW PDF name.`
+    );
+  } else if (pageCount === 1 && data.bottomGapIn < MIN_BOTTOM_GAP_IN) {
+    console.warn(
+      `FILL NOTE: very tight bottom gap (${data.bottomGapIn} in). Watch for overflow on the next edit.`
+    );
+  }
+}
+
 function parseArgs(argv) {
   const parsed = {
     input: null,
     output: null,
     engine: null,
     keepBuild: false,
+    force: false,
   };
 
   for (const arg of argv) {
     if (arg === '--keep-build') {
       parsed.keepBuild = true;
+      continue;
+    }
+    if (arg === '--force') {
+      parsed.force = true;
       continue;
     }
     if (arg.startsWith('--engine=')) {
@@ -169,7 +240,10 @@ function countPdfPages(pdfPath) {
 }
 
 function usage() {
-  console.error('Usage: node generate-latex.mjs <input.tex> [output.pdf] [--engine=xelatex|lualatex|pdflatex] [--keep-build]');
+  console.error(
+    'Usage: node generate-latex.mjs <input.tex> [output.pdf] [--engine=xelatex|lualatex|pdflatex] [--keep-build] [--force]'
+  );
+  console.error('Existing PDFs are never overwritten unless --force is passed.');
 }
 
 function fail(message) {

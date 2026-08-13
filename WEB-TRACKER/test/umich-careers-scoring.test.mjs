@@ -36,9 +36,9 @@ test('space and aerospace get the proximity bonus and outrank generic strong dom
     title: 'Mechanical Engineer',
     description: 'General facilities mechanical engineering support.',
   });
-  assert.equal(space.segment, 'apply_now');
+  assert.ok(['apply_now', 'high_relevance'].includes(space.segment));
   assert.ok(space.score > generic.score, `space ${space.score} should outrank generic ${generic.score}`);
-  assert.ok(space.score_breakdown.space_aero_matches.length > 0);
+  assert.ok(space.score_breakdown.protected_domain_matches.includes('spacecraft'));
 });
 
 test('requested strong domains (MEMS, electrical) stay visible via the domain floor', () => {
@@ -46,30 +46,28 @@ test('requested strong domains (MEMS, electrical) stay visible via the domain fl
     title: 'MEMS Research Engineer',
     description: 'Microfabrication of MEMS sensors, cleanroom semiconductor processing.',
   });
-  assert.ok(['apply_now', 'high_relevance'].includes(mems.segment), `got ${mems.segment}`);
+  assert.equal(mems.segment, 'adjacent');
   assert.equal(mems.visible, true);
-  assert.equal(mems.direct_domain, true);
+  assert.equal(mems.direct_domain, false);
 
   const electrical = score({
     title: 'Senior Electrical Engineer',
     description: 'Substation, secondary power, lighting and fire alarm electrical systems for campus buildings.',
   });
-  assert.ok(['apply_now', 'high_relevance'].includes(electrical.segment));
-  assert.equal(electrical.visible, true);
+  assert.equal(electrical.segment, 'other');
+  assert.equal(electrical.visible, false);
 });
 
-test('engineering commercialization fellowship is prioritized as a technical bridge role', () => {
+test('commercialization fellowship stays separate from technical personal fit', () => {
   const result = score({
     title: 'Innovation Partnerships Fellow',
     job_title: 'Lic/Patent Assoc Tech Transfer',
     department: 'UMOR Innovation Partnerships',
     description: 'Research the commercial and patent potential of engineering and physical sciences inventions, identify licensees, market early-stage technologies, and coordinate PhD students.',
   });
-  assert.equal(result.segment, 'apply_now');
-  assert.equal(result.direct_domain, true);
-  assert.equal(result.visible, true);
-  assert.equal(result.score_breakdown.technical_bridge_applied, true);
-  assert.deepEqual(result.score_breakdown.negative_matches, []);
+  assert.equal(result.segment, 'other');
+  assert.equal(result.direct_domain, false);
+  assert.equal(result.visible, false);
 });
 
 test('project management is prioritized only when coupled to a requested technical domain', () => {
@@ -87,19 +85,19 @@ test('project management is prioritized only when coupled to a requested technic
   assert.equal(generic.segment, 'other');
 });
 
-test('faculty and postdoc in core domains are high_relevance, never apply_now', () => {
+test('faculty and postdoc titles are wrong-role skips, not attractive averages', () => {
   const faculty = score({
     title: 'Assistant Professor of Aerospace Engineering',
     description: 'Tenure-track faculty position in aerospace engineering, spacecraft propulsion research.',
   });
-  assert.equal(faculty.segment, 'high_relevance');
-  assert.ok(faculty.risk_flags.includes('role_needs_review'));
+  assert.equal(faculty.segment, 'other');
+  assert.ok(faculty.risk_flags.includes('role_not_targeted'));
 
   const postdoc = score({
     title: 'Postdoctoral Fellow - Plasma Physics',
     description: 'Research in plasma physics and fusion diagnostics.',
   });
-  assert.equal(postdoc.segment, 'high_relevance');
+  assert.equal(postdoc.segment, 'other');
   assert.notEqual(postdoc.segment, 'apply_now');
 });
 
@@ -136,7 +134,8 @@ test('real climate science posting is a direct domain match', () => {
     description: 'Atmospheric science research on climate models and space weather interactions with satellite observations.',
   });
   assert.equal(result.direct_domain, true);
-  assert.ok(['apply_now', 'high_relevance'].includes(result.segment));
+  assert.equal(result.segment, 'adjacent');
+  assert.equal(result.visible, true);
 });
 
 test('MS is interpreted as materials science, not a bare text match', () => {
@@ -144,7 +143,8 @@ test('MS is interpreted as materials science, not a bare text match', () => {
     title: 'Materials Science Research Technician',
     description: 'Materials science characterization of alloys.',
   });
-  assert.equal(materials.direct_domain, true);
+  assert.equal(materials.direct_domain, false);
+  assert.equal(materials.segment, 'adjacent');
 
   const msWord = score({
     title: 'Administrative Assistant',

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-21T17:07:44.560Z",
+  "updated_at": "2026-08-13T02:33:08.829Z",
   "jobs": {
     "ornl-mechanical-design-and-test-engineer-temporary-1403782600": {
       "updated_at": "2026-07-05T15:45:05.151Z",
@@ -473,11 +473,11 @@
       }
     },
     "fondazione-bruno-kessler-phd-candidate-development-of-3d-integrated-trench-isolated-lgads-for-de": {
-      "updated_at": "2026-07-13T04:47:16.916Z",
-      "status": "to_consider",
-      "applied": false,
-      "applied_at": "",
-      "application_num": null,
+      "updated_at": "2026-07-27T01:48:39.895Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-07-27T01:48:39.799Z",
+      "application_num": 65,
       "notes": "",
       "resources": {
         "report_md": "reports/euraxess-fbk-phd-ti-lgad-soft-xray-space-2026-07-13.md",
@@ -503,15 +503,6 @@
         "cover_letter_pdf": "output/ku-leuven/cover-letter-harsh-desai-ku-leuven-msca-dc2-ejm-cobot-micromachining-2026-07-13.pdf",
         "email_draft": "output/ku-leuven/application-email-ku-leuven-msca-dc2-ejm-cobot-micromachining-2026-07-13.md"
       }
-    },
-    "rohde-and-schwarz-fpga-and-dsp-engineer-singapore-13644": {
-      "updated_at": "2026-07-20T17:42:57.552Z",
-      "status": "applied",
-      "applied": true,
-      "applied_at": "2026-07-20T17:42:56.956Z",
-      "application_num": 66,
-      "notes": "Rohde & Schwarz global jobboard (~560–600 openings). Prefer space/RF/FPGA/measurement; verify location + sponsorship.",
-      "resources": {}
     },
     "rohde-and-schwarz-application-engineer-denver-denver-co-us-app-denver": {
       "updated_at": "2026-07-20T17:43:16.412Z",
@@ -539,6 +530,506 @@
       "application_num": 67,
       "notes": "Rohde & Schwarz global jobboard (~560–600 openings). Prefer space/RF/FPGA/measurement; verify location + sponsorship.",
       "resources": {}
+    },
+    "odysseus-space-systems-engineer-luxembourg-systems": {
+      "updated_at": "2026-07-26T07:23:18.508Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-07-26T07:23:18.407Z",
+      "application_num": 74,
+      "notes": "Odysseus Space (Luxembourg) laser optical comms. EU work authorization.",
+      "resources": {}
+    },
+    "novo-space-mechanical-aerospace-aeronautical-engineer-buenos-aires-ar-hybrid-42": {
+      "updated_at": "2026-07-26T07:37:10.315Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-07-26T07:37:10.222Z",
+      "application_num": 75,
+      "notes": "Novo Space BambooHR. Argentina-based rad-tolerant computers. Confirm relocation/visa.",
+      "resources": {}
+    },
+    "reflex-aerospace-systems-integration-engineer-ottobrunn-ottobrunn-de-2649451": {
+      "updated_at": "2026-07-26T23:49:39.204Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-07-26T23:49:39.126Z",
+      "application_num": 76,
+      "notes": "Reflex Aerospace Personio (Germany). EU work permit required.",
+      "resources": {}
+    },
+    "mckinsey-product-engineer-cost-engineering-wroclaw": {
+      "updated_at": "2026-07-27T01:25:50.875Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-07-27T01:25:50.786Z",
+      "application_num": 77,
+      "notes": "KEEP from 2026-07-26 McKinsey scan. Report: reports/mckinsey-product-engineer-cost-engineering-2026-07-26.md",
+      "resources": {
+        "report_md": "reports/mckinsey-product-engineer-cost-engineering-2026-07-26.md"
+      }
+    },
+    "pale-blue-manufacturing-engineer-japan-pale-blue-mfg": {
+      "updated_at": "2026-07-27T01:43:29.671Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-07-27T01:43:29.578Z",
+      "application_num": 78,
+      "notes": "Pale Blue Talentio board (Japan). Water propulsion. Confirm Japan work authorization / language requirements.",
+      "resources": {}
+    },
+    "reflex-aerospace-satellite-systems-engineer-system-architect-berlin-de-1308990": {
+      "updated_at": "2026-07-27T17:23:53.798Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Reflex Aerospace Personio (Germany). EU work permit required.",
+      "resources": {},
+      "networking_org_id": "network-org-reflex-aerospace",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "pixxel-spacecraft-controller": {
+      "updated_at": "2026-07-28T13:58:29.637Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-07-27T16:40:00.000Z",
+      "application_num": 79,
+      "notes": "Applied via Darwinbox 2026-07-27. Confirmation from noreply@darwinbox.in. Reference ID: pixxel-P-S-10.",
+      "resources": {},
+      "networking_org_id": "network-org-pixxel",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "pixxel-calibration-engineer": {
+      "updated_at": "2026-07-28T13:58:29.247Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-07-27T16:40:00.000Z",
+      "application_num": 80,
+      "notes": "Applied via Darwinbox 2026-07-27. Confirmation from noreply@darwinbox.in. Reference ID: pixxel-P-S-10.",
+      "resources": {},
+      "networking_org_id": "network-org-pixxel",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "terafab-open-roles-inquiry": {
+      "updated_at": "2026-07-28T14:45:38.196Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-07-28T14:45:38.066Z",
+      "application_num": 81,
+      "notes": "Emailed Terafab for open opportunities on 2026-07-28. Resume tailored for plasma/systems fit. Careers: https://terafab.ai/careers",
+      "resources": {
+        "resume_pdf": "output/terafab/cv-harsh-desai-terafab-open-roles-inquiry-2026-07-28.pdf",
+        "resume_tex": "output/terafab/cv-harsh-desai-terafab-open-roles-inquiry-2026-07-28.tex"
+      },
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "asm-engineer-field-process-hillsboro": {
+      "updated_at": "2026-08-13T02:32:35.639Z",
+      "status": "closed",
+      "applied": true,
+      "applied_at": "2026-07-28T14:45:39.260Z",
+      "application_num": 82,
+      "notes": "Applied 2026-07-28 via ASM careers / Greenhouse (gh_jid=4931155101). Rejected Aug 10, 2026. Status changed in the Aug 10–12 window. Gmail: https://mail.google.com/mail/#all/19fea28d7574c963",
+      "resources": {},
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "european-synchrotron-radiation-facility-senior-fpga-engineer": {
+      "updated_at": "2026-07-30T16:16:38.244Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Queued from EURAXESS Factory (4.7/5). Verify deadline/application status before applying. Strong match: instrumentation, radiation, fpga, beamline, accelerator. Adjacent match: electronics, experimental, beamline. Role fit: engineer. Protected domain floor: radiation, beamline, synchrotron, accelerator, instrumentation — kept visible (deadline not confirmed passed).",
+      "resources": {
+        "manifest_path": "WEB-TRACKER/runtime/euraxess-factory/2026-07-30-european-synchrotron-radiation-facility-senior-fpga-engineer-manifest.json",
+        "report_md": "reports/euraxess-european-synchrotron-radiation-facility-senior-fpga-engineer-2026-07-30.md",
+        "research_report": "reports/euraxess-european-synchrotron-radiation-facility-senior-fpga-engineer-2026-07-30.md"
+      },
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "university-of-sheffield-silicon-sensor-particle-detectors-for-the-upgrade-of-the-atlas-experimen": {
+      "updated_at": "2026-07-30T16:08:38.744Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Queued from PhDScanner Factory (4.4/5). Verify deadline/application status before applying. Strong match: detector, detectors, particle, cern. Adjacent match: sensor, physics. Role fit: phd. Protected domain floor: detectors, particle, particle physics, cern, physics — kept visible (deadline not confirmed passed).",
+      "resources": {
+        "report_md": "reports/phdscanner-university-of-sheffield-silicon-sensor-particle-detectors-for-the-upgrade-of-the-2026-07-30.md",
+        "research_report": "reports/phdscanner-university-of-sheffield-silicon-sensor-particle-detectors-for-the-upgrade-of-the-2026-07-30.md",
+        "manifest_path": "WEB-TRACKER/runtime/phdscanner-factory/2026-07-30-university-of-sheffield-silicon-sensor-particle-detectors-for-the-upgrade-of-the-manifest.json"
+      },
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "boundary-job": {
+      "updated_at": "2026-08-08T22:21:02.503Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "",
+      "resources": {},
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "university-of-liverpool-saturn-cdt-a-fast-neutron-detector-system-for-fissile-hold-up-assay-and-": {
+      "updated_at": "2026-08-09T02:08:36.749Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Queued from PhDScanner Factory (4.2/5). Verify deadline/application status before applying. Strong match. 4.2/5 apply; eligibility unknown; confidence low.",
+      "resources": {
+        "report_md": "reports/phdscanner-university-of-liverpool-saturn-cdt-a-fast-neutron-detector-system-for-fissile-ho-2026-08-09.md",
+        "research_report": "reports/phdscanner-university-of-liverpool-saturn-cdt-a-fast-neutron-detector-system-for-fissile-ho-2026-08-09.md",
+        "manifest_path": "WEB-TRACKER/runtime/phdscanner-factory/2026-08-09-university-of-liverpool-saturn-cdt-a-fast-neutron-detector-system-for-fissile-ho-manifest.json"
+      },
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "fondazione-bruno-kessler-phd-candidate-design-fabrication-and-characterization-of-plasmonic-ante": {
+      "updated_at": "2026-08-09T21:23:59.596Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-08-09T21:23:57.938Z",
+      "application_num": 83,
+      "notes": "Queued from EURAXESS Factory (4.3/5). Verify deadline/application status before applying. Strong match. 4.3/5 apply; eligibility unknown; confidence low.",
+      "resources": {
+        "report_md": "reports/euraxess-fondazione-bruno-kessler-phd-candidate-design-fabrication-and-characterization-o-2026-08-09.md",
+        "research_report": "reports/euraxess-fondazione-bruno-kessler-phd-candidate-design-fabrication-and-characterization-o-2026-08-09.md",
+        "manifest_path": "WEB-TRACKER/runtime/euraxess-factory/2026-08-09-fondazione-bruno-kessler-phd-candidate-design-fabrication-and-characterization-o-manifest.json"
+      },
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "kla-sr-precision-machine-design-engineer-2638749": {
+      "updated_at": "2026-08-11T22:17:39.944Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Enrichment (Parallel): | Seniority: Senior | Team: Central Engineering; Precision Motion Control | Location: Ann Arbor, Michigan, USA | Export/US-person: No export-control/US-person requirement stated | OPT/H1B: Sponsorship not mentioned. | Fit lane: Precision-mechanical/optical instrumentation | Skills: precision mechanical systems; precision motion platforms; mechanical tolerancing; mechanism design; FEA and vibration analysis; precision positioning systems; flexure mechanism design",
+      "resources": {},
+      "networking_org_id": "network-org-kla",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "kla-electrical-engineer-pcba-design-2638307": {
+      "updated_at": "2026-08-11T22:17:40.568Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Enrichment (Parallel): | Seniority: Mid-level | Team: PCBA Design; product equipment and test centers | Location: Ann Arbor, Michigan, USA | Export/US-person: No export-control/US-person requirement stated | OPT/H1B: Sponsorship not mentioned | Fit lane: Mixed/Hybrid hardware-software | Skills: PCBA design; analog front-end prototyping; schematic generation; PCB layout; PCBA debugging; oscilloscopes and spectrum analyzers; FPGA design",
+      "resources": {},
+      "networking_org_id": "network-org-kla",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "kla-engineering-technician-2638373": {
+      "updated_at": "2026-08-11T22:17:41.221Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Enrichment (Parallel): | Seniority: Mid-level | Team: Electronics Rack & PDU Engineering Center; HPC infrastructure | Location: Ann Arbor, Michigan, USA | Export/US-person: No export-control/US-person requirement stated | OPT/H1B: Sponsorship not mentioned | Fit lane: Mixed/Hybrid hardware-software | Skills: electromechanical assembly; subsystem integration; power-distribution systems; controls and cabling; hardware testing and validation; engineering drawings and schematics; equipment calibration",
+      "resources": {},
+      "networking_org_id": "network-org-kla",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "cnrs-latmos-cdd-doctorant-h-f-en-conception-lidar-vent-pour-le-spatial-madwil": {
+      "updated_at": "2026-08-13T02:32:27.959Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-08-12T20:30:00.000Z",
+      "application_num": 84,
+      "notes": "Confirmed applied 2026-08-12. Explicit CNRS application receipt; under review. Ref UMR8190-FRAMON-012. Start listed as Oct 1, 2026. Gmail: https://mail.google.com/mail/#all/19ff7f72f8255b65",
+      "resources": {},
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "kla-opto-mechanical-design-engineer": {
+      "updated_at": "2026-08-13T02:33:08.829Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-08-11T18:20:00.000Z",
+      "application_num": 85,
+      "notes": "Confirmed applied 2026-08-11. Req 2533228. Application received; resumes under review; interviews expected. Mitchell Faust replied to networking outreach. Gmail: https://mail.google.com/mail/#all/19ff349855fc9d10",
+      "resources": {},
+      "networking_org_id": "network-org-kla",
+      "networking_person_ids": [
+        "network-person-mitchell-faust-kla"
+      ],
+      "networking_research_order_id": ""
+    },
+    "university-of-wisconsin-madison-instrumentation-engineer-mechanical-engineer": {
+      "updated_at": "2026-08-13T02:32:29.674Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-08-11T17:40:00.000Z",
+      "application_num": 86,
+      "notes": "Confirmed applied 2026-08-11. JR10013359. Application received; review after close date. Later generic “complete your application” reminders may be a separate started application — see Needs Verification. Gmail: https://mail.google.com/mail/#all/19ff2ecd0ebbe457",
+      "resources": {},
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "thermaltech-engineering-handshake-application-exact-title-tbd": {
+      "updated_at": "2026-08-13T02:32:31.002Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-08-11T17:50:00.000Z",
+      "application_num": 87,
+      "notes": "Confirmed applied via Handshake 2026-08-11. Confirmation does not expose exact posting title — open Handshake “View application” to capture it. Gmail: https://mail.google.com/mail/#all/19ff2f24b3e8bace",
+      "resources": {},
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "temple-allen-industries-entry-level-machine-learning-engineer": {
+      "updated_at": "2026-08-13T02:32:32.345Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-08-11T15:10:00.000Z",
+      "application_num": 88,
+      "notes": "Confirmed applied via Handshake 2026-08-11. Title mapped from Handshake job/event evidence. Gmail: https://mail.google.com/mail/#all/19ff189d94670a41",
+      "resources": {},
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "arculus-solutions-inc-mechatronics-engineer": {
+      "updated_at": "2026-08-13T02:32:33.645Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-08-11T15:08:00.000Z",
+      "application_num": 89,
+      "notes": "Confirmed applied via Handshake 2026-08-11. Title mapped from same-day Handshake evidence. Gmail: https://mail.google.com/mail/#all/19ff189b6e0ac29a",
+      "resources": {},
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "indepth-engineering-solutions-llc-air-intake-systems-engineer": {
+      "updated_at": "2026-08-13T02:32:34.970Z",
+      "status": "applied",
+      "applied": true,
+      "applied_at": "2026-08-11T15:06:00.000Z",
+      "application_num": 90,
+      "notes": "Confirmed applied via Handshake 2026-08-11. Title mapped from same-day Handshake evidence. Gmail: https://mail.google.com/mail/#all/19ff1898c8d3d28d",
+      "resources": {},
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "iist-project-associate-i": {
+      "updated_at": "2026-08-13T02:32:37.712Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "NOT confirmed submitted. 2026-08-10 registration/application credentials issued; email does not prove final submission. Verify portal status. Gmail: https://mail.google.com/mail/#all/19fedc2a7e57117b",
+      "resources": {},
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "unknown-handshake-mechanical-engineer-full-time-entry-level": {
+      "updated_at": "2026-08-13T02:32:39.445Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Needs verification. Handshake calendar-sync event titled “Application for …” on 2026-08-11. No employer or application receipt found. Confirm employer + whether submission completed. Gmail: https://mail.google.com/mail/#all/19ff33862f769ba5",
+      "resources": {},
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "unknown-handshake-process-integration-engineer": {
+      "updated_at": "2026-08-13T02:32:41.196Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Needs verification. Handshake calendar-sync event titled “Application for …” on 2026-08-11. No employer or application receipt found. Confirm employer + whether submission completed. Gmail: https://mail.google.com/mail/#all/19ff338588024a7f",
+      "resources": {},
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "unknown-handshake-triage-engineer-entry-level-propulsion-diagnostics-engineer": {
+      "updated_at": "2026-08-13T02:32:42.907Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Needs verification. Handshake calendar-sync event titled “Application for …” on 2026-08-11. No employer or application receipt found. Confirm employer + whether submission completed. Gmail: https://mail.google.com/mail/#all/19ff33864c60feee",
+      "resources": {},
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "ge-vernova-component-and-development-test-engineer-r5047028": {
+      "updated_at": "2026-08-13T02:32:45.733Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Needs verification. Role sent to Kishan Srinivasan on 2026-08-11 for referral/help. No formal application confirmation found. Confirm whether it was actually submitted. Gmail: https://mail.google.com/mail/#all/19ff3230365e6e6d",
+      "resources": {},
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "ge-vernova-fluid-systems-engineer-aeroderivative-r5049438": {
+      "updated_at": "2026-08-13T02:32:47.507Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Needs verification. Role sent to Kishan Srinivasan on 2026-08-11 for referral/help. No formal application confirmation found. Confirm whether it was actually submitted. Gmail: https://mail.google.com/mail/#all/19ff3230365e6e6d",
+      "resources": {},
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "ge-vernova-mechanical-engineer-r5049035": {
+      "updated_at": "2026-08-13T02:32:49.250Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Needs verification. Role sent to Kishan Srinivasan on 2026-08-11 for referral/help. No formal application confirmation found. Confirm whether it was actually submitted. Gmail: https://mail.google.com/mail/#all/19ff3230365e6e6d",
+      "resources": {},
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "ge-vernova-advanced-manufacturing-and-technology-engineer-r5048460": {
+      "updated_at": "2026-08-13T02:32:51.020Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Needs verification. Role sent to Kishan Srinivasan on 2026-08-11 for referral/help. No formal application confirmation found. Confirm whether it was actually submitted. Gmail: https://mail.google.com/mail/#all/19ff3230365e6e6d",
+      "resources": {},
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "university-of-wisconsin-madison-possible-second-incomplete-application-reminder-emails": {
+      "updated_at": "2026-08-13T02:32:52.806Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Needs verification. Two “Don’t forget to complete your application” reminders on 2026-08-12 after the confirmed Instrumentation Engineer application (JR10013359). Could be a separate started application or a generic reminder. Check UW candidate portal. Gmail: https://mail.google.com/mail/#all/19ff8157e6dec6b4",
+      "resources": {},
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "university-of-bern-phd-position-in-planetary-science-prof-marschall": {
+      "updated_at": "2026-08-13T02:32:54.710Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Considering — current posting recommended by Martin Rubin on 2026-08-12 after Bern mass-spec funding discussion. Read posting and decide/apply quickly if fit.",
+      "resources": {},
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "university-of-canterbury-dawn-aerospace-ads-2-13-microgravity-thermofluids-analysis-and-propella": {
+      "updated_at": "2026-08-13T02:32:56.046Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Considering — high priority. Ranked #1 in ADS shortlist (2026-08-12 chat). Verify advisor/funding/eligibility and apply if satisfied.",
+      "resources": {},
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "ads-auckland-linked-project-ads-2-11-manta-transforming-deorbit-sails-into-space-debris-sensors": {
+      "updated_at": "2026-08-13T02:32:57.162Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Considering — high priority. Ranked #2 in ADS shortlist (2026-08-12 chat). Verify exact university/lab/advisor before applying.",
+      "resources": {},
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "ads-ads-2-20-reef-rotating-experimental-environment-facility": {
+      "updated_at": "2026-08-13T02:32:58.281Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Considering — investigate. Shortlisted below top ADS priorities (2026-08-12 chat). Investigate advisor/facility/funding before applying.",
+      "resources": {},
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "ads-ads-2-18-phase-contrast-optical-metrology-for-ultra-smooth-space-defence-optics": {
+      "updated_at": "2026-08-13T02:32:59.427Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Considering — stretch. Interesting optics stretch; lower fit than top ADS choices (2026-08-12 chat). Investigate before committing application time.",
+      "resources": {},
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "tum-clupi-exodocs-dc1-clupi-scientific-return-optimization": {
+      "updated_at": "2026-08-13T02:33:00.575Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Considering — formal deadline had already passed when contacted 2026-08-11. Asked D. Koschny whether recruitment is complete or related routes exist. Await reply. Gmail: https://mail.google.com/mail/#all/19fef796d49b9993",
+      "resources": {},
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "space-x-clupi-clupi-exodocs-doctoral-project-at-space-x": {
+      "updated_at": "2026-08-13T02:33:01.711Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Considering — recruitment uncertain. Asked Jean-Luc Josset on 2026-08-11 whether SPACE-X doctoral recruitment remains possible. Await reply. Gmail: https://mail.google.com/mail/#all/19fef796cc642e3f",
+      "resources": {},
+      "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
     }
   }
 }
