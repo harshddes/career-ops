@@ -1,12 +1,18 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'fs';
+import { mkdtempSync, readFileSync, rmSync, statSync, writeFileSync } from 'fs';
+import { tmpdir } from 'os';
+import { join } from 'path';
 import {
   getCachedTodayActivity,
   getTodayActivity,
   invalidateTodayActivityCache,
 } from '../lib/today-activity.mjs';
-import { isUserStateOnlyPatch } from '../lib/research-prospect-store.mjs';
+import {
+  invalidateResearchProspectReadCache,
+  isUserStateOnlyPatch,
+  patchResearchProspect,
+} from '../lib/research-prospect-store.mjs';
 
 const TZ = 'America/New_York';
 const DATE = '2026-08-12';
@@ -144,11 +150,44 @@ test('user-state-only patches are detected without treating evidence as user sta
   assert.equal(isUserStateOnlyPatch({}), false);
 });
 
-test('status-only persistent patches skip the canonical rewrite', () => {
-  const source = readFileSync(new URL('../lib/research-prospect-store.mjs', import.meta.url), 'utf-8');
-  assert.match(source, /if \(isUserStateOnlyPatch\(updates\)\)/);
-  assert.match(source, /wrote_canonical: false/);
-  assert.match(source, /rememberResearchProspects\(filePath, store\)/);
+test('user-state-only patch does not rewrite a large canonical prospects fixture', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'prospects-skip-write-'));
+  const canonical = join(dir, 'umich-research-prospects.json');
+  const userState = join(dir, 'user-state.json');
+  const padding = 'x'.repeat(2500);
+  const prospects = Array.from({ length: 60 }, (_, i) => ({
+    id: `p-${i}`,
+    name: i === 0 ? 'Fixture Person' : `Person ${i}`,
+    title: 'Professor',
+    department: 'Nuclear Engineering and Radiological Sciences',
+    status: 'not_contacted',
+    score: 3.1,
+    fit_rationale: padding,
+    evidence: [{ type: 'source', label: 'test', url: 'https://example.test/p', date: '2026-08-01' }],
+  }));
+  const fixture = {
+    version: 1,
+    generated_at: '2026-08-01T00:00:00.000Z',
+    scope: 'test fixture',
+    prospects,
+  };
+  writeFileSync(canonical, `${JSON.stringify(fixture, null, 2)}\n`);
+  const before = readFileSync(canonical, 'utf-8');
+  const beforeStat = statSync(canonical);
+  invalidateResearchProspectReadCache(canonical);
+
+  const result = patchResearchProspect('p-0', {
+    status: 'followed_up',
+    last_followed_up: DATE,
+  }, { canonicalFile: canonical, userStateFile: userState });
+
+  assert.equal(result.wrote_canonical, false);
+  assert.equal(result.prospect.status, 'followed_up');
+  assert.equal(statSync(canonical).mtimeMs, beforeStat.mtimeMs);
+  assert.equal(readFileSync(canonical, 'utf-8'), before);
+  const overlay = JSON.parse(readFileSync(userState, 'utf-8'));
+  assert.equal(overlay.sources.umich['p-0'].status, 'followed_up');
+  rmSync(dir, { recursive: true, force: true });
 });
 
 test('kanban mutations paint daily stats from the same response', () => {
@@ -163,6 +202,8 @@ test('kanban mutations paint daily stats from the same response', () => {
   assert.match(html, /syncPhdRadarTimer/);
   assert.match(html, /queueVisibleDashboardRefresh\(\)/);
   assert.doesNotMatch(html, /queueRenderAllPanels\(\);/);
+  assert.match(html, /skipCache: true/);
+  assert.doesNotMatch(html, /lastTodaySummary = null;\s*syncTodayStatsNav/);
 });
 
 test('today-activity GET does not write CSV and uses the in-memory cache', () => {
@@ -174,4 +215,11 @@ test('today-activity GET does not write CSV and uses the in-memory cache', () =>
   assert.ok(todayGet);
   assert.match(todayGet[0], /getCachedTodayActivity/);
   assert.doesNotMatch(todayGet[0], /writeDailyActivityCsv/);
+
+  const fast = readFileSync(new URL('../server-fast.mjs', import.meta.url), 'utf-8');
+  const fastGet = fast.match(/if \(pathname === '\/api\/today-activity'\) \{[\s\S]*?return true;\s*\}/);
+  assert.ok(fastGet);
+  assert.match(fastGet[0], /getCachedTodayActivity/);
+  assert.doesNotMatch(fastGet[0], /today-activity\.json/);
+  assert.doesNotMatch(fastGet[0], /writeDailyActivityCsv/);
 });

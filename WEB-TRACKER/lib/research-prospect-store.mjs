@@ -85,10 +85,18 @@ function cacheKeyForProspects(filePath) {
   return String(filePath || '');
 }
 
-function rememberResearchProspects(filePath, store) {
+function overlayUserStateFile(filePath, filePathOrOptions) {
+  if (typeof filePathOrOptions === 'object' && filePathOrOptions?.userStateFile) {
+    return filePathOrOptions.userStateFile;
+  }
+  return usesPersistentUserState(filePath) ? RESEARCH_USER_STATE_FILE : '';
+}
+
+function rememberResearchProspects(filePath, store, overlayFile = '') {
   researchProspectReadCache.set(cacheKeyForProspects(filePath), {
     mtime: fileMtimeMs(filePath),
-    userMtime: usesPersistentUserState(filePath) ? fileMtimeMs(RESEARCH_USER_STATE_FILE) : 0,
+    userMtime: overlayFile ? fileMtimeMs(overlayFile) : 0,
+    overlayFile,
     store,
   });
 }
@@ -524,19 +532,20 @@ function usesPersistentUserState(filePath = '') {
 export function readResearchProspects(filePathOrOptions = CANONICAL_RESEARCH_PROSPECTS_FILE) {
   const filePath = filePathFromOptions(filePathOrOptions);
   const sourceId = resolveSourceId(filePathOrOptions, filePath);
+  const overlayFile = overlayUserStateFile(filePath, filePathOrOptions);
   const empty = emptyStore(defaultScope(filePathOrOptions));
   const applyState = (store) => (
-    usesPersistentUserState(filePath) ? applyUserStateToStore(store, sourceId) : store
+    overlayFile ? applyUserStateToStore(store, sourceId, overlayFile) : store
   );
   const mtime = fileMtimeMs(filePath);
-  const userMtime = usesPersistentUserState(filePath) ? fileMtimeMs(RESEARCH_USER_STATE_FILE) : 0;
+  const userMtime = overlayFile ? fileMtimeMs(overlayFile) : 0;
   const cached = researchProspectReadCache.get(cacheKeyForProspects(filePath));
-  if (cached && cached.mtime === mtime && cached.userMtime === userMtime) {
+  if (cached && cached.mtime === mtime && cached.userMtime === userMtime && cached.overlayFile === overlayFile) {
     return cached.store;
   }
   if (!existsSync(filePath)) {
     const applied = applyState(empty);
-    rememberResearchProspects(filePath, applied);
+    rememberResearchProspects(filePath, applied, overlayFile);
     return applied;
   }
   const parsed = JSON.parse(readFileSync(filePath, 'utf-8'));
@@ -549,7 +558,7 @@ export function readResearchProspects(filePathOrOptions = CANONICAL_RESEARCH_PRO
     version: 1,
     prospects,
   });
-  rememberResearchProspects(filePath, applied);
+  rememberResearchProspects(filePath, applied, overlayFile);
   return applied;
 }
 
@@ -571,7 +580,8 @@ export function writeResearchProspects(
       }
     }
   }
-  const persistUserState = usesPersistentUserState(filePath);
+  const overlayFile = overlayUserStateFile(filePath, filePathOrOptions);
+  const persistUserState = Boolean(overlayFile);
   const prospects = Array.isArray(store?.prospects)
     ? store.prospects.map(prospect => {
       const existing = prospectIdentityKeys(prospect)
@@ -593,7 +603,7 @@ export function writeResearchProspects(
           }
           : prospect;
       }
-      if (!existing) return applyUserStateToProspect(prospect, sourceId);
+      if (!existing) return applyUserStateToProspect(prospect, sourceId, overlayFile);
       const preserved = { status: existing.status };
       for (const field of USER_STATE_FIELDS) {
         if (field === 'status') continue;
@@ -609,7 +619,7 @@ export function writeResearchProspects(
         defense_sheet: Array.isArray(prospect.defense_sheet)
           ? defenseSheetWithUserResponses(prospect.defense_sheet, existing.defense_sheet)
           : prospect.defense_sheet,
-      }, sourceId);
+      }, sourceId, overlayFile);
     })
     : [];
   const next = {
@@ -620,7 +630,7 @@ export function writeResearchProspects(
     prospects: prospects.map(prospect => normalizeResearchProspect(prospect)),
   };
   atomicWrite(filePath, `${JSON.stringify(next, null, 2)}\n`);
-  rememberResearchProspects(filePath, next);
+  rememberResearchProspects(filePath, next, overlayFile);
   return next;
 }
 
@@ -744,7 +754,8 @@ export function patchResearchProspect(id, updates = {}, filePathOrOptions = CANO
   const filePath = filePathFromOptions(filePathOrOptions);
   const sourceId = resolveSourceId(filePathOrOptions, filePath);
   const prospect = store.prospects[index];
-  if (usesPersistentUserState(filePath)) {
+  const overlayFile = overlayUserStateFile(filePath, filePathOrOptions);
+  if (overlayFile) {
     patchResearchUserState(sourceId, prospect.id, {
       status: prospect.status,
       last_contacted: prospect.last_contacted,
@@ -752,9 +763,9 @@ export function patchResearchProspect(id, updates = {}, filePathOrOptions = CANO
       follow_up_date: prospect.follow_up_date,
       notes: prospect.notes,
       outreach: prospect.outreach,
-    });
+    }, overlayFile);
     if (isUserStateOnlyPatch(updates)) {
-      rememberResearchProspects(filePath, store);
+      rememberResearchProspects(filePath, store, overlayFile);
       return { store, prospect, wrote_canonical: false };
     }
   }

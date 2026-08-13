@@ -4354,12 +4354,14 @@ async function fetchJSON(file) {
 async function apiJSON(path, options = {}) {
   const method = (options.method || 'GET').toUpperCase();
   const timeoutMs = Number(options.timeoutMs) || API_TIMEOUT_MS;
+  const skipCache = Boolean(options.skipCache);
   const requestOptions = {
     headers: { 'Content-Type': 'application/json', ...(options.headers || {}) },
     cache: 'no-store',
     ...options,
   };
   delete requestOptions.timeoutMs;
+  delete requestOptions.skipCache;
   if (STATIC_PUBLISH) {
     if (method !== 'GET') throw new Error('Read-only public snapshot');
     const res = await fetchWithTimeout(staticApiPath(path), { cache: 'no-store' }, timeoutMs);
@@ -4372,7 +4374,7 @@ async function apiJSON(path, options = {}) {
   const url = `${API_BASE}${path}`;
   const key = `${method}:${path}`;
   if (method !== 'GET') apiGetCache.clear();
-  const cached = method === 'GET' ? apiGetCache.get(key) : null;
+  const cached = method === 'GET' && !skipCache ? apiGetCache.get(key) : null;
   if (cached && Date.now() - cached.timestamp < API_GET_CACHE_MS) return cached.value;
   if (method === 'GET' && apiInflightGet.has(key)) return apiInflightGet.get(key);
   const request = (async () => {
@@ -4382,7 +4384,7 @@ async function apiJSON(path, options = {}) {
       throw new Error(err.error || res.statusText);
     }
     const value = await res.json();
-    if (method === 'GET') apiGetCache.set(key, { timestamp: Date.now(), value });
+    if (method === 'GET' && !skipCache) apiGetCache.set(key, { timestamp: Date.now(), value });
     return value;
   })();
   if (method !== 'GET') return request;
@@ -4532,7 +4534,6 @@ function setTodayStatsDate(value) {
     return;
   }
   selectedTodayStatsDate = next;
-  lastTodaySummary = null;
   syncTodayStatsNav(next);
   renderTodayActivityTracker();
 }
@@ -4592,17 +4593,18 @@ async function renderTodayActivityTracker() {
     const date = selectedActivityDate();
     const data = await apiJSON(
       `/api/today-activity?date=${encodeURIComponent(date)}&timezone=${encodeURIComponent(DASHBOARD_TIMEZONE)}`,
-      { signal },
+      { signal, skipCache: true },
     );
     if (todayStatsAbort !== controller) return;
     renderTodayActivitySummary(data.summary || {});
   } catch (err) {
-    if (err?.name === 'AbortError' || controller.signal.aborted) return;
+    if (todayStatsAbort !== controller) return;
     if (lastTodaySummary) {
       renderTodayActivitySummary(lastTodaySummary);
       return;
     }
-    statsEl.innerHTML = todayStatsUnavailableMarkup(err.message || 'signal timed out');
+    const timedOut = err?.name === 'AbortError' || controller.signal.aborted;
+    statsEl.innerHTML = todayStatsUnavailableMarkup(timedOut ? 'signal timed out' : (err.message || 'unavailable'));
   }
 }
 
