@@ -62,8 +62,16 @@ import {
 
 export function createApp({ db, env = {}, seedStubCatalog = false }) {
   const app = new Hono();
-  const secure = String(env.APP_BASE_URL || '').startsWith('https://');
   const googleEnabled = Boolean(env.GOOGLE_CLIENT_ID && env.GOOGLE_CLIENT_SECRET);
+
+  function cookieSecure(c) {
+    if (String(env.APP_BASE_URL || '').startsWith('https://')) return true;
+    try {
+      return new URL(c.req.url).protocol === 'https:';
+    } catch {
+      return false;
+    }
+  }
 
   app.use('*', async (c, next) => {
     c.set('db', db);
@@ -303,7 +311,7 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
       return c.json({ error: 'confirm_required' }, 400);
     }
     await deleteUserAndWorkspace(db, { userId: session.user_id, email: session.email });
-    c.header('Set-Cookie', clearCookieHeader({ secure }));
+    c.header('Set-Cookie', clearCookieHeader({ secure: cookieSecure(c) }));
     if (wantsHtml(c)) return c.redirect('/');
     return c.json({ ok: true });
   });
@@ -320,7 +328,7 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
       return c.html(renderLogin({ googleEnabled, notice: { error: true, text: 'That email already has a workspace. Sign in.' } }), 409);
     }
     const user = await createUser(db, { email, name, password });
-    return attachSession(c, db, user.id, secure, '/');
+    return attachSession(c, db, user.id, cookieSecure(c), '/');
   });
 
   app.post('/api/auth/login', async c => {
@@ -330,7 +338,7 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
     if (!ok) {
       return c.html(renderLogin({ googleEnabled, notice: { error: true, text: 'Email or password is wrong.' } }), 401);
     }
-    return attachSession(c, db, user.id, secure, '/');
+    return attachSession(c, db, user.id, cookieSecure(c), '/');
   });
 
   app.post('/api/auth/magic-link', async c => {
@@ -362,7 +370,7 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
     if (!row) return c.html(renderLogin({ googleEnabled, notice: { error: true, text: 'That link is invalid or expired.' } }), 400);
     const existing = await findUserByEmail(db, row.email);
     const user = existing || await createUser(db, { email: row.email, name: '', password: null });
-    return attachSession(c, db, user.id, secure, '/');
+    return attachSession(c, db, user.id, cookieSecure(c), '/');
   });
 
   app.get('/api/auth/google', c => {
@@ -375,7 +383,7 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
     url.searchParams.set('response_type', 'code');
     url.searchParams.set('scope', 'openid email profile');
     url.searchParams.set('state', state);
-    c.header('Set-Cookie', `oauth_state=${state}; Path=/; HttpOnly; SameSite=Lax; Max-Age=600${secure ? '; Secure' : ''}`);
+    c.header('Set-Cookie', `oauth_state=${state}; Path=/; HttpOnly; SameSite=Lax; Max-Age=600${cookieSecure(c) ? '; Secure' : ''}`);
     return c.redirect(url.toString());
   });
 
@@ -411,12 +419,12 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
       return c.html(renderLogin({ googleEnabled, notice: { error: true, text: 'Google did not return an email.' } }), 400);
     }
     const user = await upsertGoogleUser(db, { email: profile.email, name: profile.name || '' });
-    return attachSession(c, db, user.id, secure, '/');
+    return attachSession(c, db, user.id, cookieSecure(c), '/');
   });
 
   app.post('/logout', async c => {
     await destroySession(db, getCookie(c, SESSION_COOKIE));
-    c.header('Set-Cookie', clearCookieHeader({ secure }));
+    c.header('Set-Cookie', clearCookieHeader({ secure: cookieSecure(c) }));
     return c.redirect('/');
   });
 

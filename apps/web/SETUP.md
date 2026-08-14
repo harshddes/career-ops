@@ -72,7 +72,13 @@ Cloudflare’s own CI guide uses those two Cloudflare names. [Set up CI/CD](http
 5. Open the run. Wait until it is green.
 6. In the **Deploy Cloudflare Worker** log, copy the `*.workers.dev` URL Wrangler prints. That is the public site.
 
-If the run is red, do not paste secrets into chat. Paste the **error text with secrets starred out**.
+**This site is already live** (after the 2026-08-14 green deploy):
+
+[https://career-os-web.harshddes.workers.dev](https://career-os-web.harshddes.workers.dev)
+
+The first two red runs were code bugs (schema comments, then a Worker file-path crash). The three GitHub secrets were already correct. Deploy now writes `APP_BASE_URL` from that `workers.dev` address if you did not add that secret yourself.
+
+If a later run is red, do not paste secrets into chat. Paste the **error text with secrets starred out**.
 
 Hourly job scans start when `DATABASE_URL` exists: [public-catalog-scan.yml](../../.github/workflows/public-catalog-scan.yml). You can also run that workflow by hand the same way.
 
@@ -87,8 +93,7 @@ Skip this if password sign-in is enough.
 3. GitHub → same Secrets page → **New repository secret**:
    - Name `RESEND_API_KEY`
    - Value the `re_...` key
-4. After Block 4, also add secret `APP_BASE_URL` = your `https://....workers.dev` URL (no trailing slash).
-5. Re-run **public-web-deploy**.
+4. Re-run **public-web-deploy**. Deploy already sets `APP_BASE_URL` to the `workers.dev` URL. Only add a GitHub secret named `APP_BASE_URL` if you later use a custom domain.
 
 Until you add your own domain in Resend, test mail uses Resend’s onboarding sender (`onboarding@resend.dev` in this app). You can only send to **your own Resend signup email** until a domain is verified — that is Resend’s test-sender rule, not something this repo can bypass.
 
@@ -105,17 +110,16 @@ Google’s steps: [Manage OAuth Clients](https://support.google.com/cloud/answer
 3. Application type: **Web application**.
 4. Authorized redirect URI (must match exactly, HTTPS):
 
-   `https://YOUR-WORKER.workers.dev/api/auth/google/callback`
+   `https://career-os-web.harshddes.workers.dev/api/auth/google/callback`
 
    Redirect URIs must be HTTPS (localhost is the exception). [Authorized redirect URIs](https://support.google.com/cloud/answer/6158849)
 5. Click **CREATE**. Copy **Client ID** and **Client secret**. The secret is shown **once**.
-6. GitHub secrets:
+6. GitHub secrets (deploy already writes `APP_BASE_URL` to the `workers.dev` URL):
 
 | Name | Paste this |
 |------|------------|
 | `GOOGLE_CLIENT_ID` | Client ID |
 | `GOOGLE_CLIENT_SECRET` | Client secret |
-| `APP_BASE_URL` | `https://YOUR-WORKER.workers.dev` |
 
 This app requests only `openid email profile` (see `apps/web/src/app.mjs`). Do **not** enable Gmail scopes.
 

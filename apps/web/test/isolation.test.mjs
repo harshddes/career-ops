@@ -51,6 +51,18 @@ function jsonHeaders(cookie) {
   };
 }
 
+test('https origin marks session cookies Secure without APP_BASE_URL', async () => {
+  const { app } = await setup();
+  const response = await app.request('https://career-os-web.example.workers.dev/api/auth/register', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ email: 'https-cookie@example.com', password: 'password1', name: 'Https' }),
+  });
+  assert.equal(response.status, 302, await response.text());
+  const header = response.headers.get('set-cookie') || '';
+  assert.match(header, /Secure/i);
+});
+
 test('schema split keeps CREATE TABLE users despite file-header comments', () => {
   const statements = splitSql(loadSchemaSql());
   assert.ok(statements.some(stmt => /CREATE TABLE IF NOT EXISTS users\b/i.test(stmt)));
