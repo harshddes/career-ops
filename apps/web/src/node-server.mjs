@@ -15,5 +15,6 @@ const app = createApp({
 });
 
 const port = Number(env.PORT || 8787);
-serve({ fetch: app.fetch, port });
-console.log(`Career OS web listening on http://127.0.0.1:${port}`);
+const hostname = env.HOST || '127.0.0.1';
+serve({ fetch: app.fetch, port, hostname });
+console.log(`Career OS web listening on http://${hostname}:${port}`);
