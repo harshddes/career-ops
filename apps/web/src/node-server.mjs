@@ -1,5 +1,5 @@
 import { serve } from '@hono/node-server';
-import { applySchema, createDb } from './db.mjs';
+import { applySchema, createDb } from './schema-fs.mjs';
 import { createApp } from './app.mjs';
 import { stubEuraxessJobs, stubOrgs, upsertCatalogJobs, upsertCatalogOrgs } from './catalog.mjs';
 

@@ -6,7 +6,7 @@
  */
 
 import { readFileSync } from 'node:fs';
-import { applySchema, createDb } from '../src/db.mjs';
+import { applySchema, createDb } from '../src/schema-fs.mjs';
 import { recordScanRun, stubEuraxessJobs, upsertCatalogJobs } from '../src/catalog.mjs';
 
 const connectionString = process.env.DATABASE_URL;

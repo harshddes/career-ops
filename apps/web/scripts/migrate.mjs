@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /** Apply schema. Safe to run on every ingest. */
-import { applySchema, createDb } from '../src/db.mjs';
+import { applySchema, createDb } from '../src/schema-fs.mjs';
 
 const connectionString = process.env.DATABASE_URL;
 if (!connectionString) {

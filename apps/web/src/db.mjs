@@ -1,16 +1,7 @@
 import { AsyncLocalStorage } from 'node:async_hooks';
-import { readFileSync } from 'node:fs';
-import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
-
-const SCHEMA_PATH = join(dirname(fileURLToPath(import.meta.url)), 'schema.sql');
 
 /** Routes db.query() to the in-transaction client while withTenant/withServiceRole run. */
 const scopedQuery = new AsyncLocalStorage();
-
-export function loadSchemaSql() {
-  return readFileSync(SCHEMA_PATH, 'utf8');
-}
 
 function mapRows(result) {
   if (Array.isArray(result)) return result;
@@ -101,8 +92,8 @@ export async function createDb(connectionString) {
   return createNeonDb(connectionString);
 }
 
-export async function applySchema(db) {
-  await db.exec(loadSchemaSql());
+export async function applySchemaSql(db, schemaSql) {
+  await db.exec(schemaSql);
   await ensureAppRole(db);
 }
 

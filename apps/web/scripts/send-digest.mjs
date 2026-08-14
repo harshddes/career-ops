@@ -5,7 +5,7 @@
  * No-op without DATABASE_URL or RESEND_API_KEY.
  */
 
-import { applySchema, createDb } from '../src/db.mjs';
+import { applySchema, createDb } from '../src/schema-fs.mjs';
 import { jobsSince, listDigestRecipients, markDigestSent } from '../src/profile.mjs';
 import { DIGEST_DAILY_CAP, sendResendEmail } from '../src/mail.mjs';
 

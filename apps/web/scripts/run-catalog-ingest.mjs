@@ -5,7 +5,7 @@
  * Does not write 6–8 MB JSON stores. Does not run Playwright.
  */
 
-import { applySchema, createDb } from '../src/db.mjs';
+import { applySchema, createDb } from '../src/schema-fs.mjs';
 import { recordScanRun, upsertCatalogJobs } from '../src/catalog.mjs';
 import { fetchEuraxessCompact } from '../src/ingest/euraxess.mjs';
 import { fetchFusionCompact } from '../src/ingest/fusion.mjs';

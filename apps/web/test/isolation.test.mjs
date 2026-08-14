@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createApp } from '../src/app.mjs';
-import { applySchema, createPgliteDb, loadSchemaSql, splitSql } from '../src/db.mjs';
+import { applySchema, createPgliteDb, loadSchemaSql, splitSql } from '../src/schema-fs.mjs';
 import { listDigestRecipients } from '../src/profile.mjs';
 import { readOverlayDirect } from '../src/catalog.mjs';
 import { readWorkOrderDirect } from '../src/work-orders.mjs';
