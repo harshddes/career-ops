@@ -9,5 +9,9 @@ if (!connectionString) {
 }
 
 const db = await createDb(connectionString);
-await applySchema(db);
-console.log(JSON.stringify({ ok: true, migrated: true }));
+try {
+  await applySchema(db);
+  console.log(JSON.stringify({ ok: true, migrated: true }));
+} finally {
+  if (db.pool) await db.pool.end().catch(() => {});
+}

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createApp } from '../src/app.mjs';
-import { applySchema, createPgliteDb } from '../src/db.mjs';
+import { applySchema, createPgliteDb, loadSchemaSql, splitSql } from '../src/db.mjs';
 import { listDigestRecipients } from '../src/profile.mjs';
 import { readOverlayDirect } from '../src/catalog.mjs';
 import { readWorkOrderDirect } from '../src/work-orders.mjs';
@@ -50,6 +50,15 @@ function jsonHeaders(cookie) {
     accept: 'application/json',
   };
 }
+
+test('schema split keeps CREATE TABLE users despite file-header comments', () => {
+  const statements = splitSql(loadSchemaSql());
+  assert.ok(statements.some(stmt => /CREATE TABLE IF NOT EXISTS users\b/i.test(stmt)));
+  assert.ok(statements.some(stmt => /CREATE TABLE IF NOT EXISTS sessions\b/i.test(stmt)));
+  assert.ok(statements.some(stmt => /ALTER TABLE workspaces ENABLE ROW LEVEL SECURITY/i.test(stmt)));
+  assert.ok(statements.some(stmt => /ALTER TABLE job_overlays FORCE ROW LEVEL SECURITY/i.test(stmt)));
+  assert.equal(statements.filter(stmt => stmt.trimStart().startsWith('--')).length, 0);
+});
 
 test('unauthenticated feed is rejected', async () => {
   const { app } = await setup();

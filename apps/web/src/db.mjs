@@ -123,10 +123,24 @@ async function ensureAppRole(db) {
 }
 
 export function splitSql(sql) {
-  return sql
-    .split(/;\s*\n/)
-    .map(part => part.trim())
-    .filter(part => part && !part.startsWith('--'));
+  const statements = [];
+  let current = '';
+  let inDollar = false;
+  for (const line of String(sql).split('\n')) {
+    const trimmed = line.trim();
+    if (!inDollar && trimmed.startsWith('--')) continue;
+    const dollars = line.match(/\$\$/g);
+    if (dollars && dollars.length % 2 === 1) inDollar = !inDollar;
+    current += `${line}\n`;
+    if (!inDollar && /;\s*$/.test(trimmed)) {
+      const stmt = current.trim().replace(/;+\s*$/, '');
+      if (stmt) statements.push(stmt);
+      current = '';
+    }
+  }
+  const tail = current.trim().replace(/;+\s*$/, '');
+  if (tail) statements.push(tail);
+  return statements;
 }
 
 async function runInSession(db, setup, work) {
