@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-13T02:33:08.829Z",
+  "updated_at": "2026-08-13T22:09:54.120Z",
   "jobs": {
     "ornl-mechanical-design-and-test-engineer-temporary-1403782600": {
       "updated_at": "2026-07-05T15:45:05.151Z",
@@ -1028,6 +1028,21 @@
       "notes": "Considering — recruitment uncertain. Asked Jean-Luc Josset on 2026-08-11 whether SPACE-X doctoral recruitment remains possible. Await reply. Gmail: https://mail.google.com/mail/#all/19fef796cc642e3f",
       "resources": {},
       "networking_org_id": "",
+      "networking_person_ids": [],
+      "networking_research_order_id": ""
+    },
+    "ge-vernova-controls-engineer-r5047429": {
+      "updated_at": "2026-08-13T22:09:54.120Z",
+      "status": "to_consider",
+      "applied": false,
+      "applied_at": "",
+      "application_num": null,
+      "notes": "Posting live 2026-08-13: title, JD, and Apply links present. Closes 2026-08-31. Relocation offered. Candidate is F-1 OPT.",
+      "resources": {
+        "resume_tex": "output/ge-vernova/cv-harsh-desai-ge-vernova-controls-engineer-2026-08-13.tex",
+        "resume_pdf": "output/ge-vernova/cv-harsh-desai-ge-vernova-controls-engineer-2026-08-13-v3.pdf"
+      },
+      "networking_org_id": "network-org-ge-vernova",
       "networking_person_ids": [],
       "networking_research_order_id": ""
     }

@@ -7,7 +7,10 @@
  *
  * The Harsh resume baseline uses fontspec, so xelatex is the default engine.
  * Existing PDF outputs are never overwritten unless --force is passed.
- * Prefer a new, relevant PDF filename for each render (see harsh/resume/README.md).
+ * Prefer a new, relevant PDF filename for each render.
+ * Living resume source: harsh/resume/HarshDesai_Resume.tex
+ * New PDFs: harsh/resume/pdfs-from-living-source/<new-name>.pdf
+ * See harsh/resume/README.md.
  */
 
 import { copyFileSync, existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, statSync } from 'fs';

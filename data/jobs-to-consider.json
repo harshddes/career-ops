@@ -1,7 +1,727 @@
 {
   "version": 1,
-  "generated_at": "2026-08-13T02:33:08.832Z",
+  "generated_at": "2026-08-13T22:09:54.124Z",
   "jobs": [
+    {
+      "id": "ge-vernova-controls-engineer-r5047429",
+      "company": "GE Vernova",
+      "title": "Controls Engineer",
+      "url": "https://careers.gevernova.com/ge-vernova-controls-engineer/job/R5047429",
+      "location": "Schenectady, NY, US",
+      "country": "United States",
+      "country_code": "US",
+      "countries": [
+        "US"
+      ],
+      "team": "Systems Engineering; PB",
+      "source": "gevernova_careers",
+      "status": "to_consider",
+      "applied": false,
+      "legacy_score": "2.6/5",
+      "score_overrides": [],
+      "posting_text": "GE Vernova Controls Engineer R5047429. Schenectady NY. Full time. Systems Engineering; PB. Roles: Identify, develop, evaluate, introduce, and manage engineering solutions for product control and control system technology needs. Apply control theory and mathematical modeling to design and control systems with desired behaviors. Includes operability, setting of boundaries, cycle optimization, control logic, control related software, sensors, hardware and software algorithms, and feedback to control the performance of devices, subsystems and systems. Required: bachelor's degree in electrical or mechanical engineering. Desired: Cyber security experience preferred. AI experience preferred. Prior internship in Controls or course work in Controls. Pay: $72000-$108000. Relocation yes. Posted 2026-08-10. End 2026-08-31. Must be legally authorized to work in the United States.",
+      "fit_summary": "ME + space systems. Closest evidence is LVACCS test-stand automation, AEROSP 470 coursework, motor/servo hardware, JWT/bcrypt on TestBedz, and one TensorFlow time-series project. Not a controls-theory internship.",
+      "recommendation": "review",
+      "notes": "Posting live 2026-08-13: title, JD, and Apply links present. Closes 2026-08-31. Relocation offered. Candidate is F-1 OPT.",
+      "first_seen": "2026-08-13T22:02:18.010Z",
+      "last_updated": "2026-08-13T22:09:54.118Z",
+      "last_checked": "2026-08-13T22:02:17.452Z",
+      "region": "US",
+      "h1b_status": "",
+      "h1b_sponsorship": "unknown",
+      "green_card_sponsorship": "unknown",
+      "export_control": "",
+      "export_control_risk": "unknown",
+      "work_permit_model": "needs_review",
+      "opt_story_strength": "strong",
+      "opt_story_reason": "Connect through aerospace systems + plasma / vacuum / high voltage.",
+      "adjacent_fields": [
+        "aerospace systems",
+        "plasma / vacuum / high voltage",
+        "rf / emi / emc"
+      ],
+      "visa_verdict": "unknown",
+      "eligibility_band": "unknown",
+      "liveness": "active",
+      "liveness_reason": "Official GE Vernova page shows job title, full JD, Conversational apply and Standard Apply links, posting window 2026-08-10 to 2026-08-31.",
+      "liveness_exempt": false,
+      "application_num": null,
+      "applied_at": "",
+      "resources": {
+        "resume_tex": "output/ge-vernova/cv-harsh-desai-ge-vernova-controls-engineer-2026-08-13.tex",
+        "resume_pdf": "output/ge-vernova/cv-harsh-desai-ge-vernova-controls-engineer-2026-08-13-v3.pdf"
+      },
+      "networking_org_id": "network-org-ge-vernova",
+      "networking_person_ids": [],
+      "networking_research_order_id": "",
+      "score": 2.6,
+      "score_band": "adjacent_review",
+      "fit_rationale": "2.6/5 adjacent; eligibility unknown; confidence low.",
+      "risk_flags": [
+        "protected_domain_floor",
+        "computation_dominant_no_hardware_anchor",
+        "deadline_not_stated",
+        "work_authorization_not_stated"
+      ],
+      "score_breakdown": {
+        "dimensions": {
+          "daily_work_interest": {
+            "score": 1,
+            "weight": 0.25,
+            "contribution": 0.25,
+            "evidence": [
+              {
+                "source": "direct_parser",
+                "term": "hardware",
+                "quote": "hardware",
+                "source_location": "posting_text"
+              },
+              {
+                "source": "direct_parser",
+                "term": "modeling",
+                "quote": "modeling",
+                "source_location": "posting_text"
+              },
+              {
+                "source": "direct_parser",
+                "term": "theory",
+                "quote": "theory",
+                "source_location": "posting_text"
+              },
+              {
+                "source": "direct_parser",
+                "term": "optimization",
+                "quote": "optimization",
+                "source_location": "posting_text"
+              }
+            ],
+            "rationale": "Computation dominates without verified physical work."
+          },
+          "hands_on_alignment": {
+            "score": 2,
+            "weight": 0.2,
+            "contribution": 0.4,
+            "evidence": [
+              {
+                "source": "direct_parser",
+                "term": "hardware",
+                "quote": "hardware",
+                "source_location": "posting_text"
+              }
+            ],
+            "rationale": "1 physical-work anchors verified."
+          },
+          "direct_skill_evidence": {
+            "score": 5,
+            "weight": 0.2,
+            "contribution": 1,
+            "evidence": [
+              {
+                "fact_id": "lvaccs-hv-daq",
+                "label": "LVACCS high-voltage plasma test rig, protection, DAQ, and hollow-cathode workflow",
+                "matched_terms": [
+                  "controls"
+                ],
+                "quotes": [
+                  "Controls"
+                ]
+              },
+              {
+                "fact_id": "space-systems-test",
+                "label": "Space systems, payload trade studies, environmental testing, and mission constraints",
+                "matched_terms": [
+                  "systems engineering"
+                ],
+                "quotes": [
+                  "Systems Engineering"
+                ]
+              },
+              {
+                "fact_id": "mechanical-hardware",
+                "label": "Mechanical engineering, mechanisms, fabrication, fluids, and hardware validation",
+                "matched_terms": [
+                  "mechanical engineering",
+                  "hardware"
+                ],
+                "quotes": [
+                  "mechanical engineering",
+                  "hardware"
+                ]
+              }
+            ],
+            "rationale": "3 approved candidate fact(s) matched."
+          },
+          "destination_alignment": {
+            "score": 1,
+            "weight": 0.15,
+            "contribution": 0.15,
+            "evidence": [],
+            "rationale": "0 destination anchor(s) verified."
+          },
+          "level_plausibility": {
+            "score": 4,
+            "weight": 0.1,
+            "contribution": 0.4,
+            "evidence": [
+              {
+                "source": "direct_parser",
+                "term": "engineer",
+                "quote": "Engineer",
+                "source_location": "posting_text"
+              },
+              {
+                "source": "direct_parser",
+                "term": "engineering",
+                "quote": "Engineering",
+                "source_location": "posting_text"
+              }
+            ],
+            "rationale": "Role level is anchored or remains uncertain."
+          },
+          "application_feasibility": {
+            "score": 4,
+            "weight": 0.1,
+            "contribution": 0.4,
+            "evidence": [],
+            "rationale": "Eligibility is unknown."
+          }
+        },
+        "strong_matches": [
+          "hardware"
+        ],
+        "adjacent_matches": [
+          "mechanical engineering",
+          "sensors",
+          "controls"
+        ],
+        "negative_matches": [],
+        "candidate_fact_ids": [
+          "lvaccs-hv-daq",
+          "space-systems-test",
+          "mechanical-hardware"
+        ],
+        "role_matches": [
+          "engineer",
+          "engineering"
+        ],
+        "role_archive_matches": [],
+        "protected_domain_matches": [],
+        "computation_dominant": true,
+        "independent_hardware_evidence": true,
+        "policy_version": "2026-08-unified-v1"
+      },
+      "policy_version": "2026-08-unified-v1",
+      "posting_fingerprint": "33f35a0e7df9db58f175114f76f7349404a484425546b072f9468fc5e1263b21",
+      "eligibility": {
+        "status": "unknown",
+        "reasons": [],
+        "unknowns": [
+          "deadline_not_stated",
+          "work_authorization_not_stated"
+        ],
+        "evidence": []
+      },
+      "dimensions": {
+        "daily_work_interest": {
+          "score": 1,
+          "weight": 0.25,
+          "contribution": 0.25,
+          "evidence": [
+            {
+              "source": "direct_parser",
+              "term": "hardware",
+              "quote": "hardware",
+              "source_location": "posting_text"
+            },
+            {
+              "source": "direct_parser",
+              "term": "modeling",
+              "quote": "modeling",
+              "source_location": "posting_text"
+            },
+            {
+              "source": "direct_parser",
+              "term": "theory",
+              "quote": "theory",
+              "source_location": "posting_text"
+            },
+            {
+              "source": "direct_parser",
+              "term": "optimization",
+              "quote": "optimization",
+              "source_location": "posting_text"
+            }
+          ],
+          "rationale": "Computation dominates without verified physical work."
+        },
+        "hands_on_alignment": {
+          "score": 2,
+          "weight": 0.2,
+          "contribution": 0.4,
+          "evidence": [
+            {
+              "source": "direct_parser",
+              "term": "hardware",
+              "quote": "hardware",
+              "source_location": "posting_text"
+            }
+          ],
+          "rationale": "1 physical-work anchors verified."
+        },
+        "direct_skill_evidence": {
+          "score": 5,
+          "weight": 0.2,
+          "contribution": 1,
+          "evidence": [
+            {
+              "fact_id": "lvaccs-hv-daq",
+              "label": "LVACCS high-voltage plasma test rig, protection, DAQ, and hollow-cathode workflow",
+              "matched_terms": [
+                "controls"
+              ],
+              "quotes": [
+                "Controls"
+              ]
+            },
+            {
+              "fact_id": "space-systems-test",
+              "label": "Space systems, payload trade studies, environmental testing, and mission constraints",
+              "matched_terms": [
+                "systems engineering"
+              ],
+              "quotes": [
+                "Systems Engineering"
+              ]
+            },
+            {
+              "fact_id": "mechanical-hardware",
+              "label": "Mechanical engineering, mechanisms, fabrication, fluids, and hardware validation",
+              "matched_terms": [
+                "mechanical engineering",
+                "hardware"
+              ],
+              "quotes": [
+                "mechanical engineering",
+                "hardware"
+              ]
+            }
+          ],
+          "rationale": "3 approved candidate fact(s) matched."
+        },
+        "destination_alignment": {
+          "score": 1,
+          "weight": 0.15,
+          "contribution": 0.15,
+          "evidence": [],
+          "rationale": "0 destination anchor(s) verified."
+        },
+        "level_plausibility": {
+          "score": 4,
+          "weight": 0.1,
+          "contribution": 0.4,
+          "evidence": [
+            {
+              "source": "direct_parser",
+              "term": "engineer",
+              "quote": "Engineer",
+              "source_location": "posting_text"
+            },
+            {
+              "source": "direct_parser",
+              "term": "engineering",
+              "quote": "Engineering",
+              "source_location": "posting_text"
+            }
+          ],
+          "rationale": "Role level is anchored or remains uncertain."
+        },
+        "application_feasibility": {
+          "score": 4,
+          "weight": 0.1,
+          "contribution": 0.4,
+          "evidence": [],
+          "rationale": "Eligibility is unknown."
+        }
+      },
+      "evidence": [],
+      "rejected_evidence": [],
+      "unknowns": [
+        "deadline_not_stated",
+        "work_authorization_not_stated"
+      ],
+      "confidence": "low",
+      "review_required": true,
+      "review_reasons": [
+        "hard_gate_unknown",
+        "low_confidence"
+      ],
+      "calculation_trace": {
+        "formula": "sum(dimension_score * dimension_weight), then deterministic caps",
+        "weighted_sum": 2.6,
+        "floors": [
+          {
+            "id": "protected_domain_visibility",
+            "minimum": 2.4
+          }
+        ],
+        "caps": [
+          {
+            "id": "computation_dominant",
+            "maximum": 2.9
+          }
+        ],
+        "final_score": 2.6
+      },
+      "score_before_gates": 2.6,
+      "extractor": {
+        "provider": "deterministic",
+        "model": "direct-parser",
+        "run_id": ""
+      },
+      "urgency": {
+        "status": "unknown",
+        "days_remaining": null
+      },
+      "scoring": {
+        "canonical": true,
+        "policy_version": "2026-08-unified-v1",
+        "posting_fingerprint": "33f35a0e7df9db58f175114f76f7349404a484425546b072f9468fc5e1263b21",
+        "opportunity_type": "job",
+        "eligibility": {
+          "status": "unknown",
+          "reasons": [],
+          "unknowns": [
+            "deadline_not_stated",
+            "work_authorization_not_stated"
+          ],
+          "evidence": []
+        },
+        "score": 2.6,
+        "personal_fit": 2.6,
+        "score_before_gates": 2.6,
+        "score_band": "adjacent_review",
+        "decision_band": "adjacent",
+        "recommendation": "review",
+        "urgency": {
+          "status": "unknown",
+          "days_remaining": null
+        },
+        "dimensions": {
+          "daily_work_interest": {
+            "score": 1,
+            "weight": 0.25,
+            "contribution": 0.25,
+            "evidence": [
+              {
+                "source": "direct_parser",
+                "term": "hardware",
+                "quote": "hardware",
+                "source_location": "posting_text"
+              },
+              {
+                "source": "direct_parser",
+                "term": "modeling",
+                "quote": "modeling",
+                "source_location": "posting_text"
+              },
+              {
+                "source": "direct_parser",
+                "term": "theory",
+                "quote": "theory",
+                "source_location": "posting_text"
+              },
+              {
+                "source": "direct_parser",
+                "term": "optimization",
+                "quote": "optimization",
+                "source_location": "posting_text"
+              }
+            ],
+            "rationale": "Computation dominates without verified physical work."
+          },
+          "hands_on_alignment": {
+            "score": 2,
+            "weight": 0.2,
+            "contribution": 0.4,
+            "evidence": [
+              {
+                "source": "direct_parser",
+                "term": "hardware",
+                "quote": "hardware",
+                "source_location": "posting_text"
+              }
+            ],
+            "rationale": "1 physical-work anchors verified."
+          },
+          "direct_skill_evidence": {
+            "score": 5,
+            "weight": 0.2,
+            "contribution": 1,
+            "evidence": [
+              {
+                "fact_id": "lvaccs-hv-daq",
+                "label": "LVACCS high-voltage plasma test rig, protection, DAQ, and hollow-cathode workflow",
+                "matched_terms": [
+                  "controls"
+                ],
+                "quotes": [
+                  "Controls"
+                ]
+              },
+              {
+                "fact_id": "space-systems-test",
+                "label": "Space systems, payload trade studies, environmental testing, and mission constraints",
+                "matched_terms": [
+                  "systems engineering"
+                ],
+                "quotes": [
+                  "Systems Engineering"
+                ]
+              },
+              {
+                "fact_id": "mechanical-hardware",
+                "label": "Mechanical engineering, mechanisms, fabrication, fluids, and hardware validation",
+                "matched_terms": [
+                  "mechanical engineering",
+                  "hardware"
+                ],
+                "quotes": [
+                  "mechanical engineering",
+                  "hardware"
+                ]
+              }
+            ],
+            "rationale": "3 approved candidate fact(s) matched."
+          },
+          "destination_alignment": {
+            "score": 1,
+            "weight": 0.15,
+            "contribution": 0.15,
+            "evidence": [],
+            "rationale": "0 destination anchor(s) verified."
+          },
+          "level_plausibility": {
+            "score": 4,
+            "weight": 0.1,
+            "contribution": 0.4,
+            "evidence": [
+              {
+                "source": "direct_parser",
+                "term": "engineer",
+                "quote": "Engineer",
+                "source_location": "posting_text"
+              },
+              {
+                "source": "direct_parser",
+                "term": "engineering",
+                "quote": "Engineering",
+                "source_location": "posting_text"
+              }
+            ],
+            "rationale": "Role level is anchored or remains uncertain."
+          },
+          "application_feasibility": {
+            "score": 4,
+            "weight": 0.1,
+            "contribution": 0.4,
+            "evidence": [],
+            "rationale": "Eligibility is unknown."
+          }
+        },
+        "evidence": [],
+        "rejected_evidence": [],
+        "unknowns": [
+          "deadline_not_stated",
+          "work_authorization_not_stated"
+        ],
+        "confidence": "low",
+        "review_required": true,
+        "review_reasons": [
+          "hard_gate_unknown",
+          "low_confidence"
+        ],
+        "calculation_trace": {
+          "formula": "sum(dimension_score * dimension_weight), then deterministic caps",
+          "weighted_sum": 2.6,
+          "floors": [
+            {
+              "id": "protected_domain_visibility",
+              "minimum": 2.4
+            }
+          ],
+          "caps": [
+            {
+              "id": "computation_dominant",
+              "maximum": 2.9
+            }
+          ],
+          "final_score": 2.6
+        },
+        "extractor": {
+          "provider": "deterministic",
+          "model": "direct-parser",
+          "run_id": ""
+        },
+        "risk_flags": [
+          "protected_domain_floor",
+          "computation_dominant_no_hardware_anchor",
+          "deadline_not_stated",
+          "work_authorization_not_stated"
+        ],
+        "score_breakdown": {
+          "dimensions": {
+            "daily_work_interest": {
+              "score": 1,
+              "weight": 0.25,
+              "contribution": 0.25,
+              "evidence": [
+                {
+                  "source": "direct_parser",
+                  "term": "hardware",
+                  "quote": "hardware",
+                  "source_location": "posting_text"
+                },
+                {
+                  "source": "direct_parser",
+                  "term": "modeling",
+                  "quote": "modeling",
+                  "source_location": "posting_text"
+                },
+                {
+                  "source": "direct_parser",
+                  "term": "theory",
+                  "quote": "theory",
+                  "source_location": "posting_text"
+                },
+                {
+                  "source": "direct_parser",
+                  "term": "optimization",
+                  "quote": "optimization",
+                  "source_location": "posting_text"
+                }
+              ],
+              "rationale": "Computation dominates without verified physical work."
+            },
+            "hands_on_alignment": {
+              "score": 2,
+              "weight": 0.2,
+              "contribution": 0.4,
+              "evidence": [
+                {
+                  "source": "direct_parser",
+                  "term": "hardware",
+                  "quote": "hardware",
+                  "source_location": "posting_text"
+                }
+              ],
+              "rationale": "1 physical-work anchors verified."
+            },
+            "direct_skill_evidence": {
+              "score": 5,
+              "weight": 0.2,
+              "contribution": 1,
+              "evidence": [
+                {
+                  "fact_id": "lvaccs-hv-daq",
+                  "label": "LVACCS high-voltage plasma test rig, protection, DAQ, and hollow-cathode workflow",
+                  "matched_terms": [
+                    "controls"
+                  ],
+                  "quotes": [
+                    "Controls"
+                  ]
+                },
+                {
+                  "fact_id": "space-systems-test",
+                  "label": "Space systems, payload trade studies, environmental testing, and mission constraints",
+                  "matched_terms": [
+                    "systems engineering"
+                  ],
+                  "quotes": [
+                    "Systems Engineering"
+                  ]
+                },
+                {
+                  "fact_id": "mechanical-hardware",
+                  "label": "Mechanical engineering, mechanisms, fabrication, fluids, and hardware validation",
+                  "matched_terms": [
+                    "mechanical engineering",
+                    "hardware"
+                  ],
+                  "quotes": [
+                    "mechanical engineering",
+                    "hardware"
+                  ]
+                }
+              ],
+              "rationale": "3 approved candidate fact(s) matched."
+            },
+            "destination_alignment": {
+              "score": 1,
+              "weight": 0.15,
+              "contribution": 0.15,
+              "evidence": [],
+              "rationale": "0 destination anchor(s) verified."
+            },
+            "level_plausibility": {
+              "score": 4,
+              "weight": 0.1,
+              "contribution": 0.4,
+              "evidence": [
+                {
+                  "source": "direct_parser",
+                  "term": "engineer",
+                  "quote": "Engineer",
+                  "source_location": "posting_text"
+                },
+                {
+                  "source": "direct_parser",
+                  "term": "engineering",
+                  "quote": "Engineering",
+                  "source_location": "posting_text"
+                }
+              ],
+              "rationale": "Role level is anchored or remains uncertain."
+            },
+            "application_feasibility": {
+              "score": 4,
+              "weight": 0.1,
+              "contribution": 0.4,
+              "evidence": [],
+              "rationale": "Eligibility is unknown."
+            }
+          },
+          "strong_matches": [
+            "hardware"
+          ],
+          "adjacent_matches": [
+            "mechanical engineering",
+            "sensors",
+            "controls"
+          ],
+          "negative_matches": [],
+          "candidate_fact_ids": [
+            "lvaccs-hv-daq",
+            "space-systems-test",
+            "mechanical-hardware"
+          ],
+          "role_matches": [
+            "engineer",
+            "engineering"
+          ],
+          "role_archive_matches": [],
+          "protected_domain_matches": [],
+          "computation_dominant": true,
+          "independent_hardware_evidence": true,
+          "policy_version": "2026-08-unified-v1"
+        },
+        "visible": true,
+        "archived": false,
+        "needs_deep_research": true,
+        "needs_application_pack": false,
+        "fit_rationale": "2.6/5 adjacent; eligibility unknown; confidence low."
+      }
+    },
     {
       "id": "space-x-clupi-clupi-exodocs-doctoral-project-at-space-x",
       "company": "SPACE-X / CLUPI",

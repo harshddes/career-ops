@@ -57,6 +57,14 @@ package-lock.json
 .cursor/agent-scratch/**
 !.cursor/agent-scratch/README.md
 
+# LaTeX build leftovers under the resume tree
+harsh/resume/**/*.aux
+harsh/resume/**/*.log
+harsh/resume/**/*.out
+harsh/resume/**/*.synctex.gz
+harsh/resume/**/*.fls
+harsh/resume/**/*.fdb_latexmk
+
 # Local scratch files
 harsh/Untitled spreadsheet.xlsx
 **/__pycache__/
