@@ -6,13 +6,17 @@
 
 | Phase | In the plan? | In the code today? | Live on the public internet? |
 |------|----------------|-------------------|------------------------------|
-| 0 Login + isolated workspaces | yes | **yes** | not until Neon + Cloudflare |
+| 0 Login + isolated workspaces | yes | **yes** (custom sessions, not Neon Better Auth) | not until Neon + Cloudflare secrets |
 | 1 Shared catalog + Applied kanban + research inbox | yes | **yes** | not until secrets exist |
-| 2 CV text, rule scores, print resume (Gemini left out) | yes | **yes** | same |
-| 3 Networking people, Resend digest cap, export/delete | yes | **yes** | digest needs Resend key |
+| 2 CV text, rule scores, print resume, file-to-textarea (Gemini left out on purpose) | yes | **yes** | same |
+| 3 Networking people, Resend digest cap, export/delete | yes | **yes** | digest/magic-link mail needs Resend key |
 | 4 Privacy/terms + Docker factory for :3737 | yes | **yes** | Docker is local-only |
+| Cloudflare Pages `*.pages.dev` | plan default | **Workers `*.workers.dev`** instead (same $0 HTML host) | after deploy |
+| Neon Managed Better Auth | plan default | **not wired** — custom password / magic-link / Google in `auth.mjs` | n/a |
+| R2 PDF bucket | plan “only if files” | **not built** — CV is text in Postgres | n/a |
+| Student `.me` domain / Google brand verify | phase 4 extras | **you**, after a hostname exists | n/a |
 
-The public phone URL appears only after you create Neon + Cloudflare and the deploy Action runs.
+Click-by-click for the accounts you create: [`SETUP.md`](SETUP.md).
 
 ---
 

@@ -6,6 +6,8 @@ This is a **new** multi-tenant workplace. It does not replace `http://127.0.0.1:
 
 There is **no public phone URL until Neon + Cloudflare exist**. `:8787` is local only.
 
+**You create the accounts.** Click-by-click: [SETUP.md](SETUP.md). Do not paste keys into chat.
+
 ## What it does (phases 0–4 in code)
 
 - Login, isolated workspaces, compact feeds, Applied kanban

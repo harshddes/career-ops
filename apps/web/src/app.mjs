@@ -89,6 +89,10 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
 
   function loginOr(c, session) {
     if (session) return null;
+    const accept = c.req.header('accept') || '';
+    if (c.req.method === 'GET' && !accept.includes('application/json')) {
+      return c.html(renderLogin({ googleEnabled }));
+    }
     if (wantsHtml(c) && c.req.method === 'GET') {
       return c.html(renderLogin({ googleEnabled }));
     }

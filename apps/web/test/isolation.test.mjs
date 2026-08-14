@@ -332,6 +332,15 @@ test('logout clears the session cookie', async () => {
   assert.equal(gone.status, 401);
 });
 
+test('login page states product limits', async () => {
+  const { app } = await setup();
+  const page = await app.request('/');
+  assert.equal(page.status, 200);
+  const html = await page.text();
+  assert.match(html, /does not run Cursor/i);
+  assert.match(html, /does not submit applications/i);
+});
+
 test('privacy and terms are public', async () => {
   const { app } = await setup();
   const privacy = await app.request('/privacy');

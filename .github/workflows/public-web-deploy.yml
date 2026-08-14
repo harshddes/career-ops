@@ -3,7 +3,9 @@ name: Public web deploy
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches:
+      - main
+      - cursor/zero-cost-public-saas-0a19
     paths:
       - 'apps/web/**'
       - '.github/workflows/public-web-deploy.yml'

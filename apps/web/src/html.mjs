@@ -19,6 +19,15 @@ async function copyPrompt(orderId) {
     if (button) button.textContent = 'Copy failed';
   }
 }
+
+function loadCvFile(input) {
+  const file = input.files && input.files[0];
+  const box = document.querySelector('textarea[name="cv_text"]');
+  if (!file || !box) return;
+  const reader = new FileReader();
+  reader.onload = function () { box.value = String(reader.result || ''); };
+  reader.readAsText(file);
+}
 `;
 
 function nav(active) {
@@ -121,6 +130,11 @@ export function renderLogin({ googleEnabled, notice }) {
           <label>Email for magic link<input name="email" type="email" required></label>
           <p class="row"><button class="secondary" type="submit">Email me a link</button></p>
         </form>
+      </div>
+      <div class="card">
+        <h2>What this site is</h2>
+        <p class="muted">Shared public job catalog. Your saved jobs, notes, CV, and people stay in your workspace.</p>
+        <p class="muted">This site does not run Cursor, does not send Gmail as you, does not scrape LinkedIn, and does not submit applications. Queue research copies a prompt you paste into Cursor on a computer you control. Fit scores are keyword rules, not an AI draft.</p>
       </div>`,
   });
 }
@@ -158,6 +172,7 @@ export function renderToday({ user, jobs, orders, scans, notice }) {
       <div class="card">
         <h2>Today</h2>
         <p class="muted">New catalog rows from GitHub Actions. Your Cursor inbox is private.</p>
+        <p class="muted">This website does not run Cursor or submit applications. Copy a prompt from Inbox, paste it into Cursor on your computer, paste the report back.</p>
         <p class="badge">${escapeHtml(scanLine)}</p>
       </div>
       <div class="card">
@@ -432,6 +447,9 @@ export function renderProfile({ user, profile, notice }) {
           <label>Name for resume<input name="display_name" value="${escapeHtml(profile?.display_name || user.name || '')}"></label>
           <label>Fit keywords (comma-separated)<input name="keywords" value="${escapeHtml(profile?.keywords || '')}" placeholder="plasma, FPGA, vacuum"></label>
           <label>CV text<textarea name="cv_text">${escapeHtml(profile?.cv_text || '')}</textarea></label>
+          <label>Load a .txt or .md file into the box above (stays in this browser until you Save)
+            <input type="file" accept=".txt,.md,text/plain" onchange="loadCvFile(this)">
+          </label>
           <label class="row"><input type="checkbox" name="digest_enabled" ${digestOn ? 'checked' : ''} style="width:auto"> Email me new catalog jobs (Resend, max 100/day across the app)</label>
           <p class="row">
             <button type="submit">Save profile</button>
@@ -493,7 +511,7 @@ export function renderLegal({ slug, user }) {
         <h2>Terms</h2>
         <p>You use Career OS at your own risk. Fit scores are keyword rules, not legal or immigration advice.</p>
         <p>Do not use the research prompts to scrape LinkedIn, send spam, or submit applications without the human clicking send.</p>
-        <p>Free-tier hosting may pause when idle. There is no SLA. Cursor-quality factory packs stay on a machine you control (Docker or local :3737).</p>
+        <p>This site is not Cursor-on-your-phone. Factory LaTeX/Playwright packs stay on a machine you control (Docker or local :3737). There is no Gmail send-as-you. Free-tier hosting may pause when idle. There is no SLA.</p>
         <p>License: MIT. See the career-ops repository LICENSE file.</p>`,
     },
   };
