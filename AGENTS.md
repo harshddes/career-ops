@@ -337,3 +337,24 @@ Write one TSV file per evaluation to `batch/tracker-additions/{num}-{company-slu
 - No markdown bold (`**`) in status field
 - No dates in status field (use the date column)
 - No extra text (use the notes column)
+
+---
+
+## Cursor Cloud specific instructions
+
+The startup update script installs Node deps in all three package roots (`/`, `WEB-TRACKER/`, `apps/web/`) and the Playwright headless Chromium browser. Node 22 and Go 1.22 are already on the VM. There are no lockfiles, so `npm install` resolves latest-satisfying versions in each root.
+
+There are three independent runnable pieces (each with its own `package.json`/`node_modules`):
+
+| Service | Start command (cwd) | Port | Notes |
+|---|---|---|---|
+| WEB-TRACKER dashboard (primary) | `node run.mjs --mode manual --no-open` (`WEB-TRACKER/`) | `3737` (immutable, see `.cursor/rules/dashboard-fixed-url.mdc`) | Full Express server + API. Dashboard at `/dashboard/fusion-pivot-dashboard.html`; `/` 302-redirects there. |
+| apps/web public SaaS | `npm run dev` (`apps/web/`) | `8787` | Hono app; runs zero-config on in-memory PGlite with `ALLOW_INSECURE_MAGIC_LINK=1`. No external DB needed. |
+| Go TUI (optional) | `go run . --path ..` (`dashboard/`) | terminal | `go.mod` wants Go 1.24.2 but the VM has 1.22 — the optional TUI may not build. Not needed for the web products. |
+
+Non-obvious caveats:
+- Run WEB-TRACKER in `--mode manual` for dev/testing. The default `assisted`/`autopilot` modes (`npm start`) launch background network scans and cron jobs (EURAXESS, FindAPhD via Cloudflare, U-M Careers, factory workers) that are slow and fail/timeout in a restricted-network VM. `--mode manual` starts the server + does one local `adapters/sync-all.mjs` data sync with no crons. Always pass `--no-open` (there is no desktop browser to launch via `xdg-open`).
+- `apps/web` uses ephemeral PGlite per process, so data (registered workspaces, saved-job overlays) resets on restart. Set `SEED_STUB_CATALOG=0` to skip seeding the demo EURAXESS jobs.
+- `node doctor.mjs` (`npm run doctor`) validates the root pipeline. It requires the gitignored user-layer files `config/profile.yml` and `portals.yml`; create them from the committed examples (`cp config/profile.example.yml config/profile.yml`, `cp templates/portals.example.yml portals.yml`). These are personalization files and are not needed just to run the two web apps.
+- `node test-all.mjs` reports ~8 failures for "CLAUDE.md missing section: ...". This is pre-existing and expected: `CLAUDE.md` is a one-line `@AGENTS.md` import, so the test's literal header checks don't match. It is not an environment problem. `apps/web` tests (`npm test`) pass 4/4.
+- Playwright is configured for headless Chromium (installed via `npx playwright install chromium`); it powers PDF generation (`generate-pdf.mjs`) and some scanners.
