@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "node src/node-server.mjs",
     "test": "node --test test/*.test.mjs",
-    "catalog:upsert": "node scripts/upsert-catalog.mjs"
+    "catalog:upsert": "node scripts/upsert-catalog.mjs",
+    "catalog:ingest": "node scripts/run-catalog-ingest.mjs"
   },
   "engines": {
     "node": ">=20"

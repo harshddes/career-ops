@@ -1,12 +1,15 @@
 import { serve } from '@hono/node-server';
 import { applySchema, createDb } from './db.mjs';
 import { createApp } from './app.mjs';
-import { stubEuraxessJobs, upsertCatalogJobs } from './catalog.mjs';
+import { stubEuraxessJobs, stubOrgs, upsertCatalogJobs, upsertCatalogOrgs } from './catalog.mjs';
 
 const env = process.env;
 const db = await createDb(env.DATABASE_URL || 'pglite');
 await applySchema(db);
-if (env.SEED_STUB_CATALOG !== '0') await upsertCatalogJobs(db, stubEuraxessJobs());
+if (env.SEED_STUB_CATALOG !== '0') {
+  await upsertCatalogOrgs(db, stubOrgs());
+  await upsertCatalogJobs(db, stubEuraxessJobs());
+}
 
 const app = createApp({
   db,

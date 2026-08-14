@@ -14,8 +14,40 @@ import {
   upsertGoogleUser,
   verifyPassword,
 } from './auth.mjs';
-import { listFeed, patchOverlay, stubEuraxessJobs, upsertCatalogJobs } from './catalog.mjs';
-import { renderDashboard, renderLogin } from './html.mjs';
+import {
+  FEED_SOURCES,
+  getJob,
+  getOrg,
+  latestScanRuns,
+  listFeed,
+  listOrgs,
+  listOverlays,
+  listRecentJobs,
+  patchOverlay,
+  stubEuraxessJobs,
+  stubOrgs,
+  upsertCatalogJobs,
+  upsertCatalogOrgs,
+} from './catalog.mjs';
+import {
+  completeWorkOrder,
+  createWorkOrder,
+  getWorkOrder,
+  listWorkOrders,
+  markWorkOrderCopied,
+} from './work-orders.mjs';
+import { createPerson, listPeople } from './people.mjs';
+import {
+  renderApplied,
+  renderFeed,
+  renderInbox,
+  renderJob,
+  renderLogin,
+  renderOrg,
+  renderOrgs,
+  renderPeople,
+  renderToday,
+} from './html.mjs';
 
 export function createApp({ db, env = {}, seedStubCatalog = false }) {
   const app = new Hono();
@@ -28,6 +60,30 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
     await next();
   });
 
+  async function ensureStub() {
+    if (!seedStubCatalog) return;
+    await upsertCatalogOrgs(db, stubOrgs());
+    await upsertCatalogJobs(db, stubEuraxessJobs());
+  }
+
+  function baseUrl(c) {
+    return env.APP_BASE_URL || new URL(c.req.url).origin;
+  }
+
+  function requireSession(c) {
+    const session = c.get('session');
+    if (session) return session;
+    return null;
+  }
+
+  function loginOr(c, session) {
+    if (session) return null;
+    if (wantsHtml(c) && c.req.method === 'GET') {
+      return c.html(renderLogin({ googleEnabled }));
+    }
+    return c.json({ error: 'unauthorized' }, 401);
+  }
+
   app.get('/healthz', c => c.json({
     ok: true,
     service: 'career-os-web',
@@ -36,17 +92,121 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
   }));
 
   app.get('/', async c => {
-    const session = c.get('session');
-    if (!session) return c.html(renderLogin({ googleEnabled }));
-    if (seedStubCatalog) await upsertCatalogJobs(db, stubEuraxessJobs());
-    const jobs = await listFeed(db, {
-      source: 'euraxess',
+    const session = requireSession(c);
+    const denied = loginOr(c, session);
+    if (denied) return denied;
+    await ensureStub();
+    const [jobs, orders, scans] = await Promise.all([
+      listRecentJobs(db, { tenantId: session.workspace_id, userId: session.user_id }),
+      listWorkOrders(db, { tenantId: session.workspace_id, userId: session.user_id }),
+      latestScanRuns(db),
+    ]);
+    return c.html(renderToday({
+      user: { email: session.email, name: session.name },
+      jobs,
+      orders,
+      scans,
+    }));
+  });
+
+  app.get('/feeds/:source', async c => {
+    const session = requireSession(c);
+    const denied = loginOr(c, session);
+    if (denied) return denied;
+    const source = c.req.param('source');
+    if (!FEED_SOURCES.includes(source)) return c.text('Unknown feed', 404);
+    await ensureStub();
+    const page = await listFeed(db, {
+      source,
+      tenantId: session.workspace_id,
+      userId: session.user_id,
+      cursor: c.req.query('cursor') || null,
+    });
+    return c.html(renderFeed({
+      user: { email: session.email, name: session.name },
+      source,
+      jobs: page.jobs,
+      nextCursor: page.next_cursor,
+    }));
+  });
+
+  app.get('/jobs/:id', async c => {
+    const session = requireSession(c);
+    const denied = loginOr(c, session);
+    if (denied) return denied;
+    await ensureStub();
+    const job = await getJob(db, {
+      jobId: c.req.param('id'),
       tenantId: session.workspace_id,
       userId: session.user_id,
     });
-    return c.html(renderDashboard({
+    if (!job) return c.html(renderJob({ user: { email: session.email }, job: null }), 404);
+    return c.html(renderJob({ user: { email: session.email, name: session.name }, job }));
+  });
+
+  app.get('/orgs', async c => {
+    const session = requireSession(c);
+    const denied = loginOr(c, session);
+    if (denied) return denied;
+    await ensureStub();
+    const orgs = await listOrgs(db, { tenantId: session.workspace_id, userId: session.user_id });
+    return c.html(renderOrgs({ user: { email: session.email, name: session.name }, orgs }));
+  });
+
+  app.get('/orgs/:id', async c => {
+    const session = requireSession(c);
+    const denied = loginOr(c, session);
+    if (denied) return denied;
+    await ensureStub();
+    const org = await getOrg(db, {
+      orgId: c.req.param('id'),
+      tenantId: session.workspace_id,
+      userId: session.user_id,
+    });
+    if (!org) return c.html(renderOrg({ user: { email: session.email }, org: null }), 404);
+    return c.html(renderOrg({ user: { email: session.email, name: session.name }, org }));
+  });
+
+  app.get('/inbox', async c => {
+    const session = requireSession(c);
+    const denied = loginOr(c, session);
+    if (denied) return denied;
+    const orders = await listWorkOrders(db, {
+      tenantId: session.workspace_id,
+      userId: session.user_id,
+      openOnly: false,
+    });
+    return c.html(renderInbox({ user: { email: session.email, name: session.name }, orders }));
+  });
+
+  app.get('/applied', async c => {
+    const session = requireSession(c);
+    const denied = loginOr(c, session);
+    if (denied) return denied;
+    const rows = await listOverlays(db, { tenantId: session.workspace_id, userId: session.user_id });
+    const columns = { saved: [], researching: [], applied: [], skipped: [] };
+    for (const row of rows) {
+      (columns[row.status] || columns.saved).push(row);
+    }
+    return c.html(renderApplied({
       user: { email: session.email, name: session.name },
-      jobs,
+      columns,
+    }));
+  });
+
+  app.get('/people', async c => {
+    const session = requireSession(c);
+    const denied = loginOr(c, session);
+    if (denied) return denied;
+    await ensureStub();
+    const [people, orgs] = await Promise.all([
+      listPeople(db, { tenantId: session.workspace_id, userId: session.user_id }),
+      listOrgs(db, { tenantId: session.workspace_id, userId: session.user_id }),
+    ]);
+    return c.html(renderPeople({
+      user: { email: session.email, name: session.name },
+      people,
+      orgs,
     }));
   });
 
@@ -80,8 +240,7 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
     const email = String(body.email || '').trim().toLowerCase();
     if (!email) return c.html(renderLogin({ googleEnabled, notice: { error: true, text: 'Email is required.' } }), 400);
     const link = await createMagicLink(db, email);
-    const base = env.APP_BASE_URL || new URL(c.req.url).origin;
-    const url = `${base}/api/auth/magic-link/consume?token=${link.id}`;
+    const url = `${baseUrl(c)}/api/auth/magic-link/consume?token=${link.id}`;
     if (env.RESEND_API_KEY) {
       await sendResend(env, email, url);
       return c.html(renderLogin({ googleEnabled, notice: { text: 'Check your email for the sign-in link.' } }));
@@ -107,7 +266,7 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
   app.get('/api/auth/google', c => {
     if (!googleEnabled) return c.text('Google OAuth is not configured', 501);
     const state = crypto.randomUUID();
-    const redirectUri = `${env.APP_BASE_URL || new URL(c.req.url).origin}/api/auth/google/callback`;
+    const redirectUri = `${baseUrl(c)}/api/auth/google/callback`;
     const url = new URL('https://accounts.google.com/o/oauth2/v2/auth');
     url.searchParams.set('client_id', env.GOOGLE_CLIENT_ID);
     url.searchParams.set('redirect_uri', redirectUri);
@@ -126,7 +285,7 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
     if (!code || !state || state !== cookieState) {
       return c.html(renderLogin({ googleEnabled, notice: { error: true, text: 'Google sign-in was rejected.' } }), 400);
     }
-    const redirectUri = `${env.APP_BASE_URL || new URL(c.req.url).origin}/api/auth/google/callback`;
+    const redirectUri = `${baseUrl(c)}/api/auth/google/callback`;
     const tokenRes = await fetch('https://oauth2.googleapis.com/token', {
       method: 'POST',
       headers: { 'content-type': 'application/x-www-form-urlencoded' },
@@ -160,7 +319,7 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
   });
 
   app.get('/api/me', c => {
-    const session = c.get('session');
+    const session = requireSession(c);
     if (!session) return c.json({ error: 'unauthorized' }, 401);
     return c.json({
       user_id: session.user_id,
@@ -170,22 +329,25 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
     });
   });
 
-  app.get('/api/feeds/euraxess', async c => {
-    const session = c.get('session');
+  app.get('/api/feeds/:source', async c => {
+    const session = requireSession(c);
     if (!session) return c.json({ error: 'unauthorized' }, 401);
-    if (seedStubCatalog) await upsertCatalogJobs(db, stubEuraxessJobs());
-    const jobs = await listFeed(db, {
-      source: 'euraxess',
+    const source = c.req.param('source');
+    if (!FEED_SOURCES.includes(source)) return c.json({ error: 'unknown_feed' }, 404);
+    await ensureStub();
+    const page = await listFeed(db, {
+      source,
       tenantId: session.workspace_id,
       userId: session.user_id,
+      cursor: c.req.query('cursor') || null,
     });
-    return c.json({ view: 'list', jobs });
+    return c.json({ view: 'list', source, jobs: page.jobs, next_cursor: page.next_cursor });
   });
 
   app.post('/api/overlays/:jobId', async c => {
-    const session = c.get('session');
+    const session = requireSession(c);
     if (!session) return c.json({ error: 'unauthorized' }, 401);
-    if (seedStubCatalog) await upsertCatalogJobs(db, stubEuraxessJobs());
+    await ensureStub();
     const body = await readBody(c);
     const result = await patchOverlay(db, {
       tenantId: session.workspace_id,
@@ -195,8 +357,103 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
       notes: String(body.notes || ''),
     });
     if (!result.ok) return c.json(result, 404);
-    if (wantsHtml(c)) return c.redirect('/');
+    if (wantsHtml(c)) return c.redirect(c.req.header('referer') || `/jobs/${c.req.param('jobId')}`);
     return c.json(result);
+  });
+
+  app.post('/api/work-orders', async c => {
+    const session = requireSession(c);
+    if (!session) return c.json({ error: 'unauthorized' }, 401);
+    await ensureStub();
+    const body = await readBody(c);
+    const result = await createWorkOrder(db, {
+      tenantId: session.workspace_id,
+      userId: session.user_id,
+      lane: body.lane || undefined,
+      targetKind: String(body.target_kind || 'job'),
+      targetId: String(body.target_id || ''),
+      pack: body.lane === 'pack' || body.pack === true || body.pack === 'true',
+      baseUrl: baseUrl(c),
+    });
+    if (!result.ok) return c.json(result, result.status || 400);
+    if (wantsHtml(c)) return c.redirect(`/inbox#${result.order.id}`);
+    return c.json(result);
+  });
+
+  app.get('/api/work-orders', async c => {
+    const session = requireSession(c);
+    if (!session) return c.json({ error: 'unauthorized' }, 401);
+    const orders = await listWorkOrders(db, {
+      tenantId: session.workspace_id,
+      userId: session.user_id,
+      openOnly: c.req.query('open') !== '0',
+    });
+    return c.json({ orders });
+  });
+
+  app.post('/api/work-orders/:id/copy', async c => {
+    const session = requireSession(c);
+    if (!session) return c.json({ error: 'unauthorized' }, 401);
+    const result = await markWorkOrderCopied(db, {
+      tenantId: session.workspace_id,
+      userId: session.user_id,
+      orderId: c.req.param('id'),
+    });
+    if (!result.ok) return c.json(result, result.status || 404);
+    return c.json(result);
+  });
+
+  app.post('/api/work-orders/:id/complete', async c => {
+    const session = requireSession(c);
+    if (!session) return c.json({ error: 'unauthorized' }, 401);
+    const body = await readBody(c);
+    const result = await completeWorkOrder(db, {
+      tenantId: session.workspace_id,
+      userId: session.user_id,
+      orderId: c.req.param('id'),
+      resultMd: String(body.result_md || ''),
+      status: String(body.status || 'review_ready'),
+    });
+    if (!result.ok) return c.json(result, result.status || 404);
+    if (wantsHtml(c)) return c.redirect(`/inbox#${c.req.param('id')}`);
+    return c.json(result);
+  });
+
+  app.get('/api/work-orders/:id', async c => {
+    const session = requireSession(c);
+    if (!session) return c.json({ error: 'unauthorized' }, 401);
+    const order = await getWorkOrder(db, {
+      tenantId: session.workspace_id,
+      userId: session.user_id,
+      orderId: c.req.param('id'),
+    });
+    if (!order) return c.json({ error: 'unknown_order' }, 404);
+    return c.json({ order });
+  });
+
+  app.post('/api/people', async c => {
+    const session = requireSession(c);
+    if (!session) return c.json({ error: 'unauthorized' }, 401);
+    const body = await readBody(c);
+    const result = await createPerson(db, {
+      tenantId: session.workspace_id,
+      userId: session.user_id,
+      displayName: body.display_name,
+      title: body.title,
+      organizationName: body.organization_name,
+      orgId: body.org_id || null,
+      notes: body.notes,
+    });
+    if (!result.ok) return c.json(result, result.status || 400);
+    if (wantsHtml(c)) return c.redirect('/people');
+    return c.json(result);
+  });
+
+  app.get('/api/people', async c => {
+    const session = requireSession(c);
+    if (!session) return c.json({ error: 'unauthorized' }, 401);
+    const people = await listPeople(db, { tenantId: session.workspace_id, userId: session.user_id });
+    return c.json({ people });
   });
 
   app.post('/api/internal/catalog', async c => {
@@ -205,6 +462,7 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
       return c.json({ error: 'unauthorized' }, 401);
     }
     const body = await c.req.json().catch(() => ({}));
+    if (Array.isArray(body.orgs)) await upsertCatalogOrgs(db, body.orgs);
     const jobs = Array.isArray(body.jobs) ? body.jobs : stubEuraxessJobs();
     const count = await upsertCatalogJobs(db, jobs);
     return c.json({ ok: true, upserted: count });

@@ -2,12 +2,13 @@ name: Public catalog scan
 
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '17 * * * *'
   workflow_dispatch:
 
 jobs:
-  upsert:
+  ingest:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     permissions:
       contents: read
     steps:
@@ -15,10 +16,10 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: '20'
-      - name: Upsert compact EURAXESS stub
+      - name: Compact catalog ingest
         working-directory: apps/web
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: |
           npm install
-          npm run catalog:upsert
+          npm run catalog:ingest -- --sources=euraxess,fusion,umich,phdscanner
