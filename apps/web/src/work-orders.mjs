@@ -98,7 +98,10 @@ export async function createWorkOrder(db, {
        VALUES ($1, $2, $3, $4, $5, $6, 'queued', $7, '', $8, now(), now())`,
       [id, tenantId, resolvedLane, targetKind, targetId, target.title || target.name, promptText, containsPii],
     );
-    const rows = await db.query('SELECT * FROM work_orders WHERE id = $1', [id]);
+    const rows = await db.query(
+      'SELECT * FROM work_orders WHERE id = $1 AND workspace_id = $2',
+      [id, tenantId],
+    );
     return { ok: true, order: rows[0], deduped: false };
   });
 }
@@ -117,20 +120,27 @@ export async function listWorkOrders(db, { tenantId, userId, openOnly = true } =
 
 export async function getWorkOrder(db, { tenantId, userId, orderId }) {
   return withTenant(db, { tenantId, userId }, async () => {
-    const rows = await db.query('SELECT * FROM work_orders WHERE id = $1', [orderId]);
+    const rows = await db.query(
+      'SELECT * FROM work_orders WHERE id = $1 AND workspace_id = $2',
+      [orderId, tenantId],
+    );
     return rows[0] || null;
   });
 }
 
 export async function markWorkOrderCopied(db, { tenantId, userId, orderId }) {
   return withTenant(db, { tenantId, userId }, async () => {
-    const rows = await db.query('SELECT * FROM work_orders WHERE id = $1', [orderId]);
+    const rows = await db.query(
+      'SELECT * FROM work_orders WHERE id = $1 AND workspace_id = $2',
+      [orderId, tenantId],
+    );
     const order = rows[0];
     if (!order) return { ok: false, error: 'unknown_order', status: 404 };
     if (order.status === 'queued') {
       await db.query(
-        `UPDATE work_orders SET status = 'copied', updated_at = now() WHERE id = $1`,
-        [orderId],
+        `UPDATE work_orders SET status = 'copied', updated_at = now()
+          WHERE id = $1 AND workspace_id = $2`,
+        [orderId, tenantId],
       );
       order.status = 'copied';
     }
@@ -149,15 +159,21 @@ export async function completeWorkOrder(db, {
     ? status
     : 'review_ready';
   return withTenant(db, { tenantId, userId }, async () => {
-    const rows = await db.query('SELECT * FROM work_orders WHERE id = $1', [orderId]);
+    const rows = await db.query(
+      'SELECT * FROM work_orders WHERE id = $1 AND workspace_id = $2',
+      [orderId, tenantId],
+    );
     if (!rows[0]) return { ok: false, error: 'unknown_order', status: 404 };
     await db.query(
       `UPDATE work_orders
           SET result_md = $2, status = $3, updated_at = now()
-        WHERE id = $1`,
-      [orderId, resultMd || '', next],
+        WHERE id = $1 AND workspace_id = $4`,
+      [orderId, resultMd || '', next, tenantId],
     );
-    const updated = await db.query('SELECT * FROM work_orders WHERE id = $1', [orderId]);
+    const updated = await db.query(
+      'SELECT * FROM work_orders WHERE id = $1 AND workspace_id = $2',
+      [orderId, tenantId],
+    );
     return { ok: true, order: updated[0] };
   });
 }

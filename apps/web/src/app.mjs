@@ -38,14 +38,25 @@ import {
 } from './work-orders.mjs';
 import { createPerson, listPeople } from './people.mjs';
 import {
+  deleteUserAndWorkspace,
+  exportWorkspace,
+  getProfile,
+  saveProfile,
+} from './profile.mjs';
+import { attachFitScores } from './score.mjs';
+import { sendResendEmail } from './mail.mjs';
+import {
   renderApplied,
   renderFeed,
   renderInbox,
   renderJob,
+  renderLegal,
   renderLogin,
   renderOrg,
   renderOrgs,
   renderPeople,
+  renderProfile,
+  renderResume,
   renderToday,
 } from './html.mjs';
 
@@ -84,6 +95,14 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
     return c.json({ error: 'unauthorized' }, 401);
   }
 
+  async function withFit(session, jobs) {
+    const profile = await getProfile(db, { tenantId: session.workspace_id, userId: session.user_id });
+    return attachFitScores(jobs || [], profile);
+  }
+
+  app.get('/privacy', c => c.html(renderLegal({ slug: 'privacy', user: c.get('session') })));
+  app.get('/terms', c => c.html(renderLegal({ slug: 'terms', user: c.get('session') })));
+
   app.get('/healthz', c => c.json({
     ok: true,
     service: 'career-os-web',
@@ -96,11 +115,12 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
     const denied = loginOr(c, session);
     if (denied) return denied;
     await ensureStub();
-    const [jobs, orders, scans] = await Promise.all([
+    const [rawJobs, orders, scans] = await Promise.all([
       listRecentJobs(db, { tenantId: session.workspace_id, userId: session.user_id }),
       listWorkOrders(db, { tenantId: session.workspace_id, userId: session.user_id }),
       latestScanRuns(db),
     ]);
+    const jobs = await withFit(session, rawJobs);
     return c.html(renderToday({
       user: { email: session.email, name: session.name },
       jobs,
@@ -125,7 +145,7 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
     return c.html(renderFeed({
       user: { email: session.email, name: session.name },
       source,
-      jobs: page.jobs,
+      jobs: await withFit(session, page.jobs),
       nextCursor: page.next_cursor,
     }));
   });
@@ -141,7 +161,8 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
       userId: session.user_id,
     });
     if (!job) return c.html(renderJob({ user: { email: session.email }, job: null }), 404);
-    return c.html(renderJob({ user: { email: session.email, name: session.name }, job }));
+    const [scored] = await withFit(session, [job]);
+    return c.html(renderJob({ user: { email: session.email, name: session.name }, job: scored }));
   });
 
   app.get('/orgs', async c => {
@@ -164,6 +185,7 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
       userId: session.user_id,
     });
     if (!org) return c.html(renderOrg({ user: { email: session.email }, org: null }), 404);
+    org.jobs = await withFit(session, org.jobs);
     return c.html(renderOrg({ user: { email: session.email, name: session.name }, org }));
   });
 
@@ -210,6 +232,78 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
     }));
   });
 
+  app.get('/profile', async c => {
+    const session = requireSession(c);
+    const denied = loginOr(c, session);
+    if (denied) return denied;
+    const profile = await getProfile(db, { tenantId: session.workspace_id, userId: session.user_id });
+    return c.html(renderProfile({
+      user: { email: session.email, name: session.name },
+      profile,
+    }));
+  });
+
+  app.get('/resume', async c => {
+    const session = requireSession(c);
+    const denied = loginOr(c, session);
+    if (denied) return denied;
+    const profile = await getProfile(db, { tenantId: session.workspace_id, userId: session.user_id });
+    return c.html(renderResume({
+      user: { email: session.email, name: session.name },
+      profile,
+    }));
+  });
+
+  app.post('/api/profile', async c => {
+    const session = requireSession(c);
+    if (!session) return c.json({ error: 'unauthorized' }, 401);
+    const body = await readBody(c);
+    const result = await saveProfile(db, {
+      tenantId: session.workspace_id,
+      userId: session.user_id,
+      displayName: String(body.display_name || ''),
+      cvText: String(body.cv_text || ''),
+      keywords: String(body.keywords || ''),
+      digestEnabled: body.digest_enabled === 'on' || body.digest_enabled === true || body.digest_enabled === 'true',
+    });
+    if (wantsHtml(c)) return c.redirect('/profile');
+    return c.json(result);
+  });
+
+  app.get('/api/export', async c => {
+    const session = requireSession(c);
+    if (!session) return c.json({ error: 'unauthorized' }, 401);
+    const payload = await exportWorkspace(db, {
+      tenantId: session.workspace_id,
+      userId: session.user_id,
+      email: session.email,
+      name: session.name,
+    });
+    c.header('content-disposition', 'attachment; filename="career-os-export.json"');
+    return c.json(payload);
+  });
+
+  app.post('/api/account/delete', async c => {
+    const session = requireSession(c);
+    if (!session) return c.json({ error: 'unauthorized' }, 401);
+    const body = await readBody(c);
+    if (String(body.confirm || '') !== 'DELETE') {
+      if (wantsHtml(c)) {
+        const profile = await getProfile(db, { tenantId: session.workspace_id, userId: session.user_id });
+        return c.html(renderProfile({
+          user: { email: session.email, name: session.name },
+          profile,
+          notice: { error: true, text: 'Type DELETE to confirm.' },
+        }), 400);
+      }
+      return c.json({ error: 'confirm_required' }, 400);
+    }
+    await deleteUserAndWorkspace(db, { userId: session.user_id, email: session.email });
+    c.header('Set-Cookie', clearCookieHeader({ secure }));
+    if (wantsHtml(c)) return c.redirect('/');
+    return c.json({ ok: true });
+  });
+
   app.post('/api/auth/register', async c => {
     const body = await readBody(c);
     const email = String(body.email || '').trim();
@@ -242,7 +336,11 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
     const link = await createMagicLink(db, email);
     const url = `${baseUrl(c)}/api/auth/magic-link/consume?token=${link.id}`;
     if (env.RESEND_API_KEY) {
-      await sendResend(env, email, url);
+      await sendResendEmail(env, {
+        to: email,
+        subject: 'Your Career OS sign-in link',
+        text: `Sign in: ${url}\nThis link expires in 30 minutes.`,
+      });
       return c.html(renderLogin({ googleEnabled, notice: { text: 'Check your email for the sign-in link.' } }));
     }
     if (env.ALLOW_INSECURE_MAGIC_LINK === '1') {
@@ -341,7 +439,12 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
       userId: session.user_id,
       cursor: c.req.query('cursor') || null,
     });
-    return c.json({ view: 'list', source, jobs: page.jobs, next_cursor: page.next_cursor });
+    return c.json({
+      view: 'list',
+      source,
+      jobs: await withFit(session, page.jobs),
+      next_cursor: page.next_cursor,
+    });
   });
 
   app.post('/api/overlays/:jobId', async c => {
@@ -487,20 +590,4 @@ async function readBody(c) {
 function wantsHtml(c) {
   return (c.req.header('accept') || '').includes('text/html')
     || (c.req.header('content-type') || '').includes('application/x-www-form-urlencoded');
-}
-
-async function sendResend(env, to, url) {
-  await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${env.RESEND_API_KEY}`,
-      'content-type': 'application/json',
-    },
-    body: JSON.stringify({
-      from: env.RESEND_FROM || 'Career OS <onboarding@resend.dev>',
-      to: [to],
-      subject: 'Your Career OS sign-in link',
-      text: `Sign in: ${url}\nThis link expires in 30 minutes.`,
-    }),
-  });
 }

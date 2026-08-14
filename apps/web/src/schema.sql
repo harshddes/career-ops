@@ -128,20 +128,36 @@ CREATE INDEX IF NOT EXISTS catalog_orgs_source_idx ON catalog_orgs (source, name
 CREATE INDEX IF NOT EXISTS job_overlays_workspace_idx ON job_overlays (workspace_id, status);
 CREATE INDEX IF NOT EXISTS work_orders_workspace_status_idx
   ON work_orders (workspace_id, status, updated_at DESC);
+CREATE TABLE IF NOT EXISTS workspace_profiles (
+  workspace_id TEXT PRIMARY KEY REFERENCES workspaces(id) ON DELETE CASCADE,
+  display_name TEXT NOT NULL DEFAULT '',
+  cv_text TEXT NOT NULL DEFAULT '',
+  keywords TEXT NOT NULL DEFAULT '',
+  digest_enabled BOOLEAN NOT NULL DEFAULT false,
+  last_digest_at TIMESTAMPTZ,
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
 CREATE INDEX IF NOT EXISTS workspace_people_workspace_idx
   ON workspace_people (workspace_id, updated_at DESC);
 CREATE INDEX IF NOT EXISTS scan_runs_source_idx ON scan_runs (source, started_at DESC);
 
+-- Signup/session rows are written by the connection owner without app.tenant_id.
+-- ENABLE without FORCE so that role can insert. app_user still hits the policies.
 ALTER TABLE workspaces ENABLE ROW LEVEL SECURITY;
-ALTER TABLE workspaces FORCE ROW LEVEL SECURITY;
+ALTER TABLE workspaces NO FORCE ROW LEVEL SECURITY;
+ALTER TABLE sessions ENABLE ROW LEVEL SECURITY;
+ALTER TABLE sessions NO FORCE ROW LEVEL SECURITY;
+-- Private workspace rows: FORCE so even the table owner needs app.tenant_id
+-- (set on one Postgres session inside withTenant).
 ALTER TABLE job_overlays ENABLE ROW LEVEL SECURITY;
 ALTER TABLE job_overlays FORCE ROW LEVEL SECURITY;
-ALTER TABLE sessions ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sessions FORCE ROW LEVEL SECURITY;
 ALTER TABLE work_orders ENABLE ROW LEVEL SECURITY;
 ALTER TABLE work_orders FORCE ROW LEVEL SECURITY;
 ALTER TABLE workspace_people ENABLE ROW LEVEL SECURITY;
 ALTER TABLE workspace_people FORCE ROW LEVEL SECURITY;
+ALTER TABLE workspace_profiles ENABLE ROW LEVEL SECURITY;
+ALTER TABLE workspace_profiles FORCE ROW LEVEL SECURITY;
 
 DROP POLICY IF EXISTS workspaces_tenant ON workspaces;
 CREATE POLICY workspaces_tenant ON workspaces
@@ -167,3 +183,13 @@ DROP POLICY IF EXISTS workspace_people_tenant ON workspace_people;
 CREATE POLICY workspace_people_tenant ON workspace_people
   USING (workspace_id = current_setting('app.tenant_id', true))
   WITH CHECK (workspace_id = current_setting('app.tenant_id', true));
+
+DROP POLICY IF EXISTS workspace_profiles_tenant ON workspace_profiles;
+CREATE POLICY workspace_profiles_tenant ON workspace_profiles
+  USING (workspace_id = current_setting('app.tenant_id', true))
+  WITH CHECK (workspace_id = current_setting('app.tenant_id', true));
+
+DROP POLICY IF EXISTS workspace_profiles_service ON workspace_profiles;
+CREATE POLICY workspace_profiles_service ON workspace_profiles
+  USING (current_setting('app.service_role', true) = '1')
+  WITH CHECK (current_setting('app.service_role', true) = '1');

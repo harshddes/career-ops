@@ -30,7 +30,10 @@ export async function createPerson(db, {
         notes,
       ],
     );
-    const rows = await db.query('SELECT * FROM workspace_people WHERE id = $1', [id]);
+    const rows = await db.query(
+      'SELECT * FROM workspace_people WHERE id = $1 AND workspace_id = $2',
+      [id, tenantId],
+    );
     return { ok: true, person: rows[0] };
   });
 }
@@ -48,7 +51,10 @@ export async function listPeople(db, { tenantId, userId } = {}) {
 
 export async function getPerson(db, { personId, tenantId, userId }) {
   return withTenant(db, { tenantId, userId }, async () => {
-    const rows = await db.query('SELECT * FROM workspace_people WHERE id = $1', [personId]);
+    const rows = await db.query(
+      'SELECT * FROM workspace_people WHERE id = $1 AND workspace_id = $2',
+      [personId, tenantId],
+    );
     return rows[0] || null;
   });
 }

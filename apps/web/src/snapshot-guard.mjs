@@ -1,11 +1,7 @@
-/**
- * Networking PII never leaves the tenant database.
- * Static snapshots, GitHub Pages, and public catalog upserts must not include these tables.
- */
-
 export const PRIVATE_TABLES = Object.freeze([
   'work_orders',
   'workspace_people',
+  'workspace_profiles',
   'job_overlays',
   'sessions',
   'users',
@@ -31,7 +27,7 @@ export function filterSnapshotPayload(payload = {}) {
   const safe = {};
   for (const [key, value] of Object.entries(payload)) {
     if (PRIVATE_TABLES.includes(key)) continue;
-    if (key === 'work_orders' || key === 'people' || key === 'networking') continue;
+    if (key === 'work_orders' || key === 'people' || key === 'networking' || key === 'profiles' || key === 'cv') continue;
     safe[key] = value;
   }
   return safe;

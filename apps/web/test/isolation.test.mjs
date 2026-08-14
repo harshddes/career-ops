@@ -2,11 +2,13 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createApp } from '../src/app.mjs';
 import { applySchema, createPgliteDb } from '../src/db.mjs';
+import { listDigestRecipients } from '../src/profile.mjs';
 import { readOverlayDirect } from '../src/catalog.mjs';
 import { readWorkOrderDirect } from '../src/work-orders.mjs';
 import { readPersonDirect } from '../src/people.mjs';
 import { compilePrompt } from '../src/prompt-compiler.mjs';
 import { filterSnapshotPayload, isSnapshotSafeTable, workOrderContainsPii } from '../src/snapshot-guard.mjs';
+import { ruleScore } from '../src/score.mjs';
 import { parseEuraxessRss } from '../src/ingest/euraxess.mjs';
 import { projectEuraxessItem, projectFusionJob, projectUmichRow, projectPhdscannerItem } from '../src/ingest/project.mjs';
 import { parseUmichListingHtml } from '../src/ingest/umich.mjs';
@@ -136,6 +138,13 @@ test('two workspaces cannot read each other work orders', async () => {
     headers: { cookie: cookieB },
   });
   assert.equal(stolen.status, 404);
+
+  const hijack = await app.request(`/api/work-orders/${created.order.id}/complete`, {
+    method: 'POST',
+    headers: jsonHeaders(cookieB),
+    body: JSON.stringify({ result_md: 'stolen', status: 'completed' }),
+  });
+  assert.equal(hijack.status, 404);
 
   const meB = await (await app.request('/api/me', { headers: { cookie: cookieB } })).json();
   const leaked = await readWorkOrderDirect(db, {
@@ -311,3 +320,97 @@ test('compact ingest projectors stay list-sized', async () => {
   assert.equal(match('Plasma diagnostics'), true);
   assert.equal(match('Account executive sales'), false);
 });
+
+test('logout clears the session cookie', async () => {
+  const { app } = await setup();
+  const cookie = await register(app, 'logout@example.com');
+  const me = await app.request('/api/me', { headers: { cookie } });
+  assert.equal(me.status, 200);
+  const out = await app.request('/logout', { method: 'POST', headers: { cookie } });
+  assert.equal(out.status, 302);
+  const gone = await app.request('/api/me', { headers: { cookie } });
+  assert.equal(gone.status, 401);
+});
+
+test('privacy and terms are public', async () => {
+  const { app } = await setup();
+  const privacy = await app.request('/privacy');
+  assert.equal(privacy.status, 200);
+  assert.match(await privacy.text(), /Privacy/);
+  const terms = await app.request('/terms');
+  assert.equal(terms.status, 200);
+  assert.match(await terms.text(), /Terms/);
+});
+
+test('rule scores prefer fusion diagnostics titles', () => {
+  const hot = ruleScore({ title: 'Plasma diagnostics FPGA DAQ', institution: 'ITER' }, {});
+  const cold = ruleScore({ title: 'Account executive sales', institution: 'Acme' }, {});
+  assert.ok(hot.score > cold.score);
+  assert.ok(hot.hits.includes('plasma'));
+});
+
+test('CV text stays in the owner workspace and export/delete work', async () => {
+  const { db, app } = await setup();
+  const cookieA = await register(app, 'cv-a@example.com');
+  const cookieB = await register(app, 'cv-b@example.com');
+
+  const save = await app.request('/api/profile', {
+    method: 'POST',
+    headers: jsonHeaders(cookieA),
+    body: JSON.stringify({
+      display_name: 'Ada',
+      cv_text: 'Ada private CV FPGA',
+      keywords: 'FPGA',
+      digest_enabled: true,
+    }),
+  });
+  const saved = await save.json();
+  assert.equal(save.status, 200, JSON.stringify(saved));
+  assert.equal(saved.profile.cv_text, 'Ada private CV FPGA');
+
+  const exportA = await app.request('/api/export', { headers: { cookie: cookieA } });
+  const dump = await exportA.json();
+  assert.equal(dump.profile.cv_text, 'Ada private CV FPGA');
+  assert.equal(dump.user.email, 'cv-a@example.com');
+
+  const profileB = await app.request('/profile', { headers: { cookie: cookieB } });
+  const htmlB = await profileB.text();
+  assert.doesNotMatch(htmlB, /Ada private CV FPGA/);
+
+  const feed = await app.request('/api/feeds/euraxess', { headers: { cookie: cookieA } });
+  const feedBody = await feed.json();
+  const job = feedBody.jobs.find(row => row.id === 'euraxess-fusion-demo-1');
+  assert.ok(job.fit_score >= 1);
+
+  const recipients = await listDigestRecipients(db);
+  assert.ok(recipients.some(row => row.email === 'cv-a@example.com'));
+  assert.equal(recipients.some(row => row.email === 'cv-b@example.com'), false);
+
+  const denied = await app.request('/api/account/delete', {
+    method: 'POST',
+    headers: jsonHeaders(cookieA),
+    body: JSON.stringify({ confirm: 'nope' }),
+  });
+  assert.equal(denied.status, 400);
+
+  const gone = await app.request('/api/account/delete', {
+    method: 'POST',
+    headers: jsonHeaders(cookieA),
+    body: JSON.stringify({ confirm: 'DELETE' }),
+  });
+  const goneBody = await gone.json();
+  assert.equal(gone.status, 200, JSON.stringify(goneBody));
+
+  const me = await app.request('/api/me', { headers: { cookie: cookieA } });
+  assert.equal(me.status, 401);
+
+  const afterDelete = await listDigestRecipients(db);
+  assert.equal(afterDelete.some(row => row.email === 'cv-a@example.com'), false);
+
+  assert.equal(isSnapshotSafeTable('workspace_profiles'), false);
+  assert.deepEqual(
+    filterSnapshotPayload({ catalog_jobs: [1], cv: 'secret', profiles: [{}] }),
+    { catalog_jobs: [1] },
+  );
+});
+

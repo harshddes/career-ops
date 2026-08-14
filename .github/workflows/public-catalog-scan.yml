@@ -23,3 +23,4 @@ jobs:
         run: |
           npm install
           npm run catalog:ingest -- --sources=euraxess,fusion,umich,phdscanner
+          node scripts/send-digest.mjs

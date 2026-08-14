@@ -1,24 +1,25 @@
 # Career OS — public web (agent-native)
 
-**Full earlier $0 plan:** [PLAN.md](PLAN.md)
+**Plan:** [PLAN.md](PLAN.md)
 
-This is a **new** multi-tenant workplace. It does not replace the local dashboard at `http://127.0.0.1:3737/dashboard/fusion-pivot-dashboard.html`.
+This is a **new** multi-tenant workplace. It does not replace `http://127.0.0.1:3737/dashboard/fusion-pivot-dashboard.html`.
 
-`:8787` is this public app. `:3737` is your personal Fusion Pivot factory (LaTeX / Playwright). They are different processes.
+There is **no public phone URL until Neon + Cloudflare exist**. `:8787` is local only.
 
-## What it does
+## What it does (phases 0–4 in code)
 
-- Shared compact job catalog (EURAXESS, Fusion ATS, U-M Careers, PhDScanner listing)
-- Private overlays (saved / applied kanban)
-- **Queue research** on a job, company, or person → compiles a Cursor prompt
-- **Inbox → Copy prompt** → paste into Cursor → paste the report back
-- Daily/hourly ingest via GitHub Actions (not Cloudflare Workers)
+- Login, isolated workspaces, compact feeds, Applied kanban
+- Queue research → Copy prompt into Cursor → paste report back
+- Hourly GitHub Action ingest (EURAXESS RSS, Fusion ATS, U-M listing, PhDScanner listing)
+- Private CV text, keyword **rule scores**, browser print-to-PDF resume (no Gemini)
+- Export JSON + delete account
+- Optional Resend digest (max 100 emails/run)
+- Privacy / Terms
+- Docker Compose for the **local** `:3737` factory only
 
-It does **not** run Cursor, Gemini, Gmail, LinkedIn scrape, or Playwright. Lanes stay isolated (EURAXESS vs exhibitor vs networking).
+It does **not** run Cursor, Gemini, Gmail, LinkedIn scrape, or Playwright on Cloudflare.
 
-Networking people and work-order results are RLS-private. They are never safe for a static snapshot (`src/snapshot-guard.mjs`).
-
-## Local
+## Local (terminal must stay open)
 
 ```bash
 cd apps/web
@@ -27,25 +28,26 @@ npm test
 npm run dev
 ```
 
-Open `http://127.0.0.1:8787` after the terminal prints `Career OS web listening`.
+Open `http://127.0.0.1:8787` on **this computer**.
 
-If the browser says `ERR_CONNECTION_REFUSED` on `:8787`, run `npm run dev` **on the same machine as the browser**.
+## Public URL (any phone / laptop — no terminal)
 
-## Cloud ingest
+You create free accounts (no card):
+
+1. [Neon](https://neon.tech) → copy `DATABASE_URL`
+2. [Cloudflare](https://dash.cloudflare.com) → API token with Workers deploy
+3. GitHub repo secrets: `DATABASE_URL`, `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`
+4. Cloudflare Worker secret: `DATABASE_URL` (`npx wrangler secret put DATABASE_URL` in `apps/web`)
+5. Optional: `RESEND_API_KEY`, Google OAuth `openid email profile`
+
+Then `.github/workflows/public-web-deploy.yml` deploys (Actions → Run workflow, or after merge to `main`). The live URL is the Worker `*.workers.dev` hostname Wrangler prints. GitHub secrets are copied onto the Worker during that deploy. After that the site stays up without your PC.
+
+Hourly scans: `.github/workflows/public-catalog-scan.yml` (no-op until `DATABASE_URL` is set).
+
+## Optional local factory (Cursor / LaTeX)
 
 ```bash
-# no-op without DATABASE_URL (CI stays green)
-npm run catalog:ingest -- --sources=euraxess,fusion,umich,phdscanner
+docker compose -f docker-compose.factory.yml up --build
 ```
 
-GitHub Action: `.github/workflows/public-catalog-scan.yml` (hourly). Set repository secret `DATABASE_URL`.
-
-Skipped in cloud: FindAPhD (bot wall), Apify backfill, per-user Playwright, factory workers.
-
-## $0 deploy
-
-1. Neon Free `DATABASE_URL`
-2. Cloudflare Worker/Pages from this folder (`wrangler.toml`)
-3. Optional Google OAuth (`openid email profile`)
-4. Optional Resend
-5. Secret `CATALOG_SERVICE_KEY` if you upsert via HTTP
+Still `http://127.0.0.1:3737/dashboard/fusion-pivot-dashboard.html`. Do not expose this container to the internet.

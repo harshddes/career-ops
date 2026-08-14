@@ -4,15 +4,15 @@
 
 **What shipped vs what is still the plan**
 
-| Phase | In the plan? | In the code today? |
-|------|----------------|-------------------|
-| 0 Login + isolated workspaces + stub EURAXESS list | yes | **yes** (`apps/web`) |
-| 1 Shared live catalog + Applied/kanban as the real MVP | yes | stub only |
-| 2 CV / Gemini drafts | yes | not yet |
-| 3 Networking + Resend digest | yes | not yet |
-| 4 Domain verify + Docker self-host | yes | not yet |
+| Phase | In the plan? | In the code today? | Live on the public internet? |
+|------|----------------|-------------------|------------------------------|
+| 0 Login + isolated workspaces | yes | **yes** | not until Neon + Cloudflare |
+| 1 Shared catalog + Applied kanban + research inbox | yes | **yes** | not until secrets exist |
+| 2 CV text, rule scores, print resume (Gemini left out) | yes | **yes** | same |
+| 3 Networking people, Resend digest cap, export/delete | yes | **yes** | digest needs Resend key |
+| 4 Privacy/terms + Docker factory for :3737 | yes | **yes** | Docker is local-only |
 
-The first PR was intentionally Phase 0 only so `main` and `:3737` stay untouched.
+The public phone URL appears only after you create Neon + Cloudflare and the deploy Action runs.
 
 ---
 

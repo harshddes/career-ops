@@ -32,6 +32,7 @@ function nav(active) {
     ['/people', 'People'],
     ['/inbox', 'Inbox'],
     ['/applied', 'Applied'],
+    ['/profile', 'Profile'],
   ];
   return `<nav class="nav">${links.map(([href, label]) => (
     `<a class="${active === href || (active && href !== '/' && active.startsWith(href)) ? 'on' : ''}" href="${href}">${label}</a>`
@@ -84,6 +85,9 @@ export function renderPage({ title, user, body, notice, active = '/' }) {
     ${notice ? `<p class="notice${notice.error ? ' error' : ''}">${escapeHtml(notice.text)}</p>` : ''}
     ${body}
   </main>
+  <footer class="muted" style="max-width:1100px;margin:0 auto;padding:0 1.25rem 2rem;font-size:0.85rem;">
+    <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · Career OS does not auto-submit applications.
+  </footer>
   <script>${CLIENT_JS}</script>
 </body>
 </html>`;
@@ -126,7 +130,7 @@ function jobCard(job, { queue = true } = {}) {
     <article class="card">
       <p class="badge">${escapeHtml(job.source || '')} · ${escapeHtml(job.overlay_status || 'untracked')}</p>
       <strong><a href="/jobs/${encodeURIComponent(job.id)}">${escapeHtml(job.title)}</a></strong>
-      <p class="muted">${escapeHtml(job.institution || '')} · ${escapeHtml(job.country || '')} · ${escapeHtml(job.score ?? '—')}/5</p>
+      <p class="muted">${escapeHtml(job.institution || '')} · ${escapeHtml(job.country || '')} · catalog ${escapeHtml(job.score ?? '—')}/5${job.fit_score != null ? ` · your fit ${escapeHtml(job.fit_score)}/5` : ''}</p>
       <p class="row">
         ${job.url ? `<a class="btn secondary" href="${escapeHtml(job.url)}" rel="noopener noreferrer">Open posting</a>` : ''}
         ${queue ? `<form method="post" action="/api/work-orders"><input type="hidden" name="target_kind" value="job"><input type="hidden" name="target_id" value="${escapeHtml(job.id)}"><button type="submit">Queue research</button></form>` : ''}
@@ -201,7 +205,7 @@ export function renderJob({ user, job, notice }) {
     body: `
       <article class="card">
         <h2>${escapeHtml(job.title)}</h2>
-        <p class="muted">${escapeHtml(job.institution)} · ${escapeHtml(job.country)} · ${escapeHtml(job.score ?? '—')}/5</p>
+        <p class="muted">${escapeHtml(job.institution)} · ${escapeHtml(job.country)} · catalog ${escapeHtml(job.score ?? '—')}/5${job.fit_score != null ? ` · your fit ${escapeHtml(job.fit_score)}/5 (${escapeHtml((job.fit_hits || []).join(', ') || job.fit_band || '')})` : ''}</p>
         ${job.url ? `<p><a href="${escapeHtml(job.url)}" rel="noopener noreferrer">Open posting</a></p>` : ''}
         ${job.org_id ? `<p><a href="/orgs/${encodeURIComponent(job.org_id)}">Company card</a></p>` : ''}
         <p>${escapeHtml(job.summary || job.description || 'No detail text in the compact catalog. Use Queue research for a Cursor prompt.')}</p>
@@ -410,6 +414,95 @@ export function renderPeople({ user, people, orgs, notice }) {
         </form>
       </div>
       ${cards || '<p class="muted">No people yet.</p>'}`,
+  });
+}
+
+export function renderProfile({ user, profile, notice }) {
+  const digestOn = profile?.digest_enabled === true || profile?.digest_enabled === 't';
+  return renderPage({
+    title: 'Profile — Career OS',
+    user,
+    notice,
+    active: '/profile',
+    body: `
+      <div class="card">
+        <h2>CV and keywords</h2>
+        <p class="muted">Stored only in your workspace. Used for rule scores and the printable resume. No Gemini.</p>
+        <form method="post" action="/api/profile">
+          <label>Name for resume<input name="display_name" value="${escapeHtml(profile?.display_name || user.name || '')}"></label>
+          <label>Fit keywords (comma-separated)<input name="keywords" value="${escapeHtml(profile?.keywords || '')}" placeholder="plasma, FPGA, vacuum"></label>
+          <label>CV text<textarea name="cv_text">${escapeHtml(profile?.cv_text || '')}</textarea></label>
+          <label class="row"><input type="checkbox" name="digest_enabled" ${digestOn ? 'checked' : ''} style="width:auto"> Email me new catalog jobs (Resend, max 100/day across the app)</label>
+          <p class="row">
+            <button type="submit">Save profile</button>
+            <a class="btn secondary" href="/resume">Print resume</a>
+            <a class="btn secondary" href="/api/export">Export my data</a>
+          </p>
+        </form>
+      </div>
+      <div class="card">
+        <h2>Delete account</h2>
+        <p class="muted">Removes your login, overlays, people, CV, and work orders. Shared job catalog stays.</p>
+        <form method="post" action="/api/account/delete">
+          <label>Type DELETE to confirm<input name="confirm" required autocomplete="off"></label>
+          <p class="row"><button type="submit">Delete my workspace</button></p>
+        </form>
+      </div>`,
+  });
+}
+
+export function renderResume({ user, profile }) {
+  const name = profile?.display_name || user.name || user.email;
+  const body = String(profile?.cv_text || '').trim() || 'Paste CV text on the Profile page, then return here and print.';
+  const paragraphs = escapeHtml(body).replace(/\n/g, '<br>');
+  return `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>${escapeHtml(name)} — Resume</title>
+  <style>
+    body { font: 16px/1.45 Georgia, serif; color: #111; max-width: 720px; margin: 2rem auto; padding: 0 1rem 4rem; }
+    h1 { font-size: 1.6rem; margin-bottom: 0.2rem; }
+    .muted { color: #555; }
+    @media print { button { display: none; } body { margin: 0; } }
+  </style>
+</head>
+<body>
+  <p><button onclick="window.print()">Print / Save PDF</button> <a href="/profile">Back to profile</a></p>
+  <h1>${escapeHtml(name)}</h1>
+  <p class="muted">${escapeHtml(user.email)}</p>
+  <div>${paragraphs}</div>
+</body>
+</html>`;
+}
+
+export function renderLegal({ slug, user }) {
+  const pages = {
+    privacy: {
+      title: 'Privacy',
+      body: `
+        <h2>Privacy</h2>
+        <p>Career OS stores your email, optional CV text, job overlays, research prompts, and people you add. Job catalog rows are shared public postings.</p>
+        <p>Networking names and notes never go into a static snapshot. We do not scrape LinkedIn. We do not submit applications for you.</p>
+        <p>Export or delete your workspace from Profile. Magic-link mail, if enabled, is sent through Resend.</p>
+        <p>This product is MIT-licensed career-ops software. Hosting on free Neon/Cloudflare tiers may process data in those providers’ regions.</p>`,
+    },
+    terms: {
+      title: 'Terms',
+      body: `
+        <h2>Terms</h2>
+        <p>You use Career OS at your own risk. Fit scores are keyword rules, not legal or immigration advice.</p>
+        <p>Do not use the research prompts to scrape LinkedIn, send spam, or submit applications without the human clicking send.</p>
+        <p>Free-tier hosting may pause when idle. There is no SLA. Cursor-quality factory packs stay on a machine you control (Docker or local :3737).</p>
+        <p>License: MIT. See the career-ops repository LICENSE file.</p>`,
+    },
+  };
+  const page = pages[slug] || pages.privacy;
+  return renderPage({
+    title: `${page.title} — Career OS`,
+    user,
+    active: '/',
+    body: `<div class="card">${page.body}</div>`,
   });
 }
 

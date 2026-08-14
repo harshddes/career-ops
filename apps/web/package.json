@@ -8,14 +8,18 @@
     "dev": "node src/node-server.mjs",
     "test": "node --test test/*.test.mjs",
     "catalog:upsert": "node scripts/upsert-catalog.mjs",
-    "catalog:ingest": "node scripts/run-catalog-ingest.mjs"
+    "catalog:ingest": "node scripts/run-catalog-ingest.mjs",
+    "db:migrate": "node scripts/migrate.mjs",
+    "digest": "node scripts/send-digest.mjs",
+    "deploy": "node scripts/deploy-cloudflare.mjs"
   },
   "engines": {
     "node": ">=20"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",
-    "hono": "^4.9.6"
+    "hono": "^4.9.6",
+    "ws": "^8.18.3"
   },
   "devDependencies": {
     "@electric-sql/pglite": "^0.3.7",
