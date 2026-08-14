@@ -46,7 +46,9 @@ import {
 import { attachFitScores } from './score.mjs';
 import { sendResendEmail } from './mail.mjs';
 import {
+  FAVICON_SVG,
   renderApplied,
+  renderError,
   renderFeed,
   renderInbox,
   renderJob,
@@ -79,10 +81,17 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
     await next();
   });
 
-  async function ensureStub() {
-    if (!seedStubCatalog) return;
-    await upsertCatalogOrgs(db, stubOrgs());
-    await upsertCatalogJobs(db, stubEuraxessJobs());
+  async function ensureCatalog() {
+    if (seedStubCatalog) {
+      await upsertCatalogOrgs(db, stubOrgs());
+      await upsertCatalogJobs(db, stubEuraxessJobs());
+      return;
+    }
+    const rows = await db.query('SELECT 1 AS ok FROM catalog_jobs LIMIT 1');
+    if (!rows[0]) {
+      await upsertCatalogOrgs(db, stubOrgs());
+      await upsertCatalogJobs(db, stubEuraxessJobs());
+    }
   }
 
   function baseUrl(c) {
@@ -112,6 +121,45 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
     return attachFitScores(jobs || [], profile);
   }
 
+  app.onError((err, c) => {
+    console.error(err);
+    const session = c.get('session');
+    const accept = c.req.header('accept') || '';
+    if (accept.includes('application/json') && !accept.includes('text/html')) {
+      return c.json({ error: 'internal_error' }, 500);
+    }
+    return c.html(renderError({
+      user: session ? { email: session.email, name: session.name } : null,
+      message: 'The signed-in page failed after login. Open Today again.',
+    }), 500);
+  });
+
+  app.notFound(c => {
+    const accept = c.req.header('accept') || '';
+    if (accept.includes('application/json') && !accept.includes('text/html')) {
+      return c.json({ error: 'not_found' }, 404);
+    }
+    const session = c.get('session');
+    return c.html(renderError({
+      user: session ? { email: session.email, name: session.name } : null,
+      message: 'That address is not a page on Career OS.',
+    }), 404);
+  });
+
+  app.get('/favicon.ico', () => new Response(FAVICON_SVG, {
+    headers: {
+      'content-type': 'image/svg+xml; charset=utf-8',
+      'cache-control': 'public, max-age=86400',
+    },
+  }));
+  app.get('/favicon.svg', () => new Response(FAVICON_SVG, {
+    headers: {
+      'content-type': 'image/svg+xml; charset=utf-8',
+      'cache-control': 'public, max-age=86400',
+    },
+  }));
+  app.get('/robots.txt', c => c.text('User-agent: *\nAllow: /\n'));
+
   app.get('/privacy', c => c.html(renderLegal({ slug: 'privacy', user: c.get('session') })));
   app.get('/terms', c => c.html(renderLegal({ slug: 'terms', user: c.get('session') })));
 
@@ -122,11 +170,15 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
     catalog_seeded: seedStubCatalog,
   }));
 
+  app.get('/api/auth/register', c => c.redirect('/'));
+  app.get('/api/auth/login', c => c.redirect('/'));
+  app.get('/api/auth/magic-link', c => c.redirect('/'));
+
   app.get('/', async c => {
     const session = requireSession(c);
     const denied = loginOr(c, session);
     if (denied) return denied;
-    await ensureStub();
+    await ensureCatalog();
     const [rawJobs, orders, scans] = await Promise.all([
       listRecentJobs(db, { tenantId: session.workspace_id, userId: session.user_id }),
       listWorkOrders(db, { tenantId: session.workspace_id, userId: session.user_id }),
@@ -147,7 +199,7 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
     if (denied) return denied;
     const source = c.req.param('source');
     if (!FEED_SOURCES.includes(source)) return c.text('Unknown feed', 404);
-    await ensureStub();
+    await ensureCatalog();
     const page = await listFeed(db, {
       source,
       tenantId: session.workspace_id,
@@ -166,7 +218,7 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
     const session = requireSession(c);
     const denied = loginOr(c, session);
     if (denied) return denied;
-    await ensureStub();
+    await ensureCatalog();
     const job = await getJob(db, {
       jobId: c.req.param('id'),
       tenantId: session.workspace_id,
@@ -181,7 +233,7 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
     const session = requireSession(c);
     const denied = loginOr(c, session);
     if (denied) return denied;
-    await ensureStub();
+    await ensureCatalog();
     const orgs = await listOrgs(db, { tenantId: session.workspace_id, userId: session.user_id });
     return c.html(renderOrgs({ user: { email: session.email, name: session.name }, orgs }));
   });
@@ -190,7 +242,7 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
     const session = requireSession(c);
     const denied = loginOr(c, session);
     if (denied) return denied;
-    await ensureStub();
+    await ensureCatalog();
     const org = await getOrg(db, {
       orgId: c.req.param('id'),
       tenantId: session.workspace_id,
@@ -232,7 +284,7 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
     const session = requireSession(c);
     const denied = loginOr(c, session);
     if (denied) return denied;
-    await ensureStub();
+    await ensureCatalog();
     const [people, orgs] = await Promise.all([
       listPeople(db, { tenantId: session.workspace_id, userId: session.user_id }),
       listOrgs(db, { tenantId: session.workspace_id, userId: session.user_id }),
@@ -444,7 +496,7 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
     if (!session) return c.json({ error: 'unauthorized' }, 401);
     const source = c.req.param('source');
     if (!FEED_SOURCES.includes(source)) return c.json({ error: 'unknown_feed' }, 404);
-    await ensureStub();
+    await ensureCatalog();
     const page = await listFeed(db, {
       source,
       tenantId: session.workspace_id,
@@ -462,7 +514,7 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
   app.post('/api/overlays/:jobId', async c => {
     const session = requireSession(c);
     if (!session) return c.json({ error: 'unauthorized' }, 401);
-    await ensureStub();
+    await ensureCatalog();
     const body = await readBody(c);
     const result = await patchOverlay(db, {
       tenantId: session.workspace_id,
@@ -479,7 +531,7 @@ export function createApp({ db, env = {}, seedStubCatalog = false }) {
   app.post('/api/work-orders', async c => {
     const session = requireSession(c);
     if (!session) return c.json({ error: 'unauthorized' }, 401);
-    await ensureStub();
+    await ensureCatalog();
     const body = await readBody(c);
     const result = await createWorkOrder(db, {
       tenantId: session.workspace_id,

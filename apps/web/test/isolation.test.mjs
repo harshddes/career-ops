@@ -2,8 +2,9 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createApp } from '../src/app.mjs';
 import { applySchema, createPgliteDb, loadSchemaSql, splitSql } from '../src/schema-fs.mjs';
+import { bindTenantSql, withTenant } from '../src/db.mjs';
+import { readOverlayDirect, stubEuraxessJobs, stubOrgs, upsertCatalogJobs, upsertCatalogOrgs } from '../src/catalog.mjs';
 import { listDigestRecipients } from '../src/profile.mjs';
-import { readOverlayDirect } from '../src/catalog.mjs';
 import { readWorkOrderDirect } from '../src/work-orders.mjs';
 import { readPersonDirect } from '../src/people.mjs';
 import { compilePrompt } from '../src/prompt-compiler.mjs';
@@ -51,6 +52,46 @@ function jsonHeaders(cookie) {
   };
 }
 
+test('bindTenantSql folds tenant GUCs into one statement and shifts $n', () => {
+  const out = bindTenantSql(
+    'SELECT * FROM job_overlays WHERE workspace_id = $1 AND job_id = $2',
+    ['ws_1', 'job_1'],
+    { tenantId: 'ws_1', userId: 'user_1' },
+  );
+  assert.deepEqual(out.params, ['ws_1', 'user_1', '', 'ws_1', 'job_1']);
+  assert.match(out.text, /set_config\('app.tenant_id'/);
+  assert.match(out.text, /workspace_id = \$4/);
+  assert.match(out.text, /job_id = \$5/);
+  assert.match(out.text, /CROSS JOIN _auth/);
+});
+
+test('HTTP-style tenant bind inserts overlays under FORCE RLS', async () => {
+  const db = await createPgliteDb();
+  await applySchema(db);
+  db.sessionTxn = false;
+  await upsertCatalogOrgs(db, stubOrgs());
+  await upsertCatalogJobs(db, stubEuraxessJobs());
+  await db.query(
+    `INSERT INTO users (id, email, name, password_hash, email_verified)
+     VALUES ('user_bind', 'bind@example.com', 'Bind', NULL, true)`,
+  );
+  await db.query("INSERT INTO workspaces (id, user_id) VALUES ('ws_bind', 'user_bind')");
+
+  await withTenant(db, { tenantId: 'ws_bind', userId: 'user_bind' }, async () => {
+    await db.query(
+      `INSERT INTO job_overlays (workspace_id, job_id, status, notes, updated_at)
+       VALUES ($1, $2, 'saved', 'private', now())`,
+      ['ws_bind', 'euraxess-fusion-demo-1'],
+    );
+  });
+
+  const rows = await withTenant(db, { tenantId: 'ws_bind', userId: 'user_bind' }, async () => (
+    db.query('SELECT job_id, notes FROM job_overlays WHERE workspace_id = $1', ['ws_bind'])
+  ));
+  assert.equal(rows.length, 1);
+  assert.equal(rows[0].notes, 'private');
+});
+
 test('https origin marks session cookies Secure without APP_BASE_URL', async () => {
   const { app } = await setup();
   const response = await app.request('https://career-os-web.example.workers.dev/api/auth/register', {
@@ -70,6 +111,19 @@ test('schema split keeps CREATE TABLE users despite file-header comments', () =>
   assert.ok(statements.some(stmt => /ALTER TABLE workspaces ENABLE ROW LEVEL SECURITY/i.test(stmt)));
   assert.ok(statements.some(stmt => /ALTER TABLE job_overlays FORCE ROW LEVEL SECURITY/i.test(stmt)));
   assert.equal(statements.filter(stmt => stmt.trimStart().startsWith('--')).length, 0);
+});
+
+test('favicon and signed-in Today page load', async () => {
+  const { app } = await setup();
+  const icon = await app.request('/favicon.ico');
+  assert.equal(icon.status, 200);
+  const cookie = await register(app, 'today@example.com');
+  const today = await app.request('/', { headers: { cookie } });
+  const todayHtml = await today.text();
+  assert.equal(today.status, 200, todayHtml);
+  assert.match(todayHtml, /Today/);
+  const loginGet = await app.request('/api/auth/login');
+  assert.equal(loginGet.status, 302);
 });
 
 test('unauthenticated feed is rejected', async () => {

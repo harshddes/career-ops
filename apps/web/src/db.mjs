@@ -9,11 +9,56 @@ function mapRows(result) {
   return [];
 }
 
+function isCloudflareWorker() {
+  return typeof WebSocketPair !== 'undefined';
+}
+
+function shiftPlaceholders(text, by) {
+  return String(text).replace(/\$(\d+)/g, (_, n) => `$${Number(n) + by}`);
+}
+
+/**
+ * Cloudflare Workers cannot hold a Postgres session (BEGIN / SET LOCAL / COMMIT).
+ * Fold tenant GUC binds into the same statement so FORCE RLS still sees app.tenant_id.
+ */
+export function bindTenantSql(text, params = [], { tenantId = '', userId = '', serviceRole = false } = {}) {
+  const trimmed = String(text).trim();
+  if (!trimmed) return { text, params };
+  if (/^(BEGIN|COMMIT|ROLLBACK)\b/i.test(trimmed)) return { text: trimmed, params };
+  if (/^SET\s+/i.test(trimmed)) return { text: trimmed, params };
+
+  const extras = [tenantId || '', userId || '', serviceRole ? '1' : ''];
+  const shifted = shiftPlaceholders(trimmed, extras.length);
+  const authCte = `WITH _auth AS (
+    SELECT
+      set_config('app.tenant_id', NULLIF($1::text, ''), true) AS tenant_set,
+      set_config('app.user_id', NULLIF($2::text, ''), true) AS user_set,
+      set_config('app.service_role', NULLIF($3::text, ''), true) AS service_set
+  )`;
+
+  if (/^(SELECT|WITH)\b/i.test(trimmed)) {
+    return {
+      text: `${authCte}, _exec AS (${shifted}) SELECT _exec.* FROM _exec CROSS JOIN _auth`,
+      params: [...extras, ...params],
+    };
+  }
+
+  const inner = /\bRETURNING\b/i.test(trimmed) ? shifted : `${shifted} RETURNING *`;
+  return {
+    text: `${authCte}, _exec AS (${inner}) SELECT _exec.* FROM _exec CROSS JOIN _auth`,
+    params: [...extras, ...params],
+  };
+}
+
 function attachQuery(db, rawQuery) {
   db.queryUnscoped = rawQuery;
   db.query = async (text, params = []) => {
     const scoped = scopedQuery.getStore();
-    if (scoped) return scoped(text, params);
+    if (typeof scoped === 'function') return scoped(text, params);
+    if (scoped?.mode === 'bind') {
+      const wrapped = bindTenantSql(text, params, scoped);
+      return rawQuery(wrapped.text, wrapped.params);
+    }
     return rawQuery(text, params);
   };
   return db;
@@ -27,6 +72,22 @@ export async function createPgliteDb() {
     kind: 'pglite',
     async exec(sql) {
       await client.exec(sql);
+    },
+  }, rawQuery);
+}
+
+async function createNeonHttpDb(connectionString) {
+  const { neon, neonConfig } = await import('@neondatabase/serverless');
+  neonConfig.fetchConnectionCache = true;
+  const sql = neon(connectionString, { fullResults: true });
+  const rawQuery = async (text, params = []) => mapRows(await sql.query(text, params));
+  return attachQuery({
+    kind: 'neon-http',
+    sessionTxn: false,
+    async exec(sqlText) {
+      for (const statement of splitSql(sqlText)) {
+        if (statement) await sql.query(statement, []);
+      }
     },
   }, rawQuery);
 }
@@ -47,6 +108,10 @@ async function configureNeonSockets() {
 }
 
 export async function createNeonDb(connectionString) {
+  if (isCloudflareWorker()) {
+    return createNeonHttpDb(connectionString);
+  }
+
   const sockets = await configureNeonSockets();
   if (sockets) {
     const { Pool } = await import('@neondatabase/serverless');
@@ -72,17 +137,7 @@ export async function createNeonDb(connectionString) {
     }, rawQuery);
   }
 
-  const { neon } = await import('@neondatabase/serverless');
-  const sql = neon(connectionString, { fullResults: true });
-  const rawQuery = async (text, params = []) => mapRows(await sql.query(text, params));
-  return attachQuery({
-    kind: 'neon-http',
-    async exec(sqlText) {
-      for (const statement of splitSql(sqlText)) {
-        if (statement) await sql.query(statement, []);
-      }
-    },
-  }, rawQuery);
+  return createNeonHttpDb(connectionString);
 }
 
 export async function createDb(connectionString) {
@@ -153,7 +208,14 @@ async function runInSession(db, setup, work) {
   return execute(db.queryUnscoped);
 }
 
+function usesBindTenant(db) {
+  return db?.sessionTxn === false || db?.kind === 'neon-http';
+}
+
 export async function withTenant(db, { tenantId, userId }, work) {
+  if (usesBindTenant(db)) {
+    return scopedQuery.run({ mode: 'bind', tenantId, userId }, work);
+  }
   return runInSession(db, async (rawQuery) => {
     if (tenantId) await rawQuery("SELECT set_config('app.tenant_id', $1, true)", [tenantId]);
     if (userId) await rawQuery("SELECT set_config('app.user_id', $1, true)", [userId]);
@@ -166,6 +228,9 @@ export async function withTenant(db, { tenantId, userId }, work) {
 }
 
 export async function withServiceRole(db, work) {
+  if (usesBindTenant(db)) {
+    return scopedQuery.run({ mode: 'bind', serviceRole: true }, work);
+  }
   return runInSession(db, async (rawQuery) => {
     await rawQuery("SELECT set_config('app.service_role', $1, true)", ['1']);
   }, work);

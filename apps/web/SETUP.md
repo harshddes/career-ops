@@ -76,11 +76,11 @@ Cloudflare’s own CI guide uses those two Cloudflare names. [Set up CI/CD](http
 
 [https://career-os-web.harshddes.workers.dev](https://career-os-web.harshddes.workers.dev)
 
-The first two red runs were code bugs (schema comments, then a Worker file-path crash). The three GitHub secrets were already correct. Deploy now writes `APP_BASE_URL` from that `workers.dev` address if you did not add that secret yourself.
+The first two red runs were code bugs (schema comments, then a Worker file-path crash). After that, sign-in worked but the next page crashed (Cloudflare error 1101) because the public site cannot hold a database session. That is fixed: after **Create workspace** or **Sign in with email** you should land on **Today**.
+
+Hourly job scans on a schedule only run from `main`. Until this branch is merged, deploy also fills the shared job catalog. You can still run [public-catalog-scan.yml](../../.github/workflows/public-catalog-scan.yml) by hand.
 
 If a later run is red, do not paste secrets into chat. Paste the **error text with secrets starred out**.
-
-Hourly job scans start when `DATABASE_URL` exists: [public-catalog-scan.yml](../../.github/workflows/public-catalog-scan.yml). You can also run that workflow by hand the same way.
 
 ---
 

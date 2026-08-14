@@ -6,11 +6,11 @@
 
 | Phase | In the plan? | In the code today? | Live on the public internet? |
 |------|----------------|-------------------|------------------------------|
-| 0 Login + isolated workspaces | yes | **yes** (custom sessions, not Neon Better Auth) | not until Neon + Cloudflare secrets |
-| 1 Shared catalog + Applied kanban + research inbox | yes | **yes** | not until secrets exist |
-| 2 CV text, rule scores, print resume, file-to-textarea (Gemini left out on purpose) | yes | **yes** | same |
-| 3 Networking people, Resend digest cap, export/delete | yes | **yes** | digest/magic-link mail needs Resend key |
-| 4 Privacy/terms + Docker factory for :3737 | yes | **yes** | Docker is local-only |
+| 0 Login + isolated workspaces | yes | **yes** (custom sessions, not Neon Better Auth) | **yes** — https://career-os-web.harshddes.workers.dev |
+| 1 Shared catalog + Applied kanban + research inbox | yes | **yes** | **yes** after sign-in (Worker uses HTTP Neon; catalog ingest runs on deploy) |
+| 2 CV text, rule scores, print resume, file-to-textarea (Gemini left out on purpose) | yes | **yes** | **yes** after sign-in (`/profile`, `/resume`) |
+| 3 Networking people, Resend digest cap, export/delete | yes | **yes** | **yes** after sign-in; digest/magic-link mail still needs Resend key |
+| 4 Privacy/terms + Docker factory for :3737 | yes | **yes** | privacy/terms are public; Docker is local-only |
 | Cloudflare Pages `*.pages.dev` | plan default | **Workers `*.workers.dev`** instead (same $0 HTML host) | after deploy |
 | Neon Managed Better Auth | plan default | **not wired** — custom password / magic-link / Google in `auth.mjs` | n/a |
 | R2 PDF bucket | plan “only if files” | **not built** — CV is text in Postgres | n/a |

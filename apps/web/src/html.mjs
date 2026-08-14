@@ -54,6 +54,7 @@ export function renderPage({ title, user, body, notice, active = '/' }) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <title>${escapeHtml(title)}</title>
   <style>
     :root { color-scheme: dark; --bg:#0f1419; --card:#1a222c; --ink:#e8eef4; --muted:#93a1b0; --accent:#6ee7b7; --line:#2a3542; --col-saved:#1b2838; --col-applied:#14301f; --col-skip:#3a1515; }
@@ -101,6 +102,23 @@ export function renderPage({ title, user, body, notice, active = '/' }) {
 </body>
 </html>`;
 }
+
+export function renderError({ user, message }) {
+  return renderPage({
+    title: 'Something broke — Career OS',
+    user: user || null,
+    notice: { error: true, text: message || 'The signed-in page failed. Try again, or sign in once more.' },
+    active: '/',
+    body: `
+      <div class="card">
+        <h2>That page did not load</h2>
+        <p class="muted">Sign-in itself can succeed and then the next page fail. Open Today again.</p>
+        <p class="row"><a class="btn" href="/">Open Today</a></p>
+      </div>`,
+  });
+}
+
+export const FAVICON_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#6ee7b7"/><text x="16" y="22" text-anchor="middle" font-size="16" font-family="ui-sans-serif,system-ui,sans-serif" fill="#04291c">C</text></svg>`;
 
 export function renderLogin({ googleEnabled, notice }) {
   const google = googleEnabled
