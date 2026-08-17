@@ -1,0 +1,143 @@
+% LIVING SOURCE — this is the only resume .tex to keep editing.
+% Former filename: HarshDesai_Resume_KLA_OptoMechanical.tex
+% PDFs from this file live in pdfs-from-living-source/. Never overwrite an existing PDF.
+%   node generate-latex.mjs harsh/resume/HarshDesai_Resume.tex harsh/resume/pdfs-from-living-source/HarshDesai_YYYY-MM-DD_Resume_<focus>.pdf
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[letterpaper,top=0.34in,bottom=0.32in,left=0.40in,right=0.40in]{geometry}
+\usepackage{fontspec}
+\setmainfont{DejaVu Sans}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{microtype}
+
+\definecolor{nameblue}{HTML}{214F78}
+\definecolor{linkblue}{HTML}{0000CC}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=linkblue,
+  linkcolor=linkblue,
+  pdfauthor={Harsh Desai},
+  pdftitle={Harsh Desai Resume - UW IDP Mechanical Instrumentation}
+}
+
+\pagestyle{empty}
+\raggedright
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+\setlength{\emergencystretch}{1em}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\fontsize{8.40pt}{9.05pt}\selectfont
+
+\titleformat{\section}
+  {\fontsize{9.50pt}{9.95pt}\selectfont\bfseries\uppercase}
+  {}{0pt}{}
+  [\vspace{-1.8pt}\titlerule]
+\titlespacing*{\section}{0pt}{3.9pt}{1.2pt}
+
+\setlist[itemize]{
+  leftmargin=13pt,
+  label=\raisebox{0.17ex}{\tiny$\bullet$},
+  itemsep=0.15pt,
+  parsep=0pt,
+  topsep=0.20pt,
+  partopsep=0pt
+}
+
+\newcommand{\resumeSubheading}[4]{%
+  \par\noindent\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l r}
+    \textbf{#1} & \textcolor{nameblue}{\textbf{#2}} \\
+    #3 & #4
+  \end{tabular*}\par\vspace{-1.0pt}%
+}
+
+\newcommand{\resumeProjectHeading}[2]{%
+  \par\noindent\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l r}
+    \textbf{#1} & #2
+  \end{tabular*}\par\vspace{-1.0pt}%
+}
+
+\newcommand{\resumeItemsStart}{\begin{itemize}}
+\newcommand{\resumeItemsEnd}{\end{itemize}\vspace{-0.5pt}}
+\newcommand{\resumeItem}[1]{\item #1}
+
+\begin{document}
+
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l r}
+  {\fontsize{18pt}{18pt}\selectfont\bfseries\textcolor{nameblue}{Harsh Desai}} &
+  \fontsize{8.0pt}{8.6pt}\selectfont
+  Ann Arbor, MI $\mid$
+  \href{mailto:harshdes@umich.edu}{harshdes@umich.edu} $\mid$
+  +1-734-548-1080 $\mid$
+  \href{https://www.linkedin.com/in/harshddes/}{LinkedIn} $\mid$
+  \href{https://harshddes.github.io/}{Portfolio}
+\end{tabular*}
+\vspace{-3.0pt}
+
+Mechanical and Space Systems Engineer experienced in CAD/CAE, electromechanical mechanisms, scientific instrumentation, vacuum/HV test stands, subsystem integration, and design validation.
+
+\section{Education}
+\resumeSubheading
+  {University of Michigan}{Ann Arbor, MI}
+  {Master of Engineering, Space Systems Engineering $\mid$ GPA: 3.79/4.0}{Aug 2024-Dec 2025}
+\resumeSubheading
+  {Vellore Institute of Technology}{Vellore, India}
+  {Bachelor of Technology, Mechanical Engineering $\mid$ GPA: 7.78/10}{Jul 2019-Jul 2023}
+
+\section{Technical Skills}
+\textbf{Mechanical System Design \& CAE:} ANSYS (GUI/TUI): Fluent, Mechanical, SolidWorks, Fusion 360, AutoCAD, Autodesk Inventor, SpaceClaim, conceptual design, 3D part/assembly modeling\\[-0.2pt]
+\textbf{Instrumentation \& Automation:} sensors and detector systems, electrostatic ion optics, GPIB/IEEE-488, serial data logging, NI VISA (PyVISA, PyMeasure, PySerial), DAQs and SMUs, high-voltage switching operations, vacuum chamber operation (CTI-Cryogenics Hi-Vac and roughing pump, operated at 1~mTorr)\\[-0.2pt]
+% \textbf{Plasma \& Diagnostics:} Low-pressure hollow-cathode plasma operation, 1.3~kV HV interface validation, RPA, emissive-probe and Langmuir-probe diagnostics, CEM/ESA calibration\\[-0.2pt]
+\textbf{Languages:} Python, LabVIEW (CLAD prep), SCPI, MATLAB (learning), Verilog (learning)\\[-0.2pt]
+\textbf{FPGA, Ion Optics \& Modeling Tools:} FPGA design workflow, AMD Vivado, MATLAB HDL Coder and DSP Toolbox, SIMION, SRIM, Amptek DPPMCA\\[0.2pt]
+\textbf{Documentation \& Analysis:} Microsoft Excel, Word, PowerPoint, LaTeX, Google Data/Looker Studio; Testing Plans and Procedures, FMEA, requirements and verification documentation, Systems Engineering Workflow
+
+\section{Engineering Experience}
+\resumeSubheading
+  {Climate and Space Sciences and Engineering, University of Michigan}{Ann Arbor, MI}
+  {Research Assistant, LVACCS Experimental Hardware \& Test Automation}{Feb 2026-Present}
+\resumeItemsStart
+  \resumeItem{Integrated and validated a 1.3~kV plasma-source test stand spanning vacuum hardware, a custom discharge interface, power supplies, Keithley acquisition, and synchronized Python/PyVISA control; reduced manual steps from 15 to 5}
+  \resumeItem{Developed a discharge-box FMEA, ignition and acquisition procedures, and post-run checks; achieved 98.6\% synchronized data capture and improved repeatability across hardware test states}
+  \resumeItem{Operated Langmuir and emissive probes plus an RPA assembly during vacuum-chamber testing, performing LP/EP measurements and synchronized RPA retarding-voltage/collector-current acquisition while resolving mechanical/electrical interface issues}
+\resumeItemsEnd
+
+\resumeSubheading
+  {Space Physics Research Lab, University of Michigan}{Ann Arbor, MI}
+  {Summer Intern, TestBedz Spacecraft Qualification Platform}{May 2025-Jul 2025}
+\resumeItemsStart
+  \resumeItem{Built a requirements-to-test workflow for thermal-vacuum, vibration, and EMI qualification, matching hardware to facility limits across six test types}
+  \resumeItem{Supported subsystem design reviews and technical presentations by translating operating envelopes and acceptance criteria into compatibility checks and traceable test plans for repeatable handoff to test facilities}
+\resumeItemsEnd
+
+\resumeSubheading
+  {Solar and Heliospheric Research Group, University of Michigan}{Ann Arbor, MI}
+  {Graduate Research Assistant, Solid-State Detector Readout}{Jan 2025-Dec 2025}
+\resumeItemsStart
+  \resumeItem{Derived ADC requirements from detector energy resolution, noise, signal amplitude, and timing; evaluated a 14-bit, 125~MSPS ADC integration with a Zynq-7000 development platform}
+  \resumeItem{Verified MATLAB HDL Coder models against Vivado co-simulation and diagnosed 125~MHz post-synthesis timing constraints, documenting the design limits and next integration steps}
+\resumeItemsEnd
+
+\section{Selected Mechanical \& Instrumentation Projects}
+\resumeProjectHeading{CanSat 2022 (NASA/AAS) $\mid$ 7th worldwide of 42 teams}{Aug 2021-Jul 2022}
+\resumeItemsStart
+  \resumeItem{Designed and built a compact 10~m tether-deployment and camera-stabilization assembly using a DC motor, worm gear, bearings, an ABS printed structure, and a dual-servo gimbal for controlled descent and fixed 45-degree imaging}
+  \resumeItem{Iterated the deployment architecture from spur to worm gearing for one-way load transfer, then worked across the mechanical and electronics team to integrate the mechanism with payload electronics and verify release and imaging functions through subsystem tests and design reviews}
+\resumeItemsEnd
+
+\resumeProjectHeading{Spaceport America Cup / IREC $\mid$ 23rd globally, 5th Asia-Pacific}{Apr 2020-Jul 2021}
+\resumeItemsStart
+  \resumeItem{Developed an in-house trajectory model for a Mach~0.9, 10,000~ft rocket, generating max-Q pressure and drag inputs in ANSYS Fluent and cross-checking the flight prediction in OpenRocket}
+\resumeItemsEnd
+
+\resumeProjectHeading{Particle Detector \& Electrostatic Analyzer Calibration}{Jul 2025-Dec 2025}
+\resumeItemsStart
+  \resumeItem{Calibrated a channel electron multiplier (CEM) signal chain by configuring the ion source, CEM, charge-sensitive preamplifier, pulse shaper, and MCA; charge-calibrated MCA channels with an RC injector and analyzed pulse-height spectra to extract centroid, FWHM, count rate, and effective gain versus detector bias}
+  \resumeItem{Modeled a quadrispherical electrostatic analyzer in SIMION across an 84-point energy-angle grid, quantifying pass-energy shift, energy resolution, angular acceptance, and fringe-field sensitivity}
+\resumeItemsEnd
+
+\end{document}
