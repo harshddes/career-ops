@@ -1,6 +1,10 @@
 #!/usr/bin/env node
 /**
- * generate-static-snapshot.mjs — Build read-only GitHub Pages bundle for career-dashboard/
+ * generate-static-snapshot.mjs — Build a read-only GitHub Pages bundle for career-dashboard/.
+ *
+ * This is a look-only photocopy. It does not replace the local data directory
+ * or the live dashboard at http://127.0.0.1:3737/dashboard/fusion-pivot-dashboard.html.
+ * Networking PII is excluded. See WEB-TRACKER/docs/hosting.md.
  */
 
 import { readFileSync, writeFileSync, mkdirSync, cpSync, readdirSync, existsSync } from 'fs';
@@ -26,7 +30,7 @@ function ensureDir(filePath) {
 
 function writeJson(filePath, value) {
   ensureDir(filePath);
-  writeFileSync(filePath, `${JSON.stringify(value, null, 2)}\n`, 'utf-8');
+  writeFileSync(filePath, `${JSON.stringify(value)}\n`, 'utf-8');
 }
 
 function apiSnapshotPath(outputDir, apiPath) {
@@ -57,12 +61,12 @@ export function collectApiPaths(phdSources = []) {
     '/api/applications/dashboard',
     '/api/applications',
     '/api/jobs-to-consider',
-    '/api/research-prospects',
-    '/api/euraxess/opportunities',
+    '/api/research-prospects?view=list',
+    '/api/euraxess/opportunities?view=list',
     '/api/euraxess/health',
-    '/api/phdscanner/opportunities',
+    '/api/phdscanner/opportunities?view=list',
     '/api/phdscanner/health',
-    '/api/umich-careers/opportunities',
+    '/api/umich-careers/opportunities?view=list',
     '/api/umich-careers/health',
     '/api/exhibitor/companies',
     '/api/exhibitor/clear-queue',

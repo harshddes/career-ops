@@ -3,6 +3,7 @@ import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { parseApplications } from '../adapters/applications-adapter.mjs';
 import { readActivityEvents } from './activity-log.mjs';
+import { readNetworking } from './networking/store.mjs';
 import { allResearchSources } from './phd-research-sources.mjs';
 import { readResearchProspects } from './research-prospect-store.mjs';
 import { readDashboardData } from '../../update-tracker-row.mjs';
@@ -138,13 +139,30 @@ function pulseContactedToday(entry, date, timeZone) {
 }
 
 function researchContactedToday(prospect, date, timeZone) {
-  return cleanText(prospect.status).toLowerCase() === 'contacted'
-    && dateOnly(prospect.last_contacted, timeZone) === date;
+  return dateOnly(prospect.last_contacted, timeZone) === date;
 }
 
 function researchFollowedToday(prospect, date, timeZone) {
-  return cleanText(prospect.status).toLowerCase() === 'follow_up'
-    && dateOnly(prospect.last_followed_up, timeZone) === date;
+  return dateOnly(prospect.last_followed_up, timeZone) === date;
+}
+
+function isOutboundNetworkingTouch(interaction = {}) {
+  const type = cleanText(interaction.type).toLowerCase();
+  const channel = cleanText(interaction.channel).toLowerCase();
+  const direction = cleanText(interaction.direction).toLowerCase() || 'outbound';
+  return direction === 'outbound' && type !== 'note' && channel !== 'note';
+}
+
+function networkingFollowedToday(interaction, date, timeZone) {
+  return isOutboundNetworkingTouch(interaction)
+    && cleanText(interaction.type).toLowerCase() === 'follow_up'
+    && dateOnly(interaction.occurred_at, timeZone) === date;
+}
+
+function networkingContactedToday(interaction, date, timeZone) {
+  return isOutboundNetworkingTouch(interaction)
+    && cleanText(interaction.type).toLowerCase() !== 'follow_up'
+    && dateOnly(interaction.occurred_at, timeZone) === date;
 }
 
 function applicationFollowupDue(entry, date, timeZone) {
@@ -196,6 +214,44 @@ function prospectRow(prospect, type, dateField) {
   };
 }
 
+function networkingRow(person, interaction, type) {
+  return {
+    type,
+    id: person?.id || interaction.person_id || interaction.id || '',
+    date: interaction.occurred_at || '',
+    company: person?.current_organization || '',
+    title: person?.display_name || person?.name || '',
+    status: person?.relationship_stage || interaction.type || '',
+    contact: person?.display_name || person?.name || '',
+    email: person?.email || '',
+    followup_date: '',
+    source: 'Networking',
+    notes: interaction.summary || '',
+  };
+}
+
+function dashboardAreaForRow(row = {}) {
+  if (row.source === 'Networking' || String(row.type || '').startsWith('networking_')) return 'Networking';
+  if (row.type === 'application') return 'Applications';
+  if (row.source === 'U-M Research') return 'Research';
+  return 'Research';
+}
+
+function isPhdResearchRow(row = {}) {
+  return row.type !== 'application'
+    && row.source !== 'U-M Research'
+    && row.source !== 'Networking'
+    && row.source !== 'Applications';
+}
+
+function peopleById(people = []) {
+  const map = new Map();
+  for (const person of people) {
+    if (person?.id) map.set(person.id, person);
+  }
+  return map;
+}
+
 function eventRow(event) {
   return {
     type: event.action || 'activity',
@@ -224,22 +280,70 @@ function uniqueRows(rows = []) {
   return out;
 }
 
-export function getTodayActivity({ date = '', timeZone } = {}) {
+function loadNetworkingStore() {
+  try {
+    return readNetworking();
+  } catch {
+    return { people: [], interactions: [] };
+  }
+}
+
+const todayActivityCache = new Map();
+
+export function invalidateTodayActivityCache() {
+  todayActivityCache.clear();
+}
+
+export function getCachedTodayActivity(options = {}) {
+  const hasOverrides = options.applications !== undefined
+    || options.researchProspects !== undefined
+    || options.networking !== undefined
+    || options.followups !== undefined;
+  if (hasOverrides) return getTodayActivity(options);
+  const resolvedTimeZone = resolveDigestTimeZone(options.timeZone);
+  const targetDate = cleanText(options.date) || localDateString(new Date(), resolvedTimeZone);
+  const key = `${targetDate}|${resolvedTimeZone}`;
+  const hit = todayActivityCache.get(key);
+  if (hit) return hit;
+  const activity = getTodayActivity({
+    date: targetDate,
+    timeZone: resolvedTimeZone,
+  });
+  todayActivityCache.set(key, activity);
+  return activity;
+}
+
+export function getTodayActivity({
+  date = '',
+  timeZone,
+  applications,
+  researchProspects,
+  networking,
+  followups,
+} = {}) {
   const resolvedTimeZone = resolveDigestTimeZone(timeZone);
   const targetDate = cleanText(date) || localDateString(new Date(), resolvedTimeZone);
-  const applications = mergeApplicationMetadata();
-  const researchProspects = collectResearchProspects();
-  const followups = readJsonFile(FOLLOWUPS_FILE, { entries: [] }).entries || [];
+  const resolvedApplications = applications === undefined ? mergeApplicationMetadata() : applications;
+  const resolvedProspects = researchProspects === undefined ? collectResearchProspects() : researchProspects;
+  const resolvedFollowups = followups === undefined
+    ? (readJsonFile(FOLLOWUPS_FILE, { entries: [] }).entries || [])
+    : followups;
+  const networkingStore = networking === undefined ? loadNetworkingStore() : networking;
   const activityEvents = readActivityEvents({ date: targetDate, timeZone: resolvedTimeZone });
+  const people = peopleById(networkingStore?.people || []);
 
-  const appliedFromTracker = applications.filter(entry => applicationAppliedToday(entry, targetDate, resolvedTimeZone));
-  const contactedFromPulse = applications.filter(entry => pulseContactedToday(entry, targetDate, resolvedTimeZone));
-  const contactedFromResearch = researchProspects.filter(prospect => researchContactedToday(prospect, targetDate, resolvedTimeZone));
-  const followedFromResearch = researchProspects.filter(prospect => researchFollowedToday(prospect, targetDate, resolvedTimeZone));
-  const applicationFollowupsDue = applications.filter(entry => applicationFollowupDue(entry, targetDate, resolvedTimeZone));
-  const applicationFollowupsOverdue = applications.filter(entry => applicationFollowupOverdue(entry, targetDate, resolvedTimeZone));
-  const cadenceFollowupsDue = followups.filter(entry => followupEntryDue(entry, targetDate));
-  const cadenceFollowupsDueOrOverdue = followups.filter(entry => followupEntryDue(entry, targetDate, true));
+  const appliedFromTracker = resolvedApplications.filter(entry => applicationAppliedToday(entry, targetDate, resolvedTimeZone));
+  const contactedFromPulse = resolvedApplications.filter(entry => pulseContactedToday(entry, targetDate, resolvedTimeZone));
+  const contactedFromResearch = resolvedProspects.filter(prospect => researchContactedToday(prospect, targetDate, resolvedTimeZone));
+  const followedFromResearch = resolvedProspects.filter(prospect => researchFollowedToday(prospect, targetDate, resolvedTimeZone));
+  const contactedFromNetworking = (networkingStore?.interactions || [])
+    .filter(interaction => networkingContactedToday(interaction, targetDate, resolvedTimeZone));
+  const followedFromNetworking = (networkingStore?.interactions || [])
+    .filter(interaction => networkingFollowedToday(interaction, targetDate, resolvedTimeZone));
+  const applicationFollowupsDue = resolvedApplications.filter(entry => applicationFollowupDue(entry, targetDate, resolvedTimeZone));
+  const applicationFollowupsOverdue = resolvedApplications.filter(entry => applicationFollowupOverdue(entry, targetDate, resolvedTimeZone));
+  const cadenceFollowupsDue = resolvedFollowups.filter(entry => followupEntryDue(entry, targetDate));
+  const cadenceFollowupsDueOrOverdue = resolvedFollowups.filter(entry => followupEntryDue(entry, targetDate, true));
 
   const appliedToday = uniqueRows([
     ...appliedFromTracker.map(applicationRow),
@@ -247,9 +351,19 @@ export function getTodayActivity({ date = '', timeZone } = {}) {
   const contactedToday = uniqueRows([
     ...contactedFromPulse.map(applicationRow),
     ...contactedFromResearch.map(prospect => prospectRow(prospect, 'research_contact', 'last_contacted')),
+    ...contactedFromNetworking.map(interaction => networkingRow(
+      people.get(interaction.person_id),
+      interaction,
+      'networking_contact',
+    )),
   ]);
   const followedToday = uniqueRows([
     ...followedFromResearch.map(prospect => prospectRow(prospect, 'research_follow_up', 'last_followed_up')),
+    ...followedFromNetworking.map(interaction => networkingRow(
+      people.get(interaction.person_id),
+      interaction,
+      'networking_follow_up',
+    )),
   ]);
   const followupsDueToday = uniqueRows([
     ...applicationFollowupsDue.map(applicationRow),
@@ -269,8 +383,8 @@ export function getTodayActivity({ date = '', timeZone } = {}) {
   ]);
   const allActivity = [
     ...appliedToday.map(row => ({ dashboard_area: 'Applications', occurred_at: row.date, ...row })),
-    ...contactedToday.map(row => ({ dashboard_area: row.type === 'application' ? 'Applications' : 'Research', occurred_at: row.date, ...row })),
-    ...followedToday.map(row => ({ dashboard_area: 'Research', occurred_at: row.date, ...row })),
+    ...contactedToday.map(row => ({ dashboard_area: dashboardAreaForRow(row), occurred_at: row.date, ...row })),
+    ...followedToday.map(row => ({ dashboard_area: dashboardAreaForRow(row), occurred_at: row.date, ...row })),
     ...followupsDueToday.map(row => ({ dashboard_area: 'Follow-ups', occurred_at: row.followup_date || row.date, ...row })),
   ];
   const auditActivity = activityEvents.map(event => ({
@@ -281,7 +395,9 @@ export function getTodayActivity({ date = '', timeZone } = {}) {
         ? 'PhD Options'
         : event.domain === 'jobs'
           ? 'Jobs'
-          : 'Dashboard',
+          : event.domain === 'networking'
+            ? 'Networking'
+            : 'Dashboard',
     occurred_at: event.occurred_at,
   }));
 
@@ -297,7 +413,7 @@ export function getTodayActivity({ date = '', timeZone } = {}) {
       dashboard_events_today: allActivity.length,
       umich_research_events_today: contactedToday.filter(row => row.source === 'U-M Research').length + followedToday.filter(row => row.source === 'U-M Research').length,
       job_events_today: appliedToday.filter(row => row.type === 'application').length + contactedToday.filter(row => row.type === 'application').length,
-      phd_events_today: contactedToday.filter(row => row.source !== 'U-M Research' && row.type !== 'application').length + followedToday.filter(row => row.source !== 'U-M Research').length,
+      phd_events_today: contactedToday.filter(isPhdResearchRow).length + followedToday.filter(isPhdResearchRow).length,
       overdue_followups: applicationFollowupsOverdue.length + cadenceFollowupsDueOrOverdue.filter(entry => dateOnly(entry.nextFollowupDate) < targetDate).length,
     },
     details: {
@@ -311,4 +427,4 @@ export function getTodayActivity({ date = '', timeZone } = {}) {
   };
 }
 
-export const buildTodaySnapshot = getTodayActivity;
+export const buildTodaySnapshot = getCachedTodayActivity;

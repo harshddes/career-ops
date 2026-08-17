@@ -11,10 +11,11 @@
  * close anything.
  */
 
-import { existsSync, mkdirSync, readFileSync, renameSync, unlinkSync, writeFileSync } from 'fs';
+import { existsSync, mkdirSync, renameSync, statSync, unlinkSync, writeFileSync } from 'fs';
 import { basename, dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { scoreUmichPosting, UMICH_SEGMENTS } from './scoring-profile.mjs';
+import { readMtimeCachedStore, rememberMtimeStore } from '../mtime-store-cache.mjs';
 
 const LIB_DIR = dirname(fileURLToPath(import.meta.url));
 export const WEB_TRACKER_DIR = join(LIB_DIR, '..', '..');
@@ -25,7 +26,7 @@ export const CANONICAL_UMICH_FILE = join(CAREER_DATA_DIR, 'umich-careers-opportu
 export const DASHBOARD_UMICH_FILE = join(DASHBOARD_DATA_DIR, 'umich-careers-opportunities.json');
 
 /** Cards keep enough description for evidence context without shipping ~1MB to the browser. */
-const DASHBOARD_DESCRIPTION_CHARS = 600;
+export const DASHBOARD_DESCRIPTION_CHARS = 600;
 const MISSED_CRAWLS_TO_CLOSE = 2;
 
 const DEFAULT_SCAN_HEALTH = {
@@ -220,18 +221,21 @@ function emptyStore() {
 }
 
 export function readUmichOpportunities(filePath = CANONICAL_UMICH_FILE) {
-  if (!existsSync(filePath)) return emptyStore();
-  const parsed = JSON.parse(readFileSync(filePath, 'utf-8'));
-  const opportunities = Array.isArray(parsed.opportunities)
-    ? parsed.opportunities.map(normalizeUmichOpportunityRecord).filter(item => item.id)
-    : [];
-  return {
-    ...emptyStore(),
-    ...parsed,
-    version: 1,
-    opportunities,
-    scan_health: summarize(opportunities, parsed.scan_health || {}),
-  };
+  return readMtimeCachedStore(filePath, {
+    empty: emptyStore,
+    parse: (parsed) => {
+      const opportunities = Array.isArray(parsed.opportunities)
+        ? parsed.opportunities.map(normalizeUmichOpportunityRecord).filter(item => item.id)
+        : [];
+      return {
+        ...emptyStore(),
+        ...parsed,
+        version: 1,
+        opportunities,
+        scan_health: summarize(opportunities, parsed.scan_health || {}),
+      };
+    },
+  });
 }
 
 const SEGMENT_ORDER = Object.fromEntries(UMICH_SEGMENTS.map((segment, index) => [segment, index]));
@@ -251,6 +255,7 @@ export function writeUmichOpportunities(store, filePath = CANONICAL_UMICH_FILE) 
     opportunities,
   };
   atomicWrite(filePath, `${JSON.stringify(next, null, 2)}\n`);
+  rememberMtimeStore(filePath, next);
   return next;
 }
 
@@ -496,5 +501,27 @@ export function syncUmichOpportunitiesToDashboard({
     opportunities,
   };
   atomicWrite(outputPath, `${JSON.stringify(output, null, 2)}\n`);
+  rememberMtimeStore(outputPath, output);
   return output;
+}
+
+function fileMtimeMs(filePath) {
+  try {
+    return existsSync(filePath) ? statSync(filePath).mtimeMs : 0;
+  } catch {
+    return 0;
+  }
+}
+
+/** Build the trimmed dashboard copy when missing or older than the canonical store. */
+export function ensureUmichDashboardProjection({
+  sourcePath = CANONICAL_UMICH_FILE,
+  outputPath = DASHBOARD_UMICH_FILE,
+} = {}) {
+  if (!existsSync(sourcePath)) {
+    return readUmichOpportunities(existsSync(outputPath) ? outputPath : sourcePath);
+  }
+  const needsSync = !existsSync(outputPath) || fileMtimeMs(sourcePath) > fileMtimeMs(outputPath);
+  if (needsSync) syncUmichOpportunitiesToDashboard({ sourcePath, outputPath });
+  return readUmichOpportunities(outputPath);
 }

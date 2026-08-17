@@ -341,7 +341,7 @@ test('today applied rows come from applications, not jobs-to-consider directly',
   assert.doesNotMatch(source, /readConsiderJobs/);
   assert.doesNotMatch(source, /jobAppliedToday/);
   assert.doesNotMatch(source, /jobRow/);
-  assert.match(source, /const appliedFromTracker = applications\.filter/);
+  assert.match(source, /const appliedFromTracker = resolvedApplications\.filter/);
 });
 
 test('manual daily digest route validates recipients and sends regenerated attachments', () => {
@@ -355,7 +355,7 @@ test('manual daily digest route validates recipients and sends regenerated attac
 test('research card dropdowns call the save handler instead of map index', () => {
   const html = readFileSync(new URL('../dashboard/fusion-pivot-dashboard.html', import.meta.url), 'utf-8');
   assert.match(html, /return `onchange="\$\{escapeHTML\(handler\)\}"`;/);
-  assert.match(html, /shown\.map\(prospect => prospectCard\(prospect\)\)\.join\(''\)/);
+  assert.match(html, /visible\.map\(prospect => prospectCard\(prospect\)\)\.join\(''\)/);
   assert.doesNotMatch(html, /shown\.map\(prospectCard\)\.join\(''\)/);
 });
 
