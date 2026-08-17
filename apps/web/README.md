@@ -4,7 +4,9 @@
 
 This is a **new** multi-tenant workplace. It does not replace `http://127.0.0.1:3737/dashboard/fusion-pivot-dashboard.html`.
 
-There is **no public phone URL until Neon + Cloudflare exist**. `:8787` is local only.
+**Live:** https://career-os-web.harshddes.workers.dev
+
+`:8787` is a local copy on this computer only.
 
 **You create the accounts.** Click-by-click: [SETUP.md](SETUP.md). Do not paste keys into chat.
 

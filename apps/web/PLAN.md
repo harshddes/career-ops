@@ -1,6 +1,6 @@
 # Public Career OS plan (phases 0–4)
 
-**Where this lives:** [`apps/web/PLAN.md`](PLAN.md) on branch `cursor/zero-cost-public-saas-0a19` ([PR #3](https://github.com/harshddes/career-ops/pull/3)). Cursor also kept a copy under `/opt/cursor/artifacts/plans/` on the cloud VM, which is why it did not show up in the GitHub repo.
+**Where this lives:** [`apps/web/PLAN.md`](PLAN.md) on `main`. This is the **only** public-website plan. Start from [`START-HERE.md`](../START-HERE.md).
 
 **What shipped vs what is still the plan**
 

@@ -67,7 +67,7 @@ Cloudflare’s own CI guide uses those two Cloudflare names. [Set up CI/CD](http
 
 1. Open [https://github.com/harshddes/career-ops/actions/workflows/public-web-deploy.yml](https://github.com/harshddes/career-ops/actions/workflows/public-web-deploy.yml)
 2. Click **Run workflow**.
-3. Branch: `cursor/zero-cost-public-saas-0a19`.
+3. Branch: `main`.
 4. Click the green **Run workflow** button.
 5. Open the run. Wait until it is green.
 6. In the **Deploy Cloudflare Worker** log, copy the `*.workers.dev` URL Wrangler prints. That is the public site.
