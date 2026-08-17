@@ -17,3 +17,8 @@ jobs:
           go-version: '1.22'
       - run: npm install
       - run: node test-all.mjs --quick
+      - name: Public web isolation tests
+        working-directory: apps/web
+        run: |
+          npm install
+          npm test

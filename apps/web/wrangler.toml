@@ -1,0 +1,17 @@
+name = "career-os-web"
+main = "src/index.mjs"
+compatibility_date = "2026-08-13"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+
+# Secrets (wrangler secret put):
+#   DATABASE_URL
+#   GOOGLE_CLIENT_ID
+#   GOOGLE_CLIENT_SECRET
+#   RESEND_API_KEY
+#   CATALOG_SERVICE_KEY
+#
+# Optional vars:
+#   APP_BASE_URL = "https://career-os-web.harshddes.workers.dev"
+#   SEED_STUB_CATALOG = "1"
+#   RESEND_FROM = "Career OS <onboarding@resend.dev>"
