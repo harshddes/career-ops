@@ -230,12 +230,12 @@ function mirrorUserState(store) {
   atomicWrite(DASHBOARD_RESEARCH_USER_STATE_FILE, `${JSON.stringify(store, null, 2)}\n`);
 }
 
-export function patchResearchUserState(sourceId, prospectId, fields = {}) {
+export function patchResearchUserState(sourceId, prospectId, fields = {}, userStateFile = RESEARCH_USER_STATE_FILE) {
   const source = cleanSourceId(sourceId);
   const id = cleanText(prospectId);
   if (!id) return null;
 
-  const store = readResearchUserState();
+  const store = readResearchUserState(userStateFile);
   const current = store.sources[source]?.[id] || {};
   const nextFields = { ...current, updated_at: new Date().toISOString() };
 
@@ -274,17 +274,19 @@ export function patchResearchUserState(sourceId, prospectId, fields = {}) {
     [id]: nextFields,
   };
   store.updated_at = new Date().toISOString();
-  atomicWrite(RESEARCH_USER_STATE_FILE, `${JSON.stringify(store, null, 2)}\n`);
-  mirrorUserState(store);
+  atomicWrite(userStateFile, `${JSON.stringify(store, null, 2)}\n`);
+  if (userStateFile === RESEARCH_USER_STATE_FILE) {
+    mirrorUserState(store);
+  }
   return nextFields;
 }
 
-export function applyUserStateToProspect(prospect, sourceId) {
+export function applyUserStateToProspect(prospect, sourceId, userStateFile = RESEARCH_USER_STATE_FILE) {
   const source = cleanSourceId(sourceId);
   const id = cleanText(prospect?.id);
   if (!id) return prospect;
 
-  const saved = readResearchUserState().sources[source]?.[id];
+  const saved = readResearchUserState(userStateFile).sources[source]?.[id];
   if (!saved) {
     const status = normalizeProspectStatus(prospect?.status);
     let outreach = normalizeOutreach(prospect?.outreach);
@@ -333,11 +335,11 @@ export function applyUserStateToProspect(prospect, sourceId) {
   return merged;
 }
 
-export function applyUserStateToStore(store, sourceId) {
+export function applyUserStateToStore(store, sourceId, userStateFile = RESEARCH_USER_STATE_FILE) {
   if (!Array.isArray(store?.prospects)) return store;
   return {
     ...store,
-    prospects: store.prospects.map(prospect => applyUserStateToProspect(prospect, sourceId)),
+    prospects: store.prospects.map(prospect => applyUserStateToProspect(prospect, sourceId, userStateFile)),
   };
 }
 

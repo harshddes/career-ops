@@ -1,0 +1,15 @@
+.git
+**/.git
+node_modules
+**/node_modules
+.cursor
+output
+reports
+batch/work
+**/*.pdf
+WEB-TRACKER/data/*.json
+data/euraxess-opportunities.json
+data/umich-careers-opportunities.json
+data/phdscanner-opportunities.json
+data/fusion-companies.json
+apps/web/node_modules

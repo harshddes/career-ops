@@ -15,10 +15,12 @@ test('static snapshot includes PhD, EURAXESS, and U-M Careers live feed paths', 
   ]);
 
   assert.ok(paths.includes('/api/phd-research-prospects/kth'));
-  assert.ok(paths.includes('/api/euraxess/opportunities'));
+  assert.ok(paths.includes('/api/euraxess/opportunities?view=list'));
   assert.ok(paths.includes('/api/euraxess/health'));
-  assert.ok(paths.includes('/api/umich-careers/opportunities'));
+  assert.ok(paths.includes('/api/umich-careers/opportunities?view=list'));
   assert.ok(paths.includes('/api/umich-careers/health'));
+  assert.ok(paths.includes('/api/research-prospects?view=list'));
+  assert.ok(paths.includes('/api/phdscanner/opportunities?view=list'));
   assert.equal(paths.includes('/api/networking'), false);
 });
 

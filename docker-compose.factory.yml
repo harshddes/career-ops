@@ -1,0 +1,27 @@
+# Optional local Fusion Pivot factory (single-user, not the public site).
+# Dashboard stays on port 3737. Bind all interfaces only inside the container.
+#
+#   docker compose -f docker-compose.factory.yml up --build
+#   open http://127.0.0.1:3737/dashboard/fusion-pivot-dashboard.html
+#
+# This is NOT the public Career OS. Do not expose it to the internet.
+
+services:
+  fusion-pivot:
+    build:
+      context: .
+      dockerfile: docker/factory/Dockerfile
+    ports:
+      - "3737:3737"
+    environment:
+      PORT: "3737"
+      HOST: "0.0.0.0"
+    volumes:
+      - ./data:/app/data
+      - ./reports:/app/reports
+      - ./output:/app/output
+      - ./WEB-TRACKER/data:/app/WEB-TRACKER/data
+      - ./cv.md:/app/cv.md:ro
+      - ./config:/app/config:ro
+      - ./modes:/app/modes:ro
+    restart: unless-stopped

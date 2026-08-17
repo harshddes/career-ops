@@ -12,6 +12,14 @@ loadEnv();
 
 import express from 'express';
 import { watch } from 'chokidar';
+import { compactJson, encodeCompressedBody } from './lib/http-compress.mjs';
+import {
+  maybeProjectFeed,
+  projectEuraxessListStore,
+  projectPhdscannerListStore,
+  projectResearchListStore,
+  projectUmichListStore,
+} from './lib/feed-list-projection.mjs';
 import { readFileSync, readdirSync, existsSync } from 'fs';
 import { join, dirname, basename, resolve } from 'path';
 import { fileURLToPath } from 'url';
@@ -38,7 +46,8 @@ import { writeDailyActivityCsv } from './lib/daily-activity-csv.mjs';
 import {
   DEFAULT_DIGEST_TIMEZONE,
   buildTodaySnapshot,
-  getTodayActivity,
+  getCachedTodayActivity,
+  invalidateTodayActivityCache,
   localDateString,
   mergeApplicationMetadata,
 } from './lib/today-activity.mjs';
@@ -90,8 +99,8 @@ import {
   syncPhdscannerOpportunitiesToDashboard,
 } from './lib/phdscanner/opportunity-store.mjs';
 import {
-  DASHBOARD_UMICH_FILE,
   archiveUmichOpportunity,
+  ensureUmichDashboardProjection,
   findUmichOpportunity,
   patchUmichOpportunity,
   readUmichOpportunities,
@@ -183,6 +192,7 @@ const SERVER_KEEP_ALIVE_MS = 5 * 60_000;
 const SERVER_HEADERS_TIMEOUT_MS = SERVER_KEEP_ALIVE_MS + 10_000;
 
 const app = express();
+app.set('json spaces', 0);
 
 app.use((req, res, next) => {
   const origin = req.headers.origin;
@@ -193,6 +203,22 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Headers', 'Content-Type');
   res.header('Access-Control-Allow-Methods', 'GET,POST,PATCH,DELETE,OPTIONS');
   if (req.method === 'OPTIONS') return res.sendStatus(204);
+  next();
+});
+
+app.use((req, res, next) => {
+  res.json = (value) => {
+    const body = compactJson(value);
+    const { payload, encoding } = encodeCompressedBody(body, req.headers['accept-encoding']);
+    const vary = new Set(String(res.getHeader('Vary') || '').split(',').map(part => part.trim()).filter(Boolean));
+    vary.add('Origin');
+    vary.add('Accept-Encoding');
+    res.setHeader('Content-Type', 'application/json; charset=utf-8');
+    res.setHeader('Vary', [...vary].join(', '));
+    if (encoding) res.setHeader('Content-Encoding', encoding);
+    res.setHeader('Content-Length', payload.length);
+    return res.end(payload);
+  };
   next();
 });
 
@@ -264,8 +290,8 @@ function attachmentDisposition(filename) {
 }
 
 function todaySnapshotForResponse() {
+  invalidateTodayActivityCache();
   const activity = buildTodaySnapshot({ timeZone: DEFAULT_DIGEST_TIMEZONE });
-  writeDailyActivityCsv(activity);
   return {
     date: activity.date,
     timeZone: activity.timeZone,
@@ -278,6 +304,13 @@ function withToday(payload = {}) {
     ...payload,
     today: todaySnapshotForResponse(),
   };
+}
+
+function syncProspectsAfterPatch(result, syncOptions = {}) {
+  if (result?.wrote_canonical === false) {
+    return { total: result.store?.prospects?.length || 0 };
+  }
+  return syncResearchProspectsToDashboard(syncOptions);
 }
 
 function applicationsPayload() {
@@ -496,7 +529,10 @@ function broadcast(eventType, payload) {
   }
 }
 
-setActivityAppendedHook(event => broadcast('activity_updated', event));
+setActivityAppendedHook(event => {
+  invalidateTodayActivityCache();
+  broadcast('activity_updated', event);
+});
 
 function syncArtifactsToDashboard({ notify = false } = {}) {
   const artifacts = syncArtifactResources();
@@ -753,11 +789,10 @@ app.get('/api/action-plan', (req, res) => {
 
 app.get('/api/today-activity', (req, res) => {
   try {
-    const activity = getTodayActivity({
+    const activity = getCachedTodayActivity({
       date: req.query.date,
       timeZone: req.query.timezone,
     });
-    writeDailyActivityCsv(activity);
     return res.json(activity);
   } catch (err) {
     return res.status(400).json({ error: err?.message || 'failed to build today activity' });
@@ -966,7 +1001,7 @@ app.patch('/api/networking/people/:id', (req, res) => {
       action: req.body?.relationship_stage ? 'relationship_stage_changed' : 'person_updated',
       person: result.person,
     });
-    return res.json(result);
+    return res.json(withToday(result));
   } catch (err) {
     const status = /not found/i.test(err?.message || '') ? 404 : 400;
     return res.status(status).json({ error: err?.message || 'failed to update networking person' });
@@ -1009,7 +1044,7 @@ app.post('/api/networking/interactions', (req, res) => {
       person: result.person,
       interaction: result.interaction,
     });
-    return res.status(201).json(result);
+    return res.status(201).json(withToday(result));
   } catch (err) {
     const status = /not found/i.test(err?.message || '') ? 404 : 400;
     return res.status(status).json({ error: err?.message || 'failed to log networking interaction' });
@@ -1158,7 +1193,7 @@ app.patch('/api/networking/research-queue/:id', (req, res) => {
 
 app.get('/api/research-prospects', (req, res) => {
   try {
-    res.json(readResearchProspects());
+    res.json(maybeProjectFeed(req, readResearchProspects(), projectResearchListStore));
   } catch (err) {
     return res.status(400).json({ error: err?.message || 'failed to read research prospects' });
   }
@@ -1178,7 +1213,7 @@ app.post('/api/research-prospects', (req, res) => {
 app.patch('/api/research-prospects/:id', (req, res) => {
   try {
     const result = patchResearchProspect(req.params.id, req.body || {});
-    const dashboard = syncResearchProspectsToDashboard();
+    const dashboard = syncProspectsAfterPatch(result);
     if (req.body?.status) logResearchStatusEvent(result.prospect, 'umich');
     broadcast('research_prospects_updated', { id: result.prospect.id, total: dashboard.total });
     return res.json(withToday(result));
@@ -1200,7 +1235,7 @@ app.get('/api/research-prospects/:id', (req, res) => {
 
 app.get('/api/kth-research-prospects', (req, res) => {
   try {
-    res.json(readResearchProspects({ institution: 'kth' }));
+    res.json(maybeProjectFeed(req, readResearchProspects({ institution: 'kth' }), projectResearchListStore));
   } catch (err) {
     return res.status(400).json({ error: err?.message || 'failed to read KTH research prospects' });
   }
@@ -1223,7 +1258,7 @@ app.post('/api/kth-research-prospects', (req, res) => {
 app.patch('/api/kth-research-prospects/:id', (req, res) => {
   try {
     const result = patchResearchProspect(req.params.id, req.body || {}, { institution: 'kth' });
-    const dashboard = syncResearchProspectsToDashboard({ institution: 'kth' });
+    const dashboard = syncProspectsAfterPatch(result, { institution: 'kth' });
     if (req.body?.status) logResearchStatusEvent(result.prospect, 'kth');
     broadcast('kth_research_prospects_updated', { id: result.prospect.id, total: dashboard.total });
     return res.json(withToday(result));
@@ -1245,7 +1280,7 @@ app.get('/api/kth-research-prospects/:id', (req, res) => {
 
 app.get('/api/phd-research-prospects/:source', (req, res) => {
   try {
-    res.json(readResearchProspects({ source: req.params.source }));
+    res.json(maybeProjectFeed(req, readResearchProspects({ source: req.params.source }), projectResearchListStore));
   } catch (err) {
     return res.status(400).json({ error: err?.message || 'failed to read PhD research prospects' });
   }
@@ -1272,7 +1307,7 @@ app.patch('/api/phd-research-prospects/:source/:id', (req, res) => {
   const source = req.params.source;
   try {
     const result = patchResearchProspect(req.params.id, req.body || {}, { source });
-    const dashboard = syncResearchProspectsToDashboard({ source });
+    const dashboard = syncProspectsAfterPatch(result, { source });
     if (req.body?.status) logResearchStatusEvent(result.prospect, source);
     broadcast('phd_research_prospects_updated', { source, id: result.prospect.id, total: dashboard.total });
     if (source === 'kth') broadcast('kth_research_prospects_updated', { id: result.prospect.id, total: dashboard.total });
@@ -1293,9 +1328,9 @@ app.get('/api/phd-research-prospects/:source/:id', (req, res) => {
   }
 });
 
-app.get('/api/euraxess/opportunities', (_req, res) => {
+app.get('/api/euraxess/opportunities', (req, res) => {
   try {
-    res.json(readEuraxessOpportunities());
+    res.json(maybeProjectFeed(req, readEuraxessOpportunities(), projectEuraxessListStore));
   } catch (err) {
     return res.status(400).json({ error: err?.message || 'failed to read EURAXESS opportunities' });
   }
@@ -1841,11 +1876,9 @@ app.post('/api/euraxess/opportunities/:id/apply', (req, res) => {
 
 // ── U-M Careers tracker ─────────────────────────────────────────────
 
-app.get('/api/umich-careers/opportunities', (_req, res) => {
+app.get('/api/umich-careers/opportunities', (req, res) => {
   try {
-    // Serve the dashboard projection (trimmed descriptions) when present.
-    const path = existsSync(DASHBOARD_UMICH_FILE) ? DASHBOARD_UMICH_FILE : undefined;
-    res.json(readUmichOpportunities(path));
+    res.json(maybeProjectFeed(req, ensureUmichDashboardProjection(), projectUmichListStore));
   } catch (err) {
     return res.status(400).json({ error: err?.message || 'failed to read U-M Careers opportunities' });
   }
@@ -2098,9 +2131,9 @@ app.post('/api/umich-careers/opportunities/:id/add-to-consider', (req, res) => {
   }
 });
 
-app.get('/api/phdscanner/opportunities', (_req, res) => {
+app.get('/api/phdscanner/opportunities', (req, res) => {
   try {
-    res.json(readPhdscannerOpportunities());
+    res.json(maybeProjectFeed(req, readPhdscannerOpportunities(), projectPhdscannerListStore));
   } catch (err) {
     return res.status(400).json({ error: err?.message || 'failed to read PhDScanner opportunities' });
   }

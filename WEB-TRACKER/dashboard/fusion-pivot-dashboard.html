@@ -225,6 +225,7 @@ tr.is-stats-target {
   outline: 2px solid var(--accent-fusion);
   outline-offset: -2px;
 }
+.global-today-stats { margin-top: 0.85rem; }
 
 /* Section headers */
 .section-title {
@@ -2922,6 +2923,7 @@ footer {
     <div class="stats-bar global-today-stats" id="global-today-stats"></div>
     <div class="today-stats-detail" id="today-stats-detail" hidden></div>
   </div>
+
 </header>
 
 <nav>
@@ -3781,7 +3783,7 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
   <div class="stats-bar" id="euraxess-stats" style="margin-bottom:2rem;"></div>
   <div class="filter-panel" style="margin-bottom:1rem;">
     <label>Fit
-      <select id="euraxess-score-band" onchange="renderEuraxessFeed({ force: true })">
+      <select id="euraxess-score-band" onchange="renderEuraxessFeed()">
         <option value="visible">Default (Strong + Adjacent)</option>
         <option value="all">All scanned</option>
         <option value="top_priority">Top priority</option>
@@ -3791,7 +3793,7 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
       </select>
     </label>
     <label>Role
-      <select id="euraxess-role" onchange="renderEuraxessFeed({ force: true })">
+      <select id="euraxess-role" onchange="renderEuraxessFeed()">
         <option value="all">All roles</option>
         <option value="phd">PhD / doctoral</option>
         <option value="engineer">Engineer / technician</option>
@@ -3801,7 +3803,7 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
       </select>
     </label>
     <label>Topic
-      <select id="euraxess-topic" onchange="renderEuraxessFeed({ force: true })">
+      <select id="euraxess-topic" onchange="renderEuraxessFeed()">
         <option value="all">All topics</option>
         <option value="plasma">Plasma / fusion</option>
         <option value="space">Space</option>
@@ -3819,7 +3821,7 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
       </select>
     </label>
     <label>Status
-      <select id="euraxess-status" onchange="renderEuraxessFeed({ force: true })">
+      <select id="euraxess-status" onchange="renderEuraxessFeed()">
         <option value="all">All statuses</option>
         <option value="still_apply">Still apply? (open + unverified)</option>
         <option value="open">Still open (verified deadline)</option>
@@ -3830,14 +3832,14 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
       </select>
     </label>
     <label>Ready
-      <select id="euraxess-ready" onchange="renderEuraxessFeed({ force: true })">
+      <select id="euraxess-ready" onchange="renderEuraxessFeed()">
         <option value="all">All</option>
         <option value="has_artifact">Has downloadable artifact</option>
         <option value="queued">Queued</option>
         <option value="needs_worker">Needs worker</option>
       </select>
     </label>
-    <input id="euraxess-search" type="search" placeholder="Search title, institution, keywords..." oninput="renderEuraxessFeed({ force: true })" style="min-width:280px;">
+    <input id="euraxess-search" type="search" placeholder="Search title, institution, keywords..." oninput="renderEuraxessFeed()" style="min-width:280px;">
   </div>
   <p style="color:var(--text-muted); margin:-0.4rem 0 1rem; font-size:0.72rem; font-family:'Space Mono',monospace;" id="euraxess-filter-help">
     Filters run on the card itself: Fit = score band, Role = title, Topic = title/summary keywords, Status = deadline state, Ready = artifacts/queue.
@@ -3874,7 +3876,7 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
       </select>
     </label>
     <label>University
-      <select id="phdscanner-university" onchange="renderPhdscannerFeed({ force: true })">
+      <select id="phdscanner-university" onchange="renderPhdscannerFeed()">
         <option value="">All Universities</option>
       </select>
     </label>
@@ -3884,30 +3886,30 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
       </select>
     </label>
     <label>Published from
-      <input id="phdscanner-published-from" type="date" onchange="renderPhdscannerFeed({ force: true })">
+      <input id="phdscanner-published-from" type="date" onchange="renderPhdscannerFeed()">
     </label>
     <label>Published to
-      <input id="phdscanner-published-to" type="date" onchange="renderPhdscannerFeed({ force: true })">
+      <input id="phdscanner-published-to" type="date" onchange="renderPhdscannerFeed()">
     </label>
     <label style="display:flex;align-items:center;gap:0.4rem;">
-      <input id="phdscanner-fully-funded" type="checkbox" checked onchange="renderPhdscannerFeed({ force: true })">
+      <input id="phdscanner-fully-funded" type="checkbox" checked onchange="renderPhdscannerFeed()">
       Fully Funded Only
     </label>
     <label style="display:flex;align-items:center;gap:0.4rem;">
-      <input id="phdscanner-minimal-barriers" type="checkbox" onchange="renderPhdscannerFeed({ force: true })">
+      <input id="phdscanner-minimal-barriers" type="checkbox" onchange="renderPhdscannerFeed()">
       Minimal financial barriers
     </label>
   </div>
   <div class="filter-panel" style="margin-bottom:1rem;">
     <label>Source
-      <select id="phdscanner-board-source" onchange="renderPhdscannerFeed({ force: true })">
+      <select id="phdscanner-board-source" onchange="renderPhdscannerFeed()">
         <option value="all">All sources</option>
         <option value="phdscanner">PhDScanner</option>
         <option value="findaphd">FindAPhD</option>
       </select>
     </label>
     <label>Fit
-      <select id="phdscanner-score-band" onchange="renderPhdscannerFeed({ force: true })">
+      <select id="phdscanner-score-band" onchange="renderPhdscannerFeed()">
         <option value="visible">Default (Strong + Adjacent)</option>
         <option value="all">All scanned</option>
         <option value="top_priority">Top priority</option>
@@ -3917,7 +3919,7 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
       </select>
     </label>
     <label>Role
-      <select id="phdscanner-role" onchange="renderPhdscannerFeed({ force: true })">
+      <select id="phdscanner-role" onchange="renderPhdscannerFeed()">
         <option value="all">All roles</option>
         <option value="phd">PhD / doctoral</option>
         <option value="engineer">Engineer / technician</option>
@@ -3927,7 +3929,7 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
       </select>
     </label>
     <label>Topic
-      <select id="phdscanner-topic" onchange="renderPhdscannerFeed({ force: true })">
+      <select id="phdscanner-topic" onchange="renderPhdscannerFeed()">
         <option value="all">All topics</option>
         <option value="plasma">Plasma / fusion</option>
         <option value="space">Space</option>
@@ -3945,7 +3947,7 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
       </select>
     </label>
     <label>Status
-      <select id="phdscanner-status" onchange="renderPhdscannerFeed({ force: true })">
+      <select id="phdscanner-status" onchange="renderPhdscannerFeed()">
         <option value="all">All statuses</option>
         <option value="still_apply">Still apply? (open + unverified)</option>
         <option value="open">Still open</option>
@@ -3956,14 +3958,14 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
       </select>
     </label>
     <label>Ready
-      <select id="phdscanner-ready" onchange="renderPhdscannerFeed({ force: true })">
+      <select id="phdscanner-ready" onchange="renderPhdscannerFeed()">
         <option value="all">All</option>
         <option value="has_artifact">Has downloadable artifact</option>
         <option value="queued">Queued</option>
         <option value="needs_worker">Needs worker</option>
       </select>
     </label>
-    <input id="phdscanner-search" type="search" placeholder="Search title, university, keywords..." oninput="renderPhdscannerFeed({ force: true })" style="min-width:280px;">
+    <input id="phdscanner-search" type="search" placeholder="Search title, university, keywords..." oninput="renderPhdscannerFeed()" style="min-width:280px;">
   </div>
   <p style="color:var(--text-muted); margin:-0.4rem 0 1rem; font-size:0.72rem; font-family:'Space Mono',monospace;" id="phdscanner-filter-help">
     Filters run on the card itself. Check Ready for application to enter the execution kanban.
@@ -3997,7 +3999,7 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
   <div class="stats-bar" id="umich-health" style="margin-bottom:2rem;"></div>
   <div class="filter-panel" style="margin-bottom:1rem;">
     <label>Segment
-      <select id="umich-segment" onchange="renderUmichCareersFeed({ force: true })">
+      <select id="umich-segment" onchange="renderUmichCareersFeed()">
         <option value="priority">Priority (Apply Now + High Relevance)</option>
         <option value="all">All postings</option>
         <option value="apply_now">Apply Now</option>
@@ -4010,7 +4012,7 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
       </select>
     </label>
     <label>Domain
-      <select id="umich-domain" onchange="renderUmichCareersFeed({ force: true })">
+      <select id="umich-domain" onchange="renderUmichCareersFeed()">
         <option value="all">All domains</option>
         <option value="space_aero">Space / aerospace / planetary</option>
         <option value="nuclear_plasma">Nuclear / plasma</option>
@@ -4023,36 +4025,36 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
       </select>
     </label>
     <label>Time
-      <select id="umich-employment" onchange="renderUmichCareersFeed({ force: true })">
+      <select id="umich-employment" onchange="renderUmichCareersFeed()">
         <option value="all">Full + part time</option>
         <option value="full">Full-Time</option>
         <option value="part">Part-Time</option>
       </select>
     </label>
     <label>Reg/Temp
-      <select id="umich-regular" onchange="renderUmichCareersFeed({ force: true })">
+      <select id="umich-regular" onchange="renderUmichCareersFeed()">
         <option value="all">All</option>
         <option value="Regular">Regular</option>
         <option value="Temporary">Temporary</option>
       </select>
     </label>
     <label>Campus
-      <select id="umich-location" onchange="renderUmichCareersFeed({ force: true })">
+      <select id="umich-location" onchange="renderUmichCareersFeed()">
         <option value="">All locations</option>
       </select>
     </label>
     <label>Department
-      <select id="umich-department" onchange="renderUmichCareersFeed({ force: true })">
+      <select id="umich-department" onchange="renderUmichCareersFeed()">
         <option value="">All departments</option>
       </select>
     </label>
     <label>Work mode
-      <select id="umich-workmode" onchange="renderUmichCareersFeed({ force: true })">
+      <select id="umich-workmode" onchange="renderUmichCareersFeed()">
         <option value="">All modes</option>
       </select>
     </label>
     <label>Status
-      <select id="umich-status" onchange="renderUmichCareersFeed({ force: true })">
+      <select id="umich-status" onchange="renderUmichCareersFeed()">
         <option value="all">All statuses</option>
         <option value="open">Open</option>
         <option value="closing_soon">Closing within 7 days</option>
@@ -4060,14 +4062,14 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
       </select>
     </label>
     <label>Sort
-      <select id="umich-sort" onchange="renderUmichCareersFeed({ force: true })">
+      <select id="umich-sort" onchange="renderUmichCareersFeed()">
         <option value="score">Score (high → low)</option>
         <option value="newest">Newest first</option>
         <option value="closing">Closing soonest</option>
         <option value="title">Title A→Z</option>
       </select>
     </label>
-    <input id="umich-search" type="search" placeholder="Search title, department, ID, evidence..." oninput="renderUmichCareersFeed({ force: true })" style="min-width:280px;">
+    <input id="umich-search" type="search" placeholder="Search title, department, ID, evidence..." oninput="renderUmichCareersFeed()" style="min-width:280px;">
   </div>
   <p style="color:var(--text-muted); margin:-0.4rem 0 1rem; font-size:0.72rem; font-family:'Space Mono',monospace;" id="umich-filter-help">
     Cards render in batches — use Load more at the bottom of each section. Evidence chips show the exact matched phrases behind each score.
@@ -4087,7 +4089,7 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
   <div id="researchprospects-feedback" class="inline-notice" role="status" aria-live="polite"></div>
   <div class="filter-panel" style="margin-bottom:1rem;">
     <label>Tier
-      <select id="researchprospects-tier" onchange="renderResearchProspects({ force: true })">
+      <select id="researchprospects-tier" onchange="renderResearchProspects()">
         <option value="all">All tiers</option>
         <option value="A">Tier A</option>
         <option value="B">Tier B</option>
@@ -4096,22 +4098,22 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
       </select>
     </label>
     <label>Department
-      <select id="researchprospects-department" onchange="renderResearchProspects({ force: true })">
+      <select id="researchprospects-department" onchange="renderResearchProspects()">
         <option value="all">All departments</option>
       </select>
     </label>
     <label>Research area
-      <select id="researchprospects-area" onchange="renderResearchProspects({ force: true })">
+      <select id="researchprospects-area" onchange="renderResearchProspects()">
         <option value="all">All research areas</option>
       </select>
     </label>
     <label>Transfer vector
-      <select id="researchprospects-vector" onchange="renderResearchProspects({ force: true })">
+      <select id="researchprospects-vector" onchange="renderResearchProspects()">
         <option value="all">All vectors</option>
       </select>
     </label>
     <label>Contact type
-      <select id="researchprospects-role" onchange="renderResearchProspects({ force: true })">
+      <select id="researchprospects-role" onchange="renderResearchProspects()">
         <option value="all">All</option>
         <option value="faculty_or_research_staff">Faculty / research staff</option>
         <option value="lab_member_signal">Lab-member signal</option>
@@ -4119,11 +4121,11 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
       </select>
     </label>
     <label>Status
-      <select id="researchprospects-status" onchange="renderResearchProspects({ force: true })">
+      <select id="researchprospects-status" onchange="renderResearchProspects()">
         <option value="all">All statuses</option>
       </select>
     </label>
-    <input id="researchprospects-search" type="search" placeholder="Search name, lab, department, method..." oninput="renderResearchProspects({ force: true })" style="min-width:260px;">
+    <input id="researchprospects-search" type="search" placeholder="Search name, lab, department, method..." oninput="renderResearchProspects()" style="min-width:260px;">
   </div>
   <div class="jobs-toolbar">
     <div>
@@ -4630,13 +4632,14 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
 <script>
 const TAB_RENDERERS = {
   today: () => { renderActionPlan(); renderTodayActivityTracker(); },
-  livejobs: () => renderLiveJobs({ force: true }),
-  euraxess: () => renderEuraxessFeed({ force: true }),
-  phdscanner: () => renderPhdscannerFeed({ force: true }),
-  umichcareers: () => renderUmichCareersFeed({ force: true }),
-  researchprospects: () => renderResearchProspects({ force: true }),
+  livejobs: () => renderLiveJobs(),
+  euraxess: () => renderEuraxessFeed(),
+  phdscanner: () => renderPhdscannerFeed(),
+  umichcareers: () => renderUmichCareersFeed(),
+  researchprospects: () => renderResearchProspects(),
   targetcompanies: () => renderTargetCompanies(),
   networking: () => renderNetworking({ force: true }),
+
   pulse: () => renderPulse(),
   phdradar: () => {
     mountPhdNotionEmbed();
@@ -4654,6 +4657,8 @@ const TAB_RENDERERS = {
   },
   system: () => renderSystem(),
 };
+
+const FEED_PAGE_SIZE = 48;
 
 // Notion Sites iframes fail if they start inside display:none tabs.
 // Mount the official ebd// embed URL only after PhD Options becomes visible.
@@ -4818,9 +4823,10 @@ function switchTab(tabId, evt = null) {
     .find(button => (button.getAttribute('onclick') || '').includes(`'${tabId}'`));
   if (activeButton) activeButton.classList.add('active');
   TAB_RENDERERS[tabId]?.();
+  syncPhdRadarTimer();
   if (tabId !== 'researchprospects' && deferredFullPanelRender) {
     deferredFullPanelRender = false;
-    queueRenderAllPanels();
+    queueVisibleDashboardRefresh();
   }
 }
 
@@ -4844,7 +4850,7 @@ const API_BASE = STATIC_PUBLISH
   : (window.location.protocol.startsWith('http') ? window.location.origin : `http://${DASHBOARD_HOST}:3737`);
 const API_TIMEOUT_MS = 15_000;
 const API_TIMEOUT_HEAVY_MS = 60_000;
-const API_GET_CACHE_MS = 1_500;
+const API_GET_CACHE_MS = 30_000;
 const apiInflightGet = new Map();
 const apiGetCache = new Map();
 
@@ -4885,6 +4891,12 @@ const DASHBOARD_TIMEZONE = 'America/New_York';
 let todayStatsDate = '';
 let todayStatsPayload = null;
 let todayStatsMetric = '';
+let todayStatsAbort = null;
+let lastTodaySummary = null;
+let digestUiHydrated = false;
+let phdRadarTimer = null;
+let pulseFilterTimer = null;
+
 let sseConnection = null;
 let reconnectTimer = null;
 let refreshTimer = null;
@@ -5081,12 +5093,14 @@ async function fetchJSON(file) {
 async function apiJSON(path, options = {}) {
   const method = (options.method || 'GET').toUpperCase();
   const timeoutMs = Number(options.timeoutMs) || API_TIMEOUT_MS;
+  const skipCache = Boolean(options.skipCache);
   const requestOptions = {
     headers: { 'Content-Type': 'application/json', ...(options.headers || {}) },
     cache: 'no-store',
     ...options,
   };
   delete requestOptions.timeoutMs;
+  delete requestOptions.skipCache;
   if (STATIC_PUBLISH) {
     if (method !== 'GET') throw new Error('Read-only public snapshot');
     const res = await fetchWithTimeout(staticApiPath(path), { cache: 'no-store' }, timeoutMs);
@@ -5099,7 +5113,7 @@ async function apiJSON(path, options = {}) {
   const url = `${API_BASE}${path}`;
   const key = `${method}:${path}`;
   if (method !== 'GET') apiGetCache.clear();
-  const cached = method === 'GET' ? apiGetCache.get(key) : null;
+  const cached = method === 'GET' && !skipCache ? apiGetCache.get(key) : null;
   if (cached && Date.now() - cached.timestamp < API_GET_CACHE_MS) return cached.value;
   if (method === 'GET' && apiInflightGet.has(key)) return apiInflightGet.get(key);
   const request = (async () => {
@@ -5109,7 +5123,7 @@ async function apiJSON(path, options = {}) {
       throw new Error(err.error || res.statusText);
     }
     const value = await res.json();
-    if (method === 'GET') apiGetCache.set(key, { timestamp: Date.now(), value });
+    if (method === 'GET' && !skipCache) apiGetCache.set(key, { timestamp: Date.now(), value });
     return value;
   })();
   if (method !== 'GET') return request;
@@ -5126,6 +5140,7 @@ function downloadDashboardExport(scope, format = 'xlsx') {
   const params = new URLSearchParams({
     format,
     date: scope === 'today-activity' ? selectedTodayStatsDate() : easternISODate(),
+
     timezone: DASHBOARD_TIMEZONE,
   });
   window.location.href = `${API_BASE}/api/export/${encodeURIComponent(scope)}?${params.toString()}`;
@@ -5145,7 +5160,7 @@ async function sendTodayDigestNow() {
     const result = await apiJSON('/api/daily-digest/send', {
       method: 'POST',
       body: JSON.stringify({
-        date: easternISODate(),
+        date: selectedTodayStatsDate(),
         timezone: DASHBOARD_TIMEZONE,
         recipients: recipient,
         dry_run: false,
@@ -5298,6 +5313,7 @@ function todayTrackerCard(value, label, className = '', metric = '') {
 function renderTodayActivitySummary(summary = {}) {
   const statsEl = document.getElementById('global-today-stats');
   if (!statsEl) return;
+  lastTodaySummary = summary;
   const suffix = isSelectedStatsToday() ? ' Today' : '';
   // Contacted includes Networking + research outreach — do not show a second Networking card.
   statsEl.innerHTML = [
@@ -5428,12 +5444,16 @@ async function renderTodayActivityTracker() {
     renderTodayActivitySummary(data.summary || {});
     renderTodayStatsDetail();
   } catch (err) {
-    todayStatsPayload = null;
-    statsEl.innerHTML = `<div class="jobs-empty">Today tracker unavailable: ${escapeHTML(err.message)}</div>`;
-    const detail = document.getElementById('today-stats-detail');
-    if (detail) {
-      detail.hidden = true;
-      detail.innerHTML = '';
+    if (lastTodaySummary) {
+      renderTodayActivitySummary(lastTodaySummary);
+    } else {
+      todayStatsPayload = null;
+      statsEl.innerHTML = `<div class="jobs-empty">Today tracker unavailable: ${escapeHTML(err.message)}</div>`;
+      const detail = document.getElementById('today-stats-detail');
+      if (detail) {
+        detail.hidden = true;
+        detail.innerHTML = '';
+      }
     }
   }
   hydrateDailyDigestEmailUi();
@@ -5905,6 +5925,22 @@ async function commitPulseField(num, field, value) {
   }
 }
 
+function queuePulseLocalRender() {
+  if (pulseFilterTimer) clearTimeout(pulseFilterTimer);
+  pulseFilterTimer = setTimeout(() => {
+    pulseFilterTimer = null;
+    renderPulseTableFromCache();
+  }, 200);
+}
+
+function renderPulseTableFromCache() {
+  if (!pulseEntriesByNum.size) {
+    renderPulse();
+    return;
+  }
+  renderPulse({ localOnly: true });
+}
+
 function setPulseView(view) {
   if (!PULSE_VIEWS[view]) return;
   pulseCurrentView = view;
@@ -5913,24 +5949,26 @@ function setPulseView(view) {
   pulseLastAddRowSignature = '';
   pulseLastRenderedSignature = '';
   pulseSort = view === 'career' ? { field: 'score', direction: 'desc' } : { field: 'date', direction: 'desc' };
-  renderPulse();
+  renderPulseTableFromCache();
 }
 
 function setPulseGlobalSearch(value) {
   pulseGlobalSearch = value || '';
-  renderPulse();
+  queuePulseLocalRender();
 }
 
 function setPulseFilter(field, value) {
   if (value) pulseFilters[field] = value;
   else delete pulseFilters[field];
-  renderPulse();
+  queuePulseLocalRender();
 }
 
 function clearPulseFilters() {
   pulseFilters = {};
   pulseGlobalSearch = '';
-  renderPulse();
+  const search = document.getElementById('pulse-global-search');
+  if (search) search.value = '';
+  renderPulseTableFromCache();
 }
 
 function setPulseTodayFilter() {
@@ -5939,7 +5977,7 @@ function setPulseTodayFilter() {
   delete pulseFilters.__followupDate;
   pulseGlobalSearch = '';
   pulseLastRenderedSignature = '';
-  renderPulse();
+  renderPulseTableFromCache();
 }
 
 function updatePulseQuickFilterButtons() {
@@ -5957,7 +5995,7 @@ function setPulseSort(field) {
   } else {
     pulseSort = { field, direction: 'asc' };
   }
-  renderPulse();
+  renderPulseTableFromCache();
 }
 
 function togglePulseAddRow() {
@@ -6368,8 +6406,15 @@ function renderPulseFromSse() {
   if (!shouldSkipPulseSseRender()) renderPulse();
 }
 
+function liveJobsLoadMore(key) {
+  liveJobsSectionLimits.set(key, (liveJobsSectionLimits.get(key) || FEED_PAGE_SIZE) + FEED_PAGE_SIZE);
+  renderLiveJobs();
+}
+
 function renderLiveJobsFromSse() {
-  if (!shouldSkipJobsSseRender()) renderLiveJobs();
+  liveJobsCache = null;
+  liveJobsRenderedSignature = '';
+  if (!shouldSkipJobsSseRender()) renderLiveJobs({ force: true });
 }
 
 function renderResearchProspectsFromSse() {
@@ -6562,9 +6607,7 @@ async function renderActionPlan() {
     apiJSON('/api/applications').catch(() => null),
   ]);
   window.__actionPlan = plan;
-  document.getElementById('today-date-label').textContent = new Date().toLocaleDateString(undefined, {
-    weekday: 'long', month: 'short', day: 'numeric', year: 'numeric'
-  });
+  document.getElementById('today-date-label').textContent = formatEasternLongDate();
   const daysLeft = plan?.sprint?.days_left ?? '?';
   document.getElementById('sprint-days-left').textContent = daysLeft;
   const elapsed = Number.isFinite(Number(daysLeft)) ? Math.max(0, 90 - Number(daysLeft)) : 0;
@@ -7966,9 +8009,17 @@ function renderJobTable(jobs) {
 function renderJobsSection(title, jobs, targetId) {
   const target = document.getElementById(targetId);
   if (!target) return;
+  const limit = liveJobsSectionLimits.get(targetId) || FEED_PAGE_SIZE;
+  const visible = jobs.slice(0, limit);
+  const remaining = jobs.length - visible.length;
   target.innerHTML = `
     <div class="jobs-section-title">${escapeHTML(title)} (${jobs.length})</div>
-    ${liveJobsView === 'table' ? renderJobTable(jobs) : renderJobCards(jobs)}
+    ${liveJobsView === 'table' ? renderJobTable(visible) : renderJobCards(visible)}
+    ${remaining > 0
+      ? `<div style="text-align:center; margin:1rem 0;">
+           <button class="control-btn secondary" onclick='liveJobsLoadMore(${JSON.stringify(targetId)})'>Load ${Math.min(remaining, FEED_PAGE_SIZE)} more (${remaining} hidden)</button>
+         </div>`
+      : ''}
   `;
 }
 
@@ -7976,6 +8027,10 @@ const LIVE_JOBS_SECTION_IDS = ['livejobs-to-consider', 'livejobs-applied', 'live
 const LIVE_JOBS_SCROLL_IDLE_MS = 800;
 const LIVE_JOBS_SCROLL_STORAGE_KEY = 'careerOps.liveJobsScrollState.v1';
 let liveJobsCompanyFilter = '';
+let liveJobsCache = null;
+let liveJobsRenderedSignature = '';
+let liveJobsFilterSignature = '';
+const liveJobsSectionLimits = new Map();
 let targetCompaniesCache = null;
 let exhibitorCompaniesCache = null;
 let exhibitorClearQueueCache = null;
@@ -8137,7 +8192,9 @@ async function toggleJobApplied(id, applied, inputEl = null) {
     setLiveJobsFeedback(applied ? 'Saved: job moved into Applications.' : 'Saved: job removed from Applications.', 'success');
     if (applied && result.job) showLiveJobsNetworkingNudge(result.job);
     else hideLiveJobsNetworkingNudge();
-    await renderLiveJobs();
+    liveJobsCache = null;
+    liveJobsRenderedSignature = '';
+    await renderLiveJobs({ force: true });
     await renderActionPlan();
   } catch (err) {
     if (pendingJobSaves.get(id) !== sequence) return;
@@ -8174,7 +8231,9 @@ async function deleteJobPosting(id) {
       result?.missing ? 'That posting was already removed. Refreshed Jobs to Consider.' : 'Deleted posting from Jobs to Consider.',
       'success'
     );
-    await renderLiveJobs();
+    liveJobsCache = null;
+    liveJobsRenderedSignature = '';
+    await renderLiveJobs({ force: true });
     await renderActionPlan();
   } catch (err) {
     setLiveJobsFeedback(`Could not delete posting: ${err.message}`, 'error');
@@ -8199,8 +8258,11 @@ async function renderLiveJobs({ force = false } = {}) {
   updateLiveJobsViewButtons();
   const scrollState = saveLiveJobsScrollState();
   try {
-    const [data, networkingData, researchQueue] = await Promise.all([
-      apiJSON('/api/jobs-to-consider'),
+    if (!liveJobsCache || force) {
+      liveJobsCache = await apiJSON('/api/jobs-to-consider');
+    }
+    const data = liveJobsCache;
+    const [networkingData, researchQueue] = await Promise.all([
       apiJSON('/api/networking').catch(() => null),
       apiJSON('/api/networking/research-queue').catch(() => null),
     ]);
@@ -8250,6 +8312,11 @@ async function renderLiveJobs({ force = false } = {}) {
     renderLiveJobsCompanyResearchQueue(researchQueue || networkingResearchQueueCache);
     renderLiveJobsExploreChips();
 
+    const filterSig = JSON.stringify({ filters, company: liveJobsCompanyFilter, view: liveJobsView });
+    if (filterSig !== liveJobsFilterSignature) {
+      liveJobsFilterSignature = filterSig;
+      liveJobsSectionLimits.clear();
+    }
     let filtered = liveJobsLastAllJobs.filter(job => matchesWorkAuthFilters(job, filters));
     if (liveJobsCompanyFilter) {
       const needle = liveJobsCompanyFilter.toLowerCase();
@@ -8293,6 +8360,19 @@ async function renderLiveJobs({ force = false } = {}) {
       .slice(0, 5)
       .map(([c, n]) => `${countryLabel(c)} ${n}`)
       .join(', ');
+    const signature = JSON.stringify({
+      generated_at: data.generated_at || '',
+      filters,
+      company: liveJobsCompanyFilter,
+      view: liveJobsView,
+      limits: [...liveJobsSectionLimits.entries()],
+      shown: sorted.map(job => [job.id, job.status, job.applied || false]),
+    });
+    if (!force && signature === liveJobsRenderedSignature) {
+      restoreLiveJobsScrollState(scrollState);
+      return;
+    }
+    liveJobsRenderedSignature = signature;
 
     metaEl.textContent =
       `Showing ${filtered.length} of ${total}${filterText} | ${activeJobs.length} to consider | ${appliedJobs.length} applied | ${closedJobs.length} archived | Top countries: ${topCountries || 'n/a'} | Updated: ${data.generated_at ? new Date(data.generated_at).toLocaleString() : 'unknown'}`;
@@ -8320,6 +8400,8 @@ async function renderLiveJobs({ force = false } = {}) {
 let researchProspectsCache = null;
 let researchProspectsVectorOptionsLoaded = false;
 let researchProspectsRenderedSignature = '';
+let researchProspectsFilterSignature = '';
+let researchProspectsLimit = FEED_PAGE_SIZE;
 let researchProspectsRenderInFlight = false;
 let researchProspectsRenderQueued = false;
 let researchProspectsDeferredRenderTimer = null;
@@ -8569,6 +8651,8 @@ function prospectScoreColor(score = 0) {
 let euraxessStoreCache = null;
 let euraxessFactoryCache = null;
 let euraxessRenderedSignature = '';
+let euraxessFilterSignature = '';
+const euraxessSectionLimits = new Map();
 
 const EURAXESS_ROLE_LABELS = {
   phd: 'PhD / doctoral',
@@ -9169,7 +9253,7 @@ function euraxessCard(item = {}) {
 function setEuraxessAllScanned() {
   const score = document.getElementById('euraxess-score-band');
   if (score) score.value = 'all';
-  renderEuraxessFeed({ force: true });
+  renderEuraxessFeed();
 }
 
 function setEuraxessFeedback(message = '', kind = '') {
@@ -9373,6 +9457,7 @@ async function euraxessApplyOpportunity(id, applied = true) {
       body: JSON.stringify({ applied: Boolean(applied) }),
     });
     const num = result.application?.num || result.opportunity?.execution?.application_num;
+    applyTodayFromResponse(result);
     setEuraxessFeedback(
       applied
         ? `Applied. PhD Applications row #${num || '?'}.`
@@ -9387,13 +9472,26 @@ async function euraxessApplyOpportunity(id, applied = true) {
   }
 }
 
-function renderEuraxessSection(title, items) {
+function renderEuraxessSection(title, items, key) {
   if (!items.length) return '';
+  const limit = euraxessSectionLimits.get(key) || FEED_PAGE_SIZE;
+  const visible = items.slice(0, limit);
+  const remaining = items.length - visible.length;
   return `
     <div class="jobs-section" style="margin-bottom:2rem;">
       <div class="jobs-section-title">${escapeHTML(title)} (${items.length})</div>
-      <div class="company-grid">${items.map(euraxessCard).join('')}</div>
+      <div class="company-grid">${visible.map(euraxessCard).join('')}</div>
+      ${remaining > 0
+        ? `<div style="text-align:center; margin:1rem 0;">
+             <button class="control-btn secondary" onclick='euraxessLoadMore(${JSON.stringify(key)})'>Load ${Math.min(remaining, FEED_PAGE_SIZE)} more (${remaining} hidden)</button>
+           </div>`
+        : ''}
     </div>`;
+}
+
+function euraxessLoadMore(key) {
+  euraxessSectionLimits.set(key, (euraxessSectionLimits.get(key) || FEED_PAGE_SIZE) + FEED_PAGE_SIZE);
+  renderEuraxessFeed();
 }
 
 async function renderEuraxessFeed({ force = false } = {}) {
@@ -9402,7 +9500,7 @@ async function renderEuraxessFeed({ force = false } = {}) {
   if (!meta || !grid) return;
 
   if (!euraxessStoreCache || force) {
-    euraxessStoreCache = await apiJSON('/api/euraxess/opportunities').catch(() => null);
+    euraxessStoreCache = await apiJSON('/api/euraxess/opportunities?view=list').catch(() => null);
   }
   if (!euraxessFactoryCache || force) {
     euraxessFactoryCache = await apiJSON('/api/euraxess/factory/status').catch(() => null);
@@ -9419,11 +9517,17 @@ async function renderEuraxessFeed({ force = false } = {}) {
 
   const opportunities = [...(store.opportunities || [])];
   const filters = euraxessFilters();
+  const filterSig = JSON.stringify(filters);
+  if (filterSig !== euraxessFilterSignature) {
+    euraxessFilterSignature = filterSig;
+    euraxessSectionLimits.clear();
+  }
   const shown = opportunities.filter(item => euraxessMatchesFilters(item, filters));
   const signature = JSON.stringify({
     generated_at: store.generated_at,
     factory: euraxessFactoryCache?.generated_at || '',
     filters,
+    limits: [...euraxessSectionLimits.entries()],
     shown: shown.map(item => [
       item.id,
       item.score,
@@ -9472,21 +9576,21 @@ async function renderEuraxessFeed({ force = false } = {}) {
     const applied = shown.filter(isApplied);
     const archived = shown.filter(isArchived);
     grid.innerHTML = [
-      renderEuraxessSection('Strong matches', strong),
-      renderEuraxessSection('Adjacent / explore', adjacent),
-      renderEuraxessSection('Other active', otherActive),
-      renderEuraxessSection('Applied', applied),
-      renderEuraxessSection('Archived (manual + low-fit)', archived),
+      renderEuraxessSection('Strong matches', strong, 'strong'),
+      renderEuraxessSection('Adjacent / explore', adjacent, 'adjacent'),
+      renderEuraxessSection('Other active', otherActive, 'other'),
+      renderEuraxessSection('Applied', applied, 'applied'),
+      renderEuraxessSection('Archived (manual + low-fit)', archived, 'archived'),
     ].filter(Boolean).join('') || `<div class="jobs-empty">Nothing to show.</div>`;
     return;
   }
 
   if (filters.scoreBand === 'archive' || filters.status === 'archived') {
-    grid.innerHTML = renderEuraxessSection('Archived (manual + low-fit)', shown) || `<div class="jobs-empty">No archived postings.</div>`;
+    grid.innerHTML = renderEuraxessSection('Archived (manual + low-fit)', shown, 'archived') || `<div class="jobs-empty">No archived postings.</div>`;
     return;
   }
 
-  grid.innerHTML = `<div class="company-grid">${shown.map(euraxessCard).join('')}</div>`;
+  grid.innerHTML = renderEuraxessSection('Matches', shown, 'matches') || `<div class="jobs-empty">Nothing to show.</div>`;
 }
 
 // ── U-M Careers Tracker ─────────────────────────────────────────────
@@ -9495,7 +9599,7 @@ let umichRenderedSignature = '';
 let umichFacetsLoaded = false;
 let umichFilterSignature = '';
 const umichSectionLimits = new Map();
-const UMICH_PAGE_SIZE = 48;
+const UMICH_PAGE_SIZE = FEED_PAGE_SIZE;
 
 const UMICH_SEGMENT_LABELS = {
   apply_now: 'Apply Now',
@@ -9742,7 +9846,7 @@ function umichCard(item = {}) {
 
 function umichLoadMore(key) {
   umichSectionLimits.set(key, (umichSectionLimits.get(key) || UMICH_PAGE_SIZE) + UMICH_PAGE_SIZE);
-  renderUmichCareersFeed({ force: true });
+  renderUmichCareersFeed();
 }
 
 function renderUmichSection(title, items, key, sort) {
@@ -9767,7 +9871,7 @@ async function renderUmichCareersFeed({ force = false } = {}) {
   if (!meta || !grid) return;
 
   if (!umichStoreCache || force) {
-    umichStoreCache = await apiJSON('/api/umich-careers/opportunities', { timeoutMs: API_TIMEOUT_HEAVY_MS }).catch(() => null);
+    umichStoreCache = await apiJSON('/api/umich-careers/opportunities?view=list', { timeoutMs: API_TIMEOUT_HEAVY_MS }).catch(() => null);
   }
   const store = umichStoreCache;
   if (!store) {
@@ -9952,6 +10056,8 @@ async function umichAddToConsider(id) {
 let phdscannerStoreCache = null;
 let phdscannerFactoryCache = null;
 let phdscannerRenderedSignature = '';
+let phdscannerFilterSignature = '';
+const phdscannerSectionLimits = new Map();
 let phdscannerFacetsCache = null;
 
 const PHDSCANNER_ROLE_LABELS = EURAXESS_ROLE_LABELS;
@@ -10203,7 +10309,7 @@ function onPhdscannerCountryChange() {
   const discEl = document.getElementById('phdscanner-discipline');
   if (document.getElementById('phdscanner-country')?.value && discEl) discEl.value = '';
   fillPhdscannerFacetSelects(phdscannerStoreCache?.opportunities || []);
-  renderPhdscannerFeed({ force: true });
+  renderPhdscannerFeed();
 }
 
 function onPhdscannerDisciplineChange() {
@@ -10214,7 +10320,7 @@ function onPhdscannerDisciplineChange() {
     if (uniEl) uniEl.value = '';
   }
   fillPhdscannerFacetSelects(phdscannerStoreCache?.opportunities || []);
-  renderPhdscannerFeed({ force: true });
+  renderPhdscannerFeed();
 }
 
 function setPhdscannerFeedback(message = '', kind = '') {
@@ -10229,7 +10335,7 @@ function setPhdscannerAllScanned() {
   const funded = document.getElementById('phdscanner-fully-funded');
   if (band) band.value = 'all';
   if (funded) funded.checked = false;
-  renderPhdscannerFeed({ force: true });
+  renderPhdscannerFeed();
 }
 
 function renderPhdscannerStats(store = {}, shown = []) {
@@ -10518,13 +10624,26 @@ function phdscannerCard(item = {}) {
     </div>`;
 }
 
-function renderPhdscannerSection(title, items = []) {
+function renderPhdscannerSection(title, items = [], key = 'matches') {
   if (!items.length) return '';
+  const limit = phdscannerSectionLimits.get(key) || FEED_PAGE_SIZE;
+  const visible = items.slice(0, limit);
+  const remaining = items.length - visible.length;
   return `
     <div class="jobs-section" style="margin-bottom:2rem;">
       <div class="jobs-section-title">${escapeHTML(title)} (${items.length})</div>
-      <div class="company-grid">${items.map(phdscannerCard).join('')}</div>
+      <div class="company-grid">${visible.map(phdscannerCard).join('')}</div>
+      ${remaining > 0
+        ? `<div style="text-align:center; margin:1rem 0;">
+             <button class="control-btn secondary" onclick='phdscannerLoadMore(${JSON.stringify(key)})'>Load ${Math.min(remaining, FEED_PAGE_SIZE)} more (${remaining} hidden)</button>
+           </div>`
+        : ''}
     </div>`;
+}
+
+function phdscannerLoadMore(key) {
+  phdscannerSectionLimits.set(key, (phdscannerSectionLimits.get(key) || FEED_PAGE_SIZE) + FEED_PAGE_SIZE);
+  renderPhdscannerFeed();
 }
 
 async function runPhdscannerControl(action) {
@@ -10720,6 +10839,7 @@ async function phdscannerApplyOpportunity(id, applied = true) {
       body: JSON.stringify({ applied: Boolean(applied) }),
     });
     const num = result.application?.num || result.opportunity?.execution?.application_num;
+    applyTodayFromResponse(result);
     setPhdscannerFeedback(
       applied
         ? `Applied. PhD Applications row #${num || '?'}.`
@@ -10740,7 +10860,7 @@ async function renderPhdscannerFeed({ force = false } = {}) {
   if (!meta || !grid) return;
 
   if (!phdscannerStoreCache || force) {
-    phdscannerStoreCache = await apiJSON('/api/phdscanner/opportunities').catch(() => null);
+    phdscannerStoreCache = await apiJSON('/api/phdscanner/opportunities?view=list').catch(() => null);
   }
   if (!phdscannerFactoryCache || force) {
     phdscannerFactoryCache = await apiJSON('/api/phdscanner/factory/status').catch(() => null);
@@ -10758,11 +10878,17 @@ async function renderPhdscannerFeed({ force = false } = {}) {
   fillPhdscannerFacetSelects(store.opportunities || []);
   const opportunities = [...(store.opportunities || [])];
   const filters = phdscannerFilters();
+  const filterSig = JSON.stringify(filters);
+  if (filterSig !== phdscannerFilterSignature) {
+    phdscannerFilterSignature = filterSig;
+    phdscannerSectionLimits.clear();
+  }
   const shown = opportunities.filter(item => phdscannerMatchesFilters(item, filters));
   const signature = JSON.stringify({
     generated_at: store.generated_at,
     factory: phdscannerFactoryCache?.generated_at || '',
     filters,
+    limits: [...phdscannerSectionLimits.entries()],
     shown: shown.map(item => [
       item.id,
       item.score,
@@ -10810,21 +10936,21 @@ async function renderPhdscannerFeed({ force = false } = {}) {
     const applied = shown.filter(isApplied);
     const archived = shown.filter(isArchived);
     grid.innerHTML = [
-      renderPhdscannerSection('Strong matches', strong),
-      renderPhdscannerSection('Adjacent / explore', adjacent),
-      renderPhdscannerSection('Other active', otherActive),
-      renderPhdscannerSection('Applied', applied),
-      renderPhdscannerSection('Archived (manual + low-fit)', archived),
+      renderPhdscannerSection('Strong matches', strong, 'strong'),
+      renderPhdscannerSection('Adjacent / explore', adjacent, 'adjacent'),
+      renderPhdscannerSection('Other active', otherActive, 'other'),
+      renderPhdscannerSection('Applied', applied, 'applied'),
+      renderPhdscannerSection('Archived (manual + low-fit)', archived, 'archived'),
     ].filter(Boolean).join('') || `<div class="jobs-empty">Nothing to show.</div>`;
     return;
   }
 
   if (filters.scoreBand === 'archive' || filters.status === 'archived') {
-    grid.innerHTML = renderPhdscannerSection('Archived (manual + low-fit)', shown) || `<div class="jobs-empty">No archived postings.</div>`;
+    grid.innerHTML = renderPhdscannerSection('Archived (manual + low-fit)', shown, 'archived') || `<div class="jobs-empty">No archived postings.</div>`;
     return;
   }
 
-  grid.innerHTML = `<div class="company-grid">${shown.map(phdscannerCard).join('')}</div>`;
+  grid.innerHTML = renderPhdscannerSection('Matches', shown, 'matches') || `<div class="jobs-empty">Nothing to show.</div>`;
 }
 
 function prospectEvidenceLinks(items = []) {
@@ -11289,7 +11415,7 @@ function queueResearchProspectsRenderAfterIdle() {
     researchProspectsDeferredRenderTimer = null;
     if (!researchProspectsRenderQueued) return;
     researchProspectsRenderQueued = false;
-    renderResearchProspects({ force: true });
+    renderResearchProspects();
   }, RESEARCH_PROSPECTS_INTERACTION_IDLE_MS + 100);
 }
 
@@ -11884,6 +12010,11 @@ async function updateResearchProspectStatus(id, status, selectEl = null) {
   }
 }
 
+function researchProspectsLoadMore() {
+  researchProspectsLimit += FEED_PAGE_SIZE;
+  renderResearchProspects();
+}
+
 async function renderResearchProspects({ force = false } = {}) {
   const meta = document.getElementById('researchprospects-meta');
   const grid = document.getElementById('researchprospects-grid');
@@ -11902,8 +12033,8 @@ async function renderResearchProspects({ force = false } = {}) {
   researchProspectsRenderInFlight = true;
   try {
     const data = force
-      ? await apiJSON('/api/research-prospects', { timeoutMs: API_TIMEOUT_HEAVY_MS })
-      : (researchProspectsCache || await apiJSON('/api/research-prospects', { timeoutMs: API_TIMEOUT_HEAVY_MS }));
+      ? await apiJSON('/api/research-prospects?view=list', { timeoutMs: API_TIMEOUT_HEAVY_MS })
+      : (researchProspectsCache || await apiJSON('/api/research-prospects?view=list', { timeoutMs: API_TIMEOUT_HEAVY_MS }));
     if (!data) {
       meta.textContent = 'No U-M research prospects found yet. Run the importer to create data/umich-research-prospects.json.';
       grid.innerHTML = '';
@@ -11918,18 +12049,32 @@ async function renderResearchProspects({ force = false } = {}) {
     populateResearchAreaOptions(prospects);
     populateResearchVectorOptions(prospects);
     const filters = researchProspectFilters();
+    const filterSig = JSON.stringify(filters);
+    if (filterSig !== researchProspectsFilterSignature) {
+      researchProspectsFilterSignature = filterSig;
+      researchProspectsLimit = FEED_PAGE_SIZE;
+    }
     const shown = prospects.filter(prospect => prospectMatchesFilters(prospect, filters));
     window.__researchProspectsById = Object.fromEntries(prospects.map(prospect => [shareKeyForProspect(prospect), prospect]));
     renderOutreachKanban(prospects);
-    const signature = researchProspectsSignature(data, filters, shown);
+    const signature = researchProspectsSignature(data, filters, shown) + `|limit:${researchProspectsLimit}`;
     if (!force && signature === researchProspectsRenderedSignature) return;
     researchProspectsRenderedSignature = signature;
     renderResearchProspectStats(prospects, shown);
     meta.textContent = `${shown.length}/${prospects.length} Ann Arbor prospects shown | ${prospects.filter(p => p.contact_email).length} direct emails | Updated: ${data.generated_at ? new Date(data.generated_at).toLocaleString() : 'unknown'}`;
     grid.className = 'company-grid';
-    grid.innerHTML = shown.length
-      ? shown.map(prospect => prospectCard(prospect)).join('')
-      : '<div class="jobs-empty">No prospects match these filters.</div>';
+    if (!shown.length) {
+      grid.innerHTML = '<div class="jobs-empty">No prospects match these filters.</div>';
+      return;
+    }
+    const visible = shown.slice(0, researchProspectsLimit);
+    const remaining = shown.length - visible.length;
+    grid.innerHTML = visible.map(prospect => prospectCard(prospect)).join('')
+      + (remaining > 0
+        ? `<div style="text-align:center; margin:1rem 0; grid-column:1 / -1;">
+             <button class="control-btn secondary" onclick="researchProspectsLoadMore()">Load ${Math.min(remaining, FEED_PAGE_SIZE)} more (${remaining} hidden)</button>
+           </div>`
+        : '');
   } catch (err) {
     meta.textContent = panelLoadErrorMessage('U-M research prospects', err);
     grid.innerHTML = `<div class="jobs-empty">${escapeHTML(err.message || String(err))}</div>`;
@@ -12636,10 +12781,23 @@ async function renderPhdRadar() {
 
 // ── Career-Ops Pulse Tab ────────────────────────────────────────────
 
-async function renderPulse() {
-  const apps = await apiJSON('/api/applications');
-  const pipeline = await fetchJSON('pipeline.json');
-  const dashboardData = await apiJSON('/api/applications/dashboard').catch(() => null);
+async function renderPulse(options = {}) {
+  const localOnly = Boolean(options.localOnly);
+  const apps = localOnly && pulseEntriesByNum.size
+    ? {
+      count: pulseEntriesByNum.size,
+      entries: [...pulseEntriesByNum.values()],
+      status_summary: [...pulseEntriesByNum.values()].reduce((acc, entry) => {
+        const status = String(entry.status || '').toLowerCase();
+        acc[status] = (acc[status] || 0) + 1;
+        return acc;
+      }, {}),
+    }
+    : await apiJSON('/api/applications');
+  const pipeline = localOnly ? null : await fetchJSON('pipeline.json');
+  const dashboardData = localOnly
+    ? pulseDashboardData
+    : await apiJSON('/api/applications/dashboard').catch(() => null);
   if (dashboardData) pulseDashboardData = dashboardData;
   renderPulseViewSelector();
 
@@ -14574,6 +14732,7 @@ async function moveNetworkingPersonStage(id, stage) {
         approve_on_stage_move: true,
       }),
     });
+    applyTodayFromResponse(result);
     networkingStoreCache = null;
     await renderNetworking({ force: true });
     const person = result?.person || previous || {};
@@ -14609,7 +14768,8 @@ async function logNetworkingInteraction() {
   };
   pendingNetworkingSaves.set(id, true);
   try {
-    await apiJSON('/api/networking/interactions', { method: 'POST', body: JSON.stringify(payload) });
+    const result = await apiJSON('/api/networking/interactions', { method: 'POST', body: JSON.stringify(payload) });
+    applyTodayFromResponse(result);
     document.getElementById('networking-log-summary').value = '';
     networkingStoreCache = null;
     await renderNetworking({ force: true });
@@ -14938,6 +15098,7 @@ function connectSSE() {
         } else if (activeTabId() === 'today' || activeTabId() === 'weekly' || activeTabId() === 'system') {
           // Ignore unrelated Dropbox/data churn while browsing PhD Options cards.
           queueVisibleDashboardRefresh();
+
         }
         const log = document.getElementById('event-log');
         log.innerHTML = `<div style="margin-bottom:0.3rem;">[${new Date().toLocaleTimeString()}] ${data.type}: ${data.file}</div>` + log.innerHTML;
@@ -15083,11 +15244,22 @@ document.addEventListener('visibilitychange', () => {
     refreshVisibleDashboard();
   }
 });
+function syncPhdRadarTimer() {
+  if (activeTabId() === 'phdradar') {
+    if (!phdRadarTimer) phdRadarTimer = setInterval(() => renderPhdRadar(), 60000);
+    return;
+  }
+  if (phdRadarTimer) {
+    clearInterval(phdRadarTimer);
+    phdRadarTimer = null;
+  }
+}
+
 initStaticPublishMode();
 renderInitialDashboard();
 connectSSE();
-
-setInterval(() => { renderPhdRadar(); }, 60000);
+hydrateDailyDigestEmailUi();
+digestUiHydrated = true;
 </script>
 </body>
 </html>

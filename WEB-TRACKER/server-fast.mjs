@@ -6,10 +6,18 @@ import { extname, join, normalize } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { loadEnv } from './lib/load-env.mjs';
+import { compactJson, encodeCompressedBody } from './lib/http-compress.mjs';
+import {
+  maybeProjectFeed,
+  projectEuraxessListStore,
+  projectPhdscannerListStore,
+  projectResearchListStore,
+  projectUmichListStore,
+} from './lib/feed-list-projection.mjs';
 import { summarizeSourceHealth } from './lib/source-health.mjs';
-import { DEFAULT_DIGEST_TIMEZONE, digestRecipients, getTodayActivity, localDateString } from './lib/today-activity.mjs';
+import { DEFAULT_DIGEST_TIMEZONE, digestRecipients, getCachedTodayActivity, invalidateTodayActivityCache, localDateString } from './lib/today-activity.mjs';
 import { logJobConsiderPatchEvent, logNetworkingActivity, logResearchStatusEvent } from './lib/dashboard-activity.mjs';
-import { writeDailyActivityCsv } from './lib/daily-activity-csv.mjs';
+import { setActivityAppendedHook } from './lib/activity-log.mjs';
 import { run as syncApplications } from './adapters/applications-adapter.mjs';
 import {
   CANONICAL_JOBS_FILE,
@@ -57,7 +65,7 @@ import {
   queuePhdscannerOpportunityWork,
 } from './lib/phdscanner/factory.mjs';
 import {
-  DASHBOARD_UMICH_FILE,
+  ensureUmichDashboardProjection,
   readUmichOpportunities,
 } from './lib/umich-careers/opportunity-store.mjs';
 import {
@@ -139,11 +147,20 @@ const MIME = {
 };
 
 function sendJson(res, value, status = 200) {
-  res.writeHead(status, {
+  const body = compactJson(value);
+  const { payload, encoding } = encodeCompressedBody(body, res.req?.headers?.['accept-encoding']);
+  const vary = new Set(String(res.getHeader('vary') || res.getHeader('Vary') || '').split(',').map(part => part.trim()).filter(Boolean));
+  vary.add('Origin');
+  vary.add('accept-encoding');
+  const headers = {
     'content-type': 'application/json; charset=utf-8',
     'cache-control': 'no-store',
-  });
-  res.end(`${JSON.stringify(value, null, 2)}\n`);
+    vary: [...vary].join(', '),
+    'content-length': payload.length,
+  };
+  if (encoding) headers['content-encoding'] = encoding;
+  res.writeHead(status, headers);
+  res.end(payload);
 }
 
 function sendText(res, value, status = 200) {
@@ -181,8 +198,8 @@ function createFastJob(type, input = {}) {
 }
 
 function withToday(payload = {}) {
-  const activity = getTodayActivity({ timeZone: DEFAULT_DIGEST_TIMEZONE });
-  writeDailyActivityCsv(activity);
+  invalidateTodayActivityCache();
+  const activity = getCachedTodayActivity({ timeZone: DEFAULT_DIGEST_TIMEZONE });
   return {
     ...payload,
     today: {
@@ -192,6 +209,15 @@ function withToday(payload = {}) {
     },
   };
 }
+
+function syncProspectsAfterPatch(result, syncOptions = {}) {
+  if (result?.wrote_canonical === false) {
+    return { total: result.store?.prospects?.length || 0 };
+  }
+  return syncResearchProspectsToDashboard(syncOptions);
+}
+
+setActivityAppendedHook(() => invalidateTodayActivityCache());
 
 function runNode(script, args = [], { timeoutMs = 10 * 60_000 } = {}) {
   return new Promise((resolve, reject) => {
@@ -273,18 +299,16 @@ async function routeApi(req, res, pathname, requestUrl = null) {
     if (req.method !== 'GET') return sendJson(res, { error: 'method not allowed' }, 405), true;
     try {
       const url = requestUrl || new URL(req.url || '/', 'http://127.0.0.1');
-      const activity = getTodayActivity({
+      const activity = getCachedTodayActivity({
         date: url.searchParams.get('date') || '',
         timeZone: url.searchParams.get('timezone') || DEFAULT_DIGEST_TIMEZONE,
       });
-      writeDailyActivityCsv(activity);
       sendJson(res, activity);
     } catch (err) {
       sendJson(res, { error: err?.message || 'failed to build today activity' }, 400);
     }
     return true;
   }
-
   if (pathname === '/api/daily-digest/smtp-status') {
     if (req.method !== 'GET') return sendJson(res, { error: 'method not allowed' }, 405), true;
     const { smtpConfigFromEnv, validateSmtpConfig } = await import('./lib/mail-sender.mjs');
@@ -356,17 +380,17 @@ async function routeApi(req, res, pathname, requestUrl = null) {
   }
   if (pathname === '/api/euraxess/opportunities') {
     if (req.method !== 'GET') return sendJson(res, { error: 'method not allowed' }, 405), true;
-    sendJson(res, readEuraxessOpportunities());
+    sendJson(res, maybeProjectFeed(req, readEuraxessOpportunities(), projectEuraxessListStore));
     return true;
   }
   if (pathname === '/api/phdscanner/opportunities') {
     if (req.method !== 'GET') return sendJson(res, { error: 'method not allowed' }, 405), true;
-    sendJson(res, readPhdscannerOpportunities());
+    sendJson(res, maybeProjectFeed(req, readPhdscannerOpportunities(), projectPhdscannerListStore));
     return true;
   }
   if (pathname === '/api/umich-careers/opportunities') {
     if (req.method !== 'GET') return sendJson(res, { error: 'method not allowed' }, 405), true;
-    sendJson(res, readUmichOpportunities(existsSync(DASHBOARD_UMICH_FILE) ? DASHBOARD_UMICH_FILE : undefined));
+    sendJson(res, maybeProjectFeed(req, ensureUmichDashboardProjection(), projectUmichListStore));
     return true;
   }
   if (pathname === '/api/umich-careers/health') {
@@ -1053,7 +1077,7 @@ async function routeApi(req, res, pathname, requestUrl = null) {
           action: input?.relationship_stage ? 'relationship_stage_changed' : 'person_updated',
           person: result.person,
         });
-        sendJson(res, result);
+        sendJson(res, withToday(result));
       } catch (err) {
         const status = /not found/i.test(err?.message || '') ? 404 : 400;
         sendJson(res, { error: err?.message || 'failed to update networking person' }, status);
@@ -1082,7 +1106,7 @@ async function routeApi(req, res, pathname, requestUrl = null) {
       const result = appendNetworkingInteraction(input || {});
       syncNetworkingToDashboard();
       logNetworkingActivity({ action: 'interaction_logged', person: result.person, interaction: result.interaction });
-      sendJson(res, result, 201);
+      sendJson(res, withToday(result), 201);
     } catch (err) {
       const status = /not found/i.test(err?.message || '') ? 404 : 400;
       sendJson(res, { error: err?.message || 'failed to log networking interaction' }, status);
@@ -1346,7 +1370,7 @@ async function routeApi(req, res, pathname, requestUrl = null) {
   }
   if (pathname === '/api/research-prospects') {
     if (req.method === 'GET') {
-      sendJson(res, readResearchProspects({ source: 'umich' }));
+      sendJson(res, maybeProjectFeed(req, readResearchProspects({ source: 'umich' }), projectResearchListStore));
       return true;
     }
     if (req.method === 'POST') {
@@ -1383,7 +1407,7 @@ async function routeApi(req, res, pathname, requestUrl = null) {
       try {
         const updates = await readBodyJson(req);
         const result = patchResearchProspect(id, updates || {}, { source: 'umich' });
-        const dashboard = syncResearchProspectsToDashboard({ institution: 'umich' });
+        const dashboard = syncProspectsAfterPatch(result, { institution: 'umich' });
         if (updates?.status) logResearchStatusEvent(result.prospect, 'umich');
         sendJson(res, withToday({ ...result, total: dashboard.total }));
       } catch (err) {
@@ -1407,7 +1431,7 @@ async function routeApi(req, res, pathname, requestUrl = null) {
 
     if (!prospectId) {
       if (req.method === 'GET') {
-        sendJson(res, readResearchProspects({ source: sourceId }));
+        sendJson(res, maybeProjectFeed(req, readResearchProspects({ source: sourceId }), projectResearchListStore));
         return true;
       }
       if (req.method === 'POST') {
@@ -1442,7 +1466,7 @@ async function routeApi(req, res, pathname, requestUrl = null) {
       try {
         const updates = await readBodyJson(req);
         const result = patchResearchProspect(prospectId, updates || {}, { source: sourceId });
-        const dashboard = syncResearchProspectsToDashboard({ source: sourceId });
+        const dashboard = syncProspectsAfterPatch(result, { source: sourceId });
         if (updates?.status) logResearchStatusEvent(result.prospect, sourceId);
         sendJson(res, withToday({ ...result, total: dashboard.total }));
       } catch (err) {
@@ -1478,6 +1502,7 @@ async function routeApi(req, res, pathname, requestUrl = null) {
 
 export function startFastServer(port = PORT, host = HOST) {
   const server = createServer(async (req, res) => {
+    res.req = req;
     const origin = req.headers.origin;
     if (!origin || origin === 'null' || /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)) {
       res.setHeader('access-control-allow-origin', origin || '*');
