@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "last_global_run": "2026-08-17T20:27:01.563Z",
+  "last_global_run": "2026-08-18T15:30:24.436Z",
   "sources": {
     "euraxess-fusion": {
       "last_poll": "2026-08-17T18:57:34.204Z",
@@ -37,21 +37,21 @@
       "next_poll": "2026-08-17T20:57:37.183Z"
     },
     "umich-careers": {
-      "last_poll": "2026-08-17T19:15:17.312Z",
+      "last_poll": "2026-08-18T15:30:24.435Z",
       "last_status": 200,
       "last_error": "",
       "provider": "direct_html_browse",
       "access_status": "ok",
       "changed_last_run": true,
-      "heat": 0.6625000000000001,
+      "heat": 0.5650878906250001,
       "etag": null,
       "last_modified": "Mon, 17 Aug 2026 18:01:23 GMT",
-      "last_changed_at": "2026-08-17T19:15:17.312Z",
+      "last_changed_at": "2026-08-18T15:30:24.436Z",
       "consecutive_no_change": 0,
-      "total_hits": 78,
-      "total_polls": 3,
-      "hit_rate": 26,
-      "next_poll": "2026-08-17T19:30:17.312Z",
+      "total_hits": 112,
+      "total_polls": 7,
+      "hit_rate": 16,
+      "next_poll": "2026-08-18T15:45:24.436Z",
       "content_fingerprint": "vxr1hr"
     },
     "helion": {
