@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-08-18T15:31:55.472Z",
+  "generated_at": "2026-08-19T01:31:43.506Z",
   "jobs": [
     {
       "id": "ge-vernova-controls-engineer-r5047429",
@@ -10773,7 +10773,7 @@
       "recommendation": "review",
       "notes": "Queued from EURAXESS Factory (4.3/5). Verify deadline/application status before applying. Strong match. 4.3/5 apply; eligibility unknown; confidence low.",
       "first_seen": "2026-08-08T21:46:35.047Z",
-      "last_updated": "2026-08-18T15:31:55.437Z",
+      "last_updated": "2026-08-19T01:31:43.471Z",
       "last_checked": "",
       "region": "",
       "h1b_status": "",
@@ -10798,9 +10798,9 @@
       "application_num": 83,
       "applied_at": "2026-08-09T21:23:57.938Z",
       "resources": {
-        "report_md": "reports/euraxess-fondazione-bruno-kessler-phd-candidate-design-fabrication-and-characterization-o-2026-08-18.md",
-        "research_report": "reports/euraxess-fondazione-bruno-kessler-phd-candidate-design-fabrication-and-characterization-o-2026-08-18.md",
-        "manifest_path": "WEB-TRACKER/runtime/euraxess-factory/2026-08-18-fondazione-bruno-kessler-phd-candidate-design-fabrication-and-characterization-o-manifest.json"
+        "report_md": "reports/euraxess-fondazione-bruno-kessler-phd-candidate-design-fabrication-and-characterization-o-2026-08-19.md",
+        "research_report": "reports/euraxess-fondazione-bruno-kessler-phd-candidate-design-fabrication-and-characterization-o-2026-08-19.md",
+        "manifest_path": "WEB-TRACKER/runtime/euraxess-factory/2026-08-19-fondazione-bruno-kessler-phd-candidate-design-fabrication-and-characterization-o-manifest.json"
       },
       "networking_org_id": "",
       "networking_person_ids": [],

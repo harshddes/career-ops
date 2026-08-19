@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-18T15:31:55.455Z",
+  "updated_at": "2026-08-19T01:31:43.484Z",
   "jobs": {
     "ornl-mechanical-design-and-test-engineer-temporary-1403782600": {
       "updated_at": "2026-07-05T15:45:05.151Z",
@@ -702,16 +702,16 @@
       "networking_research_order_id": ""
     },
     "fondazione-bruno-kessler-phd-candidate-design-fabrication-and-characterization-of-plasmonic-ante": {
-      "updated_at": "2026-08-18T15:31:55.455Z",
+      "updated_at": "2026-08-19T01:31:43.484Z",
       "status": "applied",
       "applied": true,
       "applied_at": "2026-08-09T21:23:57.938Z",
       "application_num": 83,
       "notes": "Queued from EURAXESS Factory (4.3/5). Verify deadline/application status before applying. Strong match. 4.3/5 apply; eligibility unknown; confidence low.",
       "resources": {
-        "report_md": "reports/euraxess-fondazione-bruno-kessler-phd-candidate-design-fabrication-and-characterization-o-2026-08-18.md",
-        "research_report": "reports/euraxess-fondazione-bruno-kessler-phd-candidate-design-fabrication-and-characterization-o-2026-08-18.md",
-        "manifest_path": "WEB-TRACKER/runtime/euraxess-factory/2026-08-18-fondazione-bruno-kessler-phd-candidate-design-fabrication-and-characterization-o-manifest.json"
+        "report_md": "reports/euraxess-fondazione-bruno-kessler-phd-candidate-design-fabrication-and-characterization-o-2026-08-19.md",
+        "research_report": "reports/euraxess-fondazione-bruno-kessler-phd-candidate-design-fabrication-and-characterization-o-2026-08-19.md",
+        "manifest_path": "WEB-TRACKER/runtime/euraxess-factory/2026-08-19-fondazione-bruno-kessler-phd-candidate-design-fabrication-and-characterization-o-manifest.json"
       },
       "networking_org_id": "",
       "networking_person_ids": [],
