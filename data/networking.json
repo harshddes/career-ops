@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-08-13T02:33:09.369Z",
+  "generated_at": "2026-08-24T01:05:28.049Z",
   "scope": "Private local networking command center",
   "organizations": [
     {
@@ -4954,7 +4954,7 @@
       "location": "",
       "personas": [],
       "affinity_tags": [],
-      "relationship_stage": "engaged",
+      "relationship_stage": "nurture",
       "relationship_strength": 0,
       "path_strength": 0,
       "fit_score": 0,
@@ -5005,7 +5005,7 @@
       "review_status": "approved",
       "merged_into_id": "",
       "created_at": "2026-08-13T02:33:08.467Z",
-      "updated_at": "2026-08-13T02:33:08.467Z"
+      "updated_at": "2026-08-24T01:05:28.049Z"
     },
     {
       "id": "network-person-murray-darrach-nasa-jet-propulsion-laboratory",
@@ -7056,13 +7056,13 @@
       "opportunity_ids": [],
       "action_type": "follow_up",
       "subject": "Prepare for KLA technical interview; wait for formal scheduling",
-      "state": "waiting",
+      "state": "completed",
       "due_at": "2026-08-19",
       "remind_at": "",
       "waiting_until": "2026-08-19",
       "snoozed_until": "",
       "blocked_reason": "",
-      "completed_at": "",
+      "completed_at": "2026-08-23T20:28:28.084Z",
       "outcome_value": null,
       "relationship_momentum": null,
       "path_quality": null,
@@ -7071,7 +7071,7 @@
       "unanswered_followups": 0,
       "notes": "Req 2533228. Application confirmed received.",
       "created_at": "2026-08-13T02:33:08.536Z",
-      "updated_at": "2026-08-13T02:33:08.536Z"
+      "updated_at": "2026-08-23T20:28:28.084Z"
     },
     {
       "id": "network-task-1786588389052-i773gh",
@@ -7152,13 +7152,13 @@
       "opportunity_ids": [],
       "action_type": "follow_up",
       "subject": "Confirm which GE Vernova roles were actually submitted",
-      "state": "open",
+      "state": "completed",
       "due_at": "2026-08-18",
       "remind_at": "",
       "waiting_until": "",
       "snoozed_until": "",
       "blocked_reason": "",
-      "completed_at": "",
+      "completed_at": "2026-08-23T20:28:34.700Z",
       "outcome_value": null,
       "relationship_momentum": null,
       "path_quality": null,
@@ -7167,7 +7167,7 @@
       "unanswered_followups": 0,
       "notes": "",
       "created_at": "2026-08-13T02:33:09.203Z",
-      "updated_at": "2026-08-13T02:33:09.203Z"
+      "updated_at": "2026-08-23T20:28:34.700Z"
     },
     {
       "id": "network-task-1786588389247-vaht6x",
@@ -7241,8 +7241,8 @@
     "people": 69,
     "active_relationships": 59,
     "warm_relationships": 0,
-    "active_tasks": 7,
-    "overdue_tasks": 0,
+    "active_tasks": 5,
+    "overdue_tasks": 2,
     "conversations": 0,
     "referrals": 0,
     "upcoming_events": 1
