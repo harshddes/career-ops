@@ -2,6 +2,8 @@
  * U-M Careers API + dashboard contract tests.
  * Covers fast-server read endpoints and the dashboard tab markup contract.
  */
+import './live-env.mjs';
+
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'fs';

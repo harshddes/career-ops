@@ -1,15 +1,22 @@
-import { mkdirSync, renameSync, unlinkSync, writeFileSync } from 'fs';
-import { basename, dirname, join } from 'path';
+import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { scoreEuraxessPosting } from './scoring-profile.mjs';
 import { externalScoreToLegacy } from '../opportunity-scoring/index.mjs';
-import { readMtimeCachedStore, rememberMtimeStore } from '../mtime-store-cache.mjs';
+import { CAREER_DATA_DIR, DASHBOARD_DATA_DIR } from '../data-paths.mjs';
+import { readLiveRow } from '../db.mjs';
+import {
+  dashboardSnapshot,
+  isCanonicalFile,
+  readLiveOrJson,
+  upsertLiveOrWrite,
+  writeDashboardSnapshot,
+  writeLiveOrJson,
+} from '../live-collection.mjs';
 
 const LIB_DIR = dirname(fileURLToPath(import.meta.url));
 export const WEB_TRACKER_DIR = join(LIB_DIR, '..', '..');
 export const CAREER_OPS_DIR = join(WEB_TRACKER_DIR, '..');
-export const CAREER_DATA_DIR = join(CAREER_OPS_DIR, 'data');
-export const DASHBOARD_DATA_DIR = join(WEB_TRACKER_DIR, 'data');
+export { CAREER_DATA_DIR, DASHBOARD_DATA_DIR };
 export const CANONICAL_EURAXESS_FILE = join(CAREER_DATA_DIR, 'euraxess-opportunities.json');
 export const DASHBOARD_EURAXESS_FILE = join(DASHBOARD_DATA_DIR, 'euraxess-opportunities.json');
 
@@ -57,34 +64,6 @@ function canonicalRank(a, b) {
     || Number(b.score || 0) - Number(a.score || 0)
     || (confidence[a.confidence] ?? 2) - (confidence[b.confidence] ?? 2)
     || a.title.localeCompare(b.title);
-}
-
-function atomicWrite(filePath, content) {
-  mkdirSync(dirname(filePath), { recursive: true });
-  const tempPath = join(dirname(filePath), `.${basename(filePath)}.tmp-${Date.now()}-${Math.random().toString(16).slice(2)}`);
-  writeFileSync(tempPath, content, 'utf-8');
-  const retryCodes = new Set(['EPERM', 'EACCES', 'EBUSY', 'EAGAIN', 'UNKNOWN']);
-  let lastErr = null;
-  for (let attempt = 0; attempt < 8; attempt += 1) {
-    try {
-      renameSync(tempPath, filePath);
-      return;
-    } catch (err) {
-      lastErr = err;
-      if (!retryCodes.has(err?.code)) break;
-      try {
-        writeFileSync(filePath, content, 'utf-8');
-        try { unlinkSync(tempPath); } catch {}
-        return;
-      } catch (writeErr) {
-        lastErr = writeErr;
-        if (!retryCodes.has(writeErr?.code)) break;
-        Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 40 * (attempt + 1));
-      }
-    }
-  }
-  try { unlinkSync(tempPath); } catch {}
-  throw lastErr || new Error(`failed to write ${filePath}`);
 }
 
 function normalizeStatus(value = '') {
@@ -447,7 +426,10 @@ function emptyStore() {
 }
 
 export function readEuraxessOpportunities(filePath = CANONICAL_EURAXESS_FILE) {
-  return readMtimeCachedStore(filePath, {
+  return readLiveOrJson({
+    table: 'euraxess_opportunities',
+    canonicalPath: CANONICAL_EURAXESS_FILE,
+    filePath,
     empty: emptyStore,
     parse: (parsed) => {
       const opportunities = Array.isArray(parsed.opportunities)
@@ -475,9 +457,12 @@ export function writeEuraxessOpportunities(store, filePath = CANONICAL_EURAXESS_
     scan_summary: summarize(opportunities, store?.scan_summary || {}),
     opportunities,
   };
-  atomicWrite(filePath, `${JSON.stringify(next, null, 2)}\n`);
-  rememberMtimeStore(filePath, next);
-  return next;
+  return writeLiveOrJson({
+    table: 'euraxess_opportunities',
+    canonicalPath: CANONICAL_EURAXESS_FILE,
+    filePath,
+    next,
+  });
 }
 
 export function mergeEuraxessOpportunities(incoming = [], { scanSummary = {}, filePath = CANONICAL_EURAXESS_FILE } = {}) {
@@ -537,13 +522,25 @@ export function mergeEuraxessOpportunities(incoming = [], { scanSummary = {}, fi
   return { store, newOpportunities };
 }
 
-export function findEuraxessOpportunity(id, store = readEuraxessOpportunities()) {
+export function findEuraxessOpportunity(id, store) {
+  if (!store) {
+    const live = readLiveRow('euraxess_opportunities', String(id));
+    if (live) return live;
+    store = readEuraxessOpportunities();
+  }
   return store.opportunities.find(item => item.id === id || item.external_id === id || item.url === id) || null;
 }
 
 export function patchEuraxessOpportunity(id, updates = {}, filePath = CANONICAL_EURAXESS_FILE) {
-  const store = readEuraxessOpportunities(filePath);
-  const index = store.opportunities.findIndex(item => item.id === id || item.external_id === id || item.url === id);
+  const liveRow = isCanonicalFile(filePath, CANONICAL_EURAXESS_FILE)
+    ? readLiveRow('euraxess_opportunities', String(id))
+    : null;
+  const store = liveRow
+    ? { opportunities: [liveRow], scan_summary: {} }
+    : readEuraxessOpportunities(filePath);
+  const index = liveRow
+    ? 0
+    : store.opportunities.findIndex(item => item.id === id || item.external_id === id || item.url === id);
   if (index < 0) throw new Error(`EURAXESS opportunity not found: ${id}`);
   const previous = store.opportunities[index];
   updates = externalScoreToLegacy(updates, previous);
@@ -573,6 +570,15 @@ export function patchEuraxessOpportunity(id, updates = {}, filePath = CANONICAL_
       : { ...(previous.execution || {}), ...(updates.execution || {}) },
     last_updated: new Date().toISOString(),
   }, { previous });
+  const live = upsertLiveOrWrite({
+    table: 'euraxess_opportunities',
+    canonicalPath: CANONICAL_EURAXESS_FILE,
+    filePath,
+    store,
+    row: store.opportunities[index],
+    metaPatch: liveRow ? {} : { scan_summary: summarize(store.opportunities, store.scan_summary || {}) },
+  });
+  if (live) return { store: live, opportunity: store.opportunities[index] };
   const nextStore = writeEuraxessOpportunities(store, filePath);
   return { store: nextStore, opportunity: findEuraxessOpportunity(id, nextStore) };
 }
@@ -580,14 +586,10 @@ export function patchEuraxessOpportunity(id, updates = {}, filePath = CANONICAL_
 export function syncEuraxessOpportunitiesToDashboard({
   sourcePath = CANONICAL_EURAXESS_FILE,
   outputPath = DASHBOARD_EURAXESS_FILE,
+  write = false,
 } = {}) {
   const store = readEuraxessOpportunities(sourcePath);
-  atomicWrite(outputPath, `${JSON.stringify({
-    ...store,
-    generated_at: new Date().toISOString(),
-    source: sourcePath,
-    total: store.opportunities.length,
-    count: store.opportunities.length,
-  }, null, 2)}\n`);
-  return readEuraxessOpportunities(outputPath);
+  const output = dashboardSnapshot(store, { source: sourcePath });
+  if (write) writeDashboardSnapshot(outputPath, store, { source: sourcePath });
+  return output;
 }

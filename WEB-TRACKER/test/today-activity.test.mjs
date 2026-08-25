@@ -196,13 +196,13 @@ test('kanban mutations paint daily stats from the same response', () => {
   assert.match(html, /async function phdscannerApplyOpportunity[\s\S]*applyTodayFromResponse\(result\)/);
   assert.match(html, /async function moveNetworkingPersonStage[\s\S]*applyTodayFromResponse\(result\)/);
   assert.match(html, /async function logNetworkingInteraction[\s\S]*applyTodayFromResponse\(result\)/);
-  assert.match(html, /id="today-stats-date"/);
+  assert.match(html, /id="today-stats-date-input"/);
   assert.match(html, /function shiftTodayStatsDate/);
   assert.match(html, /queuePulseLocalRender/);
   assert.match(html, /syncPhdRadarTimer/);
   assert.match(html, /queueVisibleDashboardRefresh\(\)/);
   assert.doesNotMatch(html, /queueRenderAllPanels\(\);/);
-  assert.match(html, /skipCache: true/);
+  assert.match(html, /skipCache/);
   assert.doesNotMatch(html, /lastTodaySummary = null;\s*syncTodayStatsNav/);
 });
 
@@ -210,7 +210,8 @@ test('today-activity GET does not write CSV and uses the in-memory cache', () =>
   const source = readFileSync(new URL('../server.mjs', import.meta.url), 'utf-8');
   assert.match(source, /getCachedTodayActivity/);
   assert.match(source, /invalidateTodayActivityCache/);
-  assert.match(source, /function todaySnapshotForResponse\(\) \{\s*invalidateTodayActivityCache\(\);/);
+  assert.match(source, /function todaySnapshotForResponse\(\{ refresh = false \} = \{\}\)/);
+  assert.match(source, /peekCachedTodayActivity/);
   const todayGet = source.match(/app\.get\('\/api\/today-activity', \(req, res\) => \{[\s\S]*?\n\}\);/);
   assert.ok(todayGet);
   assert.match(todayGet[0], /getCachedTodayActivity/);

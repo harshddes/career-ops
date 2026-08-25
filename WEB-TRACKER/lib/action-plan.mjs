@@ -1,5 +1,6 @@
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
+import { existsSync, mkdirSync, readFileSync } from 'fs';
 import { dirname } from 'path';
+import { atomicWrite, compactJsonLine } from './atomic-write.mjs';
 
 const DAY_MS = 86_400_000;
 const ACTIVE_STATUSES = new Set(['today', 'in_progress', 'blocked', 'waiting', 'deferred']);
@@ -207,7 +208,7 @@ export class ActionPlanStore {
 
   save(plan) {
     plan.updated_at = new Date().toISOString();
-    writeFileSync(this.filePath, JSON.stringify(plan, null, 2));
+    atomicWrite(this.filePath, compactJsonLine(plan));
   }
 
   dashboard(now = new Date()) {

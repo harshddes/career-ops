@@ -1,5 +1,4 @@
-import { existsSync, mkdirSync, readFileSync, renameSync, unlinkSync, writeFileSync } from 'fs';
-import { basename, dirname, join } from 'path';
+import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { applyJobsUserStateToStore, patchJobsUserState, removeJobsUserState } from './jobs-user-state.mjs';
 import {
@@ -9,12 +8,21 @@ import {
 } from './geo/location-to-country.mjs';
 import { enrichConsiderJobEligibility } from './work-auth.mjs';
 import { externalScoreToLegacy, scoreRecord } from './opportunity-scoring/index.mjs';
+import { CAREER_DATA_DIR, DASHBOARD_DATA_DIR } from './data-paths.mjs';
+import { readLiveRow } from './db.mjs';
+import {
+  dashboardSnapshot,
+  isCanonicalFile,
+  readLiveOrJson,
+  upsertLiveOrWrite,
+  writeDashboardSnapshot,
+  writeLiveOrJson,
+} from './live-collection.mjs';
 
 const LIB_DIR = dirname(fileURLToPath(import.meta.url));
 export const WEB_TRACKER_DIR = join(LIB_DIR, '..');
 export const CAREER_OPS_DIR = join(WEB_TRACKER_DIR, '..');
-export const CAREER_DATA_DIR = join(CAREER_OPS_DIR, 'data');
-export const DASHBOARD_DATA_DIR = join(WEB_TRACKER_DIR, 'data');
+export { CAREER_DATA_DIR, DASHBOARD_DATA_DIR };
 export const CANONICAL_JOBS_FILE = join(CAREER_DATA_DIR, 'jobs-to-consider.json');
 export const DASHBOARD_JOBS_FILE = join(DASHBOARD_DATA_DIR, 'jobs-to-consider.json');
 
@@ -28,17 +36,14 @@ function emptyStore() {
   };
 }
 
-function atomicWrite(filePath, content) {
-  mkdirSync(dirname(filePath), { recursive: true });
-  const tempPath = join(dirname(filePath), `.${basename(filePath)}.tmp-${Date.now()}`);
-  writeFileSync(tempPath, content, 'utf-8');
-  try {
-    renameSync(tempPath, filePath);
-  } catch (err) {
-    if (!['EPERM', 'EACCES'].includes(err?.code)) throw err;
-    writeFileSync(filePath, content, 'utf-8');
-    try { unlinkSync(tempPath); } catch {}
-  }
+function parseConsiderJobs(parsed) {
+  const jobs = Array.isArray(parsed.jobs) ? parsed.jobs.map(normalizeConsiderJob) : [];
+  return applyJobsUserStateToStore({
+    ...emptyStore(),
+    ...parsed,
+    version: 1,
+    jobs,
+  });
 }
 
 function cleanText(value) {
@@ -232,14 +237,12 @@ export function normalizeConsiderJob(raw = {}) {
 }
 
 export function readConsiderJobs(filePath = CANONICAL_JOBS_FILE) {
-  if (!existsSync(filePath)) return emptyStore();
-  const parsed = JSON.parse(readFileSync(filePath, 'utf-8'));
-  const jobs = Array.isArray(parsed.jobs) ? parsed.jobs.map(normalizeConsiderJob) : [];
-  return applyJobsUserStateToStore({
-    ...emptyStore(),
-    ...parsed,
-    version: 1,
-    jobs,
+  return readLiveOrJson({
+    table: 'jobs_to_consider',
+    canonicalPath: CANONICAL_JOBS_FILE,
+    filePath,
+    empty: emptyStore,
+    parse: parseConsiderJobs,
   });
 }
 
@@ -249,8 +252,12 @@ export function writeConsiderJobs(store, filePath = CANONICAL_JOBS_FILE) {
     generated_at: new Date().toISOString(),
     jobs: Array.isArray(store?.jobs) ? store.jobs.map(normalizeConsiderJob) : [],
   };
-  atomicWrite(filePath, `${JSON.stringify(next, null, 2)}\n`);
-  return next;
+  return writeLiveOrJson({
+    table: 'jobs_to_consider',
+    canonicalPath: CANONICAL_JOBS_FILE,
+    filePath,
+    next,
+  });
 }
 
 function normalizeLookup(input = {}) {
@@ -300,8 +307,16 @@ export function findConsiderJobIndex(input, store = readConsiderJobs()) {
   return store.jobs.findIndex(job => jobMatchesLookup(job, lookup));
 }
 
-export function findConsiderJob(input, store = readConsiderJobs()) {
-  const index = findConsiderJobIndex(input, store);
+export function findConsiderJob(input, store) {
+  const lookup = normalizeLookup(input);
+  if (!store) {
+    if (lookup.id) {
+      const live = readLiveRow('jobs_to_consider', String(lookup.id));
+      if (live) return live;
+    }
+    store = readConsiderJobs();
+  }
+  const index = store.jobs.findIndex(job => jobMatchesLookup(job, lookup));
   return index >= 0 ? store.jobs[index] : null;
 }
 
@@ -339,9 +354,14 @@ export function upsertConsiderJob(raw, filePath = CANONICAL_JOBS_FILE) {
 }
 
 export function patchConsiderJob(id, updates = {}, filePath = CANONICAL_JOBS_FILE) {
-  const store = readConsiderJobs(filePath);
-  updates = externalScoreToLegacy(updates, store.jobs.find(job => job.id === id) || {});
-  const index = findConsiderJobIndex({ id, ...updates }, store);
+  const liveRow = isCanonicalFile(filePath, CANONICAL_JOBS_FILE)
+    ? readLiveRow('jobs_to_consider', String(id))
+    : null;
+  const store = liveRow
+    ? { jobs: [liveRow] }
+    : readConsiderJobs(filePath);
+  updates = externalScoreToLegacy(updates, liveRow || store.jobs.find(job => job.id === id) || {});
+  const index = liveRow ? 0 : findConsiderJobIndex({ id, ...updates }, store);
   if (index < 0) throw new Error(`job not found: ${id}`);
 
   const current = store.jobs[index];
@@ -370,6 +390,14 @@ export function patchConsiderJob(id, updates = {}, filePath = CANONICAL_JOBS_FIL
     networking_person_ids: store.jobs[index].networking_person_ids,
     networking_research_order_id: store.jobs[index].networking_research_order_id,
   });
+  const live = upsertLiveOrWrite({
+    table: 'jobs_to_consider',
+    canonicalPath: CANONICAL_JOBS_FILE,
+    filePath,
+    store,
+    row: store.jobs[index],
+  });
+  if (live) return { store: live, job: store.jobs[index] };
   const nextStore = writeConsiderJobs(store, filePath);
   return { store: nextStore, job: nextStore.jobs[index] };
 }
@@ -395,20 +423,17 @@ export function deleteConsiderJob(input, filePath = CANONICAL_JOBS_FILE, options
 export function syncConsiderJobsToDashboard({
   sourcePath = CANONICAL_JOBS_FILE,
   outputPath = DASHBOARD_JOBS_FILE,
+  write = false,
 } = {}) {
   const store = readConsiderJobs(sourcePath);
-  const output = {
-    ...store,
-    generated_at: new Date().toISOString(),
+  const extra = {
     source: sourcePath,
-    total: store.jobs.length,
-    count: store.jobs.length,
-    jobs: store.jobs,
     status_summary: store.jobs.reduce((acc, job) => {
       acc[job.status] = (acc[job.status] || 0) + 1;
       return acc;
     }, {}),
   };
-  atomicWrite(outputPath, `${JSON.stringify(output, null, 2)}\n`);
+  const output = dashboardSnapshot(store, extra);
+  if (write) writeDashboardSnapshot(outputPath, store, extra);
   return output;
 }

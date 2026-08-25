@@ -1,16 +1,24 @@
-import { existsSync, mkdirSync, renameSync, unlinkSync, writeFileSync } from 'fs';
-import { basename, dirname, join } from 'path';
+import { existsSync } from 'fs';
+import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { scorePhdscannerPosting } from './scoring-profile.mjs';
 import { consolidatePhdBoardOpportunities, phdBoardDedupeKey } from './dedupe.mjs';
 import { externalScoreToLegacy } from '../opportunity-scoring/index.mjs';
-import { readMtimeCachedStore, rememberMtimeStore } from '../mtime-store-cache.mjs';
+import { CAREER_DATA_DIR, DASHBOARD_DATA_DIR } from '../data-paths.mjs';
+import { readLiveRow } from '../db.mjs';
+import {
+  dashboardSnapshot,
+  isCanonicalFile,
+  readLiveOrJson,
+  upsertLiveOrWrite,
+  writeDashboardSnapshot,
+  writeLiveOrJson,
+} from '../live-collection.mjs';
 
 const LIB_DIR = dirname(fileURLToPath(import.meta.url));
 export const WEB_TRACKER_DIR = join(LIB_DIR, '..', '..');
 export const CAREER_OPS_DIR = join(WEB_TRACKER_DIR, '..');
-export const CAREER_DATA_DIR = join(CAREER_OPS_DIR, 'data');
-export const DASHBOARD_DATA_DIR = join(WEB_TRACKER_DIR, 'data');
+export { CAREER_DATA_DIR, DASHBOARD_DATA_DIR };
 export const CANONICAL_PHD_BOARD_FILE = join(CAREER_DATA_DIR, 'phd-board-opportunities.json');
 export const CANONICAL_PHDSCANNER_FILE = join(CAREER_DATA_DIR, 'phdscanner-opportunities.json');
 export const DASHBOARD_PHDSCANNER_FILE = join(DASHBOARD_DATA_DIR, 'phdscanner-opportunities.json');
@@ -60,34 +68,6 @@ function canonicalRank(a, b) {
     || Number(b.score || 0) - Number(a.score || 0)
     || (confidence[a.confidence] ?? 2) - (confidence[b.confidence] ?? 2)
     || a.title.localeCompare(b.title);
-}
-
-function atomicWrite(filePath, content) {
-  mkdirSync(dirname(filePath), { recursive: true });
-  const tempPath = join(dirname(filePath), `.${basename(filePath)}.tmp-${Date.now()}-${Math.random().toString(16).slice(2)}`);
-  writeFileSync(tempPath, content, 'utf-8');
-  const retryCodes = new Set(['EPERM', 'EACCES', 'EBUSY', 'EAGAIN', 'UNKNOWN']);
-  let lastErr = null;
-  for (let attempt = 0; attempt < 8; attempt += 1) {
-    try {
-      renameSync(tempPath, filePath);
-      return;
-    } catch (err) {
-      lastErr = err;
-      if (!retryCodes.has(err?.code)) break;
-      try {
-        writeFileSync(filePath, content, 'utf-8');
-        try { unlinkSync(tempPath); } catch {}
-        return;
-      } catch (writeErr) {
-        lastErr = writeErr;
-        if (!retryCodes.has(writeErr?.code)) break;
-        Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 40 * (attempt + 1));
-      }
-    }
-  }
-  try { unlinkSync(tempPath); } catch {}
-  throw lastErr || new Error(`failed to write ${filePath}`);
 }
 
 function normalizeStatus(value = '') {
@@ -489,16 +469,12 @@ function emptyStore() {
   };
 }
 
-function resolveReadPath(filePath = CANONICAL_PHDSCANNER_FILE) {
-  if (existsSync(filePath)) return filePath;
-  if (filePath === CANONICAL_PHDSCANNER_FILE && existsSync(CANONICAL_PHD_BOARD_FILE)) return CANONICAL_PHD_BOARD_FILE;
-  if (filePath === CANONICAL_PHD_BOARD_FILE && existsSync(CANONICAL_PHDSCANNER_FILE)) return CANONICAL_PHDSCANNER_FILE;
-  return filePath;
-}
-
 export function readPhdscannerOpportunities(filePath = CANONICAL_PHDSCANNER_FILE) {
-  const resolved = resolveReadPath(filePath);
-  return readMtimeCachedStore(resolved, {
+  return readLiveOrJson({
+    table: 'phdscanner_opportunities',
+    canonicalPath: CANONICAL_PHDSCANNER_FILE,
+    extraCanonicalPaths: [CANONICAL_PHD_BOARD_FILE],
+    filePath,
     empty: emptyStore,
     parse: (parsed) => {
       const opportunities = Array.isArray(parsed.opportunities)
@@ -528,19 +504,13 @@ export function writePhdscannerOpportunities(store, filePath = CANONICAL_PHDSCAN
     scan_summary: summarize(opportunities, store?.scan_summary || {}),
     opportunities,
   };
-  const payload = `${JSON.stringify(next, null, 2)}\n`;
-  atomicWrite(filePath, payload);
-  rememberMtimeStore(filePath, next);
-  // Dual-write compatibility paths
-  if (filePath === CANONICAL_PHDSCANNER_FILE) {
-    atomicWrite(CANONICAL_PHD_BOARD_FILE, payload);
-    rememberMtimeStore(CANONICAL_PHD_BOARD_FILE, next);
-  }
-  if (filePath === CANONICAL_PHD_BOARD_FILE) {
-    atomicWrite(CANONICAL_PHDSCANNER_FILE, payload);
-    rememberMtimeStore(CANONICAL_PHDSCANNER_FILE, next);
-  }
-  return next;
+  return writeLiveOrJson({
+    table: 'phdscanner_opportunities',
+    canonicalPath: CANONICAL_PHDSCANNER_FILE,
+    extraCanonicalPaths: [CANONICAL_PHD_BOARD_FILE],
+    filePath,
+    next,
+  });
 }
 
 export function mergePhdscannerOpportunities(incoming = [], { scanSummary = {}, filePath = CANONICAL_PHDSCANNER_FILE } = {}) {
@@ -625,8 +595,13 @@ export function mergePhdscannerOpportunities(incoming = [], { scanSummary = {}, 
   return { store, newOpportunities };
 }
 
-export function findPhdscannerOpportunity(id, store = readPhdscannerOpportunities()) {
+export function findPhdscannerOpportunity(id, store) {
   const needle = String(id || '');
+  if (!store) {
+    const live = readLiveRow('phdscanner_opportunities', needle);
+    if (live) return live;
+    store = readPhdscannerOpportunities();
+  }
   return store.opportunities.find(item => (
     item.id === needle
     || item.external_id === needle
@@ -637,8 +612,15 @@ export function findPhdscannerOpportunity(id, store = readPhdscannerOpportunitie
 }
 
 export function patchPhdscannerOpportunity(id, updates = {}, filePath = CANONICAL_PHDSCANNER_FILE) {
-  const store = readPhdscannerOpportunities(filePath);
-  const index = store.opportunities.findIndex(item => (
+  const liveRow = (isCanonicalFile(filePath, CANONICAL_PHDSCANNER_FILE) || isCanonicalFile(filePath, CANONICAL_PHD_BOARD_FILE))
+    ? readLiveRow('phdscanner_opportunities', String(id))
+    : null;
+  const store = liveRow
+    ? { opportunities: [liveRow], scan_summary: {} }
+    : readPhdscannerOpportunities(filePath);
+  const index = liveRow
+    ? 0
+    : store.opportunities.findIndex(item => (
     item.id === id
     || item.external_id === id
     || item.url === id
@@ -674,6 +656,16 @@ export function patchPhdscannerOpportunity(id, updates = {}, filePath = CANONICA
       : { ...(previous.execution || {}), ...(updates.execution || {}) },
     last_updated: new Date().toISOString(),
   }, { previous });
+  const live = upsertLiveOrWrite({
+    table: 'phdscanner_opportunities',
+    canonicalPath: CANONICAL_PHDSCANNER_FILE,
+    extraCanonicalPaths: [CANONICAL_PHD_BOARD_FILE],
+    filePath,
+    store,
+    row: store.opportunities[index],
+    metaPatch: liveRow ? {} : { scan_summary: summarize(store.opportunities, store.scan_summary || {}) },
+  });
+  if (live) return { store: live, opportunity: store.opportunities[index] };
   const nextStore = writePhdscannerOpportunities(store, filePath);
   return { store: nextStore, opportunity: findPhdscannerOpportunity(id, nextStore) };
 }
@@ -681,17 +673,14 @@ export function patchPhdscannerOpportunity(id, updates = {}, filePath = CANONICA
 export function syncPhdscannerOpportunitiesToDashboard({
   sourcePath = CANONICAL_PHDSCANNER_FILE,
   outputPath = DASHBOARD_PHDSCANNER_FILE,
+  write = false,
 } = {}) {
   const store = readPhdscannerOpportunities(sourcePath);
-  const payload = `${JSON.stringify({
-    ...store,
-    generated_at: new Date().toISOString(),
-    source: sourcePath,
-    total: store.opportunities.length,
-    count: store.opportunities.length,
-  }, null, 2)}\n`;
-  atomicWrite(outputPath, payload);
-  atomicWrite(DASHBOARD_PHD_BOARD_FILE, payload);
-  return readPhdscannerOpportunities(outputPath);
+  const output = dashboardSnapshot(store, { source: sourcePath });
+  if (write) {
+    writeDashboardSnapshot(outputPath, store, { source: sourcePath });
+    writeDashboardSnapshot(DASHBOARD_PHD_BOARD_FILE, store, { source: sourcePath });
+  }
+  return output;
 }
 

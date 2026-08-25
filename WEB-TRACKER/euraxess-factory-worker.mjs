@@ -65,6 +65,7 @@ async function main() {
       max: Number.isFinite(max) && max > 0 ? max : 3,
       dryRun,
       force,
+      retryFailures: flag('--retry-failures'),
       pollTimeoutSec: Number.isFinite(pollTimeoutSec) && pollTimeoutSec > 0 ? pollTimeoutSec : 120,
     });
     return { ok: true, ...result };

@@ -1,5 +1,5 @@
-import { existsSync, mkdirSync, readFileSync, renameSync, statSync, unlinkSync, writeFileSync } from 'fs';
-import { basename, dirname, join } from 'path';
+import { existsSync, readFileSync, statSync } from 'fs';
+import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { slugify } from './jobs-to-consider-store.mjs';
 import { getDefenseSheetEnrichment } from './defense-sheet-enrichment.mjs';
@@ -16,12 +16,20 @@ import { DEFAULT_DIGEST_TIMEZONE, localDateString } from './today-activity.mjs';
 import { scoreResearchProspect } from './research-fit-scoring.mjs';
 import { externalScoreToLegacy } from './opportunity-scoring/index.mjs';
 import { normalizeActiveGrants } from './professor-grants/schema.mjs';
+import { CAREER_DATA_DIR, DASHBOARD_DATA_DIR } from './data-paths.mjs';
+import { atomicWrite, compactJsonLine } from './atomic-write.mjs';
+import {
+  dashboardSnapshot,
+  readLiveOrJson,
+  upsertLiveOrWrite,
+  writeDashboardSnapshot,
+  writeLiveOrJson,
+} from './live-collection.mjs';
 
 const LIB_DIR = dirname(fileURLToPath(import.meta.url));
 export const WEB_TRACKER_DIR = join(LIB_DIR, '..');
 export const CAREER_OPS_DIR = join(WEB_TRACKER_DIR, '..');
-export const CAREER_DATA_DIR = join(CAREER_OPS_DIR, 'data');
-export const DASHBOARD_DATA_DIR = join(WEB_TRACKER_DIR, 'data');
+export { CAREER_DATA_DIR, DASHBOARD_DATA_DIR };
 export const CANONICAL_RESEARCH_PROSPECTS_FILE = join(CAREER_DATA_DIR, 'umich-research-prospects.json');
 export const DASHBOARD_RESEARCH_PROSPECTS_FILE = join(DASHBOARD_DATA_DIR, 'umich-research-prospects.json');
 export const CANONICAL_KTH_RESEARCH_PROSPECTS_FILE = join(CAREER_DATA_DIR, 'kth-research-prospects.json');
@@ -175,19 +183,6 @@ function emptyStore(scope = RESEARCH_PROSPECT_CONFIGS.umich.scope) {
     scope,
     prospects: [],
   };
-}
-
-function atomicWrite(filePath, content) {
-  mkdirSync(dirname(filePath), { recursive: true });
-  const tempPath = join(dirname(filePath), `.${basename(filePath)}.tmp-${Date.now()}`);
-  writeFileSync(tempPath, content, 'utf-8');
-  try {
-    renameSync(tempPath, filePath);
-  } catch (err) {
-    if (!['EPERM', 'EACCES'].includes(err?.code)) throw err;
-    writeFileSync(filePath, content, 'utf-8');
-    try { unlinkSync(tempPath); } catch {}
-  }
 }
 
 function cleanText(value) {
@@ -621,6 +616,28 @@ export function readResearchProspects(filePathOrOptions = CANONICAL_RESEARCH_PRO
   const applyState = (store) => (
     overlayFile ? applyUserStateToStore(store, sourceId, overlayFile) : store
   );
+  const parseProspects = (parsed) => {
+    const prospects = Array.isArray(parsed.prospects)
+      ? parsed.prospects.map(normalizeResearchProspect)
+      : [];
+    return applyState({
+      ...empty,
+      ...parsed,
+      version: 1,
+      prospects,
+    });
+  };
+  if (filePath === CANONICAL_RESEARCH_PROSPECTS_FILE) {
+    const applied = readLiveOrJson({
+      table: 'research_prospects',
+      canonicalPath: CANONICAL_RESEARCH_PROSPECTS_FILE,
+      filePath,
+      empty: () => empty,
+      parse: parseProspects,
+    });
+    rememberResearchProspects(filePath, applied, overlayFile);
+    return applied;
+  }
   const mtime = fileMtimeMs(filePath);
   const userMtime = overlayFile ? fileMtimeMs(overlayFile) : 0;
   const cached = researchProspectReadCache.get(cacheKeyForProspects(filePath));
@@ -633,15 +650,7 @@ export function readResearchProspects(filePathOrOptions = CANONICAL_RESEARCH_PRO
     return applied;
   }
   const parsed = JSON.parse(readFileSync(filePath, 'utf-8'));
-  const prospects = Array.isArray(parsed.prospects)
-    ? parsed.prospects.map(normalizeResearchProspect)
-    : [];
-  const applied = applyState({
-    ...empty,
-    ...parsed,
-    version: 1,
-    prospects,
-  });
+  const applied = parseProspects(parsed);
   rememberResearchProspects(filePath, applied, overlayFile);
   return applied;
 }
@@ -713,7 +722,17 @@ export function writeResearchProspects(
     generated_at: new Date().toISOString(),
     prospects: prospects.map(prospect => normalizeResearchProspect(prospect)),
   };
-  atomicWrite(filePath, `${JSON.stringify(next, null, 2)}\n`);
+  if (filePath === CANONICAL_RESEARCH_PROSPECTS_FILE) {
+    const written = writeLiveOrJson({
+      table: 'research_prospects',
+      canonicalPath: CANONICAL_RESEARCH_PROSPECTS_FILE,
+      filePath,
+      next,
+    });
+    rememberResearchProspects(filePath, written, overlayFile);
+    return written;
+  }
+  atomicWrite(filePath, compactJsonLine(next));
   rememberResearchProspects(filePath, next, overlayFile);
   return next;
 }
@@ -853,6 +872,17 @@ export function patchResearchProspect(id, updates = {}, filePathOrOptions = CANO
       return { store, prospect, wrote_canonical: false };
     }
   }
+  const live = upsertLiveOrWrite({
+    table: 'research_prospects',
+    canonicalPath: CANONICAL_RESEARCH_PROSPECTS_FILE,
+    filePath,
+    store,
+    row: prospect,
+  });
+  if (live) {
+    rememberResearchProspects(filePath, live, overlayFile);
+    return { store: live, prospect, wrote_canonical: true };
+  }
   const nextStore = writeResearchProspects(store, filePathOrOptions, { existingStore: store });
   return {
     store: nextStore,
@@ -866,32 +896,26 @@ export function syncResearchProspectsToDashboard({
   source = '',
   sourcePath = null,
   outputPath = null,
+  write = false,
 } = {}) {
   const config = researchProspectConfig(source || institution);
   sourcePath = sourcePath || config.canonicalFile;
   outputPath = outputPath || config.dashboardFile;
   const store = readResearchProspects(sourcePath);
-  const tierSummary = store.prospects.reduce((acc, prospect) => {
-    acc[prospect.tier] = (acc[prospect.tier] || 0) + 1;
-    return acc;
-  }, {});
-  const methodSummary = store.prospects.reduce((acc, prospect) => {
-    for (const method of prospect.transfer_vectors || []) {
-      acc[method] = (acc[method] || 0) + 1;
-    }
-    return acc;
-  }, {});
-
-  const output = {
-    ...store,
-    generated_at: new Date().toISOString(),
+  const extra = {
     source: sourcePath,
-    total: store.prospects.length,
-    count: store.prospects.length,
-    prospects: store.prospects,
-    tier_summary: tierSummary,
-    method_summary: methodSummary,
+    tier_summary: store.prospects.reduce((acc, prospect) => {
+      acc[prospect.tier] = (acc[prospect.tier] || 0) + 1;
+      return acc;
+    }, {}),
+    method_summary: store.prospects.reduce((acc, prospect) => {
+      for (const method of prospect.transfer_vectors || []) {
+        acc[method] = (acc[method] || 0) + 1;
+      }
+      return acc;
+    }, {}),
   };
-  atomicWrite(outputPath, `${JSON.stringify(output, null, 2)}\n`);
+  const output = dashboardSnapshot(store, extra);
+  if (write) writeDashboardSnapshot(outputPath, store, extra);
   return output;
 }

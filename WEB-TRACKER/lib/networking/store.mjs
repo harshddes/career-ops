@@ -1,6 +1,7 @@
-import { existsSync, mkdirSync, readFileSync, renameSync, unlinkSync, writeFileSync } from 'fs';
-import { basename, dirname, join } from 'path';
+import { existsSync, readFileSync } from 'fs';
+import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
+import { atomicWrite, compactJsonLine } from '../atomic-write.mjs';
 import {
   canonicalizeExternalUrl,
   findDuplicateCandidates,
@@ -68,34 +69,6 @@ function slugify(value) {
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
     .slice(0, 96);
-}
-
-function atomicWrite(filePath, content) {
-  mkdirSync(dirname(filePath), { recursive: true });
-  const tempPath = join(dirname(filePath), `.${basename(filePath)}.tmp-${Date.now()}-${Math.random().toString(16).slice(2)}`);
-  writeFileSync(tempPath, content, 'utf-8');
-  const retryCodes = new Set(['EPERM', 'EACCES', 'EBUSY', 'EAGAIN', 'UNKNOWN']);
-  let lastError = null;
-  for (let attempt = 0; attempt < 8; attempt += 1) {
-    try {
-      renameSync(tempPath, filePath);
-      return;
-    } catch (error) {
-      lastError = error;
-      if (!retryCodes.has(error?.code)) break;
-      try {
-        writeFileSync(filePath, content, 'utf-8');
-        try { unlinkSync(tempPath); } catch {}
-        return;
-      } catch (writeError) {
-        lastError = writeError;
-        if (!retryCodes.has(writeError?.code)) break;
-        Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 40 * (attempt + 1));
-      }
-    }
-  }
-  try { unlinkSync(tempPath); } catch {}
-  throw lastError || new Error(`failed to write ${filePath}`);
 }
 
 function normalizeSourceRefs(value = []) {
@@ -464,22 +437,24 @@ export function writeNetworking(store, filePath = CANONICAL_NETWORKING_FILE) {
     events: (store.events || []).map(item => normalizeEvent(item)).sort((a, b) => String(a.starts_at || '9999').localeCompare(String(b.starts_at || '9999'))),
   };
   next.summary = summarize(next);
-  atomicWrite(filePath, `${JSON.stringify(next, null, 2)}\n`);
+  atomicWrite(filePath, compactJsonLine(next));
   return next;
 }
 
 export function syncNetworkingToDashboard({
   sourcePath = CANONICAL_NETWORKING_FILE,
   outputPath = DASHBOARD_NETWORKING_FILE,
+  write = false,
 } = {}) {
   const store = readNetworking(sourcePath);
-  atomicWrite(outputPath, `${JSON.stringify({
+  const output = {
     ...store,
     generated_at: new Date().toISOString(),
     local_only: true,
     source: sourcePath,
-  }, null, 2)}\n`);
-  return readNetworking(outputPath);
+  };
+  if (write) atomicWrite(outputPath, compactJsonLine(output));
+  return output;
 }
 
 export function findNetworkingPerson(idOrEmail, store = readNetworking()) {

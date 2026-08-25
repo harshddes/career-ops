@@ -18,10 +18,20 @@ import { loadEnv } from './lib/load-env.mjs';
 
 const envLoad = loadEnv();
 
-import { execFile } from 'child_process';
+import { execFile, spawnSync } from 'child_process';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import cron from 'node-cron';
+import { EXPERIMENTAL_SQLITE, nodeScriptInvocation, sqliteFlagEnabled } from './lib/node-exec.mjs';
+
+if (!sqliteFlagEnabled()) {
+  const result = spawnSync(
+    process.execPath,
+    [EXPERIMENTAL_SQLITE, fileURLToPath(import.meta.url), ...process.argv.slice(2)],
+    { stdio: 'inherit', windowsHide: true, env: process.env, cwd: process.cwd() },
+  );
+  process.exit(result.status ?? 1);
+}
 
 const BASE = dirname(fileURLToPath(import.meta.url));
 const CAREER_OPS = join(BASE, '..');
@@ -51,7 +61,7 @@ if (!envLoad.loaded) {
 
 function runScript(scriptPath, scriptArgs = [], { timeoutMs = 120_000 } = {}) {
   return new Promise((resolve) => {
-    const proc = execFile('node', [join(BASE, scriptPath), ...scriptArgs], {
+    const proc = execFile(process.execPath, nodeScriptInvocation(join(BASE, scriptPath), scriptArgs), {
       cwd: BASE,
       timeout: timeoutMs,
     }, (err, stdout, stderr) => {
@@ -64,7 +74,7 @@ function runScript(scriptPath, scriptArgs = [], { timeoutMs = 120_000 } = {}) {
 
 function runCareerOpsScript(scriptPath, scriptArgs = []) {
   return new Promise((resolve) => {
-    execFile('node', [join(CAREER_OPS, scriptPath), ...scriptArgs], {
+    execFile(process.execPath, nodeScriptInvocation(join(CAREER_OPS, scriptPath), scriptArgs), {
       cwd: CAREER_OPS,
       timeout: 120_000,
     }, (err, stdout, stderr) => {
@@ -99,14 +109,15 @@ async function checkAutonomyHealth() {
 }
 
 async function runStartupWork() {
+  console.log('[boot] Waiting 30s so the dashboard can answer clicks before catalog scans...');
+  await new Promise(resolve => setTimeout(resolve, 30_000));
+
   if (MODE !== 'manual') {
     console.log('[boot] Running initial EURAXESS opportunity scan in background...');
     await runScript('euraxess-scan.mjs', ['--all', '--refresh-liveness']);
-    await runScript('euraxess-factory-worker.mjs', ['--max', '3']);
 
     console.log('[boot] Running initial PhDScanner / PhD-board opportunity scan in background...');
     await runScript('phdscanner-scan.mjs', ['--all', '--refresh-liveness']);
-    await runScript('phdscanner-factory-worker.mjs', ['--max', '3']);
     const findaphdCode = await runScript('findaphd-scan.mjs', ['--all', '--refresh-liveness'], { timeoutMs: 600_000 });
     if (findaphdCode) console.warn('[boot] FindAPhD scan exited non-zero (Cloudflare/playwright may need a later tick).');
 
@@ -249,7 +260,12 @@ if (MODE !== 'manual') {
     });
   }
 
-  console.log(`[cron] Scheduled: jobs (8h), PhD (48h), EURAXESS scan (2h), PhD board scan (2h), U-M Careers discover (15m) + full (6h) + details (daily), EURAXESS factory (15m), PhDScanner factory (15m), sync (2h)${process.env.APIFY_TOKEN || process.env.EURAXESS_APIFY_TOKEN ? ', EURAXESS backfill (daily)' : ''}${MODE === 'autopilot' ? ', gate (4h)' : ''}`);
+  cron.schedule('12 3 * * *', async () => {
+    console.log(`\n[cron] Backing up live data off Dropbox into repo live-backup...`);
+    await runScript('scripts/backup-live-data.mjs');
+  });
+
+  console.log(`[cron] Scheduled: jobs (8h), PhD (48h), EURAXESS scan (2h), PhD board scan (2h), U-M Careers discover (15m) + full (6h) + details (daily), EURAXESS factory (15m), PhDScanner factory (15m), live-data backup (nightly), sync (2h)${process.env.APIFY_TOKEN || process.env.EURAXESS_APIFY_TOKEN ? ', EURAXESS backfill (daily)' : ''}${MODE === 'autopilot' ? ', gate (4h)' : ''}`);
   if (envEnabled(process.env.JOBS_TO_CONSIDER_LIVENESS)) {
     console.log('[cron] Jobs to Consider liveness is scheduled by the dashboard server.');
   } else {

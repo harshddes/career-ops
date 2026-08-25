@@ -13,9 +13,15 @@ import {
   projectPhdscannerListStore,
   projectResearchListStore,
   projectUmichListStore,
+  projectJobsListStore,
 } from './lib/feed-list-projection.mjs';
 import { summarizeSourceHealth } from './lib/source-health.mjs';
-import { DEFAULT_DIGEST_TIMEZONE, digestRecipients, getCachedTodayActivity, invalidateTodayActivityCache, localDateString } from './lib/today-activity.mjs';
+import { DEFAULT_DIGEST_TIMEZONE, digestRecipients, getCachedTodayActivity, invalidateTodayActivityCache, localDateString, peekCachedTodayActivity } from './lib/today-activity.mjs';
+import { eventLoopDelaySnapshot } from './lib/event-loop-monitor.mjs';
+import { factoryWorkerArgs } from './lib/spawn-job.mjs';
+import { nodeScriptInvocation } from './lib/node-exec.mjs';
+import { liveDataDir, liveEngineName } from './lib/db.mjs';
+import { smtpConfigFromEnv, validateSmtpConfig } from './lib/mail-sender.mjs';
 import { logJobConsiderPatchEvent, logNetworkingActivity, logResearchStatusEvent } from './lib/dashboard-activity.mjs';
 import { setActivityAppendedHook } from './lib/activity-log.mjs';
 import { run as syncApplications } from './adapters/applications-adapter.mjs';
@@ -50,7 +56,6 @@ import {
 } from './lib/euraxess/opportunity-store.mjs';
 import {
   euraxessFactoryStatus,
-  processEuraxessFactory,
   queueEuraxessOpportunityWork,
 } from './lib/euraxess/factory.mjs';
 import {
@@ -61,7 +66,6 @@ import {
 } from './lib/phdscanner/opportunity-store.mjs';
 import {
   phdscannerFactoryStatus,
-  processPhdscannerFactory,
   queuePhdscannerOpportunityWork,
 } from './lib/phdscanner/factory.mjs';
 import {
@@ -76,7 +80,6 @@ import {
 } from './lib/exhibitor/company-store.mjs';
 import {
   exhibitorFactoryStatus,
-  processExhibitorFactory,
   queueExhibitorCompanyWork,
   readExhibitorClearQueue,
   refreshExhibitorClearQueueStatus,
@@ -197,31 +200,46 @@ function createFastJob(type, input = {}) {
   };
 }
 
-function withToday(payload = {}) {
-  invalidateTodayActivityCache();
-  const activity = getCachedTodayActivity({ timeZone: DEFAULT_DIGEST_TIMEZONE });
+function withoutStore(payload) {
+  if (!payload || typeof payload !== 'object' || Array.isArray(payload)) return payload;
+  const { store, ...rest } = payload;
+  return rest;
+}
+
+function withToday(payload = {}, options = {}) {
+  const rest = withoutStore(payload);
+  if (options.refresh) {
+    invalidateTodayActivityCache();
+    const activity = getCachedTodayActivity({ timeZone: DEFAULT_DIGEST_TIMEZONE });
+    return {
+      ...rest,
+      today: {
+        date: activity.date,
+        timeZone: activity.timeZone,
+        summary: activity.summary,
+      },
+    };
+  }
+  const cached = peekCachedTodayActivity({ timeZone: DEFAULT_DIGEST_TIMEZONE });
   return {
-    ...payload,
+    ...rest,
     today: {
-      date: activity.date,
-      timeZone: activity.timeZone,
-      summary: activity.summary,
+      date: cached?.date || localDateString(new Date(), DEFAULT_DIGEST_TIMEZONE),
+      timeZone: cached?.timeZone || DEFAULT_DIGEST_TIMEZONE,
+      summary: cached?.summary || null,
     },
   };
 }
 
-function syncProspectsAfterPatch(result, syncOptions = {}) {
-  if (result?.wrote_canonical === false) {
-    return { total: result.store?.prospects?.length || 0 };
-  }
-  return syncResearchProspectsToDashboard(syncOptions);
+function syncProspectsAfterPatch(result) {
+  return { total: result?.store?.prospects?.length || 0 };
 }
 
 setActivityAppendedHook(() => invalidateTodayActivityCache());
 
 function runNode(script, args = [], { timeoutMs = 10 * 60_000 } = {}) {
   return new Promise((resolve, reject) => {
-    execFile(process.execPath, [join(BASE, script), ...args], {
+    execFile(process.execPath, nodeScriptInvocation(join(BASE, script), args), {
       cwd: BASE,
       timeout: timeoutMs,
       windowsHide: true,
@@ -311,7 +329,6 @@ async function routeApi(req, res, pathname, requestUrl = null) {
   }
   if (pathname === '/api/daily-digest/smtp-status') {
     if (req.method !== 'GET') return sendJson(res, { error: 'method not allowed' }, 405), true;
-    const { smtpConfigFromEnv, validateSmtpConfig } = await import('./lib/mail-sender.mjs');
     const config = smtpConfigFromEnv();
     const validation = validateSmtpConfig(config);
     const envPath = join(BASE, '.env');
@@ -421,32 +438,9 @@ async function routeApi(req, res, pathname, requestUrl = null) {
     if (req.method !== 'POST') return sendJson(res, { error: 'method not allowed' }, 405), true;
     const input = await readBodyJson(req);
     const job = createFastJob('exhibitor_factory_run', input);
-    try {
-      const result = processExhibitorFactory({
-        max: Number(input.max || 20),
-        force: Boolean(input.force),
-      });
-      syncExhibitorCompaniesToDashboard();
-      sendJson(res, {
-        job: { ...job, status: 'completed' },
-        result,
-        summary: {
-          processed: result.processed ?? result.results?.length ?? 0,
-          results: (result.results || []).map(item => ({
-            id: item.id,
-            company: item.company,
-            status: item.status,
-            stage: item.stage,
-          })),
-          message: result.message,
-        },
-      });
-    } catch (err) {
-      sendJson(res, {
-        job: { ...job, status: 'failed' },
-        error: err?.message || String(err),
-      }, 500);
-    }
+    runNode('exhibitor-factory-worker.mjs', factoryWorkerArgs({ ...input, max: input.max || 20 }), { timeoutMs: 10 * 60_000 })
+      .catch(err => console.error(`[fast-server] exhibitor factory failed: ${err.stderr || err.message}`));
+    sendJson(res, { job, queued: true }, 202);
     return true;
   }
   if (pathname.startsWith('/api/exhibitor/companies/')) {
@@ -567,62 +561,18 @@ async function routeApi(req, res, pathname, requestUrl = null) {
     if (req.method !== 'POST') return sendJson(res, { error: 'method not allowed' }, 405), true;
     const input = await readBodyJson(req);
     const job = createFastJob('euraxess_factory_run', input);
-    try {
-      const result = await processEuraxessFactory({
-        max: Number(input.max || 3),
-        dryRun: Boolean(input.dry_run || input.dryRun),
-        force: Boolean(input.force),
-        retryFailures: Boolean(input.retry_failures || input.retryFailures),
-        pollTimeoutSec: Number(input.poll_timeout_sec || input.poll_timeout || 90),
-      });
-      syncEuraxessOpportunitiesToDashboard();
-      sendJson(res, {
-        job: { ...job, status: 'completed' },
-        result,
-        summary: {
-          processed: result.processed ?? result.results?.length ?? 0,
-          results: (result.results || []).map(item => ({
-            id: item.id,
-            title: item.title,
-            status: item.status,
-            stage: item.stage,
-          })),
-        },
-      });
-    } catch (err) {
-      sendJson(res, { job: { ...job, status: 'failed' }, error: err?.message || String(err) }, 500);
-    }
+    runNode('euraxess-factory-worker.mjs', factoryWorkerArgs(input), { timeoutMs: 10 * 60_000 })
+      .catch(err => console.error(`[fast-server] EURAXESS factory failed: ${err.stderr || err.message}`));
+    sendJson(res, { job, queued: true }, 202);
     return true;
   }
   if (pathname === '/api/phdscanner/factory/run') {
     if (req.method !== 'POST') return sendJson(res, { error: 'method not allowed' }, 405), true;
     const input = await readBodyJson(req);
     const job = createFastJob('phdscanner_factory_run', input);
-    try {
-      const result = await processPhdscannerFactory({
-        max: Number(input.max || 3),
-        dryRun: Boolean(input.dry_run || input.dryRun),
-        force: Boolean(input.force),
-        retryFailures: Boolean(input.retry_failures || input.retryFailures),
-        pollTimeoutSec: Number(input.poll_timeout_sec || input.poll_timeout || 90),
-      });
-      syncPhdscannerOpportunitiesToDashboard();
-      sendJson(res, {
-        job: { ...job, status: 'completed' },
-        result,
-        summary: {
-          processed: result.processed ?? result.results?.length ?? 0,
-          results: (result.results || []).map(item => ({
-            id: item.id,
-            title: item.title,
-            status: item.status,
-            stage: item.stage,
-          })),
-        },
-      });
-    } catch (err) {
-      sendJson(res, { job: { ...job, status: 'failed' }, error: err?.message || String(err) }, 500);
-    }
+    runNode('phdscanner-factory-worker.mjs', factoryWorkerArgs(input), { timeoutMs: 10 * 60_000 })
+      .catch(err => console.error(`[fast-server] PhDScanner factory failed: ${err.stderr || err.message}`));
+    sendJson(res, { job, queued: true }, 202);
     return true;
   }
   if (pathname === '/api/euraxess/backfill') {
@@ -1212,7 +1162,7 @@ async function routeApi(req, res, pathname, requestUrl = null) {
   }
   if (pathname === '/api/jobs-to-consider') {
     if (req.method === 'GET') {
-      sendJson(res, enrichConsiderJobsStore(readConsiderJobs()));
+      sendJson(res, maybeProjectFeed(req, enrichConsiderJobsStore(readConsiderJobs()), projectJobsListStore));
       return true;
     }
     if (req.method === 'POST') {
@@ -1537,6 +1487,11 @@ export function startFastServer(port = PORT, host = HOST) {
         ],
         outreach_kanban: true,
         silence_nudge_days: 7,
+        eventLoopDelay: eventLoopDelaySnapshot(),
+        liveStore: {
+          engine: liveEngineName(),
+          dir: liveDataDir(),
+        },
       });
       return;
     }

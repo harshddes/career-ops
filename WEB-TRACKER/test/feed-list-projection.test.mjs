@@ -3,6 +3,8 @@
  * Uses temp fixtures — never the live 6–8 MB stores.
  */
 
+import './live-env.mjs';
+
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createServer } from 'http';
@@ -153,7 +155,8 @@ test('list projections drop encyclopedic blobs and stay far smaller than full st
 test('requestWantsListView reads Express query and raw URLs', () => {
   assert.equal(requestWantsListView({ query: { view: 'list' } }), true);
   assert.equal(requestWantsListView({ url: '/api/euraxess/opportunities?view=list' }), true);
-  assert.equal(requestWantsListView({ url: '/api/euraxess/opportunities' }), false);
+  assert.equal(requestWantsListView({ url: '/api/euraxess/opportunities' }), true);
+  assert.equal(requestWantsListView({ query: { view: 'full' } }), false);
 });
 
 test('gzip and brotli wrap compact JSON above the size floor', () => {
@@ -226,13 +229,12 @@ test('dashboard feed tabs fetch view=list and do not force-render on tab switch'
   assert.match(tabBlock, /phdscanner:\s*\(\)\s*=>\s*renderPhdscannerFeed\(\)/);
   assert.match(tabBlock, /umichcareers:\s*\(\)\s*=>\s*renderUmichCareersFeed\(\)/);
   assert.match(tabBlock, /researchprospects:\s*\(\)\s*=>\s*renderResearchProspects\(\)/);
-  assert.match(tabBlock, /networking:\s*\(\)\s*=>\s*renderNetworking\(\)/);
+  assert.match(tabBlock, /networking:\s*\(\)\s*=>\s*renderNetworking\(\{\s*force:\s*true\s*\}\)/);
   assert.doesNotMatch(tabBlock, /renderEuraxessFeed\(\{\s*force:\s*true\s*\}\)/);
   assert.doesNotMatch(tabBlock, /renderLiveJobs\(\{\s*force:\s*true\s*\}\)/);
   assert.doesNotMatch(tabBlock, /renderUmichCareersFeed\(\{\s*force:\s*true\s*\}\)/);
   assert.doesNotMatch(tabBlock, /renderResearchProspects\(\{\s*force:\s*true\s*\}\)/);
   assert.doesNotMatch(tabBlock, /renderPhdscannerFeed\(\{\s*force:\s*true\s*\}\)/);
-  assert.doesNotMatch(tabBlock, /renderNetworking\(\{\s*force:\s*true\s*\}\)/);
 });
 
 test('local gzip helper can drive a tiny HTTP JSON response', async () => {

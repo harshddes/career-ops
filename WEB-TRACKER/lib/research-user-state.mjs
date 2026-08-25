@@ -1,7 +1,8 @@
-import { existsSync, mkdirSync, readFileSync, renameSync, unlinkSync, writeFileSync } from 'fs';
-import { basename, dirname, join } from 'path';
+import { existsSync, readFileSync } from 'fs';
+import { dirname, join, basename } from 'path';
 import { fileURLToPath } from 'url';
 import { allResearchSources, sourceIdFromProspectsFilename } from './phd-research-sources.mjs';
+import { atomicWrite, compactJsonLine } from './atomic-write.mjs';
 
 const LIB_DIR = dirname(fileURLToPath(import.meta.url));
 const WEB_TRACKER_DIR = join(LIB_DIR, '..');
@@ -23,19 +24,6 @@ function cleanText(value) {
 function cleanSourceId(value = 'umich') {
   const source = cleanText(value || 'umich').toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-+|-+$/g, '');
   return source || 'umich';
-}
-
-function atomicWrite(filePath, content) {
-  mkdirSync(dirname(filePath), { recursive: true });
-  const tempPath = join(dirname(filePath), `.${basename(filePath)}.tmp-${Date.now()}`);
-  writeFileSync(tempPath, content, 'utf-8');
-  try {
-    renameSync(tempPath, filePath);
-  } catch (err) {
-    if (!['EPERM', 'EACCES'].includes(err?.code)) throw err;
-    writeFileSync(filePath, content, 'utf-8');
-    try { unlinkSync(tempPath); } catch {}
-  }
 }
 
 function emptyUserState() {
@@ -227,7 +215,7 @@ export function readResearchUserState(filePath = RESEARCH_USER_STATE_FILE) {
 }
 
 function mirrorUserState(store) {
-  atomicWrite(DASHBOARD_RESEARCH_USER_STATE_FILE, `${JSON.stringify(store, null, 2)}\n`);
+  atomicWrite(DASHBOARD_RESEARCH_USER_STATE_FILE, compactJsonLine(store));
 }
 
 export function patchResearchUserState(sourceId, prospectId, fields = {}, userStateFile = RESEARCH_USER_STATE_FILE) {
@@ -274,7 +262,7 @@ export function patchResearchUserState(sourceId, prospectId, fields = {}, userSt
     [id]: nextFields,
   };
   store.updated_at = new Date().toISOString();
-  atomicWrite(userStateFile, `${JSON.stringify(store, null, 2)}\n`);
+  atomicWrite(userStateFile, compactJsonLine(store));
   if (userStateFile === RESEARCH_USER_STATE_FILE) {
     mirrorUserState(store);
   }

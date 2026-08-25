@@ -1,6 +1,7 @@
-import { existsSync, mkdirSync, readFileSync, renameSync, unlinkSync, writeFileSync } from 'fs';
-import { basename, dirname, join } from 'path';
+import { existsSync, readFileSync } from 'fs';
+import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
+import { atomicWrite, compactJsonLine } from '../atomic-write.mjs';
 
 const LIB_DIR = dirname(fileURLToPath(import.meta.url));
 export const WEB_TRACKER_DIR = join(LIB_DIR, '..', '..');
@@ -39,34 +40,6 @@ function cleanNumber(value, fallback = 0) {
   if (value === null || value === undefined || value === '') return fallback;
   const parsed = Number(value);
   return Number.isFinite(parsed) ? parsed : fallback;
-}
-
-function atomicWrite(filePath, content) {
-  mkdirSync(dirname(filePath), { recursive: true });
-  const tempPath = join(dirname(filePath), `.${basename(filePath)}.tmp-${Date.now()}-${Math.random().toString(16).slice(2)}`);
-  writeFileSync(tempPath, content, 'utf-8');
-  const retryCodes = new Set(['EPERM', 'EACCES', 'EBUSY', 'EAGAIN', 'UNKNOWN']);
-  let lastErr = null;
-  for (let attempt = 0; attempt < 8; attempt += 1) {
-    try {
-      renameSync(tempPath, filePath);
-      return;
-    } catch (err) {
-      lastErr = err;
-      if (!retryCodes.has(err?.code)) break;
-      try {
-        writeFileSync(filePath, content, 'utf-8');
-        try { unlinkSync(tempPath); } catch {}
-        return;
-      } catch (writeErr) {
-        lastErr = writeErr;
-        if (!retryCodes.has(writeErr?.code)) break;
-        Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 40 * (attempt + 1));
-      }
-    }
-  }
-  try { unlinkSync(tempPath); } catch {}
-  throw lastErr || new Error(`failed to write ${filePath}`);
 }
 
 export function slugify(value) {
@@ -210,7 +183,7 @@ export function writeExhibitorCompanies(store, filePath = CANONICAL_EXHIBITOR_FI
     summary: summarize(companies),
     companies,
   };
-  atomicWrite(filePath, `${JSON.stringify(next, null, 2)}\n`);
+  atomicWrite(filePath, compactJsonLine(next));
   return next;
 }
 
@@ -265,14 +238,16 @@ export function patchExhibitorCompany(id, updates = {}, filePath = CANONICAL_EXH
 export function syncExhibitorCompaniesToDashboard({
   sourcePath = CANONICAL_EXHIBITOR_FILE,
   outputPath = DASHBOARD_EXHIBITOR_FILE,
+  write = false,
 } = {}) {
   const store = readExhibitorCompanies(sourcePath);
-  atomicWrite(outputPath, `${JSON.stringify({
+  const output = {
     ...store,
     generated_at: new Date().toISOString(),
     source: sourcePath,
     total: store.companies.length,
     count: store.companies.length,
-  }, null, 2)}\n`);
-  return readExhibitorCompanies(outputPath);
+  };
+  if (write) atomicWrite(outputPath, compactJsonLine(output));
+  return output;
 }

@@ -1,5 +1,5 @@
-import { existsSync, mkdirSync, readFileSync, renameSync, unlinkSync, writeFileSync } from 'fs';
-import { basename, dirname, join, relative } from 'path';
+import { existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync } from 'fs';
+import { dirname, join, relative } from 'path';
 import { fileURLToPath } from 'url';
 import { AgentTaskQueue } from '../agent-task-queue.mjs';
 import {
@@ -8,6 +8,7 @@ import {
   readExhibitorCompanies,
   syncExhibitorCompaniesToDashboard,
 } from './company-store.mjs';
+import { atomicWrite, compactJsonLine } from '../atomic-write.mjs';
 
 const LIB_DIR = dirname(fileURLToPath(import.meta.url));
 export const WEB_TRACKER_DIR = join(LIB_DIR, '..', '..');
@@ -27,19 +28,6 @@ function cleanText(value) {
 
 function today() {
   return new Date().toISOString().slice(0, 10);
-}
-
-function atomicWrite(filePath, content) {
-  mkdirSync(dirname(filePath), { recursive: true });
-  const tempPath = join(dirname(filePath), `.${basename(filePath)}.tmp-${Date.now()}`);
-  writeFileSync(tempPath, content, 'utf-8');
-  try {
-    renameSync(tempPath, filePath);
-  } catch (err) {
-    if (!['EPERM', 'EACCES'].includes(err?.code)) throw err;
-    writeFileSync(filePath, content, 'utf-8');
-    try { unlinkSync(tempPath); } catch {}
-  }
 }
 
 function relToCareer(filePath) {
@@ -128,7 +116,7 @@ export function refreshExhibitorClearQueueStatus() {
     pending,
     instructions_for_agent: `Execute ${CLEAR_QUEUE_SOP_REL} for every pending item. Do not ask questions. Do not touch EURAXESS/PhDScanner/Operations queues.`,
   };
-  atomicWrite(CLEAR_QUEUE_FILE, `${JSON.stringify(status, null, 2)}\n`);
+  atomicWrite(CLEAR_QUEUE_FILE, compactJsonLine(status));
   return status;
 }
 

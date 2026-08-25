@@ -1,17 +1,17 @@
 {
   "version": 1,
-  "generated_at": "2026-08-24T03:07:03.987Z",
+  "generated_at": "2026-08-24T12:07:03.539Z",
   "scope": "PhDScanner live research opportunities",
   "scan_summary": {
     "provider": "playwright_listing",
     "status": "ok",
     "scanned_count": 80,
-    "total_count": 375,
+    "total_count": 376,
     "visible_count": 68,
-    "archived_count": 307,
+    "archived_count": 308,
     "queued_count": 265,
     "top_priority_count": 6,
-    "last_success": "2026-08-24T02:29:08.105Z",
+    "last_success": "2026-08-24T11:42:31.695Z",
     "last_error": "",
     "threshold_visible": 2.4,
     "threshold_strong": 3.2,
@@ -84,7 +84,7 @@
     },
     "rescored_at": "2026-08-17T20:27:00.712Z",
     "findaphd_scanned_count": 80,
-    "findaphd_last_success": "2026-08-24T02:29:08.105Z"
+    "findaphd_last_success": "2026-08-24T11:42:31.695Z"
   },
   "opportunities": [
     {
@@ -610,7 +610,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-17T18:55:31.656Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-64179d8d9f48fc2b",
@@ -1101,7 +1101,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-4616bbdb4dcf953b",
@@ -1570,7 +1570,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-17T18:55:31.656Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-e365f2db7350f7bf",
@@ -2013,7 +2013,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-17T18:55:31.656Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-717c591e1495f793",
@@ -2456,7 +2456,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-17T18:55:31.656Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-134b3648de2a2aeb",
@@ -2953,7 +2953,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-17T18:55:31.656Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-45e5aed27c84fe95",
@@ -3765,11 +3765,11 @@
       "automation": {
         "worker_status": "runner_unavailable",
         "current_stage": "runner_unavailable",
-        "attempts": 129,
-        "next_retry_at": "2026-08-24T03:37:03.435Z",
+        "attempts": 133,
+        "next_retry_at": "2026-08-24T12:37:03.351Z",
         "last_error": "Parallel research unavailable (billing/credit): { \"error\": { \"message\": \"Insufficient credit in account, please check your plan and billing details. You can add more funds from the billing page at https://platform.parallel.ai/settings?tab=billing and check for pricing details at https://",
         "runner": "phdscanner-factory",
-        "last_run_at": "2026-08-24T03:07:00.458Z"
+        "last_run_at": "2026-08-24T12:07:00.733Z"
       },
       "artifacts": {
         "research_report": "reports/phdscanner-university-of-liverpool-saturn-cdt-a-fast-neutron-detector-system-for-fissile-ho-2026-08-09.md",
@@ -3796,7 +3796,7 @@
       },
       "jobs_to_consider_id": "university-of-liverpool-saturn-cdt-a-fast-neutron-detector-system-for-fissile-hold-up-assay-and-",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-e27a4d5ccce3d3a8",
@@ -4033,7 +4033,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -4045,11 +4045,11 @@
       "automation": {
         "worker_status": "runner_unavailable",
         "current_stage": "runner_unavailable",
-        "attempts": 15,
-        "next_retry_at": "2026-08-24T02:59:04.339Z",
+        "attempts": 16,
+        "next_retry_at": "2026-08-24T12:12:27.183Z",
         "last_error": "Parallel research unavailable (billing/credit): { \"error\": { \"message\": \"Insufficient credit in account, please check your plan and billing details. You can add more funds from the billing page at https://platform.parallel.ai/settings?tab=billing and check for pricing details at https://",
         "runner": "phdscanner-factory",
-        "last_run_at": "2026-08-24T02:29:02.777Z"
+        "last_run_at": "2026-08-24T11:42:25.070Z"
       },
       "artifacts": {
         "research_report": "",
@@ -4076,7 +4076,7 @@
       },
       "jobs_to_consider_id": "cardiff-university-developing-large-arrays-of-superconducting-microwave-kinetic-inductance-detec",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-b5de458d35dd6202",
@@ -4315,7 +4315,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -4327,11 +4327,11 @@
       "automation": {
         "worker_status": "runner_unavailable",
         "current_stage": "runner_unavailable",
-        "attempts": 15,
-        "next_retry_at": "2026-08-24T02:59:06.736Z",
+        "attempts": 16,
+        "next_retry_at": "2026-08-24T12:12:30.532Z",
         "last_error": "Parallel research unavailable (billing/credit): { \"error\": { \"message\": \"Insufficient credit in account, please check your plan and billing details. You can add more funds from the billing page at https://platform.parallel.ai/settings?tab=billing and check for pricing details at https://",
         "runner": "phdscanner-factory",
-        "last_run_at": "2026-08-24T02:29:05.140Z"
+        "last_run_at": "2026-08-24T11:42:28.148Z"
       },
       "artifacts": {
         "research_report": "",
@@ -4358,7 +4358,7 @@
       },
       "jobs_to_consider_id": "royal-holloway-university-of-london-development-of-novel-statistical-methods-and-application-to-",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-583b717dd2cbe64f",
@@ -4597,7 +4597,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -4640,7 +4640,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-372a104315dd356f",
@@ -4870,7 +4870,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -4913,7 +4913,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-b526d72cd1b6b52e",
@@ -5150,7 +5150,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -5193,7 +5193,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-ca9485f6bfa64e84",
@@ -5406,7 +5406,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -5449,7 +5449,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-382b7a028b027d0d",
@@ -5681,7 +5681,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -5724,7 +5724,7 @@
       },
       "jobs_to_consider_id": "university-of-strathclyde-plasma-photonics-optical-devices-for-next-generation-high-power-lasers",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-34fc470d43d44a96",
@@ -5928,7 +5928,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -5971,7 +5971,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-e8ff4ee943d4549a",
@@ -6182,7 +6182,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -6225,7 +6225,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-b34972e271fc9b7c",
@@ -6441,7 +6441,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -6484,7 +6484,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-9da47afe140541f9",
@@ -6692,7 +6692,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-08-17T18:55:31.656Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -6735,7 +6735,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-17T18:55:31.656Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-4b2aa8785f58ad51",
@@ -6947,7 +6947,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -6990,7 +6990,7 @@
       },
       "jobs_to_consider_id": "university-of-liverpool-saturn-cdt-prediction-and-mitigation-of-flow-induced-vibration-in-nuclea",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-cd655c7b20ec4ce5",
@@ -7183,7 +7183,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-08-03T20:31:00.313Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -7226,7 +7226,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-03T20:31:00.313Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-205e6d9c02f3bab1",
@@ -7418,7 +7418,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-31T12:23:20.241Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -7461,7 +7461,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-31T12:23:20.241Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-99f0c9eed2b93dbe",
@@ -7663,7 +7663,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -7706,7 +7706,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-5a6a53865e7108a2",
@@ -7906,7 +7906,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-30T16:29:00.485Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -7949,7 +7949,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-30T16:29:00.485Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-6021cd566a260a4f",
@@ -8600,7 +8600,7 @@
       },
       "jobs_to_consider_id": "stockholm-university-phd-student-in-physics-experimental-particle-physics-with-the-atlas-experim",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-1fedfd42fc0fe671",
@@ -9283,7 +9283,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-45617c20b473bdfd",
@@ -9465,7 +9465,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -9508,7 +9508,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-e498e6fea81a7cb6",
@@ -9742,7 +9742,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -9785,7 +9785,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-26b220e21f9143af",
@@ -10019,7 +10019,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -10062,7 +10062,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-481751c872c0292a",
@@ -10755,7 +10755,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-a18159882c7fdea4",
@@ -11350,7 +11350,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-88377d0d9cb217d8",
@@ -11544,7 +11544,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -11587,7 +11587,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-4961d935d787d3b7",
@@ -12180,7 +12180,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-5889e513dcc5975f",
@@ -12367,7 +12367,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -12410,7 +12410,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-617335d4b4be168b",
@@ -13133,7 +13133,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-03T20:31:00.313Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-c346fbbc40f19af8",
@@ -13333,7 +13333,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -13376,7 +13376,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-6d450fcbbcd454ed",
@@ -13949,7 +13949,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-f3701724e34ebda3",
@@ -14141,7 +14141,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -14184,7 +14184,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-50f7d0339d6fb0d6",
@@ -14372,7 +14372,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -14415,7 +14415,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-a834153302d0864c",
@@ -14614,7 +14614,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -14657,7 +14657,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-6de73541def6879e",
@@ -14850,7 +14850,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -14893,7 +14893,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-c95386efc3df24c8",
@@ -15466,7 +15466,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-751446d1cb96be32",
@@ -15659,7 +15659,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -15702,7 +15702,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-ffb31f4cd35dd385",
@@ -15868,7 +15868,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-08-18T22:29:00.487Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -15911,7 +15911,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-18T22:29:00.487Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-4733fa7e7e34caf4",
@@ -16097,7 +16097,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-30T16:29:00.485Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -16140,7 +16140,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-30T16:29:00.485Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-e00e229880c8f4b0",
@@ -16318,7 +16318,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -16361,7 +16361,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-1c4144c72b6e6b6c",
@@ -16540,7 +16540,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -16583,7 +16583,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-07b024f02cd0ef4d",
@@ -16769,7 +16769,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -16812,7 +16812,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-1020c611bbbfd010",
@@ -16996,7 +16996,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-08-07T15:22:33.903Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -17039,7 +17039,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-07T15:22:33.903Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-a242c80accce6adc",
@@ -17225,7 +17225,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -17268,7 +17268,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-23fca867d9631f67",
@@ -17483,7 +17483,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-17T18:55:31.656Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-5be1d843ccea49c4",
@@ -17682,7 +17682,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-18T22:29:00.487Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-2e95cf5f610f0594",
@@ -18249,7 +18249,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-e13e88aa79d21aad",
@@ -18818,7 +18818,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-a3c1bfff22fa8854",
@@ -18993,7 +18993,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-31T12:23:20.241Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -19036,7 +19036,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-31T12:23:20.241Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-dfbeef91fdc63089",
@@ -19579,7 +19579,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-d2f08d294a8e703c",
@@ -19745,7 +19745,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -19788,7 +19788,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-6bf6e09fef10498c",
@@ -20003,7 +20003,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-17T18:55:31.656Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-03881f4e856c5445",
@@ -20546,7 +20546,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-7f9b5e030b5d843d",
@@ -20702,7 +20702,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-08-03T20:31:00.313Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -20745,7 +20745,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-03T20:31:00.313Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-e82a630f18fb9331",
@@ -21340,7 +21340,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-7d3cf8174849e466",
@@ -21887,7 +21887,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-1a6fed62387aef03",
@@ -22053,7 +22053,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -22096,7 +22096,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-8bef318e7d739e67",
@@ -22261,7 +22261,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -22304,7 +22304,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-607aa54b524f2237",
@@ -22847,7 +22847,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-73f49c82cc167e45",
@@ -23027,7 +23027,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -23070,7 +23070,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-f082276535c9dedf",
@@ -23613,7 +23613,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-f201e63894ff89a3",
@@ -24236,7 +24236,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-3c6a10498a855896",
@@ -24402,7 +24402,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -24445,7 +24445,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-cf0ea244c9e6e7fe",
@@ -24629,7 +24629,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -24672,7 +24672,7 @@
       },
       "jobs_to_consider_id": "university-of-sheffield-silicon-sensor-particle-detectors-for-the-upgrade-of-the-atlas-experimen",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-cd500e6871c36585",
@@ -24842,7 +24842,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-08-20T16:29:08.544Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -24885,7 +24885,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-20T16:29:08.544Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-6ec19e458ded0e41",
@@ -25042,7 +25042,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-08-03T20:31:00.313Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -25085,7 +25085,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-03T20:31:00.313Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-5073b8fbf422a153",
@@ -25628,7 +25628,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-0436c3451e9171aa",
@@ -25798,7 +25798,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -25841,7 +25841,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-5e1fe9a31710b96e",
@@ -26368,7 +26368,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-e7ffaa64f1a1d433",
@@ -26536,7 +26536,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -26579,7 +26579,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-d26dacc51630948a",
@@ -26791,7 +26791,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-17T18:55:31.656Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-fedaafccfc906c5b",
@@ -27344,7 +27344,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-fc02fc9ecd616c6b",
@@ -27507,7 +27507,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-08-03T20:31:00.313Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -27550,7 +27550,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-03T20:31:00.313Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-2f378ea56e0f6bdd",
@@ -27717,7 +27717,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-08-20T00:29:08.004Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -27760,7 +27760,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-20T00:29:08.004Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-237ea5a35af3d6ca",
@@ -28287,7 +28287,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-585bc0bc01f79ed5",
@@ -28492,7 +28492,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-17T18:55:31.656Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-9731966c2cbcac69",
@@ -29011,7 +29011,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-2572a92d9c0b359f",
@@ -29177,7 +29177,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -29220,7 +29220,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-569d5c42665fc0e7",
@@ -29386,7 +29386,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-08-19T04:29:00.697Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -29429,7 +29429,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-19T04:29:00.697Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-d4a50f443e5a4876",
@@ -29942,7 +29942,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-ab66a8be48937a99",
@@ -30455,7 +30455,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-53ae3f4551f1de82",
@@ -30622,7 +30622,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -30665,7 +30665,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-7eb8461ab2d1f466",
@@ -31178,7 +31178,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-921eaf7e6cf6a8e3",
@@ -31345,7 +31345,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -31388,7 +31388,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-2b249cd6c417068d",
@@ -31555,7 +31555,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -31598,7 +31598,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-fc784ac0f8d435ee",
@@ -31807,7 +31807,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-17T18:55:31.656Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-158bc6cec8d837c6",
@@ -31998,7 +31998,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-18T22:29:00.487Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-1c9574757d25d405",
@@ -32146,7 +32146,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -32189,7 +32189,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-8ca75d3cbdc5b902",
@@ -32658,7 +32658,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-1b1fa1b6feb53a0f",
@@ -33127,7 +33127,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-f12f3b9dda724de3",
@@ -33596,7 +33596,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-b846562ddb96ae55",
@@ -34181,7 +34181,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-d4805092c62aa9c4",
@@ -34640,7 +34640,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-17T18:55:31.656Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-a465d3086c1236f2",
@@ -35099,7 +35099,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-08T16:29:19.750Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-37294340787688ee",
@@ -35586,7 +35586,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-17T18:55:31.656Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-674ef95ce68a8109",
@@ -36043,7 +36043,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-0481fc8b9333cf84",
@@ -36500,7 +36500,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-8683c904dc20bb64",
@@ -36957,7 +36957,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-de6a4f8f194b837a",
@@ -37414,7 +37414,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-b5f1dff0d709dc7e",
@@ -37871,7 +37871,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-004163ef62d95f1e",
@@ -38336,7 +38336,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-8820f1985321297d",
@@ -38801,7 +38801,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-50602acd9c471fe4",
@@ -39266,7 +39266,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-40e80a6cf489353c",
@@ -39731,7 +39731,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-77d2be7d9622fb9e",
@@ -39928,7 +39928,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-17T18:55:31.656Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-060f35685e20724b",
@@ -40082,7 +40082,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-08-17T18:55:31.656Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -40125,7 +40125,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-17T18:55:31.656Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-8426dfc654cca43e",
@@ -40590,7 +40590,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-e9cdcb56b71da890",
@@ -41083,7 +41083,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-99d41dbc55f6eff6",
@@ -41548,7 +41548,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-0b514487e7c3edb9",
@@ -41695,7 +41695,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -41738,7 +41738,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-ad3e6189d08bc25e",
@@ -42203,7 +42203,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-b5ceb3891e02c49e",
@@ -42696,7 +42696,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-258cb98670854277",
@@ -43161,7 +43161,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-3ca9dad85e0de421",
@@ -43626,7 +43626,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-5de7b82f19dd17c4",
@@ -44091,7 +44091,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-8fe8595c9be4e7ad",
@@ -44556,7 +44556,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-5e296c559ec5a746",
@@ -45021,7 +45021,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-8561a3646bc8a341",
@@ -45486,7 +45486,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-c73dd709fe7ebf62",
@@ -45977,7 +45977,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-e3d1beb188994af5",
@@ -46124,7 +46124,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-08-18T22:29:00.487Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -46167,7 +46167,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-18T22:29:00.487Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-723d5a008e2be647",
@@ -46632,7 +46632,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-760d6ef38e4a2e11",
@@ -47125,7 +47125,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-b18747c1b5dfb5b8",
@@ -47590,7 +47590,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-5a477883e56c805d",
@@ -48055,7 +48055,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-dbb37f8aa1a4b5e1",
@@ -48520,7 +48520,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-a0c58bfa025acfd1",
@@ -48985,7 +48985,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-aedb0f399cef1cf8",
@@ -49138,7 +49138,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-08-18T22:29:00.487Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -49181,7 +49181,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-18T22:29:00.487Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-2f0b9e09f2e17231",
@@ -49335,7 +49335,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -49378,7 +49378,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-c5c8b078e3be6aa0",
@@ -49525,7 +49525,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-08-03T20:31:00.313Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -49568,7 +49568,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-03T20:31:00.313Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-0c3c45f55886a34a",
@@ -50033,7 +50033,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-f59b9e1fd30906ce",
@@ -50498,7 +50498,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-79a3961fe94508cc",
@@ -50991,7 +50991,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-1b85044c490763a2",
@@ -51142,7 +51142,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-08-23T12:29:09.981Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -51185,7 +51185,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-23T12:29:09.981Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-cee2afdc318c230c",
@@ -51714,7 +51714,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-f575d7d6764e76d7",
@@ -52205,7 +52205,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-00a8a99309445e7e",
@@ -52725,7 +52725,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-32f2b450ecd9b545",
@@ -53216,7 +53216,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-cd28f3a51a34c301",
@@ -53707,7 +53707,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-939459de38eb29eb",
@@ -54198,7 +54198,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-95b2692f75708dc3",
@@ -54733,7 +54733,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-699eb8a6c64974fe",
@@ -55224,7 +55224,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-4d2c5321c8a5e183",
@@ -55715,7 +55715,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-9625ffe9d883248d",
@@ -56206,7 +56206,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-ec93603210cf2961",
@@ -56697,7 +56697,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-96a25b1cdedd73eb",
@@ -57188,7 +57188,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-dacb6ab4ecb7532e",
@@ -57679,7 +57679,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-10488ef26ec21d35",
@@ -58170,7 +58170,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-07d10d223388046b",
@@ -58661,7 +58661,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-1cbdb1252d3ec22e",
@@ -59152,7 +59152,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-af3fd70c51a6c81e",
@@ -59671,7 +59671,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-362939ce8d989e6a",
@@ -60162,7 +60162,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-88032091b3800acb",
@@ -60653,7 +60653,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-170cc450cb21d3a7",
@@ -61118,7 +61118,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-a07773bf1fc72e00",
@@ -61583,7 +61583,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-f3da1dda98b07ac8",
@@ -62048,7 +62048,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-88c6f3b54a196c21",
@@ -62513,7 +62513,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-d1b6b8a7ade5d9e2",
@@ -63004,7 +63004,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-773367e14ad8e3df",
@@ -63469,7 +63469,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-1165cc123afe376f",
@@ -63616,7 +63616,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-08-03T20:31:00.313Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -63659,7 +63659,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-03T20:31:00.313Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-0bfb9471168ce7f3",
@@ -64124,7 +64124,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-27b395714e2cce0e",
@@ -64617,7 +64617,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-87551679a002c7da",
@@ -64768,7 +64768,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-08-18T22:29:00.487Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -64811,7 +64811,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-18T22:29:00.487Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-5e5371d950f68d39",
@@ -65276,7 +65276,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-eca594382c79a34d",
@@ -65741,7 +65741,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-3875aac9a0de9351",
@@ -66206,7 +66206,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-c914cef6942fb12a",
@@ -66353,7 +66353,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -66396,7 +66396,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-47218943fd8cfda6",
@@ -66540,7 +66540,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-08-21T14:29:07.900Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -66583,7 +66583,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-21T14:29:07.900Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-b72b08ea7679474b",
@@ -66741,7 +66741,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-08-23T12:29:09.981Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -66784,7 +66784,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-23T12:29:09.981Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-26bd80be34bbf73e",
@@ -66937,7 +66937,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-08-04T14:29:12.230Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -66980,7 +66980,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-04T14:29:12.230Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-d41a08f494e2b3be",
@@ -67471,7 +67471,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-b766e764de30386e",
@@ -67962,7 +67962,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-558a1d407f649e03",
@@ -68453,7 +68453,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-3badd6c88b0fd734",
@@ -68944,7 +68944,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-061fe7b3e29a1286",
@@ -69409,7 +69409,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-5bdcbbf780442d7f",
@@ -69874,7 +69874,197 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
+    },
+    {
+      "id": "phdboard-31b54178fe49f952",
+      "source": "findaphd",
+      "sources": [
+        {
+          "source": "findaphd",
+          "url": "https://www.findaphd.com/phds/project/metal-organic-frameworks-for-controlled-nitric-oxide-delivery-and-new-therapy/?p198257",
+          "external_id": "198257",
+          "provider": "keyword_listing"
+        }
+      ],
+      "alt_urls": [],
+      "dedupe_key": "peking university|metal organic frameworks controlled nitric oxide delivery new therapy",
+      "provider": "keyword_listing",
+      "external_id": "198257",
+      "url": "https://www.findaphd.com/phds/project/metal-organic-frameworks-for-controlled-nitric-oxide-delivery-and-new-therapy/?p198257",
+      "title": "metal organic frameworks for controlled nitric oxide delivery and new therapy",
+      "institution": "Peking University",
+      "university": "Peking University",
+      "discipline": "College of Chemistry and Molecular Engineering",
+      "department": "College of Chemistry and Molecular Engineering",
+      "supervisor": "",
+      "fully_funded": true,
+      "minimal_financial_barriers": true,
+      "funding_label": "Funded PhD Project (Students Worldwide)",
+      "published_at": "",
+      "country": "",
+      "summary": "Myocardial infarction (MI) remains a leading cause of death worldwide, driven by irreversible cardiomyocyte loss and inadequate vascularization following arterial occlusion.",
+      "posted_at": "",
+      "deadline_text": "",
+      "deadline_utc": "",
+      "status": "open_unverified",
+      "liveness": "active",
+      "liveness_reason": "No hard deadline; verify posting before applying",
+      "score": 1.6,
+      "score_band": "archive",
+      "tier": "D",
+      "visible": false,
+      "archived": true,
+      "fit_rationale": "1.6/5 skip; eligibility unknown; confidence low.",
+      "risk_flags": [
+        "deadline_not_stated",
+        "phd_funding_not_stated"
+      ],
+      "score_breakdown": {
+        "dimensions": {
+          "daily_work_interest": {
+            "score": 1,
+            "weight": 0.25,
+            "contribution": 0.25,
+            "evidence": [],
+            "rationale": "Anchored from verified work and domain terms."
+          },
+          "hands_on_alignment": {
+            "score": 1,
+            "weight": 0.2,
+            "contribution": 0.2,
+            "evidence": [],
+            "rationale": "0 physical-work anchors verified."
+          },
+          "direct_skill_evidence": {
+            "score": 1,
+            "weight": 0.2,
+            "contribution": 0.2,
+            "evidence": [],
+            "rationale": "0 approved candidate fact(s) matched."
+          },
+          "destination_alignment": {
+            "score": 1,
+            "weight": 0.15,
+            "contribution": 0.15,
+            "evidence": [],
+            "rationale": "0 destination anchor(s) verified."
+          },
+          "level_plausibility": {
+            "score": 4,
+            "weight": 0.1,
+            "contribution": 0.4,
+            "evidence": [
+              {
+                "source": "direct_parser",
+                "term": "engineering",
+                "quote": "Engineering",
+                "source_location": "posting_text"
+              }
+            ],
+            "rationale": "Role level is anchored or remains uncertain."
+          },
+          "application_feasibility": {
+            "score": 4,
+            "weight": 0.1,
+            "contribution": 0.4,
+            "evidence": [],
+            "rationale": "Eligibility is unknown."
+          }
+        },
+        "strong_matches": [],
+        "adjacent_matches": [],
+        "negative_matches": [],
+        "candidate_fact_ids": [],
+        "role_matches": [
+          "engineering"
+        ],
+        "role_archive_matches": [],
+        "protected_domain_matches": [],
+        "computation_dominant": false,
+        "independent_hardware_evidence": false,
+        "policy_version": "2026-08-unified-v1",
+        "funding_ignored": false
+      },
+      "legacy_score": "",
+      "score_overrides": [],
+      "policy_version": "",
+      "posting_fingerprint": "",
+      "eligibility": {},
+      "dimensions": {},
+      "evidence": [],
+      "rejected_evidence": [],
+      "unknowns": [],
+      "confidence": "",
+      "review_required": false,
+      "review_reasons": [],
+      "calculation_trace": {},
+      "score_before_gates": 0,
+      "extractor": {},
+      "urgency": {},
+      "scoring": {},
+      "research_fields": [
+        "College of Chemistry and Molecular Engineering"
+      ],
+      "academic_level": "PhD",
+      "researcher_profile": "R1",
+      "language": "",
+      "translated_title": "",
+      "translated_summary": "",
+      "needs_research": true,
+      "needs_application_pack": false,
+      "worker_status": "not_needed",
+      "research_report": "",
+      "resources": {},
+      "coverage": {
+        "provider": "keyword_listing",
+        "feed_window": "",
+        "backfill_profile": "",
+        "first_seen": "2026-08-24T11:42:31.695Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
+        "duplicate_of": ""
+      },
+      "verification": {
+        "deadline_source": "missing",
+        "status_source": "rss_unverified",
+        "verified_at": "",
+        "verification_required": true
+      },
+      "automation": {
+        "worker_status": "not_needed",
+        "current_stage": "discovered",
+        "attempts": 0,
+        "next_retry_at": "",
+        "last_error": "",
+        "runner": "",
+        "last_run_at": ""
+      },
+      "artifacts": {
+        "research_report": "",
+        "resume_tex": "",
+        "resume_pdf": "",
+        "cover_letter_pdf": "",
+        "email_draft": "",
+        "manifest_path": ""
+      },
+      "decision": {
+        "apply_recommendation": "",
+        "score": 1.6,
+        "confidence": null,
+        "rationale": "1.6/5 skip; eligibility unknown; confidence low.",
+        "archive_reason": ""
+      },
+      "execution": {
+        "stage": null,
+        "ready_checked": false,
+        "stage_updated_at": "",
+        "applied_at": "",
+        "application_num": null,
+        "notes": ""
+      },
+      "jobs_to_consider_id": "",
+      "first_seen": "2026-08-24T11:42:31.695Z",
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-d1e0f97d6a7c60eb",
@@ -70339,7 +70529,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-80c2ce8b3876d832",
@@ -70832,7 +71022,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-608867788e31198a",
@@ -71325,7 +71515,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-058d5d0a4391d638",
@@ -71816,7 +72006,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-999040305fc22c42",
@@ -71962,7 +72152,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-08-06T14:29:10.492Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -72005,7 +72195,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-06T14:29:10.492Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-09f160bbcbc98c3a",
@@ -72470,7 +72660,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-6b8ef07d6f3f8f74",
@@ -72935,7 +73125,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-15388d805d40c129",
@@ -73089,7 +73279,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -73132,7 +73322,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-1abbdde006e4394c",
@@ -73661,7 +73851,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-45719325537117ae",
@@ -74126,7 +74316,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-9de48826c71b8863",
@@ -74591,7 +74781,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-6765d9df6737be6d",
@@ -75056,7 +75246,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-66fc800e98f36b29",
@@ -75521,7 +75711,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-993498379fc262d3",
@@ -76012,7 +76202,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-2a51b1a391a61730",
@@ -76505,7 +76695,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-bfb862f8cf58c236",
@@ -76970,7 +77160,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-8e33f9edca705f00",
@@ -77435,7 +77625,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-68049946fa56bcc6",
@@ -77900,7 +78090,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-d01b329e567d7ca6",
@@ -78365,7 +78555,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-f775e82aa5f2e960",
@@ -78830,7 +79020,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-dae19c07077a6b0e",
@@ -79295,7 +79485,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-339633513135edab",
@@ -79760,7 +79950,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-eab1d019c7439fb6",
@@ -79913,7 +80103,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -79956,7 +80146,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-7efbd79c4bd146a6",
@@ -80449,7 +80639,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-1b3bde115aa93945",
@@ -80942,7 +81132,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-7543b3d260c8d49d",
@@ -81415,7 +81605,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-262c98790f51da9a",
@@ -81880,7 +82070,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-a61ae15dbfb70de0",
@@ -82345,7 +82535,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-1a8fa6f54ba6b904",
@@ -82810,7 +83000,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-f7b676ecaa38bc4d",
@@ -83275,7 +83465,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-13bca6dfa5b843cc",
@@ -83740,7 +83930,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-01f564919e6a8af3",
@@ -84205,7 +84395,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-3d741dcb1b2bbbda",
@@ -84724,7 +84914,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-d5ad9abd5e3ef1bd",
@@ -85189,7 +85379,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-b4b50db8fa02367c",
@@ -85654,7 +85844,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-ecf08f33798cd1f3",
@@ -86119,7 +86309,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-b7cb68cb522f42b4",
@@ -86584,7 +86774,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-f56431e985f5afe1",
@@ -87049,7 +87239,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-09cbf85ffcefbb27",
@@ -87514,7 +87704,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-a7f8494deab4e354",
@@ -87979,7 +88169,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-fe88cf81b8915b75",
@@ -88472,7 +88662,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-69d3bfcd554d1e4f",
@@ -88937,7 +89127,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-f86f9e3ed81e403c",
@@ -89402,7 +89592,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-96cd7cb79c07ed77",
@@ -89867,7 +90057,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-8496a55f1f03be1f",
@@ -90332,7 +90522,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-3d50998c0f1c141d",
@@ -90797,7 +90987,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-8bff783a959bf9a7",
@@ -91290,7 +91480,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-a68c1880924ffe35",
@@ -91755,7 +91945,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-f789f51a6059a820",
@@ -92220,7 +92410,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-eced453b1adeaaca",
@@ -92729,7 +92919,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-c96956726b826ba6",
@@ -93222,7 +93412,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-eec3cce8023456e6",
@@ -93687,7 +93877,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-1b7f8a7ef19537e5",
@@ -94152,7 +94342,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-4152ffc5541db516",
@@ -94617,7 +94807,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-429dcaaea20c9a56",
@@ -95082,7 +95272,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-db28053b52f4841f",
@@ -95573,7 +95763,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-77f330d2d540905c",
@@ -96038,7 +96228,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-101323f3ea134c4d",
@@ -96503,7 +96693,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-818d8fbdf047ea88",
@@ -96968,7 +97158,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-9af2e29532f2cadb",
@@ -97461,7 +97651,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-60f4a37968cad2ae",
@@ -97926,7 +98116,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-bc06ca4addf1573c",
@@ -98391,7 +98581,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-717083a0aa773cb4",
@@ -98856,7 +99046,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-99b010ce7316a929",
@@ -99321,7 +99511,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-762727036884cc79",
@@ -99814,7 +100004,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-f3171a1fb43b8295",
@@ -100279,7 +100469,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-eb5466beb0e91457",
@@ -100744,7 +100934,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-7b3c4565d16f6771",
@@ -101209,7 +101399,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-287b25d9c8b46c24",
@@ -101702,7 +101892,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-cd6d2ce5b11c0858",
@@ -102167,7 +102357,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-cc75277e15056004",
@@ -102660,7 +102850,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-69051e740eefdd8e",
@@ -103125,7 +103315,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-71cca6c5cd36f9d2",
@@ -103590,7 +103780,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-7269648e62095fcd",
@@ -104083,7 +104273,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-4ddcca32433649f2",
@@ -104548,7 +104738,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-965b353c2a69f9ff",
@@ -105013,7 +105203,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-557be2145e121a14",
@@ -105478,7 +105668,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-a0708a9d6bb7fbdd",
@@ -105943,7 +106133,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-13bf443d03b44bbb",
@@ -106408,7 +106598,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-793b8795a1503fb3",
@@ -106873,7 +107063,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-a119fc27d1827644",
@@ -107027,7 +107217,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -107070,7 +107260,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-2ceed6815a0245c0",
@@ -107224,7 +107414,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -107267,7 +107457,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-06f5a08fd200624f",
@@ -107413,7 +107603,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-08-24T00:29:08.156Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -107456,7 +107646,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-24T00:29:08.156Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-9686801a45a13796",
@@ -107921,7 +108111,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-942b12abe5eac126",
@@ -108067,7 +108257,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-08-18T22:29:00.487Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -108110,7 +108300,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-18T22:29:00.487Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-6c3f9ea69466bf95",
@@ -108575,7 +108765,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-f4a8e0b36dbfc66e",
@@ -109040,7 +109230,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-b188b8ca93c2d25b",
@@ -109505,7 +109695,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-28b09c1c816d4529",
@@ -109970,7 +110160,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-253cc474da9bbaac",
@@ -110461,7 +110651,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-8a835cfb54be70b4",
@@ -110926,7 +111116,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-7366f8aa47c74bce",
@@ -111391,7 +111581,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-f7f34f659944546f",
@@ -111884,7 +112074,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-92adb98fb7258964",
@@ -112031,7 +112221,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -112074,7 +112264,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-2389dec62cc6333d",
@@ -112539,7 +112729,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-6e48d4fc60f85f3b",
@@ -112740,7 +112930,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-17T18:55:31.656Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-d1d5c1fe6128ca79",
@@ -113205,7 +113395,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-f15a5100ab1d402f",
@@ -113670,7 +113860,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-b222131b85b16aad",
@@ -113824,7 +114014,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-08-17T18:55:31.656Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -113867,7 +114057,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-17T18:55:31.656Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-d163c7fe67987336",
@@ -114332,7 +114522,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-3f682b7c14ecc767",
@@ -114861,7 +115051,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-7ba8c9113ae68d2a",
@@ -115007,7 +115197,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -115050,7 +115240,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-be288d8feacede4b",
@@ -115515,7 +115705,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-96def867b87d8b69",
@@ -115980,7 +116170,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-b1b5b2a8881d8e6c",
@@ -116445,7 +116635,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-4c56cd20ae2bdc78",
@@ -116910,7 +117100,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-a1dd5e54ee3861df",
@@ -117375,7 +117565,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-057dfb6108dd1866",
@@ -117840,7 +118030,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-966dae81d89273f0",
@@ -117994,7 +118184,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-07-29T00:13:54.557Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -118037,7 +118227,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-fd75f70fcc52f20f",
@@ -118502,7 +118692,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-a8a013c9fbfeaa0d",
@@ -118646,7 +118836,7 @@
         "feed_window": "",
         "backfill_profile": "",
         "first_seen": "2026-08-21T14:29:07.900Z",
-        "last_seen": "2026-08-24T02:29:08.105Z",
+        "last_seen": "2026-08-24T11:42:31.695Z",
         "duplicate_of": ""
       },
       "verification": {
@@ -118689,7 +118879,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-21T14:29:07.900Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-3944684ad272e5f6",
@@ -119154,7 +119344,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-ae19bd58a9868f66",
@@ -119334,7 +119524,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-18T22:29:00.487Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-d0da11b1b0562ce2",
@@ -119839,7 +120029,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-431cb1675af2ff75",
@@ -120372,7 +120562,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-c6472c2f36e600a5",
@@ -120879,7 +121069,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-89ea2c495268f316",
@@ -121117,7 +121307,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-20T16:29:08.544Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-e93644865e991fa9",
@@ -121578,7 +121768,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-31T12:23:20.241Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-20970a13e6c527b3",
@@ -122065,7 +122255,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-03T20:31:00.313Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-727e6be6b270f301",
@@ -122616,7 +122806,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-ebf19bfa1ffd7dde",
@@ -123169,7 +123359,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-03T20:31:00.313Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-adcddd0a5276c50f",
@@ -123660,7 +123850,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-03T22:29:00.275Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-9d0d5a8af248df17",
@@ -124175,7 +124365,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-03T20:31:00.313Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-df50d337bcaa224c",
@@ -124728,7 +124918,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-ebf5a99863a101fd",
@@ -125357,7 +125547,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-06T14:29:10.492Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-b1a6fbbfedb4ce3e",
@@ -125870,7 +126060,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-03T20:31:00.313Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-8e0b4a6835fc2597",
@@ -126357,7 +126547,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-06T14:29:10.492Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-530edd2c0544f6cd",
@@ -126874,7 +127064,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-03T20:31:00.313Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-e98d0b69bfd6e6e2",
@@ -127427,7 +127617,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-06T14:29:10.492Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-4a610a441bfd28c9",
@@ -128024,7 +128214,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-03T20:31:00.313Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-5bb4fecd6883640f",
@@ -128725,7 +128915,7 @@
       },
       "jobs_to_consider_id": "university-of-southampton-development-of-a-miniaturised-plug-and-play-in-situ-plasma-measurement",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-c75c68436b7479e4",
@@ -129350,7 +129540,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-d07907dc46fd373f",
@@ -129955,7 +130145,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-c129c075be291748",
@@ -130470,7 +130660,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-31T12:23:20.241Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-edf7dc8385631b61",
@@ -130931,7 +131121,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-06T14:29:10.492Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-7b5cb8ec39cddef1",
@@ -131448,7 +131638,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-30T16:29:00.485Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-fe48533588a48d8f",
@@ -131961,7 +132151,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-f45e58cf002f3236",
@@ -132452,7 +132642,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-04T00:29:00.196Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-d686725f53d65e4c",
@@ -132913,7 +133103,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-a082323a1004889c",
@@ -133402,7 +133592,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-31T12:23:20.241Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-6a9e487c1cb4b1a1",
@@ -133893,7 +134083,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-04T00:29:00.196Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-c49ed18b3487e220",
@@ -134380,7 +134570,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-a23ad0b5c91bd90e",
@@ -134927,7 +135117,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-21addd7934c5d640",
@@ -135414,7 +135604,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T16:29:01.242Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-1a8c4cc1cedee985",
@@ -135907,7 +136097,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-30T16:29:00.485Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-e4b97a2e16755ad0",
@@ -136420,7 +136610,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-03T20:31:00.313Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-ffeafbed824677da",
@@ -136907,7 +137097,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-08T16:29:19.750Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-caa7daee535f9497",
@@ -137394,7 +137584,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-03T20:31:00.313Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-1a84eec9ec1d8308",
@@ -137881,7 +138071,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-08T16:29:19.750Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-85e907b72a093ee7",
@@ -138432,7 +138622,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-31T12:23:20.241Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-ff1e9905e02250ac",
@@ -138959,7 +139149,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-03T20:31:00.313Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-5405880b915bc923",
@@ -139658,7 +139848,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-31T12:23:20.241Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-2425207a8fefdf72",
@@ -140289,7 +140479,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-517a9f463a034635",
@@ -140866,7 +141056,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-30T16:29:00.485Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-caef6001bff10732",
@@ -141327,7 +141517,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-ce339b826cf63842",
@@ -141788,7 +141978,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-373b9f99a507db82",
@@ -142275,7 +142465,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-4aea30dc604168f0",
@@ -142736,7 +142926,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-5d5f376ef85d8c3b",
@@ -143249,7 +143439,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-9d2b00160f5c7d78",
@@ -143800,7 +143990,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-03T20:31:00.313Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-6ad886fc1fc81fac",
@@ -144347,7 +144537,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-dc645de1fcf29c3f",
@@ -144834,7 +145024,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-08T16:29:19.750Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-d40bd5590cc948fa",
@@ -145321,7 +145511,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-30T16:29:00.485Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-dd81668db36a19a9",
@@ -145926,7 +146116,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-06T14:29:10.492Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-394337bc5fc7d329",
@@ -146479,7 +146669,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-b64c5c1c8f7e797e",
@@ -146940,7 +147130,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-08T16:29:19.750Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-f5e7e9e51e1667d5",
@@ -147427,7 +147617,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-06T14:29:10.492Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-81e8876fefd77f5c",
@@ -147914,7 +148104,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-08T16:29:19.750Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-e82e6a3dbf14eca3",
@@ -148573,7 +148763,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-b08a64266f327de8",
@@ -149060,7 +149250,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-30T16:29:00.485Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-c550ed437016b6ac",
@@ -149609,7 +149799,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-31T12:23:20.241Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-eefcaa55a3713524",
@@ -150246,7 +150436,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-03T20:31:00.313Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-6a3a8e51da4a9c25",
@@ -150737,7 +150927,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-08T16:29:19.750Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-2834f277e3762816",
@@ -151250,7 +151440,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-f7250c6b7abda05b",
@@ -151737,7 +151927,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-21c8c326c14ccc0f",
@@ -152224,7 +152414,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-31T12:23:20.241Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-08603457233d49c4",
@@ -152781,7 +152971,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-03T20:31:00.313Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-d76723965cf2409c",
@@ -153328,7 +153518,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-08T16:29:19.750Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-6416d4655aaafb99",
@@ -153935,7 +154125,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-31T12:23:20.241Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-8b6e249381a57134",
@@ -154462,7 +154652,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-7101cfa1bea4ffb2",
@@ -155039,7 +155229,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-31T12:23:20.241Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-248661f7ddf9e7cc",
@@ -155530,7 +155720,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-04T00:29:00.196Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-971fefabddc1a82d",
@@ -156109,7 +156299,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-ed2e81d8182892d7",
@@ -156622,7 +156812,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-520cfed23bd40571",
@@ -157227,7 +157417,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-03T20:31:00.313Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-c8917e52280839b8",
@@ -157688,7 +157878,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-78b683e777f4bc89",
@@ -158203,7 +158393,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-31T12:23:20.241Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-310c68b8a06e230f",
@@ -158668,7 +158858,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-08T16:29:19.750Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-00e293a8f1e9f7a2",
@@ -159129,7 +159319,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-31T12:23:20.241Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-6ffc685aece17a02",
@@ -159724,7 +159914,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-30T16:29:00.485Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-e2c509daecfdbf9a",
@@ -160239,7 +160429,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-08T16:29:19.750Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-7182025cd9714c7b",
@@ -160868,7 +161058,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-13T15:19:49.022Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-9d17ebd585662d95",
@@ -161329,7 +161519,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-94869ef2e5da21ae",
@@ -161900,7 +162090,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-08-03T20:31:00.313Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     },
     {
       "id": "phdboard-763e1a99a7c98f51",
@@ -162387,7 +162577,7 @@
       },
       "jobs_to_consider_id": "",
       "first_seen": "2026-07-29T00:13:54.557Z",
-      "last_updated": "2026-08-24T03:07:03.454Z"
+      "last_updated": "2026-08-24T12:07:03.365Z"
     }
   ]
 }

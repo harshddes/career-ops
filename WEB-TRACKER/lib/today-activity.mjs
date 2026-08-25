@@ -390,6 +390,9 @@ function collectNetworkingToday(store, activityEvents, targetDate, timeZone) {
       notes: item.summary || item.subject || '',
     };
   });
+  const followedFromInteractions = interactionsToday
+    .filter(item => networkingFollowedToday(item, targetDate, timeZone))
+    .map(item => networkingRow(peopleById.get(item.person_id) || null, item, 'networking_follow_up'));
 
   // Prefer last_interaction_at so note edits / org saves do not mint fake contacts.
   const stageTouchedToday = (store.people || []).filter(person => (
@@ -468,6 +471,7 @@ function collectNetworkingToday(store, activityEvents, targetDate, timeZone) {
     contactedToday,
     followedToday: uniqueContactRows([
       ...followedFromEvents,
+      ...followedFromInteractions,
       ...followedFromTasks,
     ], timeZone),
     followupsDueToday: uniqueRows(followupsFromTasks.map(row => ({
@@ -523,6 +527,13 @@ const todayActivityCache = new Map();
 
 export function invalidateTodayActivityCache() {
   todayActivityCache.clear();
+}
+
+export function peekCachedTodayActivity(options = {}) {
+  const resolvedTimeZone = resolveDigestTimeZone(options.timeZone);
+  const targetDate = cleanText(options.date) || localDateString(new Date(), resolvedTimeZone);
+  const key = `${targetDate}|${resolvedTimeZone}`;
+  return todayActivityCache.get(key) || null;
 }
 
 export function getCachedTodayActivity(options = {}) {

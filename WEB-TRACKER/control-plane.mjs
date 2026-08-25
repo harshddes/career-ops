@@ -4,6 +4,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { runPreflight } from './lib/preflight.mjs';
+import { nodeScriptInvocation } from './lib/node-exec.mjs';
 
 const BASE = dirname(fileURLToPath(import.meta.url));
 const CAREER_OPS = join(BASE, '..');
@@ -35,7 +36,7 @@ function acquireLock() {
 
 function runNode(script, scriptArgs = [], { cwd = BASE, timeoutMs = 180_000 } = {}) {
   return new Promise(resolve => {
-    execFile(process.execPath, [join(BASE, script), ...scriptArgs], {
+    execFile(process.execPath, nodeScriptInvocation(join(BASE, script), scriptArgs), {
       cwd,
       timeout: timeoutMs,
       windowsHide: true,

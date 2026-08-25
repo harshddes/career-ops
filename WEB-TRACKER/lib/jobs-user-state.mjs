@@ -1,6 +1,7 @@
-import { existsSync, mkdirSync, readFileSync, renameSync, unlinkSync, writeFileSync } from 'fs';
-import { basename, dirname, join } from 'path';
+import { existsSync, readFileSync } from 'fs';
+import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
+import { atomicWrite, compactJsonLine } from './atomic-write.mjs';
 
 const LIB_DIR = dirname(fileURLToPath(import.meta.url));
 const WEB_TRACKER_DIR = join(LIB_DIR, '..');
@@ -23,19 +24,6 @@ const USER_STATE_FIELDS = [
 
 function cleanText(value) {
   return String(value ?? '').replace(/\r?\n/g, ' ').replace(/\s+/g, ' ').trim();
-}
-
-function atomicWrite(filePath, content) {
-  mkdirSync(dirname(filePath), { recursive: true });
-  const tempPath = join(dirname(filePath), `.${basename(filePath)}.tmp-${Date.now()}`);
-  writeFileSync(tempPath, content, 'utf-8');
-  try {
-    renameSync(tempPath, filePath);
-  } catch (err) {
-    if (!['EPERM', 'EACCES'].includes(err?.code)) throw err;
-    writeFileSync(filePath, content, 'utf-8');
-    try { unlinkSync(tempPath); } catch {}
-  }
 }
 
 function emptyUserState() {
@@ -61,7 +49,7 @@ export function readJobsUserState(filePath = JOBS_USER_STATE_FILE) {
 }
 
 function mirrorJobsUserState(store) {
-  atomicWrite(DASHBOARD_JOBS_USER_STATE_FILE, `${JSON.stringify(store, null, 2)}\n`);
+  atomicWrite(DASHBOARD_JOBS_USER_STATE_FILE, compactJsonLine(store));
 }
 
 export function patchJobsUserState(jobId, fields = {}) {
@@ -83,7 +71,7 @@ export function patchJobsUserState(jobId, fields = {}) {
 
   store.jobs[id] = nextFields;
   store.updated_at = new Date().toISOString();
-  atomicWrite(JOBS_USER_STATE_FILE, `${JSON.stringify(store, null, 2)}\n`);
+  atomicWrite(JOBS_USER_STATE_FILE, compactJsonLine(store));
   mirrorJobsUserState(store);
   return nextFields;
 }
@@ -103,7 +91,7 @@ export function removeJobsUserState(jobIds = [], filePath = JOBS_USER_STATE_FILE
   if (!changed) return store;
 
   store.updated_at = new Date().toISOString();
-  atomicWrite(filePath, `${JSON.stringify(store, null, 2)}\n`);
+  atomicWrite(filePath, compactJsonLine(store));
   if (filePath === JOBS_USER_STATE_FILE) mirrorJobsUserState(store);
   return store;
 }

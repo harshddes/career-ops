@@ -1,6 +1,7 @@
 import { execFile } from 'child_process';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { dirname, join, resolve } from 'path';
+import { nodeScriptInvocation } from '../node-exec.mjs';
 import { createLocalModelClient, localModelHealth } from '../local-llm/model-health.mjs';
 import { ParallelResearchProvider } from '../research-providers/parallel.mjs';
 import { patchConsiderJob } from '../jobs-to-consider-store.mjs';
@@ -21,7 +22,7 @@ function compact(value, max = 12_000) {
 
 function runNode(scriptPath, args = [], cwd) {
   return new Promise((resolve, reject) => {
-    execFile(process.execPath, [scriptPath, ...args], { cwd, windowsHide: true, timeout: 120_000 }, (err, stdout = '', stderr = '') => {
+    execFile(process.execPath, nodeScriptInvocation(scriptPath, args), { cwd, windowsHide: true, timeout: 120_000 }, (err, stdout = '', stderr = '') => {
       if (err) {
         err.stdout = stdout;
         err.stderr = stderr;

@@ -19,6 +19,7 @@ import {
   projectPhdscannerListStore,
   projectResearchListStore,
   projectUmichListStore,
+  projectJobsListStore,
 } from './lib/feed-list-projection.mjs';
 import { readFileSync, readdirSync, existsSync } from 'fs';
 import { join, dirname, basename, resolve } from 'path';
@@ -45,11 +46,11 @@ import { summarizeSourceHealth } from './lib/source-health.mjs';
 import { writeDailyActivityCsv } from './lib/daily-activity-csv.mjs';
 import {
   DEFAULT_DIGEST_TIMEZONE,
-  buildTodaySnapshot,
   getCachedTodayActivity,
   invalidateTodayActivityCache,
   localDateString,
   mergeApplicationMetadata,
+  peekCachedTodayActivity,
 } from './lib/today-activity.mjs';
 import { run as syncApplications } from './adapters/applications-adapter.mjs';
 import {
@@ -72,14 +73,12 @@ import {
   findResearchProspect,
   patchResearchProspect,
   readResearchProspects,
-  syncResearchProspectsToDashboard,
   upsertResearchProspect,
 } from './lib/research-prospect-store.mjs';
 import {
   findEuraxessOpportunity,
   patchEuraxessOpportunity,
   readEuraxessOpportunities,
-  syncEuraxessOpportunitiesToDashboard,
 } from './lib/euraxess/opportunity-store.mjs';
 import {
   EURAXESS_EXECUTION_STAGES,
@@ -89,14 +88,12 @@ import {
 } from './lib/euraxess/filters.mjs';
 import {
   euraxessFactoryStatus,
-  processEuraxessFactory,
   queueEuraxessOpportunityWork,
 } from './lib/euraxess/factory.mjs';
 import {
   findPhdscannerOpportunity,
   patchPhdscannerOpportunity,
   readPhdscannerOpportunities,
-  syncPhdscannerOpportunitiesToDashboard,
 } from './lib/phdscanner/opportunity-store.mjs';
 import {
   archiveUmichOpportunity,
@@ -104,7 +101,6 @@ import {
   findUmichOpportunity,
   patchUmichOpportunity,
   readUmichOpportunities,
-  syncUmichOpportunitiesToDashboard,
   unarchiveUmichOpportunity,
 } from './lib/umich-careers/opportunity-store.mjs';
 import { assertCanArchiveOpportunity } from './lib/protected-domain.mjs';
@@ -115,7 +111,6 @@ import {
 } from './lib/phdscanner/filters.mjs';
 import {
   phdscannerFactoryStatus,
-  processPhdscannerFactory,
   queuePhdscannerOpportunityWork,
 } from './lib/phdscanner/factory.mjs';
 import {
@@ -126,7 +121,6 @@ import {
 } from './lib/exhibitor/company-store.mjs';
 import {
   exhibitorFactoryStatus,
-  processExhibitorFactory,
   queueExhibitorCompanyWork,
   readExhibitorClearQueue,
   refreshExhibitorClearQueueStatus,
@@ -172,6 +166,13 @@ import {
   updateTrackerMetadata,
   updateTrackerRow,
 } from '../update-tracker-row.mjs';
+
+import { eventLoopDelaySnapshot } from './lib/event-loop-monitor.mjs';
+import { CAREER_DATA_DIR, FAT_JSON_FILES, fatJsonTable } from './lib/data-paths.mjs';
+import { LIVE_TABLES, liveDataDir, liveEngineName, liveRowCount, readLiveOrImport } from './lib/db.mjs';
+import { factoryWorkerArgs, spawnNodeJob } from './lib/spawn-job.mjs';
+import { nodeScriptInvocation } from './lib/node-exec.mjs';
+import { smtpConfigFromEnv, validateSmtpConfig } from './lib/mail-sender.mjs';
 
 const BASE = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = join(BASE, 'data');
@@ -289,28 +290,47 @@ function attachmentDisposition(filename) {
   return `attachment; filename="${safeFilename}"`;
 }
 
-function todaySnapshotForResponse() {
-  invalidateTodayActivityCache();
-  const activity = buildTodaySnapshot({ timeZone: DEFAULT_DIGEST_TIMEZONE });
-  return {
-    date: activity.date,
-    timeZone: activity.timeZone,
-    summary: activity.summary,
-  };
-}
-
-function withToday(payload = {}) {
-  return {
-    ...payload,
-    today: todaySnapshotForResponse(),
-  };
-}
-
-function syncProspectsAfterPatch(result, syncOptions = {}) {
-  if (result?.wrote_canonical === false) {
-    return { total: result.store?.prospects?.length || 0 };
+function todaySnapshotForResponse({ refresh = false } = {}) {
+  if (refresh) {
+    invalidateTodayActivityCache();
+    const activity = getCachedTodayActivity({ timeZone: DEFAULT_DIGEST_TIMEZONE });
+    return {
+      date: activity.date,
+      timeZone: activity.timeZone,
+      summary: activity.summary,
+    };
   }
-  return syncResearchProspectsToDashboard(syncOptions);
+  const cached = peekCachedTodayActivity({ timeZone: DEFAULT_DIGEST_TIMEZONE });
+  return {
+    date: cached?.date || localDateString(new Date(), DEFAULT_DIGEST_TIMEZONE),
+    timeZone: cached?.timeZone || DEFAULT_DIGEST_TIMEZONE,
+    summary: cached?.summary || null,
+  };
+}
+
+function withToday(payload = {}, options = {}) {
+  const rest = payload && typeof payload === 'object' && !Array.isArray(payload)
+    ? Object.fromEntries(Object.entries(payload).filter(([key]) => key !== 'store'))
+    : payload;
+  return {
+    ...rest,
+    today: todaySnapshotForResponse(options),
+  };
+}
+
+function opportunityTotal(result, table = 'euraxess_opportunities') {
+  return liveRowCount(table) || result?.store?.opportunities?.length || 0;
+}
+
+function jobsTotal(result) {
+  return liveRowCount('jobs_to_consider')
+    || result?.store?.jobs?.length
+    || result?.jobs?.length
+    || 0;
+}
+
+function syncProspectsAfterPatch(result) {
+  return { total: result?.store?.prospects?.length || 0 };
 }
 
 function applicationsPayload() {
@@ -453,6 +473,15 @@ function renderMarkdownPreview({ sourcePath, content }) {
 }
 
 app.get('/data/:file', (req, res) => {
+  const table = fatJsonTable(req.params.file);
+  if (table && LIVE_TABLES[table]) {
+    const jsonFile = LIVE_TABLES[table].jsonFile;
+    try {
+      return res.json(readLiveOrImport(table, join(CAREER_DATA_DIR, jsonFile)));
+    } catch (err) {
+      return res.status(400).json({ error: err?.message || 'failed to read live store' });
+    }
+  }
   const filePath = safeDataPath(req.params.file);
   if (!filePath) return res.status(400).json({ error: 'invalid file' });
   if (!existsSync(filePath)) return res.status(404).json({ error: 'not found' });
@@ -677,7 +706,7 @@ async function runScheduledLivenessSweep(reason = 'scheduled') {
       broadcast('jobs_to_consider_liveness_started', { reason });
       const { execFile } = await import('child_process');
       const summary = await new Promise((resolve, reject) => {
-        execFile(process.execPath, [join(BASE, 'jobs-to-consider-liveness.mjs')], {
+        execFile(process.execPath, nodeScriptInvocation(join(BASE, 'jobs-to-consider-liveness.mjs')), {
           cwd: BASE,
           timeout: 15 * 60_000,
           windowsHide: true,
@@ -824,8 +853,7 @@ app.get('/api/export/:scope', async (req, res) => {
   }
 });
 
-app.get('/api/daily-digest/smtp-status', async (_req, res) => {
-  const { smtpConfigFromEnv, validateSmtpConfig } = await import('./lib/mail-sender.mjs');
+app.get('/api/daily-digest/smtp-status', (_req, res) => {
   const config = smtpConfigFromEnv();
   const validation = validateSmtpConfig(config);
   const envPath = join(dirname(fileURLToPath(import.meta.url)), '.env');
@@ -904,7 +932,7 @@ app.get('/api/applications', (req, res) => {
 
 app.get('/api/jobs-to-consider', (req, res) => {
   try {
-    res.json(enrichConsiderJobsStore(readConsiderJobs()));
+    res.json(maybeProjectFeed(req, enrichConsiderJobsStore(readConsiderJobs()), projectJobsListStore));
   } catch (err) {
     return res.status(400).json({ error: err?.message || 'failed to read jobs to consider' });
   }
@@ -913,8 +941,7 @@ app.get('/api/jobs-to-consider', (req, res) => {
 app.post('/api/jobs-to-consider', (req, res) => {
   try {
     const store = upsertConsiderJob(req.body || {});
-    const dashboard = syncConsiderJobsToDashboard();
-    broadcast('jobs_to_consider_updated', { total: dashboard.total });
+    broadcast('jobs_to_consider_updated', { total: jobsTotal(store) });
     queueLivenessSweep('job created');
     return res.status(201).json(store);
   } catch (err) {
@@ -929,8 +956,7 @@ app.patch('/api/jobs-to-consider/:id', (req, res) => {
     if (updates.status !== undefined || updates.applied !== undefined) {
       logJobConsiderPatchEvent(result.job, updates);
     }
-    const dashboard = syncConsiderJobsToDashboard();
-    broadcast('jobs_to_consider_updated', { id: result.job.id, total: dashboard.total });
+    broadcast('jobs_to_consider_updated', { id: result.job.id, total: jobsTotal(result) });
     if (updates.url || updates.status) queueLivenessSweep('job updated');
     return res.json(withToday(result));
   } catch (err) {
@@ -942,12 +968,12 @@ app.patch('/api/jobs-to-consider/:id', (req, res) => {
 app.delete('/api/jobs-to-consider/:id', (req, res) => {
   try {
     const result = deleteConsiderJob({ id: req.params.id, ...(req.body || {}) }, CANONICAL_JOBS_FILE, { missingOk: true });
-    const dashboard = syncConsiderJobsToDashboard();
     triggerSync();
     const id = result.job?.id || req.params.id;
-    broadcast('jobs_to_consider_deleted', { id, missing: Boolean(result.missing), total: dashboard.total });
-    broadcast('jobs_to_consider_updated', { id, missing: Boolean(result.missing), total: dashboard.total });
-    return res.json({ ...result, total: dashboard.total });
+    const total = jobsTotal(result);
+    broadcast('jobs_to_consider_deleted', { id, missing: Boolean(result.missing), total });
+    broadcast('jobs_to_consider_updated', { id, missing: Boolean(result.missing), total });
+    return res.json({ ...result, total });
   } catch (err) {
     const status = /not found/i.test(err?.message || '') ? 404 : 400;
     return res.status(status).json({ error: err?.message || 'failed to delete job to consider' });
@@ -1202,8 +1228,7 @@ app.get('/api/research-prospects', (req, res) => {
 app.post('/api/research-prospects', (req, res) => {
   try {
     const store = upsertResearchProspect(req.body || {});
-    const dashboard = syncResearchProspectsToDashboard();
-    broadcast('research_prospects_updated', { total: dashboard.total });
+    broadcast('research_prospects_updated', { total: store.prospects?.length || 0 });
     return res.status(201).json(store);
   } catch (err) {
     return res.status(400).json({ error: err?.message || 'failed to create research prospect' });
@@ -1216,7 +1241,7 @@ app.patch('/api/research-prospects/:id', (req, res) => {
     const dashboard = syncProspectsAfterPatch(result);
     if (req.body?.status) logResearchStatusEvent(result.prospect, 'umich');
     broadcast('research_prospects_updated', { id: result.prospect.id, total: dashboard.total });
-    return res.json(withToday(result));
+    return res.json(withToday(result, { refresh: Boolean(req.body?.status) }));
   } catch (err) {
     const status = /not found/i.test(err?.message || '') ? 404 : 400;
     return res.status(status).json({ error: err?.message || 'failed to update research prospect' });
@@ -1247,8 +1272,7 @@ app.post('/api/kth-research-prospects', (req, res) => {
       ...(req.body || {}),
       institution: req.body?.institution || 'kth',
     }, { institution: 'kth' });
-    const dashboard = syncResearchProspectsToDashboard({ institution: 'kth' });
-    broadcast('kth_research_prospects_updated', { total: dashboard.total });
+    broadcast('kth_research_prospects_updated', { total: store.prospects?.length || 0 });
     return res.status(201).json(store);
   } catch (err) {
     return res.status(400).json({ error: err?.message || 'failed to create KTH research prospect' });
@@ -1258,7 +1282,7 @@ app.post('/api/kth-research-prospects', (req, res) => {
 app.patch('/api/kth-research-prospects/:id', (req, res) => {
   try {
     const result = patchResearchProspect(req.params.id, req.body || {}, { institution: 'kth' });
-    const dashboard = syncProspectsAfterPatch(result, { institution: 'kth' });
+    const dashboard = syncProspectsAfterPatch(result);
     if (req.body?.status) logResearchStatusEvent(result.prospect, 'kth');
     broadcast('kth_research_prospects_updated', { id: result.prospect.id, total: dashboard.total });
     return res.json(withToday(result));
@@ -1294,9 +1318,8 @@ app.post('/api/phd-research-prospects/:source', (req, res) => {
       source,
       institution: req.body?.institution || source,
     }, { source });
-    const dashboard = syncResearchProspectsToDashboard({ source });
-    broadcast('phd_research_prospects_updated', { source, total: dashboard.total });
-    if (source === 'kth') broadcast('kth_research_prospects_updated', { total: dashboard.total });
+    broadcast('phd_research_prospects_updated', { source, total: store.prospects?.length || 0 });
+    if (source === 'kth') broadcast('kth_research_prospects_updated', { total: store.prospects?.length || 0 });
     return res.status(201).json(store);
   } catch (err) {
     return res.status(400).json({ error: err?.message || 'failed to create PhD research prospect' });
@@ -1356,48 +1379,28 @@ app.get('/api/euraxess/factory/status', async (_req, res) => {
   }
 });
 
-app.post('/api/euraxess/factory/run', async (req, res) => {
+app.post('/api/euraxess/factory/run', (req, res) => {
   const input = req.body || {};
   const job = jobStore.create('euraxess_factory_run', input, {
     label: 'Run EURAXESS factory',
     description: 'Process queued/high-fit EURAXESS opportunities through research and draft artifact gates.',
   });
-  jobStore.update(job.id, { status: 'running' });
-  try {
-    const result = await processEuraxessFactory({
-      max: Number(input.max || 3),
-      dryRun: Boolean(input.dry_run || input.dryRun),
-      force: Boolean(input.force),
-      retryFailures: Boolean(input.retry_failures || input.retryFailures),
-      pollTimeoutSec: Number(input.poll_timeout_sec || input.poll_timeout || 120),
-    });
-    jobStore.appendLog(job.id, 'stdout', JSON.stringify(result, null, 2));
-    jobStore.finish(job.id, 0);
-    syncEuraxessOpportunitiesToDashboard();
-    broadcast('euraxess_factory_updated', result);
-    broadcast('euraxess_opportunities_updated', { total: readEuraxessOpportunities().opportunities?.length || 0 });
-    return res.json({
-      job: { ...jobStore.get(job.id), status: 'completed' },
-      result,
-      summary: {
-        processed: result.processed ?? result.results?.length ?? 0,
-        results: (result.results || []).map(item => ({
-          id: item.id,
-          title: item.title,
-          status: item.status,
-          stage: item.stage,
-        })),
-      },
-    });
-  } catch (err) {
-    jobStore.appendLog(job.id, 'stderr', err?.stack || err?.message || String(err));
-    jobStore.finish(job.id, 1, err?.message || String(err));
-    broadcast('euraxess_factory_failed', { error: err?.message || String(err) });
-    return res.status(500).json({
-      job: { ...jobStore.get(job.id), status: 'failed' },
-      error: err?.message || String(err),
-    });
-  }
+  spawnNodeJob({
+    jobStore,
+    job,
+    baseDir: BASE,
+    script: 'euraxess-factory-worker.mjs',
+    args: factoryWorkerArgs(input),
+    timeoutMs: 10 * 60_000,
+    onSuccess: () => {
+      broadcast('euraxess_factory_updated', { job_id: job.id });
+      broadcast('euraxess_opportunities_updated', { total: readEuraxessOpportunities().opportunities?.length || 0 });
+    },
+    onFail: (err) => {
+      broadcast('euraxess_factory_failed', { error: err?.message || String(err) });
+    },
+  });
+  res.status(202).json({ job, queued: true });
 });
 
 app.get('/api/exhibitor/companies', (_req, res) => {
@@ -1424,46 +1427,28 @@ app.get('/api/exhibitor/factory/status', (_req, res) => {
   }
 });
 
-app.post('/api/exhibitor/factory/run', async (req, res) => {
+app.post('/api/exhibitor/factory/run', (req, res) => {
   const input = req.body || {};
   const job = jobStore.create('exhibitor_factory_run', input, {
     label: 'Process Target Companies exhibitor queue',
     description: 'Promote queued exhibitor research work orders for Cursor clear-queue.',
   });
-  jobStore.update(job.id, { status: 'running' });
-  try {
-    const result = processExhibitorFactory({
-      max: Number(input.max || 20),
-      force: Boolean(input.force),
-    });
-    jobStore.appendLog(job.id, 'stdout', JSON.stringify(result, null, 2));
-    jobStore.finish(job.id, 0);
-    syncExhibitorCompaniesToDashboard();
-    broadcast('exhibitor_factory_updated', result);
-    broadcast('exhibitor_companies_updated', { total: readExhibitorCompanies().companies?.length || 0 });
-    return res.json({
-      job: { ...jobStore.get(job.id), status: 'completed' },
-      result,
-      summary: {
-        processed: result.processed ?? result.results?.length ?? 0,
-        results: (result.results || []).map(item => ({
-          id: item.id,
-          company: item.company,
-          status: item.status,
-          stage: item.stage,
-        })),
-        message: result.message,
-      },
-    });
-  } catch (err) {
-    jobStore.appendLog(job.id, 'stderr', err?.stack || err?.message || String(err));
-    jobStore.finish(job.id, 1, err?.message || String(err));
-    broadcast('exhibitor_factory_failed', { error: err?.message || String(err) });
-    return res.status(500).json({
-      job: { ...jobStore.get(job.id), status: 'failed' },
-      error: err?.message || String(err),
-    });
-  }
+  spawnNodeJob({
+    jobStore,
+    job,
+    baseDir: BASE,
+    script: 'exhibitor-factory-worker.mjs',
+    args: factoryWorkerArgs({ ...input, max: input.max || 20 }),
+    timeoutMs: 10 * 60_000,
+    onSuccess: () => {
+      broadcast('exhibitor_factory_updated', { job_id: job.id });
+      broadcast('exhibitor_companies_updated', { total: readExhibitorCompanies().companies?.length || 0 });
+    },
+    onFail: (err) => {
+      broadcast('exhibitor_factory_failed', { error: err?.message || String(err) });
+    },
+  });
+  res.status(202).json({ job, queued: true });
 });
 
 app.get('/api/exhibitor/companies/:id', (req, res) => {
@@ -1520,7 +1505,7 @@ app.post('/api/euraxess/scan', (req, res) => {
     try {
       const { execFile } = await import('child_process');
       const result = await new Promise(resolve => {
-        execFile(process.execPath, [join(BASE, 'euraxess-scan.mjs'), ...args], {
+        execFile(process.execPath, nodeScriptInvocation(join(BASE, 'euraxess-scan.mjs'), args), {
           cwd: BASE,
           timeout: 5 * 60_000,
           windowsHide: true,
@@ -1558,7 +1543,7 @@ app.post('/api/euraxess/backfill', (req, res) => {
     try {
       const { execFile } = await import('child_process');
       const result = await new Promise(resolve => {
-        execFile(process.execPath, [join(BASE, 'euraxess-backfill.mjs'), ...args], {
+        execFile(process.execPath, nodeScriptInvocation(join(BASE, 'euraxess-backfill.mjs'), args), {
           cwd: BASE,
           timeout: 10 * 60_000,
           windowsHide: true,
@@ -1583,7 +1568,7 @@ app.post('/api/euraxess/backfill', (req, res) => {
 
 app.get('/api/euraxess/opportunities/:id', (req, res) => {
   try {
-    const opportunity = findEuraxessOpportunity(req.params.id, readEuraxessOpportunities());
+    const opportunity = findEuraxessOpportunity(req.params.id);
     if (!opportunity) return res.status(404).json({ error: 'EURAXESS opportunity not found' });
     return res.json({ opportunity });
   } catch (err) {
@@ -1594,8 +1579,7 @@ app.get('/api/euraxess/opportunities/:id', (req, res) => {
 app.patch('/api/euraxess/opportunities/:id', (req, res) => {
   try {
     const result = patchEuraxessOpportunity(req.params.id, req.body || {});
-    const dashboard = syncEuraxessOpportunitiesToDashboard();
-    broadcast('euraxess_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    broadcast('euraxess_opportunities_updated', { id: result.opportunity.id, total: opportunityTotal(result) });
     return res.json(withToday(result));
   } catch (err) {
     const status = /not found/i.test(err?.message || '') ? 404 : 400;
@@ -1620,8 +1604,7 @@ app.post('/api/euraxess/opportunities/:id/queue-research', (req, res) => {
       notes: req.body?.notes,
     });
     const queued = queueEuraxessOpportunityWork(result.opportunity, { pack: false });
-    const dashboard = syncEuraxessOpportunitiesToDashboard();
-    broadcast('euraxess_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    broadcast('euraxess_opportunities_updated', { id: result.opportunity.id, total: opportunityTotal(result) });
     return res.json(withToday({
       ...result,
       tasks: queued.tasks || [],
@@ -1651,8 +1634,7 @@ app.post('/api/euraxess/opportunities/:id/queue-application-pack', (req, res) =>
       notes: req.body?.notes,
     });
     const queued = queueEuraxessOpportunityWork(result.opportunity, { pack: true });
-    const dashboard = syncEuraxessOpportunitiesToDashboard();
-    broadcast('euraxess_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    broadcast('euraxess_opportunities_updated', { id: result.opportunity.id, total: opportunityTotal(result) });
     return res.json(withToday({
       ...result,
       tasks: queued.tasks || [],
@@ -1666,7 +1648,7 @@ app.post('/api/euraxess/opportunities/:id/queue-application-pack', (req, res) =>
 
 app.post('/api/euraxess/opportunities/:id/archive', (req, res) => {
   try {
-    const existing = findEuraxessOpportunity(req.params.id, readEuraxessOpportunities());
+    const existing = findEuraxessOpportunity(req.params.id);
     if (!existing) {
       return res.status(404).json({ error: `EURAXESS opportunity not found: ${req.params.id}` });
     }
@@ -1690,8 +1672,7 @@ app.post('/api/euraxess/opportunities/:id/archive', (req, res) => {
         archive_reason: req.body?.reason || req.body?.archive_reason || 'Archived from dashboard.',
       },
     });
-    const dashboard = syncEuraxessOpportunitiesToDashboard();
-    broadcast('euraxess_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    broadcast('euraxess_opportunities_updated', { id: result.opportunity.id, total: opportunityTotal(result) });
     return res.json(withToday({
       ...result,
       message: `Archived: ${result.opportunity.title}`,
@@ -1720,8 +1701,7 @@ app.post('/api/euraxess/opportunities/:id/retry', (req, res) => {
       },
     });
     const queued = queueEuraxessOpportunityWork(result.opportunity, { pack });
-    const dashboard = syncEuraxessOpportunitiesToDashboard();
-    broadcast('euraxess_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    broadcast('euraxess_opportunities_updated', { id: result.opportunity.id, total: opportunityTotal(result) });
     return res.json(withToday({
       ...result,
       tasks: queued.tasks || [],
@@ -1737,7 +1717,7 @@ app.post('/api/euraxess/opportunities/:id/retry', (req, res) => {
 
 app.post('/api/euraxess/opportunities/:id/execution', (req, res) => {
   try {
-    const existing = findEuraxessOpportunity(req.params.id, readEuraxessOpportunities());
+    const existing = findEuraxessOpportunity(req.params.id);
     if (!existing) return res.status(404).json({ error: 'EURAXESS opportunity not found' });
     const body = req.body || {};
     const prev = existing.execution || {};
@@ -1772,8 +1752,7 @@ app.post('/api/euraxess/opportunities/:id/execution', (req, res) => {
       archived: false,
       visible: existing.visible !== false,
     });
-    const dashboard = syncEuraxessOpportunitiesToDashboard();
-    broadcast('euraxess_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    broadcast('euraxess_opportunities_updated', { id: result.opportunity.id, total: opportunityTotal(result) });
     return res.json(withToday({
       ...result,
       message: result.opportunity.execution?.stage
@@ -1789,7 +1768,7 @@ app.post('/api/euraxess/opportunities/:id/execution', (req, res) => {
 app.post('/api/euraxess/opportunities/:id/apply', (req, res) => {
   try {
     const applied = req.body?.applied !== false;
-    const existing = findEuraxessOpportunity(req.params.id, readEuraxessOpportunities());
+    const existing = findEuraxessOpportunity(req.params.id);
     if (!existing) return res.status(404).json({ error: 'EURAXESS opportunity not found' });
     const prev = existing.execution || {};
 
@@ -1811,10 +1790,9 @@ app.post('/api/euraxess/opportunities/:id/apply', (req, res) => {
           stage_updated_at: new Date().toISOString(),
         },
       });
-      const dashboard = syncEuraxessOpportunitiesToDashboard();
       syncApplications();
       triggerSync();
-      broadcast('euraxess_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+      broadcast('euraxess_opportunities_updated', { id: result.opportunity.id, total: opportunityTotal(result) });
       broadcast('application_deleted', { num: prev.application_num || null });
       return res.json(withToday({ opportunity: result.opportunity, application: null }));
     }
@@ -1859,16 +1837,15 @@ app.post('/api/euraxess/opportunities/:id/apply', (req, res) => {
       archived: false,
       visible: true,
     });
-    const dashboard = syncEuraxessOpportunitiesToDashboard();
     syncApplications();
     triggerSync();
-    broadcast('euraxess_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    broadcast('euraxess_opportunities_updated', { id: result.opportunity.id, total: opportunityTotal(result) });
     broadcast('application_updated', {
       num: trackerResult.num,
       created: !trackerResult.duplicate,
       duplicate: trackerResult.duplicate,
     });
-    return res.json(withToday({ opportunity: result.opportunity, application: trackerResult }));
+    return res.json(withToday({ opportunity: result.opportunity, application: trackerResult }, { refresh: true }));
   } catch (err) {
     return res.status(400).json({ error: err?.message || 'failed to update EURAXESS applied state' });
   }
@@ -1907,7 +1884,7 @@ app.post('/api/umich-careers/scan', (req, res) => {
     try {
       const { execFile } = await import('child_process');
       const result = await new Promise(resolve => {
-        execFile(process.execPath, [join(BASE, 'umich-careers-scan.mjs'), ...args], {
+        execFile(process.execPath, nodeScriptInvocation(join(BASE, 'umich-careers-scan.mjs'), args), {
           cwd: BASE,
           timeout: (mode === 'full' ? 30 : 10) * 60_000,
           windowsHide: true,
@@ -1931,7 +1908,7 @@ app.post('/api/umich-careers/scan', (req, res) => {
 
 app.get('/api/umich-careers/opportunities/:id', (req, res) => {
   try {
-    const opportunity = findUmichOpportunity(req.params.id, readUmichOpportunities());
+    const opportunity = findUmichOpportunity(req.params.id);
     if (!opportunity) return res.status(404).json({ error: 'U-M Careers opportunity not found' });
     return res.json({ opportunity });
   } catch (err) {
@@ -1942,8 +1919,7 @@ app.get('/api/umich-careers/opportunities/:id', (req, res) => {
 app.patch('/api/umich-careers/opportunities/:id', (req, res) => {
   try {
     const result = patchUmichOpportunity(req.params.id, req.body || {});
-    const dashboard = syncUmichOpportunitiesToDashboard();
-    broadcast('umich_careers_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    broadcast('umich_careers_opportunities_updated', { id: result.opportunity.id, total: opportunityTotal(result, 'umich_opportunities') });
     return res.json(result);
   } catch (err) {
     const status = /not found/i.test(err?.message || '') ? 404 : 400;
@@ -1953,7 +1929,7 @@ app.patch('/api/umich-careers/opportunities/:id', (req, res) => {
 
 app.post('/api/umich-careers/opportunities/:id/archive', (req, res) => {
   try {
-    const existing = findUmichOpportunity(req.params.id, readUmichOpportunities());
+    const existing = findUmichOpportunity(req.params.id);
     if (!existing) return res.status(404).json({ error: 'U-M Careers opportunity not found' });
     const gate = assertCanArchiveOpportunity(existing, { force: Boolean(req.body?.force) });
     if (!gate.allowed) {
@@ -1963,8 +1939,7 @@ app.post('/api/umich-careers/opportunities/:id/archive', (req, res) => {
       reason: req.body?.reason || req.body?.archive_reason || 'Archived from dashboard.',
       force: Boolean(req.body?.force),
     });
-    const dashboard = syncUmichOpportunitiesToDashboard();
-    broadcast('umich_careers_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    broadcast('umich_careers_opportunities_updated', { id: result.opportunity.id, total: opportunityTotal(result, 'umich_opportunities') });
     return res.json({
       ...result,
       message: `Archived: ${result.opportunity.working_title || result.opportunity.title}`,
@@ -1978,8 +1953,7 @@ app.post('/api/umich-careers/opportunities/:id/archive', (req, res) => {
 app.post('/api/umich-careers/opportunities/:id/unarchive', (req, res) => {
   try {
     const result = unarchiveUmichOpportunity(req.params.id);
-    const dashboard = syncUmichOpportunitiesToDashboard();
-    broadcast('umich_careers_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    broadcast('umich_careers_opportunities_updated', { id: result.opportunity.id, total: opportunityTotal(result, 'umich_opportunities') });
     return res.json({
       ...result,
       message: `Restored from archive: ${result.opportunity.working_title || result.opportunity.title}`,
@@ -1993,7 +1967,7 @@ app.post('/api/umich-careers/opportunities/:id/unarchive', (req, res) => {
 app.post('/api/umich-careers/opportunities/:id/apply', (req, res) => {
   try {
     const applied = req.body?.applied !== false;
-    const existing = findUmichOpportunity(req.params.id, readUmichOpportunities());
+    const existing = findUmichOpportunity(req.params.id);
     if (!existing) return res.status(404).json({ error: 'U-M Careers opportunity not found' });
 
     if (!applied) {
@@ -2009,10 +1983,9 @@ app.post('/api/umich-careers/opportunities/:id/apply', (req, res) => {
         application_num: null,
         applied_at: '',
       });
-      const dashboard = syncUmichOpportunitiesToDashboard();
       syncApplications();
       triggerSync();
-      broadcast('umich_careers_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+      broadcast('umich_careers_opportunities_updated', { id: result.opportunity.id, total: opportunityTotal(result, 'umich_opportunities') });
       broadcast('application_deleted', { num: existing.application_num || null });
       return res.json(withToday({
         opportunity: result.opportunity,
@@ -2064,10 +2037,9 @@ app.post('/api/umich-careers/opportunities/:id/apply', (req, res) => {
       archive_reason: '',
       archived_at: '',
     });
-    const dashboard = syncUmichOpportunitiesToDashboard();
     syncApplications();
     triggerSync();
-    broadcast('umich_careers_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    broadcast('umich_careers_opportunities_updated', { id: result.opportunity.id, total: opportunityTotal(result, 'umich_opportunities') });
     broadcast('application_updated', {
       num: trackerResult.num,
       created: !trackerResult.duplicate,
@@ -2077,7 +2049,7 @@ app.post('/api/umich-careers/opportunities/:id/apply', (req, res) => {
       opportunity: result.opportunity,
       application: trackerResult,
       message: `Applied: ${role} → Applications #${trackerResult.num}`,
-    }));
+    }, { refresh: true }));
   } catch (err) {
     const status = /not found/i.test(err?.message || '') ? 404 : 400;
     return res.status(status).json({ error: err?.message || 'failed to update U-M Careers applied state' });
@@ -2086,7 +2058,7 @@ app.post('/api/umich-careers/opportunities/:id/apply', (req, res) => {
 
 app.post('/api/umich-careers/opportunities/:id/add-to-consider', (req, res) => {
   try {
-    const existing = findUmichOpportunity(req.params.id, readUmichOpportunities());
+    const existing = findUmichOpportunity(req.params.id);
     if (!existing) return res.status(404).json({ error: 'U-M Careers opportunity not found' });
 
     // Idempotent: reuse the linked Jobs to Consider entry when it still exists.
@@ -2095,7 +2067,6 @@ app.post('/api/umich-careers/opportunities/:id/add-to-consider', (req, res) => {
     if (byUrl) {
       if (!existing.jobs_to_consider_id || existing.jobs_to_consider_id !== byUrl.id) {
         patchUmichOpportunity(req.params.id, { jobs_to_consider_id: byUrl.id });
-        syncUmichOpportunitiesToDashboard();
       }
       return res.json({ job: byUrl, created: false, message: 'Already on Jobs to Consider.' });
     }
@@ -2121,9 +2092,7 @@ app.post('/api/umich-careers/opportunities/:id/add-to-consider', (req, res) => {
     if (job) {
       patchUmichOpportunity(req.params.id, { jobs_to_consider_id: job.id });
     }
-    const dashboard = syncConsiderJobsToDashboard();
-    syncUmichOpportunitiesToDashboard();
-    broadcast('jobs_to_consider_updated', { total: dashboard.total });
+    broadcast('jobs_to_consider_updated', { total: readConsiderJobs().jobs.length });
     broadcast('umich_careers_opportunities_updated', { id: existing.id });
     return res.status(201).json({ job, created: true, message: 'Added to Jobs to Consider for review.' });
   } catch (err) {
@@ -2156,48 +2125,28 @@ app.get('/api/phdscanner/factory/status', async (_req, res) => {
   }
 });
 
-app.post('/api/phdscanner/factory/run', async (req, res) => {
+app.post('/api/phdscanner/factory/run', (req, res) => {
   const input = req.body || {};
   const job = jobStore.create('phdscanner_factory_run', input, {
     label: 'Run PhDScanner factory',
     description: 'Process queued/high-fit PhDScanner opportunities through research and draft artifact gates.',
   });
-  jobStore.update(job.id, { status: 'running' });
-  try {
-    const result = await processPhdscannerFactory({
-      max: Number(input.max || 3),
-      dryRun: Boolean(input.dry_run || input.dryRun),
-      force: Boolean(input.force),
-      retryFailures: Boolean(input.retry_failures || input.retryFailures),
-      pollTimeoutSec: Number(input.poll_timeout_sec || input.poll_timeout || 120),
-    });
-    jobStore.appendLog(job.id, 'stdout', JSON.stringify(result, null, 2));
-    jobStore.finish(job.id, 0);
-    syncPhdscannerOpportunitiesToDashboard();
-    broadcast('phdscanner_factory_updated', result);
-    broadcast('phdscanner_opportunities_updated', { total: readPhdscannerOpportunities().opportunities?.length || 0 });
-    return res.json({
-      job: { ...jobStore.get(job.id), status: 'completed' },
-      result,
-      summary: {
-        processed: result.processed ?? result.results?.length ?? 0,
-        results: (result.results || []).map(item => ({
-          id: item.id,
-          title: item.title,
-          status: item.status,
-          stage: item.stage,
-        })),
-      },
-    });
-  } catch (err) {
-    jobStore.appendLog(job.id, 'stderr', err?.stack || err?.message || String(err));
-    jobStore.finish(job.id, 1, err?.message || String(err));
-    broadcast('phdscanner_factory_failed', { error: err?.message || String(err) });
-    return res.status(500).json({
-      job: { ...jobStore.get(job.id), status: 'failed' },
-      error: err?.message || String(err),
-    });
-  }
+  spawnNodeJob({
+    jobStore,
+    job,
+    baseDir: BASE,
+    script: 'phdscanner-factory-worker.mjs',
+    args: factoryWorkerArgs(input),
+    timeoutMs: 10 * 60_000,
+    onSuccess: () => {
+      broadcast('phdscanner_factory_updated', { job_id: job.id });
+      broadcast('phdscanner_opportunities_updated', { total: readPhdscannerOpportunities().opportunities?.length || 0 });
+    },
+    onFail: (err) => {
+      broadcast('phdscanner_factory_failed', { error: err?.message || String(err) });
+    },
+  });
+  res.status(202).json({ job, queued: true });
 });
 
 app.post('/api/phdscanner/scan', (req, res) => {
@@ -2216,7 +2165,7 @@ app.post('/api/phdscanner/scan', (req, res) => {
     try {
       const { execFile } = await import('child_process');
       const result = await new Promise(resolve => {
-        execFile(process.execPath, [join(BASE, 'phdscanner-scan.mjs'), ...args], {
+        execFile(process.execPath, nodeScriptInvocation(join(BASE, 'phdscanner-scan.mjs'), args), {
           cwd: BASE,
           timeout: 10 * 60_000,
           windowsHide: true,
@@ -2254,7 +2203,7 @@ app.post('/api/findaphd/scan', (req, res) => {
     try {
       const { execFile } = await import('child_process');
       const result = await new Promise(resolve => {
-        execFile(process.execPath, [join(BASE, 'findaphd-scan.mjs'), ...args], {
+        execFile(process.execPath, nodeScriptInvocation(join(BASE, 'findaphd-scan.mjs'), args), {
           cwd: BASE,
           timeout: 15 * 60_000,
           windowsHide: true,
@@ -2278,7 +2227,7 @@ app.post('/api/findaphd/scan', (req, res) => {
 
 app.get('/api/phdscanner/opportunities/:id', (req, res) => {
   try {
-    const opportunity = findPhdscannerOpportunity(req.params.id, readPhdscannerOpportunities());
+    const opportunity = findPhdscannerOpportunity(req.params.id);
     if (!opportunity) return res.status(404).json({ error: 'PhDScanner opportunity not found' });
     return res.json({ opportunity });
   } catch (err) {
@@ -2289,8 +2238,7 @@ app.get('/api/phdscanner/opportunities/:id', (req, res) => {
 app.patch('/api/phdscanner/opportunities/:id', (req, res) => {
   try {
     const result = patchPhdscannerOpportunity(req.params.id, req.body || {});
-    const dashboard = syncPhdscannerOpportunitiesToDashboard();
-    broadcast('phdscanner_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    broadcast('phdscanner_opportunities_updated', { id: result.opportunity.id, total: opportunityTotal(result, 'phdscanner_opportunities') });
     return res.json(withToday(result));
   } catch (err) {
     const status = /not found/i.test(err?.message || '') ? 404 : 400;
@@ -2308,8 +2256,7 @@ app.post('/api/phdscanner/opportunities/:id/queue-research', (req, res) => {
       automation: { worker_status: 'queued_research', current_stage: 'queued_research', last_error: '', runner: 'phdscanner-factory' },
     });
     const queued = queuePhdscannerOpportunityWork(result.opportunity, { pack: false });
-    const dashboard = syncPhdscannerOpportunitiesToDashboard();
-    broadcast('phdscanner_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    broadcast('phdscanner_opportunities_updated', { id: result.opportunity.id, total: opportunityTotal(result, 'phdscanner_opportunities') });
     return res.json(withToday({ ...result, tasks: queued.tasks || [], message: `Queued research for ${result.opportunity.title}` }));
   } catch (err) {
     const status = /not found/i.test(err?.message || '') ? 404 : 400;
@@ -2328,8 +2275,7 @@ app.post('/api/phdscanner/opportunities/:id/queue-application-pack', (req, res) 
       automation: { worker_status: 'queued_pack', current_stage: 'queued_pack', last_error: '', runner: 'phdscanner-factory' },
     });
     const queued = queuePhdscannerOpportunityWork(result.opportunity, { pack: true });
-    const dashboard = syncPhdscannerOpportunitiesToDashboard();
-    broadcast('phdscanner_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    broadcast('phdscanner_opportunities_updated', { id: result.opportunity.id, total: opportunityTotal(result, 'phdscanner_opportunities') });
     return res.json(withToday({ ...result, tasks: queued.tasks || [], message: `Queued application pack for ${result.opportunity.title}` }));
   } catch (err) {
     const status = /not found/i.test(err?.message || '') ? 404 : 400;
@@ -2339,7 +2285,7 @@ app.post('/api/phdscanner/opportunities/:id/queue-application-pack', (req, res) 
 
 app.post('/api/phdscanner/opportunities/:id/archive', (req, res) => {
   try {
-    const existing = findPhdscannerOpportunity(req.params.id, readPhdscannerOpportunities());
+    const existing = findPhdscannerOpportunity(req.params.id);
     if (!existing) {
       return res.status(404).json({ error: `PhDScanner opportunity not found: ${req.params.id}` });
     }
@@ -2357,8 +2303,7 @@ app.post('/api/phdscanner/opportunities/:id/archive', (req, res) => {
       automation: { worker_status: 'not_needed', current_stage: 'applied_or_archived', last_error: '' },
       decision: { archive_reason: req.body?.reason || req.body?.archive_reason || 'Archived from dashboard.' },
     });
-    const dashboard = syncPhdscannerOpportunitiesToDashboard();
-    broadcast('phdscanner_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    broadcast('phdscanner_opportunities_updated', { id: result.opportunity.id, total: opportunityTotal(result, 'phdscanner_opportunities') });
     return res.json(withToday({ ...result, message: `Archived: ${result.opportunity.title}` }));
   } catch (err) {
     const status = /not found/i.test(err?.message || '') ? 404 : 400;
@@ -2384,8 +2329,7 @@ app.post('/api/phdscanner/opportunities/:id/retry', (req, res) => {
       },
     });
     const queued = queuePhdscannerOpportunityWork(result.opportunity, { pack });
-    const dashboard = syncPhdscannerOpportunitiesToDashboard();
-    broadcast('phdscanner_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    broadcast('phdscanner_opportunities_updated', { id: result.opportunity.id, total: opportunityTotal(result, 'phdscanner_opportunities') });
     return res.json(withToday({ ...result, tasks: queued.tasks || [] }));
   } catch (err) {
     const status = /not found/i.test(err?.message || '') ? 404 : 400;
@@ -2395,7 +2339,7 @@ app.post('/api/phdscanner/opportunities/:id/retry', (req, res) => {
 
 app.post('/api/phdscanner/opportunities/:id/execution', (req, res) => {
   try {
-    const existing = findPhdscannerOpportunity(req.params.id, readPhdscannerOpportunities());
+    const existing = findPhdscannerOpportunity(req.params.id);
     if (!existing) return res.status(404).json({ error: 'PhDScanner opportunity not found' });
     const prev = existing.execution || {};
     let stage = req.body?.stage !== undefined ? req.body.stage : prev.stage;
@@ -2418,8 +2362,7 @@ app.post('/api/phdscanner/opportunities/:id/execution', (req, res) => {
       },
       archived: false,
     });
-    const dashboard = syncPhdscannerOpportunitiesToDashboard();
-    broadcast('phdscanner_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    broadcast('phdscanner_opportunities_updated', { id: result.opportunity.id, total: opportunityTotal(result, 'phdscanner_opportunities') });
     return res.json(withToday({
       ...result,
       message: result.opportunity.execution?.stage
@@ -2435,7 +2378,7 @@ app.post('/api/phdscanner/opportunities/:id/execution', (req, res) => {
 app.post('/api/phdscanner/opportunities/:id/apply', (req, res) => {
   try {
     const applied = req.body?.applied !== false;
-    const existing = findPhdscannerOpportunity(req.params.id, readPhdscannerOpportunities());
+    const existing = findPhdscannerOpportunity(req.params.id);
     if (!existing) return res.status(404).json({ error: 'PhDScanner opportunity not found' });
     const prev = existing.execution || {};
 
@@ -2457,10 +2400,9 @@ app.post('/api/phdscanner/opportunities/:id/apply', (req, res) => {
           stage_updated_at: new Date().toISOString(),
         },
       });
-      const dashboard = syncPhdscannerOpportunitiesToDashboard();
       syncApplications();
       triggerSync();
-      broadcast('phdscanner_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+      broadcast('phdscanner_opportunities_updated', { id: result.opportunity.id, total: opportunityTotal(result, 'phdscanner_opportunities') });
       broadcast('application_deleted', { num: prev.application_num || null });
       return res.json(withToday({ opportunity: result.opportunity, application: null }));
     }
@@ -2505,16 +2447,15 @@ app.post('/api/phdscanner/opportunities/:id/apply', (req, res) => {
       archived: false,
       visible: true,
     });
-    const dashboard = syncPhdscannerOpportunitiesToDashboard();
     syncApplications();
     triggerSync();
-    broadcast('phdscanner_opportunities_updated', { id: result.opportunity.id, total: dashboard.opportunities.length });
+    broadcast('phdscanner_opportunities_updated', { id: result.opportunity.id, total: opportunityTotal(result, 'phdscanner_opportunities') });
     broadcast('application_updated', {
       num: trackerResult.num,
       created: !trackerResult.duplicate,
       duplicate: trackerResult.duplicate,
     });
-    return res.json(withToday({ opportunity: result.opportunity, application: trackerResult }));
+    return res.json(withToday({ opportunity: result.opportunity, application: trackerResult }, { refresh: true }));
   } catch (err) {
     return res.status(400).json({ error: err?.message || 'failed to update PhDScanner applied state' });
   }
@@ -2523,8 +2464,7 @@ app.post('/api/phdscanner/opportunities/:id/apply', (req, res) => {
 app.post('/api/jobs-to-consider/:id/apply', (req, res) => {
   try {
     const applied = req.body?.applied !== false;
-    const store = readConsiderJobs();
-    const job = findConsiderJob(req.params.id, store);
+    const job = findConsiderJob(req.params.id);
     if (!job) return res.status(404).json({ error: 'job not found' });
 
     if (!applied) {
@@ -2541,10 +2481,9 @@ app.post('/api/jobs-to-consider/:id/apply', (req, res) => {
         application_num: null,
         applied_at: '',
       });
-      const dashboard = syncConsiderJobsToDashboard();
       syncApplications();
       triggerSync();
-      broadcast('jobs_to_consider_updated', { id: result.job.id, total: dashboard.total });
+      broadcast('jobs_to_consider_updated', { id: result.job.id, total: jobsTotal(result) });
       broadcast('application_deleted', { num: job.application_num || null });
       return res.json(withToday({ job: result.job, application: null }));
     }
@@ -2588,10 +2527,9 @@ app.post('/api/jobs-to-consider/:id/apply', (req, res) => {
         networking = { error: err?.message || 'failed to queue networking research' };
       }
     }
-    const dashboard = syncConsiderJobsToDashboard();
     syncApplications();
     triggerSync();
-    broadcast('jobs_to_consider_updated', { id: result.job.id, total: dashboard.total });
+    broadcast('jobs_to_consider_updated', { id: result.job.id, total: jobsTotal(result) });
     broadcast('application_updated', {
       num: trackerResult.num,
       created: !trackerResult.duplicate,
@@ -2617,8 +2555,7 @@ app.post('/api/jobs-to-consider/:id/queue-networking', (req, res) => {
       personas: req.body?.personas,
       notes: req.body?.notes || '',
     });
-    const dashboard = syncConsiderJobsToDashboard();
-    broadcast('jobs_to_consider_updated', { id: result.job.id, total: dashboard.total });
+    broadcast('jobs_to_consider_updated', { id: result.job.id, total: jobsTotal(result) });
     broadcast('networking_research_queue_updated', { order_id: result.order.id, duplicate: result.duplicate });
     broadcast('networking_updated', { organization_id: result.organization?.id });
     logNetworkingActivity({
@@ -2875,7 +2812,7 @@ async function triggerSync() {
     syncDebounce = null;
     try {
       const { execFile } = await import('child_process');
-      execFile('node', [join(BASE, 'adapters', 'sync-all.mjs')], { cwd: BASE, timeout: 30_000 },
+      execFile(process.execPath, nodeScriptInvocation(join(BASE, 'adapters', 'sync-all.mjs')), { cwd: BASE, timeout: 30_000 },
         (err, stdout) => {
           if (stdout) process.stdout.write(stdout);
           broadcast('career_ops_synced', { note: 'career-ops data refreshed' });
@@ -2905,6 +2842,13 @@ function startFileWatchers() {
   const watcher = watch(DATA_DIR, {
     ignoreInitial: true,
     awaitWriteFinish: { stabilityThreshold: 500 },
+    ignored: (filePath) => {
+      const file = basename(filePath);
+      if (file.startsWith('.') && file.includes('.tmp-')) return true;
+      if (file.endsWith('.lock')) return true;
+      if (FAT_JSON_FILES.has(file)) return true;
+      return false;
+    },
   });
 
   watcher.on('change', (filePath) => {
@@ -2964,6 +2908,11 @@ app.get('/healthz', (req, res) => {
     ],
     outreach_kanban: true,
     silence_nudge_days: 7,
+    eventLoopDelay: eventLoopDelaySnapshot(),
+    liveStore: {
+      engine: liveEngineName(),
+      dir: liveDataDir(),
+    },
   });
 });
 
@@ -2982,8 +2931,9 @@ export function startServer(port = PORT, host = HOST) {
       console.log(`  SSE stream: http://${host}:${port}/stream`);
       console.log(`  Data API: http://${host}:${port}/data/<file>.json`);
       console.log(`  Control API: http://${host}:${port}/api/actions\n`);
-      startFileWatchers();
-      if (!['1', 'true', 'yes'].includes(String(process.env.PUBLISH_SNAPSHOT || '').toLowerCase())) {
+      const skipWatchers = ['1', 'true', 'yes'].includes(String(process.env.CAREER_OPS_SKIP_WATCHERS || '').toLowerCase());
+      if (!skipWatchers) startFileWatchers();
+      if (!skipWatchers && !['1', 'true', 'yes'].includes(String(process.env.PUBLISH_SNAPSHOT || '').toLowerCase())) {
         startLivenessScheduler();
       }
       settled = true;

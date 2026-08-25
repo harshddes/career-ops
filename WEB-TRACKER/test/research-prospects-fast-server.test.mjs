@@ -1,3 +1,5 @@
+import './live-env.mjs';
+
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { startFastServer } from '../server-fast.mjs';

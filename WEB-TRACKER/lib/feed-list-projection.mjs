@@ -56,13 +56,65 @@ function requestView(req) {
   }
 }
 
+export function requestWantsFullView(req) {
+  return String(requestView(req)).toLowerCase() === 'full';
+}
+
 export function requestWantsListView(req) {
-  return String(requestView(req)).toLowerCase() === 'list';
+  const view = String(requestView(req)).toLowerCase();
+  if (view === 'full') return false;
+  if (view === 'list') return true;
+  return true;
+}
+
+export function requestPage(req) {
+  try {
+    const url = new URL(req?.url || '/', 'http://127.0.0.1');
+    const queryLimit = req?.query?.limit ?? url.searchParams.get('limit');
+    const queryOffset = req?.query?.offset ?? url.searchParams.get('offset');
+    const limit = queryLimit == null || queryLimit === '' ? null : Math.max(0, Number(queryLimit));
+    const offset = queryOffset == null || queryOffset === '' ? 0 : Math.max(0, Number(queryOffset));
+    return {
+      limit: Number.isFinite(limit) ? limit : null,
+      offset: Number.isFinite(offset) ? offset : 0,
+    };
+  } catch {
+    return { limit: null, offset: 0 };
+  }
+}
+
+export function pageCollection(items = [], { limit = null, offset = 0 } = {}) {
+  const list = Array.isArray(items) ? items : [];
+  if (limit == null) {
+    return { items: list, total: list.length, limit: null, offset: 0 };
+  }
+  const sliced = list.slice(offset, offset + limit);
+  return { items: sliced, total: list.length, limit, offset };
 }
 
 export function maybeProjectFeed(req, store, projectFn) {
-  if (!requestWantsListView(req)) return store;
-  return projectFn(store);
+  const projected = requestWantsFullView(req) ? store : projectFn(store);
+  const page = requestPage(req);
+  if (page.limit == null) return projected;
+  const key = Array.isArray(projected?.opportunities)
+    ? 'opportunities'
+    : Array.isArray(projected?.prospects)
+      ? 'prospects'
+      : Array.isArray(projected?.jobs)
+        ? 'jobs'
+        : '';
+  if (!key) return projected;
+  const paged = pageCollection(projected[key], page);
+  return {
+    ...projected,
+    [key]: paged.items,
+    view: projected.view || 'list',
+    page: {
+      limit: paged.limit,
+      offset: paged.offset,
+      total: paged.total,
+    },
+  };
 }
 
 export function projectEuraxessListItem(item = {}) {
@@ -323,6 +375,53 @@ export function projectResearchListStore(store = {}) {
     prospects: Array.isArray(store.prospects)
       ? store.prospects.map(projectResearchListItem)
       : [],
+  };
+}
+
+export function projectJobsListItem(item = {}) {
+  const resources = pickPathMap(item.resources);
+  return {
+    id: item.id || '',
+    url: item.url || '',
+    company: item.company || '',
+    title: item.title || '',
+    location: item.location || '',
+    country: item.country || '',
+    region: item.region || '',
+    status: item.status || '',
+    applied: Boolean(item.applied),
+    applied_at: item.applied_at || '',
+    application_num: item.application_num || null,
+    score: item.score || item.scoring?.score || '',
+    notes: clip(item.notes, FIT_CHARS),
+    resources,
+    eligibility: item.eligibility || item.scoring?.eligibility || null,
+    scoring: item.scoring?.canonical ? {
+      canonical: true,
+      score: item.scoring.score,
+      eligibility: item.scoring.eligibility,
+      confidence: item.scoring.confidence,
+      urgency: item.scoring.urgency,
+    } : item.scoring || null,
+    urgency: item.urgency || item.scoring?.urgency || null,
+    confidence: item.confidence || item.scoring?.confidence || '',
+    visa: item.visa || null,
+    export_control: item.export_control || '',
+    eligibility_band: item.eligibility_band || '',
+    networking_org_id: item.networking_org_id || '',
+    networking_person_ids: Array.isArray(item.networking_person_ids) ? item.networking_person_ids : [],
+    networking_research_order_id: item.networking_research_order_id || '',
+  };
+}
+
+export function projectJobsListStore(store = {}) {
+  return {
+    version: store.version || 1,
+    generated_at: store.generated_at || '',
+    view: 'list',
+    total: Array.isArray(store.jobs) ? store.jobs.length : 0,
+    count: Array.isArray(store.jobs) ? store.jobs.length : 0,
+    jobs: Array.isArray(store.jobs) ? store.jobs.map(projectJobsListItem) : [],
   };
 }
 

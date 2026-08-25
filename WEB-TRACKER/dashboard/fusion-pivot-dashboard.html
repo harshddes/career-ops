@@ -4595,6 +4595,7 @@ That's how you go from "random applicant" to "that Michigan instrumentation pers
   <h2 class="section-title">Behind The Scenes</h2>
   <p style="color:var(--text-secondary); margin-bottom:1rem; font-size:0.9rem;">These buttons do dashboard chores on your computer. You do not need to understand the code. Start with “Update my dashboard”.</p>
   <div id="operations-feedback" class="inline-notice" role="status" aria-live="polite"></div>
+  <div id="event-loop-health" class="inline-notice" role="status"></div>
   <div id="actions-grid" class="control-grid"></div>
 
   <h2 class="section-title">Autonomous Research</h2>
@@ -4910,6 +4911,10 @@ const pendingJobSaves = new Map();
 const pendingResearchSaves = new Map();
 const pendingPhdResearchSaves = new Map();
 const pendingNetworkingSaves = new Map();
+const pendingActionPlanSaves = new Map();
+const pendingEuraxessSaves = new Map();
+const pendingPhdscannerSaves = new Map();
+const pendingUmichSaves = new Map();
 let networkingStoreCache = null;
 let networkingResearchQueueCache = null;
 let companyFocusCache = null;
@@ -5220,6 +5225,16 @@ async function hydrateDailyDigestEmailUi() {
 
 function easternISODate() {
   return new Intl.DateTimeFormat('en-CA', { timeZone: DASHBOARD_TIMEZONE }).format(new Date());
+}
+
+function formatEasternLongDate(date = new Date()) {
+  return new Intl.DateTimeFormat('en-US', {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+    timeZone: DASHBOARD_TIMEZONE,
+  }).format(date);
 }
 
 function todayISODate() {
@@ -6298,7 +6313,32 @@ function refreshVisibleDashboard() {
   if (activeTab !== 'today') renderTodayActivityTracker();
 }
 
+function shouldSkipDashboardSseRefresh() {
+  return Boolean(
+    pendingPulseSaves.size
+    || pendingJobSaves.size
+    || pendingResearchSaves.size
+    || pendingPhdResearchSaves.size
+    || pendingNetworkingSaves.size
+    || pendingActionPlanSaves.size
+    || pendingEuraxessSaves.size
+    || pendingPhdscannerSaves.size
+    || pendingUmichSaves.size
+  );
+}
+
+function patchCachedOpportunity(cache, id, patch = {}) {
+  const list = cache?.opportunities;
+  if (!Array.isArray(list)) return null;
+  const item = list.find(entry => entry.id === id);
+  if (!item) return null;
+  Object.assign(item, patch);
+  if (patch.execution) item.execution = { ...(item.execution || {}), ...patch.execution };
+  return item;
+}
+
 function queueVisibleDashboardRefresh(delay = 400) {
+  if (shouldSkipDashboardSseRefresh()) return;
   if (visibleRefreshTimer) return;
   visibleRefreshTimer = setTimeout(() => {
     visibleRefreshTimer = null;
@@ -6316,7 +6356,7 @@ function queueTodayActivityRefresh(delay = 400) {
 
 function queueRenderAllPanels() {
   const activeTab = document.querySelector('.tab-content.active')?.id || '';
-  if (pendingPulseSaves.size || pendingJobSaves.size || pendingResearchSaves.size || pendingPhdResearchSaves.size || pendingNetworkingSaves.size) {
+  if (shouldSkipDashboardSseRefresh()) {
     return;
   }
   if (activeTab === 'researchprospects') {
@@ -6601,9 +6641,10 @@ async function updateTodayPlaybookStrip(jobs = []) {
 // ── Today / coach plan ───────────────────────────────────────────────
 
 async function renderActionPlan() {
+  const keepLocalPlan = pendingActionPlanSaves.size && window.__actionPlan;
   const [plan, jobsData, appsData] = await Promise.all([
-    apiJSON('/api/action-plan').catch(() => null),
-    apiJSON('/api/jobs-to-consider').catch(() => null),
+    keepLocalPlan ? Promise.resolve(window.__actionPlan) : apiJSON('/api/action-plan').catch(() => null),
+    apiJSON('/api/jobs-to-consider?view=list').catch(() => null),
     apiJSON('/api/applications').catch(() => null),
   ]);
   window.__actionPlan = plan;
@@ -6626,7 +6667,12 @@ async function renderActionPlan() {
   window.__todayAppliedJobs = appliedJobs;
   await updateTodayPlaybookStrip(jobs);
   document.getElementById('next-best-action').innerHTML = todayNextBestAction(activeJobs, apps);
-  document.getElementById('today-actions').innerHTML = todayTopActions(activeJobs, appliedJobs);
+  const dailyTasks = (plan?.top_three?.length
+    ? plan.top_three
+    : (plan?.all_tasks || []).filter(task => task.horizon === 'daily' && !['done', 'archived'].includes(task.status))
+  ).slice(0, 3);
+  const dailyHtml = dailyTasks.map((task, index) => actionCard(task, index)).join('');
+  document.getElementById('today-actions').innerHTML = dailyHtml || todayTopActions(activeJobs, appliedJobs);
   document.getElementById('minimum-win').innerHTML = todayMinimumWin(activeJobs);
   document.getElementById('goal-grid').innerHTML = todayPipelineFacts({
     activeJobs,
@@ -6840,17 +6886,34 @@ function goalCard(goal) {
 }
 
 async function updateActionItem(id, action, input = {}) {
+  const sequence = ++saveSequence;
+  pendingActionPlanSaves.set(id, sequence);
+  const plan = window.__actionPlan;
+  if (plan?.all_tasks) {
+    const task = plan.all_tasks.find(t => t.id === id);
+    if (task) {
+      if (action === 'done') task.status = 'done';
+      else if (action === 'defer') task.status = 'deferred';
+      else if (action === 'waiting') task.status = 'waiting';
+      else if (action === 'blocked') task.status = 'blocked';
+      task.last_action = action;
+    }
+  }
   try {
-    const plan = await apiJSON(`/api/action-plan/${id}`, {
+    const next = await apiJSON(`/api/action-plan/${id}`, {
       method: 'PATCH',
       body: JSON.stringify({ action, ...input }),
     });
-    window.__actionPlan = plan;
+    if (pendingActionPlanSaves.get(id) !== sequence) return;
+    window.__actionPlan = next;
     renderActionPlan();
-    const task = (plan.all_tasks || []).find(t => t.id === id);
+    const task = (next.all_tasks || []).find(t => t.id === id);
     setTodayFeedback(actionResultMessage(action, task), action === 'blocked' ? 'warn' : 'success');
   } catch (err) {
+    if (pendingActionPlanSaves.get(id) !== sequence) return;
     setTodayFeedback(`Could not save that update: ${err.message}`, 'error');
+  } finally {
+    if (pendingActionPlanSaves.get(id) === sequence) pendingActionPlanSaves.delete(id);
   }
 }
 
@@ -8259,7 +8322,7 @@ async function renderLiveJobs({ force = false } = {}) {
   const scrollState = saveLiveJobsScrollState();
   try {
     if (!liveJobsCache || force) {
-      liveJobsCache = await apiJSON('/api/jobs-to-consider');
+      liveJobsCache = await apiJSON('/api/jobs-to-consider?view=list');
     }
     const data = liveJobsCache;
     const [networkingData, researchQueue] = await Promise.all([
@@ -9282,15 +9345,20 @@ async function runEuraxessControl(action) {
     euraxessFactoryCache = null;
     euraxessRenderedSignature = '';
 
-    if (action === 'scan') {
-      setEuraxessFeedback(`Scan queued${result.job?.id ? ` (${result.job.id})` : ''}. Refreshing in a moment…`, 'warn');
+    if (action === 'scan' || result.queued) {
+      const queuedLabel = action === 'scan' ? 'Scan queued' : 'Process queue started';
+      setEuraxessFeedback(`${queuedLabel}${result.job?.id ? ` (${result.job.id})` : ''}. Refreshing in a moment…`, 'warn');
       setTimeout(async () => {
         await renderEuraxessFeed({ force: true });
-        const summary = euraxessStoreCache?.scan_summary || {};
-        setEuraxessFeedback(
-          `Scan finished view: ${summary.scanned_count || 0} RSS items · Strong ${summary.strong_count ?? '?'} · Adjacent ${summary.adjacent_count ?? '?'} · Archived ${summary.archived_count ?? 0}.`,
-          'success'
-        );
+        if (action === 'scan') {
+          const summary = euraxessStoreCache?.scan_summary || {};
+          setEuraxessFeedback(
+            `Scan finished view: ${summary.scanned_count || 0} RSS items · Strong ${summary.strong_count ?? '?'} · Adjacent ${summary.adjacent_count ?? '?'} · Archived ${summary.archived_count ?? 0}.`,
+            'success'
+          );
+        } else {
+          setEuraxessFeedback('Process queue is running in a worker. Cards refresh when it finishes.', 'success');
+        }
       }, 2500);
       return;
     }
@@ -9319,12 +9387,24 @@ async function runEuraxessControl(action) {
 }
 
 async function euraxessOpportunityAction(id, action) {
+  const sequence = ++saveSequence;
+  pendingEuraxessSaves.set(id, sequence);
   setEuraxessFeedback('Updating EURAXESS opportunity...', 'warn');
   document.getElementById('euraxess-feedback')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  const previous = euraxessStoreCache?.opportunities?.find(item => item.id === id);
+  const previousSnapshot = previous ? { ...previous, execution: { ...(previous.execution || {}) } } : null;
+  if (action === 'archive') {
+    patchCachedOpportunity(euraxessStoreCache, id, { archived: true, visible: false });
+    renderEuraxessFeed();
+  } else if (action === 'unarchive') {
+    patchCachedOpportunity(euraxessStoreCache, id, { archived: false, visible: true });
+    renderEuraxessFeed();
+  }
   try {
     const endpoint = `/api/euraxess/opportunities/${encodeURIComponent(id)}/${action}`;
     const body = action === 'archive' ? { reason: 'Archived from dashboard.' } : {};
     const result = await apiJSON(endpoint, { method: 'POST', body: JSON.stringify(body) });
+    if (pendingEuraxessSaves.get(id) !== sequence) return;
     // Queueing while on Ready → slide into Making artifacts (files still attach to the posting).
     const opp = result.opportunity || {};
     if (['queue-research', 'queue-application-pack'].includes(action)
@@ -9342,11 +9422,20 @@ async function euraxessOpportunityAction(id, action) {
           : 'EURAXESS opportunity updated.'),
       'success',
     );
-    euraxessStoreCache = null;
-    euraxessFactoryCache = null;
+    if (result.opportunity) patchCachedOpportunity(euraxessStoreCache, id, result.opportunity);
+    else {
+      euraxessStoreCache = null;
+      euraxessFactoryCache = null;
+    }
     euraxessRenderedSignature = '';
-    await renderEuraxessFeed({ force: true });
+    await renderEuraxessFeed({ force: !result.opportunity });
   } catch (err) {
+    if (pendingEuraxessSaves.get(id) !== sequence) return;
+    if (previousSnapshot && euraxessStoreCache) {
+      const index = euraxessStoreCache.opportunities.findIndex(item => item.id === id);
+      if (index >= 0) euraxessStoreCache.opportunities[index] = previousSnapshot;
+      renderEuraxessFeed();
+    }
     // Protected-domain gate: same force-confirm path as UMich Careers cards.
     if (action === 'archive' && /protected-domain|Cannot archive/i.test(err.message || '')) {
       const ok = window.confirm(`${err.message}\n\nArchive anyway? Use this when you already applied, nationality-blocked, or want it hidden from the live tray.`);
@@ -9359,11 +9448,11 @@ async function euraxessOpportunityAction(id, action) {
           method: 'POST',
           body: JSON.stringify({ reason: 'Archived from dashboard (forced).', force: true }),
         });
+        if (pendingEuraxessSaves.get(id) !== sequence) return;
         setEuraxessFeedback(forced.message || 'Archived.', 'success');
-        euraxessStoreCache = null;
-        euraxessFactoryCache = null;
+        patchCachedOpportunity(euraxessStoreCache, id, { archived: true, visible: false, ...(forced.opportunity || {}) });
         euraxessRenderedSignature = '';
-        await renderEuraxessFeed({ force: true });
+        await renderEuraxessFeed({ force: !forced.opportunity });
         return;
       } catch (forceErr) {
         setEuraxessFeedback(`EURAXESS archive failed: ${forceErr.message}`, 'error');
@@ -9371,6 +9460,8 @@ async function euraxessOpportunityAction(id, action) {
       }
     }
     setEuraxessFeedback(`EURAXESS update failed: ${err.message}`, 'error');
+  } finally {
+    if (pendingEuraxessSaves.get(id) === sequence) pendingEuraxessSaves.delete(id);
   }
 }
 
@@ -9450,12 +9541,20 @@ async function euraxessSetExecution(id, stage) {
 }
 
 async function euraxessApplyOpportunity(id, applied = true) {
+  const sequence = ++saveSequence;
+  pendingEuraxessSaves.set(id, sequence);
   setEuraxessFeedback(applied ? 'Marking applied + creating PhD Applications row…' : 'Reverting applied state…', 'warn');
+  patchCachedOpportunity(euraxessStoreCache, id, {
+    applied: Boolean(applied),
+    execution: { stage: applied ? 'applied' : 'ready_for_application' },
+  });
+  renderEuraxessFeed();
   try {
     const result = await apiJSON(`/api/euraxess/opportunities/${encodeURIComponent(id)}/apply`, {
       method: 'POST',
       body: JSON.stringify({ applied: Boolean(applied) }),
     });
+    if (pendingEuraxessSaves.get(id) !== sequence) return;
     const num = result.application?.num || result.opportunity?.execution?.application_num;
     applyTodayFromResponse(result);
     setEuraxessFeedback(
@@ -9464,11 +9563,20 @@ async function euraxessApplyOpportunity(id, applied = true) {
         : 'Un-applied. Tracker row removed if present.',
       'success',
     );
-    euraxessStoreCache = null;
+    if (result.opportunity) patchCachedOpportunity(euraxessStoreCache, id, result.opportunity);
+    else euraxessStoreCache = null;
     euraxessRenderedSignature = '';
-    await renderEuraxessFeed({ force: true });
+    await renderEuraxessFeed({ force: !result.opportunity });
   } catch (err) {
+    if (pendingEuraxessSaves.get(id) !== sequence) return;
+    patchCachedOpportunity(euraxessStoreCache, id, {
+      applied: !applied,
+      execution: { stage: applied ? 'ready_for_application' : 'applied' },
+    });
+    renderEuraxessFeed();
     setEuraxessFeedback(`Apply update failed: ${err.message}`, 'error');
+  } finally {
+    if (pendingEuraxessSaves.get(id) === sequence) pendingEuraxessSaves.delete(id);
   }
 }
 
@@ -9896,7 +10004,7 @@ async function renderUmichCareersFeed({ force = false } = {}) {
     generated_at: store.generated_at,
     filters,
     limits: [...umichSectionLimits.entries()],
-    shown: shown.map(item => [item.id, item.score, item.status, item.segment, item.jobs_to_consider_id || '']),
+    shown: shown.map(item => [item.id, item.score, item.status, item.segment, item.archived, item.applied, item.jobs_to_consider_id || '']),
   });
   if (!force && signature === umichRenderedSignature) return;
   umichRenderedSignature = signature;
@@ -9960,12 +10068,17 @@ async function umichToggleApplied(id, applied, inputEl = null) {
     if (inputEl) inputEl.checked = true;
     return;
   }
+  const sequence = ++saveSequence;
+  pendingUmichSaves.set(id, sequence);
   setUmichFeedback(applied ? 'Saving as applied → Applications tracker…' : 'Removing from Applications…', 'warn');
+  patchCachedOpportunity(umichStoreCache, id, { applied: Boolean(applied) });
+  renderUmichCareersFeed();
   try {
     const result = await apiJSON(`/api/umich-careers/opportunities/${encodeURIComponent(id)}/apply`, {
       method: 'POST',
       body: JSON.stringify({ applied: Boolean(applied) }),
     });
+    if (pendingUmichSaves.get(id) !== sequence) return;
     const num = result.application?.num || result.opportunity?.application_num;
     setUmichFeedback(
       applied
@@ -9973,23 +10086,50 @@ async function umichToggleApplied(id, applied, inputEl = null) {
         : (result.message || 'Removed from Applications.'),
       'success',
     );
-    await renderUmichCareersFeed({ force: true });
+    if (result.opportunity) patchCachedOpportunity(umichStoreCache, id, result.opportunity);
+    else umichStoreCache = null;
+    umichRenderedSignature = '';
+    await renderUmichCareersFeed({ force: !result.opportunity });
   } catch (err) {
+    if (pendingUmichSaves.get(id) !== sequence) return;
     if (inputEl) inputEl.checked = !applied;
+    patchCachedOpportunity(umichStoreCache, id, { applied: !applied });
+    renderUmichCareersFeed();
     setUmichFeedback(`Apply toggle failed: ${err.message}`, 'error');
+  } finally {
+    if (pendingUmichSaves.get(id) === sequence) pendingUmichSaves.delete(id);
   }
 }
 
 async function umichOpportunityAction(id, action) {
+  const sequence = ++saveSequence;
+  pendingUmichSaves.set(id, sequence);
   setUmichFeedback(action === 'archive' ? 'Archiving posting...' : 'Restoring posting...', 'warn');
+  const previous = umichStoreCache?.opportunities?.find(item => item.id === id);
+  const previousSnapshot = previous ? { ...previous } : null;
+  patchCachedOpportunity(umichStoreCache, id, {
+    archived: action === 'archive',
+    visible: action !== 'archive',
+  });
+  renderUmichCareersFeed();
   try {
     const result = await apiJSON(`/api/umich-careers/opportunities/${encodeURIComponent(id)}/${action}`, {
       method: 'POST',
       body: JSON.stringify(action === 'archive' ? { reason: 'Archived from dashboard.' } : {}),
     });
+    if (pendingUmichSaves.get(id) !== sequence) return;
     setUmichFeedback(result.message || (action === 'archive' ? 'Archived.' : 'Restored from archive.'), 'success');
-    await renderUmichCareersFeed({ force: true });
+    if (result.opportunity) patchCachedOpportunity(umichStoreCache, id, result.opportunity);
+    else umichStoreCache = null;
+    umichRenderedSignature = '';
+    await renderUmichCareersFeed({ force: !result.opportunity });
   } catch (err) {
+    if (pendingUmichSaves.get(id) !== sequence) return;
+    if (previousSnapshot && umichStoreCache) {
+      const index = umichStoreCache.opportunities.findIndex(item => item.id === id);
+      if (index >= 0) umichStoreCache.opportunities[index] = previousSnapshot;
+      renderUmichCareersFeed();
+    }
     // Protected-domain gate (same as EURAXESS): allow an explicit force archive after confirm.
     if (action === 'archive' && /protected-domain|Cannot archive/i.test(err.message || '')) {
       const ok = window.confirm(`${err.message}\n\nArchive anyway? This is for postings you already applied to or want hidden.`);
@@ -10002,8 +10142,11 @@ async function umichOpportunityAction(id, action) {
           method: 'POST',
           body: JSON.stringify({ reason: 'Archived from dashboard (forced).', force: true }),
         });
+        if (pendingUmichSaves.get(id) !== sequence) return;
         setUmichFeedback(forced.message || 'Archived.', 'success');
-        await renderUmichCareersFeed({ force: true });
+        patchCachedOpportunity(umichStoreCache, id, { archived: true, visible: false, ...(forced.opportunity || {}) });
+        umichRenderedSignature = '';
+        await renderUmichCareersFeed({ force: !forced.opportunity });
         return;
       } catch (forceErr) {
         setUmichFeedback(`archive failed: ${forceErr.message}`, 'error');
@@ -10011,6 +10154,8 @@ async function umichOpportunityAction(id, action) {
       }
     }
     setUmichFeedback(`${action} failed: ${err.message}`, 'error');
+  } finally {
+    if (pendingUmichSaves.get(id) === sequence) pendingUmichSaves.delete(id);
   }
 }
 
@@ -10666,15 +10811,20 @@ async function runPhdscannerControl(action) {
     phdscannerFactoryCache = null;
     phdscannerRenderedSignature = '';
 
-    if (action === 'scan') {
-      setPhdscannerFeedback(`Scan queued${result.job?.id ? ` (${result.job.id})` : ''}. Refreshing in a moment…`, 'warn');
+    if (action === 'scan' || result.queued) {
+      const queuedLabel = action === 'scan' ? 'Scan queued' : 'Process queue started';
+      setPhdscannerFeedback(`${queuedLabel}${result.job?.id ? ` (${result.job.id})` : ''}. Refreshing in a moment…`, 'warn');
       setTimeout(async () => {
         await renderPhdscannerFeed({ force: true });
-        const summary = phdscannerStoreCache?.scan_summary || {};
-        setPhdscannerFeedback(
-          `Scan finished view: ${summary.scanned_count || 0} items · Strong ${summary.strong_count ?? '?'} · Adjacent ${summary.adjacent_count ?? '?'} · Archived ${summary.archived_count ?? 0}.`,
-          'success'
-        );
+        if (action === 'scan') {
+          const summary = phdscannerStoreCache?.scan_summary || {};
+          setPhdscannerFeedback(
+            `Scan finished view: ${summary.scanned_count || 0} items · Strong ${summary.strong_count ?? '?'} · Adjacent ${summary.adjacent_count ?? '?'} · Archived ${summary.archived_count ?? 0}.`,
+            'success'
+          );
+        } else {
+          setPhdscannerFeedback('Process queue is running in a worker. Cards refresh when it finishes.', 'success');
+        }
       }, 2500);
       return;
     }
@@ -10703,12 +10853,24 @@ async function runPhdscannerControl(action) {
 }
 
 async function phdscannerOpportunityAction(id, action) {
+  const sequence = ++saveSequence;
+  pendingPhdscannerSaves.set(id, sequence);
   setPhdscannerFeedback('Updating PhDScanner opportunity...', 'warn');
   document.getElementById('phdscanner-feedback')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  const previous = phdscannerStoreCache?.opportunities?.find(item => item.id === id);
+  const previousSnapshot = previous ? { ...previous, execution: { ...(previous.execution || {}) } } : null;
+  if (action === 'archive') {
+    patchCachedOpportunity(phdscannerStoreCache, id, { archived: true, visible: false });
+    renderPhdscannerFeed();
+  } else if (action === 'unarchive') {
+    patchCachedOpportunity(phdscannerStoreCache, id, { archived: false, visible: true });
+    renderPhdscannerFeed();
+  }
   try {
     const endpoint = `/api/phdscanner/opportunities/${encodeURIComponent(id)}/${action}`;
     const body = action === 'archive' ? { reason: 'Archived from dashboard.' } : {};
     const result = await apiJSON(endpoint, { method: 'POST', body: JSON.stringify(body) });
+    if (pendingPhdscannerSaves.get(id) !== sequence) return;
     const opp = result.opportunity || {};
     if (['queue-research', 'queue-application-pack'].includes(action)
       && opp.execution?.ready_checked
@@ -10725,11 +10887,20 @@ async function phdscannerOpportunityAction(id, action) {
           : 'PhDScanner opportunity updated.'),
       'success',
     );
-    phdscannerStoreCache = null;
-    phdscannerFactoryCache = null;
+    if (result.opportunity) patchCachedOpportunity(phdscannerStoreCache, id, result.opportunity);
+    else {
+      phdscannerStoreCache = null;
+      phdscannerFactoryCache = null;
+    }
     phdscannerRenderedSignature = '';
-    await renderPhdscannerFeed({ force: true });
+    await renderPhdscannerFeed({ force: !result.opportunity });
   } catch (err) {
+    if (pendingPhdscannerSaves.get(id) !== sequence) return;
+    if (previousSnapshot && phdscannerStoreCache) {
+      const index = phdscannerStoreCache.opportunities.findIndex(item => item.id === id);
+      if (index >= 0) phdscannerStoreCache.opportunities[index] = previousSnapshot;
+      renderPhdscannerFeed();
+    }
     if (action === 'archive' && /protected-domain|Cannot archive/i.test(err.message || '')) {
       const ok = window.confirm(`${err.message}\n\nArchive anyway? Use this when you already applied, nationality-blocked, or want it hidden from the live tray.`);
       if (!ok) {
@@ -10741,11 +10912,11 @@ async function phdscannerOpportunityAction(id, action) {
           method: 'POST',
           body: JSON.stringify({ reason: 'Archived from dashboard (forced).', force: true }),
         });
+        if (pendingPhdscannerSaves.get(id) !== sequence) return;
         setPhdscannerFeedback(forced.message || 'Archived.', 'success');
-        phdscannerStoreCache = null;
-        phdscannerFactoryCache = null;
+        patchCachedOpportunity(phdscannerStoreCache, id, { archived: true, visible: false, ...(forced.opportunity || {}) });
         phdscannerRenderedSignature = '';
-        await renderPhdscannerFeed({ force: true });
+        await renderPhdscannerFeed({ force: !forced.opportunity });
         return;
       } catch (forceErr) {
         setPhdscannerFeedback(`PhDScanner archive failed: ${forceErr.message}`, 'error');
@@ -10753,6 +10924,8 @@ async function phdscannerOpportunityAction(id, action) {
       }
     }
     setPhdscannerFeedback(`PhDScanner update failed: ${err.message}`, 'error');
+  } finally {
+    if (pendingPhdscannerSaves.get(id) === sequence) pendingPhdscannerSaves.delete(id);
   }
 }
 
@@ -10832,12 +11005,20 @@ async function phdscannerSetExecution(id, stage) {
 }
 
 async function phdscannerApplyOpportunity(id, applied = true) {
+  const sequence = ++saveSequence;
+  pendingPhdscannerSaves.set(id, sequence);
   setPhdscannerFeedback(applied ? 'Marking applied + creating PhD Applications row…' : 'Reverting applied state…', 'warn');
+  patchCachedOpportunity(phdscannerStoreCache, id, {
+    applied: Boolean(applied),
+    execution: { stage: applied ? 'applied' : 'ready_for_application' },
+  });
+  renderPhdscannerFeed();
   try {
     const result = await apiJSON(`/api/phdscanner/opportunities/${encodeURIComponent(id)}/apply`, {
       method: 'POST',
       body: JSON.stringify({ applied: Boolean(applied) }),
     });
+    if (pendingPhdscannerSaves.get(id) !== sequence) return;
     const num = result.application?.num || result.opportunity?.execution?.application_num;
     applyTodayFromResponse(result);
     setPhdscannerFeedback(
@@ -10846,11 +11027,20 @@ async function phdscannerApplyOpportunity(id, applied = true) {
         : 'Un-applied. Tracker row removed if present.',
       'success',
     );
-    phdscannerStoreCache = null;
+    if (result.opportunity) patchCachedOpportunity(phdscannerStoreCache, id, result.opportunity);
+    else phdscannerStoreCache = null;
     phdscannerRenderedSignature = '';
-    await renderPhdscannerFeed({ force: true });
+    await renderPhdscannerFeed({ force: !result.opportunity });
   } catch (err) {
+    if (pendingPhdscannerSaves.get(id) !== sequence) return;
+    patchCachedOpportunity(phdscannerStoreCache, id, {
+      applied: !applied,
+      execution: { stage: applied ? 'ready_for_application' : 'applied' },
+    });
+    renderPhdscannerFeed();
     setPhdscannerFeedback(`Apply update failed: ${err.message}`, 'error');
+  } finally {
+    if (pendingPhdscannerSaves.get(id) === sequence) pendingPhdscannerSaves.delete(id);
   }
 }
 
@@ -12942,6 +13132,18 @@ async function renderActions() {
   if (!grid) return;
   try {
     const data = await apiJSON('/api/actions');
+    const health = await apiJSON('/healthz').catch(() => null);
+    const p99 = health?.eventLoopDelay?.p99_ms;
+    const loopEl = document.getElementById('event-loop-health');
+    if (loopEl) {
+      if (typeof p99 === 'number' && p99 > 100) {
+        loopEl.className = 'inline-notice error';
+        loopEl.textContent = `Event loop delay p99 is ${p99}ms (want under 100ms). Catalog writes are blocking other clicks.`;
+      } else if (typeof p99 === 'number') {
+        loopEl.className = 'inline-notice';
+        loopEl.textContent = `Event loop p99: ${p99}ms · live store: ${health?.liveStore?.engine || ''}`;
+      }
+    }
     setOperationsFeedback('');
     window.__actions = data.actions;
     grid.innerHTML = '';
@@ -15041,28 +15243,33 @@ function connectSSE() {
         queueTodayActivityRefresh();
       }
       if (data.type === 'euraxess_factory_updated' || data.type === 'euraxess_opportunities_updated') {
+        if (pendingEuraxessSaves.size) return;
         euraxessStoreCache = null;
         euraxessFactoryCache = null;
         euraxessRenderedSignature = '';
         if (activeTabId() === 'euraxess') renderEuraxessFeed({ force: true });
       }
       if (data.type === 'phdscanner_factory_updated' || data.type === 'phdscanner_opportunities_updated') {
+        if (pendingPhdscannerSaves.size) return;
         phdscannerStoreCache = null;
         phdscannerFactoryCache = null;
         phdscannerRenderedSignature = '';
         if (activeTabId() === 'phdscanner') renderPhdscannerFeed({ force: true });
       }
       if (data.type === 'umich_careers_opportunities_updated') {
+        if (pendingUmichSaves.size) return;
         umichStoreCache = null;
         umichRenderedSignature = '';
         if (activeTabId() === 'umichcareers') renderUmichCareersFeed({ force: true });
       }
       if (data.type === 'data_updated' || data.type === 'data_added') {
         if (data.file === 'jobs-to-consider.json') {
+          if (pendingJobSaves.size) return;
           if (activeTabId() === 'livejobs') renderLiveJobsFromSse();
           if (activeTabId() === 'today') queueVisibleDashboardRefresh();
           queueTodayActivityRefresh();
         } else if (data.file === 'euraxess-opportunities.json') {
+          if (pendingEuraxessSaves.size) return;
           euraxessStoreCache = null;
           euraxessFactoryCache = null;
           euraxessRenderedSignature = '';
@@ -15072,6 +15279,7 @@ function connectSSE() {
           if (activeTabId() === 'researchprospects') renderResearchProspectsFromSse();
           queueTodayActivityRefresh();
         } else if (data.file === 'umich-careers-opportunities.json') {
+          if (pendingUmichSaves.size) return;
           umichStoreCache = null;
           umichRenderedSignature = '';
           if (activeTabId() === 'umichcareers') renderUmichCareersFeed({ force: true });
@@ -15116,6 +15324,7 @@ function connectSSE() {
         }
       }
       if (data.type === 'action_plan_updated') {
+        if (pendingActionPlanSaves.size) return;
         if (activeTabId() === 'today' || activeTabId() === 'weekly') queueVisibleDashboardRefresh();
       }
       if (data.type === 'application_updated' || data.type === 'application_dashboard_updated') {
@@ -15128,6 +15337,7 @@ function connectSSE() {
         }
       }
       if (data.type === 'jobs_to_consider_updated') {
+        if (pendingJobSaves.size) return;
         if (activeTabId() === 'livejobs') renderLiveJobsFromSse();
         if (activeTabId() === 'today') queueVisibleDashboardRefresh();
         queueTodayActivityRefresh();

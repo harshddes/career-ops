@@ -1,9 +1,10 @@
 /**
  * Company Focus / Execute Mode — one pinned company, capped roles/contacts, one next action.
  */
-import { existsSync, mkdirSync, readFileSync, renameSync, unlinkSync, writeFileSync } from 'fs';
-import { basename, dirname, join } from 'path';
+import { existsSync, readFileSync } from 'fs';
+import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
+import { atomicWrite, compactJsonLine } from './atomic-write.mjs';
 import { readConsiderJobs } from './jobs-to-consider-store.mjs';
 import { readNetworkingResearchQueue } from './networking/factory.mjs';
 import { findNetworkingOrganization, readNetworking } from './networking/store.mjs';
@@ -53,34 +54,6 @@ function cleanArray(value) {
 function cleanNumber(value, fallback) {
   const parsed = Number(value);
   return Number.isFinite(parsed) ? parsed : fallback;
-}
-
-function atomicWrite(filePath, content) {
-  mkdirSync(dirname(filePath), { recursive: true });
-  const tempPath = join(dirname(filePath), `.${basename(filePath)}.tmp-${Date.now()}-${Math.random().toString(16).slice(2)}`);
-  writeFileSync(tempPath, content, 'utf-8');
-  const retryCodes = new Set(['EPERM', 'EACCES', 'EBUSY', 'EAGAIN', 'UNKNOWN']);
-  let lastError = null;
-  for (let attempt = 0; attempt < 8; attempt += 1) {
-    try {
-      renameSync(tempPath, filePath);
-      return;
-    } catch (error) {
-      lastError = error;
-      if (!retryCodes.has(error?.code)) break;
-      try {
-        writeFileSync(filePath, content, 'utf-8');
-        try { unlinkSync(tempPath); } catch {}
-        return;
-      } catch (writeError) {
-        lastError = writeError;
-        if (!retryCodes.has(writeError?.code)) break;
-        Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 40 * (attempt + 1));
-      }
-    }
-  }
-  try { unlinkSync(tempPath); } catch {}
-  throw lastError || new Error(`failed to write ${filePath}`);
 }
 
 function emptyNextAction() {
@@ -171,7 +144,7 @@ export function writeCompanyFocus(focus, filePath = CANONICAL_COMPANY_FOCUS_FILE
     ...focus,
     updated_at: new Date().toISOString(),
   });
-  atomicWrite(filePath, `${JSON.stringify(next, null, 2)}\n`);
+  atomicWrite(filePath, compactJsonLine(next));
   return next;
 }
 
@@ -180,7 +153,7 @@ export function syncCompanyFocusToDashboard({
   targetPath = DASHBOARD_COMPANY_FOCUS_FILE,
 } = {}) {
   const focus = readCompanyFocus(sourcePath);
-  atomicWrite(targetPath, `${JSON.stringify(focus, null, 2)}\n`);
+  atomicWrite(targetPath, compactJsonLine(focus));
   return focus;
 }
 

@@ -1,3 +1,5 @@
+import './live-env.mjs';
+
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdirSync, mkdtempSync, readFileSync, rmSync } from 'fs';
@@ -75,7 +77,7 @@ test('writes EURAXESS store summary and syncs dashboard copy', () => {
     assert.equal(store.scan_summary.visible_count, 1);
     assert.equal(store.scan_summary.queued_count, 1);
     assert.ok((store.scan_summary.strong_count ?? 0) + (store.scan_summary.adjacent_count ?? 0) >= 1);
-    syncEuraxessOpportunitiesToDashboard({ sourcePath: canonical, outputPath: dashboard });
+    syncEuraxessOpportunitiesToDashboard({ sourcePath: canonical, outputPath: dashboard, write: true });
     const synced = JSON.parse(readFileSync(dashboard, 'utf-8'));
     assert.equal(synced.opportunities[0].id, 'euraxess-fusion-123456');
   } finally {
@@ -91,6 +93,7 @@ test('fast server exposes EURAXESS opportunities API', async () => {
     assert.equal(res.status, 200);
     const body = await res.json();
     assert.equal(Array.isArray(body.opportunities), true);
+    assert.equal(body.view, 'list');
     assert.ok(body.scan_summary);
     readEuraxessOpportunities();
   } finally {

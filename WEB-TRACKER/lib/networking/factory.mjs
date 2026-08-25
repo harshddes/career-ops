@@ -1,7 +1,8 @@
-import { existsSync, mkdirSync, readFileSync, renameSync, unlinkSync, writeFileSync } from 'fs';
-import { basename, dirname, join } from 'path';
+import { existsSync, readFileSync } from 'fs';
+import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { findNetworkingOrganization, readNetworking } from './store.mjs';
+import { atomicWrite, compactJsonLine } from '../atomic-write.mjs';
 
 const LIB_DIR = dirname(fileURLToPath(import.meta.url));
 export const WEB_TRACKER_DIR = join(LIB_DIR, '..', '..');
@@ -38,19 +39,6 @@ function mergeNotes(existing, incoming) {
   if (!prev) return next;
   if (prev.includes(next)) return prev;
   return `${prev}\n${next}`;
-}
-
-function atomicWrite(filePath, content) {
-  mkdirSync(dirname(filePath), { recursive: true });
-  const tempPath = join(dirname(filePath), `.${basename(filePath)}.tmp-${Date.now()}`);
-  writeFileSync(tempPath, content, 'utf-8');
-  try {
-    renameSync(tempPath, filePath);
-  } catch (error) {
-    if (!['EPERM', 'EACCES', 'EBUSY'].includes(error?.code)) throw error;
-    writeFileSync(filePath, content, 'utf-8');
-    try { unlinkSync(tempPath); } catch {}
-  }
 }
 
 function emptyQueue() {
@@ -126,7 +114,7 @@ export function writeNetworkingResearchQueue(queue, filePath = NETWORKING_RESEAR
     pending,
     completed,
   };
-  atomicWrite(filePath, `${JSON.stringify(next, null, 2)}\n`);
+  atomicWrite(filePath, compactJsonLine(next));
   return next;
 }
 

@@ -11,18 +11,25 @@
  * close anything.
  */
 
-import { existsSync, mkdirSync, renameSync, statSync, unlinkSync, writeFileSync } from 'fs';
-import { basename, dirname, join } from 'path';
+import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { scoreUmichPosting, UMICH_SEGMENTS } from './scoring-profile.mjs';
 import { externalScoreToLegacy } from '../opportunity-scoring/index.mjs';
-import { readMtimeCachedStore, rememberMtimeStore } from '../mtime-store-cache.mjs';
+import { CAREER_DATA_DIR, DASHBOARD_DATA_DIR } from '../data-paths.mjs';
+import { readLiveRow } from '../db.mjs';
+import {
+  dashboardSnapshot,
+  isCanonicalFile,
+  readLiveOrJson,
+  upsertLiveOrWrite,
+  writeDashboardSnapshot,
+  writeLiveOrJson,
+} from '../live-collection.mjs';
 
 const LIB_DIR = dirname(fileURLToPath(import.meta.url));
 export const WEB_TRACKER_DIR = join(LIB_DIR, '..', '..');
 export const CAREER_OPS_DIR = join(WEB_TRACKER_DIR, '..');
-export const CAREER_DATA_DIR = join(CAREER_OPS_DIR, 'data');
-export const DASHBOARD_DATA_DIR = join(WEB_TRACKER_DIR, 'data');
+export { CAREER_DATA_DIR, DASHBOARD_DATA_DIR };
 export const CANONICAL_UMICH_FILE = join(CAREER_DATA_DIR, 'umich-careers-opportunities.json');
 export const DASHBOARD_UMICH_FILE = join(DASHBOARD_DATA_DIR, 'umich-careers-opportunities.json');
 
@@ -65,34 +72,6 @@ function cleanNumber(value, fallback = 0) {
   if (value === null || value === undefined || value === '') return fallback;
   const parsed = Number(value);
   return Number.isFinite(parsed) ? parsed : fallback;
-}
-
-function atomicWrite(filePath, content) {
-  mkdirSync(dirname(filePath), { recursive: true });
-  const tempPath = join(dirname(filePath), `.${basename(filePath)}.tmp-${Date.now()}-${Math.random().toString(16).slice(2)}`);
-  writeFileSync(tempPath, content, 'utf-8');
-  const retryCodes = new Set(['EPERM', 'EACCES', 'EBUSY', 'EAGAIN', 'UNKNOWN']);
-  let lastErr = null;
-  for (let attempt = 0; attempt < 8; attempt += 1) {
-    try {
-      renameSync(tempPath, filePath);
-      return;
-    } catch (err) {
-      lastErr = err;
-      if (!retryCodes.has(err?.code)) break;
-      try {
-        writeFileSync(filePath, content, 'utf-8');
-        try { unlinkSync(tempPath); } catch {}
-        return;
-      } catch (writeErr) {
-        lastErr = writeErr;
-        if (!retryCodes.has(writeErr?.code)) break;
-        Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 40 * (attempt + 1));
-      }
-    }
-  }
-  try { unlinkSync(tempPath); } catch {}
-  throw lastErr || new Error(`failed to write ${filePath}`);
 }
 
 function normalizeStatus(value = '') {
@@ -238,7 +217,10 @@ function emptyStore() {
 }
 
 export function readUmichOpportunities(filePath = CANONICAL_UMICH_FILE) {
-  return readMtimeCachedStore(filePath, {
+  return readLiveOrJson({
+    table: 'umich_opportunities',
+    canonicalPath: CANONICAL_UMICH_FILE,
+    filePath,
     empty: emptyStore,
     parse: (parsed) => {
       const opportunities = Array.isArray(parsed.opportunities)
@@ -279,9 +261,12 @@ export function writeUmichOpportunities(store, filePath = CANONICAL_UMICH_FILE) 
     scan_health: summarize(opportunities, store?.scan_health || {}),
     opportunities,
   };
-  atomicWrite(filePath, `${JSON.stringify(next, null, 2)}\n`);
-  rememberMtimeStore(filePath, next);
-  return next;
+  return writeLiveOrJson({
+    table: 'umich_opportunities',
+    canonicalPath: CANONICAL_UMICH_FILE,
+    filePath,
+    next,
+  });
 }
 
 function rescoreRecord(item, now) {
@@ -468,15 +453,27 @@ export function mergeUmichCrawl(rows = [], details = new Map(), {
   return { store, newOpportunities, closedCount };
 }
 
-export function findUmichOpportunity(id, store = readUmichOpportunities()) {
+export function findUmichOpportunity(id, store) {
   const needle = cleanText(id);
+  if (!store) {
+    const live = readLiveRow('umich_opportunities', needle);
+    if (live) return live;
+    store = readUmichOpportunities();
+  }
   return store.opportunities.find(item => item.id === needle || item.job_id === needle || item.url === needle) || null;
 }
 
 export function patchUmichOpportunity(id, updates = {}, filePath = CANONICAL_UMICH_FILE) {
-  const store = readUmichOpportunities(filePath);
   const needle = cleanText(id);
-  const index = store.opportunities.findIndex(item => item.id === needle || item.job_id === needle || item.url === needle);
+  const liveRow = isCanonicalFile(filePath, CANONICAL_UMICH_FILE)
+    ? readLiveRow('umich_opportunities', needle)
+    : null;
+  const store = liveRow
+    ? { opportunities: [liveRow], scan_health: {} }
+    : readUmichOpportunities(filePath);
+  const index = liveRow
+    ? 0
+    : store.opportunities.findIndex(item => item.id === needle || item.job_id === needle || item.url === needle);
   if (index < 0) throw new Error(`U-M Careers opportunity not found: ${id}`);
   const previous = store.opportunities[index];
   updates = externalScoreToLegacy(updates, previous);
@@ -488,6 +485,15 @@ export function patchUmichOpportunity(id, updates = {}, filePath = CANONICAL_UMI
       : { ...(previous.score_breakdown || {}), ...(updates.score_breakdown || {}) },
     last_updated: new Date().toISOString(),
   });
+  const live = upsertLiveOrWrite({
+    table: 'umich_opportunities',
+    canonicalPath: CANONICAL_UMICH_FILE,
+    filePath,
+    store,
+    row: store.opportunities[index],
+    metaPatch: liveRow ? {} : { scan_health: summarize(store.opportunities, store.scan_health || {}) },
+  });
+  if (live) return { store: live, opportunity: store.opportunities[index] };
   const nextStore = writeUmichOpportunities(store, filePath);
   return { store: nextStore, opportunity: findUmichOpportunity(needle, nextStore) };
 }
@@ -525,6 +531,7 @@ export function unarchiveUmichOpportunity(id, filePath = CANONICAL_UMICH_FILE) {
 export function syncUmichOpportunitiesToDashboard({
   sourcePath = CANONICAL_UMICH_FILE,
   outputPath = DASHBOARD_UMICH_FILE,
+  write = false,
 } = {}) {
   const store = readUmichOpportunities(sourcePath);
   const opportunities = store.opportunities.map(item => ({
@@ -533,36 +540,12 @@ export function syncUmichOpportunitiesToDashboard({
       ? `${item.description.slice(0, DASHBOARD_DESCRIPTION_CHARS)}…`
       : item.description,
   }));
-  const output = {
-    ...store,
-    generated_at: new Date().toISOString(),
-    source: sourcePath,
-    total: opportunities.length,
-    count: opportunities.length,
-    opportunities,
-  };
-  atomicWrite(outputPath, `${JSON.stringify(output, null, 2)}\n`);
-  rememberMtimeStore(outputPath, output);
+  const output = dashboardSnapshot({ ...store, opportunities }, { source: sourcePath });
+  if (write) writeDashboardSnapshot(outputPath, { ...store, opportunities }, { source: sourcePath });
   return output;
 }
 
-function fileMtimeMs(filePath) {
-  try {
-    return existsSync(filePath) ? statSync(filePath).mtimeMs : 0;
-  } catch {
-    return 0;
-  }
-}
-
-/** Build the trimmed dashboard copy when missing or older than the canonical store. */
-export function ensureUmichDashboardProjection({
-  sourcePath = CANONICAL_UMICH_FILE,
-  outputPath = DASHBOARD_UMICH_FILE,
-} = {}) {
-  if (!existsSync(sourcePath)) {
-    return readUmichOpportunities(existsSync(outputPath) ? outputPath : sourcePath);
-  }
-  const needsSync = !existsSync(outputPath) || fileMtimeMs(sourcePath) > fileMtimeMs(outputPath);
-  if (needsSync) syncUmichOpportunitiesToDashboard({ sourcePath, outputPath });
-  return readUmichOpportunities(outputPath);
+/** Live list reads the canonical/live store — never rewrite 33 MB on GET. */
+export function ensureUmichDashboardProjection() {
+  return readUmichOpportunities();
 }

@@ -1,3 +1,5 @@
+import './live-env.mjs';
+
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdirSync, mkdtempSync, readFileSync, rmSync } from 'fs';
@@ -64,7 +66,7 @@ test('writes PhDScanner store and syncs dashboard copy', () => {
     });
     assert.equal(store.scan_summary.total_count, 1);
     assert.ok(store.scan_summary.visible_count >= 1);
-    syncPhdscannerOpportunitiesToDashboard({ sourcePath: canonical, outputPath: dashboard });
+    syncPhdscannerOpportunitiesToDashboard({ sourcePath: canonical, outputPath: dashboard, write: true });
     const synced = JSON.parse(readFileSync(dashboard, 'utf-8'));
     assert.match(synced.opportunities[0].id, /^(phdscanner-|phdboard-|findaphd-)/);
     assert.ok(synced.opportunities[0].sources?.length || synced.opportunities[0].source);
