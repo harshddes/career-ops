@@ -36,9 +36,15 @@ $content = @"
 setlocal EnableExtensions
 set "CAREER_OPS_ROOT=$safeCareerOpsRoot"
 set "DASHBOARD_LAUNCHER=$safeLauncher"
-
+set "WAITED=0"
+:wait_dropbox
+if exist "%DASHBOARD_LAUNCHER%" goto dropbox_ready
+if %WAITED% GEQ 24 goto fail
+timeout /t 5 /nobreak >nul
+set /a WAITED+=1
+goto wait_dropbox
+:dropbox_ready
 cd /d "%CAREER_OPS_ROOT%" || goto fail
-if not exist "%DASHBOARD_LAUNCHER%" goto fail
 call "%DASHBOARD_LAUNCHER%" $Mode --no-open
 if errorlevel 1 goto fail
 exit /b 0

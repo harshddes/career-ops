@@ -8,6 +8,7 @@ set "DASHBOARD_PORT=3737"
 set "DASHBOARD_URL=http://127.0.0.1:3737/dashboard/fusion-pivot-dashboard.html"
 set "DASHBOARD_HEALTH=http://127.0.0.1:3737/healthz"
 set "RUNTIME_DIR=%TRACKER_DIR%\runtime"
+set "LOG_DIR=%LOCALAPPDATA%\career-ops\logs"
 set "MODE=assisted"
 set "OPEN_BROWSER=1"
 
@@ -44,6 +45,7 @@ if not exist "%TRACKER_DIR%\package.json" (
 )
 
 if not exist "%RUNTIME_DIR%" mkdir "%RUNTIME_DIR%"
+if not exist "%LOG_DIR%" mkdir "%LOG_DIR%"
 
 call :is_dashboard_healthy
 if "%DASHBOARD_RUNNING%"=="1" (
@@ -111,7 +113,7 @@ set "HOST=%DASHBOARD_HOST%"
 set "PORT=%DASHBOARD_PORT%"
 
 echo [career-ops] Starting dashboard in %MODE% mode on %DASHBOARD_URL%...
-powershell -NoProfile -ExecutionPolicy Bypass -Command "$ErrorActionPreference='Stop'; $env:HOST='%DASHBOARD_HOST%'; $env:PORT='%DASHBOARD_PORT%'; $out='%RUNTIME_DIR%\dashboard.out.log'; $err='%RUNTIME_DIR%\dashboard.err.log'; $pidFile='%RUNTIME_DIR%\dashboard.pid'; $node=(Get-Command node -ErrorAction Stop).Source; $run='%TRACKER_DIR%\run.mjs'; $argLine=([char]34 + $run + [char]34 + ' --mode %MODE% --no-open'); $p = Start-Process -FilePath $node -ArgumentList $argLine -WorkingDirectory '%TRACKER_DIR%' -WindowStyle Hidden -RedirectStandardOutput $out -RedirectStandardError $err -PassThru; Set-Content -Path $pidFile -Value $p.Id"
+powershell -NoProfile -ExecutionPolicy Bypass -File "%TRACKER_DIR%\scripts\start-dashboard-hidden.ps1" -Mode %MODE%
 if errorlevel 1 (
   echo [career-ops] Dashboard failed to start.
   call :print_port_owner
@@ -128,8 +130,8 @@ if "%DASHBOARD_RUNNING%"=="1" (
 
 echo [career-ops] Dashboard process started, but health check did not pass in time.
 echo [career-ops] Logs:
-echo [career-ops]   %RUNTIME_DIR%\dashboard.out.log
-echo [career-ops]   %RUNTIME_DIR%\dashboard.err.log
+echo [career-ops]   %LOG_DIR%\dashboard.out.log
+echo [career-ops]   %LOG_DIR%\dashboard.err.log
 call :print_port_owner
 goto fail
 
