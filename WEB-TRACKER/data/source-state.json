@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "last_global_run": "2026-11-07T03:45:04.996Z",
+  "last_global_run": "2026-11-07T07:00:08.538Z",
   "sources": {
     "euraxess-fusion": {
       "last_poll": "2026-11-07T03:17:01.611Z",
@@ -21,37 +21,37 @@
       "next_poll": "2026-11-07T05:17:01.611Z"
     },
     "findaphd-fusion": {
-      "last_poll": "2026-11-07T01:32:41.527Z",
+      "last_poll": "2026-11-07T05:32:41.485Z",
       "last_status": 200,
       "last_error": "cloudflare_challenge",
       "provider": null,
       "access_status": null,
       "changed_last_run": false,
-      "heat": 3.6531713252078834e-25,
+      "heat": 2.7398784939059126e-25,
       "etag": null,
       "last_modified": null,
-      "consecutive_no_change": 190,
-      "total_polls": 190,
+      "consecutive_no_change": 191,
+      "total_polls": 191,
       "hit_rate": 0,
-      "next_poll_at": "2026-11-07T03:32:41.528Z",
+      "next_poll_at": "2026-11-07T07:32:41.486Z",
       "next_poll": "2026-11-06T13:00:01.801Z"
     },
     "umich-careers": {
-      "last_poll": "2026-11-07T03:45:04.996Z",
+      "last_poll": "2026-11-07T07:00:08.538Z",
       "last_status": 200,
       "last_error": "",
       "provider": "direct_html_browse",
       "access_status": "ok",
       "changed_last_run": false,
-      "heat": 0.0009770552173746585,
+      "heat": 0.033401921224700024,
       "etag": null,
       "last_modified": "Wed, 04 Nov 2026 21:06:41 GMT",
-      "last_changed_at": "2026-11-06T22:15:04.012Z",
-      "consecutive_no_change": 21,
+      "last_changed_at": "2026-11-07T05:07:20.974Z",
+      "consecutive_no_change": 7,
       "total_hits": 2972,
-      "total_polls": 1457,
-      "hit_rate": 2.0398078242964996,
-      "next_poll": "2026-11-07T04:00:04.996Z",
+      "total_polls": 1469,
+      "hit_rate": 2.023144996596324,
+      "next_poll": "2026-11-07T07:15:08.538Z",
       "content_fingerprint": "pw86nb"
     },
     "helion": {
